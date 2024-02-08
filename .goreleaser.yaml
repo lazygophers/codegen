@@ -1,0 +1,69 @@
+project_name: codegen
+
+env:
+    - GO111MODULE=on
+    - GOSUMDB=off
+    - CGO_ENABLED=0
+before:
+    hooks:
+        - go work sync
+        - go mod tidy
+
+#gomod:
+#    proxy: true
+#    mod: mod
+
+builds:
+    -   id: cli
+        binary: "{{ .ProjectName }}"
+        tags:
+            - release
+        ldflags:
+            - -s -w
+            - --extldflags "-static -fpic"
+            - -X github.com/lazygophers/utils/app.Name={{ .ProjectName }}
+            - -X github.com/lazygophers/utils/app.Commit={{ .FullCommit }}
+            - -X github.com/lazygophers/utils/app.ShortCommit={{ .ShortCommit }}
+            - -X github.com/lazygophers/utils/app.Branch={{ .Branch }}
+            - -X github.com/lazygophers/utils/app.Version={{ .Version }}
+            - -X github.com/lazygophers/utils/app.Tag={{ .Tag }}
+            - -X github.com/lazygophers/utils/app.BuildDate={{ .Date }}
+            - -X github.com/lazygophers/utils/app.GoVersion={{ .Env.GOVERSION }}
+            - -X github.com/lazygophers/utils/app.GoOS={{ .Os }}
+            - -X github.com/lazygophers/utils/app.Goarch={{ .Arch }}
+            - -X github.com/lazygophers/utils/app.Goarm={{ .Arm }}
+            - -X github.com/lazygophers/utils/app.Goamd64={{ .Amd64 }}
+            - -X github.com/lazygophers/utils/app.Gomips={{ .Mips }}
+        gcflags:
+            - -N -l
+        main: ./cmd/
+        targets:
+            - linux_amd64_v3
+            - windows_amd64_v3
+            - linux_arm64
+            - darwin_amd64_v3
+            - linux_arm64
+
+archives:
+    -   format: tar.gz
+        name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ with .Arm }}v{{ . }}{{ end }}{{ with .Mips }}_{{ . }}{{ end }}{{ if not (eq .Amd64 "v1") }}{{ .Amd64 }}{{ end }}'
+        format_overrides:
+            -   goos: windows
+                format: zip
+        files:
+            - LICENSE
+            - README.md
+
+#checksum:
+#    algorithm: sha512
+#    name_template: '{{ .ProjectName }}_{{ .Version }}.sha512'
+
+source:
+    enabled: false
+    files:
+        - LICENSE
+        - README.md
+        - conf.example.yaml
+        - '*.go'
+
+report_sizes: true
