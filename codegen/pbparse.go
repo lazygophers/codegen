@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"github.com/emicklei/proto"
 	"github.com/lazygophers/log"
+	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
 	"os"
-	"strconv"
 	"strings"
 )
 
@@ -240,12 +240,15 @@ func (p *PbPackage) Proto() *proto.Proto {
 
 func (p *PbPackage) GetParent(v proto.Visitee) string {
 	var nameList []string
+
 	for v != nil {
 		m := p.messages[fmt.Sprintf("%p", v)]
 		if m == nil {
 			break
 		}
+
 		nameList = append(nameList, m.Name)
+
 		vv := &ProtoVisitor{}
 		v.Accept(vv)
 		if len(vv.msgList) == len(p.messages) || len(vv.msgList) != 1 {
@@ -255,16 +258,9 @@ func (p *PbPackage) GetParent(v proto.Visitee) string {
 		x := vv.msgList[0]
 		v = x.Parent
 	}
-	if len(nameList) == 0 {
-		return ""
-	} else if len(nameList) == 1 {
-		return nameList[0]
-	}
-	var rev []string
-	for i := len(nameList) - 1; i >= 0; i-- {
-		rev = append(rev, nameList[i])
-	}
-	return strings.Join(rev, ".")
+
+	candy.Reverse(nameList)
+	return strings.Join(nameList, ".")
 }
 
 func (p *PbPackage) GetMessageFullName(e *proto.Message) string {
@@ -353,9 +349,6 @@ type ProtoVisitor struct {
 	enumFields   []*proto.EnumField
 	normalFields []*proto.NormalField
 	mapFields    []*proto.MapField
-	cmdId        uint32
-	userType     string
-	subUserType  string
 	options      map[string]string
 }
 
@@ -376,22 +369,6 @@ func (p *ProtoVisitor) VisitOptions(o *proto.Option) {
 }
 
 func (p *ProtoVisitor) VisitOption(o *proto.Option) {
-	if strings.Index(o.Name, "ext.CmdID") >= 0 {
-		strVal := o.Constant.Source
-		val, err := strconv.Atoi(strVal)
-		if err != nil || val <= 0 {
-			log.Fatalf("invalid CmdID `%s` at line %d", strVal, o.Position.Line)
-		}
-		p.cmdId = uint32(val)
-	}
-	if strings.Index(o.Name, "ext.UserType") >= 0 {
-		p.userType = o.Constant.Source
-		index := strings.Index(p.userType, ".")
-		if strings.Index(p.userType, ".") > 0 {
-			p.subUserType = p.userType[index+1:]
-			p.userType = p.userType[:index]
-		}
-	}
 	if p.options == nil {
 		p.options = map[string]string{}
 	}

@@ -97,7 +97,13 @@ func injectTag(contents []byte, area textArea) (injected []byte) {
 	return
 }
 
-func InjectTagWriteFile(inputPath string, areas []textArea) (err error) {
+func InjectTagWriteFile(inputPath string, areas []textArea) error {
+	stat, err := os.Stat(inputPath)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	contents, err := os.ReadFile(inputPath)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -109,13 +115,13 @@ func InjectTagWriteFile(inputPath string, areas []textArea) (err error) {
 		contents = injectTag(contents, area)
 	}
 
-	err = os.WriteFile(inputPath, contents, 0644)
+	err = os.WriteFile(inputPath, contents, stat.Mode())
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
-	return
+	return nil
 }
 
 func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
@@ -191,7 +197,7 @@ type textArea struct {
 
 var (
 	rInject = regexp.MustCompile("`.+`$")
-	rTags   = regexp.MustCompile(`[\w_]+:"[^"]+"`)
+	rTags   = regexp.MustCompile(`\w+:"[^"]+"`)
 )
 
 func injectTagCommentParse(lines []string) tagItems {

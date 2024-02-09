@@ -149,11 +149,10 @@ func LoadConfig() error {
 	// NOTE: 从环境变量中获取
 	log.Warnf("Try to load config from environment variable(%s)", pterm.Gray("LAZYGO_CODEGEN_CONFIG_FILE"))
 	path = os.Getenv("LAZYGO_CODEGEN_CONFIG_FILE")
-	if path != "" {
-		if !osx.IsFile(path) {
-			log.Debugf("config file not found:%v", path)
-			path = ""
-		}
+
+	if path != "" && !osx.IsFile(path) {
+		log.Debugf("config file not found:%v", path)
+		path = ""
 	}
 
 	// NOTE: 从系统目录中获取
@@ -183,7 +182,6 @@ func LoadConfig() error {
 				log.Errorf("err:%v", err)
 			}
 		} else {
-			log.Errorf("unsupported config file format:%v", ext)
 			log.Errorf("unsupported config file format:%v", ext)
 			return fmt.Errorf("unsupported config file format:%v", ext)
 		}

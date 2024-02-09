@@ -68,7 +68,7 @@ type GoParams struct {
 func (p *GoParams) String() string {
 	switch p.TypeName {
 	case "func":
-		return fmt.Sprintf("%s", p.GoFunc.String())
+		return p.GoFunc.String()
 	default:
 		return fmt.Sprintf("%s %s", p.FieldName, p.TypeName)
 	}
@@ -77,7 +77,7 @@ func (p *GoParams) String() string {
 func (p *GoParams) StringWithColor() string {
 	switch p.TypeName {
 	case "func":
-		return fmt.Sprintf("%s", p.GoFunc.StringWithColor())
+		return p.GoFunc.StringWithColor()
 	default:
 		return fmt.Sprintf("%s %s", color.Cyan.Text(p.FieldName), color.Blue.Text(p.TypeName))
 	}
@@ -752,13 +752,14 @@ func (p *ScanErrCodeContext) MergePkgMapWithPkgName(m map[string]*GoPackage, pkg
 		p.pkgMap[pkg] = v
 	}
 }
+
 func (p *ScanErrCodeContext) Scan(mod, name string) {
-	var pkg *GoPackage
-	pkg = p.pkgMap[mod]
+	pkg := p.pkgMap[mod]
 	if pkg == nil {
 		log.Warnf("not found package %s", mod)
 		return
 	}
+
 	// 看看是否处理过了
 	full := fmt.Sprintf("%s.%s", mod, name)
 	if p.accessMap[full] {
@@ -782,23 +783,11 @@ func (p *ScanErrCodeContext) Scan(mod, name string) {
 			}
 			continue
 		}
-		//
-		// 支持这种形式:
-		// XXXErr(xxx.ErrXXX)
-		//
-		// if len(v.Names) == 1 &&
-		//	strings.HasSuffix(v.Names[0], "Err") {
-		//	if len(v.Args) > 0 {
-		//		x := v.Args[0]
-		//		if len(x.Names) == 2 && strings.HasPrefix(x.Names[1], "Err") {
-		//			p.errMap[fmt.Sprintf("%s.%s", x.Names[0], x.Names[1])] = true
-		//		}
-		//	}
-		//	continue
-		// }
-		if len(v.Names) == 1 {
+
+		switch len(v.Names) {
+		case 1:
 			p.Scan(mod, v.Names[0])
-		} else if len(v.Names) == 2 {
+		case 2:
 			callMod := v.Names[0]
 			callName := v.Names[1]
 			// 1. 已经 load 过了
