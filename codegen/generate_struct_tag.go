@@ -15,7 +15,7 @@ import (
 func GenerateProto(pb *PbPackage) error {
 	goPbFilePath := filepath.Join(filepath.Dir(filepath.Dir(pb.protoFilePath)), pb.GoPackage, pb.PackageName+".pb.go")
 
-	areas, _, err := InjectTagParseFile(goPbFilePath)
+	areas, err := InjectTagParseFile(goPbFilePath)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -117,12 +117,12 @@ func InjectTagWriteFile(inputPath string, areas []textArea) (err error) {
 	return
 }
 
-func InjectTagParseFile(inputPath string) (areas []textArea, gormMsgList []string, err error) {
+func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 	fset := token.NewFileSet()
 	f, err := parser.ParseFile(fset, inputPath, nil, parser.ParseComments)
 	if err != nil {
 		log.Errorf("err:%v", err)
-		return nil, nil, err
+		return nil, err
 	}
 
 	for _, decl := range f.Decls {
@@ -175,9 +175,8 @@ func InjectTagParseFile(inputPath string) (areas []textArea, gormMsgList []strin
 			}
 			areas = append(areas, area)
 		}
-
-		gormMsgList = append(gormMsgList, typeSpec.Name.Name)
 	}
+
 	log.Infof("number of fields to inject custom tags: %d", len(areas))
 	return
 }
@@ -218,8 +217,6 @@ func injectTagCommentParse(lines []string) string {
 
 		resList = append(resList, tag, fmt.Sprintf(`%s:"%s"`, tag, removeStrQuote(value)))
 	}
-
-	log.Info(resList)
 
 	return strings.Join(resList, " ")
 }
