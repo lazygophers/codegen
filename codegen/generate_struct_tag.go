@@ -84,13 +84,16 @@ func newTagItems(tag string) tagItems {
 func injectTag(contents []byte, area textArea) (injected []byte) {
 	expr := make([]byte, area.End-area.Start)
 	copy(expr, contents[area.Start-1:area.End-1])
-	cti := newTagItems(area.CurrentTag)
-	iti := newTagItems(area.InjectTag)
-	ti := cti.override(iti)
+
+	cti := area.CurrentTag
+	ti := cti.override(area.InjectTag)
+
 	expr = rInject.ReplaceAll(expr, []byte(fmt.Sprintf("`%s`", ti.format())))
+
 	injected = append(injected, contents[:area.Start-1]...)
 	injected = append(injected, expr...)
 	injected = append(injected, contents[area.End-1:]...)
+	
 	return
 }
 
@@ -161,8 +164,8 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 				commentLines = append(commentLines, v.Text)
 			}
 
-			injectTag := injectTagCommentParse(commentLines)
-			if injectTag == "" {
+			injectTags := injectTagCommentParse(commentLines)
+			if len(injectTags) == 0 {
 				continue
 			}
 
@@ -170,8 +173,8 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 			area := textArea{
 				Start:      int(field.Pos()),
 				End:        int(field.End()),
-				CurrentTag: currentTag[1 : len(currentTag)-1],
-				InjectTag:  injectTag,
+				CurrentTag: newTagItems(currentTag[1 : len(currentTag)-1]),
+				InjectTag:  injectTags,
 			}
 			areas = append(areas, area)
 		}
@@ -184,8 +187,8 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 type textArea struct {
 	Start      int
 	End        int
-	CurrentTag string
-	InjectTag  string
+	CurrentTag tagItems
+	InjectTag  tagItems
 }
 
 var (
@@ -193,8 +196,8 @@ var (
 	rTags   = regexp.MustCompile(`[\w_]+:"[^"]+"`)
 )
 
-func injectTagCommentParse(lines []string) string {
-	var resList []string
+func injectTagCommentParse(lines []string) tagItems {
+	var resList tagItems
 	for _, line := range lines {
 		line = strings.ReplaceAll(line, " ", "")
 		if line == "" {
@@ -215,8 +218,11 @@ func injectTagCommentParse(lines []string) string {
 		tag := line[:idx]
 		value := line[idx+1:]
 
-		resList = append(resList, tag, fmt.Sprintf(`%s:"%s"`, tag, removeStrQuote(value)))
+		resList = append(resList, tagItem{
+			key:   tag,
+			value: removeStrQuote(value),
+		})
 	}
 
-	return strings.Join(resList, " ")
+	return resList
 }
