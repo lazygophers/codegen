@@ -93,7 +93,7 @@ func injectTag(contents []byte, area textArea) (injected []byte) {
 	injected = append(injected, contents[:area.Start-1]...)
 	injected = append(injected, expr...)
 	injected = append(injected, contents[area.End-1:]...)
-	
+
 	return
 }
 
@@ -104,9 +104,7 @@ func InjectTagWriteFile(inputPath string, areas []textArea) (err error) {
 		return err
 	}
 
-	// inject custom tags from tail of file first to preserve order
-	for i := range areas {
-		area := areas[len(areas)-i-1]
+	for _, area := range areas {
 		log.Infof("inject custom tag %q to expression %q", area.InjectTag, string(contents[area.Start-1:area.End-1]))
 		contents = injectTag(contents, area)
 	}
