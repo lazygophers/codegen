@@ -12,6 +12,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 )
 
 var genPbCmd = &cobra.Command{
@@ -62,6 +63,9 @@ func init() {
 }
 
 func genPbFile(protoFilePath string) error {
+	log.Info("gen pb.go with protoc")
+	pterm.Info.Printfln("gen pb.go with protoc")
+
 	cmd := exec.Command(state.Config.ProtocPath,
 		"-I", filepath.ToSlash(filepath.Dir(protoFilePath)),
 		"--plugin=protoc-gen-go="+state.Config.ProtoGenGoPath,
@@ -74,6 +78,7 @@ func genPbFile(protoFilePath string) error {
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		log.Errorf("err:%v", err)
+		pterm.Error.Printfln("exec %s\nerr:%s", pterm.BgCyan.Sprint(strings.Join(cmd.Args, " ")), err.Error())
 		return err
 	}
 

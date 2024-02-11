@@ -29,7 +29,16 @@
 - <go_package>
 	- <package>.pb.go
 ```
+3. 如果全局变量无法找到，可以尝试在配置文件中使用绝对路径
 
+### 配置文件
+
+配置文件名问 `[codegen.cfg.yaml](codegen.cfg.yaml)` 会依次在环境变量（LAZYGO_CODEGEN_CONFIG_FILE）、用户配置路径（/root/.config/lazygophers）依次查找，如果没有找到则使用默认配置
+
+```yaml
+protoc_path: "<protoc的绝对路径>"
+protogen_go_path: "<protoc-gen-go的绝对路径>"
+```
 
 ## 生成样例
 

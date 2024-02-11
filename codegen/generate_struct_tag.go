@@ -141,7 +141,7 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 
 		var typeSpec *ast.TypeSpec
 		for _, spec := range genDecl.Specs {
-			if ts, tsOK := spec.(*ast.TypeSpec); tsOK {
+			if ts, ok := spec.(*ast.TypeSpec); ok {
 				typeSpec = ts
 				break
 			}
@@ -174,10 +174,11 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 			}
 
 			currentTag := field.Tag.Value
+			currentTag = strings.TrimSuffix(strings.TrimPrefix(currentTag, "`"), "`")
 			area := textArea{
 				Start:      int(field.Pos()),
 				End:        int(field.End()),
-				CurrentTag: newTagItems(currentTag[1 : len(currentTag)-1]),
+				CurrentTag: newTagItems(currentTag),
 				InjectTag:  injectTags,
 			}
 			areas = append(areas, area)

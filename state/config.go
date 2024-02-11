@@ -86,7 +86,7 @@ func (p *Cfg) apply() (err error) {
 			case *exec.ExitError:
 				switch x.ExitCode() {
 				case 1:
-					if !strings.Contains(string(x.Stderr), `unknown argument "--version"`) {
+					if !strings.Contains(string(x.Stderr), `unknown argument`) {
 						log.Errorf("err:%v", err)
 						return err
 					}
@@ -100,6 +100,9 @@ func (p *Cfg) apply() (err error) {
 					log.Errorf("err:%v", err)
 					return errors.New("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
 				}
+
+				log.Errorf("err:%v", err)
+				return err
 			default:
 				log.Errorf("err:%v", err)
 				return err
