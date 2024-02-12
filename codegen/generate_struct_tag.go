@@ -22,12 +22,10 @@ func GenerateProto(pb *PbPackage) error {
 		return err
 	}
 
-	if len(areas) > 0 {
-		err = InjectTagWriteFile(goPbFilePath, areas)
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return err
-		}
+	err = InjectTagWriteFile(goPbFilePath, areas)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
 	}
 
 	pterm.Success.Printfln("generate pb file %s", goPbFilePath)
@@ -64,14 +62,6 @@ func (ti tagItems) override() tagItems {
 		m[item.key] = append(m[item.key], item.value)
 	}
 
-	//for _, item := range nti {
-	//	if _, ok := m[item.key]; !ok {
-	//		m[item.key] = []string{}
-	//	}
-	//
-	//	m[item.key] = append(m[item.key], item.value)
-	//}
-
 	var overrided tagItems
 	for k, v := range m {
 		v = candy.Filter(v, func(s string) bool {
@@ -96,6 +86,10 @@ func (ti tagItems) override() tagItems {
 }
 
 func InjectTagWriteFile(inputPath string, areas []textArea) error {
+	if len(areas) == 0 {
+		return nil
+	}
+
 	stat, err := os.Stat(inputPath)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -116,8 +110,10 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 	var lastEnd int
 	for _, area := range areas {
 		endIdx := bytes.LastIndex(contents[area.Start-1:area.End-1], []byte("`")) + area.Start - 1
+
 		log.Infof("append custom tags to %s at %d", contents[area.Start-1:endIdx], endIdx)
 		pterm.Info.Printfln("append custom tags to %s at %s", pterm.BgMagenta.Sprintf("%s", contents[area.Start-1:endIdx]), pterm.FgMagenta.Sprint(endIdx))
+
 		b.Write(contents[lastEnd:endIdx])
 		b.WriteString(" ")
 		area.InjectTag.writeTo(&b)
