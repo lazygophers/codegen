@@ -11,7 +11,6 @@ import (
 	"go/token"
 	"os"
 	"path/filepath"
-	"regexp"
 	"strings"
 )
 
@@ -52,7 +51,19 @@ func (ti tagItems) format() string {
 	return strings.Join(tags, " ")
 }
 
-func (ti tagItems) override(nti tagItems) tagItems {
+func (ti tagItems) writeTo(b *bytes.Buffer) {
+	for _, item := range ti {
+		b.WriteString(item.key)
+		b.WriteString(`:"`)
+		b.WriteString(item.value)
+		b.WriteString(`"`)
+		b.WriteString(" ")
+	}
+
+	b.Truncate(b.Len() - 1)
+}
+
+func (ti tagItems) override() tagItems {
 	m := make(map[string][]string, len(ti))
 	for _, item := range ti {
 		if _, ok := m[item.key]; !ok {
@@ -62,13 +73,13 @@ func (ti tagItems) override(nti tagItems) tagItems {
 		m[item.key] = append(m[item.key], item.value)
 	}
 
-	for _, item := range nti {
-		if _, ok := m[item.key]; !ok {
-			m[item.key] = []string{}
-		}
-
-		m[item.key] = append(m[item.key], item.value)
-	}
+	//for _, item := range nti {
+	//	if _, ok := m[item.key]; !ok {
+	//		m[item.key] = []string{}
+	//	}
+	//
+	//	m[item.key] = append(m[item.key], item.value)
+	//}
 
 	var overrided tagItems
 	for k, v := range m {
@@ -93,32 +104,21 @@ func (ti tagItems) override(nti tagItems) tagItems {
 	return overrided
 }
 
-func newTagItems(tag string) tagItems {
-	var items []tagItem
-	for _, t := range rTags.FindAllString(tag, -1) {
-		sepPos := strings.Index(t, ":")
-		items = append(items, tagItem{
-			key:   t[:sepPos],
-			value: t[sepPos+2 : len(t)-1],
-		})
-	}
-	return items
-}
-
 func injectTag(contents []byte, area textArea) (injected []byte) {
-	expr := make([]byte, area.End-area.Start)
-	copy(expr, contents[area.Start-1:area.End-1])
+	var b bytes.Buffer
+	b.Write(contents[area.Start-1 : area.End-1])
+	//b.Truncate(bytes.LastIndex(contents[area.Start-1:area.End-1], []byte("`")))
+	b.Truncate(area.End - area.Start - 1)
 
-	cti := area.CurrentTag
-	ti := cti.override(area.InjectTag)
+	pterm.Info.Printfln("append custom tag %s to expression %s",
+		pterm.BgYellow.Sprint(b.String()), pterm.BgGreen.Sprint(area.InjectTag.format()))
 
-	log.Infof("inject custom tag %q to expression %q", cti.format(), ti.format())
-	pterm.Info.Printfln("inject custom tag %s to expression %s",
-		pterm.BgYellow.Sprint(cti.format()), pterm.BgGreen.Sprint(ti.format()))
+	b.WriteString(" ")
+	area.InjectTag.writeTo(&b)
+	b.WriteString("`")
 
-	expr = bytes.ReplaceAll(expr, expr, []byte(fmt.Sprintf("`%s`", ti.format())))
 	injected = append(injected, contents[:area.Start-1]...)
-	injected = append(injected, expr...)
+	injected = append(injected, b.Bytes()...)
 	injected = append(injected, contents[area.End-1:]...)
 
 	return
@@ -224,10 +224,9 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 			currentTag := field.Tag.Value
 			currentTag = strings.TrimSuffix(strings.TrimPrefix(currentTag, "`"), "`")
 			area := textArea{
-				Start:      int(field.Pos()),
-				End:        int(field.End()),
-				CurrentTag: newTagItems(currentTag),
-				InjectTag:  injectTags,
+				Start:     int(field.Pos()),
+				End:       int(field.End()),
+				InjectTag: injectTags.override(),
 			}
 			areas = append(areas, area)
 		}
@@ -238,43 +237,7 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 }
 
 type textArea struct {
-	Start      int
-	End        int
-	CurrentTag tagItems
-	InjectTag  tagItems
-}
-
-var (
-	rTags = regexp.MustCompile(`\w+:"[^"]+"`)
-)
-
-func injectTagCommentParse(lines []string) tagItems {
-	var resList tagItems
-	for _, line := range lines {
-		line = strings.ReplaceAll(line, " ", "")
-		if line == "" {
-			continue
-		}
-
-		if !strings.HasPrefix(line, "//@") {
-			continue
-		}
-
-		line = line[3:]
-
-		idx := strings.Index(line, ":")
-		if idx < 0 {
-			continue
-		}
-
-		tag := line[:idx]
-		value := line[idx+1:]
-
-		resList = append(resList, tagItem{
-			key:   tag,
-			value: removeStrQuote(value),
-		})
-	}
-
-	return resList
+	Start     int
+	End       int
+	InjectTag tagItems
 }
