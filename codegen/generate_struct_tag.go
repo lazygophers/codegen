@@ -76,7 +76,7 @@ func newTagItems(tag string) tagItems {
 		sepPos := strings.Index(t, ":")
 		items = append(items, tagItem{
 			key:   t[:sepPos],
-			value: t[sepPos+1:],
+			value: t[sepPos+2 : len(t)-1],
 		})
 	}
 	return items
