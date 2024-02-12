@@ -1,9 +1,11 @@
 package codegen
 
 import (
+	"bytes"
 	"fmt"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
+	"github.com/pterm/pterm"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -30,6 +32,8 @@ func GenerateProto(pb *PbPackage) error {
 		}
 	}
 
+	pterm.Success.Printfln("generate pb file %s", goPbFilePath)
+
 	return nil
 }
 
@@ -51,7 +55,11 @@ func (ti tagItems) format() string {
 func (ti tagItems) override(nti tagItems) tagItems {
 	m := make(map[string][]string, len(ti))
 	for _, item := range ti {
-		m[item.key] = []string{item.value}
+		if _, ok := m[item.key]; !ok {
+			m[item.key] = []string{}
+		}
+
+		m[item.key] = append(m[item.key], item.value)
 	}
 
 	for _, item := range nti {
@@ -64,6 +72,10 @@ func (ti tagItems) override(nti tagItems) tagItems {
 
 	var overrided tagItems
 	for k, v := range m {
+		v = candy.Filter(v, func(s string) bool {
+			return s != ""
+		})
+
 		switch k {
 		case "gorm":
 			overrided = append(overrided, tagItem{
@@ -78,7 +90,7 @@ func (ti tagItems) override(nti tagItems) tagItems {
 		}
 	}
 
-	return append(overrided, nti...)
+	return overrided
 }
 
 func newTagItems(tag string) tagItems {
@@ -100,8 +112,11 @@ func injectTag(contents []byte, area textArea) (injected []byte) {
 	cti := area.CurrentTag
 	ti := cti.override(area.InjectTag)
 
-	expr = rInject.ReplaceAll(expr, []byte(fmt.Sprintf("`%s`", ti.format())))
+	log.Infof("inject custom tag %q to expression %q", cti.format(), ti.format())
+	pterm.Info.Printfln("inject custom tag %s to expression %s",
+		pterm.BgYellow.Sprint(cti.format()), pterm.BgGreen.Sprint(ti.format()))
 
+	expr = bytes.ReplaceAll(expr, expr, []byte(fmt.Sprintf("`%s`", ti.format())))
 	injected = append(injected, contents[:area.Start-1]...)
 	injected = append(injected, expr...)
 	injected = append(injected, contents[area.End-1:]...)
@@ -127,7 +142,6 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 	})
 
 	for _, area := range areas {
-		log.Infof("inject custom tag %q to expression %q", area.InjectTag, string(contents[area.Start-1:area.End-1]))
 		contents = injectTag(contents, area)
 	}
 
@@ -141,15 +155,13 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 }
 
 func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
-	fset := token.NewFileSet()
-	f, err := parser.ParseFile(fset, inputPath, nil, parser.ParseComments)
+	f, err := parser.ParseFile(token.NewFileSet(), inputPath, nil, parser.ParseComments)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
 	}
 
 	for _, decl := range f.Decls {
-		// check if is generic declaration
 		genDecl, ok := decl.(*ast.GenDecl)
 		if !ok {
 			continue
@@ -179,12 +191,32 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 				continue
 			}
 
-			var commentLines []string
+			var injectTags tagItems
+			var lastTag string
 			for _, v := range field.Doc.List {
-				commentLines = append(commentLines, v.Text)
-			}
+				line := strings.ReplaceAll(strings.ReplaceAll(strings.TrimPrefix(v.Text, "//"), " ", ""), "\t", "")
+				if !strings.HasPrefix(line, "@") {
+					if lastTag != "" {
+						injectTags = append(injectTags, tagItem{
+							key:   lastTag,
+							value: removeStrQuote(line),
+						})
+					}
+					continue
+				} else {
+					idx := strings.Index(line, ":")
+					if idx < 0 {
+						continue
+					}
 
-			injectTags := injectTagCommentParse(commentLines)
+					tag := line[1:idx]
+					injectTags = append(injectTags, tagItem{
+						key:   tag,
+						value: removeStrQuote(line[idx+1:]),
+					})
+					lastTag = tag
+				}
+			}
 			if len(injectTags) == 0 {
 				continue
 			}
@@ -213,8 +245,7 @@ type textArea struct {
 }
 
 var (
-	rInject = regexp.MustCompile("`.+`$")
-	rTags   = regexp.MustCompile(`\w+:"[^"]+"`)
+	rTags = regexp.MustCompile(`\w+:"[^"]+"`)
 )
 
 func injectTagCommentParse(lines []string) tagItems {
