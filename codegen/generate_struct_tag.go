@@ -2,7 +2,6 @@ package codegen
 
 import (
 	"bytes"
-	"fmt"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
@@ -42,14 +41,6 @@ type tagItem struct {
 }
 
 type tagItems []tagItem
-
-func (ti tagItems) format() string {
-	var tags []string
-	for _, item := range ti {
-		tags = append(tags, fmt.Sprintf(`%s:"%s"`, item.key, item.value))
-	}
-	return strings.Join(tags, " ")
-}
 
 func (ti tagItems) writeTo(b *bytes.Buffer) {
 	for _, item := range ti {
@@ -104,26 +95,6 @@ func (ti tagItems) override() tagItems {
 	return overrided
 }
 
-func injectTag(contents []byte, area textArea) (injected []byte) {
-	var b bytes.Buffer
-	b.Write(contents[area.Start-1 : area.End-1])
-	//b.Truncate(bytes.LastIndex(contents[area.Start-1:area.End-1], []byte("`")))
-	b.Truncate(area.End - area.Start - 1)
-
-	pterm.Info.Printfln("append custom tag %s to expression %s",
-		pterm.BgYellow.Sprint(b.String()), pterm.BgGreen.Sprint(area.InjectTag.format()))
-
-	b.WriteString(" ")
-	area.InjectTag.writeTo(&b)
-	b.WriteString("`")
-
-	injected = append(injected, contents[:area.Start-1]...)
-	injected = append(injected, b.Bytes()...)
-	injected = append(injected, contents[area.End-1:]...)
-
-	return
-}
-
 func InjectTagWriteFile(inputPath string, areas []textArea) error {
 	stat, err := os.Stat(inputPath)
 	if err != nil {
@@ -138,14 +109,24 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 	}
 
 	areas = candy.SortUsing(areas, func(a, b textArea) bool {
-		return a.Start > b.Start
+		return a.Start < b.Start
 	})
 
+	var b bytes.Buffer
+	var lastEnd int
 	for _, area := range areas {
-		contents = injectTag(contents, area)
+		endIdx := bytes.LastIndex(contents[area.Start-1:area.End-1], []byte("`")) + area.Start - 1
+		log.Infof("append custom tags to %s at %d", contents[area.Start-1:endIdx], endIdx)
+		pterm.Info.Printfln("append custom tags to %s at %s", pterm.BgMagenta.Sprintf("%s", contents[area.Start-1:endIdx]), pterm.FgMagenta.Sprint(endIdx))
+		b.Write(contents[lastEnd:endIdx])
+		b.WriteString(" ")
+		area.InjectTag.writeTo(&b)
+		lastEnd = endIdx
 	}
 
-	err = os.WriteFile(inputPath, contents, stat.Mode())
+	b.Write(contents[lastEnd:])
+
+	err = os.WriteFile(inputPath, b.Bytes(), stat.Mode())
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -221,14 +202,11 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 				continue
 			}
 
-			currentTag := field.Tag.Value
-			currentTag = strings.TrimSuffix(strings.TrimPrefix(currentTag, "`"), "`")
-			area := textArea{
+			areas = append(areas, textArea{
 				Start:     int(field.Pos()),
 				End:       int(field.End()),
 				InjectTag: injectTags.override(),
-			}
-			areas = append(areas, area)
+			})
 		}
 	}
 
