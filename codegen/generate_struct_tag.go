@@ -49,30 +49,41 @@ func (ti tagItems) format() string {
 }
 
 func (ti tagItems) override(nti tagItems) tagItems {
-	var overrided []tagItem
-	for i := range ti {
-		var dup = -1
-		for j := range nti {
-			if ti[i].key == nti[j].key {
-				dup = j
-				break
-			}
+	m := make(map[string][]string, len(ti))
+	for _, item := range ti {
+		m[item.key] = []string{item.value}
+	}
+
+	for _, item := range nti {
+		if _, ok := m[item.key]; !ok {
+			m[item.key] = []string{}
 		}
-		if dup == -1 {
-			overrided = append(overrided, ti[i])
-		} else {
-			overrided = append(overrided, nti[dup])
-			nti = append(nti[:dup], nti[dup+1:]...)
+
+		m[item.key] = append(m[item.key], item.value)
+	}
+
+	var overrided tagItems
+	for k, v := range m {
+		switch k {
+		case "gorm":
+			overrided = append(overrided, tagItem{
+				key:   k,
+				value: strings.Join(v, ";"),
+			})
+		default:
+			overrided = append(overrided, tagItem{
+				key:   k,
+				value: strings.Join(v, ","),
+			})
 		}
 	}
+
 	return append(overrided, nti...)
 }
 
 func newTagItems(tag string) tagItems {
 	var items []tagItem
-	splitted := rTags.FindAllString(tag, -1)
-
-	for _, t := range splitted {
+	for _, t := range rTags.FindAllString(tag, -1) {
 		sepPos := strings.Index(t, ":")
 		items = append(items, tagItem{
 			key:   t[:sepPos],
