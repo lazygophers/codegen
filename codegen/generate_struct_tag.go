@@ -43,7 +43,7 @@ type tagItems []tagItem
 func (ti tagItems) format() string {
 	var tags []string
 	for _, item := range ti {
-		tags = append(tags, fmt.Sprintf(`%s:%s`, item.key, item.value))
+		tags = append(tags, fmt.Sprintf(`%s:"%s"`, item.key, item.value))
 	}
 	return strings.Join(tags, " ")
 }
