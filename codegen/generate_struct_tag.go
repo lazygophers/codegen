@@ -3,6 +3,7 @@ package codegen
 import (
 	"fmt"
 	"github.com/lazygophers/log"
+	"github.com/lazygophers/utils/candy"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -109,6 +110,10 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 		log.Errorf("err:%v", err)
 		return err
 	}
+
+	areas = candy.SortUsing(areas, func(a, b textArea) bool {
+		return a.Start > b.Start
+	})
 
 	for _, area := range areas {
 		log.Infof("inject custom tag %q to expression %q", area.InjectTag, string(contents[area.Start-1:area.End-1]))
