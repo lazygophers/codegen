@@ -34,13 +34,14 @@ var rootCmd = &cobra.Command{
 
 		return nil
 	},
-	RunE: func(cmd *cobra.Command, args []string) error {
-		return nil
-	},
 }
 
 func Run() {
 	var err error
+
+	cobra.EnablePrefixMatching = true
+	cobra.EnableCommandSorting = true
+	cobra.EnableTraverseRunHooks = true
 
 	rootCmd.PersistentFlags().BoolP("debug", "d", false, "debug output")
 

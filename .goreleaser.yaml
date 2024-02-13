@@ -53,6 +53,7 @@ archives:
         files:
             - LICENSE
             - README.md
+            - codegen.cfg.yaml.example
 
 #checksum:
 #    algorithm: sha512
