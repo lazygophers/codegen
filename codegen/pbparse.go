@@ -3,10 +3,12 @@ package codegen
 import (
 	"fmt"
 	"github.com/emicklei/proto"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -236,6 +238,14 @@ type PbPackage struct {
 
 func (p *PbPackage) Proto() *proto.Proto {
 	return p.proto
+}
+
+func (p *PbPackage) ProjectRoot() string {
+	if state.Config.OutputPath == "" {
+		return filepath.Join(filepath.Dir(filepath.Dir(p.protoFilePath)), p.GoPackage)
+	} else {
+		return filepath.Join(state.Config.OutputPath, p.GoPackage)
+	}
 }
 
 func (p *PbPackage) GetParent(v proto.Visitee) string {

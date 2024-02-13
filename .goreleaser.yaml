@@ -39,10 +39,10 @@ builds:
         main: ./cmd/
         targets:
             - linux_amd64_v3
-            - windows_amd64_v3
-            - linux_arm64
-            - darwin_amd64_v3
-            - linux_arm64
+#            - windows_amd64_v3
+#            - linux_arm64
+#            - darwin_amd64_v3
+#            - linux_arm64
 
 archives:
     -   format: tar.gz
@@ -53,6 +53,7 @@ archives:
         files:
             - LICENSE
             - README.md
+            - codegen.cfg.yaml.example
 
 #checksum:
 #    algorithm: sha512

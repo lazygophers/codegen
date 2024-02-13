@@ -14,7 +14,7 @@ import (
 )
 
 func GenerateProto(pb *PbPackage) error {
-	goPbFilePath := filepath.Join(filepath.Dir(filepath.Dir(pb.protoFilePath)), pb.GoPackage, pb.PackageName+".pb.go")
+	goPbFilePath := filepath.Join(pb.ProjectRoot(), pb.PackageName+".pb.go")
 
 	areas, err := InjectTagParseFile(goPbFilePath)
 	if err != nil {
