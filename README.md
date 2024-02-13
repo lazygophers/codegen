@@ -71,7 +71,12 @@
 会依次在环境变量（LAZYGO_CODEGEN_CONFIG_FILE）、用户配置路径（/root/.config/lazygophers）依次查找，如果没有找到则使用默认配置
 
 ```yaml
+protoc_path: "<protoc的绝对路径>"
+protogen_go_path: "<protoc-gen-go的绝对路径>"
 
+# 生成的代码的目录，即 protoc 执行的路径，实际生成的代码将会放在 <output_path>/<go_package> 下
+# 如果不指定，默认规则为 <proto_file_path>/../<go_package>
+output_path: "<生成的代码的目录>"
 ```
 
 ## 生成样例
