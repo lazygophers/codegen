@@ -1,8 +1,6 @@
 package state
 
 import (
-	"bytes"
-	"errors"
 	"fmt"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/app"
@@ -14,9 +12,7 @@ import (
 	"gopkg.in/yaml.v3"
 	"io"
 	"os"
-	"os/exec"
 	"path/filepath"
-	"strings"
 )
 
 type Cfg struct {
@@ -40,75 +36,6 @@ func (p *Cfg) apply() (err error) {
 			p.ProtoGenGoPath = "protoc-gen-go.exe"
 		} else {
 			p.ProtoGenGoPath = "protoc-gen-go"
-		}
-	}
-
-	// NOTE: 检查 protoc 是否存在
-	{
-		log.Debugf("check protoc:%v", p.ProtocPath)
-		cmd := exec.Command(p.ProtocPath, "--version")
-		cmd.Dir = runtime.Pwd()
-		cmd.Env = os.Environ()
-
-		output, err := cmd.Output()
-		if err != nil {
-			//goland:noinspection GoTypeAssertionOnErrors
-			switch x := err.(type) {
-			case *exec.Error:
-				if errors.Is(x.Err, exec.ErrNotFound) {
-					pterm.Error.Printfln("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-					log.Errorf("err:%v", err)
-					return errors.New("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-				}
-			default:
-				log.Errorf("err:%v", err)
-				return err
-			}
-		}
-
-		output = bytes.TrimSuffix(output, []byte("\n"))
-
-		log.Infof("protoc version:%s", output)
-		pterm.Success.Printfln("protoc version:%s", output)
-	}
-
-	// NOTE: 检查 protoc-gen-go 是否存在
-	{
-		// go install github.com/golang/protobuf/protoc-gen-go
-		log.Debugf("check protoc-gen-go:%v", p.ProtoGenGoPath)
-
-		cmd := exec.Command(p.ProtoGenGoPath, "--version")
-		cmd.Dir = runtime.Pwd()
-		cmd.Env = os.Environ()
-
-		_, err = cmd.Output()
-		if err != nil {
-			//goland:noinspection GoTypeAssertionOnErrors
-			switch x := err.(type) {
-			case *exec.ExitError:
-				switch x.ExitCode() {
-				case 1:
-					if !strings.Contains(string(x.Stderr), `unknown argument`) {
-						log.Errorf("err:%v", err)
-						return err
-					}
-				default:
-					log.Errorf("err:%v", err)
-					return err
-				}
-			case *exec.Error:
-				if errors.Is(x.Err, exec.ErrNotFound) {
-					pterm.Error.Printfln("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-					log.Errorf("err:%v", err)
-					return errors.New("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-				}
-
-				log.Errorf("err:%v", err)
-				return err
-			default:
-				log.Errorf("err:%v", err)
-				return err
-			}
 		}
 	}
 

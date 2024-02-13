@@ -236,6 +236,10 @@ type PbPackage struct {
 	PackageName string
 }
 
+func (p *PbPackage) ProtoFilePath() string {
+	return p.protoFilePath
+}
+
 func (p *PbPackage) Proto() *proto.Proto {
 	return p.proto
 }
