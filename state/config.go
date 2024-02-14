@@ -1,8 +1,6 @@
 package state
 
 import (
-	"bytes"
-	"errors"
 	"fmt"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/app"
@@ -14,16 +12,40 @@ import (
 	"gopkg.in/yaml.v3"
 	"io"
 	"os"
-	"os/exec"
 	"path/filepath"
-	"strings"
 )
+
+type CfgTables struct {
+	Disable bool `json:"disable,omitempty" yaml:"disable,omitempty" toml:"disable,omitempty"`
+
+	DisableAutoId bool `json:"disable_auto_id,omitempty" yaml:"disable_auto_id,omitempty" toml:"disable_auto_id,omitempty"`
+
+	DisableAutoCreatedAt bool `json:"disable_auto_created_at,omitempty" yaml:"disable_auto_created_at,omitempty" toml:"disable_auto_created_at,omitempty"`
+	DisableAutoUpdatedAt bool `json:"disable_auto_updated_at,omitempty" yaml:"disable_auto_updated_at,omitempty" toml:"disable_auto_updated_at,omitempty"`
+	DisableAutoDeletedAt bool `json:"disable_auto_deleted_at,omitempty" yaml:"disable_auto_deleted_at,omitempty" toml:"disable_auto_deleted_at,omitempty"`
+}
+
+func (p *CfgTables) apply() (err error) {
+	if p.Disable {
+		p.DisableAutoId = true
+
+		p.DisableAutoCreatedAt = true
+		p.DisableAutoUpdatedAt = true
+		p.DisableAutoDeletedAt = true
+	}
+
+	return nil
+}
 
 type Cfg struct {
 	ProtocPath     string `json:"protoc_path,omitempty" yaml:"protoc_path,omitempty" toml:"protoc_path,omitempty"`
 	ProtoGenGoPath string `json:"protogen_go_path,omitempty" yaml:"protogen_go_path,omitempty" toml:"protogen_go_path,omitempty"`
 
+	GoModulePrefix string `json:"go_module_prefix,omitempty" yaml:"go_module_prefix,omitempty" toml:"go_module_prefix,omitempty"`
+
 	OutputPath string `json:"output_path,omitempty" yaml:"output_path,omitempty" toml:"output_path,omitempty"`
+
+	Tables *CfgTables `json:"tables,omitempty" yaml:"tables,omitempty" toml:"tables,omitempty"`
 }
 
 func (p *Cfg) apply() (err error) {
@@ -43,73 +65,13 @@ func (p *Cfg) apply() (err error) {
 		}
 	}
 
-	// NOTE: 检查 protoc 是否存在
-	{
-		log.Debugf("check protoc:%v", p.ProtocPath)
-		cmd := exec.Command(p.ProtocPath, "--version")
-		cmd.Dir = runtime.Pwd()
-		cmd.Env = os.Environ()
-
-		output, err := cmd.Output()
-		if err != nil {
-			//goland:noinspection GoTypeAssertionOnErrors
-			switch x := err.(type) {
-			case *exec.Error:
-				if errors.Is(x.Err, exec.ErrNotFound) {
-					pterm.Error.Printfln("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-					log.Errorf("err:%v", err)
-					return errors.New("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-				}
-			default:
-				log.Errorf("err:%v", err)
-				return err
-			}
-		}
-
-		output = bytes.TrimSuffix(output, []byte("\n"))
-
-		log.Infof("protoc version:%s", output)
-		pterm.Success.Printfln("protoc version:%s", output)
+	if p.Tables == nil {
+		p.Tables = new(CfgTables)
 	}
 
-	// NOTE: 检查 protoc-gen-go 是否存在
-	{
-		// go install github.com/golang/protobuf/protoc-gen-go
-		log.Debugf("check protoc-gen-go:%v", p.ProtoGenGoPath)
-
-		cmd := exec.Command(p.ProtoGenGoPath, "--version")
-		cmd.Dir = runtime.Pwd()
-		cmd.Env = os.Environ()
-
-		_, err = cmd.Output()
-		if err != nil {
-			//goland:noinspection GoTypeAssertionOnErrors
-			switch x := err.(type) {
-			case *exec.ExitError:
-				switch x.ExitCode() {
-				case 1:
-					if !strings.Contains(string(x.Stderr), `unknown argument`) {
-						log.Errorf("err:%v", err)
-						return err
-					}
-				default:
-					log.Errorf("err:%v", err)
-					return err
-				}
-			case *exec.Error:
-				if errors.Is(x.Err, exec.ErrNotFound) {
-					pterm.Error.Printfln("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-					log.Errorf("err:%v", err)
-					return errors.New("protoc-gen-go not found, please install it by running `go install github.com/golang/protobuf/protoc-gen-go`")
-				}
-
-				log.Errorf("err:%v", err)
-				return err
-			default:
-				log.Errorf("err:%v", err)
-				return err
-			}
-		}
+	err = p.Tables.apply()
+	if err != nil {
+		return err
 	}
 
 	return nil

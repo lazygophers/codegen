@@ -2,6 +2,7 @@ package codegen
 
 import (
 	"bytes"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
@@ -40,8 +41,8 @@ type tagItem struct {
 
 type tagItems []tagItem
 
-func (ti tagItems) writeTo(b *bytes.Buffer) {
-	for _, item := range ti {
+func (p tagItems) writeTo(b *bytes.Buffer) {
+	for _, item := range p {
 		b.WriteString(item.key)
 		b.WriteString(`:"`)
 		b.WriteString(item.value)
@@ -52,9 +53,9 @@ func (ti tagItems) writeTo(b *bytes.Buffer) {
 	b.Truncate(b.Len() - 1)
 }
 
-func (ti tagItems) override() tagItems {
-	m := make(map[string][]string, len(ti))
-	for _, item := range ti {
+func (p tagItems) override() tagItems {
+	m := make(map[string][]string, len(p))
+	for _, item := range p {
 		if _, ok := m[item.key]; !ok {
 			m[item.key] = []string{}
 		}
@@ -83,6 +84,16 @@ func (ti tagItems) override() tagItems {
 	}
 
 	return overrided
+}
+
+func (p tagItems) get(key string) string {
+	for _, item := range p {
+		if item.key == key {
+			return item.value
+		}
+	}
+
+	return ""
 }
 
 func InjectTagWriteFile(inputPath string, areas []textArea) error {
@@ -163,37 +174,129 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 			continue
 		}
 
+		isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model")
+
 		for _, field := range structDecl.Fields.List {
-			if field.Doc == nil {
-				continue
-			}
-
 			var injectTags tagItems
-			var lastTag string
-			for _, v := range field.Doc.List {
-				line := strings.ReplaceAll(strings.ReplaceAll(strings.TrimPrefix(v.Text, "//"), " ", ""), "\t", "")
-				if !strings.HasPrefix(line, "@") {
-					if lastTag != "" {
-						injectTags = append(injectTags, tagItem{
-							key:   lastTag,
-							value: removeStrQuote(line),
-						})
-					}
-					continue
-				} else {
-					idx := strings.Index(line, ":")
-					if idx < 0 {
-						continue
-					}
 
-					tag := line[1:idx]
-					injectTags = append(injectTags, tagItem{
-						key:   tag,
-						value: removeStrQuote(line[idx+1:]),
-					})
-					lastTag = tag
+			if field.Doc != nil {
+				var lastTag string
+				for _, v := range field.Doc.List {
+					line := strings.ReplaceAll(strings.ReplaceAll(strings.TrimPrefix(v.Text, "//"), " ", ""), "\t", "")
+					if !strings.HasPrefix(line, "@") {
+						if lastTag != "" {
+							injectTags = append(injectTags, tagItem{
+								key:   lastTag,
+								value: removeStrQuote(line),
+							})
+						}
+						continue
+					} else {
+						idx := strings.Index(line, ":")
+						if idx < 0 {
+							continue
+						}
+
+						tag := line[1:idx]
+						injectTags = append(injectTags, tagItem{
+							key:   tag,
+							value: removeStrQuote(line[idx+1:]),
+						})
+						lastTag = tag
+					}
 				}
 			}
+
+			injectTags = injectTags.override()
+
+			//Id        uint64 `gorm:"column:id;primaryKey;autoIncrement;not null" json:"id,omitempty" role:"admin"`
+			//CreatedAt int64  `json:"created_at,omitempty" gorm:"autoCreateTime;<-:create;column:created_at;not null"`
+			//UpdatedAt int64  `json:"updated_at,omitempty" gorm:"autoUpdateTime;<-;column:updated_at;not null" role:"admin"`
+			//
+			//DeleteAt int64 `json:"delete_at,omitempty" gorm:"column:delete_at;type:bigint(20);not null;default:0;index:idx_username,unique" role:"admin"`
+			if isModelStruct {
+				if len(field.Names) > 0 {
+					addGorm := func(m map[string]string, values string) {
+						for _, value := range strings.Split(values, ";") {
+							idx := strings.Index(value, ":")
+							if idx < 0 {
+								delete(m, value)
+							} else {
+								delete(m, value[:idx])
+							}
+						}
+
+						for k, v := range m {
+							if v == "" {
+								injectTags = append(injectTags, tagItem{
+									key:   "gorm",
+									value: k,
+								})
+							} else {
+								injectTags = append(injectTags, tagItem{
+									key:   "gorm",
+									value: k + ":" + v,
+								})
+							}
+						}
+					}
+
+					switch field.Names[0].Name {
+					case "Id":
+						if state.Config.Tables.DisableAutoId {
+							break
+						}
+
+						// 添加gorm标签
+						addGorm(map[string]string{
+							"column":        "id",
+							"primaryKey":    "",
+							"autoIncrement": "",
+							"not null":      "",
+						}, injectTags.get("gorm"))
+					case "CreatedAt":
+						if state.Config.Tables.DisableAutoCreatedAt {
+							break
+						}
+
+						// 添加gorm标签
+						addGorm(map[string]string{
+							"autoCreateTime": "",
+							"<-":             "create",
+							"column":         "created_at",
+							"not null":       "",
+						}, injectTags.get("gorm"))
+
+					case "UpdatedAt":
+						if state.Config.Tables.DisableAutoUpdatedAt {
+							break
+						}
+
+						// 添加gorm标签
+						addGorm(map[string]string{
+							"autoUpdateTime": "",
+							"<-":             "",
+							"column":         "updated_at",
+							"not null":       "",
+						}, injectTags.get("gorm"))
+
+					case "DeletedAt":
+						if state.Config.Tables.DisableAutoDeletedAt {
+							break
+						}
+
+						// 添加gorm标签
+						addGorm(map[string]string{
+							"column":   "deleted_at",
+							"not null": "",
+						}, injectTags.get("gorm"))
+
+					}
+				}
+
+				injectTags = injectTags.override()
+			}
+
 			if len(injectTags) == 0 {
 				continue
 			}
@@ -201,7 +304,7 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 			areas = append(areas, textArea{
 				Start:     int(field.Pos()),
 				End:       int(field.End()),
-				InjectTag: injectTags.override(),
+				InjectTag: injectTags,
 			})
 		}
 	}
