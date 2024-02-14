@@ -228,12 +228,12 @@ type PbPackage struct {
 
 	proto *proto.Proto
 
-	messages    map[string]*PbMessage
-	enums       map[string]*PbEnum
-	rpcs        map[string]*PbRPC
-	options     map[string]*PbOption
-	GoPackage   string
-	PackageName string
+	messages     map[string]*PbMessage
+	enums        map[string]*PbEnum
+	rpcs         map[string]*PbRPC
+	options      map[string]*PbOption
+	RawGoPackage string
+	PackageName  string
 }
 
 func (p *PbPackage) ProtoFilePath() string {
@@ -246,9 +246,19 @@ func (p *PbPackage) Proto() *proto.Proto {
 
 func (p *PbPackage) ProjectRoot() string {
 	if state.Config.OutputPath == "" {
-		return filepath.Join(filepath.Dir(filepath.Dir(p.protoFilePath)), p.GoPackage)
+		return filepath.Join(filepath.Dir(filepath.Dir(p.protoFilePath)), p.RawGoPackage)
 	} else {
-		return filepath.Join(state.Config.OutputPath, p.GoPackage)
+		return filepath.Join(state.Config.OutputPath, p.RawGoPackage)
+	}
+}
+
+func (p *PbPackage) GoPackage() string {
+	if state.Config.GoModulePrefix != "" {
+		return fmt.Sprintf("%s/%s",
+			strings.TrimSuffix(state.Config.GoModulePrefix, "/"),
+			strings.TrimPrefix(p.RawGoPackage, "/"))
+	} else {
+		return p.RawGoPackage
 	}
 }
 
@@ -322,7 +332,7 @@ func (p *PbPackage) Walk() {
 	)
 
 	if o, ok := p.options["go_package"]; ok {
-		p.GoPackage = o.Value
+		p.RawGoPackage = o.Value
 	}
 }
 

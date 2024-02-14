@@ -61,12 +61,34 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 	if cmd.Flag("output-path").Changed {
 		state.Config.OutputPath = getString("output-path", cmd)
 	}
+
+	// NOTE: tables
+	if cmd.Flag("tables-enable_auto_id").Changed {
+		state.Config.Tables.DisableAutoId = !getBool("tables-enable_auto_id", cmd)
+	}
+
+	if cmd.Flag("tables-enable_auto_created_at").Changed {
+		state.Config.Tables.DisableAutoCreatedAt = !getBool("tables-enable_auto_created_at", cmd)
+	}
+
+	if cmd.Flag("tables-enable_auto_updated_at").Changed {
+		state.Config.Tables.DisableAutoUpdatedAt = !getBool("tables-enable_auto_updated_at", cmd)
+	}
+
+	if cmd.Flag("tables-enable_auto_deleted_at").Changed {
+		state.Config.Tables.DisableAutoDeletedAt = !getBool("tables-enable_auto_deleted_at", cmd)
+	}
 }
 
 func init() {
 	genCmd.PersistentFlags().String("protoc", "", "protoc path")
 	genCmd.PersistentFlags().String("protoc-gen-go", "", "protoc-gen-go path")
 	genCmd.PersistentFlags().String("output-path", "", "output path")
+
+	genCmd.PersistentFlags().Bool("tables-enable_auto_id", false, "enable auto gen tags for id field")
+	genCmd.PersistentFlags().Bool("tables-enable_auto_created_at", false, "enable auto gen tags for created_at field")
+	genCmd.PersistentFlags().Bool("tables-enable_auto_updated_at", false, "enable auto gen tags for updated_at field")
+	genCmd.PersistentFlags().Bool("tables-enable_auto_deleted_at", false, "enable auto gen tags for deleted_at field")
 
 	genCmd.PersistentFlags().StringP("input", "i", "", "input protobuf file")
 

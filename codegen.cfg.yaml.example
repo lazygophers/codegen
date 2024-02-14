@@ -4,3 +4,18 @@ protogen_go_path: "<protoc-gen-go的绝对路径>"
 # 生成的代码的目录，即 protoc 执行的路径，实际生成的代码将会放在 <output_path>/<go_package> 下
 # 如果不指定，默认规则为 <proto_file_path>/../<go_package>
 output_path: "<生成的代码的目录>"
+go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_package 字段当做包名>"
+
+# 数据表相关的配置
+tables:
+    # 是否开启，默认为为 false，如果单独使用命令，则不会生效
+    enable: true
+
+    # 关闭自动生成 id 相关的gorm tag，默认为 false
+    disable_auto_id: false
+    # 关闭自动生成 created_at 的gorm tag，默认为 false
+    disable_auto_created_at: false
+    # 关闭自动生成 updated_at 的gorm tag，默认为 false
+    disable_auto_updated_at: false
+    # 关闭自动生成 deleted_at 的gorm tag，默认为 false
+    disable_auto_deleted_at: false

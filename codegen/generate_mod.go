@@ -20,7 +20,7 @@ func GenerateMod(pb *PbPackage) (err error) {
 	{
 		pterm.Info.Printfln("run go mod init")
 
-		cmd := exec.Command("go", "mod", "init", pb.GoPackage)
+		cmd := exec.Command("go", "mod", "init", pb.GoPackage())
 		cmd.Dir = pb.ProjectRoot()
 		cmd.Env = os.Environ()
 

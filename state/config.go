@@ -15,11 +15,37 @@ import (
 	"path/filepath"
 )
 
+type CfgTables struct {
+	Disable bool `json:"disable,omitempty" yaml:"disable,omitempty" toml:"disable,omitempty"`
+
+	DisableAutoId bool `json:"disable_auto_id,omitempty" yaml:"disable_auto_id,omitempty" toml:"disable_auto_id,omitempty"`
+
+	DisableAutoCreatedAt bool `json:"disable_auto_created_at,omitempty" yaml:"disable_auto_created_at,omitempty" toml:"disable_auto_created_at,omitempty"`
+	DisableAutoUpdatedAt bool `json:"disable_auto_updated_at,omitempty" yaml:"disable_auto_updated_at,omitempty" toml:"disable_auto_updated_at,omitempty"`
+	DisableAutoDeletedAt bool `json:"disable_auto_deleted_at,omitempty" yaml:"disable_auto_deleted_at,omitempty" toml:"disable_auto_deleted_at,omitempty"`
+}
+
+func (p *CfgTables) apply() (err error) {
+	if p.Disable {
+		p.DisableAutoId = true
+
+		p.DisableAutoCreatedAt = true
+		p.DisableAutoUpdatedAt = true
+		p.DisableAutoDeletedAt = true
+	}
+
+	return nil
+}
+
 type Cfg struct {
 	ProtocPath     string `json:"protoc_path,omitempty" yaml:"protoc_path,omitempty" toml:"protoc_path,omitempty"`
 	ProtoGenGoPath string `json:"protogen_go_path,omitempty" yaml:"protogen_go_path,omitempty" toml:"protogen_go_path,omitempty"`
 
+	GoModulePrefix string `json:"go_module_prefix,omitempty" yaml:"go_module_prefix,omitempty" toml:"go_module_prefix,omitempty"`
+
 	OutputPath string `json:"output_path,omitempty" yaml:"output_path,omitempty" toml:"output_path,omitempty"`
+
+	Tables *CfgTables `json:"tables,omitempty" yaml:"tables,omitempty" toml:"tables,omitempty"`
 }
 
 func (p *Cfg) apply() (err error) {
@@ -37,6 +63,15 @@ func (p *Cfg) apply() (err error) {
 		} else {
 			p.ProtoGenGoPath = "protoc-gen-go"
 		}
+	}
+
+	if p.Tables == nil {
+		p.Tables = new(CfgTables)
+	}
+
+	err = p.Tables.apply()
+	if err != nil {
+		return err
 	}
 
 	return nil
