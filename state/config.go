@@ -19,47 +19,51 @@ type CfgTables struct {
 	Disable bool `json:"disable,omitempty" yaml:"disable,omitempty" toml:"disable,omitempty"`
 
 	// 是否禁用自动添加 id 字段相关的内容
-	DisableAutoId bool `json:"disable_auto_id,omitempty" yaml:"disable_auto_id,omitempty" toml:"disable_auto_id,omitempty"`
+	DisableFieldId bool `json:"disable_field_id,omitempty" yaml:"disable_field_id,omitempty" tom:"disable_field_id,omitempty"`
 	// 是否禁用自动添加 created_at 字段相关的内容
-	DisableAutoCreatedAt bool `json:"disable_auto_created_at,omitempty" yaml:"disable_auto_created_at,omitempty" toml:"disable_auto_created_at,omitempty"`
+	DisableFieldCreatedAt bool `json:"disable_field_created_at,omitempty" yaml:"disable_field_created_at,omitempty" toml:"disable_field_created_at,omitempty"`
 	// 是否禁用自动添加 updated_at 字段相关的内容
-	DisableAutoUpdatedAt bool `json:"disable_auto_updated_at,omitempty" yaml:"disable_auto_updated_at,omitempty" toml:"disable_auto_updated_at,omitempty"`
+	DisableFieldUpdatedAt bool `json:"disable_field_updated_at,omitempty" yaml:"disable_field_updated_at,omitempty" toml:"disable_field_updated_at,omitempty"`
 	// 是否禁用自动添加 deleted_at 字段相关的内容
-	DisableAutoDeletedAt bool `json:"disable_auto_deleted_at,omitempty" yaml:"disable_auto_deleted_at,omitempty" toml:"disable_auto_deleted_at,omitempty"`
+	DisableFieldDeletedAt bool `json:"disable_field_deleted_at,omitempty" yaml:"disable_field_deleted_at,omitempty" toml:"disable_field_deleted_at,omitempty"`
+	// 是否禁用自动添加 gorm tag: column
+	DisableGormTagColumn bool `json:"disable_gorm_tag_column,omitempty" yaml:"disable_gorm_tag_column,omitempty" toml:"disable_gorm_tag_column,omitempty"`
 
 	// 默认添加 id 字段的 gorm tag
-	DefaultGormTagId string `json:"default_gorm_tag_id,omitempty" yaml:"default_gorm_tag_id,omitempty" toml:"default_gorm_tag_id,omitempty"`
+	DefaultGormFieldId string `json:"default_gorm_tag_id,omitempty" yaml:"default_gorm_tag_id,omitempty" toml:"default_gorm_tag_id,omitempty"`
 	// 默认添加 created_at 字段的 gorm tag
-	DefaultGormTagCreatedAt string `json:"default_gorm_tag_created_at,omitempty" yaml:"default_gorm_tag_created_at,omitempty" toml:"default_gorm_tag_created_at,omitempty"`
+	DefaultGormFieldCreatedAt string `json:"default_gorm_tag_created_at,omitempty" yaml:"default_gorm_tag_created_at,omitempty" toml:"default_gorm_tag_created_at,omitempty"`
 	// 默认添加 updated_at 字段的 gorm tag
-	DefaultGormTagUpdatedAt string `json:"default_gorm_tag_updated_at,omitempty" yaml:"default_gorm_tag_updated_at,omitempty" toml:"default_gorm_tag_updated_at,omitempty"`
+	DefaultGormFieldUpdatedAt string `json:"default_gorm_tag_updated_at,omitempty" yaml:"default_gorm_tag_updated_at,omitempty" toml:"default_gorm_tag_updated_at,omitempty"`
 	// 默认添加 deleted_at 字段的 gorm tag
-	DefaultGormTagDeletedAt string `json:"default_gorm_tag_deleted_at,omitempty" yaml:"default_gorm_tag_deleted_at,omitempty" toml:"default_gorm_tag_deleted_at,omitempty"`
+	DefaultGormFieldDeletedAt string `json:"default_gorm_tag_deleted_at,omitempty" yaml:"default_gorm_tag_deleted_at,omitempty" toml:"default_gorm_tag_deleted_at,omitempty"`
 }
 
 func (p *CfgTables) apply() (err error) {
 	if p.Disable {
-		p.DisableAutoId = true
+		p.DisableFieldId = true
 
-		p.DisableAutoCreatedAt = true
-		p.DisableAutoUpdatedAt = true
-		p.DisableAutoDeletedAt = true
+		p.DisableFieldCreatedAt = true
+		p.DisableFieldUpdatedAt = true
+		p.DisableFieldDeletedAt = true
+
+		p.DisableGormTagColumn = true
 	}
 
-	if p.DefaultGormTagId == "" {
-		p.DefaultGormTagId = "column:id;primaryKey;autoIncrement;not null"
+	if p.DefaultGormFieldId == "" {
+		p.DefaultGormFieldId = "column:id;primaryKey;autoIncrement;not null"
 	}
 
-	if p.DefaultGormTagCreatedAt == "" {
-		p.DefaultGormTagCreatedAt = "autoCreateTime;<-:create;column:created_at;not null"
+	if p.DefaultGormFieldCreatedAt == "" {
+		p.DefaultGormFieldCreatedAt = "autoCreateTime;<-:create;column:created_at;not null"
 	}
 
-	if p.DefaultGormTagUpdatedAt == "" {
-		p.DefaultGormTagUpdatedAt = "autoUpdateTime;<-:;column:updated_at;not null"
+	if p.DefaultGormFieldUpdatedAt == "" {
+		p.DefaultGormFieldUpdatedAt = "autoUpdateTime;<-:;column:updated_at;not null"
 	}
 
-	if p.DefaultGormTagDeletedAt == "" {
-		p.DefaultGormTagDeletedAt = "column:deleted_at;not null"
+	if p.DefaultGormFieldDeletedAt == "" {
+		p.DefaultGormFieldDeletedAt = "column:deleted_at;not null"
 	}
 
 	return nil

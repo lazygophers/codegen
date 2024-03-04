@@ -188,10 +188,21 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 			continue
 		}
 
-		isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model")
+		isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model") && strings.Contains(typeSpec.Name.Name, "_")
+
+		log.Infof("find type %s", typeSpec.Name.Name)
 
 		for _, field := range structDecl.Fields.List {
 			var injectTags tagItems
+
+			// 私有字段不处理
+			if len(field.Names) == 0 {
+				continue
+			}
+
+			if !ast.IsExported(field.Names[0].Name) {
+				continue
+			}
 
 			if field.Doc != nil {
 				var lastTag string
@@ -221,68 +232,113 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 				}
 			}
 
+			log.Info(field.Names[0].Name)
+
+			var fieldName string
+			if x, ok := field.Names[0].Obj.Decl.(*ast.Field); ok {
+				if x.Tag == nil {
+					log.Warnf("no tag for %s", field.Names[0].Name)
+					continue
+				}
+
+				idx := strings.Index(x.Tag.Value, `protobuf:"`)
+				if idx < 0 {
+					log.Warnf("unknown tag %s", x.Tag.Value)
+					continue
+				}
+
+				fieldName = x.Tag.Value[idx+10:]
+				idx = strings.Index(fieldName, `name=`)
+				if idx < 0 {
+					log.Warnf("unknown tag %s", x.Tag.Value)
+					continue
+				}
+				fieldName = fieldName[idx+5:]
+
+				idx = strings.Index(fieldName, `,`)
+				if idx < 0 {
+					log.Warnf("unknown tag %s", x.Tag.Value)
+					continue
+				}
+
+				fieldName = fieldName[:idx]
+
+			} else {
+				log.Warnf("unknown type %T", x)
+				continue
+			}
+
 			injectTags = injectTags.override()
+
+			addGorm := func(m map[string]string, values string) {
+				for _, value := range strings.Split(values, ";") {
+					idx := strings.Index(value, ":")
+					if idx < 0 {
+						delete(m, value)
+					} else {
+						delete(m, value[:idx])
+					}
+				}
+
+				for k, v := range m {
+					if v == "" {
+						injectTags = append(injectTags, tagItem{
+							key:   "gorm",
+							value: k,
+						})
+					} else {
+						injectTags = append(injectTags, tagItem{
+							key:   "gorm",
+							value: k + ":" + v,
+						})
+					}
+				}
+			}
 
 			if isModelStruct {
 				if len(field.Names) > 0 {
-					addGorm := func(m map[string]string, values string) {
-						for _, value := range strings.Split(values, ";") {
-							idx := strings.Index(value, ":")
-							if idx < 0 {
-								delete(m, value)
-							} else {
-								delete(m, value[:idx])
-							}
-						}
-
-						for k, v := range m {
-							if v == "" {
-								injectTags = append(injectTags, tagItem{
-									key:   "gorm",
-									value: k,
-								})
-							} else {
-								injectTags = append(injectTags, tagItem{
-									key:   "gorm",
-									value: k + ":" + v,
-								})
-							}
-						}
-					}
-
 					switch field.Names[0].Name {
 					case "Id":
-						if state.Config.Tables.DisableAutoId {
+						if state.Config.Tables.DisableFieldId {
 							break
 						}
 
 						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagId), injectTags.get("gorm"))
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldId), injectTags.get("gorm"))
 					case "CreatedAt":
-						if state.Config.Tables.DisableAutoCreatedAt {
+						if state.Config.Tables.DisableFieldCreatedAt {
 							break
 						}
 
 						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagCreatedAt), injectTags.get("gorm"))
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldCreatedAt), injectTags.get("gorm"))
 					case "UpdatedAt":
-						if state.Config.Tables.DisableAutoUpdatedAt {
+						if state.Config.Tables.DisableFieldUpdatedAt {
 							break
 						}
 
 						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagUpdatedAt), injectTags.get("gorm"))
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldUpdatedAt), injectTags.get("gorm"))
 
 					case "DeletedAt":
-						if state.Config.Tables.DisableAutoDeletedAt {
+						if state.Config.Tables.DisableFieldDeletedAt {
 							break
 						}
 
 						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagDeletedAt), injectTags.get("gorm"))
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldDeletedAt), injectTags.get("gorm"))
 
 					}
 				}
+
+				injectTags = injectTags.override()
+			}
+
+			// TODO: 对 Table 的子类型的字段进行处理，暂时先按照如果如要就全体都加
+			if !state.Config.Tables.DisableGormTagColumn {
+				addGorm(map[string]string{
+					"column": fieldName,
+				}, injectTags.get("gorm"))
 
 				injectTags = injectTags.override()
 			}
