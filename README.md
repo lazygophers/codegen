@@ -95,11 +95,20 @@ tables:
 	# 关闭自动生成 column 的gorm tag，默认为 false
 	disable_gorm_tag_column: false
 
-	# 默认的 gorm tag
-	default_gorm_field_id: "column:id;primaryKey;autoIncrement;not null"
-	default_gorm_field_created_at: "column:created_at;<-:create;autoCreateTime;not null"
-	default_gorm_field_updated_at: "column:updated_at;<-;autoUpdateTime;not null"
-	default_gorm_field_deleted_at: "column:deleted_at;autoDeleteTime"
+	# 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
+	default_tag:
+		gorm:
+			id: "column:id;primaryKey;autoIncrement;not null"
+			created_at: "column:created_at;<-:create;autoCreateTime;not null"
+			updated_at: "column:updated_at;<-;autoUpdateTime;not null"
+			deleted_at: "column:deleted_at;autoDeleteTime"
+			name: "type:varchar(255);not null"
+			username: "type:varchar(255);not null"
+			email: "type:varchar(255);not null"
+		validate:
+			name: "required"
+			username: "required"
+			email: "required,email"
 ```
 
 ## 生成样例
