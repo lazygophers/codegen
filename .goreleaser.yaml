@@ -6,7 +6,6 @@ env:
     - CGO_ENABLED=0
 before:
     hooks:
-        - go work sync
         - go mod tidy
 
 #gomod:
@@ -53,7 +52,7 @@ archives:
         files:
             - LICENSE
             - README.md
-            - codegen.cfg.yaml.example
+            - example.codegen.cfg.yaml
 
 #checksum:
 #    algorithm: sha512
