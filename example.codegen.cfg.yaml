@@ -19,3 +19,9 @@ tables:
     disable_auto_updated_at: false
     # 关闭自动生成 deleted_at 的gorm tag，默认为 false
     disable_auto_deleted_at: false
+
+    # 默认的 gorm tag
+    default_gorm_tag_id: "column:id;primaryKey;autoIncrement;not null"
+    default_gorm_tag_created_at: "column:created_at;<-:create;autoCreateTime;not null"
+    default_gorm_tag_updated_at: "column:updated_at;<-;autoUpdateTime;not null"
+    default_gorm_tag_deleted_at: "column:deleted_at;autoDeleteTime"
