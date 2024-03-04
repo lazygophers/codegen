@@ -203,7 +203,7 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			continue
 		}
 
-		isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model") && strings.Contains(typeSpec.Name.Name, "_")
+		isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model") && !strings.Contains(typeSpec.Name.Name, "_")
 
 		log.Infof("find type %s", typeSpec.Name.Name)
 
