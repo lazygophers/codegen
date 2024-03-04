@@ -123,7 +123,7 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 		endIdx := bytes.LastIndex(contents[area.Start-1:area.End-1], []byte("`")) + area.Start - 1
 
 		log.Infof("append custom tags to %s at %d", contents[area.Start-1:endIdx], endIdx)
-		pterm.Info.Printfln("append custom tags to %s at %s", pterm.BgMagenta.Sprintf("%s", contents[area.Start-1:endIdx]), pterm.FgMagenta.Sprint(endIdx))
+		pterm.Info.Printfln("append custom tags to %s at %s", pterm.FgWhite.Sprint(pterm.BgCyan.Sprintf("%s", contents[area.Start-1:endIdx])), pterm.FgMagenta.Sprint(endIdx))
 
 		b.Write(contents[lastEnd:endIdx])
 		b.WriteString(" ")
@@ -140,6 +140,20 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 	}
 
 	return nil
+}
+
+func gormTagStr2Map(s string) map[string]string {
+	m := make(map[string]string)
+	for _, v := range strings.Split(s, ";") {
+		idx := strings.Index(v, ":")
+		if idx < 0 {
+			m[v] = ""
+		} else {
+			m[v[:idx]] = v[idx+1:]
+		}
+	}
+
+	return m
 }
 
 func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
@@ -209,11 +223,6 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 
 			injectTags = injectTags.override()
 
-			//Id        uint64 `gorm:"column:id;primaryKey;autoIncrement;not null" json:"id,omitempty" role:"admin"`
-			//CreatedAt int64  `json:"created_at,omitempty" gorm:"autoCreateTime;<-:create;column:created_at;not null"`
-			//UpdatedAt int64  `json:"updated_at,omitempty" gorm:"autoUpdateTime;<-;column:updated_at;not null" role:"admin"`
-			//
-			//DeleteAt int64 `json:"delete_at,omitempty" gorm:"column:delete_at;type:bigint(20);not null;default:0;index:idx_username,unique" role:"admin"`
 			if isModelStruct {
 				if len(field.Names) > 0 {
 					addGorm := func(m map[string]string, values string) {
@@ -248,37 +257,21 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 						}
 
 						// 添加gorm标签
-						addGorm(map[string]string{
-							"column":        "id",
-							"primaryKey":    "",
-							"autoIncrement": "",
-							"not null":      "",
-						}, injectTags.get("gorm"))
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagId), injectTags.get("gorm"))
 					case "CreatedAt":
 						if state.Config.Tables.DisableAutoCreatedAt {
 							break
 						}
 
 						// 添加gorm标签
-						addGorm(map[string]string{
-							"autoCreateTime": "",
-							"<-":             "create",
-							"column":         "created_at",
-							"not null":       "",
-						}, injectTags.get("gorm"))
-
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagCreatedAt), injectTags.get("gorm"))
 					case "UpdatedAt":
 						if state.Config.Tables.DisableAutoUpdatedAt {
 							break
 						}
 
 						// 添加gorm标签
-						addGorm(map[string]string{
-							"autoUpdateTime": "",
-							"<-":             "",
-							"column":         "updated_at",
-							"not null":       "",
-						}, injectTags.get("gorm"))
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagUpdatedAt), injectTags.get("gorm"))
 
 					case "DeletedAt":
 						if state.Config.Tables.DisableAutoDeletedAt {
@@ -286,10 +279,7 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 						}
 
 						// 添加gorm标签
-						addGorm(map[string]string{
-							"column":   "deleted_at",
-							"not null": "",
-						}, injectTags.get("gorm"))
+						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormTagDeletedAt), injectTags.get("gorm"))
 
 					}
 				}

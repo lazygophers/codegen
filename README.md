@@ -82,7 +82,7 @@ go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_pac
 # 数据表相关的配置
 tables:
 	# 是否开启，默认为为 false，如果单独使用命令，则不会生效
-	disable: true
+	enable: true
 
 	# 关闭自动生成 id 相关的gorm tag，默认为 false
 	disable_auto_id: false
@@ -93,6 +93,11 @@ tables:
 	# 关闭自动生成 deleted_at 的gorm tag，默认为 false
 	disable_auto_deleted_at: false
 
+	# 默认的 gorm tag
+	default_gorm_tag_id: "column:id;primaryKey;autoIncrement;not null"
+	default_gorm_tag_created_at: "column:created_at;<-:create;autoCreateTime;not null"
+	default_gorm_tag_updated_at: "column:updated_at;<-;autoUpdateTime;not null"
+	default_gorm_tag_deleted_at: "column:deleted_at;autoDeleteTime"
 ```
 
 ## 生成样例
