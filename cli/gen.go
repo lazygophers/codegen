@@ -78,6 +78,10 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 	if cmd.Flag("tables-enable_field_deleted_at").Changed {
 		state.Config.Tables.DisableFieldDeletedAt = !getBool("tables-enable_field_deleted_at", cmd)
 	}
+
+	if cmd.Flag("tables-enable_gorm_tag_column").Changed {
+		state.Config.Tables.DisableGormTagColumn = !getBool("tables-enable_gorm_tag_column", cmd)
+	}
 }
 
 func init() {
@@ -89,6 +93,7 @@ func init() {
 	genCmd.PersistentFlags().Bool("tables-enable_field_created_at", false, "enable field gen tags for created_at field")
 	genCmd.PersistentFlags().Bool("tables-enable_field_updated_at", false, "enable field gen tags for updated_at field")
 	genCmd.PersistentFlags().Bool("tables-enable_field_deleted_at", false, "enable field gen tags for deleted_at field")
+	genCmd.PersistentFlags().Bool("tables-enable_gorm_tag_column", false, "enable gen tags for column tag for each")
 
 	genCmd.PersistentFlags().StringP("input", "i", "", "input protobuf file")
 
