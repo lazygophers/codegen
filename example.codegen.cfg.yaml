@@ -12,16 +12,18 @@ tables:
     enable: true
 
     # 关闭自动生成 id 相关的gorm tag，默认为 false
-    disable_auto_id: false
+    disable_field_id: false
     # 关闭自动生成 created_at 的gorm tag，默认为 false
-    disable_auto_created_at: false
+    disable_field_created_at: false
     # 关闭自动生成 updated_at 的gorm tag，默认为 false
-    disable_auto_updated_at: false
+    disable_field_updated_at: false
     # 关闭自动生成 deleted_at 的gorm tag，默认为 false
-    disable_auto_deleted_at: false
+    disable_field_deleted_at: false
+    # 关闭自动生成 column 的gorm tag，默认为 false
+    disable_gorm_tag_column: false
 
     # 默认的 gorm tag
-    default_gorm_tag_id: "column:id;primaryKey;autoIncrement;not null"
-    default_gorm_tag_created_at: "column:created_at;<-:create;autoCreateTime;not null"
-    default_gorm_tag_updated_at: "column:updated_at;<-;autoUpdateTime;not null"
-    default_gorm_tag_deleted_at: "column:deleted_at;autoDeleteTime"
+    default_gorm_field_id: "column:id;primaryKey;autoIncrement;not null"
+    default_gorm_field_created_at: "column:created_at;<-:create;autoCreateTime;not null"
+    default_gorm_field_updated_at: "column:updated_at;<-;autoUpdateTime;not null"
+    default_gorm_field_deleted_at: "column:deleted_at;autoDeleteTime"

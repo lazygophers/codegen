@@ -63,20 +63,20 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 	}
 
 	// NOTE: tables
-	if cmd.Flag("tables-enable_auto_id").Changed {
-		state.Config.Tables.DisableAutoId = !getBool("tables-enable_auto_id", cmd)
+	if cmd.Flag("tables-enable_field_id").Changed {
+		state.Config.Tables.DisableFieldId = !getBool("tables-enable_field_id", cmd)
 	}
 
-	if cmd.Flag("tables-enable_auto_created_at").Changed {
-		state.Config.Tables.DisableAutoCreatedAt = !getBool("tables-enable_auto_created_at", cmd)
+	if cmd.Flag("tables-enable_field_created_at").Changed {
+		state.Config.Tables.DisableFieldId = !getBool("tables-enable_field_created_at", cmd)
 	}
 
-	if cmd.Flag("tables-enable_auto_updated_at").Changed {
-		state.Config.Tables.DisableAutoUpdatedAt = !getBool("tables-enable_auto_updated_at", cmd)
+	if cmd.Flag("tables-enable_field_updated_at").Changed {
+		state.Config.Tables.DisableFieldUpdatedAt = !getBool("tables-enable_field_updated_at", cmd)
 	}
 
-	if cmd.Flag("tables-enable_auto_deleted_at").Changed {
-		state.Config.Tables.DisableAutoDeletedAt = !getBool("tables-enable_auto_deleted_at", cmd)
+	if cmd.Flag("tables-enable_field_deleted_at").Changed {
+		state.Config.Tables.DisableFieldDeletedAt = !getBool("tables-enable_field_deleted_at", cmd)
 	}
 }
 
@@ -85,10 +85,10 @@ func init() {
 	genCmd.PersistentFlags().String("protoc-gen-go", "", "protoc-gen-go path")
 	genCmd.PersistentFlags().String("output-path", "", "output path")
 
-	genCmd.PersistentFlags().Bool("tables-enable_auto_id", false, "enable auto gen tags for id field")
-	genCmd.PersistentFlags().Bool("tables-enable_auto_created_at", false, "enable auto gen tags for created_at field")
-	genCmd.PersistentFlags().Bool("tables-enable_auto_updated_at", false, "enable auto gen tags for updated_at field")
-	genCmd.PersistentFlags().Bool("tables-enable_auto_deleted_at", false, "enable auto gen tags for deleted_at field")
+	genCmd.PersistentFlags().Bool("tables-enable_field_id", false, "enable field gen tags for id field")
+	genCmd.PersistentFlags().Bool("tables-enable_field_created_at", false, "enable field gen tags for created_at field")
+	genCmd.PersistentFlags().Bool("tables-enable_field_updated_at", false, "enable field gen tags for updated_at field")
+	genCmd.PersistentFlags().Bool("tables-enable_field_deleted_at", false, "enable field gen tags for deleted_at field")
 
 	genCmd.PersistentFlags().StringP("input", "i", "", "input protobuf file")
 
