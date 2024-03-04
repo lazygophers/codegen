@@ -29,14 +29,11 @@ type CfgTables struct {
 	// 是否禁用自动添加 gorm tag: column
 	DisableGormTagColumn bool `json:"disable_gorm_tag_column,omitempty" yaml:"disable_gorm_tag_column,omitempty" toml:"disable_gorm_tag_column,omitempty"`
 
-	// 默认添加 id 字段的 gorm tag
-	DefaultGormFieldId string `json:"default_gorm_tag_id,omitempty" yaml:"default_gorm_tag_id,omitempty" toml:"default_gorm_tag_id,omitempty"`
-	// 默认添加 created_at 字段的 gorm tag
-	DefaultGormFieldCreatedAt string `json:"default_gorm_tag_created_at,omitempty" yaml:"default_gorm_tag_created_at,omitempty" toml:"default_gorm_tag_created_at,omitempty"`
-	// 默认添加 updated_at 字段的 gorm tag
-	DefaultGormFieldUpdatedAt string `json:"default_gorm_tag_updated_at,omitempty" yaml:"default_gorm_tag_updated_at,omitempty" toml:"default_gorm_tag_updated_at,omitempty"`
-	// 默认添加 deleted_at 字段的 gorm tag
-	DefaultGormFieldDeletedAt string `json:"default_gorm_tag_deleted_at,omitempty" yaml:"default_gorm_tag_deleted_at,omitempty" toml:"default_gorm_tag_deleted_at,omitempty"`
+	// 对于原始数据，key 为 tag 名。value.key 为字段名，value.value 为 tag 内容
+	// 例如: {"gorm": {"id": "column:id;primaryKey;autoIncrement;not null"}}
+	// 从初始化后整理为，key 为字段名，value.key 为 tag 名，value.value 为 tag 内容
+	// 例如: {"id": {"gorm": "column:id;primaryKey;autoIncrement;not null"}}
+	DefaultTag map[string]map[string]string `json:"default_tag,omitempty" yaml:"default_tag,omitempty" toml:"default_tag,omitempty"`
 }
 
 func (p *CfgTables) apply() (err error) {
@@ -50,22 +47,45 @@ func (p *CfgTables) apply() (err error) {
 		p.DisableGormTagColumn = true
 	}
 
-	if p.DefaultGormFieldId == "" {
-		p.DefaultGormFieldId = "column:id;primaryKey;autoIncrement;not null"
+	if len(p.DefaultTag) == 0 {
+		p.DefaultTag = make(map[string]map[string]string, 1)
 	}
 
-	if p.DefaultGormFieldCreatedAt == "" {
-		p.DefaultGormFieldCreatedAt = "autoCreateTime;<-:create;column:created_at;not null"
+	if _, ok := p.DefaultTag["gorm"]; !ok {
+		p.DefaultTag["gorm"] = make(map[string]string)
 	}
 
-	if p.DefaultGormFieldUpdatedAt == "" {
-		p.DefaultGormFieldUpdatedAt = "autoUpdateTime;<-:;column:updated_at;not null"
+	if _, ok := p.DefaultTag["gorm"]["id"]; !p.DisableFieldId && !ok {
+		p.DefaultTag["gorm"]["id"] = "column:id;primaryKey;autoIncrement;not null"
 	}
 
-	if p.DefaultGormFieldDeletedAt == "" {
-		p.DefaultGormFieldDeletedAt = "column:deleted_at;not null"
+	if _, ok := p.DefaultTag["gorm"]["created_at"]; !p.DisableFieldCreatedAt && !ok {
+		p.DefaultTag["gorm"]["created_at"] = "autoCreateTime;<-:create;column:created_at;not null"
 	}
 
+	if _, ok := p.DefaultTag["gorm"]["updated_at"]; !p.DisableFieldUpdatedAt && !ok {
+		p.DefaultTag["gorm"]["updated_at"] = "autoUpdateTime;<-:;column:updated_at;not null"
+	}
+
+	if _, ok := p.DefaultTag["gorm"]["deleted_at"]; !p.DisableFieldDeletedAt && !ok {
+		p.DefaultTag["gorm"]["deleted_at"] = "column:deleted_at;not null"
+	}
+
+	{
+		newTag := make(map[string]map[string]string)
+
+		for tag, values := range p.DefaultTag {
+			for field, value := range values {
+				if _, ok := newTag[field]; !ok {
+					newTag[field] = make(map[string]string)
+				}
+
+				newTag[field][tag] = value
+			}
+		}
+
+		p.DefaultTag = newTag
+	}
 	return nil
 }
 

@@ -156,13 +156,28 @@ func gormTagStr2Map(s string) map[string]string {
 	return m
 }
 
-func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
+func tagStr2Map(s string) map[string]string {
+	m := make(map[string]string)
+	for _, v := range strings.Split(s, ",") {
+		idx := strings.Index(v, "=")
+		if idx < 0 {
+			m[v] = ""
+		} else {
+			m[v[:idx]] = v[idx+1:]
+		}
+	}
+
+	return m
+}
+
+func InjectTagParseFile(inputPath string) ([]textArea, error) {
 	f, err := parser.ParseFile(token.NewFileSet(), inputPath, nil, parser.ParseComments)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
 	}
 
+	var areas []textArea
 	for _, decl := range f.Decls {
 		genDecl, ok := decl.(*ast.GenDecl)
 		if !ok {
@@ -270,9 +285,16 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 
 			injectTags = injectTags.override()
 
-			addGorm := func(m map[string]string, values string) {
-				for _, value := range strings.Split(values, ";") {
-					idx := strings.Index(value, ":")
+			addTag := func(key string, m map[string]string, values string) {
+				seq := ","
+				connect := "="
+				if key == "gorm" {
+					seq = ";"
+					connect = ":"
+				}
+
+				for _, value := range strings.Split(values, seq) {
+					idx := strings.Index(value, connect)
 					if idx < 0 {
 						delete(m, value)
 					} else {
@@ -283,65 +305,45 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 				for k, v := range m {
 					if v == "" {
 						injectTags = append(injectTags, tagItem{
-							key:   "gorm",
+							key:   key,
 							value: k,
 						})
 					} else {
 						injectTags = append(injectTags, tagItem{
-							key:   "gorm",
-							value: k + ":" + v,
+							key:   key,
+							value: k + connect + v,
 						})
 					}
 				}
 			}
 
+			tagsMap := state.Config.Tables.DefaultTag[fieldName]
+			if len(tagsMap) == 0 {
+				tagsMap = make(map[string]string)
+			}
+
 			if isModelStruct {
-				if len(field.Names) > 0 {
-					switch field.Names[0].Name {
-					case "Id":
-						if state.Config.Tables.DisableFieldId {
-							break
-						}
-
-						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldId), injectTags.get("gorm"))
-					case "CreatedAt":
-						if state.Config.Tables.DisableFieldCreatedAt {
-							break
-						}
-
-						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldCreatedAt), injectTags.get("gorm"))
-					case "UpdatedAt":
-						if state.Config.Tables.DisableFieldUpdatedAt {
-							break
-						}
-
-						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldUpdatedAt), injectTags.get("gorm"))
-
-					case "DeletedAt":
-						if state.Config.Tables.DisableFieldDeletedAt {
-							break
-						}
-
-						// 添加gorm标签
-						addGorm(gormTagStr2Map(state.Config.Tables.DefaultGormFieldDeletedAt), injectTags.get("gorm"))
-
-					}
+				if value, ok := tagsMap["gorm"]; ok {
+					addTag("gorm", gormTagStr2Map(value), injectTags.get("gorm"))
 				}
 
-				injectTags = injectTags.override()
+				if !state.Config.Tables.DisableGormTagColumn {
+					addTag("gorm", map[string]string{
+						"column": fieldName,
+					}, injectTags.get("gorm"))
+				}
+
 			}
 
-			// TODO: 对 Table 的子类型的字段进行处理，暂时先按照如果如要就全体都加
-			if !state.Config.Tables.DisableGormTagColumn {
-				addGorm(map[string]string{
-					"column": fieldName,
-				}, injectTags.get("gorm"))
+			for key, value := range tagsMap {
+				if key == "gorm" {
+					continue
+				}
 
-				injectTags = injectTags.override()
+				addTag(key, tagStr2Map(value), injectTags.get(key))
 			}
+
+			injectTags = injectTags.override()
 
 			if len(injectTags) == 0 {
 				continue
@@ -356,7 +358,8 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 	}
 
 	log.Infof("number of fields to inject custom tags: %d", len(areas))
-	return
+
+	return areas, nil
 }
 
 type textArea struct {
