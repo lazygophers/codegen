@@ -6,11 +6,27 @@ protogen_go_path: "<protoc-gen-go的绝对路径>"
 output_path: "<生成的代码的目录>"
 go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_package 字段当做包名>"
 
+# 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
+default_tag:
+    gorm:
+        id: "column:id;primaryKey;autoIncrement;not null"
+        created_at: "column:created_at;<-:create;autoCreateTime;not null"
+        updated_at: "column:updated_at;<-;autoUpdateTime;not null"
+        deleted_at: "column:deleted_at;autoDeleteTime"
+        name: "type:varchar(255);not null"
+        username: "type:varchar(255);not null"
+        email: "type:varchar(255);not null"
+    validate:
+        name: "required,max=200,min=2"
+        username: "required,max=100"
+        email: "required,email"
+
 # 数据表相关的配置
 tables:
-    # 是否开启，默认为为 false，如果单独使用命令，则不会生效
-    enable: true
+    # 是否关闭，默认为为 false，如果单独使用命令，则不会生效
+    disable: false
 
+    # 是否关闭自动生成的 gorm tag，默认为 false
     # 关闭自动生成 id 相关的gorm tag，默认为 false
     disable_field_id: false
     # 关闭自动生成 created_at 的gorm tag，默认为 false
@@ -21,18 +37,3 @@ tables:
     disable_field_deleted_at: false
     # 关闭自动生成 column 的gorm tag，默认为 false
     disable_gorm_tag_column: false
-
-    # 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
-    default_tag:
-        gorm:
-            id: "column:id;primaryKey;autoIncrement;not null"
-            created_at: "column:created_at;<-:create;autoCreateTime;not null"
-            updated_at: "column:updated_at;<-;autoUpdateTime;not null"
-            deleted_at: "column:deleted_at;autoDeleteTime"
-            name: "type:varchar(255);not null"
-            username: "type:varchar(255);not null"
-            email: "type:varchar(255);not null"
-        validate:
-            name: "required,max=200,min=2"
-            username: "required,max=100"
-            email: "required,email"

@@ -317,7 +317,7 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				}
 			}
 
-			tagsMap := state.Config.Tables.DefaultTag[fieldName]
+			tagsMap := state.Config.DefaultTag[fieldName]
 			if len(tagsMap) == 0 {
 				tagsMap = make(map[string]string)
 			}
