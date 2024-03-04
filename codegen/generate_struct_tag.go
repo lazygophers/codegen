@@ -156,13 +156,14 @@ func gormTagStr2Map(s string) map[string]string {
 	return m
 }
 
-func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
+func InjectTagParseFile(inputPath string) ([]textArea, error) {
 	f, err := parser.ParseFile(token.NewFileSet(), inputPath, nil, parser.ParseComments)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
 	}
 
+	var areas []textArea
 	for _, decl := range f.Decls {
 		genDecl, ok := decl.(*ast.GenDecl)
 		if !ok {
@@ -356,7 +357,8 @@ func InjectTagParseFile(inputPath string) (areas []textArea, err error) {
 	}
 
 	log.Infof("number of fields to inject custom tags: %d", len(areas))
-	return
+
+	return areas, nil
 }
 
 type textArea struct {
