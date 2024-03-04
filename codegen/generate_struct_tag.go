@@ -247,8 +247,6 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				}
 			}
 
-			log.Info(field.Names[0].Name)
-
 			var fieldName string
 			if x, ok := field.Names[0].Obj.Decl.(*ast.Field); ok {
 				if x.Tag == nil {
