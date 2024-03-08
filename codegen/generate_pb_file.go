@@ -1,8 +1,10 @@
 package codegen
 
 import (
+	"bytes"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
+	"github.com/lazygophers/utils/app"
 	"github.com/pterm/pterm"
 	"os"
 	"os/exec"
@@ -10,7 +12,9 @@ import (
 	"strings"
 )
 
-func GenPbFile(protoFilePath string) error {
+func GenPbFile(pb *PbPackage) error {
+	protoFilePath := pb.ProtoFilePath()
+
 	log.Info("gen pb.go with protoc")
 	pterm.Info.Printfln("gen pb.go with protoc")
 
@@ -49,6 +53,40 @@ func GenPbFile(protoFilePath string) error {
 	}
 
 	log.Infof("output:%s", output)
+
+	// NOTE: 添加注释
+	{
+		goPbFilePath := filepath.Join(pb.ProjectRoot(), pb.PackageName+".pb.go")
+
+		stat, err := os.Stat(goPbFilePath)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+
+		// NOTE: 读取文件
+		goPbFile, err := os.ReadFile(goPbFilePath)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+
+		// NOTE: 添加注释
+		idx := strings.Index(string(goPbFile), "\n// source:")
+		if idx > 0 {
+			var b bytes.Buffer
+			b.Write(goPbFile[:idx])
+			b.WriteString("\n// \tcpdegen       v")
+			b.WriteString(app.Version)
+			b.Write(goPbFile[idx:])
+
+			err = os.WriteFile(goPbFilePath, b.Bytes(), stat.Mode())
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
+		}
+	}
 
 	pterm.Success.Printfln("gen protobuf file by protoc success")
 
