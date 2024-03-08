@@ -20,7 +20,7 @@ func runGenPb(cmd *cobra.Command, args []string) (err error) {
 	pterm.Info.Println("gen protobuf file")
 
 	// NOTE: 生成pb文件
-	err = codegen.GenPbFile(pb.ProtoFilePath())
+	err = codegen.GenPbFile(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
