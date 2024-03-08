@@ -4,7 +4,6 @@ GOCACHE = $(shell go env GOCACHE)
 
 .PHONY: build
 build: ## build
-	export PATH="$PATH:/home/go/lazygophers/codegen/dist/cli_linux_amd64_v3/:/root/go/bin/"
 	GOVERSION=$(shell go version | awk '{print $$3;}') goreleaser --clean --snapshot --skip=publish,validate --timeout=24h
 
 .PHONY: lint
