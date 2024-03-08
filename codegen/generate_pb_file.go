@@ -76,7 +76,9 @@ func GenPbFile(pb *PbPackage) error {
 		if idx > 0 {
 			var b bytes.Buffer
 			b.Write(goPbFile[:idx])
-			b.WriteString("\n// \tcpdegen       v")
+			b.WriteString("\n// \t")
+			b.WriteString(app.Name)
+			b.WriteString("       v")
 			b.WriteString(app.Version)
 			b.Write(goPbFile[idx:])
 
