@@ -79,6 +79,9 @@ protogen_go_path: "<protoc-gen-go的绝对路径>"
 output_path: "<生成的代码的目录>"
 go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_package 字段当做包名>"
 
+# .editorconfig 文件路径，用于 IDE 的默认格式化
+editorconfig_path: "<.editorconfig 文件路径，如果不存在则使用默认>"
+
 # 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
 default_tag:
 	gorm:

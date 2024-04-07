@@ -62,6 +62,14 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 		state.Config.OutputPath = getString("output-path", cmd)
 	}
 
+	if cmd.Flag("editorconfig-path").Changed {
+		state.Config.EditorconfigPath = getString("editorconfig-path", cmd)
+	}
+
+	if cmd.Flag("overwrite").Changed {
+		state.Config.Overwrite = getBool("overwrite", cmd)
+	}
+
 	// NOTE: tables
 	if cmd.Flag("tables-enable_field_id").Changed {
 		state.Config.Tables.DisableFieldId = !getBool("tables-enable_field_id", cmd)
@@ -88,6 +96,9 @@ func init() {
 	genCmd.PersistentFlags().String("protoc", "", "protoc path")
 	genCmd.PersistentFlags().String("protoc-gen-go", "", "protoc-gen-go path")
 	genCmd.PersistentFlags().String("output-path", "", "output path")
+
+	genCmd.PersistentFlags().Bool("overwrite", false, "overwrite configuration")
+	genCmd.PersistentFlags().String("editorconfig-path", "", ".editorconfig path")
 
 	genCmd.PersistentFlags().Bool("tables-enable_field_id", false, "enable field gen tags for id field")
 	genCmd.PersistentFlags().Bool("tables-enable_field_created_at", false, "enable field gen tags for created_at field")
