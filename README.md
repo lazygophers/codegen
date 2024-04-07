@@ -67,7 +67,8 @@
 
 ### 配置文件
 
-配置文件名问 `[codegen.cfg.yaml](codegen.cfg.yaml)`
+> 配置文件名 `codegen.cfg.yaml`
+
 会依次在环境变量（LAZYGO_CODEGEN_CONFIG_FILE）、用户配置路径（/root/.config/lazygophers）依次查找，如果没有找到则使用默认配置
 
 ```yaml
