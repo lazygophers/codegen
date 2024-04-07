@@ -59,6 +59,11 @@ type Cfg struct {
 	DefaultTag map[string]map[string]string `json:"default_tag,omitempty" yaml:"default_tag,omitempty" toml:"default_tag,omitempty"`
 
 	Tables *CfgTables `json:"tables,omitempty" yaml:"tables,omitempty" toml:"tables,omitempty"`
+
+	Overwrite bool `json:"-" yaml:"-" toml:"-"`
+
+	// .editorconfig 文件位置
+	EditorconfigPath string `json:"editorconfig_path,omitempty" yaml:"editorconfig_path,omitempty" toml:"editorconfig_path,omitempty"`
 }
 
 func (p *Cfg) apply() (err error) {

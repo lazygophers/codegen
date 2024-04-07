@@ -22,6 +22,12 @@ var genAllCmd = &cobra.Command{
 			return err
 		}
 
+		err = runEditorconfigfunc(cmd, args)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+
 		return nil
 	},
 }
