@@ -9,9 +9,9 @@ import (
 
 var genPbCmd = &cobra.Command{
 	Use:   "pb",
-	Short: "gen pb.go",
-	Long: `Generate pb.go file from proto file.
-Add fields tags to the generated file(pb.go).
+	Short: "Generate .pb.go",
+	Long: `Generate .pb.go file from proto file.
+Add fields tags to the generated file(.pb.go).
 `,
 	RunE: runGenPb,
 }

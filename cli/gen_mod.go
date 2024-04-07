@@ -8,7 +8,7 @@ import (
 
 var genModCmd = &cobra.Command{
 	Use:   "mod",
-	Short: "gen go.mod",
+	Short: "Generate go.mod",
 	Long: `Generate go.mod file from proto file.
 If go.mod file already exists,skip generate.
 Go version will be set with the version in the current environment by go version.
