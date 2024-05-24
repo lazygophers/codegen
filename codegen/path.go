@@ -12,6 +12,8 @@ const (
 	PathTypeState
 	PathTypeStateTable
 	PathTypeStateConf
+	PathTypeStateCache
+	PathTypeStateState
 )
 
 func GetPath(t PathType, pb *PbPackage) string {
@@ -33,6 +35,12 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeStateConf:
 		return filepath.Join(pb.ProjectRoot(), "state", "config.go")
+
+	case PathTypeStateCache:
+		return filepath.Join(pb.ProjectRoot(), "state", "cache.go")
+
+	case PathTypeStateState:
+		return filepath.Join(pb.ProjectRoot(), "state", "state.go")
 
 	default:
 		panic("unsupported path type")

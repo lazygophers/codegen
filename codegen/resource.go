@@ -21,8 +21,11 @@ type TemplateType uint8
 
 const (
 	TemplateTypeEditorconfig TemplateType = iota + 1
+
 	TemplateTypeStateTable
 	TemplateTypeStateConf
+	TemplateTypeStateCache
+	TemplateTypeStateState
 )
 
 func GetTemplate(t TemplateType) (tpl *template.Template, err error) {
@@ -40,6 +43,14 @@ func GetTemplate(t TemplateType) (tpl *template.Template, err error) {
 	case TemplateTypeStateConf:
 		systemPath = state.Config.Template.Conf
 		embedPath = "template/state/config.gtpl"
+
+	case TemplateTypeStateCache:
+		systemPath = state.Config.Template.Cache
+		embedPath = "template/state/cache.gtpl"
+
+	case TemplateTypeStateState:
+		systemPath = state.Config.Template.State
+		embedPath = "template/state/state.gtpl"
 
 	default:
 		panic("unsupported template type")

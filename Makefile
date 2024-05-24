@@ -4,8 +4,14 @@ GOCACHE = $(shell go env GOCACHE)
 
 .PHONY: build
 build: ## build
-	export PATH="$PATH:/home/go/lazygophers/codegen/dist/cli_linux_amd64_v3/:/root/go/bin/"
-	GOVERSION=$(shell go version | awk '{print $$3;}') goreleaser --clean --snapshot --skip=publish,validate --timeout=24h
+	#export PATH="$PATH:/home/go/lazygophers/codegen/dist/cli_linux_amd64_v3/:/root/go/bin/"
+	#export PATH="$PATH:/Users/luoxin/persons/go/lazygophers/codegen/codegen/dist/cli_darwin_arm64/:/root/go/bin/"
+
+	# cp ./codegen.cfg.yaml ~/Library/Application Support/lazygophers/codegen.cfg.yaml
+
+	GOVERSION=$(shell go version | awk '{print $$3;}') \
+	goreleaser build --clean --snapshot --single-target --config=debug.goreleaser.yaml
+	#GOVERSION=$(shell go version | awk '{print $$3;}') goreleaser --clean --snapshot --skip=publish,validate --timeout=24h
 
 .PHONY: lint
 lint: ## lint go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
