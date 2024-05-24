@@ -189,6 +189,18 @@ func (p *PbMessage) Message() *proto.Message {
 
 func (p *PbMessage) IsTable() bool {
 	if strings.HasPrefix(p.Name, "Model") {
+		if !strings.Contains(p.Name, "_") {
+			return true
+		}
+	}
+
+	// TODO: 允许通过对注释的解析判断时候是表
+
+	return false
+}
+
+func (p *PbMessage) NeedOrm() bool {
+	if strings.HasPrefix(p.Name, "Model") {
 		return true
 	}
 
@@ -288,49 +300,43 @@ func (p *PbPackage) Messages() []*PbMessage {
 	return messages
 }
 
-func (p *PbPackage) GetParent(v proto.Visitee) string {
-	var nameList []string
-
-	for v != nil {
-		m := p.messages[fmt.Sprintf("%p", v)]
-		if m == nil {
-			break
-		}
-
-		nameList = append(nameList, m.Name)
-
-		vv := &ProtoVisitor{}
-		v.Accept(vv)
-		if len(vv.msgList) == len(p.messages) || len(vv.msgList) != 1 {
-			// 到顶层了
-			break
-		}
-		x := vv.msgList[0]
-		v = x.Parent
-	}
-
-	candy.Reverse(nameList)
-	return strings.Join(nameList, ".")
-}
-
 func (p *PbPackage) GetMessageFullName(e *proto.Message) string {
-	parent := p.GetParent(e.Parent)
-	var fullName string
-	if parent != "" {
-		fullName = fmt.Sprintf("%s.%s", parent, e.Name)
-	} else {
-		fullName = e.Name
+	var names []string
+
+	var walk func(m *proto.Message)
+	walk = func(m *proto.Message) {
+		if m == nil {
+			return
+		}
+
+		names = append(names, m.Name)
+
+		if m.Parent == nil {
+			return
+		}
+
+		switch x := m.Parent.(type) {
+		case *proto.Message:
+			walk(x)
+		default:
+			log.Warnf("unknown parent type:%T", x)
+		}
 	}
-	return fullName
+
+	walk(e)
+
+	return strings.Join(candy.Reverse(names), "_")
 }
 
 func (p *PbPackage) Walk() {
 	proto.Walk(p.proto,
 		proto.WithMessage(func(m *proto.Message) {
+			m.Name = p.GetMessageFullName(m)
+
 			log.Infof("message:%v", m.Name)
 			pterm.Info.Printfln("find message:%s", m.Name)
 
-			p.messages[p.GetMessageFullName(m)] = NewPbMessage(m)
+			p.messages[m.Name] = NewPbMessage(m)
 			p.messages[m.Name].walk()
 		}),
 		//proto.WithService(func(s *proto.Service) {

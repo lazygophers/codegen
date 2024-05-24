@@ -18,10 +18,12 @@ import (
 
 type CfgTemplate struct {
 	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
-	Table        string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
-	Conf         string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
-	Cache        string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
-	State        string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
+	Orm          string `json:"orm,omitempty" yaml:"orm,omitempty" toml:"orm,omitempty"`
+
+	Table string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
+	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
+	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
+	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 }
 
 func (p *CfgTemplate) apply() {

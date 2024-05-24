@@ -21,6 +21,7 @@ type TemplateType uint8
 
 const (
 	TemplateTypeEditorconfig TemplateType = iota + 1
+	TemplateTypeOrm
 
 	TemplateTypeStateTable
 	TemplateTypeStateConf
@@ -35,6 +36,10 @@ func GetTemplate(t TemplateType) (tpl *template.Template, err error) {
 	case TemplateTypeEditorconfig:
 		systemPath = state.Config.Template.Editorconfig
 		embedPath = "template/.editorconfig"
+
+	case TemplateTypeOrm:
+		systemPath = state.Config.Template.Orm
+		embedPath = "template/orm.gtpl"
 
 	case TemplateTypeStateTable:
 		systemPath = state.Config.Template.Table

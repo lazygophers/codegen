@@ -14,6 +14,12 @@ var genTableCmd = &cobra.Command{
 }
 
 func runGenTable(cmd *cobra.Command, args []string) (err error) {
+	err = codegen.GenerateOrm(pb)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	err = codegen.GenerateTable(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)
