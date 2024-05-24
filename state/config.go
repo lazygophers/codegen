@@ -13,7 +13,18 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strings"
 )
+
+type CfgTemplate struct {
+	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
+	Table        string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
+	Conf         string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
+}
+
+func (p *CfgTemplate) apply() {
+
+}
 
 type CfgTables struct {
 	Disable bool `json:"disable,omitempty" yaml:"disable,omitempty" toml:"disable,omitempty"`
@@ -30,7 +41,7 @@ type CfgTables struct {
 	DisableGormTagColumn bool `json:"disable_gorm_tag_column,omitempty" yaml:"disable_gorm_tag_column,omitempty" toml:"disable_gorm_tag_column,omitempty"`
 }
 
-func (p *CfgTables) apply() (err error) {
+func (p *CfgTables) apply() {
 	if p.Disable {
 		p.DisableFieldId = true
 
@@ -40,8 +51,6 @@ func (p *CfgTables) apply() (err error) {
 
 		p.DisableGormTagColumn = true
 	}
-
-	return nil
 }
 
 type Cfg struct {
@@ -52,6 +61,8 @@ type Cfg struct {
 
 	OutputPath string `json:"output_path,omitempty" yaml:"output_path,omitempty" toml:"output_path,omitempty"`
 
+	Template *CfgTemplate `json:"template,omitempty" yaml:"template,omitempty" toml:"template,omitempty"`
+
 	// 对于原始数据，key 为 tag 名。value.key 为字段名，value.value 为 tag 内容
 	// 例如: {"gorm": {"id": "column:id;primaryKey;autoIncrement;not null"}}
 	// 从初始化后整理为，key 为字段名，value.key 为 tag 名，value.value 为 tag 内容
@@ -61,9 +72,6 @@ type Cfg struct {
 	Tables *CfgTables `json:"tables,omitempty" yaml:"tables,omitempty" toml:"tables,omitempty"`
 
 	Overwrite bool `json:"-" yaml:"-" toml:"-"`
-
-	// .editorconfig 文件位置
-	EditorconfigPath string `json:"editorconfig_path,omitempty" yaml:"editorconfig_path,omitempty" toml:"editorconfig_path,omitempty"`
 }
 
 func (p *Cfg) apply() (err error) {
@@ -83,15 +91,21 @@ func (p *Cfg) apply() (err error) {
 		}
 	}
 
+	if p.GoModulePrefix != "" {
+		p.GoModulePrefix = strings.TrimSuffix(p.GoModulePrefix, "/")
+	}
+
+	if p.Template == nil {
+		p.Template = new(CfgTemplate)
+	}
+	p.Template.apply()
+
 	if p.Tables == nil {
 		p.Tables = new(CfgTables)
 	}
+	p.Tables.apply()
 
-	err = p.Tables.apply()
-	if err != nil {
-		return err
-	}
-
+	// NOTE: struct 标签
 	{
 		if len(p.DefaultTag) == 0 {
 			p.DefaultTag = make(map[string]map[string]string, 1)

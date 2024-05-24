@@ -10,6 +10,7 @@ import (
 	"github.com/pterm/pterm"
 	"github.com/spf13/cobra"
 	"path/filepath"
+	"strings"
 )
 
 var pb *codegen.PbPackage
@@ -50,6 +51,7 @@ var genCmd = &cobra.Command{
 }
 
 func mergeGenCmdFlags(cmd *cobra.Command) {
+
 	if cmd.Flag("protoc").Changed {
 		state.Config.ProtocPath = getString("protoc", cmd)
 	}
@@ -58,12 +60,16 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 		state.Config.ProtoGenGoPath = getString("protoc-gen-go", cmd)
 	}
 
+	if cmd.Flag("go-module-prefix").Changed {
+		state.Config.GoModulePrefix = strings.TrimSuffix(getString("go-module-prefix", cmd), "/")
+	}
+
 	if cmd.Flag("output-path").Changed {
 		state.Config.OutputPath = getString("output-path", cmd)
 	}
 
 	if cmd.Flag("editorconfig-path").Changed {
-		state.Config.EditorconfigPath = getString("editorconfig-path", cmd)
+		state.Config.Template.Editorconfig = getString("editorconfig-path", cmd)
 	}
 
 	if cmd.Flag("overwrite").Changed {
@@ -96,6 +102,8 @@ func init() {
 	genCmd.PersistentFlags().String("protoc", "", "protoc path")
 	genCmd.PersistentFlags().String("protoc-gen-go", "", "protoc-gen-go path")
 	genCmd.PersistentFlags().String("output-path", "", "output path")
+
+	genCmd.PersistentFlags().String("go-module-prefix", "", "go module prefix")
 
 	genCmd.PersistentFlags().Bool("overwrite", false, "overwrite configuration")
 	genCmd.PersistentFlags().String("editorconfig-path", "", ".editorconfig path")

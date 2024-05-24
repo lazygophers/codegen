@@ -6,11 +6,11 @@ import (
 	"github.com/pterm/pterm"
 	"os"
 	"os/exec"
-	"path/filepath"
 )
 
 func GenerateMod(pb *PbPackage) (err error) {
-	modFilePath := filepath.Join(pb.ProjectRoot(), "go.mod")
+	modFilePath := GetPath(PathTypeGoMod, pb)
+
 	if osx.IsFile(modFilePath) {
 		pterm.Warning.Printfln("go.mod file already exists,skip generate %s", modFilePath)
 		return nil

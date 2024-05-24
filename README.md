@@ -33,6 +33,14 @@
 		- Update: `UpdateUserReq`、`UpdateUserResp`
 		- Delete: `DelUserReq`、`DelUserResp`
 		- Set: `SetUserReq`、`SetUserResp`
+- 整体项目结构
+	- xxx.pb.go
+	- xxx.proto(单体项目推荐放在当前目录，微服务推荐放在公共仓库)
+	- go.mod
+	- go.sum
+	- .editorconfig
+	- state
+		- table.go(数据库相关的内容)
 
 ## 如何使用
 

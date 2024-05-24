@@ -5,12 +5,12 @@ import (
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
+	"io/fs"
 	"os"
-	"path/filepath"
 )
 
 func GenerateEditorconfig(pb *PbPackage) (err error) {
-	editorFile := filepath.Join(pb.ProjectRoot(), ".editorconfig")
+	editorFile := GetPath(PathTypeEditorconfig, pb)
 
 	if !state.Config.Overwrite {
 		if osx.IsFile(editorFile) {
@@ -21,29 +21,22 @@ func GenerateEditorconfig(pb *PbPackage) (err error) {
 
 	pterm.Info.Printfln("update .editorconfig")
 
-	var buf []byte
-	if state.Config.EditorconfigPath != "" {
-		log.Infof("useing %s", state.Config.EditorconfigPath)
-		buf, err = os.ReadFile(state.Config.EditorconfigPath)
-		if err != nil {
-			if os.IsNotExist(err) {
-				pterm.Error.Printfln("%s is not found", state.Config.EditorconfigPath)
-				return err
-			}
-
-			log.Errorf("err:%v", err)
-			return err
-		}
-	}
-
-	if len(buf) == 0 {
-		log.Info("useing default .editorconfig")
-		buf = GetDefaultEditorconfig()
+	tpl, err := GetTemplate(TemplateTypeEditorconfig)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
 	}
 
 	log.Infof("update %s", editorFile)
 
-	err = os.WriteFile(editorFile, buf, 0600)
+	file, err := os.OpenFile(editorFile, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	defer file.Close()
+
+	err = tpl.Execute(file, nil)
 	if err != nil {
 		if os.IsPermission(err) {
 			pterm.Error.Printfln("permission denied")

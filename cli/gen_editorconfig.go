@@ -9,10 +9,10 @@ import (
 var genEditorconfigCmd = &cobra.Command{
 	Use:   "editorconfig",
 	Short: "Generate .editorconfig file",
-	RunE:  runEditorconfigfunc,
+	RunE:  runEditorconfig,
 }
 
-func runEditorconfigfunc(cmd *cobra.Command, args []string) (err error) {
+func runEditorconfig(cmd *cobra.Command, args []string) (err error) {
 	err = codegen.GenerateEditorconfig(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)
