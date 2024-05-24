@@ -33,6 +33,17 @@
 		- Update: `UpdateUserReq`、`UpdateUserResp`
 		- Delete: `DelUserReq`、`DelUserResp`
 		- Set: `SetUserReq`、`SetUserResp`
+- 整体项目结构
+	- xxx.pb.go
+	- xxx.proto(单体项目推荐放在当前目录，微服务推荐放在公共仓库)
+	- go.mod
+	- go.sum
+	- .editorconfig
+	- state
+		- table.go(数据库相关的内容)
+        - cache.go(缓存相关的内容)
+        - config.go(配置文件相关内容)
+        - state.go(有状态的服务配置的初始化)
 
 ## 如何使用
 
@@ -67,7 +78,8 @@
 
 ### 配置文件
 
-配置文件名问 `[codegen.cfg.yaml](codegen.cfg.yaml)`
+> 配置文件名 `codegen.cfg.yaml`
+
 会依次在环境变量（LAZYGO_CODEGEN_CONFIG_FILE）、用户配置路径（/root/.config/lazygophers）依次查找，如果没有找到则使用默认配置
 
 ```yaml
@@ -79,8 +91,19 @@ protogen_go_path: "<protoc-gen-go的绝对路径>"
 output_path: "<生成的代码的目录>"
 go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_package 字段当做包名>"
 
-# .editorconfig 文件路径，用于 IDE 的默认格式化
-editorconfig_path: "<.editorconfig 文件路径，如果不存在则使用默认>"
+# 自定义模版文件，要求 .gtpl 格式
+template:
+	# .editorconfig 文件路径，用于 IDE 的默认格式化
+	editorconfig: "<.editorconfig 文件路径，如果不存在则使用默认>"
+
+	# state/table.go 模板文件路径
+	table: "<state/table.go 模板文件路径，如果不存在则是使用默认>"
+	# state/conf.go 模板文件路径
+	conf: "<state/conf.go 模板文件路径，如果不存在则是使用默认>"
+	# state/cache.go 模板文件路径
+	cache: "<state/cache.go 模板文件路径，如果不存在则是使用默认>"
+	# state/state.go 模板文件路径
+	state: "<state/state.go 模板文件路径，如果不存在则是使用默认>"
 
 # 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
 default_tag:

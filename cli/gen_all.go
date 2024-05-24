@@ -5,27 +5,26 @@ import (
 	"github.com/spf13/cobra"
 )
 
+type GenHook func(cmd *cobra.Command, args []string) (err error)
+
+var GenAllHooks = []GenHook{
+	runGenPb,
+	runGenMod,
+	runEditorconfig,
+	runGenState,
+}
+
 var genAllCmd = &cobra.Command{
 	Use:   "all",
 	Short: "gen all action",
 	Long:  `Generate all action.`,
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
-		err = runGenPb(cmd, args)
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return err
-		}
-
-		err = runGenMod(cmd, args)
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return err
-		}
-
-		err = runEditorconfigfunc(cmd, args)
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return err
+		for _, hook := range GenAllHooks {
+			err = hook(cmd, args)
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
 		}
 
 		return nil

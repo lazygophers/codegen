@@ -187,6 +187,16 @@ func (p *PbMessage) Message() *proto.Message {
 	return p.message
 }
 
+func (p *PbMessage) IsTable() bool {
+	if strings.HasPrefix(p.Name, "Model") {
+		return true
+	}
+
+	// TODO: 允许通过对注释的解析判断时候是表
+
+	return false
+}
+
 func (p *PbMessage) walk() {
 	p.Name = p.message.Name
 
@@ -240,6 +250,10 @@ func (p *PbPackage) ProtoFilePath() string {
 	return p.protoFilePath
 }
 
+func (p *PbPackage) ProtoFileName() string {
+	return filepath.Base(p.protoFilePath)
+}
+
 func (p *PbPackage) Proto() *proto.Proto {
 	return p.proto
 }
@@ -260,6 +274,18 @@ func (p *PbPackage) GoPackage() string {
 	} else {
 		return p.RawGoPackage
 	}
+}
+
+func (p *PbPackage) GoPackageName() string {
+	return filepath.Base(p.GoPackage())
+}
+
+func (p *PbPackage) Messages() []*PbMessage {
+	var messages []*PbMessage
+	for _, m := range p.messages {
+		messages = append(messages, m)
+	}
+	return messages
 }
 
 func (p *PbPackage) GetParent(v proto.Visitee) string {

@@ -20,8 +20,8 @@ func GenPbFile(pb *PbPackage) error {
 
 	var args []string
 
-	// NOTE: proto文件所谓文件夹
-	args = append(args, "-I", filepath.ToSlash(filepath.Dir(protoFilePath)))
+	// NOTE: proto文件所在文件夹
+	args = append(args, "--proto_path", filepath.ToSlash(filepath.Dir(protoFilePath)))
 
 	// NOTE: protoc-gen-go插件
 	args = append(args, "--plugin=protoc-gen-go="+state.Config.ProtoGenGoPath)
@@ -48,7 +48,7 @@ func GenPbFile(pb *PbPackage) error {
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		log.Errorf("err:%v", err)
-		pterm.Error.Printfln("exec %s\nerr:%s", pterm.BgCyan.Sprint(strings.Join(cmd.Args, " ")), output)
+		pterm.Error.Printfln("exec %s\nerr:%s", strings.Join(cmd.Args, " "), output)
 		return err
 	}
 
@@ -76,10 +76,16 @@ func GenPbFile(pb *PbPackage) error {
 		if idx > 0 {
 			var b bytes.Buffer
 			b.Write(goPbFile[:idx])
+
 			b.WriteString("\n// \t")
 			b.WriteString(app.Name)
-			b.WriteString("       v")
+			b.WriteString("\tv")
 			b.WriteString(app.Version)
+
+			b.WriteString("\n// \tgo")
+			b.WriteString("\t\t")
+			b.WriteString(app.GoVersion)
+
 			b.Write(goPbFile[idx:])
 
 			err = os.WriteFile(goPbFilePath, b.Bytes(), stat.Mode())
