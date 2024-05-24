@@ -5,14 +5,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-type GenAllHook func(cmd *cobra.Command, args []string) (err error)
+type GenHook func(cmd *cobra.Command, args []string) (err error)
 
-var GenAllHooks = []GenAllHook{
+var GenAllHooks = []GenHook{
 	runGenPb,
 	runGenMod,
 	runEditorconfig,
-	ranGenConf,
-	runGenTable,
+	runGenState,
 }
 
 var genAllCmd = &cobra.Command{
