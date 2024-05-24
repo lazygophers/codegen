@@ -122,7 +122,7 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 		endIdx := bytes.LastIndex(contents[area.Start-1:area.End-1], []byte("`")) + area.Start - 1
 
 		log.Infof("append custom tags to %s at %d", contents[area.Start-1:endIdx], endIdx)
-		pterm.Info.Printfln("append custom tags to %s at %s", pterm.FgBlack.Sprint(pterm.BgCyan.Sprintf("%s", contents[area.Start-1:endIdx])), pterm.FgMagenta.Sprint(endIdx))
+		pterm.Info.Printfln("append custom tags to %s at %s", pterm.FgBlack.Sprint(pterm.BgWhite.Sprintf("%s", contents[area.Start-1:endIdx])), pterm.FgMagenta.Sprint(endIdx))
 
 		b.Write(contents[lastEnd:endIdx])
 		b.WriteString(" ")

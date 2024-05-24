@@ -101,9 +101,64 @@ func GenerateOrm(pb *PbPackage) (err error) {
 		return err
 	}
 
-	// TODO: 自动添加错误码到 proto 文件中
-
 	file, err := os.OpenFile(GetPath(PathTypeOrm, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	defer file.Close()
+
+	_, err = file.Write(getFileHeader(pb))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = tpl.Execute(file, args)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
+
+func GenerateTableName(pb *PbPackage) (err error) {
+	err = initStateDirectory(pb)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// table 文件为覆盖生成
+	args := map[string]interface{}{
+		"PB": pb,
+	}
+
+	// 读取 Models
+	{
+		var models []string
+		candy.Each(pb.Messages(), func(message *PbMessage) {
+			if !message.IsTable() {
+				return
+			}
+
+			log.Infof("find table %s", message.Name)
+
+			models = append(models, message.Name)
+		})
+
+		args["Models"] = models
+	}
+
+	// 生成 table.go
+	tpl, err := GetTemplate(TemplateTypeTableName)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	file, err := os.OpenFile(GetPath(PathTypeTableName, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

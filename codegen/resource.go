@@ -2,6 +2,7 @@ package codegen
 
 import (
 	"embed"
+	"fmt"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
@@ -22,6 +23,12 @@ type TemplateType uint8
 const (
 	TemplateTypeEditorconfig TemplateType = iota + 1
 	TemplateTypeOrm
+	TemplateTypeTableName
+
+	TemplateTypeProtoService
+	TemplateTypeProtoRpcName
+	TemplateTypeProtoRpcReq
+	TemplateTypeProtoRpcResp
 
 	TemplateTypeStateTable
 	TemplateTypeStateConf
@@ -29,7 +36,7 @@ const (
 	TemplateTypeStateState
 )
 
-func GetTemplate(t TemplateType) (tpl *template.Template, err error) {
+func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
 	var systemPath, embedPath string
 
 	switch t {
@@ -40,6 +47,41 @@ func GetTemplate(t TemplateType) (tpl *template.Template, err error) {
 	case TemplateTypeOrm:
 		systemPath = state.Config.Template.Orm
 		embedPath = "template/orm.gtpl"
+
+	case TemplateTypeTableName:
+		systemPath = state.Config.Template.TableName
+		embedPath = "template/table_name.gtpl"
+
+	case TemplateTypeProtoService:
+		systemPath = state.Config.Template.Proto.Service
+		embedPath = "template/proto/rpc_service.gtpl"
+
+	case TemplateTypeProtoRpcName:
+		if len(args) != 1 {
+			panic("Must provide")
+		}
+		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+			systemPath = v.Name
+		}
+		embedPath = fmt.Sprintf("template/proto/%s.name.rpc.gtpl", args[0])
+
+	case TemplateTypeProtoRpcReq:
+		if len(args) != 1 {
+			panic("Must provide")
+		}
+		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+			systemPath = v.Req
+		}
+		embedPath = fmt.Sprintf("template/proto/%s.req.rpc.gtpl", args[0])
+
+	case TemplateTypeProtoRpcResp:
+		if len(args) != 1 {
+			panic("Must provide")
+		}
+		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+			systemPath = v.Resp
+		}
+		embedPath = fmt.Sprintf("template/proto/%s.resp.rpc.gtpl", args[0])
 
 	case TemplateTypeStateTable:
 		systemPath = state.Config.Template.Table
