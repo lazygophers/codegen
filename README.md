@@ -93,6 +93,12 @@ protogen_go_path: "<protoc-gen-go的绝对路径>"
 output_path: "<生成的代码的目录>"
 go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_package 字段当做包名>"
 
+# 不在 指定 proto 文件所在目录的其它被引用的包路径
+#	支持绝对路径、相对生成路径 (相对于 output_path)
+proto_files:
+	- "./core/"
+	- "~/proto/"
+
 # 自定义模版文件，要求 .gtpl 格式
 template:
 	# .editorconfig 模板文件路径，用于 IDE 的默认格式化
