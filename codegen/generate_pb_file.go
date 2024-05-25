@@ -23,6 +23,10 @@ func GenPbFile(pb *PbPackage) error {
 	// NOTE: proto文件所在文件夹
 	args = append(args, "--proto_path", filepath.ToSlash(filepath.Dir(protoFilePath)))
 
+	for _, protoDir := range state.Config.ProtoFiles {
+		args = append(args, "--proto_path", protoDir)
+	}
+
 	// NOTE: protoc-gen-go插件
 	args = append(args, "--plugin=protoc-gen-go="+state.Config.ProtoGenGoPath)
 

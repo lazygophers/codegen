@@ -11,3 +11,8 @@ func getString(key string, c *cobra.Command) string {
 	value, _ := c.Flags().GetString(key)
 	return value
 }
+
+func getStringSlice(key string, c *cobra.Command) []string {
+	value, _ := c.Flags().GetStringSlice(key)
+	return value
+}
