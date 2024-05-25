@@ -39,6 +39,8 @@
 	- go.mod
 	- go.sum
 	- .editorconfig
+    - orm_gen.go(gorm 配套的接口协议的生成)
+    - table_gen.go(表名的生成)
 	- state
 		- table.go(数据库相关的内容)
         - cache.go(缓存相关的内容)
@@ -59,7 +61,7 @@
 
 4. 执行命令
    ```bash
-	codegen gen pb -i <proto文件路径>
+	codegen gen pb <action> -i <proto文件路径>
    ```
 
 ### 注意事项
