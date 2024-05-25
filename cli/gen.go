@@ -76,6 +76,14 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 		state.Config.Overwrite = getBool("overwrite", cmd)
 	}
 
+	if cmd.Flag("proto-files").Changed {
+		state.Config.ProtoFiles = getStringSlice("proto-files", cmd)
+	}
+
+	if cmd.Flag("add-proto-files").Changed {
+		state.Config.ProtoFiles = append(state.Config.ProtoFiles, getStringSlice("proto-files", cmd)...)
+	}
+
 	// NOTE: tables
 	if cmd.Flag("tables-enable_field_id").Changed {
 		state.Config.Tables.DisableFieldId = !getBool("tables-enable_field_id", cmd)
@@ -104,6 +112,8 @@ func init() {
 	genCmd.PersistentFlags().String("output-path", "", "output path")
 
 	genCmd.PersistentFlags().String("go-module-prefix", "", "go module prefix")
+	genCmd.PersistentFlags().StringSlice("proto-files", nil, "import other .proto files, if their not in the .proto file")
+	genCmd.PersistentFlags().StringSlice("add-proto-files", nil, "append import other .proto files, if their not in the .proto file")
 
 	genCmd.PersistentFlags().Bool("overwrite", false, "overwrite configuration")
 	genCmd.PersistentFlags().String("editorconfig-path", "", ".editorconfig path")

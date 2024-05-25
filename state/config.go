@@ -19,8 +19,6 @@ import (
 
 type CfgStyle struct {
 	Go string `json:"go,omitempty" yaml:"go,omitempty" toml:"go,omitempty" default:"fiber"`
-
-	ListPagination string `json:"list_pagination,omitempty" yaml:"list_pagination,omitempty" toml:"list_pagination,omitempty" default:"offset"`
 }
 
 type CfgProtoRpc struct {
@@ -78,6 +76,8 @@ func (p *CfgTables) apply() {
 type Cfg struct {
 	ProtocPath     string `json:"protoc_path,omitempty" yaml:"protoc_path,omitempty" toml:"protoc_path,omitempty"`
 	ProtoGenGoPath string `json:"protogen_go_path,omitempty" yaml:"protogen_go_path,omitempty" toml:"protogen_go_path,omitempty"`
+
+	ProtoFiles []string `json:"proto_files,omitempty" yaml:"proto_files,omitempty" toml:"proto_files,omitempty"`
 
 	GoModulePrefix string `json:"go_module_prefix,omitempty" yaml:"go_module_prefix,omitempty" toml:"go_module_prefix,omitempty"`
 
