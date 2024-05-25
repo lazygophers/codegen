@@ -16,8 +16,11 @@ var genAddRpcCmd = &cobra.Command{
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		opt := codegen.NewAddRpcOption()
 
-		var msg *codegen.PbMessage
+		if v, err := cmd.Flags().GetString("default-role"); err == nil {
+			opt.DefaultRole = v
+		}
 
+		var msg *codegen.PbMessage
 		if v, err := cmd.Flags().GetString("model"); err == nil && v != "" {
 			// 先看一下加了 Model 的 时候存在
 			{
@@ -59,11 +62,11 @@ var genAddRpcCmd = &cobra.Command{
 			return errors.New("missing argument `action`")
 		}
 
-		if v, err := cmd.Flags().GetString("loptions"); err == nil && v != "" {
+		if v, err := cmd.Flags().GetString("list-option"); err == nil && v != "" {
 			opt.ParseListOption(v, msg)
 		}
 
-		err = codegen.GenerateAddRpc(pb, opt)
+		err = codegen.GenerateAddRpc(pb, msg, opt)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -78,7 +81,9 @@ func init() {
 
 	genAddRpcCmd.Flags().StringP("action", "a", "", "action for adding, segmente by ';',\nsupports: add/set/get/list/del/update")
 
-	genAddRpcCmd.Flags().StringP("loptions", "l", "", "list options, segmente by ';'")
+	genAddRpcCmd.Flags().StringP("list-option", "l", "", "list options, segmente by ';'")
+
+	genAddRpcCmd.Flags().String("default-role", "", "default role")
 
 	genCmd.AddCommand(genAddRpcCmd)
 }

@@ -2,7 +2,6 @@ package codegen
 
 import (
 	"bytes"
-	"fmt"
 	"github.com/emicklei/proto"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
@@ -343,11 +342,9 @@ func (p *PbPackage) ProjectRoot() string {
 
 func (p *PbPackage) GoPackage() string {
 	if state.Config.GoModulePrefix != "" {
-		return fmt.Sprintf("%s/%s",
-			strings.TrimSuffix(state.Config.GoModulePrefix, "/"),
-			strings.TrimPrefix(p.RawGoPackage, "/"))
+		return filepath.ToSlash(filepath.Join(state.Config.GoModulePrefix, p.RawGoPackage))
 	} else {
-		return p.RawGoPackage
+		return filepath.ToSlash(filepath.Join(p.RawGoPackage))
 	}
 }
 
@@ -409,6 +406,10 @@ func (p *PbPackage) GetMessageFullName(e *proto.Message) string {
 		switch x := m.Parent.(type) {
 		case *proto.Message:
 			walk(x)
+
+		case *proto.Proto:
+			// do nothing
+
 		default:
 			log.Warnf("unknown parent type:%T", x)
 		}

@@ -9,6 +9,7 @@ import (
 	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
+	"go.uber.org/atomic"
 	"os"
 	"strings"
 	"text/template"
@@ -150,6 +151,32 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	return tpl, nil
 }
 
+var (
+	counters = map[string]*atomic.Int64{}
+)
+
+func IncrWithKey(key string, def int64) int64 {
+	if v, ok := counters[key]; ok {
+		return v.Inc()
+	}
+
+	v := atomic.NewInt64(0)
+	counters[key] = v
+
+	return def
+}
+
+func DecrWithKey(key string, def int64) int64 {
+	if v, ok := counters[key]; ok {
+		return v.Dec()
+	}
+
+	v := atomic.NewInt64(0)
+	counters[key] = v
+
+	return def
+}
+
 var DefaultTemplateFunc = template.FuncMap{
 	"ToCamel": stringx.ToCamel,
 	"ToSnake": stringx.ToSnake,
@@ -180,4 +207,7 @@ var DefaultTemplateFunc = template.FuncMap{
 	"First":    candy.First[string],
 	"Last":     candy.Last[string],
 	"Contains": candy.Contains[string],
+
+	"IncrKey": IncrWithKey,
+	"DecrKey": DecrWithKey,
 }
