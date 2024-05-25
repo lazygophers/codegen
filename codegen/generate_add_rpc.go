@@ -16,6 +16,7 @@ type AddRpcOptionAction struct {
 
 type AddRpcOption struct {
 	Model string
+	GenTo string
 
 	DefaultRole string
 
@@ -182,6 +183,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 				"Model":       opt.Model,
 				"Role":        role,
 				"Action":      action,
+				"GenTo":       opt.GenTo,
 				"ListOptions": opt.ListOptions,
 			}
 

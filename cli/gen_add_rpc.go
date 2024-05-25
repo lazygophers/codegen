@@ -20,6 +20,10 @@ var genAddRpcCmd = &cobra.Command{
 			opt.DefaultRole = v
 		}
 
+		if v, err := cmd.Flags().GetString("gen-to"); err == nil {
+			opt.GenTo = v
+		}
+
 		var msg *codegen.PbMessage
 		if v, err := cmd.Flags().GetString("model"); err == nil && v != "" {
 			// 先看一下加了 Model 的 时候存在
@@ -78,6 +82,7 @@ var genAddRpcCmd = &cobra.Command{
 
 func init() {
 	genAddRpcCmd.Flags().StringP("model", "m", "", "model name，must be specified")
+	genAddRpcCmd.Flags().StringP("gen-to", "t", "", "generate go source code path, will be used in gen go source code")
 
 	genAddRpcCmd.Flags().StringP("action", "a", "", "action for adding, segmente by ';',\nsupports: add/set/get/list/del/update")
 
