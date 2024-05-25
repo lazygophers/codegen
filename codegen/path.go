@@ -8,6 +8,8 @@ const (
 	PathTypePbGo PathType = iota + 1
 	PathTypeGoMod
 	PathTypeEditorconfig
+	PathTypeOrm
+	PathTypeTableName
 
 	PathTypeState
 	PathTypeStateTable
@@ -26,6 +28,12 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeEditorconfig:
 		return filepath.Join(pb.ProjectRoot(), ".editorconfig")
+
+	case PathTypeOrm:
+		return filepath.Join(pb.ProjectRoot(), "orm.gen.go")
+
+	case PathTypeTableName:
+		return filepath.Join(pb.ProjectRoot(), "table_name.gen.go")
 
 	case PathTypeState:
 		return filepath.Join(pb.ProjectRoot(), "state")

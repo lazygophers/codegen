@@ -1,7 +1,7 @@
 package codegen
 
 import (
-	"fmt"
+	"bytes"
 	"github.com/emicklei/proto"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
@@ -112,8 +112,60 @@ type PbEnum struct {
 	enum *proto.Enum
 }
 
+func (p *PbEnum) Enum() *proto.Enum {
+	return p.enum
+}
+
+func (p *PbEnum) walk() {
+
+}
+
+func NewPbEnum(e *proto.Enum) *PbEnum {
+	p := &PbEnum{
+		enum: e,
+	}
+
+	return p
+}
+
 type PbRPC struct {
-	rpc *proto.RPC
+	rpc  *proto.RPC
+	Name string
+}
+
+func (p *PbRPC) RPC() *proto.RPC {
+	return p.rpc
+}
+
+func (p *PbRPC) walk() {
+}
+
+func NewPbRPC(rpc *proto.RPC) *PbRPC {
+	p := &PbRPC{
+		Name: rpc.Name,
+		rpc:  rpc,
+	}
+
+	return p
+}
+
+type PbService struct {
+	service *proto.Service
+}
+
+func (p *PbService) Service() *proto.Service {
+	return p.service
+}
+
+func (p *PbService) walk() {
+}
+
+func NewPbService(service *proto.Service) *PbService {
+	p := &PbService{
+		service: service,
+	}
+
+	return p
 }
 
 type PbNormalField struct {
@@ -189,6 +241,18 @@ func (p *PbMessage) Message() *proto.Message {
 
 func (p *PbMessage) IsTable() bool {
 	if strings.HasPrefix(p.Name, "Model") {
+		if !strings.Contains(p.Name, "_") {
+			return true
+		}
+	}
+
+	// TODO: 允许通过对注释的解析判断时候是表
+
+	return false
+}
+
+func (p *PbMessage) NeedOrm() bool {
+	if strings.HasPrefix(p.Name, "Model") {
 		return true
 	}
 
@@ -238,12 +302,22 @@ type PbPackage struct {
 
 	proto *proto.Proto
 
-	messages     map[string]*PbMessage
-	enums        map[string]*PbEnum
-	rpcs         map[string]*PbRPC
-	options      map[string]*PbOption
+	messages []*PbMessage
+	enums    []*PbEnum
+	services []*PbService
+	rpcs     []*PbRPC
+	options  []*PbOption
+
+	msgMap     map[string]*PbMessage
+	enumMap    map[string]*PbEnum
+	serviceMap map[string]*PbService
+	rpcMap     map[string]*PbRPC
+	optionMap  map[string]*PbOption
+
 	RawGoPackage string
 	PackageName  string
+
+	ProtoBuffer string
 }
 
 func (p *PbPackage) ProtoFilePath() string {
@@ -251,7 +325,7 @@ func (p *PbPackage) ProtoFilePath() string {
 }
 
 func (p *PbPackage) ProtoFileName() string {
-	return filepath.Base(p.protoFilePath)
+	return p.proto.Filename
 }
 
 func (p *PbPackage) Proto() *proto.Proto {
@@ -268,11 +342,9 @@ func (p *PbPackage) ProjectRoot() string {
 
 func (p *PbPackage) GoPackage() string {
 	if state.Config.GoModulePrefix != "" {
-		return fmt.Sprintf("%s/%s",
-			strings.TrimSuffix(state.Config.GoModulePrefix, "/"),
-			strings.TrimPrefix(p.RawGoPackage, "/"))
+		return filepath.ToSlash(filepath.Join(state.Config.GoModulePrefix, p.RawGoPackage))
 	} else {
-		return p.RawGoPackage
+		return filepath.ToSlash(filepath.Join(p.RawGoPackage))
 	}
 }
 
@@ -282,72 +354,115 @@ func (p *PbPackage) GoPackageName() string {
 
 func (p *PbPackage) Messages() []*PbMessage {
 	var messages []*PbMessage
-	for _, m := range p.messages {
+	for _, m := range p.msgMap {
 		messages = append(messages, m)
 	}
 	return messages
 }
 
-func (p *PbPackage) GetParent(v proto.Visitee) string {
-	var nameList []string
+func (p *PbPackage) GetMessage(msg string) *PbMessage {
+	return p.msgMap[msg]
+}
 
-	for v != nil {
-		m := p.messages[fmt.Sprintf("%p", v)]
-		if m == nil {
-			break
-		}
+func (p *PbPackage) Enums() []*PbEnum {
+	return p.enums
+}
 
-		nameList = append(nameList, m.Name)
+func (p *PbPackage) GetEnum(e string) *PbEnum {
+	return p.enumMap[e]
+}
 
-		vv := &ProtoVisitor{}
-		v.Accept(vv)
-		if len(vv.msgList) == len(p.messages) || len(vv.msgList) != 1 {
-			// 到顶层了
-			break
-		}
-		x := vv.msgList[0]
-		v = x.Parent
-	}
+func (p *PbPackage) RPCs() []*PbRPC {
+	return p.rpcs
+}
 
-	candy.Reverse(nameList)
-	return strings.Join(nameList, ".")
+func (p *PbPackage) GetRPC(rpc string) *PbRPC {
+	return p.rpcMap[rpc]
+}
+
+func (p *PbPackage) Services() []*PbService {
+	return p.services
+}
+
+func (p *PbPackage) GetService(s string) *PbService {
+	return p.serviceMap[s]
 }
 
 func (p *PbPackage) GetMessageFullName(e *proto.Message) string {
-	parent := p.GetParent(e.Parent)
-	var fullName string
-	if parent != "" {
-		fullName = fmt.Sprintf("%s.%s", parent, e.Name)
-	} else {
-		fullName = e.Name
+	var names []string
+
+	var walk func(m *proto.Message)
+	walk = func(m *proto.Message) {
+		if m == nil {
+			return
+		}
+
+		names = append(names, m.Name)
+
+		if m.Parent == nil {
+			return
+		}
+
+		switch x := m.Parent.(type) {
+		case *proto.Message:
+			walk(x)
+
+		case *proto.Proto:
+			// do nothing
+
+		default:
+			log.Warnf("unknown parent type:%T", x)
+		}
 	}
-	return fullName
+
+	walk(e)
+
+	return strings.Join(candy.Reverse(names), "_")
 }
 
 func (p *PbPackage) Walk() {
 	proto.Walk(p.proto,
 		proto.WithMessage(func(m *proto.Message) {
+			m.Name = p.GetMessageFullName(m)
+
 			log.Infof("message:%v", m.Name)
 			pterm.Info.Printfln("find message:%s", m.Name)
 
-			p.messages[p.GetMessageFullName(m)] = NewPbMessage(m)
-			p.messages[m.Name].walk()
+			p.msgMap[m.Name] = NewPbMessage(m)
+			p.msgMap[m.Name].walk()
+			p.messages = append(p.messages, p.msgMap[m.Name])
 		}),
-		//proto.WithService(func(s *proto.Service) {
-		//	log.Infof("service:%v", s.Name)
-		//}),
-		//proto.WithRPC(func(r *proto.RPC) {
-		//	log.Infof("rpc:%v", r.Name)
-		//}),
+		proto.WithService(func(s *proto.Service) {
+			log.Infof("service:%v", s.Name)
+			pterm.Info.Printfln("find service:%s", s.Name)
+
+			p.serviceMap[s.Name] = NewPbService(s)
+			p.serviceMap[s.Name].walk()
+			p.services = append(p.services, p.serviceMap[s.Name])
+		}),
+		proto.WithRPC(func(r *proto.RPC) {
+			log.Infof("rpc:%v", r.Name)
+			pterm.Info.Printfln("find rpc:%s", r.Name)
+
+			p.rpcMap[r.Name] = NewPbRPC(r)
+			p.rpcMap[r.Name].walk()
+			p.rpcs = append(p.rpcs, p.rpcMap[r.Name])
+		}),
 		proto.WithEnum(func(e *proto.Enum) {
 			log.Infof("enum:%v", e.Name)
+			pterm.Info.Printfln("find enum:%s", e.Name)
+
+			p.enumMap[e.Name] = NewPbEnum(e)
+			p.enumMap[e.Name].walk()
+			p.enums = append(p.enums, p.enumMap[e.Name])
 		}),
 		proto.WithOption(func(option *proto.Option) {
 			log.Infof("option:%v", option.Name)
 			pterm.Info.Printfln("find option:%s", option.Name)
 
-			p.options[option.Name] = NewPbOption(option)
-			p.options[option.Name].walk()
+			p.optionMap[option.Name] = NewPbOption(option)
+			p.optionMap[option.Name].walk()
+			p.options = append(p.options, p.optionMap[option.Name])
 		}),
 		proto.WithPackage(func(pp *proto.Package) {
 			log.Infof("package:%v", pp.Name)
@@ -357,7 +472,7 @@ func (p *PbPackage) Walk() {
 		}),
 	)
 
-	if o, ok := p.options["go_package"]; ok {
+	if o, ok := p.optionMap["go_package"]; ok {
 		p.RawGoPackage = o.Value
 	}
 }
@@ -366,28 +481,42 @@ func NewPbPackage(protoFilePath string, p *proto.Proto) *PbPackage {
 	return &PbPackage{
 		protoFilePath: protoFilePath,
 		proto:         p,
-		messages:      map[string]*PbMessage{},
-		enums:         map[string]*PbEnum{},
-		rpcs:          map[string]*PbRPC{},
-		options:       map[string]*PbOption{},
+		messages:      nil,
+		enums:         nil,
+		services:      nil,
+		rpcs:          nil,
+		options:       nil,
+		msgMap:        map[string]*PbMessage{},
+		enumMap:       map[string]*PbEnum{},
+		serviceMap:    map[string]*PbService{},
+		rpcMap:        map[string]*PbRPC{},
+		optionMap:     map[string]*PbOption{},
+		RawGoPackage:  "",
+		PackageName:   "",
+		ProtoBuffer:   "",
 	}
 }
 
-func ParseProto(path string) (*PbPackage, error) {
-	pbFile, err := os.Open(path)
+func ParseProto(path string, cacheFiles ...bool) (*PbPackage, error) {
+	protoBuffer, err := os.ReadFile(path)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
 	}
-	defer pbFile.Close()
 
-	pb, err := proto.NewParser(pbFile).Parse()
+	pb, err := proto.NewParser(bytes.NewBuffer(protoBuffer)).Parse()
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
 	}
 
 	p := NewPbPackage(path, pb)
+
+	if len(cacheFiles) > 0 {
+		if cacheFiles[0] {
+			p.ProtoBuffer = string(protoBuffer)
+		}
+	}
 
 	p.Walk()
 

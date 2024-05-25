@@ -2,12 +2,14 @@ package codegen
 
 import (
 	"embed"
+	"fmt"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
 	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
+	"go.uber.org/atomic"
 	"os"
 	"strings"
 	"text/template"
@@ -21,6 +23,13 @@ type TemplateType uint8
 
 const (
 	TemplateTypeEditorconfig TemplateType = iota + 1
+	TemplateTypeOrm
+	TemplateTypeTableName
+
+	TemplateTypeProtoService
+	TemplateTypeProtoRpcName
+	TemplateTypeProtoRpcReq
+	TemplateTypeProtoRpcResp
 
 	TemplateTypeStateTable
 	TemplateTypeStateConf
@@ -28,13 +37,52 @@ const (
 	TemplateTypeStateState
 )
 
-func GetTemplate(t TemplateType) (tpl *template.Template, err error) {
+func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
 	var systemPath, embedPath string
 
 	switch t {
 	case TemplateTypeEditorconfig:
 		systemPath = state.Config.Template.Editorconfig
 		embedPath = "template/.editorconfig"
+
+	case TemplateTypeOrm:
+		systemPath = state.Config.Template.Orm
+		embedPath = "template/orm.gtpl"
+
+	case TemplateTypeTableName:
+		systemPath = state.Config.Template.TableName
+		embedPath = "template/table_name.gtpl"
+
+	case TemplateTypeProtoService:
+		systemPath = state.Config.Template.Proto.Service
+		embedPath = "template/proto/rpc_service.gtpl"
+
+	case TemplateTypeProtoRpcName:
+		if len(args) != 1 {
+			panic("Must provide")
+		}
+		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+			systemPath = v.Name
+		}
+		embedPath = fmt.Sprintf("template/proto/%s.name.rpc.gtpl", args[0])
+
+	case TemplateTypeProtoRpcReq:
+		if len(args) != 1 {
+			panic("Must provide")
+		}
+		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+			systemPath = v.Req
+		}
+		embedPath = fmt.Sprintf("template/proto/%s.req.rpc.gtpl", args[0])
+
+	case TemplateTypeProtoRpcResp:
+		if len(args) != 1 {
+			panic("Must provide")
+		}
+		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+			systemPath = v.Resp
+		}
+		embedPath = fmt.Sprintf("template/proto/%s.resp.rpc.gtpl", args[0])
 
 	case TemplateTypeStateTable:
 		systemPath = state.Config.Template.Table
@@ -103,6 +151,32 @@ func GetTemplate(t TemplateType) (tpl *template.Template, err error) {
 	return tpl, nil
 }
 
+var (
+	counters = map[string]*atomic.Int64{}
+)
+
+func IncrWithKey(key string, def int64) int64 {
+	if v, ok := counters[key]; ok {
+		return v.Inc()
+	}
+
+	v := atomic.NewInt64(0)
+	counters[key] = v
+
+	return def
+}
+
+func DecrWithKey(key string, def int64) int64 {
+	if v, ok := counters[key]; ok {
+		return v.Dec()
+	}
+
+	v := atomic.NewInt64(0)
+	counters[key] = v
+
+	return def
+}
+
 var DefaultTemplateFunc = template.FuncMap{
 	"ToCamel": stringx.ToCamel,
 	"ToSnake": stringx.ToSnake,
@@ -133,4 +207,7 @@ var DefaultTemplateFunc = template.FuncMap{
 	"First":    candy.First[string],
 	"Last":     candy.Last[string],
 	"Contains": candy.Contains[string],
+
+	"IncrKey": IncrWithKey,
+	"DecrKey": DecrWithKey,
 }

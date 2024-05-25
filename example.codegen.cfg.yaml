@@ -8,8 +8,42 @@ go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_pac
 
 # 自定义模版文件，要求 .gtpl 格式
 template:
-    # .editorconfig 文件路径，用于 IDE 的默认格式化
+    # .editorconfig 模板文件路径，用于 IDE 的默认格式化
     editorconfig: "<.editorconfig 文件路径，如果不存在则使用默认>"
+    # orm.go 模板文件路径，用于 gorm 的相关数据生成
+    orm: "<orm.go 模板文件路径，如果不存在则是使用默认>"
+    # table_name.go 模板文件路径，用于 gorm 的相关表名
+    table_name: "<table_name.go 模板文件路径，如果不存在则是使用默认>"
+
+    # .proto 文件相关的模板文件
+    proto:
+        # rpc 服务的模板文件路径
+        service: "proto.service 的模板文件路径"
+
+        # rpc 相关的
+        rpc:
+            # key → action value → 模版文件路径
+            add:
+                name: "rpc 名字的生成模板"
+                req: "message.request 生成模板"
+                resp: "messsage.response 生成模板"
+            set:
+                name: "rpc 名字的生成模板"
+                req: "message.request 生成模板"
+                resp: "messsage.response 生成模板"
+            update:
+                name: "rpc 名字的生成模板"
+                req: "message.request 生成模板"
+                resp: "messsage.response 生成模板"
+            del:
+                name: "rpc 名字的生成模板"
+                req: "message.request 生成模板"
+                resp: "messsage.response 生成模板"
+            # 如果 key 为 list，会触发筛选项的生辰
+            list:
+                name: "rpc 名字的生成模板"
+                req: "message.request 生成模板"
+                resp: "messsage.response 生成模板"
 
     # state/table.go 模板文件路径
     table: "<state/table.go 模板文件路径，如果不存在则是使用默认>"

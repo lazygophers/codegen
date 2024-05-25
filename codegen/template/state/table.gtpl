@@ -1,13 +1,16 @@
 package state
 
-{{ if gt (len .GoImports) 0 }}import (
-{{ range $key, $value := .GoImports }}    "{{ $value }}"
-{{ end }}){{ end }}
+import (
+	{{ .PB.GoPackage }}
+	"github.com/lazygophers/log"
+	"github.com/lazygophers/utils/common"
+	"github.com/lazygophers/utils/db"
+)
 
 var (
 	_db *db.Client
 
-{{ range $key, $value := .Models}}    {{TrimPrefix $value "Model"}} *db.Model[{{ $.PB.GoPackageName }}.{{ $value }}]
+{{ range $key, $value := .Models }}    {{TrimPrefix $value "Model"}} *db.Model[{{ $.PB.GoPackageName }}.{{ $value }}]
 {{ end }})
 
 func ConnectDatebase() (err error) {

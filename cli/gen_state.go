@@ -36,5 +36,5 @@ func runGenState(cmd *cobra.Command, args []string) (err error) {
 }
 
 func init() {
-	rootCmd.AddCommand(genStateCmd)
+	genCmd.AddCommand(genStateCmd)
 }

@@ -19,3 +19,5 @@ lint: ## lint go install github.com/golangci/golangci-lint/cmd/golangci-lint@lat
 
 help: ## Show this help
 	@egrep '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | sed 's/Makefile://' | awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n\nTargets:\n"} /^[a-z0-9A-Z_-]+:.*?##/ { printf "  \033[36m%-30s\033[0m %s\n", $$1, $$2 }'
+
+# make build && ./dist/cli_darwin_arm64/codegen gen -i ../example/example.proto -d add-rpc -m user -a add:,admin

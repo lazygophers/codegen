@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/app"
+	"github.com/lazygophers/utils/defaults"
 	"github.com/lazygophers/utils/json"
 	"github.com/lazygophers/utils/osx"
 	"github.com/lazygophers/utils/runtime"
@@ -16,16 +17,35 @@ import (
 	"strings"
 )
 
-type CfgTemplate struct {
-	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
-	Table        string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
-	Conf         string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
-	Cache        string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
-	State        string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
+type CfgStyle struct {
+	Go string `json:"go,omitempty" yaml:"go,omitempty" toml:"go,omitempty" default:"fiber"`
+
+	ListPagination string `json:"list_pagination,omitempty" yaml:"list_pagination,omitempty" toml:"list_pagination,omitempty" default:"offset"`
 }
 
-func (p *CfgTemplate) apply() {
+type CfgProtoRpc struct {
+	Name string `json:"name,omitempty" yaml:"name,omitempty" toml:"name,omitempty"`
+	Req  string `json:"req,omitempty" yaml:"req,omitempty" toml:"req,omitempty"`
+	Resp string `json:"resp,omitempty" yaml:"resp,omitempty" toml:"resp,omitempty"`
+}
 
+type CfgProto struct {
+	Rpc map[string]*CfgProtoRpc `json:"rpc,omitempty" yaml:"rpc,omitempty" toml:"rpc,omitempty"`
+
+	Service string `json:"service,omitempty" yaml:"service,omitempty" toml:"service,omitempty"`
+}
+
+type CfgTemplate struct {
+	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
+	Orm          string `json:"orm,omitempty" yaml:"orm,omitempty" toml:"orm,omitempty"`
+	TableName    string `json:"table_name,omitempty" yaml:"table_name,omitempty" toml:"table_name,omitempty"`
+
+	Proto *CfgProto `json:"proto,omitempty" yaml:"proto,omitempty" toml:"proto,omitempty"`
+
+	Table string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
+	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
+	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
+	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 }
 
 type CfgTables struct {
@@ -62,6 +82,8 @@ type Cfg struct {
 	GoModulePrefix string `json:"go_module_prefix,omitempty" yaml:"go_module_prefix,omitempty" toml:"go_module_prefix,omitempty"`
 
 	OutputPath string `json:"output_path,omitempty" yaml:"output_path,omitempty" toml:"output_path,omitempty"`
+
+	Style *CfgStyle `json:"style,omitempty" yaml:"style,omitempty" toml:"style,omitempty"`
 
 	Template *CfgTemplate `json:"template,omitempty" yaml:"template,omitempty" toml:"template,omitempty"`
 
@@ -100,12 +122,25 @@ func (p *Cfg) apply() (err error) {
 	if p.Template == nil {
 		p.Template = new(CfgTemplate)
 	}
-	p.Template.apply()
+	if p.Template.Proto == nil {
+		p.Template.Proto = new(CfgProto)
+	}
+	if len(p.Template.Proto.Rpc) == 0 {
+		p.Template.Proto.Rpc = make(map[string]*CfgProtoRpc)
+	}
 
 	if p.Tables == nil {
 		p.Tables = new(CfgTables)
 	}
-	p.Tables.apply()
+
+	if p.Style == nil {
+		p.Style = new(CfgStyle)
+	}
+	err = defaults.SetDefaults(p.Style)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
 
 	// NOTE: struct 标签
 	{
