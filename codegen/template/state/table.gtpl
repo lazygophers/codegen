@@ -3,7 +3,7 @@ package state
 import (
 	{{ .PB.GoPackage }}
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/utils/common"
+	"github.com/lazygophers/lrpc/middleware/xerror"
 	"github.com/lazygophers/utils/db"
 )
 
@@ -23,7 +23,7 @@ func ConnectDatebase() (err error) {
 		return err
 	}
 
-{{ range $key, $value := .Models}}    {{TrimPrefix $value "Model"}} = db.NewModel[{{ $.PB.GoPackageName }}.{{ $value }}](Db()).SetNotFound(common.NewError({{ $.PB.GoPackageName }}.ErrCode_{{TrimPrefix $value "Model"}}NotFound))
+{{ range $key, $value := .Models}}    {{TrimPrefix $value "Model"}} = db.NewModel[{{ $.PB.GoPackageName }}.{{ $value }}](Db()).SetNotFound(xerror.NewError({{ $.PB.GoPackageName }}.ErrCode_{{TrimPrefix $value "Model"}}NotFound))
 {{ end }}
 	log.Info("connect mysql successfully")
 

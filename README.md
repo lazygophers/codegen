@@ -16,8 +16,7 @@
 - 为了简化实现，不区分空值（默认值）与未传入的区别，所以在使用时需要注意对空值的处理
 - 所有的数据表的类型名都需要以 `Model` 为开头，例如 `ModelUser`，`ModelOrder` 等
 	- 除非用户主动开启，否则不会自动执行以下操作
-		- 数据表默认使用 `id` 作为主键，如果存在字段名为 `id` 的字段，那么将会使用该字段作为主键，并且主动为其添加
-		  相关 `gorm` 标签
+		- 数据表默认使用 `id` 作为主键，如果存在字段名为 `id` 的字段，那么将会使用该字段作为主键，并且主动为其添加相关 `gorm` 标签
 		- 数据表默认使用 `created_at`、`updated_at`、`deleted_at`
 		  作为时间字段，如果存在字段名为 `created_at`、`updated_at`、`deleted_at` 的字段，那么将会使用该字段作为时间字段，并且主动为其添加
 		  相关 `gorm` 标签
@@ -92,6 +91,12 @@ protogen_go_path: "<protoc-gen-go的绝对路径>"
 # 如果不指定，默认规则为 <proto_file_path>/../<go_package>
 output_path: "<生成的代码的目录>"
 go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_package 字段当做包名>"
+
+# 不在 指定 proto 文件所在目录的其它被引用的包路径
+#	支持绝对路径、相对生成路径 (相对于 output_path)
+proto_files:
+	- "./core/"
+	- "~/proto/"
 
 # 自定义模版文件，要求 .gtpl 格式
 template:
