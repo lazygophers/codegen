@@ -11,6 +11,7 @@ const (
 	PathTypeOrm
 	PathTypeTableName
 
+	PathTypeInternal
 	PathTypeState
 	PathTypeStateTable
 	PathTypeStateConf
@@ -35,20 +36,23 @@ func GetPath(t PathType, pb *PbPackage) string {
 	case PathTypeTableName:
 		return filepath.Join(pb.ProjectRoot(), "table_name.gen.go")
 
+	case PathTypeInternal:
+		return filepath.Join(pb.ProjectRoot(), "internal")
+
 	case PathTypeState:
-		return filepath.Join(pb.ProjectRoot(), "state")
+		return filepath.Join(GetPath(PathTypeInternal, pb), "state")
 
 	case PathTypeStateTable:
-		return filepath.Join(pb.ProjectRoot(), "state", "table.go")
+		return filepath.Join(GetPath(PathTypeState, pb), "table.go")
 
 	case PathTypeStateConf:
-		return filepath.Join(pb.ProjectRoot(), "state", "config.go")
+		return filepath.Join(GetPath(PathTypeState, pb), "config.go")
 
 	case PathTypeStateCache:
-		return filepath.Join(pb.ProjectRoot(), "state", "cache.go")
+		return filepath.Join(GetPath(PathTypeState, pb), "cache.go")
 
 	case PathTypeStateState:
-		return filepath.Join(pb.ProjectRoot(), "state", "state.go")
+		return filepath.Join(GetPath(PathTypeState, pb), "state.go")
 
 	default:
 		panic("unsupported path type")

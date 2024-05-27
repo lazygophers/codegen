@@ -100,59 +100,48 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 	// 找到最后一个 service 里面 rpc 的位置
 	var lastRpcPos int
 	{
+		foundEnd := func(s int, next bool) {
+			e := s
+			poolCnt := 0
+
+			for e <= len(pb.ProtoBuffer) {
+				e = s
+				for e < len(pb.ProtoBuffer) {
+					e++
+					switch pb.ProtoBuffer[e-1] {
+					case '\n':
+						goto END
+					case '{':
+						poolCnt++
+					case '}':
+						poolCnt--
+					}
+				}
+
+			END:
+				if poolCnt == 0 {
+					if next {
+						lastRpcPos = e
+					} else {
+						lastRpcPos = s - 1
+					}
+					break
+				}
+
+				s = e
+			}
+		}
+
 		rpc := candy.Last(pb.RPCs())
 		if rpc != nil {
 			// 找到这一个 rpc 的结尾
-			s := rpc.RPC().Position.Offset
-			e := s
-
-			for e <= len(pb.ProtoBuffer) {
-				for e < len(pb.ProtoBuffer) &&
-					pb.ProtoBuffer[e] != '\n' {
-					e++
-				}
-
-				line := pb.ProtoBuffer[s:e]
-
-				line = strings.ReplaceAll(line, " ", "")
-				line = strings.ReplaceAll(line, "\r", "")
-				line = strings.ReplaceAll(line, "\t", "")
-				if line == "};" || line == "}" {
-					lastRpcPos = e // 当前行的换行符
-					break
-				}
-
-				s = e + 1
-				e = s
-			}
+			foundEnd(rpc.RPC().Position.Offset, true)
 		}
-	}
 
-	if lastRpcPos == 0 {
-		service := candy.Last(pb.Services())
-		if service != nil {
-			// 找到这一个 rpc 的结尾
-			s := service.Service().Position.Offset
-			e := s
-
-			for e <= len(pb.ProtoBuffer) {
-				for e < len(pb.ProtoBuffer) &&
-					pb.ProtoBuffer[e] != '\n' {
-					e++
-				}
-
-				line := pb.ProtoBuffer[s:e]
-
-				line = strings.ReplaceAll(line, " ", "")
-				line = strings.ReplaceAll(line, "\r", "")
-				line = strings.ReplaceAll(line, "\t", "")
-				if line == "}" {
-					lastRpcPos = s - 1
-					break
-				}
-
-				s = e + 1
-				e = s
+		if lastRpcPos == 0 {
+			service := candy.Last(pb.Services())
+			if service != nil {
+				foundEnd(service.Service().Position.Offset, false)
 			}
 		}
 	}
@@ -251,8 +240,6 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 					log.Errorf("err:%v", err)
 					return err
 				}
-
-				log.Info(args["ListOptions"])
 
 				var b bytes.Buffer
 				err = tpl.Execute(&b, args)
