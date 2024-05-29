@@ -168,6 +168,16 @@ func NewPbService(service *proto.Service) *PbService {
 	return p
 }
 
+type PbField interface {
+	FieldName() string
+	FieldType() string
+	IsSlice() bool
+}
+
+var _ PbField = (*PbNormalField)(nil)
+var _ PbField = (*PbMapField)(nil)
+var _ PbField = (*PbEnumField)(nil)
+
 type PbNormalField struct {
 	Name  string
 	field *proto.NormalField
@@ -177,6 +187,18 @@ type PbNormalField struct {
 
 	// 写在字段后面的注释
 	inlineComment *PbComment
+}
+
+func (p *PbNormalField) FieldName() string {
+	return p.Name
+}
+
+func (p *PbNormalField) FieldType() string {
+	return p.Type()
+}
+
+func (p *PbNormalField) IsSlice() bool {
+	return p.field.Repeated
 }
 
 func (p *PbNormalField) Field() *proto.NormalField {
@@ -208,21 +230,49 @@ func NewPbNormalField(f *proto.NormalField) *PbNormalField {
 }
 
 type PbMapField struct {
+	Name  string
 	field *proto.MapField
+}
+
+func (p *PbMapField) FieldName() string {
+	return p.Name
+}
+
+func (p *PbMapField) FieldType() string {
+	return p.field.Type
+}
+
+func (p *PbMapField) IsSlice() bool {
+	return false
 }
 
 func NewPbMapField(f *proto.MapField) *PbMapField {
 	return &PbMapField{
+		Name:  f.Name,
 		field: f,
 	}
 }
 
 type PbEnumField struct {
+	Name  string
 	field *proto.EnumField
+}
+
+func (p *PbEnumField) FieldName() string {
+	return p.Name
+}
+
+func (p *PbEnumField) FieldType() string {
+	return "uint32"
+}
+
+func (p *PbEnumField) IsSlice() bool {
+	return false
 }
 
 func NewPbEnumField(f *proto.EnumField) *PbEnumField {
 	return &PbEnumField{
+		Name:  f.Name,
 		field: f,
 	}
 }
@@ -233,6 +283,33 @@ type PbMessage struct {
 	mapFields    map[string]*PbMapField
 	enumFields   map[string]*PbEnumField
 	Name         string
+}
+
+func (p *PbMessage) NormalFields() []*PbNormalField {
+	fields := make([]*PbNormalField, 0, len(p.normalFields))
+	for _, field := range p.normalFields {
+		fields = append(fields, field)
+	}
+
+	return fields
+}
+
+func (p *PbMessage) MapFields() []*PbMapField {
+	fields := make([]*PbMapField, 0, len(p.mapFields))
+	for _, field := range p.mapFields {
+		fields = append(fields, field)
+	}
+
+	return fields
+}
+
+func (p *PbMessage) EnumFields() []*PbEnumField {
+	fields := make([]*PbEnumField, 0, len(p.enumFields))
+	for _, field := range p.enumFields {
+		fields = append(fields, field)
+	}
+
+	return fields
 }
 
 func (p *PbMessage) Message() *proto.Message {
@@ -325,7 +402,7 @@ func (p *PbPackage) ProtoFilePath() string {
 }
 
 func (p *PbPackage) ProtoFileName() string {
-	return p.proto.Filename
+	return filepath.Base(p.ProtoFilePath())
 }
 
 func (p *PbPackage) Proto() *proto.Proto {

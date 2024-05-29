@@ -35,8 +35,10 @@ type CfgProto struct {
 
 type CfgTemplate struct {
 	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
-	Orm          string `json:"orm,omitempty" yaml:"orm,omitempty" toml:"orm,omitempty"`
-	TableName    string `json:"table_name,omitempty" yaml:"table_name,omitempty" toml:"table_name,omitempty"`
+
+	Orm        string `json:"orm,omitempty" yaml:"orm,omitempty" toml:"orm,omitempty"`
+	TableName  string `json:"table_name,omitempty" yaml:"table_name,omitempty" toml:"table_name,omitempty"`
+	TableField string `json:"table_field,omitempty" yaml:"table_field,omitempty" toml:"table_field,omitempty"`
 
 	Proto *CfgProto `json:"proto,omitempty" yaml:"proto,omitempty" toml:"proto,omitempty"`
 

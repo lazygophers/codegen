@@ -25,6 +25,7 @@ const (
 	TemplateTypeEditorconfig TemplateType = iota + 1
 	TemplateTypeOrm
 	TemplateTypeTableName
+	TemplateTypeTableField
 
 	TemplateTypeProtoService
 	TemplateTypeProtoRpcName
@@ -52,6 +53,10 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeTableName:
 		systemPath = state.Config.Template.TableName
 		embedPath = "template/table_name.gtpl"
+
+	case TemplateTypeTableField:
+		systemPath = state.Config.Template.TableField
+		embedPath = "template/table_field.gen.gtpl"
 
 	case TemplateTypeProtoService:
 		systemPath = state.Config.Template.Proto.Service
