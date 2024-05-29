@@ -6,5 +6,5 @@ message {{ .RequestType }} {
 	}
 
 	// @validate: required
-	core.ListOption list_option = 1;
+	lrpc.ListOption list_option = 1;
 }

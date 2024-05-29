@@ -170,10 +170,13 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 			args := map[string]interface{}{
 				"PB":          pb,
 				"Model":       opt.Model,
-				"Role":        role,
 				"Action":      action,
 				"GenTo":       opt.GenTo,
 				"ListOptions": opt.ListOptions,
+			}
+
+			if role != "" {
+				args["Role"] = role
 			}
 
 			if pkField != nil {
