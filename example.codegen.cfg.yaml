@@ -15,11 +15,15 @@ proto_files:
 # 自定义模版文件，要求 .gtpl 格式
 template:
     # .editorconfig 模板文件路径，用于 IDE 的默认格式化
-    editorconfig: "<.editorconfig 文件路径，如果不存在则使用默认>"
+    editorconfig: "<.editorconfig> 文件路径，如果不存在则使用默认"
     # orm.go 模板文件路径，用于 gorm 的相关数据生成
-    orm: "<orm.go 模板文件路径，如果不存在则是使用默认>"
+    orm: "<orm.go> 模板文件路径，如果不存在则是使用默认"
+
     # table_name.go 模板文件路径，用于 gorm 的相关表名
-    table_name: "<table_name.go 模板文件路径，如果不存在则是使用默认>"
+    table_name: "<table_name.go> 模板文件路径，如果不存在则是使用默认"
+
+    # table_field.go 模板文件路径，用于 gorm 的相关字段名，用于数据库操作时字段填写
+    table_field: "<table_field.go> 模板文件路径，如果不存在则是使用默认"
 
     # .proto 文件相关的模板文件
     proto:

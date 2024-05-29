@@ -3,9 +3,13 @@ package codegen
 import (
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/app"
+	"strconv"
+	"time"
 )
 
 func getFileHeader(pb *PbPackage) []byte {
+	now := time.Now()
+
 	b := log.GetBuffer()
 	defer log.PutBuffer(b)
 
@@ -14,20 +18,27 @@ func getFileHeader(pb *PbPackage) []byte {
 	b.WriteString(". DO NOT EDIT.")
 	b.WriteByte('\n')
 
-	b.WriteString("// versions:\n")
+	// 版本
+	b.WriteString("//\tversions:\n")
 
-	b.WriteString("//    ")
+	b.WriteString("//\t\t")
 	b.WriteString(app.Name)
 	b.WriteByte('\t')
 	b.WriteByte('v')
 	b.WriteString(app.Version)
 	b.WriteByte('\n')
 
-	b.WriteString("//    go\t\t")
+	b.WriteString("//\t\tgo\t\t")
 	b.WriteString(app.GoVersion)
 	b.WriteByte('\n')
 
-	b.WriteString("// source: ")
+	// 更新时间
+	b.WriteString("//\tupdate:\t")
+	b.WriteString(strconv.FormatInt(now.Unix(), 10))
+	b.WriteByte('\n')
+
+	// 文件
+	b.WriteString("//\tsource: ")
 	b.WriteString(pb.ProtoFileName())
 	b.WriteByte('\n')
 
@@ -37,6 +48,7 @@ func getFileHeader(pb *PbPackage) []byte {
 	// versions:
 	// 	protoc-gen-go v1.33.0
 	// source: example.proto
+	// update: 1716956316
 
 	return b.Bytes()
 }
