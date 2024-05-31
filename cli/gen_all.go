@@ -12,6 +12,7 @@ var GenAllHooks = []GenHook{
 	runGenMod,
 	runEditorconfig,
 	runGenState,
+	runGenImpl,
 }
 
 var genAllCmd = &cobra.Command{

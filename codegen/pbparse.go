@@ -5,7 +5,10 @@ import (
 	"github.com/emicklei/proto"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
+	"github.com/lazygophers/lrpc/middleware/core"
 	"github.com/lazygophers/utils/candy"
+	"github.com/lazygophers/utils/json"
+	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
 	"os"
 	"path/filepath"
@@ -25,9 +28,11 @@ func (p *PbOption) walk() {
 }
 
 func NewPbOption(o *proto.Option) *PbOption {
-	return &PbOption{
+	p := &PbOption{
 		option: o,
 	}
+	p.walk()
+	return p
 }
 
 type PbCommentTag struct {
@@ -102,10 +107,14 @@ func (p *PbComment) walk() {
 }
 
 func NewPbComment(c *proto.Comment) *PbComment {
-	return &PbComment{
+	p := &PbComment{
 		comment: c,
 		tags:    map[string]*PbCommentTag{},
 	}
+
+	p.walk()
+
+	return p
 }
 
 type PbEnum struct {
@@ -117,7 +126,6 @@ func (p *PbEnum) Enum() *proto.Enum {
 }
 
 func (p *PbEnum) walk() {
-
 }
 
 func NewPbEnum(e *proto.Enum) *PbEnum {
@@ -125,12 +133,27 @@ func NewPbEnum(e *proto.Enum) *PbEnum {
 		enum: e,
 	}
 
+	p.walk()
+
 	return p
+}
+
+type PbRpcGenOptions struct {
+	GenTo  string
+	Model  string
+	Action string
+	Role   string
+	Method string
+	Path   string
 }
 
 type PbRPC struct {
 	rpc  *proto.RPC
 	Name string
+
+	options   map[string]map[string]string
+	comment   *PbComment
+	genOption *PbRpcGenOptions
 }
 
 func (p *PbRPC) RPC() *proto.RPC {
@@ -138,14 +161,96 @@ func (p *PbRPC) RPC() *proto.RPC {
 }
 
 func (p *PbRPC) walk() {
+	for _, option := range p.rpc.Options {
+		p.options[option.Name] = make(map[string]string, len(option.AggregatedConstants))
+		for _, value := range option.AggregatedConstants {
+			p.options[option.Name][value.Name] = value.Literal.Source
+		}
+	}
+
+	if p.rpc.Comment != nil {
+		p.comment = NewPbComment(p.rpc.Comment)
+	}
+
+	// 优先解析 options 的
+	if v, ok := p.options["core.lazygen"]; ok {
+		var gen core.LazyGen
+		buffer, err := json.Marshal(v)
+		if err != nil {
+			log.Panicf("err:%v", err)
+			return
+		}
+
+		err = json.Unmarshal(buffer, &gen)
+		if err != nil {
+			log.Panicf("err:%v", err)
+			return
+		}
+
+		if gen.Role != nil {
+			p.genOption.Role = *gen.Role
+		}
+	}
+
+	if v, ok := p.options["core.http"]; ok {
+		var gen core.Http
+		buffer, err := json.Marshal(v)
+		if err != nil {
+			log.Panicf("err:%v", err)
+			return
+		}
+
+		err = json.Unmarshal(buffer, &gen)
+		if err != nil {
+			log.Panicf("err:%v", err)
+			return
+		}
+
+		if gen.Method != nil {
+			p.genOption.Method = *gen.Method
+		}
+
+		if gen.Path != nil {
+			p.genOption.Path = *gen.Path
+		}
+	}
+
+	// 然后解析 注释的
+	if p.comment != nil {
+		if v, ok := p.comment.tags["gen"]; ok {
+			p.genOption.GenTo = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+		}
+
+		if v, ok := p.comment.tags["model"]; ok {
+			p.genOption.Model = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+		}
+
+		if v, ok := p.comment.tags["action"]; ok {
+			p.genOption.Action = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+		}
+
+		if v, ok := p.comment.tags["role"]; ok {
+			p.genOption.Role = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+		}
+	}
+
+	if p.genOption.GenTo == "" {
+		if p.genOption.Model != "" {
+			p.genOption.GenTo = stringx.ToSnake(strings.TrimPrefix(p.genOption.Model, "Model"))
+		} else {
+			p.genOption.GenTo = "impl"
+		}
+	}
 }
 
 func NewPbRPC(rpc *proto.RPC) *PbRPC {
 	p := &PbRPC{
-		Name: rpc.Name,
-		rpc:  rpc,
+		Name:      rpc.Name,
+		rpc:       rpc,
+		options:   make(map[string]map[string]string, len(rpc.Options)),
+		genOption: &PbRpcGenOptions{},
 	}
-
+	p.walk()
 	return p
 }
 
@@ -164,6 +269,8 @@ func NewPbService(service *proto.Service) *PbService {
 	p := &PbService{
 		service: service,
 	}
+
+	p.walk()
 
 	return p
 }
@@ -214,19 +321,21 @@ func (p *PbNormalField) walk() {
 
 	if p.field.Comment != nil {
 		p.comment = NewPbComment(p.field.Comment)
-		p.comment.walk()
 	}
 
 	if p.field.InlineComment != nil {
 		p.inlineComment = NewPbComment(p.field.InlineComment)
-		p.inlineComment.walk()
 	}
 }
 
 func NewPbNormalField(f *proto.NormalField) *PbNormalField {
-	return &PbNormalField{
+	p := &PbNormalField{
 		field: f,
 	}
+
+	p.walk()
+
+	return p
 }
 
 type PbMapField struct {
@@ -246,11 +355,19 @@ func (p *PbMapField) IsSlice() bool {
 	return false
 }
 
+func (p *PbMapField) walk() {
+
+}
+
 func NewPbMapField(f *proto.MapField) *PbMapField {
-	return &PbMapField{
+	p := &PbMapField{
 		Name:  f.Name,
 		field: f,
 	}
+
+	p.walk()
+
+	return p
 }
 
 type PbEnumField struct {
@@ -283,6 +400,18 @@ type PbMessage struct {
 	mapFields    map[string]*PbMapField
 	enumFields   map[string]*PbEnumField
 	Name         string
+}
+
+func (p *PbMessage) PrimaryField() (pkField *PbNormalField) {
+	for _, field := range p.normalFields {
+		// 先简单粗暴用 id 当作主键，后面再改
+		if field.Name == "id" {
+			pkField = field
+			break
+		}
+	}
+
+	return pkField
 }
 
 func (p *PbMessage) NormalFields() []*PbNormalField {
@@ -354,7 +483,6 @@ func (p *PbMessage) walk() {
 		for _, field := range visitor.normalFields {
 			pterm.Info.Printfln("find normal field:%s in %s", field.Name, p.Name)
 			p.normalFields[field.Name] = NewPbNormalField(field)
-			p.normalFields[field.Name].walk()
 		}
 
 		for _, field := range visitor.enumFields {
@@ -365,13 +493,15 @@ func (p *PbMessage) walk() {
 }
 
 func NewPbMessage(m *proto.Message) *PbMessage {
-	return &PbMessage{
+	p := &PbMessage{
 		message: m,
 
 		normalFields: map[string]*PbNormalField{},
 		mapFields:    map[string]*PbMapField{},
 		enumFields:   map[string]*PbEnumField{},
 	}
+	p.walk()
+	return p
 }
 
 type PbPackage struct {
@@ -506,7 +636,6 @@ func (p *PbPackage) Walk() {
 			pterm.Info.Printfln("find message:%s", m.Name)
 
 			p.msgMap[m.Name] = NewPbMessage(m)
-			p.msgMap[m.Name].walk()
 			p.messages = append(p.messages, p.msgMap[m.Name])
 		}),
 		proto.WithService(func(s *proto.Service) {
@@ -514,7 +643,6 @@ func (p *PbPackage) Walk() {
 			pterm.Info.Printfln("find service:%s", s.Name)
 
 			p.serviceMap[s.Name] = NewPbService(s)
-			p.serviceMap[s.Name].walk()
 			p.services = append(p.services, p.serviceMap[s.Name])
 		}),
 		proto.WithRPC(func(r *proto.RPC) {
@@ -522,7 +650,6 @@ func (p *PbPackage) Walk() {
 			pterm.Info.Printfln("find rpc:%s", r.Name)
 
 			p.rpcMap[r.Name] = NewPbRPC(r)
-			p.rpcMap[r.Name].walk()
 			p.rpcs = append(p.rpcs, p.rpcMap[r.Name])
 		}),
 		proto.WithEnum(func(e *proto.Enum) {
@@ -530,7 +657,6 @@ func (p *PbPackage) Walk() {
 			pterm.Info.Printfln("find enum:%s", e.Name)
 
 			p.enumMap[e.Name] = NewPbEnum(e)
-			p.enumMap[e.Name].walk()
 			p.enums = append(p.enums, p.enumMap[e.Name])
 		}),
 		proto.WithOption(func(option *proto.Option) {
@@ -538,7 +664,6 @@ func (p *PbPackage) Walk() {
 			pterm.Info.Printfln("find option:%s", option.Name)
 
 			p.optionMap[option.Name] = NewPbOption(option)
-			p.optionMap[option.Name].walk()
 			p.options = append(p.options, p.optionMap[option.Name])
 		}),
 		proto.WithPackage(func(pp *proto.Package) {
@@ -551,6 +676,10 @@ func (p *PbPackage) Walk() {
 
 	if o, ok := p.optionMap["go_package"]; ok {
 		p.RawGoPackage = o.Value
+		idx := strings.Index(p.RawGoPackage, ";")
+		if idx > 0 {
+			p.RawGoPackage = p.RawGoPackage[:idx]
+		}
 	}
 }
 

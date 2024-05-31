@@ -21,16 +21,22 @@ type CfgStyle struct {
 	Go string `json:"go,omitempty" yaml:"go,omitempty" toml:"go,omitempty" default:"fiber"`
 }
 
-type CfgProtoRpc struct {
+type CfgProtoAction struct {
 	Name string `json:"name,omitempty" yaml:"name,omitempty" toml:"name,omitempty"`
 	Req  string `json:"req,omitempty" yaml:"req,omitempty" toml:"req,omitempty"`
 	Resp string `json:"resp,omitempty" yaml:"resp,omitempty" toml:"resp,omitempty"`
 }
 
 type CfgProto struct {
-	Rpc map[string]*CfgProtoRpc `json:"rpc,omitempty" yaml:"rpc,omitempty" toml:"rpc,omitempty"`
+	Action map[string]*CfgProtoAction `json:"action,omitempty" yaml:"action,omitempty" toml:"action,omitempty"`
 
-	Service string `json:"service,omitempty" yaml:"service,omitempty" toml:"service,omitempty"`
+	Rpc string `json:"rpc,omitempty" yaml:"rpc,omitempty" toml:"rpc,omitempty"`
+}
+
+type CfgImpl struct {
+	Action map[string]string `json:"action,omitempty" yaml:"action,omitempty" toml:"action,omitempty"`
+
+	Impl string `json:"impl,omitempty" yaml:"impl,omitempty" toml:"impl,omitempty"`
 }
 
 type CfgTemplate struct {
@@ -41,6 +47,7 @@ type CfgTemplate struct {
 	TableField string `json:"table_field,omitempty" yaml:"table_field,omitempty" toml:"table_field,omitempty"`
 
 	Proto *CfgProto `json:"proto,omitempty" yaml:"proto,omitempty" toml:"proto,omitempty"`
+	Impl  *CfgImpl  `json:"impl,omitempty" yaml:"impl,omitempty" toml:"impl,omitempty"`
 
 	Table string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
 	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
@@ -127,8 +134,14 @@ func (p *Cfg) apply() (err error) {
 	if p.Template.Proto == nil {
 		p.Template.Proto = new(CfgProto)
 	}
-	if len(p.Template.Proto.Rpc) == 0 {
-		p.Template.Proto.Rpc = make(map[string]*CfgProtoRpc)
+	if len(p.Template.Proto.Action) == 0 {
+		p.Template.Proto.Action = make(map[string]*CfgProtoAction)
+	}
+	if p.Template.Impl == nil {
+		p.Template.Impl = new(CfgImpl)
+	}
+	if len(p.Template.Impl.Action) == 0 {
+		p.Template.Impl.Action = make(map[string]string)
 	}
 
 	if p.Tables == nil {

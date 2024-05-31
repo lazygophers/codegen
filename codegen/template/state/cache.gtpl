@@ -2,7 +2,7 @@ package state
 
 import (
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/utils/cache"
+	"github.com/lazygophers/lrpc/middleware/cache"
 )
 
 var (

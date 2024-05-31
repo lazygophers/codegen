@@ -178,15 +178,15 @@ type GoStruct struct {
 }
 
 type GoFile struct {
-	Imports []*GoImport
-	Funcs   []*GoFunc
-	Structs []*GoStruct
+	imports []*GoImport
+	funcs   []*GoFunc
+	structs []*GoStruct
 }
 
 func (p *GoPackage) buildFuncMap() {
 	p.FuncMap = map[string]*GoFuncNode{}
 	for _, v := range p.FileMap {
-		for _, x := range v.Funcs {
+		for _, x := range v.funcs {
 			p.FuncMap[x.Name] = &GoFuncNode{
 				goFunc: x,
 				goFile: v,
@@ -370,7 +370,7 @@ func fetchImports(ctx *GoContext, f *ast.File, goFile *GoFile) {
 				goImport.Name = path.Base(goImport.Path)
 			}
 		}
-		goFile.Imports = append(goFile.Imports, goImport)
+		goFile.imports = append(goFile.imports, goImport)
 	}
 }
 func getSelectorExprIndents(ctx *GoContext, c ast.Expr, goFunc *GoFunc) []string {
@@ -621,13 +621,12 @@ func parseFuncDecl(ctx *GoContext, f *ast.FuncDecl) *GoFunc {
 }
 
 func fetchFunc(ctx *GoContext, f *ast.FuncDecl, goFile *GoFile) {
-	log.Info(f.Doc)
 	goFunc := parseFuncDecl(ctx, f)
 	if goFunc == nil {
 		return
 	}
 
-	goFile.Funcs = append(goFile.Funcs, goFunc)
+	goFile.funcs = append(goFile.funcs, goFunc)
 }
 func fetchType(ctx *GoContext, ts *ast.TypeSpec, goFile *GoFile) {
 	if ts.Type == nil {
@@ -642,7 +641,7 @@ func fetchType(ctx *GoContext, ts *ast.TypeSpec, goFile *GoFile) {
 	}
 	switch ts.Type.(type) {
 	case *ast.StructType:
-		goFile.Structs = append(goFile.Structs, &GoStruct{
+		goFile.structs = append(goFile.structs, &GoStruct{
 			Name: name,
 		})
 	}
@@ -800,7 +799,7 @@ func (p *ScanErrCodeContext) Scan(mod, name string) {
 			// 找下这个模块的 path
 			goFile := node.goFile
 			var impPath string
-			for _, x := range goFile.Imports {
+			for _, x := range goFile.imports {
 				if x.Name == callMod {
 					impPath = x.Path
 					break
