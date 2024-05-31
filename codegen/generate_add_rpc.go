@@ -152,16 +152,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 	}
 
 	// NOTE: 寻找主键
-	var pkField *PbNormalField
-	{
-		for _, field := range msg.normalFields {
-			// 先简单粗暴用 id 当作主键，后面再改
-			if field.Name == "id" {
-				pkField = field
-				break
-			}
-		}
-	}
+	pkField := msg.PrimaryField()
 
 	var rpcBlock string
 
@@ -170,15 +161,18 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 			args := map[string]interface{}{
 				"PB":          pb,
 				"Model":       opt.Model,
-				"Role":        role,
 				"Action":      action,
 				"GenTo":       opt.GenTo,
 				"ListOptions": opt.ListOptions,
 			}
 
+			if role != "" {
+				args["Role"] = role
+			}
+
 			if pkField != nil {
-				args["PprimaryKey"] = pkField.Name
-				args["PprimaryKeyType"] = pkField.Type()
+				args["PrimaryKey"] = pkField.Name
+				args["PrimaryKeyType"] = pkField.Type()
 			}
 
 			var rpcName string
@@ -217,7 +211,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 
 			// 处理 server.rpc
 			if rpc := pb.GetRPC(rpcName); rpc == nil {
-				tpl, err := GetTemplate(TemplateTypeProtoService)
+				tpl, err := GetTemplate(TemplateTypeProtoRpc)
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err

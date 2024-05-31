@@ -7,6 +7,7 @@ import (
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
 	"github.com/lazygophers/utils/candy"
+	"github.com/lazygophers/utils/osx"
 	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
 	"go.uber.org/atomic"
@@ -17,6 +18,7 @@ import (
 
 //go:embed template/*
 //go:embed template/state/*
+//go:embed template/impl/*
 var embedFs embed.FS
 
 type TemplateType uint8
@@ -27,7 +29,7 @@ const (
 	TemplateTypeTableName
 	TemplateTypeTableField
 
-	TemplateTypeProtoService
+	TemplateTypeProtoRpc
 	TemplateTypeProtoRpcName
 	TemplateTypeProtoRpcReq
 	TemplateTypeProtoRpcResp
@@ -36,6 +38,9 @@ const (
 	TemplateTypeStateConf
 	TemplateTypeStateCache
 	TemplateTypeStateState
+
+	TemplateTypeImpl
+	TemplateTypeImplAction
 )
 
 func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
@@ -58,15 +63,15 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 		systemPath = state.Config.Template.TableField
 		embedPath = "template/table_field.gen.gtpl"
 
-	case TemplateTypeProtoService:
-		systemPath = state.Config.Template.Proto.Service
+	case TemplateTypeProtoRpc:
+		systemPath = state.Config.Template.Proto.Rpc
 		embedPath = "template/proto/rpc_service.gtpl"
 
 	case TemplateTypeProtoRpcName:
 		if len(args) != 1 {
 			panic("Must provide")
 		}
-		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+		if v, ok := state.Config.Template.Proto.Action[args[0]]; ok && v != nil {
 			systemPath = v.Name
 		}
 		embedPath = fmt.Sprintf("template/proto/%s.name.rpc.gtpl", args[0])
@@ -75,7 +80,7 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 		if len(args) != 1 {
 			panic("Must provide")
 		}
-		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+		if v, ok := state.Config.Template.Proto.Action[args[0]]; ok && v != nil {
 			systemPath = v.Req
 		}
 		embedPath = fmt.Sprintf("template/proto/%s.req.rpc.gtpl", args[0])
@@ -84,7 +89,7 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 		if len(args) != 1 {
 			panic("Must provide")
 		}
-		if v, ok := state.Config.Template.Proto.Rpc[args[0]]; ok && v != nil {
+		if v, ok := state.Config.Template.Proto.Action[args[0]]; ok && v != nil {
 			systemPath = v.Resp
 		}
 		embedPath = fmt.Sprintf("template/proto/%s.resp.rpc.gtpl", args[0])
@@ -104,6 +109,21 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeStateState:
 		systemPath = state.Config.Template.State
 		embedPath = "template/state/state.gtpl"
+
+	case TemplateTypeImpl:
+		systemPath = state.Config.Template.Impl.Impl
+		embedPath = "template/impl/impl.gtpl"
+
+	case TemplateTypeImplAction:
+		systemPath = state.Config.Template.Impl.Action[args[0]]
+		if !osx.IsFile(systemPath) {
+			systemPath = state.Config.Template.Impl.Action[""]
+		}
+
+		embedPath = fmt.Sprintf("template/impl/%s.rpc.gtpl", args[0])
+		if !osx.FsHasFile(embedFs, embedPath) {
+			embedPath = "template/impl/.rpc.gtpl"
+		}
 
 	default:
 		panic("unsupported template type")
@@ -183,11 +203,12 @@ func DecrWithKey(key string, def int64) int64 {
 }
 
 var DefaultTemplateFunc = template.FuncMap{
-	"ToCamel": stringx.ToCamel,
-	"ToSnake": stringx.ToSnake,
-	"ToLower": strings.ToLower,
-	"ToUpper": strings.ToUpper,
-	"ToTitle": strings.ToTitle,
+	"ToCamel":      stringx.ToCamel,
+	"ToSmallCamel": stringx.ToSmallCamel,
+	"ToSnake":      stringx.ToSnake,
+	"ToLower":      strings.ToLower,
+	"ToUpper":      strings.ToUpper,
+	"ToTitle":      strings.ToTitle,
 
 	"TrimPrefix": strings.TrimPrefix,
 	"TrimSuffix": strings.TrimSuffix,

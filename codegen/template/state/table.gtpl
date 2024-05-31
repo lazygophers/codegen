@@ -1,10 +1,10 @@
 package state
 
 import (
-	{{ .PB.GoPackage }}
+	"{{ .PB.GoPackage }}"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/lrpc/middleware/xerror"
-	"github.com/lazygophers/utils/db"
+	"github.com/lazygophers/lrpc/middleware/db"
 )
 
 var (

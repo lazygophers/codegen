@@ -14,11 +14,14 @@ const (
 	PathTypeTableField
 
 	PathTypeInternal
+
 	PathTypeState
 	PathTypeStateTable
 	PathTypeStateConf
 	PathTypeStateCache
 	PathTypeStateState
+
+	PathTypeImpl
 )
 
 func GetPath(t PathType, pb *PbPackage) string {
@@ -58,6 +61,9 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeStateState:
 		return filepath.Join(GetPath(PathTypeState, pb), "state.go")
+
+	case PathTypeImpl:
+		return filepath.Join(GetPath(PathTypeInternal, pb), "impl")
 
 	default:
 		panic("unsupported path type")

@@ -1,4 +1,4 @@
 message {{ .ResponseType }} {
-	core.Paginate paginate = 1;
-	{{ .Model }} {{ ToSnake (TrimPrefix .Model "Model") }} = 2;
+    core.Paginate paginate = 1;
+	repeated {{ .Model }} list = 2;
 }

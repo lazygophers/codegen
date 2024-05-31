@@ -1,4 +1,4 @@
 message {{ .RequestType }} {
-{{with .PprimaryKey }}	// @validate: required
-	{{ $.PprimaryKeyType}} {{ $.PprimaryKey }} = 1;{{end}}
+{{with .PrimaryKey }}	// @validate: required
+	{{ $.PrimaryKeyType}} {{ $.PrimaryKey }} = 1;{{end}}
 }
