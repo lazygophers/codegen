@@ -65,6 +65,10 @@ template:
     impl:
         # impl.go 模板文件路径
         impl: "<impl.go> 的模板文件路径"
+
+        # rpc请求路径模板文件路径
+        path: "<rpc_path.go> 的模板文件路径"
+
         # rpc 相关的
         action:
             # key → action value → 模版文件路径

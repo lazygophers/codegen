@@ -131,6 +131,7 @@ type CfgImpl struct {
 	Action map[string]string `json:"action,omitempty" yaml:"action,omitempty" toml:"action,omitempty"`
 
 	Impl string `json:"impl,omitempty" yaml:"impl,omitempty" toml:"impl,omitempty"`
+	Path string `json:"path,omitempty" yaml:"path,omitempty" toml:"path,omitempty"`
 }
 
 type CfgTemplate struct {

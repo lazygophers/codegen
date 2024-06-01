@@ -41,6 +41,7 @@ const (
 
 	TemplateTypeImpl
 	TemplateTypeImplAction
+	TemplateTypeImplPath
 )
 
 func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
@@ -124,6 +125,10 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 		if !osx.FsHasFile(embedFs, embedPath) {
 			embedPath = "template/impl/.rpc.gtpl"
 		}
+
+	case TemplateTypeImplPath:
+		systemPath = state.Config.Template.Impl.Path
+		embedPath = "template/rpc_path.gtpl"
 
 	default:
 		panic("unsupported template type")

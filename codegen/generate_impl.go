@@ -311,3 +311,56 @@ func GenerateImpl(pb *PbPackage) (err error) {
 
 	return nil
 }
+
+type RpcPathOption struct {
+	RpcName string
+	Path    string
+	Method  string
+}
+
+func GenerateImplRpcPath(pb *PbPackage) (err error) {
+	pterm.Info.Printfln("Generating impl path")
+
+	// 会覆盖生成
+
+	var rpcs []*RpcPathOption
+	candy.Each(pb.RPCs(), func(rpc *PbRPC) {
+		opt := &RpcPathOption{
+			RpcName: rpc.Name,
+			Path:    rpc.genOption.Path,
+			Method:  rpc.genOption.Method,
+		}
+
+		rpcs = append(rpcs, opt)
+	})
+
+	tpl, err := GetTemplate(TemplateTypeImplPath)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	file, err := os.OpenFile(GetPath(PathTypeImplPath, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	defer file.Close()
+
+	_, err = file.Write(getFileHeader(pb))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = tpl.Execute(file, map[string]any{
+		"PB":   pb,
+		"RPCS": rpcs,
+	})
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
