@@ -119,6 +119,8 @@ func NewPbComment(c *proto.Comment) *PbComment {
 
 type PbEnum struct {
 	enum *proto.Enum
+
+	fields []*PbEnumField
 }
 
 func (p *PbEnum) Enum() *proto.Enum {
@@ -126,6 +128,15 @@ func (p *PbEnum) Enum() *proto.Enum {
 }
 
 func (p *PbEnum) walk() {
+	for _, element := range p.enum.Elements {
+		switch x := element.(type) {
+		case *proto.EnumField:
+			p.fields = append(p.fields, NewPbEnumField(x))
+
+		default:
+			log.Panicf("unexpected enum field: %T", x)
+		}
+	}
 }
 
 func NewPbEnum(e *proto.Enum) *PbEnum {
@@ -187,8 +198,8 @@ func (p *PbRPC) walk() {
 			return
 		}
 
-		if gen.Role != nil {
-			p.genOption.Role = *gen.Role
+		if gen.Role != "" {
+			p.genOption.Role = gen.Role
 		}
 	}
 
@@ -245,10 +256,13 @@ func (p *PbRPC) walk() {
 
 func NewPbRPC(rpc *proto.RPC) *PbRPC {
 	p := &PbRPC{
-		Name:      rpc.Name,
-		rpc:       rpc,
-		options:   make(map[string]map[string]string, len(rpc.Options)),
-		genOption: &PbRpcGenOptions{},
+		Name:    rpc.Name,
+		rpc:     rpc,
+		options: make(map[string]map[string]string, len(rpc.Options)),
+		genOption: &PbRpcGenOptions{
+			Method: "POST",
+			Path:   rpc.Name,
+		},
 	}
 	p.walk()
 	return p
@@ -371,8 +385,9 @@ func NewPbMapField(f *proto.MapField) *PbMapField {
 }
 
 type PbEnumField struct {
-	Name  string
-	field *proto.EnumField
+	Name    string
+	field   *proto.EnumField
+	comment *PbComment
 }
 
 func (p *PbEnumField) FieldName() string {
@@ -380,18 +395,28 @@ func (p *PbEnumField) FieldName() string {
 }
 
 func (p *PbEnumField) FieldType() string {
-	return "uint32"
+	return "int32"
 }
 
 func (p *PbEnumField) IsSlice() bool {
 	return false
 }
 
+func (p *PbEnumField) walk() {
+	if p.field.Comment != nil {
+		p.comment = NewPbComment(p.field.Comment)
+	}
+}
+
 func NewPbEnumField(f *proto.EnumField) *PbEnumField {
-	return &PbEnumField{
+	p := &PbEnumField{
 		Name:  f.Name,
 		field: f,
 	}
+
+	p.walk()
+
+	return p
 }
 
 type PbMessage struct {
@@ -595,30 +620,36 @@ func (p *PbPackage) GetService(s string) *PbService {
 	return p.serviceMap[s]
 }
 
-func (p *PbPackage) GetMessageFullName(e *proto.Message) string {
+func GetFullName(e proto.Visitee) string {
 	var names []string
 
-	var walk func(m *proto.Message)
-	walk = func(m *proto.Message) {
+	var walk func(m proto.Visitee)
+	walk = func(m proto.Visitee) {
 		if m == nil {
 			return
 		}
 
-		names = append(names, m.Name)
-
-		if m.Parent == nil {
-			return
-		}
-
-		switch x := m.Parent.(type) {
+		switch x := m.(type) {
 		case *proto.Message:
-			walk(x)
+			names = append(names, x.Name)
+			walk(x.Parent)
+
+		case *proto.Enum:
+			names = append(names, x.Name)
+			walk(x.Parent)
+
+		case *proto.EnumField:
+			names = append(names, x.Name)
+
+			if x.Parent != nil {
+				walk(x.Parent.(*proto.Enum).Parent)
+			}
 
 		case *proto.Proto:
 			// do nothing
 
 		default:
-			log.Warnf("unknown parent type:%T", x)
+			log.Panicf("unknown parent type:%T", x)
 		}
 	}
 
@@ -630,7 +661,7 @@ func (p *PbPackage) GetMessageFullName(e *proto.Message) string {
 func (p *PbPackage) Walk() {
 	proto.Walk(p.proto,
 		proto.WithMessage(func(m *proto.Message) {
-			m.Name = p.GetMessageFullName(m)
+			m.Name = GetFullName(m)
 
 			log.Infof("message:%v", m.Name)
 			pterm.Info.Printfln("find message:%s", m.Name)
@@ -653,6 +684,8 @@ func (p *PbPackage) Walk() {
 			p.rpcs = append(p.rpcs, p.rpcMap[r.Name])
 		}),
 		proto.WithEnum(func(e *proto.Enum) {
+			e.Name = GetFullName(e)
+
 			log.Infof("enum:%v", e.Name)
 			pterm.Info.Printfln("find enum:%s", e.Name)
 

@@ -163,6 +163,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 				"Model":       opt.Model,
 				"Action":      action,
 				"GenTo":       opt.GenTo,
+				"Method":      "POST",
 				"ListOptions": opt.ListOptions,
 			}
 
@@ -208,6 +209,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 			args["RpcName"] = rpcName
 			args["RequestType"] = rpcName + "Req"
 			args["ResponseType"] = rpcName + "Rsp"
+			args["Path"] = CoverageStyledName(rpcName, opt.Model)
 
 			// 处理 server.rpc
 			if rpc := pb.GetRPC(rpcName); rpc == nil {
