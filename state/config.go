@@ -17,8 +17,102 @@ import (
 	"strings"
 )
 
+type CfgStyleName string
+
+const (
+	// 使用 rpc name
+	CfgStyleNameDefault CfgStyleName = ""
+	// 蛇形 rpc_name
+	CfgStyleNameSnake CfgStyleName = "snake"
+	// （大）驼峰 RpcName
+	CfgStyleNamePascal CfgStyleName = "pascal"
+	// 小驼峰 rpcName
+	CfgStyleNameCamel CfgStyleName = "camel"
+	// 中划线 rpc-name
+	CfgStyleNameKebab CfgStyleName = "kebab"
+
+	// 斜杠  /add/user/record
+	CfgStyleNameSlash CfgStyleName = "slash"
+	// 斜杠-行为模型风格-蛇形 /add/user_record
+	CfgStyleNameSlashSnake CfgStyleName = "slash-snake"
+	// 斜杠-行为模型风格-大驼峰 /add/UserRecord
+	CfgStyleNameSlashPascal CfgStyleName = "slash-pascal"
+	// 斜杠-行为模型风格-小驼峰 /add/userRecord
+	CfgStyleNameSlashCamel CfgStyleName = "slash-camel"
+	// 斜杠-行为模型风格-中划线 /add/user-record
+	CfgStyleNameSlashKebab CfgStyleName = "slash-kebab"
+
+	// 斜杠-反转 /record/user/add/
+	CfgStyleNameSlashReverse CfgStyleName = "slash-reverse"
+	// 斜杠-反转-行为模型风格-蛇形 /user_record/add
+	CfgStyleNameSlashReverseSnake CfgStyleName = "slash-reverse-snake"
+	// 斜杠-反转-行为模型风格-大驼峰 /UserRecord/add
+	CfgStyleNameSlashReversePascal CfgStyleName = "slash-reverse-pascal"
+	// 斜杠-反转-行为模型风格-小驼峰 /userRecord/add
+	CfgStyleNameSlashReverseCamel CfgStyleName = "slash-reverse-camel"
+	// 斜杠-反转-行为模型风格-中划线 /user-record/add
+	CfgStyleNameSlashReverseKebab CfgStyleName = "slash-reverse-kebab"
+
+	// 点  add.user.record
+	CfgStyleNameDot CfgStyleName = "dot"
+	// 点-行为模型风格-蛇形 add.user_record
+	CfgStyleNameDotSnake CfgStyleName = "dot-snake"
+	// 点-行为模型风格-大驼峰 add.UserRecord
+	CfgStyleNameDotPascal CfgStyleName = "dot-pascal"
+	// 点-行为模型风格-小驼峰 add.userRecord
+	CfgStyleNameDotCamel CfgStyleName = "dot-camel"
+	// 点-行为模型风格-中划线 add.user-record
+	CfgStyleNameDotKebab CfgStyleName = "dot-kebab"
+
+	// 点-反转
+	CfgStyleNameDotReverse CfgStyleName = "dot-reverse"
+	// 点-反转-行为模型风格-蛇形 user_record.add
+	CfgStyleNameDotReverseSnake CfgStyleName = "dot-reverse-snake"
+	// 点-反转-行为模型风格-大驼峰 UserRecord.add
+	CfgStyleNameDotReversePascal CfgStyleName = "dot-reverse-pascal"
+	// 点-反转-行为模型风格-小驼峰 userRecord.add
+	CfgStyleNameDotReverseCamel CfgStyleName = "dot-reverse-camel"
+	// 点-反转-行为模型风格-中划线 user-record.add
+	CfgStyleNameDotReverseKebab CfgStyleName = "dot-reverse-kebab"
+)
+
+func (p CfgStyleName) String() string {
+	return string(p)
+}
+
+func (p *CfgStyleName) UnmarshalJSON(data []byte) error {
+	*p = CfgStyleName(data)
+	return nil
+}
+
+func (p *CfgStyleName) UnmarshalTOML(data []byte) error {
+	*p = CfgStyleName(data)
+	return nil
+}
+
+func (p *CfgStyleName) UnmarshalYAML(unmarshal func(any) error) error {
+	var tp string
+	if err := unmarshal(&tp); err != nil {
+		return err
+	}
+	*p = CfgStyleName(tp)
+	return nil
+}
+
+func (p *CfgStyleName) MarshalJSON() ([]byte, error) {
+	return []byte(*p), nil
+}
+
+func (p *CfgStyleName) MarshalTOML() ([]byte, error) {
+	return []byte(*p), nil
+}
+
+func (p *CfgStyleName) MarshalYAML() (interface{}, error) {
+	return *p, nil
+}
+
 type CfgStyle struct {
-	Go string `json:"go,omitempty" yaml:"go,omitempty" toml:"go,omitempty" default:"fiber"`
+	Path CfgStyleName `json:"path,omitempty" yaml:"path,omitempty" toml:"path,omitempty"`
 }
 
 type CfgProtoAction struct {

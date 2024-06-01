@@ -12,6 +12,14 @@ proto_files:
     - "./lrpc/"
     - "~/proto/"
 
+style:
+    # 命名风格，支持以下格式
+    #   snake
+    #   camel
+    #   pascal
+    #   kebab
+    path: "<rpc 请求路径命名风格，默认为 rpc name>"
+
 # 自定义模版文件，要求 .gtpl 格式
 template:
     # .editorconfig 模板文件路径，用于 IDE 的默认格式化

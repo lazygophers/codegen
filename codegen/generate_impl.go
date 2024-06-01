@@ -2,11 +2,13 @@ package codegen
 
 import (
 	"github.com/lazygophers/log"
+	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func initImplDirectory(pb *PbPackage) error {
@@ -57,6 +59,14 @@ func initImplFile(pb *PbPackage, genTo string) (err error) {
 	}
 
 	return nil
+}
+
+type ListOptionFieldOption struct {
+	Key       string
+	KeyField  string
+	Value     int
+	FieldName string
+	FieldType string
 }
 
 func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
@@ -112,6 +122,140 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 		}
 	}
 
+	// NOTE: 找一下有没有 ListOption
+	{
+		enum := pb.GetEnum(rpc.rpc.RequestType + "_" + "ListOption")
+		if enum != nil {
+			var opts []*ListOptionFieldOption
+
+			candy.Each(enum.fields, func(field *PbEnumField) {
+				opt := &ListOptionFieldOption{
+					Key:      field.field.Name,
+					KeyField: GetFullName(field.field),
+					Value:    field.field.Integer,
+				}
+
+				if opt.Value == 0 {
+					return
+				}
+
+				if field.comment != nil {
+					if v, ok := field.comment.tags["type"]; ok {
+						opt.FieldType = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+					}
+
+					if v, ok := field.comment.tags["field"]; ok {
+						opt.FieldName = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+					}
+				}
+
+				// NOTE: 抹平 type 的差异
+				switch opt.FieldType {
+				case "str", "string":
+					opt.FieldType = "string"
+
+				case "strs", "stringslice", "string-slice":
+					opt.FieldType = "string-slice"
+
+				case "like":
+					opt.FieldType = "like"
+
+				case "llike", "leftlike", "leftLike", "left_like", "left-like":
+					opt.FieldType = "left-like"
+
+				case "rlike", "rightlike", "rightLike", "right_like", "right-like":
+					opt.FieldType = "right-like"
+
+				case "i", "int":
+					opt.FieldType = "int"
+
+				case "i8", "int8":
+					opt.FieldType = "int8"
+
+				case "i16", "int16":
+					opt.FieldType = "int16"
+
+				case "i32", "int32":
+					opt.FieldType = "int32"
+
+				case "i64", "int64":
+					opt.FieldType = "int64"
+
+				case "u", "uint":
+					opt.FieldType = "uint"
+
+				case "u8", "uint8":
+					opt.FieldType = "uint8"
+
+				case "u16", "uint16":
+					opt.FieldType = "uint16"
+
+				case "u32", "uint32":
+					opt.FieldType = "uint32"
+
+				case "u64", "uint64":
+					opt.FieldType = "uint64"
+
+				case "f32", "float32":
+					opt.FieldType = "float32"
+
+				case "f64", "float64":
+					opt.FieldType = "float64"
+
+				case "b", "bool":
+					opt.FieldType = "bool"
+
+				case "is", "ints", "intslice", "int-slice":
+					opt.FieldType = "int-slice"
+
+				case "i8s", "int8s", "int8slice", "int8-slice":
+					opt.FieldType = "int8-slice"
+
+				case "i16s", "int16s", "int16slice", "int16-slice":
+					opt.FieldType = "int16-slice"
+
+				case "i32s", "int32s", "int32slice", "int32-slice":
+					opt.FieldType = "int32-slice"
+
+				case "i64s", "int64s", "int64slice", "int64-slice":
+					opt.FieldType = "int64-slice"
+
+				case "us", "uints", "uintslice", "uint-slice":
+					opt.FieldType = "uint-slice"
+
+				case "u16s", "uint16s", "uint16slice", "uint16-slice":
+					opt.FieldType = "uint16-slice"
+
+				case "u32s", "uint32s", "uint32slice", "uint32-slice":
+					opt.FieldType = "uint32-slice"
+
+				case "u64s", "uint64s", "uint64slice", "uint64-slice":
+					opt.FieldType = "uint64-slice"
+
+				case "f32s", "float32s", "float32slice", "float32-slice":
+					opt.FieldType = "float32-slice"
+
+				case "f64s", "float64s", "float64slice", "float64-slice":
+					opt.FieldType = "float64-slice"
+
+				case "bs", "bools", "boolslice", "bool-slice":
+					opt.FieldType = "bool-slice"
+
+				}
+
+				// NOTE：切割名字
+				if opt.FieldName == "" {
+					opt.FieldName = strings.TrimPrefix(field.field.Name, "ListOption")
+				}
+
+				opts = append(opts, opt)
+			})
+
+			args["ListOption"] = opts
+		}
+
+	}
+
 	tpl, err := GetTemplate(TemplateTypeImplAction, rpc.genOption.Action)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -157,19 +301,12 @@ func GenerateImpl(pb *PbPackage) (err error) {
 		return err
 	}
 
-	log.Info("————————————————————分割线————————————————")
-
 	for _, rpc := range pb.RPCs() {
 		err = generateImpl(pb, rpc)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
 		}
-
-		log.Info(rpc.Name)
-		log.Info(rpc.options)
-		log.Info(rpc.comment)
-		log.Info(rpc.genOption)
 	}
 
 	return nil
