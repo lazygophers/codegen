@@ -74,7 +74,7 @@ func GetPath(t PathType, pb *PbPackage) string {
 		return filepath.Join(pb.ProjectRoot(), "rpc_path.gen.go")
 
 	case PathTypeImplRoute:
-		return filepath.Join(pb.ProjectRoot(), "rpc_route.gen.go")
+		return filepath.Join(GetPath(PathTypeCmd, pb), "route.gen.go")
 
 	case PathTypeCmd:
 		return filepath.Join(pb.ProjectRoot(), "cmd")
