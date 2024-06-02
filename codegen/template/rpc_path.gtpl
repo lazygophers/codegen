@@ -1,5 +1,5 @@
 package {{ .PB.GoPackageName }}
 
-const (
-	RpcPath{{ .RpcName }} = "{{ .RpcUrl }}"
+const ({{ range $key, $value := .RPCS }}
+	RpcPath{{ $value.RpcName }} = "{{ $value.Path }}"{{ end }}
 )
