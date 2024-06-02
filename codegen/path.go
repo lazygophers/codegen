@@ -24,6 +24,9 @@ const (
 	PathTypeImpl
 	PathTypeImplPath
 	PathTypeImplRoute
+
+	PathTypeCmd
+	PathTypeCmdMain
 )
 
 func GetPath(t PathType, pb *PbPackage) string {
@@ -72,6 +75,12 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeImplRoute:
 		return filepath.Join(pb.ProjectRoot(), "rpc_route.gen.go")
+
+	case PathTypeCmd:
+		return filepath.Join(pb.ProjectRoot(), "cmd")
+
+	case PathTypeCmdMain:
+		return filepath.Join(GetPath(PathTypeCmd, pb), "main.go")
 
 	default:
 		panic("unsupported path type")

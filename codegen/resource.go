@@ -29,6 +29,8 @@ const (
 	TemplateTypeTableName
 	TemplateTypeTableField
 
+	TemplateTypeCmd
+
 	TemplateTypeProtoRpc
 	TemplateTypeProtoRpcName
 	TemplateTypeProtoRpcReq
@@ -134,6 +136,10 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeImplRoute:
 		systemPath = state.Config.Template.Impl.Route
 		embedPath = "template/rpc_route.gtpl"
+
+	case TemplateTypeCmd:
+		systemPath = state.Config.Template.Main
+		embedPath = "template/cmd.gtpl"
 
 	default:
 		panic("unsupported template type")

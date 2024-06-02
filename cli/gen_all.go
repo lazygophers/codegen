@@ -11,6 +11,7 @@ var GenAllHooks = []GenHook{
 	runGenPb,
 	runGenMod,
 	runEditorconfig,
+	runGenCmd,
 	runGenState,
 	runGenImpl,
 }

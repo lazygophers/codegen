@@ -9,41 +9,49 @@ import (
 	"os"
 )
 
-func GenerateCache(pb *PbPackage) (err error) {
-	err = initStateDirectory(pb)
+func initCmdDirectory(pb *PbPackage) error {
+	if osx.IsDir(GetPath(PathTypeCmd, pb)) {
+		return nil
+	}
+
+	err := os.MkdirAll(GetPath(PathTypeCmd, pb), fs.ModePerm)
+	if err != nil {
+		log.Errorf("err:%s", err)
+		return err
+	}
+
+	return nil
+}
+
+func GenerateCmd(pb *PbPackage) (err error) {
+	err = initCmdDirectory(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
 	// cache 文件为覆盖生成单次生成，不会重复读取
-	if osx.IsFile(GetPath(PathTypeStateCache, pb)) {
+	if osx.IsFile(GetPath(PathTypeCmdMain, pb)) {
 		if !state.Config.Overwrite {
-			pterm.Warning.Printfln("cache is already existing, skip generation")
+			pterm.Warning.Printfln("main is already existing, skip generation")
 			return nil
 		}
 
-		pterm.Warning.Printfln("cache is already existing, will overwrite")
+		pterm.Warning.Printfln("main is already existing, will overwrite")
 	}
 
 	// table 文件为覆盖生成
 	args := map[string]interface{}{
 		"PB": pb,
-		"GoImports": []string{
-			pb.GoPackage(),
-			"github.com/lazygophers/log",
-			"github.com/lazygophers/utils/common",
-			"github.com/lazygophers/utils/db",
-		},
 	}
 
-	tpl, err := GetTemplate(TemplateTypeStateCache)
+	tpl, err := GetTemplate(TemplateTypeCmd)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeStateCache, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeCmdMain, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
