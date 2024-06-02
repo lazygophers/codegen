@@ -8,6 +8,7 @@ import (
 
 var GenStateHook = []GenHook{
 	ranGenConf,
+	ranGenCache,
 	runGenTable,
 }
 

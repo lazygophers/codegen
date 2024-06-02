@@ -21,7 +21,7 @@ func Load() (err error) {
 	    return err
 	}
 
-	err = ConnectCache()
+	err = ConnectDatebase()
 	if err != nil {
 	    log.Errorf("err:%v", err)
 	    return err

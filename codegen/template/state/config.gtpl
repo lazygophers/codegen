@@ -2,12 +2,16 @@ package state
 
 import (
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/utils/cache"
+	"github.com/lazygophers/lrpc/middleware/cache"
+	"github.com/lazygophers/lrpc/middleware/db"
 	"github.com/lazygophers/utils/config"
-	"github.com/lazygophers/utils/db"
 )
 
 type Config struct {
+	Name string `json:"name,omitempty" yaml:"name,omitempty" toml:"name,omitempty"`
+
+	Port int `json:"port,omitempty" yaml:"port,omitempty" toml:"port,omitempty"`
+
 	Db    *db.Config    `json:"db,omitempty" yaml:"db,omitempty" toml:"db,omitempty"`
 	Cache *cache.Config `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
 

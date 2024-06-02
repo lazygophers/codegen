@@ -145,6 +145,8 @@ type CfgTemplate struct {
 	Proto *CfgProto `json:"proto,omitempty" yaml:"proto,omitempty" toml:"proto,omitempty"`
 	Impl  *CfgImpl  `json:"impl,omitempty" yaml:"impl,omitempty" toml:"impl,omitempty"`
 
+	Main string `json:"main,omitempty" yaml:"main,omitempty" toml:"main,omitempty"`
+
 	Table string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
 	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
 	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`

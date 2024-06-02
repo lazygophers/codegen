@@ -82,6 +82,9 @@ template:
             list: "列表数据的模板路径"
             "": "默认的模版路径"
 
+    # 入口文件
+    main: "<main.go> 模板文件路径"
+
     # state/table.go 模板文件路径
     table: "<state/table.go 模板文件路径，如果不存在则是使用默认>"
     # state/conf.go 模板文件路径
