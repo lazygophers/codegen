@@ -25,6 +25,12 @@ var runGenImpl = func(cmd *cobra.Command, args []string) (err error) {
 		return err
 	}
 
+	err = codegen.GenerateImplRpcRoute(pb)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	return nil
 }
 
