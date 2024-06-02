@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/lazygophers/{{ .PB.GoPackageName }}"
 	"github.com/lazygophers/{{ .PB.GoPackageName }}/internal/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/lrpc"
@@ -18,7 +17,7 @@ func main() {
 		Name: state.State.Config.Name,
 	})
 
-	app.AddRoutes({{ .PB.GoPackageName }}.Routes)
+	app.AddRoutes(Routes)
 
 	err = app.ListenAndServe(state.State.Config.Port)
 	if err != nil {

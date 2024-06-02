@@ -373,6 +373,12 @@ func GenerateImplRpcPath(pb *PbPackage) (err error) {
 func GenerateImplRpcRoute(pb *PbPackage) (err error) {
 	pterm.Info.Printfln("Generating impl routes")
 
+	err = initCmdDirectory(pb)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	// 会覆盖生成
 	var rpcs []*RpcRouteOption
 	candy.Each(pb.RPCs(), func(rpc *PbRPC) {
