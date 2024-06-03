@@ -4,7 +4,7 @@ import (
 	"{{ .PB.GoPackage }}"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/lrpc/middleware/xerror"
-	"github.com/lazygophers/lrpc/middleware/db"
+	"github.com/lazygophers/lrpc/middleware/storage/db"
 )
 
 var (
