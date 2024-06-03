@@ -24,8 +24,7 @@ var embedFs embed.FS
 type TemplateType uint8
 
 const (
-	TemplateTypeEditorconfig TemplateType = iota + 1
-	TemplateTypeOrm
+	TemplateTypeOrm TemplateType = iota + 1
 	TemplateTypeTableName
 	TemplateTypeTableField
 
@@ -45,6 +44,11 @@ const (
 	TemplateTypeImplAction
 	TemplateTypeImplPath
 	TemplateTypeImplRoute
+
+	TemplateTypeGoreleaser
+	TemplateTypeMakefile
+	TemplateTypeEditorconfig
+	TemplateTypeGolangci
 )
 
 func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
@@ -140,6 +144,18 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeCmd:
 		systemPath = state.Config.Template.Main
 		embedPath = "template/cmd.gtpl"
+
+	case TemplateTypeGoreleaser:
+		systemPath = state.Config.Template.Goreleaser
+		embedPath = "template/goreleaser.gtpl"
+
+	case TemplateTypeMakefile:
+		systemPath = state.Config.Template.Makefile
+		embedPath = "template/makefile.gtpl"
+
+	case TemplateTypeGolangci:
+		systemPath = state.Config.Template.Golangci
+		embedPath = "template/.golangci.yml"
 
 	default:
 		panic("unsupported template type")

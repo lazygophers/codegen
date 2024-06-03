@@ -2,8 +2,8 @@ package state
 
 import (
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/lrpc/middleware/cache"
-	"github.com/lazygophers/lrpc/middleware/db"
+	"github.com/lazygophers/lrpc/middleware/storage/cache"
+	"github.com/lazygophers/lrpc/middleware/storage/db"
 	"github.com/lazygophers/utils/config"
 )
 

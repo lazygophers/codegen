@@ -7,7 +7,6 @@ type PathType uint8
 const (
 	PathTypePbGo PathType = iota + 1
 	PathTypeGoMod
-	PathTypeEditorconfig
 
 	PathTypeOrm
 	PathTypeTableName
@@ -27,6 +26,11 @@ const (
 
 	PathTypeCmd
 	PathTypeCmdMain
+
+	PathTypeGoreleaser
+	PathTypeMakefile
+	PathTypeEditorconfig
+	PathTypeGolangci
 )
 
 func GetPath(t PathType, pb *PbPackage) string {
@@ -81,6 +85,15 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeCmdMain:
 		return filepath.Join(GetPath(PathTypeCmd, pb), "main.go")
+
+	case PathTypeGoreleaser:
+		return filepath.Join(pb.ProjectRoot(), ".goreleaser.yaml")
+
+	case PathTypeMakefile:
+		return filepath.Join(pb.ProjectRoot(), "Makefile")
+
+	case PathTypeGolangci:
+		return filepath.Join(pb.ProjectRoot(), ".golangci.yml")
 
 	default:
 		panic("unsupported path type")

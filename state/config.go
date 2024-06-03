@@ -151,6 +151,10 @@ type CfgTemplate struct {
 	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
 	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
 	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
+
+	Goreleaser string `json:"goreleaser,omitempty" yaml:"goreleaser,omitempty" toml:"goreleaser,omitempty"`
+	Makefile   string `json:"makefile,omitempty" yaml:"makefile,omitempty" toml:"makefile,omitempty"`
+	Golangci   string `json:"golangci,omitempty" yaml:"golangci,omitempty" toml:"golangci,omitempty"`
 }
 
 type CfgTables struct {
