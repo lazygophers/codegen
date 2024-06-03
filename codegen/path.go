@@ -31,6 +31,8 @@ const (
 	PathTypeMakefile
 	PathTypeEditorconfig
 	PathTypeGolangci
+	PathTypeGitignore
+	PathTypeDockerignore
 )
 
 func GetPath(t PathType, pb *PbPackage) string {
@@ -94,6 +96,12 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeGolangci:
 		return filepath.Join(pb.ProjectRoot(), ".golangci.yml")
+
+	case PathTypeGitignore:
+		return filepath.Join(pb.ProjectRoot(), ".gitignore")
+
+	case PathTypeDockerignore:
+		return filepath.Join(pb.ProjectRoot(), ".dockerignore")
 
 	default:
 		panic("unsupported path type")

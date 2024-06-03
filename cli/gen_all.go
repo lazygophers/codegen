@@ -13,6 +13,8 @@ var GenAllHooks = []GenHook{
 	runEditorconfig,
 	runGoreleaser,
 	runMakefile,
+	runGitignote,
+	runDockerignote,
 	runGolangci,
 	runGenCmd,
 	runGenState,

@@ -103,6 +103,12 @@ template:
     # .golangci.yml 模板文件
     golangci: "<.golangci.yml> 模板文件路径"
 
+    # .gitignore 模板文件
+    gitignore: "<.gitignore> 模板文件路径"
+
+    #.dockerignore 模板文件
+    dockerignore: "<.dockerignore> 模板文件路径"
+
 # 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
 default_tag:
     gorm:

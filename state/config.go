@@ -152,9 +152,11 @@ type CfgTemplate struct {
 	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
 	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 
-	Goreleaser string `json:"goreleaser,omitempty" yaml:"goreleaser,omitempty" toml:"goreleaser,omitempty"`
-	Makefile   string `json:"makefile,omitempty" yaml:"makefile,omitempty" toml:"makefile,omitempty"`
-	Golangci   string `json:"golangci,omitempty" yaml:"golangci,omitempty" toml:"golangci,omitempty"`
+	Goreleaser   string `json:"goreleaser,omitempty" yaml:"goreleaser,omitempty" toml:"goreleaser,omitempty"`
+	Makefile     string `json:"makefile,omitempty" yaml:"makefile,omitempty" toml:"makefile,omitempty"`
+	Golangci     string `json:"golangci,omitempty" yaml:"golangci,omitempty" toml:"golangci,omitempty"`
+	Gitignore    string `json:"gitignore,omitempty" yaml:"gitignore,omitempty" toml:"gitignore,omitempty"`
+	Dockerignore string `json:"dockerignore,omitempty" yaml:"dockerignore,omitempty" toml:"dockerignore,omitempty"`
 }
 
 type CfgTables struct {
