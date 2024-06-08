@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Wepụta ndekọ zuru ezu
+    help:
+        additional_commands: Iwu ndị ọzọ
+        aliases: iwu utu aha
+        available_commands: Iwu akwadoro
+        command: Nye iwu
+        flags: oke
+        get_info: ka inweta ozi zuru oke
+        global_flags: zuru ụwa ọnụ parameters
+        use: jiri
+    i18n:
+        long: Ngwa metụtara mba ụwa ọtụtụ asụsụ
+        short: Ngwa metụtara mba ụwa ọtụtụ asụsụ
+        tran:
+            flags:
+                all-language: Tụgharịa asụsụ niile akwadoro (ọ bụrụ eziokwu na ọkọlọtọ asụsụ a nwere nkwarụ)
+                force: Degharịa ntụgharị asụsụ ndị dị ugbu a
+                force-key-prefix: igodo ndị kwesịrị ịmanye ka edegharịa
+                generate-const: Mepụta ụkpụrụ ngụkọ maka ịkpọ oku dị mfe
+                languages: Ezipụta asụsụ ebumnuche maka ntụgharị asụsụ
+                src-file: A ga-atụgharị asụsụ isi mmalite (chọrọ)
+                src-language: Asụsụ nke faịlụ isi mmalite (ọ bụrụ na akọwaghị ya, ngwa ahụ ga-ekpebi faịlụ isi mmalite na-akpaghị aka)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Ọwa ntụgharị: Ụdị nkwado {{oke $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
+            long: A na-atụgharị faịlụ ọtụtụ asụsụ sitere n'otu ebe gaa na faịlụ n'otu usoro n'asụsụ ndị ọzọ.
+            short: sụgharịa
+    long: Nwere 'proto' ndabere ndabere ndabere, ndebiri a na-ejikarị, yana ntụgharị asụsụ ọtụtụ asụsụ
+    short: Ngwa ngwa

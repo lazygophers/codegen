@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output detalyado a log
+    help:
+        additional_commands: Kanayonan a bilin
+        aliases: alias ti bilin
+        available_commands: Dagiti nasuportaran a bilin
+        command: Ipaipaw-it
+        flags: parametro
+        get_info: tapno makagun-od iti ad-adu a detalyado nga impormasion
+        global_flags: dagiti sangalubongan a parametro
+        use: usaren
+    i18n:
+        long: Multilingual nga internasionalisasion a mainaig a toolkit
+        short: Multilingual nga internasionalisasion a mainaig a toolkit
+        tran:
+            flags:
+                all-language: Ipatarus amin a nasuportaran a pagsasao (no pudno ti bandera dagiti pagsasao ket nabalbaliwan) .
+                force: Isurat iti rabaw dagiti addan a patarus
+                force-key-prefix: dagiti tulbek a kasapulan a mapilit a maisurat
+                generate-const: Mangpataud kadagiti pateg ti panagibilang para iti nalaka a panagayab
+                languages: Ibaga ti target language para iti panagipatarus
+                src-file: Gubuayan a file a maipatarus (kasapulan) .
+                src-language: Ti pagsasao ti taudan a papeles (no saan a naikeddeng, ti ramit ket automatiko a mangikeddeng ti taudan a papeles) .
+                translater:
+                    google-free: Google Web Ipatarus
+                    usage: 'Kanal ti panagipatarus: Kita ti suporta {{range $key,$value := .Tipo}}{{$key}}:{{$value}}{{end}}'
+            long: Dagiti multilingual a file manipud iti maysa a naikeddeng a taudan ket mabaliwan kadagiti file iti isu met laeng a pormat kadagiti sabali a pagsasao.
+            short: itarus
+    long: Naglaon ti 'proto'-a naibatay a balangkas ti backend, dagiti kadawyan a maus-usar a plantilia, ken dagiti adu a pagsasao a panagipatarus
+    short: Toolkit ti ramit

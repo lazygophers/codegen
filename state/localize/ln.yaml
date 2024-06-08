@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Sortie journal détaillé
+    help:
+        additional_commands: Ba commandes ya kobakisa
+        aliases: alias ya komande
+        available_commands: Ba commandes oyo esungami
+        command: Etinda
+        flags: paramètre
+        get_info: mpo na kozwa makambo mosusu ya sikisiki
+        global_flags: ba paramètres ya mokili mobimba
+        use: kosalela
+    i18n:
+        long: Bokumbi bisaleli oyo etali internationalisation multilingue
+        short: Bokumbi bisaleli oyo etali internationalisation multilingue
+        tran:
+            flags:
+                all-language: Bobongola minoko nyonso oyo esungami (soki ezali solo drapeau ya minoko ekangami)
+                force: Kokoma likolo ya mabongoli oyo ezali
+                force-key-prefix: bafungola oyo esengeli kotindama na makasi mpo na kokoma likolo
+                generate-const: Bosala ba valeurs ya enumeration pona kobenga na pete
+                languages: Lakisá monɔkɔ oyo olingi kobongola
+                src-file: Fisyé ya source oyo esengeli kobongolama (esengeli) .
+                src-language: Monoko ya fisyé ya source (soki elakisami te, esaleli ekoyeba automatiquement fichier source)
+                translater:
+                    google-free: Google Web Bobongoli
+                    usage: 'Nzela ya bobongoli: Lolenge ya lisungi {{range $key,$value := .Lolenge}}{{$key}}:{{$value}}{{nsuka}}'
+            long: Ba fichiers ya minoko ebele oyo ewutaka na source moko boye ebongwanaka na ba fichiers na format moko na minoko misusu.
+            short: kobongola
+    long: Ezali na cadre ya sima oyo esalemi na 'proto', ba modèles oyo esalelamaka mingi, mpe mabongoli ya minoko ebele
+    short: Bokumbi bisaleli

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output detalyado nga log
+    help:
+        additional_commands: Dugang nga mga sugo
+        aliases: command alias
+        available_commands: Gisuportahan nga mga sugo
+        command: Pag-order
+        flags: parametro
+        get_info: para makakuha ug mas detalyadong impormasyon
+        global_flags: global nga mga parameter
+        use: paggamit
+    i18n:
+        long: Multilingual nga internasyonalisasyon nga may kalabutan nga toolkit
+        short: Multilingual nga internasyonalisasyon nga may kalabutan nga toolkit
+        tran:
+            flags:
+                all-language: Paghubad sa tanan nga gisuportahan nga mga sinultian (kung tinuod ang bandila sa mga sinultian gi-disable)
+                force: I-overwrite ang kasamtangan nga mga hubad
+                force-key-prefix: mga yawe nga kinahanglang pugson nga ma-overwrite
+                generate-const: Paghimo mga kantidad sa enumeration alang sa dali nga pagtawag
+                languages: Ipiho ang target nga lengguwahe para sa paghubad
+                src-file: Source file nga hubaron (gikinahanglan)
+                src-language: Ang lengguwahe sa source file (kung wala gipiho, ang himan awtomatik nga magdeterminar sa source file)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Hubad nga channel: Suporta nga matang {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Ang multilingual nga mga file gikan sa usa ka piho nga tinubdan gi-convert ngadto sa mga file sa samang format sa ubang mga pinulongan.
+            short: paghubad
+    long: Naglangkob sa 'proto'-based backend framework, sagad gigamit nga templates, ug multi-language translations
+    short: Toolkit

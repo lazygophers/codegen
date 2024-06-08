@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output detailed iniuriarum
+    help:
+        additional_commands: Additional imperium
+        aliases: imperium alias
+        available_commands: Confirmatum imperium
+        command: Ordo
+        flags: modulus
+        get_info: ut magis detailed notitia
+        global_flags: global parametri
+        use: usus
+    i18n:
+        long: Multilingual internationalization related toolkit
+        short: Multilingual internationalization related toolkit
+        tran:
+            flags:
+                all-language: Transferre omnes linguas suffultae (si verum linguarum vexillum debilitatum est)
+                force: Rescribere existentium translationes
+                force-key-prefix: clavium necessitatem cogendi esse overwritten
+                generate-const: Enumerationem generare valores ad facilem vocationem
+                languages: Specificare scopum lingua pro translatione
+                src-file: Source file interpretari (requiritur)
+                src-language: Lingua fasciculi fontis (nisi specificatur, instrumentum statim fontem lima definiet)
+                translater:
+                    google-free: Google Telae Translate
+                    usage: 'Canale translatio: Support typus {{ range $clavem,$ valorem := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Multilinguales fasciculi ex quodam fonte convertuntur in lima forma in aliis linguis.
+            short: translate
+    long: Continet 'proto'-substructio compago dorsi, exempla consueta, et translationes multi-linguae.
+    short: Toolkit

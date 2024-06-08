@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output detailléierte Logbuch
+    help:
+        additional_commands: Zousätzlech Kommandoen
+        aliases: Kommando alias
+        available_commands: Ënnerstëtzt Kommandoen
+        command: Uerdnung
+        flags: parameter
+        get_info: fir méi detailléiert Informatiounen ze kréien
+        global_flags: global Parameteren
+        use: benotzen
+    i18n:
+        long: Multilingual Internationaliséierung-Zesummenhang Toolkit
+        short: Multilingual Internationaliséierung-Zesummenhang Toolkit
+        tran:
+            flags:
+                all-language: Iwwersetze all ënnerstëtzt Sproochen (wann richteg ass de Sprooche Fändel behënnert)
+                force: Iwwerschreiwe bestehend Iwwersetzungen
+                force-key-prefix: Schlësselen déi gezwongen sinn ze iwwerschreiwe
+                generate-const: Generéiere Opzielungswäerter fir einfach ze ruffen
+                languages: Gitt d'Zilsprooch fir d'Iwwersetzung un
+                src-file: Quelldatei fir ze iwwersetzen (obligatoresch)
+                src-language: D'Sprooch vun der Quelldatei (wann net uginn, wäert d'Tool automatesch d'Quelldatei bestëmmen)
+                translater:
+                    google-free: Google Web Iwwersetzer
+                    usage: 'Iwwersetzungskanal: Ënnerstëtzungstyp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Méisproocheg Dateien aus enger bestëmmter Quell ginn an Dateien am selwechte Format an anere Sproochen ëmgewandelt.
+            short: iwwersetzen
+    long: Enthält 'Proto'-baséiert Backend Kader, allgemeng benotzt Templates, a Multi-Sprooch Iwwersetzungen
+    short: Toolkit

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output log rinci
+    help:
+        additional_commands: printah tambahan
+        aliases: dhawuh alias
+        available_commands: Didhukung printah
+        command: dhawuh
+        flags: paramèter
+        get_info: kanggo njaluk informasi luwih rinci
+        global_flags: paramèter global
+        use: nggunakake
+    i18n:
+        long: Toolkit internasionalisasi multibasa
+        short: Toolkit internasionalisasi multibasa
+        tran:
+            flags:
+                all-language: Terjemahake kabeh basa sing didhukung (yen bener, gendera basa dipateni)
+                force: Nimpa terjemahan sing wis ana
+                force-key-prefix: tombol sing kudu dipeksa kanggo ditindhes
+                generate-const: Gawe nilai enumerasi supaya gampang ditelpon
+                languages: Nemtokake basa target kanggo terjemahan
+                src-file: File sumber sing arep diterjemahake (dibutuhake)
+                src-language: Basa file sumber (yen ora ditemtokake, alat kasebut bakal nemtokake file sumber kanthi otomatis)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Saluran terjemahan: Tipe dhukungan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: File multibasa saka sumber tartamtu diowahi dadi file ing format sing padha ing basa liya.
+            short: nerjemahake
+    long: Ngandhut kerangka backend adhedhasar 'proto', cithakan sing umum digunakake, lan terjemahan multi-basa
+    short: Toolkit

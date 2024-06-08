@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Bɔli detayɛli log
+    help:
+        additional_commands: Cikan wɛrɛw
+        aliases: cikan tɔgɔ wɛrɛ
+        available_commands: Cikan minnu bɛ dɛmɛ
+        command: Ci
+        flags: paramɛtiri
+        get_info: walasa ka kunnafoni caman sɔrɔ
+        global_flags: diɲɛ kɔnɔ paramɛtiriw
+        use: k'a nafa bɔ a la
+    i18n:
+        long: Baarakɛminɛn minnu bɛ tali kɛ kan caman na diɲɛnatigɛ la
+        short: Baarakɛminɛn minnu bɛ tali kɛ kan caman na diɲɛnatigɛ la
+        tran:
+            flags:
+                all-language: Kan dɛmɛnenw bɛɛ bamanankan na (ni tiɲɛ don kanw ka darapo bɛ baara kɛ)
+                force: Bamanankan bayɛlɛmani minnu bɛ yen, olu sɛbɛn u kan
+                force-key-prefix: kilisi minnu ka kan ka wajibiya ka sɛbɛn u kan
+                generate-const: Jatebla nafaw labɔ walasa weleli ka nɔgɔn
+                languages: Bamanankan baarakɛcogo bɛ kan min laɲini, o fɔ
+                src-file: Source file min ka kan ka baara (a wajibiyalen don) .
+                src-language: Soso filen kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .
+                translater:
+                    google-free: Google Web Bamanankan baarakɛcogo
+                    usage: 'Bamanankan baarakɛcogo: Dɛmɛ suguya {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Kan caman ka dosiye minnu bɛ Bɔ yɔrɔ dɔ la, olu bɛ Yɛlɛma ka Kɛ dosiyew ye cogo kelen na kan wɛrɛw la.
+            short: ka bayɛlɛma
+    long: ‘Proto’-based backend framework, template minnu bɛ Kɛ ka caya, ani kan caman bamanankan-falen-falen bɛ a kɔnɔ
+    short: Baarakɛminɛnw gafe

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Väljund üksikasjalik logi
+    help:
+        additional_commands: Täiendavad käsud
+        aliases: käsu varjunimi
+        available_commands: Toetatud käsud
+        command: Telli
+        flags: parameeter
+        get_info: täpsema teabe saamiseks
+        global_flags: globaalsed parameetrid
+        use: kasutada
+    i18n:
+        long: Mitmekeelne rahvusvahelistumisega seotud tööriistakomplekt
+        short: Mitmekeelne rahvusvahelistumisega seotud tööriistakomplekt
+        tran:
+            flags:
+                all-language: Tõlgi kõik toetatud keeled (kui see on tõene, on keelte lipp keelatud)
+                force: Olemasolevate tõlgete ülekirjutamine
+                force-key-prefix: võtmed, mis tuleb sundida üle kirjutama
+                generate-const: Looge loendusväärtusi helistamise hõlbustamiseks
+                languages: Määrake tõlke sihtkeel
+                src-file: Tõlgitav lähtefail (nõutav)
+                src-language: Lähtefaili keel (kui pole määratud, määrab tööriist lähtefaili automaatselt)
+                translater:
+                    google-free: Google'i veebitõlge
+                    usage: 'Tõlkekanal: toe tüüp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Teatud allikast pärit mitmekeelsed failid teisendatakse teistes keeltes samas vormingus failideks.
+            short: tõlkida
+    long: Sisaldab "proto"põhist taustaraamistikku, tavaliselt kasutatavaid malle ja mitmekeelseid tõlkeid
+    short: Tööriistakomplekt

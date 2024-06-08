@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Ijade alaye log
+    help:
+        additional_commands: Awọn aṣẹ afikun
+        aliases: aṣẹ inagijẹ
+        available_commands: Awọn aṣẹ atilẹyin
+        command: Bere fun
+        flags: paramita
+        get_info: lati gba alaye diẹ sii
+        global_flags: agbaye sile
+        use: lo
+    i18n:
+        long: Ohun elo irinṣẹ ti o ni ibatan si ilu okeere ti ede pupọ
+        short: Ohun elo irinṣẹ ti o ni ibatan si ilu okeere ti ede pupọ
+        tran:
+            flags:
+                all-language: Tumọ gbogbo awọn ede ti o ni atilẹyin (ti o ba jẹ otitọ awọn asia awọn ede jẹ alaabo)
+                force: Kọ awọn itumọ ti o wa tẹlẹ
+                force-key-prefix: awọn bọtini ti o nilo lati fi agbara mu lati kọ
+                generate-const: Ṣe ina awọn iye kika fun pipe pipe
+                languages: Pato ede ibi-afẹde fun itumọ
+                src-file: Faili orisun lati tumọ (beere)
+                src-language: Ede ti faili orisun (ti ko ba ṣe pato, ọpa yoo pinnu faili orisun laifọwọyi)
+                translater:
+                    google-free: Google Wẹẹbu Tumọ
+                    usage: 'Ikanni itumọ: Atilẹyin Iru {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{opin}}'
+            long: Awọn faili onisọpọ pupọ lati orisun kan jẹ iyipada si awọn faili ni ọna kika kanna ni awọn ede miiran.
+            short: tumọ
+    long: Ni ‘proto’ ni ilana ẹhin ti o da lori, awọn awoṣe ti a lo nigbagbogbo, ati awọn itumọ ede pupọ
+    short: Ohun elo irinṣẹ

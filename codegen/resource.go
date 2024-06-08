@@ -28,6 +28,8 @@ const (
 	TemplateTypeTableName
 	TemplateTypeTableField
 
+	TemplateTypeI18nConst
+
 	TemplateTypeCmd
 
 	TemplateTypeProtoRpc
@@ -49,6 +51,8 @@ const (
 	TemplateTypeMakefile
 	TemplateTypeEditorconfig
 	TemplateTypeGolangci
+	TemplateTypeGitignore
+	TemplateTypeDockerignore
 )
 
 func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
@@ -156,6 +160,18 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeGolangci:
 		systemPath = state.Config.Template.Golangci
 		embedPath = "template/.golangci.yml"
+
+	case TemplateTypeGitignore:
+		systemPath = state.Config.Template.Gitignore
+		embedPath = "template/.gitignore"
+
+	case TemplateTypeDockerignore:
+		systemPath = state.Config.Template.Dockerignore
+		embedPath = "template/.dockerignore"
+
+	case TemplateTypeI18nConst:
+		systemPath = state.Config.Template.I18nConst
+		embedPath = "template/i18n_const.gtpl"
 
 	default:
 		panic("unsupported template type")

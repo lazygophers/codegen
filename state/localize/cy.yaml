@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Log manwl allbwn
+    help:
+        additional_commands: Gorchmynion ychwanegol
+        aliases: alias gorchymyn
+        available_commands: Gorchmynion a gefnogir
+        command: Gorchymyn
+        flags: paramedr
+        get_info: i gael gwybodaeth fanylach
+        global_flags: paramedrau byd-eang
+        use: defnydd
+    i18n:
+        long: Pecyn cymorth rhyngwladoli amlieithog
+        short: Pecyn cymorth rhyngwladoli amlieithog
+        tran:
+            flags:
+                all-language: Cyfieithwch yr holl ieithoedd a gefnogir (os yn wir mae baner yr ieithoedd wedi'i hanalluogi)
+                force: Trosysgrifo cyfieithiadau presennol
+                force-key-prefix: allweddi y mae angen eu gorfodi i gael eu trosysgrifo
+                generate-const: Cynhyrchu gwerthoedd cyfrifo ar gyfer galw hawdd
+                languages: Nodwch yr iaith darged ar gyfer cyfieithu
+                src-file: Ffeil ffynhonnell i'w chyfieithu (gofynnol)
+                src-language: Iaith y ffeil ffynhonnell (os na chaiff ei nodi, bydd yr offeryn yn pennu'r ffeil ffynhonnell yn awtomatig)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Sianel gyfieithu: Math o gefnogaeth {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Mae ffeiliau amlieithog o ffynhonnell benodol yn cael eu trosi'n ffeiliau yn yr un fformat mewn ieithoedd eraill.
+            short: cyfieithu
+    long: Yn cynnwys fframwaith ôl-wyneb seiliedig ar 'proto', templedi a ddefnyddir yn gyffredin, a chyfieithiadau aml-iaith
+    short: Pecyn cymorth

@@ -38,9 +38,11 @@ func getFileHeader(pb *PbPackage) []byte {
 	b.WriteByte('\n')
 
 	// 文件
-	b.WriteString("//\tsource: ")
-	b.WriteString(pb.ProtoFileName())
-	b.WriteByte('\n')
+	if pb != nil {
+		b.WriteString("//\tsource: ")
+		b.WriteString(pb.ProtoFileName())
+		b.WriteByte('\n')
+	}
 
 	b.WriteByte('\n')
 

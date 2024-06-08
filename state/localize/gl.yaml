@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Saída de rexistro detallado
+    help:
+        additional_commands: Comandos adicionais
+        aliases: alias de comando
+        available_commands: Comandos compatibles
+        command: Orde
+        flags: parámetro
+        get_info: para obter información máis detallada
+        global_flags: parámetros globais
+        use: usar
+    i18n:
+        long: Caja de ferramentas multilingüe relacionada coa internacionalización
+        short: Caja de ferramentas multilingüe relacionada coa internacionalización
+        tran:
+            flags:
+                all-language: Traduce todos os idiomas admitidos (se é verdade, a bandeira de idiomas está desactivada)
+                force: Sobrescribir as traducións existentes
+                force-key-prefix: claves que deben ser forzadas a sobrescribirlas
+                generate-const: Xera valores de enumeración para facilitar as chamadas
+                languages: Especifique o idioma de destino para a tradución
+                src-file: Ficheiro fonte a traducir (obrigatorio)
+                src-language: O idioma do ficheiro de orixe (se non se especifica, a ferramenta determinará automaticamente o ficheiro de orixe)
+                translater:
+                    google-free: Tradutor web de Google
+                    usage: 'Canle de tradución: tipo de soporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Os ficheiros multilingües dunha determinada fonte convértense en ficheiros no mesmo formato noutros idiomas.
+            short: traducir
+    long: Contén un cadro de fondo baseado en 'proto', modelos de uso habitual e traducións en varios idiomas
+    short: Caixa de ferramentas

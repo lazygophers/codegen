@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Výstup podrobného protokolu
+    help:
+        additional_commands: Ďalšie príkazy
+        aliases: alias príkazu
+        available_commands: Podporované príkazy
+        command: objednať
+        flags: parameter
+        get_info: získať podrobnejšie informácie
+        global_flags: globálne parametre
+        use: použitie
+    i18n:
+        long: Viacjazyčný súbor nástrojov súvisiacich s internacionalizáciou
+        short: Viacjazyčný súbor nástrojov súvisiacich s internacionalizáciou
+        tran:
+            flags:
+                all-language: Preložiť všetky podporované jazyky (ak je pravda, príznak jazykov je zakázaný)
+                force: Prepíšte existujúce preklady
+                force-key-prefix: kľúče, ktoré je potrebné vynútiť prepísanie
+                generate-const: Generujte hodnoty enumerácie pre jednoduché volanie
+                languages: Zadajte cieľový jazyk prekladu
+                src-file: Zdrojový súbor na preklad (povinné)
+                src-language: Jazyk zdrojového súboru (ak nie je zadaný, nástroj automaticky určí zdrojový súbor)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Kanál prekladu: Typ podpory {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Viacjazyčné súbory z určitého zdroja sa skonvertujú na súbory v rovnakom formáte v iných jazykoch.
+            short: preložiť
+    long: Obsahuje backendový rámec založený na „proto“, bežne používané šablóny a viacjazyčné preklady
+    short: Toolkit

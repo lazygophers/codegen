@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Eligi detalan protokolon
+    help:
+        additional_commands: Kromaj komandoj
+        aliases: komando kaŝnomo
+        available_commands: Subtenataj komandoj
+        command: Ordo
+        flags: parametro
+        get_info: por ricevi pli detalajn informojn
+        global_flags: tutmondaj parametroj
+        use: uzi
+    i18n:
+        long: Plurlingva internaciigo rilata ilaro
+        short: Plurlingva internaciigo rilata ilaro
+        tran:
+            flags:
+                all-language: Traduku ĉiujn subtenatajn lingvojn (se vera la lingvo-marko estas malŝaltita)
+                force: Anstataŭigu ekzistantajn tradukojn
+                force-key-prefix: ŝlosiloj kiuj devas esti devigitaj esti anstataŭitaj
+                generate-const: Generu enumerajn valorojn por facila vokado
+                languages: Indiku la cellingvon por tradukado
+                src-file: Fontdosiero tradukenda (postulata)
+                src-language: La lingvo de la fontdosiero (se ne specifita, la ilo aŭtomate determinos la fontdosieron)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Traduka kanalo: Subtena tipo {{range $key,$value := .Type}}{{$key}}:{{$valoro}}{{end}}'
+            long: Plurlingvaj dosieroj de certa fonto estas konvertitaj en dosierojn en la sama formato en aliaj lingvoj.
+            short: traduki
+    long: Enhavas 'proto'-bazitan backend kadron, ofte uzatajn ŝablonojn kaj plurlingvajn tradukojn
+    short: Ilaro

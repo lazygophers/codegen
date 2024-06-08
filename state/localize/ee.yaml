@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output tsitotsito log
+    help:
+        additional_commands: Sedede bubuwo
+        aliases: sedede ƒe ŋkɔ bubu
+        available_commands: Sedede siwo ŋu wodo alɔe
+        command: Gbeɖeɖe
+        flags: parameter
+        get_info: be nàkpɔ nyatakaka siwo de to wu
+        global_flags: xexeame katã ƒe nɔnɔmewo
+        use: zã
+    i18n:
+        long: Dɔwɔnu siwo ku ɖe gbegbɔgblɔ geɖe me dukɔwo dome ƒomedodo ŋu
+        short: Dɔwɔnu siwo ku ɖe gbegbɔgblɔ geɖe me dukɔwo dome ƒomedodo ŋu
+        tran:
+            flags:
+                all-language: Gblɔ gbegbɔgblɔ siwo katã wodo alɔe (ne nyateƒee la, wotu gbegbɔgblɔwo ƒe aflaga)
+                force: Ŋlɔ gɔmeɖeɖe siwo li xoxo la ɖe edzi
+                force-key-prefix: safui siwo wòle be woazi dzi be woaŋlɔ ɖe wo dzi
+                generate-const: Wɔ xexlẽdzesiwo ƒe asixɔxɔwo hena yɔyɔ bɔbɔe
+                languages: Gblɔ gbe si me nàɖe gbegɔmeɖeɖe le
+                src-file: Dzɔtsoƒe faɛl si gɔme woaɖe (ehiã) .
+                src-language: Gbe si me faɛl tsoƒe la le (ne womegblɔe o la, dɔwɔnua atso nya me le eɖokui si)
+                translater:
+                    google-free: Google Nyatakakadzraɖoƒe Gbegɔmeɖeɖe
+                    usage: 'Gbegɔmeɖeɖe mɔnu: Kpekpeɖeŋu ƒomevi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Wotrɔa gbegbɔgblɔ geɖe me faɛl siwo tso teƒe aɖe la wozua faɛl siwo le nɔnɔme ɖeka me le gbe bubuwo me.
+            short: ɖe gbe gɔme
+    long: '''proto''-based backend framework, template siwo wozãna zi geɖe, kple gbegbɔgblɔ geɖe me gɔmeɖeɖewo le eme'
+    short: Dɔwɔnuawo ƒe Agbalẽ

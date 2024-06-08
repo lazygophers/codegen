@@ -152,9 +152,13 @@ type CfgTemplate struct {
 	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
 	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 
-	Goreleaser string `json:"goreleaser,omitempty" yaml:"goreleaser,omitempty" toml:"goreleaser,omitempty"`
-	Makefile   string `json:"makefile,omitempty" yaml:"makefile,omitempty" toml:"makefile,omitempty"`
-	Golangci   string `json:"golangci,omitempty" yaml:"golangci,omitempty" toml:"golangci,omitempty"`
+	Goreleaser   string `json:"goreleaser,omitempty" yaml:"goreleaser,omitempty" toml:"goreleaser,omitempty"`
+	Makefile     string `json:"makefile,omitempty" yaml:"makefile,omitempty" toml:"makefile,omitempty"`
+	Golangci     string `json:"golangci,omitempty" yaml:"golangci,omitempty" toml:"golangci,omitempty"`
+	Gitignore    string `json:"gitignore,omitempty" yaml:"gitignore,omitempty" toml:"gitignore,omitempty"`
+	Dockerignore string `json:"dockerignore,omitempty" yaml:"dockerignore,omitempty" toml:"dockerignore,omitempty"`
+
+	I18nConst string `json:"i18n_const,omitempty" yaml:"i18n_const,omitempty" toml:"i18n_const,omitempty"`
 }
 
 type CfgTables struct {
@@ -184,6 +188,38 @@ func (p *CfgTables) apply() {
 	}
 }
 
+type CfgI18n struct {
+	GenerateConst bool `json:"generate_const,omitempty" yaml:"generate_const,omitempty" toml:"generate_const,omitempty"`
+
+	Languages    []string `json:"languages,omitempty" yaml:"languages,omitempty" toml:"languages,omitempty"`
+	AllLanguages bool     `json:"all_languages,omitempty" yaml:"all_languages,omitempty" toml:"all_languages,omitempty"`
+
+	Translater string `json:"translater,omitempty" yaml:"translater,omitempty" toml:"translater,omitempty"`
+}
+
+func (p *CfgI18n) apply() {
+	if p.Translater == "" {
+		p.Translater = "google-free"
+	}
+
+	if p.AllLanguages {
+		// do nothing
+	} else {
+		if len(p.Languages) == 0 {
+			p.Languages = []string{
+				"en",
+				"zh",
+				"ja",
+				"ko",
+				"fr",
+				"de",
+				"it",
+				"ru",
+			}
+		}
+	}
+}
+
 type Cfg struct {
 	ProtocPath     string `json:"protoc_path,omitempty" yaml:"protoc_path,omitempty" toml:"protoc_path,omitempty"`
 	ProtoGenGoPath string `json:"protogen_go_path,omitempty" yaml:"protogen_go_path,omitempty" toml:"protogen_go_path,omitempty"`
@@ -193,6 +229,10 @@ type Cfg struct {
 	GoModulePrefix string `json:"go_module_prefix,omitempty" yaml:"go_module_prefix,omitempty" toml:"go_module_prefix,omitempty"`
 
 	OutputPath string `json:"output_path,omitempty" yaml:"output_path,omitempty" toml:"output_path,omitempty"`
+
+	Language string `json:"language,omitempty" yaml:"language,omitempty" toml:"language,omitempty"`
+
+	I18n *CfgI18n `json:"i18n,omitempty" yaml:"i18n,omitempty" toml:"i18n,omitempty"`
 
 	Style *CfgStyle `json:"style,omitempty" yaml:"style,omitempty" toml:"style,omitempty"`
 
@@ -258,6 +298,11 @@ func (p *Cfg) apply() (err error) {
 		log.Errorf("err:%v", err)
 		return err
 	}
+
+	if p.I18n == nil {
+		p.I18n = new(CfgI18n)
+	}
+	p.I18n.apply()
 
 	// NOTE: struct 标签
 	{

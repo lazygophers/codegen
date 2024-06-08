@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Fitar da cikakken log
+    help:
+        additional_commands: Ƙarin umarni
+        aliases: umarni mai lakabi
+        available_commands: Umurnai masu goyan baya
+        command: Oda
+        flags: siga
+        get_info: domin samun cikakken bayani
+        global_flags: sigogi na duniya
+        use: amfani
+    i18n:
+        long: Kunshin kayan aiki masu alaƙa da haɗakar harsuna da yawa
+        short: Kunshin kayan aiki masu alaƙa da haɗakar harsuna da yawa
+        tran:
+            flags:
+                all-language: Fassara duk harsunan da aka goyan baya (idan gaskiya an kashe tutar harsunan)
+                force: Rubuta fassarorin da ke akwai
+                force-key-prefix: makullin da ake buƙatar tilastawa a sake rubuta su
+                generate-const: Ƙirƙirar ƙididdiga ƙididdiga don sauƙin kira
+                languages: Ƙayyade harshen manufa don fassara
+                src-file: Fayil ɗin tushen da za a fassara (an buƙata)
+                src-language: Harshen fayil ɗin tushen (idan ba a ƙayyade ba, kayan aiki zai ƙayyade fayil ɗin tushen ta atomatik)
+                translater:
+                    google-free: Google Yanar Gizo Fassara
+                    usage: 'Tashar fassarar: Nau''in tallafi {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Fayilolin yaruka da yawa daga wani tushe ana jujjuya su zuwa fayiloli a cikin tsari iri ɗaya a cikin wasu harsuna.
+            short: fassara
+    long: Ya ƙunshi tsarin baya na tushen 'proto', samfuran da aka saba amfani da su, da fassarorin harsuna da yawa
+    short: Kayan aiki

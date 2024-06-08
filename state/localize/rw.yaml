@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Ibisohoka birambuye
+    help:
+        additional_commands: Amabwiriza yinyongera
+        aliases: itegeko alias
+        available_commands: Gushyigikirwa
+        command: Tegeka
+        flags: ibipimo
+        get_info: kugirango ubone ibisobanuro birambuye
+        global_flags: ibipimo byisi
+        use: Koresha
+    i18n:
+        long: Indimi nyinshi zijyanye no kumenyekanisha mpuzamahanga
+        short: Indimi nyinshi zijyanye no kumenyekanisha mpuzamahanga
+        tran:
+            flags:
+                all-language: Sobanura indimi zose zishyigikiwe (niba arukuri ibendera ibendera ryahagaritswe)
+                force: Andika ibisobanuro bihari
+                force-key-prefix: urufunguzo rugomba guhatirwa kwandikwa
+                generate-const: Kubyara indangagaciro zo kubara byoroshye guhamagarwa
+                languages: Kugaragaza ururimi rugenewe gusobanura
+                src-file: Idosiye yinkomoko igomba guhindurwa (bisabwa)
+                src-language: Ururimi rwa dosiye yinkomoko (niba bidasobanuwe neza, igikoresho kizahita kigena dosiye yinkomoko)
+                translater:
+                    google-free: Urubuga rwa Google
+                    usage: 'Umuyoboro wubuhinduzi: Ubwoko bwingoboka {{urwego $ urufunguzo, $ agaciro: = .Ubwoko}} {{$ urufunguzo}}: {{$ agaciro}} {{iherezo}}'
+            long: Indimi nyinshi ziva mu isoko runaka zihindurwa muri dosiye muburyo bumwe mu zindi ndimi.
+            short: guhindura
+    long: Harimo 'proto'-ishingiye kumurongo winyuma, ikunze gukoreshwa inyandikorugero, hamwe nubusobanuro bwindimi nyinshi
+    short: Igitabo

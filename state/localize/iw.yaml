@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: פלט יומן מפורט
+    help:
+        additional_commands: פקודות נוספות
+        aliases: כינוי פקודה
+        available_commands: פקודות נתמכות
+        command: להזמין
+        flags: פָּרָמֶטֶר
+        get_info: כדי לקבל מידע מפורט יותר
+        global_flags: פרמטרים גלובליים
+        use: להשתמש
+    i18n:
+        long: ערכת כלים הקשורה לבינאום רב לשוני
+        short: ערכת כלים הקשורה לבינאום רב לשוני
+        tran:
+            flags:
+                all-language: תרגם את כל השפות הנתמכות (אם נכון, דגל השפות מושבת)
+                force: החלף תרגומים קיימים
+                force-key-prefix: מפתחות שצריך להכריח להחלף
+                generate-const: צור ערכי ספירה להתקשרות קלה
+                languages: ציין את שפת היעד לתרגום
+                src-file: קובץ המקור לתרגום (חובה)
+                src-language: שפת קובץ המקור (אם לא צוין, הכלי יקבע אוטומטית את קובץ המקור)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'ערוץ תרגום: סוג תמיכה {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: קבצים רב לשוניים ממקור מסוים מומרים לקבצים באותו פורמט בשפות אחרות.
+            short: לתרגם
+    long: מכיל מסגרת עורפית מבוססת 'פרוטו', תבניות נפוצות ותרגומים מרובי שפות
+    short: אַרְגַז כֵּלִים

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: 輸出詳細日誌
+    help:
+        additional_commands: 附加命令
+        aliases: 命令別名
+        available_commands: 支援的命令
+        command: 命令
+        flags: 參數
+        get_info: 來獲取更詳細的信息
+        global_flags: 全域參數
+        use: 使用
+    i18n:
+        long: 多語言國際化相關工具包
+        short: 多語言國際化相關工具包
+        tran:
+            flags:
+                all-language: 翻譯所有支援的語言（如果為 true 則 languages 標記失效）
+                force: 覆蓋已存在的翻譯
+                force-key-prefix: 需要被強制覆蓋的 keys
+                generate-const: 產生枚舉值，方便調用
+                languages: 指定翻譯的目標語言
+                src-file: 需要翻譯的原始檔（必填）
+                src-language: 原始檔的語言（如果不指定，則會工具原始檔自動判斷）
+                translater:
+                    google-free: Google 網頁翻譯
+                    usage: 翻譯頻道：支援類型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
+            long: 透過某一個原始多語言文件還以為其它語言相同格式的文件
+            short: 翻譯
+    long: 包含基於 'proto' 的後端框架、常用模板，以及多語言翻譯
+    short: 工具包

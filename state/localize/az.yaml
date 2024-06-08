@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Ətraflı jurnalı çıxarın
+    help:
+        additional_commands: Əlavə əmrlər
+        aliases: əmr ləqəbi
+        available_commands: Dəstəklənən əmrlər
+        command: Sifariş verin
+        flags: parametr
+        get_info: daha ətraflı məlumat almaq üçün
+        global_flags: qlobal parametrlər
+        use: istifadə edin
+    i18n:
+        long: Çoxdilli beynəlmiləlləşdirmə ilə bağlı alətlər dəsti
+        short: Çoxdilli beynəlmiləlləşdirmə ilə bağlı alətlər dəsti
+        tran:
+            flags:
+                all-language: Bütün dəstəklənən dilləri tərcümə edin (əgər doğrudursa, dillər bayrağı deaktivdir)
+                force: Mövcud tərcümələrin üzərinə yazın
+                force-key-prefix: üzərinə yazılmağa məcbur edilməli olan açarlar
+                generate-const: Asan zəng üçün siyahı dəyərləri yaradın
+                languages: Tərcümə üçün hədəf dili göstərin
+                src-file: Tərcümə ediləcək mənbə fayl (tələb olunur)
+                src-language: Mənbə faylının dili (əgər göstərilməyibsə, alət mənbə faylı avtomatik müəyyən edəcək)
+                translater:
+                    google-free: Google Veb Tərcümə
+                    usage: 'Tərcümə kanalı: Dəstək növü {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Müəyyən mənbədən çoxdilli fayllar digər dillərdə eyni formatda olan fayllara çevrilir.
+            short: tərcümə etmək
+    long: Tərkibində "proto" əsaslı arxa plan çərçivəsi, çox istifadə olunan şablonlar və çoxdilli tərcümələr var
+    short: Alət dəsti

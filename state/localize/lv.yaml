@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Izvadiet detalizētu žurnālu
+    help:
+        additional_commands: Papildu komandas
+        aliases: komandas aizstājvārds
+        available_commands: Atbalstītās komandas
+        command: Pasūtiet
+        flags: parametrs
+        get_info: lai iegūtu sīkāku informāciju
+        global_flags: globālie parametri
+        use: izmantot
+    i18n:
+        long: Daudzvalodu internacionalizācijas rīku komplekts
+        short: Daudzvalodu internacionalizācijas rīku komplekts
+        tran:
+            flags:
+                all-language: Tulkot visas atbalstītās valodas (ja tā ir patiesa, valodu karodziņš ir atspējots)
+                force: Pārrakstīt esošos tulkojumus
+                force-key-prefix: atslēgas, kuras nepieciešams piespiest pārrakstīt
+                generate-const: Ģenerējiet uzskaites vērtības, lai tos varētu viegli izsaukt
+                languages: Norādiet tulkošanas mērķa valodu
+                src-file: Tulkojams avota fails (obligāti)
+                src-language: Avota faila valoda (ja nav norādīta, rīks automātiski noteiks avota failu)
+                translater:
+                    google-free: Google tīmekļa tulkotājs
+                    usage: 'Tulkošanas kanāls: atbalsta veids {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Daudzvalodu faili no noteikta avota tiek pārvērsti failos tādā pašā formātā citās valodās.
+            short: tulkot
+    long: Ietver uz "proto" balstītu aizmugursistēmas sistēmu, bieži lietotas veidnes un vairāku valodu tulkojumus
+    short: Rīku komplekts

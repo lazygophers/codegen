@@ -9,5 +9,11 @@ func Load() (err error) {
 		return err
 	}
 
+	err = LoadI18n()
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	return nil
 }

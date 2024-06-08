@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output ditayl lɔg
+    help:
+        additional_commands: Ɔda kɔmand dɛn
+        aliases: kɔmand alias
+        available_commands: Kɔmand dɛn we dɛn sɔpɔt
+        command: Ɔda
+        flags: paramita
+        get_info: fɔ gɛt mɔ ditayli infɔmeshɔn
+        global_flags: di glob ɔl paramita dɛn
+        use: yuz
+    i18n:
+        long: Tulkit we gɛt fɔ du wit intanashɔnalayzeshɔn we gɛt bɔku langwej dɛn
+        short: Tulkit we gɛt fɔ du wit intanashɔnalayzeshɔn we gɛt bɔku langwej dɛn
+        tran:
+            flags:
+                all-language: Translet ɔl di langwej dɛn we dɛn sɔpɔt (if na tru di langwej dɛn flag nɔ de wok)
+                force: Rayt di transleshɔn dɛn we dɔn de
+                force-key-prefix: ki dɛn we nid fɔ fos fɔ rayt ɔva
+                generate-const: Jɛnɛret ɛnyumɛreshɔn valyu fɔ izi kɔl
+                languages: Sho di langwej we yu want fɔ translet
+                src-file: Sɔs fayl we dɛn fɔ translet (we dɛn nid) .
+                src-language: Di langwej fɔ di sɔs fayl (if dɛn nɔ sho am, di tul go ɔtomɛtiks disayd di sɔs fayl)
+                translater:
+                    google-free: Google Wɛb Translet
+                    usage: 'Transleshɔn chanɛl: Sɔpɔt tayp {{rɛnj $ki,$valyu := .Tayp}}{{$ki}}:{{$valyu}}{{ɛnd}}'
+            long: Fayl dɛn we gɛt bɔku langwej dɛn frɔm wan patikyula say, dɛn kin chenj dɛn to fayl dɛn we gɛt di sem fɔmat insay ɔda langwej dɛn.
+            short: translet
+    long: I gɛt ‘proto’-based bakɛnd fremwɔk, tɛmplat dɛn we dɛn kin yuz bɔku tɛm, ɛn transleshɔn dɛn we gɛt bɔku langwej dɛn
+    short: Tulkit we dɛn kɔl

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output nsɛm a ɛkɔ akyiri log
+    help:
+        additional_commands: Ahyɛde afoforo
+        aliases: ahyɛdeɛ alias
+        available_commands: Ahyɛde ahorow a wɔboa
+        command: Kra
+        flags: parameter
+        get_info: sɛnea ɛbɛyɛ a wubenya nsɛm a ɛkɔ akyiri
+        global_flags: wiase nyinaa nsusuwii ahorow
+        use: fa di dwuma
+    i18n:
+        long: Kasa ahorow pii amanaman ntam nkitahodi ho adwinnade
+        short: Kasa ahorow pii amanaman ntam nkitahodi ho adwinnade
+        tran:
+            flags:
+                all-language: Kyerɛ kasa horow a wɔboa nyinaa ase (sɛ ɛyɛ nokware a kasa ahorow no frankaa no ayɛ adwuma) .
+                force: Kyerɛw nkyerɛase ahorow a ɛwɔ hɔ dedaw no so
+                force-key-prefix: nsafe a ɛsɛ sɛ wɔhyɛ ma wɔkyerɛw so
+                generate-const: Yɛ enumeration values ​​ma frɛ a ɛnyɛ den
+                languages: Kyerɛ kasa a wopɛ sɛ wokyerɛ ase
+                src-file: Source file a wɔbɛkyerɛ ase (ɛhwehwɛ) .
+                src-language: Kasa a wɔde fa fael no fibea (sɛ wɔankyerɛ a, adwinnade no ankasa bɛkyerɛ fael a efi mu ba) .
+                translater:
+                    google-free: Google Wɛb Nkyerɛaseɛ
+                    usage: 'Nkyerɛaseɛ kwan: Mmoa su {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Wɔdan fael ahorow a ɛka kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.
+            short: kyerɛ aseɛ
+    long: Ɛwɔ 'proto'-based backend framework, templates a wɔtaa de di dwuma, ne kasa ahodoɔ nkyerɛaseɛ
+    short: Nnwinnade a Wɔde Di Dwuma

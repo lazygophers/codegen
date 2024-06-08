@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Ieșire jurnal detaliat
+    help:
+        additional_commands: Comenzi suplimentare
+        aliases: alias de comandă
+        available_commands: Comenzi acceptate
+        command: Ordin
+        flags: parametru
+        get_info: pentru a obține informații mai detaliate
+        global_flags: parametri globali
+        use: utilizare
+    i18n:
+        long: Setul de instrumente pentru internaționalizare multilingvă
+        short: Setul de instrumente pentru internaționalizare multilingvă
+        tran:
+            flags:
+                all-language: Traduceți toate limbile acceptate (dacă este adevărat, indicatorul de limbi este dezactivat)
+                force: Suprascrieți traducerile existente
+                force-key-prefix: cheile care trebuie forțate să fie suprascrise
+                generate-const: Generați valori de enumerare pentru apeluri ușoare
+                languages: Specificați limba țintă pentru traducere
+                src-file: Fișierul sursă de tradus (obligatoriu)
+                src-language: Limba fișierului sursă (dacă nu este specificată, instrumentul va determina automat fișierul sursă)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Canal de traducere: tip de suport {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Fișierele multilingve dintr-o anumită sursă sunt convertite în fișiere în același format în alte limbi.
+            short: Traduceți
+    long: Conține un cadru backend bazat pe „proto”, șabloane utilizate în mod obișnuit și traduceri în mai multe limbi
+    short: Trusa de instrumente

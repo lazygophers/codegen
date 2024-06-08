@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Têketinek berfireh derxe
+    help:
+        additional_commands: fermanên Additional
+        aliases: fermana nasnav
+        available_commands: Emrên piştgirî kirin
+        command: Emir
+        flags: parametre
+        get_info: ji bo agahdariya berfirehtir bistînin
+        global_flags: parametreyên gerdûnî
+        use: bikaranîn
+    i18n:
+        long: Amûrên têkildarî navneteweyîbûna pirzimanî
+        short: Amûrên têkildarî navneteweyîbûna pirzimanî
+        tran:
+            flags:
+                all-language: Hemî zimanên piştgirî wergerînin (eger rast be ala zimanan neçalak be)
+                force: Wergerên heyî binivîsînin
+                force-key-prefix: mifteyên ku divê bi zorê bêne nivîsandin
+                generate-const: Ji bo banga hêsan nirxên hejmartinê biafirînin
+                languages: Zimanê mebest ji bo wergerê diyar bike
+                src-file: Dosya çavkaniyê ku were wergerandin (pêwîst e)
+                src-language: Zimanê pelê çavkaniyê (heke ne diyar be, amûr dê bixweber pelê çavkaniyê diyar bike)
+                translater:
+                    google-free: Google Web Wergera
+                    usage: 'Kanala wergerandinê: Cureya piştgirîyê {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Pelên pirzimanî yên ji çavkaniyek diyarkirî di zimanên din de di heman forma pelan de têne veguheztin.
+            short: wergerandin
+    long: Çarçoveya paşîn a bingehîn ya 'proto', şablonên ku bi gelemperî têne bikar anîn, û wergerên pir-ziman vedihewîne.
+    short: Toolkit

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Nxjerr regjistrin e detajuar
+    help:
+        additional_commands: Komandat shtesë
+        aliases: pseudonimi i komandës
+        available_commands: Komandat e mbështetura
+        command: Rendit
+        flags: parametri
+        get_info: për të marrë informacion më të detajuar
+        global_flags: parametrat globalë
+        use: përdorni
+    i18n:
+        long: Paketa e mjeteve në lidhje me ndërkombëtarizimin shumëgjuhësh
+        short: Paketa e mjeteve në lidhje me ndërkombëtarizimin shumëgjuhësh
+        tran:
+            flags:
+                all-language: Përkthe të gjitha gjuhët e mbështetura (nëse është e vërtetë, flamuri i gjuhëve është i çaktivizuar)
+                force: Mbishkruani përkthimet ekzistuese
+                force-key-prefix: çelësat që duhet të detyrohen të mbishkruhen
+                generate-const: Gjeneroni vlera numërimi për thirrje të lehtë
+                languages: Specifikoni gjuhën e synuar për përkthim
+                src-file: Skedari burimor që do të përkthehet (kërkohet)
+                src-language: Gjuha e skedarit burimor (nëse nuk specifikohet, mjeti do të përcaktojë automatikisht skedarin burimor)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Kanali i përkthimit: Lloji i mbështetjes {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Skedarët shumëgjuhësh nga një burim i caktuar konvertohen në skedarë në të njëjtin format në gjuhë të tjera.
+            short: përkthejnë
+    long: Përmban kornizën mbështetëse të bazuar në "proto", shabllone të përdorura zakonisht dhe përkthime shumë-gjuhëshe
+    short: Pako e veglave

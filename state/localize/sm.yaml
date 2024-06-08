@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Fa'amatalaga fa'amatalaga fa'amatalaga
+    help:
+        additional_commands: Poloaiga faaopoopo
+        aliases: fa'atonu igoa
+        available_commands: Poloaiga lagolago
+        command: Poloaiga
+        flags: fa'ata'oto
+        get_info: e maua ai fa'amatalaga auiliili
+        global_flags: fa'asologa o le lalolagi
+        use: fa'aoga
+    i18n:
+        long: Meafaigaluega e feso'ota'i i gagana fa'ava-o-malo
+        short: Meafaigaluega e feso'ota'i i gagana fa'ava-o-malo
+        tran:
+            flags:
+                all-language: Fa'aliliu gagana lagolago uma (pe a sa'o le fu'a gagana)
+                force: Sui fa'aliliuga o iai
+                force-key-prefix: ki e mana'omia ona fa'amalosia e fa'asolo
+                generate-const: Fausia fa'asologa fa'atatau mo le vala'au faigofie
+                languages: Fa'ailoa le gagana fa'atatau mo le fa'aliliuga
+                src-file: Fa'aliliuga faila e fa'aliliu (mana'omia)
+                src-language: Le gagana o le faila fa'apogai (pe a le fa'amaonia, o le meafaigaluega e otometi lava ona iloa le faila fa'apogai)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Fa''aliliuga ala: Ituaiga lagolago {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: O faila e tele gagana mai se puna patino e liua i faila i le faatulagaga tutusa i isi gagana.
+            short: fa'aliliu
+    long: O lo'o iai 'proto' fa'avae pito i tua auivi, fa'ata'ita'iga masani ona fa'aoga, ma fa'aliliuga e tele gagana.
+    short: Meafaigaluega

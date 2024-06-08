@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Részletes napló kimenet
+    help:
+        additional_commands: További parancsok
+        aliases: parancs alias
+        available_commands: Támogatott parancsok
+        command: Rendelés
+        flags: paraméter
+        get_info: részletesebb információkhoz
+        global_flags: globális paraméterek
+        use: használat
+    i18n:
+        long: Többnyelvű nemzetközivé válással kapcsolatos eszköztár
+        short: Többnyelvű nemzetközivé válással kapcsolatos eszköztár
+        tran:
+            flags:
+                all-language: Az összes támogatott nyelv lefordítása (ha igaz, a nyelvek jelzője le van tiltva)
+                force: A meglévő fordítások felülírása
+                force-key-prefix: olyan kulcsok, amelyeket kényszeríteni kell felülírni
+                generate-const: Számolási értékek generálása az egyszerű hívás érdekében
+                languages: Adja meg a fordítás célnyelvét
+                src-file: Lefordítandó forrásfájl (kötelező)
+                src-language: A forrásfájl nyelve (ha nincs megadva, az eszköz automatikusan meghatározza a forrásfájlt)
+                translater:
+                    google-free: Google Web Fordító
+                    usage: 'Fordítási csatorna: Támogatási típus: {{tartomány $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Egy bizonyos forrásból származó többnyelvű fájlokat a rendszer más nyelvek azonos formátumú fájljaivá alakítja.
+            short: fordít
+    long: „Proto” alapú háttérrendszert, gyakran használt sablonokat és többnyelvű fordításokat tartalmaz
+    short: Eszközkészlet

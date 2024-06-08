@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Izlaz detaljnog dnevnika
+    help:
+        additional_commands: Dodatne naredbe
+        aliases: komandni pseudonim
+        available_commands: Podržane komande
+        command: Red
+        flags: parametar
+        get_info: da dobijete detaljnije informacije
+        global_flags: globalni parametri
+        use: koristiti
+    i18n:
+        long: Višejezični alat za internacionalizaciju
+        short: Višejezični alat za internacionalizaciju
+        tran:
+            flags:
+                all-language: Prevedite sve podržane jezike (ako je tačno, zastavica jezika je onemogućena)
+                force: Zamijenite postojeće prijevode
+                force-key-prefix: ključeve koje je potrebno prisilno prepisati
+                generate-const: Generirajte vrijednosti nabrajanja za jednostavno pozivanje
+                languages: Navedite ciljni jezik za prijevod
+                src-file: Izvorni fajl za prevod (obavezno)
+                src-language: Jezik izvorne datoteke (ako nije naveden, alat će automatski odrediti izvorni fajl)
+                translater:
+                    google-free: Google web prevodilac
+                    usage: 'Kanal prijevoda: Vrsta podrške {{opseg $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Višejezične datoteke iz određenog izvora se pretvaraju u datoteke u istom formatu na drugim jezicima.
+            short: prevoditi
+    long: Sadrži pozadinski okvir zasnovan na 'proto', najčešće korištene šablone i višejezične prijevode
+    short: Toolkit

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Putanga rangitaki taipitopito
+    help:
+        additional_commands: Nga whakahau taapiri
+        aliases: tono ingoa ingoa
+        available_commands: Nga whakahau tautoko
+        command: Ota
+        flags: tawhā
+        get_info: ki te tiki atu i nga korero taipitopito
+        global_flags: tawhā ao
+        use: whakamahi
+    i18n:
+        long: He kete taputapu e pa ana ki te ao maha
+        short: He kete taputapu e pa ana ki te ao maha
+        tran:
+            flags:
+                all-language: Whakamaoritia nga reo tautoko katoa (mehemea he pono kua monoa te kara reo)
+                force: Tuhia nga whakamaoritanga o naianei
+                force-key-prefix: mau taviri e tia ia faahepohia ia tuhiruahia
+                generate-const: Hangaia nga uara tatau mo te waea ngawari
+                languages: Tauwhāitihia te reo whainga mo te whakamaoritanga
+                src-file: Kōnae puna hei whakamaori (hiahia)
+                src-language: Te reo o te konae puna (mehemea kaore i tohua, ka whakatau aunoatia e te taputapu te konae puna)
+                translater:
+                    google-free: Whakamaori Tukutuku a Google
+                    usage: 'Te hongere whakamaori: Momo tautoko {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Ko nga konae reo maha mai i tetahi puna ka huri ki nga konae i roto i te ahua rite ki etahi atu reo.
+            short: whakamaori
+    long: Kei roto 'proto'-a-muri anga, tauira e whakamahia nuitia ana, me nga whakamaoritanga reo-maha
+    short: kete taputapu

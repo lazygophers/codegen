@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Xuất nhật ký chi tiết
+    help:
+        additional_commands: Các lệnh bổ sung
+        aliases: bí danh lệnh
+        available_commands: Các lệnh được hỗ trợ
+        command: Đặt hàng
+        flags: tham số
+        get_info: để biết thêm thông tin chi tiết
+        global_flags: thông số toàn cầu
+        use: sử dụng
+    i18n:
+        long: Bộ công cụ liên quan đến quốc tế hóa đa ngôn ngữ
+        short: Bộ công cụ liên quan đến quốc tế hóa đa ngôn ngữ
+        tran:
+            flags:
+                all-language: Dịch tất cả các ngôn ngữ được hỗ trợ (nếu đúng, cờ ngôn ngữ sẽ bị tắt)
+                force: Ghi đè các bản dịch hiện có
+                force-key-prefix: các phím cần bị buộc phải ghi đè
+                generate-const: Tạo giá trị liệt kê để gọi dễ dàng
+                languages: Chỉ định ngôn ngữ đích để dịch
+                src-file: Tệp nguồn cần dịch (bắt buộc)
+                src-language: Ngôn ngữ của file nguồn (nếu không được chỉ định, công cụ sẽ tự động xác định file nguồn)
+                translater:
+                    google-free: Google Dịch Web
+                    usage: 'Kênh dịch: Loại hỗ trợ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Các tệp đa ngôn ngữ từ một nguồn nhất định sẽ được chuyển đổi thành các tệp có cùng định dạng ở các ngôn ngữ khác.
+            short: dịch
+    long: Chứa khung phụ trợ dựa trên 'proto', các mẫu thường được sử dụng và bản dịch đa ngôn ngữ
+    short: Bộ công cụ

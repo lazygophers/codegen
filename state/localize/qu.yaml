@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Salida detallada registro
+    help:
+        additional_commands: Yapa kamachiykuna
+        aliases: kamachiy alias
+        available_commands: Yanapasqa kamachiykuna
+        command: Ñiqinchay
+        flags: parámetro nisqa
+        get_info: aswan sut’i willakuykunata tarinapaq
+        global_flags: pachantinpi parámetros nisqakuna
+        use: hapiy
+    i18n:
+        long: Achka simipi internacionalización nisqawan tupaq yanapakuykuna
+        short: Achka simipi internacionalización nisqawan tupaq yanapakuykuna
+        tran:
+            flags:
+                all-language: Llapan yanapasqa simikunata tikray (chiqap kaptinqa simikunap banderanqa mana llamk'achisqam)
+                force: Kaq t’ikraykunata hawaman qillqay
+                force-key-prefix: llavekuna, chaykunatam obligana kanqa hawanpi qillqanapaq
+                generate-const: Yupay chanikunata paqarichiy, mana sasa waqyanapaq
+                languages: Tikranapaq simita niy
+                src-file: Pukyu willañiqi t'ikranapaq (mañasqa) .
+                src-language: Pukyu willañiqip rimaynin (mana nisqa kaptinqa, llamk'anaqa kikinmantam pukyu willañiqita kamachinqa)
+                translater:
+                    google-free: Google Web Tikray
+                    usage: 'Tikray ñan: Yanapakuy laya {{range $key,$value := .Tipo}}{{$llave}}:{{$value}}{{end}}'
+            long: Huk pukyumanta achka simiyuq willañiqikunaqa huk simikunapi kaqlla rikch'aq willañiqikunamanmi tikrasqa.
+            short: tikray
+    long: '''proto''-pi ruwasqa qhipa marcota, sapa kuti llamk''achisqa plantillakunata, achka simipi tikraykunatapas hap''in'
+    short: Llamkanakuna

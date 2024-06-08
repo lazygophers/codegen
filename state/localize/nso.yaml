@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output qaqileng log
+    help:
+        additional_commands: Ditaelo tša tlaleletšo
+        aliases: leina le lengwe la taelo
+        available_commands: Ditaelo tše di thekgwago
+        command: Tatelano
+        flags: paramethara ya
+        get_info: go hwetša tshedimošo ye e tletšego ka botlalo
+        global_flags: ditekanyetos lefatše lohle
+        use: šomiša
+    i18n:
+        long: Sedirišwa sa go amana le boditšhabatšhaba bja maleme a mantši
+        short: Sedirišwa sa go amana le boditšhabatšhaba bja maleme a mantši
+        tran:
+            flags:
+                all-language: Fetolela maleme ka moka ao a thekgwago (ge e le therešo folaga ya maleme e šitišitšwe) .
+                force: Ngwala godimo ga diphetolelo tše di lego gona
+                force-key-prefix: dinotlelo tšeo di swanetšego go gapeletšwa go ngwalwa godimo
+                generate-const: Hlagiša dikelo tša go bala bakeng sa go bitša gabonolo
+                languages: Laetša leleme leo le nepišitšwego bakeng sa phetolelo
+                src-file: Faele ya mohlodi yeo e tlago fetolelwa (e nyakega) .
+                src-language: Polelo ya faele ya mohlodi (ge e sa laetšwa, sedirišwa se tla laola faele ya mohlodi ka go iketla) .
+                translater:
+                    google-free: Google Web Fetolela
+                    usage: 'Mokero wa phetolelo: Mohuta wa thekgo {{range $ key,$ value := .Type}}{{$key}}:{{$ value}}{{end}}'
+            long: Difaele tša maleme a mantši go tšwa mothopong wo o itšego di fetolelwa go difaele ka sebopego se se swanago ka maleme a mangwe.
+            short: fetolela
+    long: E na le tlhako ya morago ye e theilwego godimo ga 'proto', dithempleite tše di šomišwago ka tlwaelo, le diphetolelo tša maleme a mantši
+    short: Sedirišwa sa didirišwa

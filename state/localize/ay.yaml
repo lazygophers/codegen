@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Salida detallada registro ukaxa
+    help:
+        additional_commands: Yaqha kamachinaka
+        aliases: kamachi alias ukampi
+        available_commands: Yanapt’ata kamachinaka
+        command: Mayachthapiña
+        flags: parámetro ukaxa
+        get_info: juk’amp suma yatiyawinak jikxatañataki
+        global_flags: uraqpachan parámetros ukanaka
+        use: apnaqaña
+    i18n:
+        long: Walja arunak internacionalización ukamp chikt’at herramientas
+        short: Walja arunak internacionalización ukamp chikt’at herramientas
+        tran:
+            flags:
+                all-language: Taqi yanapt’at arunaka jaqukipaña (chiqächi ukhax arunakan banderapax jan ch’amanchatawa)
+                force: Jichhax utjki uka jaqukipäwinakat qillqt’aña
+                force-key-prefix: llaves ukax forzado ukhamaw qillqt’atäñapa
+                generate-const: Jasaki jawsañataki jakthapiwi chimpunaka luraña
+                languages: Jaqukipañatakixa kuna arusa uñt’ayaña
+                src-file: Jaqukipañataki phuqhat qillqata (wakisiwa) .
+                src-language: Uka phunchhawi qillqatan arupa (janiwa qhananchatäkiti, uka yänakax phunchhawi qillqat uñt’ayañapawa) .
+                translater:
+                    google-free: Google Web Jaqukipaña
+                    usage: 'Jaqukipaña thakhi: Yanapt’awi kasta {{rango $key,$value := .Tipo}}{{$clave}}:{{$value}}{{end}}'
+            long: Mä chiqat walja arut arsutanakax yaqha arunakan pachpa formato ukan qillqatanakaruw jaqukipata.
+            short: jaqukipaña
+    long: ‘proto’-based backend framework, plantillas ukanakax apnaqatäki, ukatx walja arut jaqukipäwinakaw utji
+    short: Herramientas ukax mä juk’a pachanakanwa
