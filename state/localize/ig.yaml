@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Wepụta ndekọ zuru ezu
+    gen:
+        add-rpc:
+            flags:
+                action: Àgwà ndị ekwesịrị ịgbakwunye na batches, biko chọta akwụkwọ eji eme ihe maka nkọwa
+                default-role: Ọrụ ndabara nke interface emepụtara batch Biko rụtụ aka na akwụkwọ eji eme ihe maka nkọwa.
+                gen-to: Ezipụta ebe mmepụta nke faịlụ .go emepụtara
+                list-option: Enwere ike ịchachaa ndepụta a, biko chọta akwụkwọ eji eme ihe maka nkọwa.
+                model: Ezipụta aha ihe nlereanya, kwado ịwepụ prefix 'model'
+            long: Mepụta oghere n'ime batches wee gbakwunye interface maka ụdị ụfọdụ na faịlụ .proto
+            short: Ogbe ọgbọ interface
+        all:
+            long: Mepụta koodu niile nke ngwa a kwadoro
+            short: Mepụta koodu niile
+        cache:
+            long: Mepụta faịlụ cache maka SDK ndị metụtara cache oku azụmahịa
+            short: Mepụta faịlụ cache
+        cmd:
+            long: Mepụta faịlụ ntinye maka ọrụ azụmahịa
+            short: Mepụta faịlụ ntinye
+        flags:
+            add-proto-files: Ọ bụrụ na ịchọrọ ibubata faịlụ .proto ndị ọzọ / ụzọ nchekwa na-adịghị na otu nchekwa ahụ dị ka faịlụ .proto akọwapụtara, ọrụ a ga-agbakwunye (agaghị edegharị) ụzọ ahaziri na faịlụ nhazi.
+            go-module-prefix: Maka ụzọ go_package ahaziri na faịlụ .proto na nke ahụ, ị ​​nwere ike hazie nhọrọ a.
+            input: Ezipụta faịlụ isi iyi proto nke a ga-emepụta
+            output-path: Enwere ike ịhazi nhọrọ a mgbe a haziri ụzọ go_package na faịlụ .proto ekwekọghị n'okporo ụzọ a ga-eme n'ezie.
+            overwrite: Maka ọdịnaya nke na-agaghị emeghari, manye idegharị ọdịnaya dị ugbu a
+            proto-files: Iji bubata faịlụ .proto ndị ọzọ / ụzọ nchekwa nke na-anọghị n'otu nchekwa ahụ dị ka faịlụ .proto akọwapụtara, ọrụ a bụ nhọrọ iji kpochapụ mpaghara nhazi na faịlụ nhazi.
+            protoc: Ụzọ faịlụ nwere ike ịhazi 'protoc'
+            protoc-gen-go: Ụzọ ngwa mgbakwunye 'protoc-gen-go'
+            tables-enable_field_created_at: Ma ọ ga-eme ka ọgbọ nhazi ndabara nke ebe nchekwa data create_at
+            tables-enable_field_deleted_at: Ma ọ ga-eme ka ntọala ndabara nke ubi deleted_at dị na nchekwa data
+            tables-enable_field_id: Kwado ọgbọ nhazi ndabara maka mpaghara metụtara nchekwa data
+            tables-enable_field_updated_at: Ma ọ ga-eme ka uru ndabara nke ubi updated_at dị na nchekwa data
+            tables-enable_gorm_tag_column: Ma iji mee ka ọgbọ gorm metụtara nchekwa data
+        long: Ọkpụkpọ koodu, na-akwado ọtụtụ ndebiri
+        short: Koodu generator
     help:
         additional_commands: Iwu ndị ọzọ
         aliases: iwu utu aha
@@ -27,5 +62,5 @@ cli:
                     usage: 'Ọwa ntụgharị: Ụdị nkwado {{oke $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
             long: A na-atụgharị faịlụ ọtụtụ asụsụ sitere n'otu ebe gaa na faịlụ n'otu usoro n'asụsụ ndị ọzọ.
             short: sụgharịa
-    long: Nwere 'proto' ndabere ndabere ndabere, ndebiri a na-ejikarị, yana ntụgharị asụsụ ọtụtụ asụsụ
-    short: Ngwa ngwa
+    long: Ngwá ọrụ atọrọ maka ndị umengwụ, gụnyere 'proto' backend framework, ndebiri a na-ejikarị, na ntụgharị asụsụ ọtụtụ asụsụ.
+    short: Ngwá ọrụ edobere maka ndị umengwụ

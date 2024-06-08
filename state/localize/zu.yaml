@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Ilogi enemininingwane yokuphuma
+    gen:
+        add-rpc:
+            flags:
+                action: Izindlela zokuziphatha ezidinga ukwengezwa ngamaqoqo, sicela uthole imibhalo yokusetshenziswa ukuze uthole imininingwane
+                default-role: Indima ezenzakalelayo yesixhumi esibonakalayo esikhiqizwe inqwaba Sicela ubheke imibhalo yokusetshenziswa ukuze uthole imininingwane.
+                gen-to: Cacisa indawo ephumayo yamafayela e-.go akhiqiziwe
+                list-option: Uhlu lungaphinda luhlungwe, sicela uthole imibhalo yokusetshenziswa ukuze uthole imininingwane.
+                model: Cacisa igama lemodeli, isekela ukushiya isiqalo `semodeli`
+            long: Khiqiza ukuxhumana ngamaqoqo futhi wengeze isixhumi esibonakalayo semodeli ethile kufayela le-.proto
+            short: Isixhumi esibonakalayo sokukhiqiza inqwaba
+        all:
+            long: Khiqiza wonke amakhodi asekelwa yileli thuluzi
+            short: Khiqiza yonke ikhodi
+        cache:
+            long: Khiqiza amafayela enqolobane yama-SDK ahlobene nekholi yebhizinisi
+            short: Khiqiza ifayela lenqolobane
+        cmd:
+            long: Khiqiza amafayela okufaka ezinsiza zebhizinisi
+            short: Khiqiza ifayela lokungena
+        flags:
+            add-proto-files: Uma udinga ukungenisa amanye amafayela .proto/izindlela zefolda ezingekho kufolda efanayo nefayela elithi .proto elishiwo, lo msebenzi uzokwengeza (hhayi ukuwubhala ngaphezulu) indlela emisiwe kufayela lokumisa.
+            go-module-prefix: Ukuze uthole indlela ye-go_package elungiselelwe kufayela elithi .proto kanye nelona langempela, ungakwazi ukumisa le nketho
+            input: Cacisa ifayela lomthombo we-.proto elizokhiqizwa
+            output-path: Le nketho ingalungiselelwa uma indlela ye-go_package elungiselelwe kufayela elithi .proto ingahambisani nombhede womgwaqo odinga ukwenziwa.
+            overwrite: Ngokuqukethwe okungeke kwenziwe kabusha, phoqa ukuthi kubhalwe phezu kokuqukethwe okukhona
+            proto-files: Ukungenisa amanye amafayela .proto/izindlela zefolda ezingekho kufolda efanayo nefayela elishiwo .proto, lokhu kusebenza kuyinketho yokweqa inkambu yokumisa kufayela lokumisa.
+            protoc: '`protoc` indlela yefayela eyenziwe ngokwezifiso'
+            protoc-gen-go: Indlela ye-plugin `protoc-gen-go`
+            tables-enable_field_created_at: Ukuthi kunikwe amandla ukwakhiwa kokucushwa okuzenzakalelayo kwesizindalwazi esidaliwe_enkambu
+            tables-enable_field_deleted_at: Ukuthi kunikwe amandla ukulungiselelwa okuzenzakalelayo kwenkambu esusiwe_kusizindalwazi
+            tables-enable_field_id: Nika amandla ukwakhiwa kokucushwa okuzenzakalelayo kwezinkambu ezihlobene nesizindalwazi
+            tables-enable_field_updated_at: Ukuthi kunikwe amandla inani elimisiwe lenkambu ebuyekeziwe_ekusizindalwazi
+            tables-enable_gorm_tag_column: Ukuthi unike amandla ukukhiqizwa kwe-gorm ehlobene nesizindalwazi
+        long: Ikhodi generator, isekela izifanekiso eziningi
+        short: Ikhodi generator
     help:
         additional_commands: Imiyalo eyengeziwe
         aliases: umyalo alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Isiteshi sokuhumusha: Uhlobo losekelo {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Amafayela ezilimi eziningi asuka emthonjeni othile aguqulwa abe amafayela ngefomethi efanayo kwezinye izilimi.
             short: humusha
-    long: Iqukethe 'i-proto'-based backend framework, izifanekiso ezisetshenziswa kakhulu, nokuhunyushwa kwezilimi eziningi
-    short: Ikhithi yamathuluzi
+    long: Ithuluzi elisethelwe abantu abavilaphayo, okuhlanganisa 'i-proto'-based backend framework, izifanekiso ezisetshenziswa kakhulu, nokuhumusha kwezilimi eziningi
+    short: Ithuluzi elimiselwe abantu abavilaphayo

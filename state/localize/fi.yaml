@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Tulosta yksityiskohtainen loki
+    gen:
+        add-rpc:
+            flags:
+                action: Käyttäytymiset, jotka on lisättävä erissä, katso lisätietoja käyttödokumentaatiosta
+                default-role: Erämuodostetun käyttöliittymän oletusrooli Katso lisätietoja käyttödokumentaatiosta.
+                gen-to: Määritä luotujen .go-tiedostojen tulostussijainti
+                list-option: Listaa voidaan myös suodattaa, katso lisätietoja käyttödokumentaatiosta.
+                model: Määritä mallin nimi, tue malli-etuliitettä
+            long: Luo rajapintoja erissä ja lisää rajapinta tietylle mallille .proto-tiedostoon
+            short: Erän sukupolven käyttöliittymä
+        all:
+            long: Luo kaikki tämän työkalun tukema koodi
+            short: Luo kaikki koodi
+        cache:
+            long: Luo välimuistitiedostoja yrityspuheluiden välimuistiin liittyville SDK:ille
+            short: Luo välimuistitiedosto
+        cmd:
+            long: Luo merkintätiedostoja yrityspalveluille
+            short: Luo syöttötiedosto
+        flags:
+            add-proto-files: Jos sinun on tuotava muita .proto-tiedostoja/kansiopolkuja, jotka eivät ole samassa kansiossa määritetyn .proto-tiedoston kanssa, tämä toiminto lisää (ei korvaa) määritystiedostossa määritetyn polun.
+            go-module-prefix: Voit määrittää tämän vaihtoehdon go_package-polulle, joka on määritetty .proto-tiedostossa ja varsinaiselle polulle.
+            input: Määritä luotava .proto-lähdetiedosto
+            output-path: Tämä asetus voidaan määrittää, kun .proto-tiedostossa määritetty go_package-polku on ristiriidassa luotavan tiepohjan kanssa.
+            overwrite: Jos sisältöä ei luoda uudelleen, pakota olemassa olevan sisällön korvaaminen
+            proto-files: Jos haluat tuoda muita .proto-tiedostoja/kansiopolkuja, jotka eivät ole samassa kansiossa määritetyn .proto-tiedoston kanssa, tällä toiminnolla voit ohittaa määritystiedoston määrityskentän.
+            protoc: '"protoc" mukautettava tiedostopolku'
+            protoc-gen-go: '`protoc-gen-go''-laajennuksen polku'
+            tables-enable_field_created_at: Otetaanko tietokannan luotu_at-kenttään oletuskokoonpanon luonti käyttöön
+            tables-enable_field_deleted_at: Otetaanko deleted_at-kentän oletusasetus käyttöön tietokannassa
+            tables-enable_field_id: Ota oletusasetusten luominen käyttöön tietokantoihin liittyvissä kentissä
+            tables-enable_field_updated_at: Otetaanko updated_at-kentän oletusarvo käyttöön tietokannassa
+            tables-enable_gorm_tag_column: Otetaanko tietokantaan liittyvä gormien luominen käyttöön
+        long: Koodigeneraattori, tukee useita malleja
+        short: Koodigeneraattori
     help:
         additional_commands: Lisäkomennot
         aliases: komentoalias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Käännöskanava: Tukityyppi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Tietystä lähteestä peräisin olevat monikieliset tiedostot muunnetaan tiedostoiksi, jotka ovat samassa muodossa muilla kielillä.
             short: Kääntää
-    long: Sisältää "proto"-pohjaisen taustakehyksen, yleisesti käytettyjä malleja ja monikielisiä käännöksiä
-    short: Toolkit
+    long: Työkalusarja laiskaille ihmisille, mukaan lukien "proto"-pohjainen taustakehys, yleisesti käytetyt mallit ja monikieliset käännökset
+    short: Työkalusarja laiskoille

@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Output detalyadong log
+    gen:
+        add-rpc:
+            flags:
+                action: Mga gawi na kailangang idagdag sa mga batch, mangyaring hanapin ang dokumentasyon ng paggamit para sa mga detalye
+                default-role: Ang default na papel ng interface na binuo ng batch Mangyaring sumangguni sa dokumentasyon ng paggamit para sa mga detalye.
+                gen-to: Tukuyin ang lokasyon ng output ng nabuong .go file
+                list-option: Maaari ding i-filter ang listahan, mangyaring hanapin ang dokumentasyon ng paggamit para sa mga detalye.
+                model: Tukuyin ang pangalan ng modelo, suporta sa pag-aalis ng prefix ng `model`
+            long: Bumuo ng mga interface sa mga batch at magdagdag ng interface para sa isang partikular na modelo sa .proto file
+            short: Interface ng pagbuo ng batch
+        all:
+            long: Bumuo ng lahat ng code na sinusuportahan ng tool na ito
+            short: Bumuo ng lahat ng code
+        cache:
+            long: Bumuo ng mga cache file para sa mga SDK na nauugnay sa pag-cache ng tawag sa negosyo
+            short: Bumuo ng cache file
+        cmd:
+            long: Bumuo ng mga entry file para sa mga serbisyo ng negosyo
+            short: Bumuo ng entry file
+        flags:
+            add-proto-files: Kung kailangan mong mag-import ng iba pang .proto file/folder path na wala sa parehong folder tulad ng tinukoy na .proto file, idaragdag (hindi i-overwrite) ng operasyong ito ang path na na-configure sa configuration file.
+            go-module-prefix: Para sa path ng go_package na na-configure sa .proto file at ang aktwal na isa, maaari mong i-configure ang opsyong ito
+            input: Tukuyin ang .proto source file na bubuuin
+            output-path: Maaaring i-configure ang opsyong ito kapag ang path ng go_package na na-configure sa .proto file ay hindi naaayon sa roadbed na talagang kailangang mabuo.
+            overwrite: Para sa content na hindi na muling bubuuin, pilitin ang pag-overwrite ng kasalukuyang content
+            proto-files: Upang mag-import ng iba pang .proto file/folder path na wala sa parehong folder tulad ng tinukoy na .proto file, ang operasyong ito ay isang opsyon upang i-override ang configuration field sa configuration file.
+            protoc: '`protoc` na nako-customize na landas ng file'
+            protoc-gen-go: '`protoc-gen-go` na landas ng plugin'
+            tables-enable_field_created_at: Kung paganahin ang default na pagbuo ng configuration ng database created_at field
+            tables-enable_field_deleted_at: Kung paganahin ang default na setting ng deleted_at field sa database
+            tables-enable_field_id: Paganahin ang pagbuo ng default na configuration para sa mga field na nauugnay sa database
+            tables-enable_field_updated_at: Kung paganahin ang default na halaga ng updated_at field sa database
+            tables-enable_gorm_tag_column: Kung paganahin ang pagbuo ng gorm na nauugnay sa database
+        long: Code generator, sumusuporta sa maramihang mga template
+        short: Generator ng code
     help:
         additional_commands: Mga karagdagang utos
         aliases: utos ng alyas
@@ -27,5 +62,5 @@ cli:
                     usage: 'Channel ng pagsasalin: Uri ng suporta {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ang mga multilingual na file mula sa isang partikular na pinagmulan ay kino-convert sa mga file sa parehong format sa ibang mga wika.
             short: Isalin
-    long: Naglalaman ng 'proto' na nakabatay sa backend framework, karaniwang ginagamit na mga template, at mga pagsasalin sa maraming wika
-    short: Toolkit
+    long: Isang tool set para sa mga tamad na tao, kabilang ang 'proto'-based na backend framework, karaniwang ginagamit na mga template, at multi-language translation
+    short: Isang tool set para sa mga tamad na tao

@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Cov ntaub ntawv qhia ntxaws
+    gen:
+        add-rpc:
+            flags:
+                action: Cov cwj pwm uas yuav tsum tau ntxiv rau hauv cov khoom siv, thov nrhiav cov ntaub ntawv siv kom paub meej
+                default-role: Lub luag haujlwm tseem ceeb ntawm batch-generated interface Thov xa mus rau cov ntaub ntawv siv kom paub meej.
+                gen-to: Qhia qhov chaw tso zis ntawm cov ntaub ntawv generated .go
+                list-option: Cov npe kuj tuaj yeem lim tau, thov nrhiav cov ntaub ntawv siv kom paub meej.
+                model: Qhia tus qauv lub npe, kev txhawb nqa omitting 'model' prefix
+            long: Tsim interfaces hauv batch thiab ntxiv ib qho interface rau ib qho qauv hauv cov ntaub ntawv .proto
+            short: Batch tiam interface
+        all:
+            long: Tsim tag nrho cov cai txhawb los ntawm cov cuab yeej no
+            short: Tsim tag nrho cov cai
+        cache:
+            long: Tsim cov ntaub ntawv cache rau kev lag luam hu caching ntsig txog SDKs
+            short: Tsim cov ntaub ntawv cache
+        cmd:
+            long: Tsim cov ntaub ntawv nkag rau kev pabcuam kev lag luam
+            short: Tsim cov ntaub ntawv nkag
+        flags:
+            add-proto-files: Yog tias koj xav tau import lwm .proto cov ntaub ntawv/folder txoj hauv kev uas tsis nyob hauv tib lub nplaub tshev raws li cov ntaub ntawv .proto tau teev tseg, qhov haujlwm no yuav ntxiv (tsis sau dhau) txoj hauv kev teeb tsa hauv cov ntaub ntawv teeb tsa.
+            go-module-prefix: Rau txoj kev ntawm go_package teeb tsa hauv .proto cov ntaub ntawv thiab qhov tseeb, koj tuaj yeem teeb tsa qhov kev xaiv no
+            input: Qhia meej cov ntaub ntawv .proto qhov yuav tsum tau tsim
+            output-path: Qhov kev xaiv no tuaj yeem teeb tsa thaum txoj hauv kev ntawm go_package teeb tsa hauv .proto cov ntaub ntawv tsis sib haum nrog cov roadbed uas yuav tsum tau tsim.
+            overwrite: Rau cov ntsiab lus uas yuav tsis rov tsim dua tshiab, yuam overwriting ntawm cov ntsiab lus uas twb muaj lawm
+            proto-files: Txhawm rau import lwm cov ntaub ntawv .proto/folder txoj hauv kev uas tsis nyob hauv tib lub nplaub tshev raws li cov ntaub ntawv .proto tau teev tseg, qhov kev ua haujlwm no yog ib qho kev xaiv rau override lub configuration teb nyob rau hauv cov ntaub ntawv configuration.
+            protoc: '''protoc'' customizable file path'
+            protoc-gen-go: '''protoc-gen-go'' plugin path'
+            tables-enable_field_created_at: Seb puas yuav pab kom lub neej ntawd configuration tiam ntawm database generate_at teb
+            tables-enable_field_deleted_at: Seb puas yuav pab kom lub neej ntawd teeb tsa ntawm qhov chaw deleted_at hauv cov ntaub ntawv
+            tables-enable_field_id: Pab kom lub neej ntawd configuration tiam rau database-related teb
+            tables-enable_field_updated_at: Seb puas yuav pab kom tus nqi pib ntawm qhov kho tshiab_at teb hauv cov ntaub ntawv
+            tables-enable_gorm_tag_column: Seb puas yuav pab tau database-related gorm tiam
+        long: Code generator, txhawb ntau tus qauv
+        short: Code generator
     help:
         additional_commands: Cov lus txib ntxiv
         aliases: txib alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Kev txhais channel: Txhawb hom {{ntau $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Multilingual ntaub ntawv los ntawm ib tug tej qhov chaw yog hloov dua siab tshiab rau hauv cov ntaub ntawv nyob rau hauv tib hom ntawv nyob rau hauv lwm yam lus.
             short: txhais
-    long: Muaj 'proto'-based backend moj khaum, feem ntau siv cov qauv, thiab ntau hom kev txhais lus
-    short: Cov cuab yeej
+    long: Cov cuab yeej teeb tsa rau cov neeg tub nkeeg, suav nrog 'proto'-raws li cov txheej txheem backend, feem ntau siv cov qauv, thiab ntau hom lus txhais lus
+    short: Cov cuab yeej teeb tsa rau cov neeg tub nkeeg

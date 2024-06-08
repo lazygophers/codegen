@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Bɔli detayɛli log
+    gen:
+        add-rpc:
+            flags:
+                action: Taamacogo minnu ka kan ka fara ɲɔgɔn kan kuluw kɔnɔ, aw bɛ baarakɛcogo sɛbɛnw ɲini walasa ka kunnafoni wɛrɛw sɔrɔ
+                default-role: Batch-generated interface jɔyɔrɔ fɔlɔ Aw ye baarakɛcogo sɛbɛnw lajɛ walasa ka kunnafoni wɛrɛw sɔrɔ.
+                gen-to: .go file minnu dilannen don, olu bɔyɔrɔ jira
+                list-option: Lisiti fana bɛ se ka filɛ, aw bɛ baarakɛcogo sɛbɛnw ɲini walasa ka kunnafoni wɛrɛw sɔrɔ.
+                model: Modeli tɔgɔ fɔ, dɛmɛ ka `model` daminɛ bila
+            long: Ka 'interface (dakunw) Dabɔ batch (dakunw) la ani ka interface (dakun) dɔ Fàra modeli dɔ kan .proto file kɔnɔ
+            short: Batch generation interface (baarakɛminɛnw sɛnɛcogo).
+        all:
+            long: Kode bɛɛ lajɛlen minnu bɛ dɛmɛ ni nin baarakɛminɛn in ye
+            short: Kode bɛɛ labɛn
+        cache:
+            long: Cache files (cache files) dilan ka ɲɛsin SDKw ma minnu bɛ tali kɛ jago weleli cache la
+            short: Cache file (cache file) dilan
+        cmd:
+            long: Jagokɛyɔrɔw ka dondaw dosiyew labɛn
+            short: A ye donna dosiye dilan
+        flags:
+            add-proto-files: N’i ​​mago bɛ .proto file/folder sira wɛrɛw la minnu tɛ foli kelen kɔnɔ ni .proto file kofɔlen ye, o baara in bɛna sira min labɛnna configuration file kɔnɔ, o fara (a tɛna sɛbɛn a kan).
+            go-module-prefix: Go_package sira min labɛnna .proto file kɔnɔ ani tiɲɛ yɛrɛ la, i bɛ se ka nin sugandi in labɛn
+            input: .proto source file min bɛna dilan, o jira
+            output-path: Nin sugandi in bɛ se ka labɛn ni go_package sira min labɛnna .proto file kɔnɔ, o tɛ bɛn siraba ma min ka kan ka dilan tiɲɛ na.
+            overwrite: Ni kɔnɔkow tɛna segin u cogo kɔrɔ la, aw bɛ waajibiya ka kɔnɔkow sɛbɛn minnu bɛ yen
+            proto-files: Walasa ka .proto file/folder sira wɛrɛw ladon minnu tɛ foli kelen kɔnɔ ni .proto file kofɔlen ye, o baara in ye sugandi ye walasa ka labɛnni foro tiɲɛ labɛnni file kɔnɔ.
+            protoc: '`protoc` ka filen sira min bɛ se ka ladilan'
+            protoc-gen-go: '`protoc-gen-go` bɔgɔdaga sira'
+            tables-enable_field_created_at: Yala ka se ka database created_at foro labɛnni daminɛcogo daminɛ
+            tables-enable_field_deleted_at: Yala ka deleted_at foro sigicogo kɔrɔ daminɛ database kɔnɔ
+            tables-enable_field_id: Aw ye se ka labɛncogo daminɛcogo daminɛ kunnafonidilanw ni ɲɔgɔn cɛ forow la
+            tables-enable_field_updated_at: Yala ka updated_at foro nafa dafalen daminɛ database kɔnɔ
+            tables-enable_gorm_tag_column: Yala ka se ka database-related gorm generation (gorm generation) kɛ
+        long: Kode generateur, bɛ dɛmɛ don template caman ma
+        short: Kode jɛnɛrato
     help:
         additional_commands: Cikan wɛrɛw
         aliases: cikan tɔgɔ wɛrɛ
@@ -27,5 +62,5 @@ cli:
                     usage: 'Bamanankan baarakɛcogo: Dɛmɛ suguya {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Kan caman ka dosiye minnu bɛ Bɔ yɔrɔ dɔ la, olu bɛ Yɛlɛma ka Kɛ dosiyew ye cogo kelen na kan wɛrɛw la.
             short: ka bayɛlɛma
-    long: ‘Proto’-based backend framework, template minnu bɛ Kɛ ka caya, ani kan caman bamanankan-falen-falen bɛ a kɔnɔ
-    short: Baarakɛminɛnw gafe
+    long: Baarakɛminɛn min sigilen don mɔgɔ lafiyabaliw ye, i n’a fɔ ‘proto’-based backend framework, template minnu bɛ kɛ ka caya, ani kan caman bamanankan na
+    short: Baarakɛminɛn min sigilen don mɔgɔ sɛgɛnbaliw ye

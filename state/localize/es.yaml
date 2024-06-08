@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Registro detallado de salida
+    gen:
+        add-rpc:
+            flags:
+                action: Comportamientos que deben agregarse en lotes; consulte la documentación de uso para obtener más detalles
+                default-role: La función predeterminada de la interfaz generada por lotes. Consulte la documentación de uso para obtener más detalles.
+                gen-to: Especificar la ubicación de salida de los archivos .go generados
+                list-option: La lista también se puede filtrar; consulte la documentación de uso para obtener más detalles.
+                model: Especifique el nombre del modelo; se admite omitir el prefijo "modelo"
+            long: Genere interfaces en lotes y agregue una interfaz para un modelo determinado en el archivo .proto
+            short: Interfaz de generación por lotes
+        all:
+            long: Genera todo el código soportado por esta herramienta.
+            short: Generar todo el código
+        cache:
+            long: Genere archivos de caché para SDK relacionados con el almacenamiento en caché de llamadas comerciales
+            short: Generar archivo de caché
+        cmd:
+            long: Generar archivos de entrada para servicios empresariales.
+            short: Generar archivo de entrada
+        flags:
+            add-proto-files: Si necesita importar otros archivos .proto/rutas de carpetas que no están en la misma carpeta que el archivo .proto especificado, esta operación agregará (no sobrescribirá) la ruta configurada en el archivo de configuración.
+            go-module-prefix: Para la ruta de go_package configurada en el archivo .proto y la actual, puede configurar esta opción
+            input: Especifique el archivo fuente .proto que se generará
+            output-path: Esta opción se puede configurar cuando la ruta de go_package configurada en el archivo .proto no coincide con la ruta que realmente debe generarse.
+            overwrite: Para el contenido que no se regenerará, fuerce la sobrescritura del contenido existente.
+            proto-files: Para importar otros archivos .proto/rutas de carpetas que no están en la misma carpeta que el archivo .proto especificado, esta operación es una opción para anular el campo de configuración en el archivo de configuración.
+            protoc: Ruta de archivo personalizable `protoc`
+            protoc-gen-go: Ruta del complemento `protoc-gen-go`
+            tables-enable_field_created_at: Si se debe habilitar la generación de configuración predeterminada del campo creado_at de la base de datos
+            tables-enable_field_deleted_at: Si se debe habilitar la configuración predeterminada del campo eliminado_at en la base de datos
+            tables-enable_field_id: Habilitar la generación de configuración predeterminada para campos relacionados con la base de datos
+            tables-enable_field_updated_at: Si se debe habilitar el valor predeterminado del campo actualizado_at en la base de datos
+            tables-enable_gorm_tag_column: Si se debe habilitar la generación de gorms relacionados con la base de datos
+        long: Generador de código, admite múltiples plantillas.
+        short: Generador de códigos
     help:
         additional_commands: Comandos adicionales
         aliases: alias de comando
@@ -27,5 +62,5 @@ cli:
                     usage: 'Canal de traducción: tipo de soporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Los archivos multilingües de una determinada fuente se convierten en archivos del mismo formato en otros idiomas.
             short: traducir
-    long: Contiene un marco de backend basado en 'proto', plantillas de uso común y traducciones en varios idiomas.
-    short: Kit de herramientas
+    long: Un conjunto de herramientas para personas perezosas, que incluye un marco backend basado en "proto", plantillas de uso común y traducción a varios idiomas.
+    short: Un conjunto de herramientas para gente perezosa

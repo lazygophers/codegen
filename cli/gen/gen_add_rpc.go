@@ -3,6 +3,7 @@ package gen
 import (
 	"errors"
 	"github.com/lazygophers/codegen/codegen"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
@@ -80,15 +81,18 @@ var addRpcCmd = &cobra.Command{
 	},
 }
 
-func init() {
-	addRpcCmd.Flags().StringP("model", "m", "", "model name，must be specified")
-	addRpcCmd.Flags().StringP("gen-to", "t", "", "generate go source code path, will be used in gen go source code")
+func initAddRpc() {
+	addRpcCmd.Short = state.Localize(state.I18nTagCliGenAddRpcShort)
+	addRpcCmd.Long = state.Localize(state.I18nTagCliGenAddRpcLong)
 
-	addRpcCmd.Flags().StringP("action", "a", "", "action for adding, segmente by ';',\nsupports: add/set/get/list/del/update")
+	addRpcCmd.Flags().StringP("model", "m", "", state.Localize(state.I18nTagCliGenAddRpcFlagsModel))
+	addRpcCmd.Flags().StringP("gen-to", "t", "", state.I18nTagCliGenAddRpcFlagsGenTo)
 
-	addRpcCmd.Flags().StringP("list-option", "l", "", "list options, segmente by ';'")
+	addRpcCmd.Flags().StringP("action", "a", "", state.Localize(state.I18nTagCliGenAddRpcFlagsAction))
 
-	addRpcCmd.Flags().String("default-role", "", "default role")
+	addRpcCmd.Flags().StringP("list-option", "l", "", state.Localize(state.I18nTagCliGenAddRpcFlagsListOption))
+
+	addRpcCmd.Flags().String("default-role", "", state.Localize(state.I18nTagCliGenAddRpcFlagsDefaultRole))
 
 	genCmd.AddCommand(addRpcCmd)
 }

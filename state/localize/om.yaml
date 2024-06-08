@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Galmee bal'aa baasaa
+    gen:
+        add-rpc:
+            flags:
+                action: Amaloota tuuta keessatti dabalamuu qaban, maaloo bal'inaaf galmee itti fayyadama barbaadi
+                default-role: Gahee durtii walqunnamtii tuuta-uumame Maaloo bal'inaaf galmee fayyadama ilaali.
+                gen-to: Bakka baasaa faayilii .go uumaman ifteessi
+                list-option: Tarreen kunis calalamuu danda'a, maaloo bal'inaaf galmee itti fayyadama barbaadi.
+                model: Maqaa moodeela ifteessi, durtii `model` dhiisuu deeggarsa
+            long: Walqunnamsiistota tuuta keessatti uumuu fi walqunnamtii moodeela murtaa'eef faayilii .proto keessatti dabali
+            short: Walqunnamtii dhaloota tuuta
+        all:
+            long: Koodii meeshaa kanaan deeggarame hunda uumi
+            short: Koodii hunda maddisi
+        cache:
+            long: Faayilota kaachota SDKwwan kuusaa waamicha daldalaa wajjin walqabataniif uumi
+            short: Faayilii kaachota uumuu
+        cmd:
+            long: Tajaajila daldalaaf faayiloota galtee uumuu
+            short: Faayilii galtee uumi
+        flags:
+            add-proto-files: Yoo faayilii/daandiiwwan galmee .proto biroo kanneen galmee walfakkaataa faayilii .proto ifteessame keessa hin jirre galchuu barbaadde, hojiin kun daandii faayilii qindeessaa keessatti qindaa'e ni dabala (irra hin barreessa).
+            go-module-prefix: Daandii go_package faayilii .proto keessatti qindaa'ee fi isa dhugaatiif, filannoo kana qindeessuu dandeessa
+            input: Faayilii madda .proto uumamuu qabu ifteessi
+            output-path: Filannoon kun yeroo daandii go_package faayilii .proto keessatti qindaa'e roadbed qabatamaan uumamuu qabu waliin wal hin simne qindaa'uu danda'a.
+            overwrite: Qabiyyee hin haaromfamneef, qabiyyee jiru irra barreessuu dirqisiisi
+            proto-files: Faayilota/karaa galmee .proto biroo kan galmee walfakkaataa faayilii .proto ifteessame keessa hin jirre galchuuf, hojiin kun filannoo dirree qindeessaa faayilii qindeessaa keessatti irra darbuuf.
+            protoc: '`protoc` daandii faayilii dhuunfachiifamuu danda''u'
+            protoc-gen-go: '`protoc-gen-go` daandii ifteessaa'
+            tables-enable_field_created_at: Dhaloota qindeessaa durtii dirree kuusdeetaa created_at dandeessisuun fi dhiisuu isaa
+            tables-enable_field_deleted_at: Sajoo durtii dirree deleted_at kuusdeetaa keessatti dandeessisuun fi dhiisuu isaa
+            tables-enable_field_id: Dhaloota qindeessaa durtii man'eewwan kuusdeetaa wajjin walqabataniif dandeessisi
+            tables-enable_field_updated_at: Gatii durtii dirree updated_at kuusdeetaa keessatti dandeessisuun fi dhiisuu isaa
+            tables-enable_gorm_tag_column: Dhaloota gorm kuusdeetaa wajjin walqabatu dandeessisuun fi dhiisuu isaa
+        long: Jenereetarii koodii, unkaalee hedduu deeggara
+        short: Jenereetarii koodii
     help:
         additional_commands: Ajajoota dabalataa
         aliases: maqaa biraa ajaja
@@ -27,5 +62,5 @@ cli:
                     usage: 'Chaanaalii hiikkaa: Gosa deeggarsa {{range $key,$value := .Akkaataa}}{{$key}}:{{$value}}{{end}}'
             long: Faayiloonni afaanota hedduu madda murtaa'e irraa gara faayilii bifa walfakkaataa afaanota birootiin jijjiiramu.
             short: hiikuu
-    long: Unka duubbee 'proto' irratti hundaa'e, unkaalee yeroo baay'ee fayyadaman, fi hiika afaanota hedduu of keessaa qaba
-    short: Meeshaa
+    long: Meeshaa namoota dadhaboodhaaf saagame, 'proto' irratti hundaa'e backend framework, unkaalee yeroo baay'ee fayyadaman, fi hiikkaa afaanota hedduu dabalatee
+    short: Meeshaa namoota dadhaboo ta'aniif qophaa'e

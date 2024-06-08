@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Lethathamo le felletseng la lintlha
+    gen:
+        add-rpc:
+            flags:
+                action: Boitšoaro bo hlokang ho eketsoa ka lihlopha, ka kopo fumana litokomane tsa tšebeliso bakeng sa lintlha
+                default-role: Karolo ea kamehla ea sebopeho se hlahisoang ke sehlopha Ka kopo sheba litokomane tsa tšebeliso bakeng sa lintlha.
+                gen-to: Hlalosa sebaka sa tlhahiso ea lifaele tsa .go tse hlahisitsoeng
+                list-option: Lethathamo le ka hlophisoa hape, ka kopo fumana litokomane tsa tšebeliso bakeng sa lintlha.
+                model: Hlalosa lebitso la mohlala, ts'ehetso e siea sehlongoa sa `model`
+            long: Hlahisa likhokahano ka lihlopha 'me u kenye sebopeho sa mofuta o itseng faeleng ea .proto
+            short: Sehokelo sa moloko oa batho
+        all:
+            long: Hlahisa khoutu eohle e tšehetsoeng ke sesebelisoa sena
+            short: Hlahisa khoutu eohle
+        cache:
+            long: Hlahisa lifaele tsa cache bakeng sa li-SDK tse amanang le caching ea khoebo
+            short: Hlahisa faele ea cache
+        cmd:
+            long: Hlahisa lifaele tsa ho kena bakeng sa lits'ebeletso tsa khoebo
+            short: Hlahisa faele ea ho kena
+        flags:
+            add-proto-files: Haeba o hloka ho kenya tse ling tsa .proto lifaele/litsela tsa lifoldara tse seng ka har'a foldara e tšoanang le faele e boletsoeng ea .proto, ts'ebetso ena e tla hlomathisa (eseng ho hlakola) tsela e hlophisitsoeng faeleng ea tlhophiso.
+            go-module-prefix: Bakeng sa tsela ea go_package e hlophisitsoeng faeleng ea .proto le ea 'nete, o ka hlophisa khetho ena.
+            input: Hlalosa faele ea .proto e tla hlahisoa
+            output-path: Khetho ena e ka hlophisoa ha tsela ea go_package e hlophisitsoeng faeleng ea .proto e sa lumellane le tsela e hlileng e hlokang ho hlahisoa.
+            overwrite: Bakeng sa litaba tse ke keng tsa nchafatsoa, ​​qobella ho hlakola litaba tse teng
+            proto-files: Ho kenya lifaele tse ling tsa .proto/litsela tsa lifoldara tse sieo ka har'a foldara e tšoanang le faele e boletsoeng ea .proto, ts'ebetso ena ke khetho ea ho feta sebaka sa tlhophiso faeleng ea tlhophiso.
+            protoc: '`protoc` tsela ea faele eo u ka e khethang'
+            protoc-gen-go: '`protoc-gen-go` plugin tsela'
+            tables-enable_field_created_at: Hore na o ka nolofalletsa ho etsa tlhophiso ea kamehla ea database e entsoeng_e sebakeng
+            tables-enable_field_deleted_at: Hore na o ka lumella litlhophiso tsa kamehla tsa sebaka sa deleted_at sebakeng sa polokelo ea litaba
+            tables-enable_field_id: Numella tlhahiso ea tlhophiso ea kamehla bakeng sa likarolo tse amanang le database
+            tables-enable_field_updated_at: Hore na ho ka bulela boleng ba kamehla ba karolo e nchafalitsoeng_e bobolokelong
+            tables-enable_gorm_tag_column: Hore na ho ka nolofalletsa tlhahiso ea gorm e amanang le database
+        long: Jenereithara ea khoutu, e tšehetsa litempele tse ngata
+        short: Jenereithara ea khoutu
     help:
         additional_commands: Litaelo tse ling
         aliases: laela alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Lenaneo la phetolelo: Mofuta oa tšehetso {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Lifaele tsa lipuo tse ngata tse tsoang mohloling o itseng li fetoloa lifaele ka mokhoa o tšoanang lipuong tse ling.
             short: fetolela
-    long: E na le 'proto'-based backend framework, lithempleite tse sebelisoang hangata, le liphetolelo tsa lipuo tse ngata
-    short: Toolkit
+    long: Sesebelisoa se behiloeng bakeng sa batho ba botsoa, ​​ho kenyeletsoa 'proto'-based backend framework, lithempleite tse sebelisoang hangata, le phetolelo ea lipuo tse ngata.
+    short: Sesebelisoa se behiloeng bakeng sa batho ba botsoa

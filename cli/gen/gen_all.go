@@ -1,6 +1,7 @@
 package gen
 
 import (
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/spf13/cobra"
 )
@@ -22,9 +23,7 @@ var GenAllHooks = []GenHook{
 }
 
 var allCmd = &cobra.Command{
-	Use:   "all",
-	Short: "gen all action",
-	Long:  `Generate all action.`,
+	Use: "all",
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		for _, hook := range GenAllHooks {
 			err = hook(cmd, args)
@@ -38,6 +37,9 @@ var allCmd = &cobra.Command{
 	},
 }
 
-func init() {
+func initAll() {
+	allCmd.Short = state.Localize(state.I18nTagCliGenAllShort)
+	allCmd.Long = state.Localize(state.I18nTagCliGenAllLong)
+
 	genCmd.AddCommand(allCmd)
 }

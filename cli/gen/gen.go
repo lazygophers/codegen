@@ -18,7 +18,6 @@ var pb *codegen.PbPackage
 
 var genCmd = &cobra.Command{
 	Use:     "gen",
-	Short:   "gen",
 	Aliases: []string{"g", "generate"},
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) (err error) {
 		// NOTE: 合并输入参数与配置文件
@@ -53,7 +52,6 @@ var genCmd = &cobra.Command{
 }
 
 func mergeGenCmdFlags(cmd *cobra.Command) {
-
 	if cmd.Flag("protoc").Changed {
 		state.Config.ProtocPath = utils.GetString("protoc", cmd)
 	}
@@ -68,10 +66,6 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 
 	if cmd.Flag("output-path").Changed {
 		state.Config.OutputPath = utils.GetString("output-path", cmd)
-	}
-
-	if cmd.Flag("editorconfig-path").Changed {
-		state.Config.Template.Editorconfig = utils.GetString("editorconfig-path", cmd)
 	}
 
 	if cmd.Flag("overwrite").Changed {
@@ -108,28 +102,32 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 	}
 }
 
-func init() {
-	genCmd.PersistentFlags().String("protoc", "", "protoc path")
-	genCmd.PersistentFlags().String("protoc-gen-go", "", "protoc-gen-go path")
-	genCmd.PersistentFlags().String("output-path", "", "output path")
-
-	genCmd.PersistentFlags().String("go-module-prefix", "", "go module prefix")
-	genCmd.PersistentFlags().StringSlice("proto-files", nil, "import other .proto files, if their not in the .proto file")
-	genCmd.PersistentFlags().StringSlice("add-proto-files", nil, "append import other .proto files, if their not in the .proto file")
-
-	genCmd.PersistentFlags().Bool("overwrite", false, "overwrite configuration")
-	genCmd.PersistentFlags().String("editorconfig-path", "", ".editorconfig path")
-
-	genCmd.PersistentFlags().Bool("tables-enable_field_id", false, "enable field gen tags for id field")
-	genCmd.PersistentFlags().Bool("tables-enable_field_created_at", false, "enable field gen tags for created_at field")
-	genCmd.PersistentFlags().Bool("tables-enable_field_updated_at", false, "enable field gen tags for updated_at field")
-	genCmd.PersistentFlags().Bool("tables-enable_field_deleted_at", false, "enable field gen tags for deleted_at field")
-	genCmd.PersistentFlags().Bool("tables-enable_gorm_tag_column", false, "enable gen tags for column tag for each")
-
-	genCmd.PersistentFlags().StringP("input", "i", "", "input protobuf file")
-
-}
-
 func Load(rootCmd *cobra.Command) {
+	rootCmd.Short = state.Localize(state.I18nTagCliGenShort)
+	rootCmd.Long = state.Localize(state.I18nTagCliGenLong)
+
+	genCmd.PersistentFlags().String("protoc", state.Config.ProtocPath, state.Localize(state.I18nTagCliGenFlagsProtoc))
+	genCmd.PersistentFlags().String("protoc-gen-go", state.Config.ProtoGenGoPath, state.Localize(state.I18nTagCliGenFlagsProtocGenGo))
+	genCmd.PersistentFlags().String("output-path", state.Config.OutputPath, state.Localize(state.I18nTagCliGenFlagsOutputPath))
+
+	genCmd.PersistentFlags().String("go-module-prefix", state.Config.GoModulePrefix, state.Localize(state.I18nTagCliGenFlagsGoModulePrefix))
+	genCmd.PersistentFlags().StringSlice("proto-files", state.Config.ProtoFiles, state.Localize(state.I18nTagCliGenFlagsProtoFiles))
+	genCmd.PersistentFlags().StringSlice("add-proto-files", nil, state.Localize(state.I18nTagCliGenFlagsAddProtoFiles))
+
+	genCmd.PersistentFlags().Bool("overwrite", false, state.Localize(state.I18nTagCliGenFlagsOverwrite))
+
+	genCmd.PersistentFlags().Bool("tables-enable_field_id", state.Config.Tables.DisableFieldId, state.Localize(state.I18nTagCliGenFlagsTablesEnableFieldId))
+	genCmd.PersistentFlags().Bool("tables-enable_field_created_at", state.Config.Tables.DisableFieldCreatedAt, state.Localize(state.I18nTagCliGenFlagsTablesEnableFieldCreatedAt))
+	genCmd.PersistentFlags().Bool("tables-enable_field_updated_at", state.Config.Tables.DisableFieldUpdatedAt, state.Localize(state.I18nTagCliGenFlagsTablesEnableFieldUpdatedAt))
+	genCmd.PersistentFlags().Bool("tables-enable_field_deleted_at", state.Config.Tables.DisableFieldDeletedAt, state.Localize(state.I18nTagCliGenFlagsTablesEnableFieldDeletedAt))
+	genCmd.PersistentFlags().Bool("tables-enable_gorm_tag_column", state.Config.Tables.DisableGormTagColumn, state.Localize(state.I18nTagCliGenFlagsTablesEnableGormTagColumn))
+
+	genCmd.PersistentFlags().StringP("input", "i", "", state.Localize(state.I18nTagCliGenFlagsInput))
+
+	initAddRpc()
+	initAll()
+	initCache()
+	initCmd()
+
 	rootCmd.AddCommand(genCmd)
 }

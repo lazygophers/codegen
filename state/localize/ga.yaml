@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Aschur logáil mionsonraithe
+    gen:
+        add-rpc:
+            flags:
+                action: Iompar ar gá iad a chur isteach i mbaisceanna, faigh na doiciméid úsáide le haghaidh sonraí
+                default-role: Ról réamhshocraithe an chomhéadain baisc-ghinte Féach ar na doiciméid úsáide le haghaidh sonraí.
+                gen-to: Sonraigh suíomh aschuir na gcomhad .go ginte
+                list-option: Is féidir an liosta a scagadh freisin, le do thoil teacht ar an doiciméadú úsáide le haghaidh sonraí.
+                model: Sonraigh ainm an mhúnla, tacaigh leis an réimír `múnla` a fhágáil ar lár
+            long: Gin comhéadain i mbaisceanna agus cuir comhéadan le haghaidh samhail áirithe sa chomhad .proto
+            short: Comhéadan giniúna bhaisc
+        all:
+            long: Gin gach cód a dtacaíonn an uirlis seo leis
+            short: Gin gach cód
+        cache:
+            long: Gin comhaid taisce le haghaidh SDKanna a bhaineann le taisceadh glaonna gnó
+            short: Gin comhad taisce
+        cmd:
+            long: Gin comhaid iontrála le haghaidh seirbhísí gnó
+            short: Gin comhad iontrála
+        flags:
+            add-proto-files: Más gá duit comhaid .proto/cosáin fillteáin eile a iompórtáil nach bhfuil san fhillteán céanna leis an gcomhad .proto sonraithe, cuirfidh an oibríocht seo i gceangal (gan forscríobh) an chonair atá cumraithe sa chomhad cumraíochta.
+            go-module-prefix: Chun conair go_package cumraithe sa chomhad .proto agus an ceann iarbhír, is féidir leat an rogha seo a chumrú
+            input: Sonraigh an comhad foinse .proto atá le giniúint
+            output-path: Is féidir an rogha seo a chumrú nuair a bhíonn an chonair go_package cumraithe sa chomhad .proto ar neamhréir leis an leaba bóthair is gá a ghiniúint.
+            overwrite: Maidir le hábhar nach ndéanfar é a athghiniúint, cuir iallach ar ábhar atá ann cheana a fhorscríobh
+            proto-files: Chun comhaid .proto/cosáin fillteáin eile a allmhairiú nach bhfuil san fhillteán céanna leis an gcomhad .proto sonraithe, is rogha é an oibríocht seo chun an réimse cumraíochta sa chomhad cumraíochta a shárú.
+            protoc: cosán comhaid inoiriúnaithe `protoc`
+            protoc-gen-go: cosán breiseán `protoc-gen-go`
+            tables-enable_field_created_at: Cibé an féidir giniúint chumraíocht réamhshocraithe an bhunachair shonraí created_at a chumasú
+            tables-enable_field_deleted_at: Cibé ar cheart socrú réamhshocraithe an réimse deleted_at a chumasú sa bhunachar sonraí
+            tables-enable_field_id: Cumasaigh giniúint cumraíochta réamhshocraithe do réimsí a bhaineann leis an mbunachar sonraí
+            tables-enable_field_updated_at: Cibé an féidir luach réamhshocraithe an réimse updated_at a chumasú sa bhunachar sonraí
+            tables-enable_gorm_tag_column: Cibé an féidir giniúint gorm a bhaineann le bunachar sonraí a chumasú
+        long: Tacaíonn gineadóir cód, teimpléid iolracha
+        short: Gineadóir cód
     help:
         additional_commands: Orduithe breise
         aliases: ailias ordú
@@ -27,5 +62,5 @@ cli:
                     usage: 'Cainéal aistriúcháin: Cineál tacaíochta {{ range $key, $value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Tiontaítear comhaid ilteangacha ó fhoinse áirithe go comhaid san fhormáid chéanna i dteangacha eile.
             short: aistrigh
-    long: Tá creatlach bunaithe ar 'phrótacal' ann, teimpléid a úsáidtear go coitianta, agus aistriúcháin iltheangacha
-    short: Foireann uirlisí
+    long: Tacar uirlisí do dhaoine leisciúla, lena n-áirítear creat inneall bunaithe ar 'phrótacal', teimpléid a úsáidtear go coitianta, agus aistriúchán iltheanga
+    short: Sraith uirlisí do dhaoine leisciúil

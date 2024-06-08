@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Output nsɛm a ɛkɔ akyiri log
+    gen:
+        add-rpc:
+            flags:
+                action: Suban a ɛsɛ sɛ wɔde ka ho wɔ batch mu, yɛsrɛ wo hwehwɛ dwumadie ho nkrataa no ma nsɛm no mu nsɛm
+                default-role: Dwumadie a ɛwɔ batch-generated interface no mu Yɛsrɛ wo hwɛ dwumadie ho nkrataa no mu ma nsɛm no mu nsɛm.
+                gen-to: Kyerɛ beae a .go fael ahorow a wɔayɛ no bɛpue
+                list-option: Wobetumi nso ayɛ list no filtered, yɛsrɛ wo hwehwɛ dwumadie ho nkrataa no ma nsɛm no mu nsɛm.
+                model: Kyerɛ model din, boa omitting `model` prefix no
+            long: Yɛ interfaces wɔ batches mu na fa interface bi ka ho ma model pɔtee bi wɔ .proto fael no mu
+            short: Batch awo ntoatoaso ntam nkitahodi
+        all:
+            long: Yɛ code a adwinnade yi boa nyinaa
+            short: Generate code nyinaa
+        cache:
+            long: Yɛ cache fael ma adwumayɛ frɛ caching a ɛfa SDKs ho
+            short: Yɛ cache fael no
+        cmd:
+            long: Yɛ entry fael ahorow ma adwumayɛ nnwuma
+            short: Yɛ fael a wɔde hyɛ mu
+        flags:
+            add-proto-files: Sɛ ɛho hia sɛ wode .proto fael/folda akwan afoforo a enni folda koro no ara mu ne .proto fael a wɔakyerɛ no ba a, saa dwumadie yi bɛka (ɛnyɛ sɛ ɛbɛkyerɛw so) ɔkwan a wɔahyehyɛ wɔ nhyehyeɛ fael no mu no.
+            go-module-prefix: Wɔ go_package kwan a wɔahyehyɛ wɔ .proto fael no mu ne nea ɛyɛ ankasa no ho no, wubetumi asiesie saa nhyehyɛe yi
+            input: Kyerɛ .proto fibea fael a wɔbɛhyehyɛ
+            output-path: Wobetumi asiesie saa nhyehyeɛ yi berɛ a go_package kwan a wɔahyehyɛ wɔ .proto fael no mu no ne roadbed a ɛhia sɛ wɔyɛ ankasa no nhyia.
+            overwrite: Sɛ wopɛ nsɛm a wɔrensan nyɛ no foforo a, hyɛ nsɛm a ɛwɔ hɔ dedaw no so
+            proto-files: Sɛ wopɛ sɛ wode .proto fael/folda akwan afoforo a enni folda koro no ara mu ne .proto fael a wɔakyerɛ no ba a, saa dwumadie yi yɛ ɔkwan a wobɛfa so abɔ nhyehyeɛ afuo a ɛwɔ nhyehyɛɛ fael no mu.
+            protoc: '`protoc` fael kwan a wotumi sesa'
+            protoc-gen-go: '`protoc-gen-go` plugin kwan'
+            tables-enable_field_created_at: Sɛ ebia wobɛma default nhyehyeɛ awoɔ ntoatoasoɔ a ɛwɔ database created_at field no mu ayɛ adwuma
+            tables-enable_field_deleted_at: Sɛ ebia wobɛma deleted_at field no default nhyehyɛe a ɛwɔ database no mu no ayɛ adwuma anaa
+            tables-enable_field_id: Ma default nhyehyeɛ awoɔ ntoatoasoɔ nyɛ adwuma ma database-fam mfuo
+            tables-enable_field_updated_at: Sɛ ebia wobɛma updated_at field no default value a ɛwɔ database no mu no ayɛ adwuma anaa
+            tables-enable_gorm_tag_column: Sɛ́ ebia wɔbɛma gorm awo ntoatoaso a ɛfa database ho no atumi ayɛ adwuma
+        long: Code generator, boa template ahorow pii
+        short: Kood generator a wɔde yɛ adwuma
     help:
         additional_commands: Ahyɛde afoforo
         aliases: ahyɛdeɛ alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Nkyerɛaseɛ kwan: Mmoa su {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Wɔdan fael ahorow a ɛka kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.
             short: kyerɛ aseɛ
-    long: Ɛwɔ 'proto'-based backend framework, templates a wɔtaa de di dwuma, ne kasa ahodoɔ nkyerɛaseɛ
-    short: Nnwinnade a Wɔde Di Dwuma
+    long: Adwinnade a wɔahyehyɛ ama anihafo, a ‘proto’-based backend framework, templates a wɔtaa de di dwuma, ne kasa horow pii nkyerɛase ka ho
+    short: Adwinnade a wɔde asi hɔ ama anihafo

@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Framleiðsla nákvæma annál
+    gen:
+        add-rpc:
+            flags:
+                action: Hegðun sem þarf að bæta við í lotum, vinsamlegast finndu notkunarskjölin fyrir frekari upplýsingar
+                default-role: Sjálfgefið hlutverk lotumyndaðs viðmóts Vinsamlega skoðaðu notkunarskjölin til að fá nánari upplýsingar.
+                gen-to: Tilgreindu úttaksstaðsetningu myndaðra .go skráa
+                list-option: Einnig er hægt að sía listann, vinsamlegast finndu notkunarskjölin fyrir frekari upplýsingar.
+                model: Tilgreindu heiti líkansins, stuðning við að sleppa 'líkan' forskeytinu
+            long: Búðu til viðmót í lotum og bættu við viðmóti fyrir ákveðna gerð í .proto skránni
+            short: Lotu kynslóð tengi
+        all:
+            long: Búðu til allan kóða sem þetta tól styður
+            short: Búðu til allan kóða
+        cache:
+            long: Búðu til skyndiminniskrár fyrir skyndiminni tengdar SDK-kerfum fyrir viðskiptasímtöl
+            short: Búðu til skyndiminni skrá
+        cmd:
+            long: Búðu til færsluskrár fyrir viðskiptaþjónustu
+            short: Búðu til færsluskrá
+        flags:
+            add-proto-files: Ef þú þarft að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá mun þessi aðgerð bæta við (ekki skrifa yfir) slóðina sem er stillt í stillingarskránni.
+            go-module-prefix: Fyrir slóð go_package sem er stillt í .proto skránni og hina raunverulegu, geturðu stillt þennan valkost
+            input: Tilgreindu .proto frumskrána sem á að búa til
+            output-path: Hægt er að stilla þennan valmöguleika þegar slóð go_package sem er stillt í .proto skránni er í ósamræmi við vegfarveginn sem raunverulega þarf að búa til.
+            overwrite: Fyrir efni sem verður ekki endurnýjað, þvingaðu yfir yfirskrift á núverandi efni
+            proto-files: Til að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá er þessi aðgerð valkostur til að hnekkja stillingarreitnum í stillingarskránni.
+            protoc: '''Protoc'' sérhannaðar skráarslóð'
+            protoc-gen-go: „protoc-gen-go“ viðbótaleið
+            tables-enable_field_created_at: Hvort á að virkja sjálfgefna stillingargerð gagnagrunnsins create_at reitnum
+            tables-enable_field_deleted_at: Hvort eigi að virkja sjálfgefna stillingu á deleted_at reitnum í gagnagrunninum
+            tables-enable_field_id: Virkja sjálfgefna stillingargerð fyrir gagnagrunnstengda reiti
+            tables-enable_field_updated_at: Hvort eigi að virkja sjálfgefið gildi updated_at reitsins í gagnagrunninum
+            tables-enable_gorm_tag_column: Hvort á að virkja gagnagrunnstengda gorm kynslóð
+        long: Kóða rafall, styður mörg sniðmát
+        short: Kóða rafall
     help:
         additional_commands: Viðbótarskipanir
         aliases: skipunarnefni
@@ -27,5 +62,5 @@ cli:
                     usage: 'Þýðingarrás: Stuðningstegund {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fjöltyngdum skrám frá ákveðnum uppruna er breytt í skrár á sama sniði á öðrum tungumálum.
             short: þýða
-    long: Inniheldur „frumu“-byggðan bakenda ramma, almennt notuð sniðmát og þýðingar á mörgum tungumálum
-    short: Verkfærakista
+    long: Verkfærasett fyrir lata fólk, þar á meðal „frumu“-byggðan bakenda ramma, algeng sniðmát og þýðingu á mörgum tungumálum
+    short: Verkfærasett fyrir lata

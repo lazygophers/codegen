@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Putanga rangitaki taipitopito
+    gen:
+        add-rpc:
+            flags:
+                action: Ko nga whanonga e tika ana kia taapirihia i roto i nga roopu, tirohia te tuhinga whakamahinga mo nga taipitopito
+                default-role: Ko te mahi taunoa o te atanga i hangaia he puranga Tena tirohia te tuhinga whakamahinga mo nga taipitopito.
+                gen-to: Tauwhāitihia te waahi whakaputa o nga konae .go i hangaia
+                list-option: Ka taea hoki te tātari te rarangi, tirohia koa nga tuhinga whakamahinga mo nga taipitopito.
+                model: Tauwhāitihia te ingoa tauira, tautoko me waiho te `tauira` muamua
+            long: Hangaia nga atanga i roto i nga puranga ka taapirihia he atanga mo tetahi tauira i roto i te konae .proto
+            short: Atanga whakatipuranga puranga
+        all:
+            long: Waihangahia nga waehere katoa e tautokohia ana e tenei taputapu
+            short: Hanga waehere katoa
+        cache:
+            long: Waihangahia nga konae keteroki mo nga SDK e pa ana ki te keteroki waea pakihi
+            short: Waihanga kōnae keteroki
+        cmd:
+            long: Waihanga kōnae urunga mo nga ratonga pakihi
+            short: Hangaia te konae urunga
+        flags:
+            add-proto-files: Mena ka hiahia koe ki te kawemai i etahi atu konae .proto/ ara kōpaki kaore i roto i te kōpaki rite ki te konae .proto kua tohua, ka taapiri tenei mahi (kaore e tuhirua) te ara i whirihorahia ki te konae whirihoranga.
+            go-module-prefix: Mo te ara o te go_package kua whirihorahia ki te konae .proto me te mea pono, ka taea e koe te whirihora i tenei whiringa
+            input: Tauwhāitihia te kōnae pūtake .proto hei hanga
+            output-path: Ka taea te whirihora i tenei kowhiri ina he rereke te ara o te go_package i whirihorahia ki te konae .proto ki te papa rori e tika ana kia mahia.
+            overwrite: Mo nga ihirangi e kore e whakahoutia, kaha ki te tuhi i nga ihirangi o mua
+            proto-files: Hei kawemai i etahi atu kōnae .proto / ara kōpaki kaore i roto i te kōpaki rite ki te konae .proto kua tohua, ko tenei mahi he whiringa ki te whakakore i te mara whirihoranga i roto i te konae whirihoranga.
+            protoc: ara kōnae whakarite `protoc`
+            protoc-gen-go: ara mono `protoc-gen-go`
+            tables-enable_field_created_at: Mena ka taea te hanga whirihoranga taunoa o te papaarangi i hangaia_i te mara
+            tables-enable_field_deleted_at: Mena ka taea te tautuhinga taunoa o te deleted_at mara i roto i te pātengi raraunga
+            tables-enable_field_id: Whakahohehia te whakaputanga whirihoranga taunoa mo nga mara e pa ana ki te papaunga raraunga
+            tables-enable_field_updated_at: Ki te whakahohe i te uara taunoa o te āpure updated_at i te pātengi raraunga
+            tables-enable_gorm_tag_column: Mena ka whakahohehia te whakatipuranga gorm e pa ana ki te putunga raraunga
+        long: Kaihanga Waehere, e tautoko ana i nga tauira maha
+        short: Kaihanga Waehere
     help:
         additional_commands: Nga whakahau taapiri
         aliases: tono ingoa ingoa
@@ -27,5 +62,5 @@ cli:
                     usage: 'Te hongere whakamaori: Momo tautoko {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ko nga konae reo maha mai i tetahi puna ka huri ki nga konae i roto i te ahua rite ki etahi atu reo.
             short: whakamaori
-    long: Kei roto 'proto'-a-muri anga, tauira e whakamahia nuitia ana, me nga whakamaoritanga reo-maha
-    short: kete taputapu
+    long: He huinga taputapu mo te hunga mangere, tae atu ki te anga-whakamuri o te 'proto', nga tauira e whakamahia nuitia ana, me te whakamaoritanga reo-maha
+    short: He huinga taputapu mo te hunga mangere

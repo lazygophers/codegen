@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Részletes napló kimenet
+    gen:
+        add-rpc:
+            flags:
+                action: Azokat a viselkedéseket, amelyeket kötegekben kell hozzáadni, a részletekért tekintse meg a használati dokumentációt
+                default-role: A kötegelt interfész alapértelmezett szerepe A részletekért tekintse meg a használati dokumentációt.
+                gen-to: Adja meg a generált .go fájlok kimeneti helyét
+                list-option: A lista szűrhető is, a részleteket a használati dokumentációban találja.
+                model: Adja meg a modell nevét, és hagyja ki a "model" előtagot
+            long: Hozzon létre kötegelt felületeket, és adjon hozzá egy interfészt egy bizonyos modellhez a .proto fájlban
+            short: Batch generálás interfész
+        all:
+            long: Az eszköz által támogatott összes kód létrehozása
+            short: Az összes kód generálása
+        cache:
+            long: Gyorsítótár-fájlok létrehozása az üzleti hívások gyorsítótárazásához kapcsolódó SDK-khoz
+            short: Gyorsítótár fájl létrehozása
+        cmd:
+            long: Bejegyzési fájlokat generál az üzleti szolgáltatásokhoz
+            short: Belépési fájl létrehozása
+        flags:
+            add-proto-files: Ha más .proto fájlokat/mappa elérési útvonalakat kell importálnia, amelyek nem ugyanabban a mappában vannak, mint a megadott .proto fájl, akkor ez a művelet hozzáfűzi (nem írja felül) a konfigurációs fájlban konfigurált elérési utat.
+            go-module-prefix: A .proto fájlban konfigurált go_package elérési útjához és a ténylegeshez konfigurálhatja ezt az opciót
+            input: Adja meg a létrehozandó .proto forrásfájlt
+            output-path: Ez a beállítás akkor konfigurálható, ha a .proto fájlban konfigurált go_package elérési útja nincs összhangban azzal az útalappal, amelyet ténylegesen elő kell állítani.
+            overwrite: Olyan tartalom esetén, amelyet nem generálunk újra, kényszerítse a meglévő tartalom felülírását
+            proto-files: Más .proto fájlok/mappa elérési utak importálásához, amelyek nem ugyanabban a mappában vannak, mint a megadott .proto fájl, ezzel a művelettel felülírhatja a konfigurációs fájl konfigurációs mezőjét.
+            protoc: '`protoc` testreszabható fájl elérési út'
+            protoc-gen-go: '`protoc-gen-go` bővítmény elérési útja'
+            tables-enable_field_created_at: Engedélyezni kell-e a Created_at mező alapértelmezett konfiguráció-generálását
+            tables-enable_field_deleted_at: Engedélyezze-e a deleted_at mező alapértelmezett beállítását az adatbázisban
+            tables-enable_field_id: Az adatbázishoz kapcsolódó mezők alapértelmezett konfigurációgenerálásának engedélyezése
+            tables-enable_field_updated_at: Engedélyezze-e az updated_at mező alapértelmezett értékét az adatbázisban
+            tables-enable_gorm_tag_column: Engedélyezze-e az adatbázissal kapcsolatos gorm-generálást
+        long: Kódgenerátor, több sablont is támogat
+        short: Kódgenerátor
     help:
         additional_commands: További parancsok
         aliases: parancs alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Fordítási csatorna: Támogatási típus: {{tartomány $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Egy bizonyos forrásból származó többnyelvű fájlokat a rendszer más nyelvek azonos formátumú fájljaivá alakítja.
             short: fordít
-    long: „Proto” alapú háttérrendszert, gyakran használt sablonokat és többnyelvű fordításokat tartalmaz
-    short: Eszközkészlet
+    long: Eszközkészlet lusta emberek számára, beleértve a „proto” alapú háttérrendszert, az általánosan használt sablonokat és a többnyelvű fordítást
+    short: Eszközkészlet lustáknak

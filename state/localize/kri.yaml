@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Output ditayl lɔg
+    gen:
+        add-rpc:
+            flags:
+                action: Biheviɔr dɛn we nid fɔ ad insay batch, duya fɛn di yuz dɔkyumentri fɔ di ditel dɛn
+                default-role: Di difɔlt rol fɔ di batch-generated intafeys Duya luk na di yuz dɔkyumentri fɔ di ditel dɛn.
+                gen-to: Spɛsifik di ɔtput ples fɔ di .go fayl dɛn we dɛn dɔn jenarayz
+                list-option: Di list kin filta bak, duya fɛn di yuz dɔkyumentri fɔ di ditel dɛn.
+                model: Spɛsifik di mɔdel nem, sɔpɔt fɔ lɛf di `mɔdel` prɛfiks
+            long: Jɛnɛret intafɛs dɛn insay batch ɛn ad wan intafɛs fɔ wan patikyula mɔdel na di .proto fayl
+            short: Batch jenereshɔn intafɛs
+        all:
+            long: Jɛnɛret ɔl di kɔd dɛn we dis tul de sɔpɔt
+            short: Jɛnɛret ɔl di kɔd dɛn
+        cache:
+            long: Jɛnɛret kesh fayl fɔ biznɛs kɔl kesh rilayt SDK dɛn
+            short: Jɛnɛret kesh fayl
+        cmd:
+            long: Jɛnɛret ɛntri fayl dɛn fɔ biznɛs savis dɛn
+            short: Jɛnɛret ɛntri fayl
+        flags:
+            add-proto-files: If yu nid fɔ import ɔda .proto fayl dɛn/fɔlda pat dɛn we nɔ de na di sem fɔlda wit di .proto fayl we dɛn dɔn spɛsifa, dis ɔpreshɔn go ad (nɔto ɔvarayt) di pat we dɛn dɔn kɔnfigyut na di kɔnfigyushɔn fayl.
+            go-module-prefix: Fɔ di pat fɔ go_package we dɛn kɔnfigyut na di .proto fayl ɛn di aktual wan, yu kin kɔnfigyut dis opshɔn
+            input: Spɛsifik di .proto sɔs fayl we dɛn go jenarayz
+            output-path: Dis opshɔn kin kɔnfigyut we di pat fɔ go_package we dɛn kɔnfigyut na di .proto fayl nɔ kɔnsistɛn wit di rodbed we rili nid fɔ jenarayz.
+            overwrite: Fɔ kɔntinyu we nɔ go rijeneret, fos fɔ ɔvarayt di kɔntinyu we dɔn de
+            proto-files: Fɔ import ɔda .proto fayl dɛn/fɔlda pat dɛn we nɔ de na di sem fɔlda wit di .proto fayl we dɛn spɛsifa, dis ɔpreshɔn na opshɔn fɔ ɔvalayz di kɔnfigyushɔn fil na di kɔnfigyushɔn fayl.
+            protoc: '`protoc` fayl pat we yu kin kɔstɔmayz'
+            protoc-gen-go: '`protoc-gen-go` plɔgin pat'
+            tables-enable_field_created_at: If fɔ ɛnabul di difɔlt kɔnfigyushɔn jɛnɛreshɔn fɔ di database created_at fil
+            tables-enable_field_deleted_at: If fɔ ɛnabul di difɔlt sɛtin fɔ di deleted_at fil na di database
+            tables-enable_field_id: Enable difɔlt kɔnfigyushɔn jenɛreshɔn fɔ database-rilayt fil dɛm
+            tables-enable_field_updated_at: If fɔ ɛnabul di difɔlt valyu fɔ di updated_at fil na di database
+            tables-enable_gorm_tag_column: If fɔ ɛnabul database-rilayt gorm jɛnɛreshɔn
+        long: Kod jenɛra, sɔpɔt bɔku tɛmplat dɛn
+        short: Kod jenɛratɔ
     help:
         additional_commands: Ɔda kɔmand dɛn
         aliases: kɔmand alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Transleshɔn chanɛl: Sɔpɔt tayp {{rɛnj $ki,$valyu := .Tayp}}{{$ki}}:{{$valyu}}{{ɛnd}}'
             long: Fayl dɛn we gɛt bɔku langwej dɛn frɔm wan patikyula say, dɛn kin chenj dɛn to fayl dɛn we gɛt di sem fɔmat insay ɔda langwej dɛn.
             short: translet
-    long: I gɛt ‘proto’-based bakɛnd fremwɔk, tɛmplat dɛn we dɛn kin yuz bɔku tɛm, ɛn transleshɔn dɛn we gɛt bɔku langwej dɛn
-    short: Tulkit we dɛn kɔl
+    long: Wan tul we dɛn sɛt fɔ pipul dɛn we les, we inklud ‘proto’-based bakɛnd fremwɔk, tɛmplat dɛn we dɛn kin yuz bɔku tɛm, ɛn transleshɔn we gɛt bɔku langwej dɛn
+    short: Wan tul we dɛn dɔn sɛt fɔ pipul dɛn we les

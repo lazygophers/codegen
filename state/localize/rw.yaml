@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Ibisohoka birambuye
+    gen:
+        add-rpc:
+            flags:
+                action: Imyitwarire ikeneye kongerwaho mubice, nyamuneka shakisha imikoreshereze yinyandiko irambuye
+                default-role: Uruhare rwibanze rwimikorere-yakozwe.
+                gen-to: Kugaragaza ibisohoka aho dosiye zakozwe .go
+                list-option: Urutonde narwo rushobora gushungura, nyamuneka shakisha imikoreshereze yinyandiko kubisobanuro birambuye.
+                model: Kugaragaza izina ryicyitegererezo, shyigikira usibye `moderi` prefix
+            long: Kora intera mubice hanyuma ongeraho intera ya moderi runaka muri dosiye .proto
+            short: Imigaragarire yimbere
+        all:
+            long: Kora code zose zishyigikiwe niki gikoresho
+            short: Kora code zose
+        cache:
+            long: Gukora cache dosiye kubucuruzi bwo guhamagara gufunga SDKs
+            short: Gukora dosiye
+        cmd:
+            long: Gukora dosiye zinjira muri serivisi zubucuruzi
+            short: Gukora dosiye yinjira
+        flags:
+            add-proto-files: Niba ukeneye gutumiza izindi .proto dosiye / ububiko bwububiko butari mububiko bumwe na dosiye ya .proto, iki gikorwa kizongera (ntabwo cyanditse) inzira yagenwe muri dosiye iboneza.
+            go-module-prefix: Kuburyo bwa go_package yagizwe muri dosiye ya .proto nimwe nyayo, urashobora gushiraho iyi option
+            input: Kugaragaza dosiye .proto yinkomoko igomba gukorwa
+            output-path: Ihitamo rirashobora gushyirwaho mugihe inzira ya go_package yagizwe muri dosiye ya .proto idahuye ninzira nyabagendwa ikeneye kubyara.
+            overwrite: Kubirimo bitazasubirwamo, guhatira kwandika hejuru yibirimo
+            proto-files: Kuzana andi .proto dosiye / ububiko bwinzira zitari mububiko bumwe na dosiye isobanutse .proto, iki gikorwa nuburyo bwo guhisha ikibanza cyimiterere muri dosiye iboneza.
+            protoc: '`protoc` inzira yihariye ya dosiye'
+            protoc-gen-go: '`protoc-gen-go` inzira ya plugin'
+            tables-enable_field_created_at: Niba ushobora gukora igenamigambi ryibanze rya data base yaremye_umurima
+            tables-enable_field_deleted_at: Niba ushobora gukora igenamiterere ryibanze ryasibwe_umurima muri base de base
+            tables-enable_field_id: Gushoboza iboneza ryibanze kububiko bujyanye nimirima
+            tables-enable_field_updated_at: Niba ushobora gukora agaciro gasanzwe kavuguruwe_kumwanya wububiko
+            tables-enable_gorm_tag_column: Niba ushobora gukora data base ijyanye na gorm generation
+        long: Kode itanga, ishyigikira inyandikorugero nyinshi
+        short: Amashanyarazi
     help:
         additional_commands: Amabwiriza yinyongera
         aliases: itegeko alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Umuyoboro wubuhinduzi: Ubwoko bwingoboka {{urwego $ urufunguzo, $ agaciro: = .Ubwoko}} {{$ urufunguzo}}: {{$ agaciro}} {{iherezo}}'
             long: Indimi nyinshi ziva mu isoko runaka zihindurwa muri dosiye muburyo bumwe mu zindi ndimi.
             short: guhindura
-    long: Harimo 'proto'-ishingiye kumurongo winyuma, ikunze gukoreshwa inyandikorugero, hamwe nubusobanuro bwindimi nyinshi
-    short: Igitabo
+    long: Igikoresho cyashyizweho kubantu bafite ubunebwe, harimo 'proto'-ishingiye kumurongo winyuma, ibisanzwe bikoreshwa mubishusho, hamwe no guhindura indimi nyinshi
+    short: Igikoresho cyashyizweho kubantu bafite ubunebwe

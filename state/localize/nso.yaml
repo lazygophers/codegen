@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Output qaqileng log
+    gen:
+        add-rpc:
+            flags:
+                action: Maitshwaro ao a swanetšego go okeletšwa ka dihlopha, hle hwetša ditokomane tša tšhomišo bakeng sa dintlha
+                default-role: Karolo ya go se fetoge ya segokanyimmediamentsi sa sebolokigolo seo se tšweleditšwego ke sehlopha Hle lebelela ditokomane tša tšhomišo bakeng sa dintlha.
+                gen-to: Laetša lefelo la ditšweletšwa tša difaele tša .go tše di tšweleditšwego
+                list-option: Lenaneo le ka sefiwa gape, hle hwetša ditokomane tša tšhomišo bakeng sa dintlha.
+                model: Laetša leina la mohlala, thekgo o tlogetše hlogo ya `mohlala`
+            long: Hlahisa segokanyimmediamentsi sa sebolokigolo ka dihlopha le eketsa segokanyimmediamentsi sa sebolokigolo bakeng sa mohlala itseng ka faele .proto
+            short: Batch moloko segokanyimmediamentsi sa sebolokigolo
+        all:
+            long: Hlagiša khoutu ka moka yeo e thekgwago ke sedirišwa se
+            short: Hlahisa khoutu yohle
+        cache:
+            long: Hlagiša difaele tša cache bakeng sa di-SDK tše di amanago le cache ya mogala wa kgwebo
+            short: Hlahisa faele ya cache
+        cmd:
+            long: Hlagiša difaele tša go tsena tša ditirelo tša kgwebo
+            short: Hlagiša faele ya go tsena
+        flags:
+            add-proto-files: Ge e le gore o swanetše go tsenya difaele tše dingwe tša .proto/ditsela tša foltara tšeo di sego ka gare ga foltara ye e swanago le faele ya .proto ye e laeditšwego, tshepedišo ye e tla tlaleletša (e sego go ngwala godimo) tsela yeo e beakantšwego ka faeleng ya peakanyo.
+            go-module-prefix: Bakeng sa tsela ya go_package yeo e beakantšwego ka gare ga faele ya .proto le ya nnete, o ka beakanya kgetho ye
+            input: Laetša faele ya mohlodi ya .proto yeo e tlago tšweletšwa
+            output-path: Kgetho ye e ka beakanywa ge tsela ya go_package yeo e beakantšwego ka faeleng ya .proto e sa sepelelane le roadbed yeo e tlogago e swanetše go tšweletšwa.
+            overwrite: Bakeng sa diteng tšeo di ka se tsošološwego, gapeletša go ngwala godimo ga diteng tše di lego gona
+            proto-files: Go tsenya difaele tše dingwe tša .proto/ditsela tša foltara tšeo di sego ka gare ga foltara ye e swanago le faele ya .proto ye e laeditšwego, tshepedišo ye ke kgetho ya go tloša tšhemo ya peakanyo ka faeleng ya peakanyo.
+            protoc: '`protoc` tsela ya faele yeo e ka fetošwago'
+            protoc-gen-go: '`protoc-gen-go` tsela ya plugin'
+            tables-enable_field_created_at: Gore o tla kgontšha moloko wa peakanyo ya maitirelo ya tšhemo ya polokelo ya tshedimošo created_at
+            tables-enable_field_deleted_at: Gore o tla kgontšha peakanyo ya go se fetoge ya tšhemo ya deleted_at ka polokelongtshedimošo
+            tables-enable_field_id: Kgontšha moloko wa peakanyo ya go se fetoge bakeng sa mafelo ao a amanago le polokelo ya tshedimošo
+            tables-enable_field_updated_at: Gore o tla kgontšha boleng bja go se fetoge bja tšhemo ya updated_at ka polokelongtshedimošo
+            tables-enable_gorm_tag_column: Gore na go kgontšha moloko wa gorm wo o amanago le polokelo ya tshedimošo
+        long: Khoutu jenereithara, tšehetsa dithempleite multiple
+        short: Khoutu ya jenereithara
     help:
         additional_commands: Ditaelo tša tlaleletšo
         aliases: leina le lengwe la taelo
@@ -27,5 +62,5 @@ cli:
                     usage: 'Mokero wa phetolelo: Mohuta wa thekgo {{range $ key,$ value := .Type}}{{$key}}:{{$ value}}{{end}}'
             long: Difaele tša maleme a mantši go tšwa mothopong wo o itšego di fetolelwa go difaele ka sebopego se se swanago ka maleme a mangwe.
             short: fetolela
-    long: E na le tlhako ya morago ye e theilwego godimo ga 'proto', dithempleite tše di šomišwago ka tlwaelo, le diphetolelo tša maleme a mantši
-    short: Sedirišwa sa didirišwa
+    long: Seteišene sa sedirišwa sa batho ba go tšwafa, go akaretšwa tlhako ya morago ye e theilwego godimo ga ‘proto’, dithempleite tšeo di šomišwago ka tlwaelo, le phetolelo ya maleme a mantši
+    short: Sedirišwa se se beilwego bakeng sa batho ba botswa

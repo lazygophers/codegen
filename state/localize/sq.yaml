@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Nxjerr regjistrin e detajuar
+    gen:
+        add-rpc:
+            flags:
+                action: Sjelljet që duhet të shtohen në grupe, ju lutemi gjeni dokumentacionin e përdorimit për detaje
+                default-role: Roli i parazgjedhur i ndërfaqes së gjeneruar nga grupi Ju lutemi referojuni dokumentacionit të përdorimit për detaje.
+                gen-to: Specifikoni vendndodhjen e daljes së skedarëve .go të gjeneruar
+                list-option: Lista gjithashtu mund të filtrohet, ju lutemi gjeni dokumentacionin e përdorimit për detaje.
+                model: Specifikoni emrin e modelit, mbështesni heqjen e prefiksit `model`
+            long: Gjeneroni ndërfaqe në grupe dhe shtoni një ndërfaqe për një model të caktuar në skedarin .proto
+            short: Ndërfaqja e gjenerimit të grupeve
+        all:
+            long: Gjeneroni të gjithë kodin e mbështetur nga ky mjet
+            short: Gjeneroni të gjithë kodin
+        cache:
+            long: Gjeneroni skedarë memorie specifike për SDK-të e lidhura me ruajtjen e telefonatave të biznesit
+            short: Gjeneroni skedarin e cache
+        cmd:
+            long: Gjeneroni skedarë hyrje për shërbimet e biznesit
+            short: Gjeneroni skedarin e hyrjes
+        flags:
+            add-proto-files: Nëse keni nevojë të importoni skedarë/shtigje të tjera .proto që nuk janë në të njëjtën dosje me skedarin .proto të specifikuar, ky operacion do të shtojë (jo do të mbishkruajë) shtegun e konfiguruar në skedarin e konfigurimit.
+            go-module-prefix: Për shtegun e go_package të konfiguruar në skedarin .proto dhe atë aktual, mund të konfiguroni këtë opsion
+            input: Specifikoni skedarin burimor .proto që do të gjenerohet
+            output-path: Ky opsion mund të konfigurohet kur shtegu i go_package i konfiguruar në skedarin .proto nuk është në përputhje me shtratin e rrugës që në fakt duhet të gjenerohet.
+            overwrite: Për përmbajtjen që nuk do të rigjenerohet, detyrojeni mbishkrimin e përmbajtjes ekzistuese
+            proto-files: Për të importuar skedarë/shtigje të tjera .proto që nuk janë në të njëjtën dosje me skedarin .proto të specifikuar, ky operacion është një opsion për të anashkaluar fushën e konfigurimit në skedarin e konfigurimit.
+            protoc: Rruga e skedarit e personalizueshme "protoc".
+            protoc-gen-go: Shtegu i shtojcës "protoc-gen-go".
+            tables-enable_field_created_at: Nëse do të aktivizohet gjenerimi i konfigurimit të paracaktuar të fushës create_at të bazës së të dhënave
+            tables-enable_field_deleted_at: Nëse do të aktivizohet cilësimi i paracaktuar i fushës deleted_at në bazën e të dhënave
+            tables-enable_field_id: Aktivizo gjenerimin e konfigurimit të paracaktuar për fushat që lidhen me bazën e të dhënave
+            tables-enable_field_updated_at: Nëse do të aktivizohet vlera e paracaktuar e fushës updated_at në bazën e të dhënave
+            tables-enable_gorm_tag_column: Nëse do të mundësohet gjenerimi i gorm i lidhur me bazën e të dhënave
+        long: Gjenerator kodi, mbështet modele të shumta
+        short: Gjenerator kodesh
     help:
         additional_commands: Komandat shtesë
         aliases: pseudonimi i komandës
@@ -27,5 +62,5 @@ cli:
                     usage: 'Kanali i përkthimit: Lloji i mbështetjes {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Skedarët shumëgjuhësh nga një burim i caktuar konvertohen në skedarë në të njëjtin format në gjuhë të tjera.
             short: përkthejnë
-    long: Përmban kornizën mbështetëse të bazuar në "proto", shabllone të përdorura zakonisht dhe përkthime shumë-gjuhëshe
-    short: Pako e veglave
+    long: Një grup mjetesh për njerëzit dembelë, duke përfshirë kornizën mbështetëse të bazuar në "proto", shabllone të përdorura zakonisht dhe përkthim në shumë gjuhë
+    short: Një grup mjetesh për dembelët

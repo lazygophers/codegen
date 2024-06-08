@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Log detalhado de saída
+    gen:
+        add-rpc:
+            flags:
+                action: Comportamentos que precisam ser adicionados em lotes, consulte a documentação de uso para obter detalhes
+                default-role: A função padrão da interface gerada em lote Consulte a documentação de uso para obter detalhes.
+                gen-to: Especifique o local de saída dos arquivos .go gerados
+                list-option: A lista também pode ser filtrada; consulte a documentação de uso para obter detalhes.
+                model: Especifique o nome do modelo, suportando a omissão do prefixo `model`
+            long: Gere interfaces em lotes e adicione uma interface para um determinado modelo no arquivo .proto
+            short: Interface de geração de lote
+        all:
+            long: Gere todo o código suportado por esta ferramenta
+            short: Gerar todo o código
+        cache:
+            long: Gerar arquivos de cache para SDKs relacionados ao cache de chamadas comerciais
+            short: Gerar arquivo de cache
+        cmd:
+            long: Gere arquivos de entrada para serviços empresariais
+            short: Gerar arquivo de entrada
+        flags:
+            add-proto-files: Se você precisar importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta do arquivo .proto especificado, esta operação anexará (não substituirá) o caminho configurado no arquivo de configuração.
+            go-module-prefix: Para o caminho do go_package configurado no arquivo .proto e o real, você pode configurar esta opção
+            input: Especifique o arquivo de origem .proto a ser gerado
+            output-path: Esta opção pode ser configurada quando o caminho do go_package configurado no arquivo .proto é inconsistente com o roadbed que realmente precisa ser gerado.
+            overwrite: Para conteúdo que não será regenerado, force a substituição do conteúdo existente
+            proto-files: Para importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta do arquivo .proto especificado, esta operação é uma opção para substituir o campo de configuração no arquivo de configuração.
+            protoc: caminho de arquivo personalizável `protoc`
+            protoc-gen-go: Caminho do plugin `protoc-gen-go`
+            tables-enable_field_created_at: Se deve ativar a geração de configuração padrão do campo de banco de dadoscreated_at
+            tables-enable_field_deleted_at: Se a configuração padrão do campo deletado_at deve ser habilitada no banco de dados
+            tables-enable_field_id: Habilitar geração de configuração padrão para campos relacionados ao banco de dados
+            tables-enable_field_updated_at: Se o valor padrão do campo atualizado_at deve ser habilitado no banco de dados
+            tables-enable_gorm_tag_column: Se deve ser habilitada a geração de gorms relacionados ao banco de dados
+        long: Gerador de código, suporta vários modelos
+        short: Gerador de código
     help:
         additional_commands: Comandos adicionais
         aliases: apelido de comando
@@ -27,5 +62,5 @@ cli:
                     usage: 'Canal de tradução: Tipo de suporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Arquivos multilíngues de uma determinada fonte são convertidos em arquivos do mesmo formato em outros idiomas.
             short: traduzir
-    long: Contém estrutura de back-end baseada em 'proto', modelos comumente usados ​​e traduções em vários idiomas
-    short: Conjunto de ferramentas
+    long: Um conjunto de ferramentas para pessoas preguiçosas, incluindo estrutura de back-end baseada em 'proto', modelos comumente usados ​​e tradução multilíngue
+    short: Um conjunto de ferramentas para pessoas preguiçosas

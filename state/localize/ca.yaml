@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Sortida del registre detallat
+    gen:
+        add-rpc:
+            flags:
+                action: Comportaments que s'han d'afegir per lots, consulteu la documentació d'ús per obtenir més informació
+                default-role: La funció predeterminada de la interfície generada per lots, consulteu la documentació d'ús per obtenir més informació.
+                gen-to: Especifiqueu la ubicació de sortida dels fitxers .go generats
+                list-option: La llista també es pot filtrar, si us plau, trobeu la documentació d'ús per obtenir més informació.
+                model: Especifiqueu el nom del model, permet ometre el prefix "model".
+            long: Genereu interfícies per lots i afegiu una interfície per a un model determinat al fitxer .proto
+            short: Interfície de generació per lots
+        all:
+            long: Genereu tot el codi compatible amb aquesta eina
+            short: Genera tot el codi
+        cache:
+            long: Genereu fitxers de memòria cau per als SDK relacionats amb la memòria cau de trucades empresarials
+            short: Genera un fitxer de memòria cau
+        cmd:
+            long: Genera fitxers d'entrada per a serveis empresarials
+            short: Generar fitxer d'entrada
+        flags:
+            add-proto-files: Si necessiteu importar altres fitxers .proto/camins de carpetes que no es troben a la mateixa carpeta que el fitxer .proto especificat, aquesta operació afegirà (no sobreescriurà) la ruta configurada al fitxer de configuració.
+            go-module-prefix: Per a la ruta de go_package configurada al fitxer .proto i la real, podeu configurar aquesta opció
+            input: Especifiqueu el fitxer font .proto que s'ha de generar
+            output-path: Aquesta opció es pot configurar quan la ruta de go_package configurada al fitxer .proto no és coherent amb el camí que realment s'ha de generar.
+            overwrite: Per al contingut que no es regenerarà, força la sobreescritura del contingut existent
+            proto-files: Per importar altres fitxers .proto/camins de carpetes que no es troben a la mateixa carpeta que el fitxer .proto especificat, aquesta operació és una opció per anul·lar el camp de configuració del fitxer de configuració.
+            protoc: Ruta del fitxer personalitzable `protoc`
+            protoc-gen-go: Camí del connector `protoc-gen-go`
+            tables-enable_field_created_at: Si s'ha d'activar la generació de configuració predeterminada del camp created_at de la base de dades
+            tables-enable_field_deleted_at: Si s'ha d'activar la configuració predeterminada del camp deleted_at a la base de dades
+            tables-enable_field_id: Habiliteu la generació de configuració predeterminada per als camps relacionats amb la base de dades
+            tables-enable_field_updated_at: Si s'ha d'activar el valor predeterminat del camp updated_at a la base de dades
+            tables-enable_gorm_tag_column: Si s'habilita la generació de gorm relacionada amb la base de dades
+        long: Generador de codi, admet múltiples plantilles
+        short: Generador de codi
     help:
         additional_commands: Ordres addicionals
         aliases: àlies de comanda
@@ -27,5 +62,5 @@ cli:
                     usage: 'Canal de traducció: tipus de suport {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Els fitxers multilingües d'una determinada font es converteixen en fitxers en el mateix format en altres idiomes.
             short: traduir
-    long: Conté un marc de backend basat en "proto", plantilles d'ús habitual i traduccions en diversos idiomes
-    short: Kit d'eines
+    long: Un conjunt d'eines per a gent mandrosa, que inclou un marc de backend basat en "proto", plantilles d'ús habitual i traducció en diversos idiomes
+    short: Un conjunt d'eines per a mandrosos

@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Logi ya kina ya pato
+    gen:
+        add-rpc:
+            flags:
+                action: Tabia zinazohitaji kuongezwa katika makundi, tafadhali tafuta hati za matumizi kwa maelezo
+                default-role: Jukumu la chaguo-msingi la kiolesura kinachozalishwa na kundi Tafadhali rejelea hati za matumizi kwa maelezo.
+                gen-to: Bainisha eneo la pato la faili zinazozalishwa za .go
+                list-option: Orodha pia inaweza kuchujwa, tafadhali tafuta hati za matumizi kwa maelezo.
+                model: Bainisha jina la kielelezo, ruhusu kuacha kiambishi awali cha `muundo`
+            long: Tengeneza violesura katika makundi na uongeze kiolesura cha modeli fulani katika faili ya .proto
+            short: Kiolesura cha kutengeneza bechi
+        all:
+            long: Tengeneza msimbo wote unaoungwa mkono na zana hii
+            short: Tengeneza msimbo wote
+        cache:
+            long: Tengeneza faili za akiba za SDK zinazohusiana na uakibishaji wa simu za biashara
+            short: Tengeneza faili ya kache
+        cmd:
+            long: Tengeneza faili za kuingia kwa huduma za biashara
+            short: Tengeneza faili ya kuingia
+        flags:
+            add-proto-files: Iwapo unahitaji kuleta faili/njia zingine za .proto ambazo haziko katika folda sawa na faili iliyobainishwa ya .proto, operesheni hii itaambatisha (sio kubatilisha) njia iliyosanidiwa katika faili ya usanidi.
+            go-module-prefix: Kwa njia ya go_package iliyosanidiwa katika faili ya .proto na ile halisi, unaweza kusanidi chaguo hili.
+            input: Bainisha faili ya .proto ya kuzalishwa
+            output-path: Chaguo hili linaweza kusanidiwa wakati njia ya go_package iliyosanidiwa katika faili ya .proto haioani na barabara ambayo inahitaji kutengenezwa.
+            overwrite: Kwa maudhui ambayo hayatazalishwa upya, lazimisha ubatilishaji wa maudhui yaliyopo
+            proto-files: Ili kuleta faili/njia zingine za .proto ambazo haziko katika folda sawa na faili iliyobainishwa ya .proto, operesheni hii ni chaguo la kubatilisha uga wa usanidi katika faili ya usanidi.
+            protoc: '`protoc` njia ya faili inayoweza kubinafsishwa'
+            protoc-gen-go: '`protoc-gen-go` njia jalizi'
+            tables-enable_field_created_at: Ikiwa itawasha uundaji wa usanidi chaguo-msingi wa hifadhidata iliyoundwa_kwenye uwanja
+            tables-enable_field_deleted_at: Ikiwa itawasha mpangilio chaguomsingi wa sehemu iliyofutwa_katika hifadhidata
+            tables-enable_field_id: Washa uundaji wa usanidi chaguo-msingi kwa sehemu zinazohusiana na hifadhidata
+            tables-enable_field_updated_at: Ikiwa itawasha thamani chaguomsingi ya sehemu iliyosasishwa_katika hifadhidata
+            tables-enable_gorm_tag_column: Iwapo itawasha uzalishaji wa gorm unaohusiana na hifadhidata
+        long: Jenereta ya msimbo, inasaidia violezo vingi
+        short: Jenereta ya kanuni
     help:
         additional_commands: Amri za ziada
         aliases: amri jina lak
@@ -27,5 +62,5 @@ cli:
                     usage: 'Kituo cha kutafsiri: Aina ya usaidizi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Faili za lugha nyingi kutoka chanzo fulani hubadilishwa kuwa faili katika umbizo sawa katika lugha zingine.
             short: kutafsiri
-    long: Ina mfumo wa nyuma unaotegemea 'proto', violezo vinavyotumika sana na tafsiri za lugha nyingi.
-    short: Zana
+    long: Zana iliyowekwa kwa ajili ya watu wavivu, ikiwa ni pamoja na 'proto'-msingi mfumo wa nyuma, violezo vinavyotumika sana, na tafsiri ya lugha nyingi.
+    short: Chombo kilichowekwa kwa watu wavivu

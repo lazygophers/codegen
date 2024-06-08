@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Hoʻopuka i ka moʻolelo kikoʻī
+    gen:
+        add-rpc:
+            flags:
+                action: ʻO nā ʻano pono e hoʻohui ʻia i nā pūʻulu, e ʻoluʻolu e ʻimi i ka palapala hoʻohana no nā kikoʻī
+                default-role: ʻO ka hana paʻamau o ka hui i hana ʻia e ʻoluʻolu e nānā i ka palapala hoʻohana no nā kikoʻī.
+                gen-to: E wehewehe i ka wahi hoʻopuka o nā faila .go i hana ʻia
+                list-option: Hiki ke kānana ʻia ka papa inoa, e ʻoluʻolu e ʻimi i ka palapala hoʻohana no nā kikoʻī.
+                model: E hōʻike i ka inoa hoʻohālike, kākoʻo e kāpae i ka prefix `model`
+            long: E hana i nā pilina ma nā pūʻulu a hoʻohui i kahi interface no kekahi kumu hoʻohālike ma ka faila .proto
+            short: Pākuʻi hoʻokumu pūʻulu
+        all:
+            long: E hana i nā code a pau i kākoʻo ʻia e kēia mea hana
+            short: E hana i nā code a pau
+        cache:
+            long: E hana i nā faila huna no nā SDK pili i ke kelepona ʻoihana
+            short: E hana i ka waihona huna
+        cmd:
+            long: E hana i nā faila komo no nā lawelawe ʻoihana
+            short: E hana i ka waihona komo
+        flags:
+            add-proto-files: Inā pono ʻoe e hoʻokomo i nā faila .proto/ala ala ʻē aʻe ʻaʻole i loko o ka waihona like me ka faila .proto i ʻōlelo ʻia, e hoʻopili kēia hana (ʻaʻole e kākau hou) i ke ala i hoʻonohonoho ʻia i ka faila hoʻonohonoho.
+            go-module-prefix: No ke ala o ka go_package i hoʻonohonoho ʻia i ka faila .proto a me ka mea maoli, hiki iā ʻoe ke hoʻonohonoho i kēia koho.
+            input: E wehewehe i ka waihona kumu .proto e hana ʻia
+            output-path: Hiki ke hoʻonohonoho ʻia kēia koho ke kū ʻole ke ala o go_package i hoʻonohonoho ʻia i ka faila .proto me ke alanui e pono ai e hana.
+            overwrite: No ka maʻiʻo ʻaʻole e hana hou ʻia, e hoʻoikaika i ke kākau ʻana i nā maʻiʻo i loaʻa
+            proto-files: No ka hoʻokomo ʻana i nā faila .proto ʻē aʻe ʻaʻole i loko o ka waihona like me ka faila .proto i kuhikuhi ʻia, he koho kēia hana e hoʻopau i ke kahua hoʻonohonoho i ka faila hoʻonohonoho.
+            protoc: '''protoc'' ala waihona hoʻopilikino'
+            protoc-gen-go: '''protoc-gen-go'' ala plugin'
+            tables-enable_field_created_at: Inā hiki ke hoʻololi i ka hana hoʻonohonoho paʻamau o ka waihona i haku ʻia_at kahua
+            tables-enable_field_deleted_at: Inā hiki ke hoʻonohonoho paʻa i ka deleted_at kahua i loko o ka waihona
+            tables-enable_field_id: E ho'ā i ka hana hoʻonohonoho paʻamau no nā kahua pili i ka waihona
+            tables-enable_field_updated_at: Inā hiki ke hoʻohana i ka waiwai paʻamau o ka updated_at kahua i loko o ka waihona
+            tables-enable_gorm_tag_column: Inā paha e hiki ai ke hoʻokumu ʻia gorm pili i ka waihona
+        long: Kākoʻo ʻia nā ʻōkuhi he nui
+        short: Mea hana code
     help:
         additional_commands: Nā kauoha hou aku
         aliases: kauoha inoa
@@ -27,5 +62,5 @@ cli:
                     usage: 'Kaila unuhi: Kākoʻo ʻano {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Hoʻololi ʻia nā faila ʻōlelo he nui mai kekahi kumu i nā faila ma ka ʻano like ma nā ʻōlelo ʻē aʻe.
             short: unuhi
-    long: Loaʻa i ka 'proto'-based backend framework, hoʻohana maʻamau, a me nā unuhi ʻōlelo he nui.
-    short: Mea paahana
+    long: He mea paahana no ka poʻe palaualelo, e like me ka 'proto'-based backend framework, hoʻohana maʻamau, a me ka unuhi ʻōlelo he nui.
+    short: He mea paahana no ka poe palaualelo

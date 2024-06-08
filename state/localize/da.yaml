@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Udfør detaljeret log
+    gen:
+        add-rpc:
+            flags:
+                action: Adfærd, der skal tilføjes i batches, se brugsdokumentationen for detaljer
+                default-role: Standardrollen for den batch-genererede grænseflade Se brugsdokumentationen for detaljer.
+                gen-to: Angiv outputplaceringen for de genererede .go-filer
+                list-option: Listen kan også filtreres, se brugsdokumentationen for detaljer.
+                model: Angiv modelnavnet, støtte udeladelse af 'model'-præfikset
+            long: Generer grænseflader i batches og tilføj en grænseflade for en bestemt model i .proto-filen
+            short: Batchgenereringsgrænseflade
+        all:
+            long: Generer al kode, der understøttes af dette værktøj
+            short: Generer al kode
+        cache:
+            long: Generer cache-filer til forretningsopkaldscache-relaterede SDK'er
+            short: Generer cache-fil
+        cmd:
+            long: Generer indgangsfiler til forretningstjenester
+            short: Generer indtastningsfil
+        flags:
+            add-proto-files: Hvis du har brug for at importere andre .proto-filer/mappestier, der ikke er i samme mappe som den angivne .proto-fil, vil denne handling tilføje (ikke overskrive) stien, der er konfigureret i konfigurationsfilen.
+            go-module-prefix: For stien til go_package konfigureret i .proto-filen og den faktiske, kan du konfigurere denne mulighed
+            input: Angiv .proto-kildefilen, der skal genereres
+            output-path: Denne mulighed kan konfigureres, når stien til go_package, der er konfigureret i .proto-filen, ikke er i overensstemmelse med den vejbed, der faktisk skal genereres.
+            overwrite: For indhold, der ikke vil blive regenereret, skal du tvinge overskrivning af eksisterende indhold
+            proto-files: For at importere andre .proto-filer/mappestier, der ikke er i samme mappe som den angivne .proto-fil, er denne handling en mulighed for at tilsidesætte konfigurationsfeltet i konfigurationsfilen.
+            protoc: '"protoc" tilpasselig filsti'
+            protoc-gen-go: '`protoc-gen-go` plugin-sti'
+            tables-enable_field_created_at: Om standardkonfigurationsgenereringen af ​​feltet oprettet_at skal aktiveres
+            tables-enable_field_deleted_at: Om standardindstillingen for deleted_at-feltet i databasen skal aktiveres
+            tables-enable_field_id: Aktiver generering af standardkonfiguration for databaserelaterede felter
+            tables-enable_field_updated_at: Om standardværdien for feltet updated_at skal aktiveres i databasen
+            tables-enable_gorm_tag_column: Om databaserelateret gorm-generering skal aktiveres
+        long: Kodegenerator, understøtter flere skabeloner
+        short: Kode generator
     help:
         additional_commands: Yderligere kommandoer
         aliases: kommando alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Oversættelseskanal: Supporttype {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Flersprogede filer fra en bestemt kilde konverteres til filer i samme format på andre sprog.
             short: Oversætte
-    long: Indeholder 'proto'-baseret backend-ramme, almindeligt anvendte skabeloner og flersprogede oversættelser
-    short: Værktøjskasse
+    long: Et værktøjssæt til dovne mennesker, inklusive 'proto'-baseret backend-ramme, almindeligt anvendte skabeloner og flersproget oversættelse
+    short: Et værktøjssæt til dovne mennesker

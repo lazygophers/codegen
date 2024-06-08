@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Ətraflı jurnalı çıxarın
+    gen:
+        add-rpc:
+            flags:
+                action: Partiyalarda əlavə edilməli olan davranışlar, təfərrüatlar üçün istifadə sənədlərini tapın
+                default-role: Toplu yaradılan interfeysin standart rolu Təfərrüatlar üçün istifadə sənədlərinə baxın.
+                gen-to: Yaradılmış .go fayllarının çıxış yerini təyin edin
+                list-option: Siyahı da süzülə bilər, ətraflı məlumat üçün istifadə sənədlərini tapın.
+                model: Model adını göstərin, `model` prefiksini buraxmağı dəstəkləyin
+            long: Partiyalarda interfeyslər yaradın və .proto faylında müəyyən model üçün interfeys əlavə edin
+            short: Toplu generasiya interfeysi
+        all:
+            long: Bu alət tərəfindən dəstəklənən bütün kodları yaradın
+            short: Bütün kodu yaradın
+        cache:
+            long: Biznes zəngləri ilə əlaqəli SDK-lar üçün keş faylları yaradın
+            short: Keş faylı yaradın
+        cmd:
+            long: Biznes xidmətləri üçün giriş faylları yaradın
+            short: Giriş faylı yaradın
+        flags:
+            add-proto-files: Göstərilən .proto faylı ilə eyni qovluqda olmayan digər .proto faylları/qovluq yollarını idxal etmək lazımdırsa, bu əməliyyat konfiqurasiya faylında konfiqurasiya edilmiş yolu əlavə edəcək (üzerinə yazmayacaq).
+            go-module-prefix: .proto faylında konfiqurasiya edilmiş go_package yolu və faktiki üçün bu seçimi konfiqurasiya edə bilərsiniz.
+            input: Yaradılacaq .proto mənbə faylını təyin edin
+            output-path: Bu seçim .proto faylında konfiqurasiya edilmiş go_package yolu faktiki olaraq yaradılmalı olan yol yatağı ilə uyğun gəlməyəndə konfiqurasiya edilə bilər.
+            overwrite: Yenilənməyəcək məzmun üçün mövcud məzmunun üzərinə yazmağa məcbur edin
+            proto-files: Göstərilən .proto faylı ilə eyni qovluqda olmayan digər .proto faylları/qovluq yollarını idxal etmək üçün bu əməliyyat konfiqurasiya faylında konfiqurasiya sahəsini ləğv etmək üçün bir seçimdir.
+            protoc: '`protoc` fərdiləşdirilə bilən fayl yolu'
+            protoc-gen-go: '`protoc-gen-go` plagin yolu'
+            tables-enable_field_created_at: yaradılmış_at sahəsinin standart konfiqurasiya generasiyasının aktiv edilib-edilməməsi
+            tables-enable_field_deleted_at: Verilənlər bazasında silinmiş_at sahəsinin standart parametrlərinin aktiv edilib-edilməməsi
+            tables-enable_field_id: Verilənlər bazası ilə əlaqəli sahələr üçün standart konfiqurasiya yaradılmasını aktivləşdirin
+            tables-enable_field_updated_at: Verilənlər bazasında updated_at sahəsinin standart dəyərinin aktiv edilib-edilməməsi
+            tables-enable_gorm_tag_column: Verilənlər bazası ilə əlaqəli gorm generasiyasının aktiv edilib-edilməməsi
+        long: Kod generatoru, birdən çox şablonu dəstəkləyir
+        short: Kod generatoru
     help:
         additional_commands: Əlavə əmrlər
         aliases: əmr ləqəbi
@@ -27,5 +62,5 @@ cli:
                     usage: 'Tərcümə kanalı: Dəstək növü {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Müəyyən mənbədən çoxdilli fayllar digər dillərdə eyni formatda olan fayllara çevrilir.
             short: tərcümə etmək
-    long: Tərkibində "proto" əsaslı arxa plan çərçivəsi, çox istifadə olunan şablonlar və çoxdilli tərcümələr var
-    short: Alət dəsti
+    long: Tənbəl insanlar üçün alət dəsti, o cümlədən 'proto' əsaslı backend çərçivəsi, çox istifadə olunan şablonlar və çoxdilli tərcümə
+    short: Tənbəl insanlar üçün alət dəsti

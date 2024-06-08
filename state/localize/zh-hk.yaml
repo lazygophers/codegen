@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: 輸出詳細日誌
+    gen:
+        add-rpc:
+            flags:
+                action: 需要批次新增的行為，具體請尋找使用文檔
+                default-role: 批次產生的介面預設的角色，具體請查看使用文檔
+                gen-to: 指定生成的 .go 檔案的輸出位置
+                list-option: 清單也的篩選，具體請尋找使用文檔
+                model: 指定模型名，支援 省略 `model` 前綴
+            long: 批量生成接口，在.proto 文件中增加針對某個模型的接口
+            short: 批量生成介面
+        all:
+            long: 生成本工具所支援的所有的程式碼
+            short: 產生所有程式碼
+        cache:
+            long: 產生快取文件，用於業務呼叫快取的相關 SDK
+            short: 產生快取文件
+        cmd:
+            long: 產生入口文件，用於業務服務的
+            short: 產生入口文件
+        flags:
+            add-proto-files: 需要引入的其它和指定的 .proto 檔案不在同一個資料夾內的其它 .proto 檔案/資料夾路徑，本操作會對 設定檔中已配置的路徑進行追加（非覆蓋）
+            go-module-prefix: 對於 .proto 檔案 中配置的 go_package 的路徑與實際的，可以配置該選項
+            input: 指定要產生的 .proto 原始檔
+            output-path: 對於 .proto 檔案 中配置的 go_package 的路徑與實際需要產生的路基不一致時，可設定此選項
+            overwrite: 對於不會重複產生的內容，強制覆蓋已存在的內容
+            proto-files: 需要引入的其它和指定的 .proto 文件不在同一個資料夾內的其它 .proto 文件/資料夾路徑，本操作是覆蓋配置文件中的配置字段的選項
+            protoc: '`protoc` 可自行檔案路徑'
+            protoc-gen-go: '`protoc-gen-go` 插件路徑'
+            tables-enable_field_created_at: 是否開啟資料庫 created_at 欄位的預設配置生成
+            tables-enable_field_deleted_at: 是否開啟資料庫 deleted_at 欄位的默認
+            tables-enable_field_id: 開啟資料庫相關欄位的預設配置生成
+            tables-enable_field_updated_at: 是否開啟資料庫 updated_at 欄位的默認
+            tables-enable_gorm_tag_column: 是否開啟資料庫相關的 gorm 生成
+        long: 程式碼產生器，支援多種模板
+        short: 程式碼產生器
     help:
         additional_commands: 附加命令
         aliases: 命令別名
@@ -27,5 +62,5 @@ cli:
                     usage: 翻譯頻道：支援類型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
             long: 透過某一個原始多語言文件還以為其它語言相同格式的文件
             short: 翻譯
-    long: 包含基於 'proto' 的後端框架、常用模板，以及多語言翻譯
-    short: 工具包
+    long: 適合懶人工具集，包含基於 'proto' 的後端框架、常用模板，以及多語言翻譯
+    short: 一個適合懶人工具集

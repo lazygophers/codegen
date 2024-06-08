@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Ijade alaye log
+    gen:
+        add-rpc:
+            flags:
+                action: Awọn ihuwasi ti o nilo lati ṣafikun ni awọn ipele, jọwọ wa iwe lilo fun awọn alaye
+                default-role: Ipa aiyipada ti wiwo-ipilẹṣẹ Jọwọ tọka si iwe lilo fun awọn alaye.
+                gen-to: Pato ipo iṣelọpọ ti awọn faili .go ti ipilẹṣẹ
+                list-option: Awọn akojọ le tun ti wa ni filtered, jọwọ wa awọn lilo iwe fun awọn alaye.
+                model: Pato orukọ awoṣe naa, ṣe atilẹyin yiyọkuro ìpele 'awoṣe'
+            long: Ṣe awọn atọkun ni awọn ipele ki o ṣafikun wiwo fun awoṣe kan ninu faili .proto
+            short: Ipele iran ni wiwo
+        all:
+            long: Ṣe ipilẹṣẹ gbogbo koodu ti o ni atilẹyin nipasẹ ọpa yii
+            short: Ṣẹda gbogbo koodu
+        cache:
+            long: Ṣe ina kaṣe awọn faili fun caching ipe iṣowo awọn SDK ti o ni ibatan
+            short: Ṣe ina kaṣe faili
+        cmd:
+            long: Ṣẹda awọn faili titẹsi fun awọn iṣẹ iṣowo
+            short: Ṣe ina iwọle faili
+        flags:
+            add-proto-files: Ti o ba nilo lati gbe awọn faili .proto miiran / awọn ọna folda ti ko si ni folda kanna bi faili .proto ti a ti sọ tẹlẹ, isẹ yii yoo fi kun (kii ṣe atunṣe) ọna ti a tunto ni faili iṣeto ni.
+            go-module-prefix: Fun ọna ti a tunto go_package ninu faili .proto ati ọkan gangan, o le tunto aṣayan yii
+            input: Pato faili orisun .proto lati ṣe ipilẹṣẹ
+            output-path: Aṣayan yii le tunto nigbati ọna go_package ti tunto ni faili .proto ko ni ibamu pẹlu ọna opopona ti o nilo lati ṣe ipilẹṣẹ.
+            overwrite: Fun akoonu ti kii yoo ṣe atunbi, fi ipa kọkọkọ akoonu ti o wa tẹlẹ
+            proto-files: Lati gbe awọn faili .proto miiran / awọn ipa ọna folda ti ko si ni folda kanna gẹgẹbi faili .proto ti a ti sọ tẹlẹ, iṣẹ yii jẹ aṣayan lati yi aaye iṣeto kuro ninu faili iṣeto.
+            protoc: '`protoc` ọna faili isọdi'
+            protoc-gen-go: Ona itanna `protoc-gen-go`
+            tables-enable_field_created_at: Boya lati jẹki iran iṣeto aiyipada ti aaye data ṣẹda_at
+            tables-enable_field_deleted_at: Boya lati mu eto aiyipada ṣiṣẹ ti aaye deleted_at ninu aaye data
+            tables-enable_field_id: Jeki iran iṣeto aiyipada ṣiṣẹ fun awọn aaye data ti o ni ibatan
+            tables-enable_field_updated_at: Boya lati jẹki iye aiyipada ti aaye imudojuiwọn_at ninu aaye data
+            tables-enable_gorm_tag_column: Boya lati jeki database-jẹmọ gorm iran
+        long: Olupilẹṣẹ koodu, ṣe atilẹyin awọn awoṣe pupọ
+        short: Code monomono
     help:
         additional_commands: Awọn aṣẹ afikun
         aliases: aṣẹ inagijẹ
@@ -27,5 +62,5 @@ cli:
                     usage: 'Ikanni itumọ: Atilẹyin Iru {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{opin}}'
             long: Awọn faili onisọpọ pupọ lati orisun kan jẹ iyipada si awọn faili ni ọna kika kanna ni awọn ede miiran.
             short: tumọ
-    long: Ni ‘proto’ ni ilana ẹhin ti o da lori, awọn awoṣe ti a lo nigbagbogbo, ati awọn itumọ ede pupọ
-    short: Ohun elo irinṣẹ
+    long: Ohun elo ti a ṣeto fun awọn ọlẹ, pẹlu 'proto' ipilẹ-ipilẹ ẹhin, awọn awoṣe ti a lo nigbagbogbo, ati itumọ ede pupọ
+    short: A ọpa ṣeto fun Ọlẹ eniyan

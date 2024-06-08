@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Saída de rexistro detallado
+    gen:
+        add-rpc:
+            flags:
+                action: Os comportamentos que deben engadirse por lotes, consulta a documentación de uso para obter máis detalles
+                default-role: O rol predeterminado da interface xerada por lotes Consulte a documentación de uso para obter máis información.
+                gen-to: Especifique a localización de saída dos ficheiros .go xerados
+                list-option: A lista tamén se pode filtrar, consulta a documentación de uso para obter máis información.
+                model: Especifique o nome do modelo, admite omitir o prefixo "modelo".
+            long: Xera interfaces por lotes e engade unha interface para un determinado modelo no ficheiro .proto
+            short: Interface de xeración de lotes
+        all:
+            long: Xera todo o código compatible con esta ferramenta
+            short: Xera todo o código
+        cache:
+            long: Xera ficheiros de caché para os SDK relacionados coa memoria caché de chamadas empresariais
+            short: Xerar ficheiro de caché
+        cmd:
+            long: Xerar ficheiros de entrada para servizos empresariais
+            short: Xerar ficheiro de entrada
+        flags:
+            add-proto-files: Se precisa importar outros ficheiros .proto/rutas de cartafol que non estean no mesmo cartafol que o ficheiro .proto especificado, esta operación engadirá (non sobrescribirá) a ruta configurada no ficheiro de configuración.
+            go-module-prefix: Para a ruta de go_package configurada no ficheiro .proto e a real, pode configurar esta opción
+            input: Especifique o ficheiro de orixe .proto que se vai xerar
+            output-path: Esta opción pódese configurar cando a ruta do paquete go_package configurada no ficheiro .proto non é coherente coa estrada que realmente se debe xerar.
+            overwrite: Para o contido que non se rexenerará, forza a sobreescritura do contido existente
+            proto-files: Para importar outros ficheiros .proto/rutas de cartafol que non estean no mesmo cartafol que o ficheiro .proto especificado, esta operación é unha opción para anular o campo de configuración do ficheiro de configuración.
+            protoc: Ruta do ficheiro personalizable `protoc`
+            protoc-gen-go: Ruta do complemento `protoc-gen-go`
+            tables-enable_field_created_at: Indica se se activa a xeración de configuración predeterminada do campo created_at da base de datos
+            tables-enable_field_deleted_at: Indica se se activa a configuración predeterminada do campo deleted_at na base de datos
+            tables-enable_field_id: Activa a xeración de configuración predeterminada para campos relacionados coa base de datos
+            tables-enable_field_updated_at: Indica se se activa o valor predeterminado do campo updated_at na base de datos
+            tables-enable_gorm_tag_column: Indica se se activa a xeración de gorm relacionada coa base de datos
+        long: Xerador de código, admite varios modelos
+        short: Xerador de código
     help:
         additional_commands: Comandos adicionais
         aliases: alias de comando
@@ -27,5 +62,5 @@ cli:
                     usage: 'Canle de tradución: tipo de soporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Os ficheiros multilingües dunha determinada fonte convértense en ficheiros no mesmo formato noutros idiomas.
             short: traducir
-    long: Contén un cadro de fondo baseado en 'proto', modelos de uso habitual e traducións en varios idiomas
-    short: Caixa de ferramentas
+    long: Un conxunto de ferramentas para preguiceiros, que inclúe un marco de backend baseado en "proto", modelos de uso habitual e tradución multilingüe
+    short: Un conxunto de ferramentas para preguiceiros

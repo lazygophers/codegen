@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Salida detallada registro ukaxa
+    gen:
+        add-rpc:
+            flags:
+                action: Sarnaqäwinakax lotes ukan yapxatatäñapawa, juk’amp yatxatañatakix apnaqañ qillqatanakap jikxatañamawa
+                default-role: Uka lurawixa lote-generada interfaz ukankiwa.
+                gen-to: Uñacht’ayaña kawkhantixa mistuski uka .go qillqatanaka
+                list-option: Ukhamaraki lista ukaxa filtratarakispawa, ukatxa juk’ampi yatxatañatakixa apnaqañ qillqatanaka thaqhañamawa.
+                model: Modelo suti uñt’ayaña, yanapt’aña `modelo` nayrïr aru chhaqtayaña
+            long: Interfaces ukanakax lotes ukan luraña ukat mä interfaz mä modelo ukar .proto qillqatan yapxataña
+            short: Interfaz de generación de lotes ukax mä juk’a pachanakanwa
+        all:
+            long: Taqi kunatix aka herramienta ukamp yanapt’atäki ukanak luraña
+            short: Taqi codigo uñstayaña
+        cache:
+            long: Negocio jawsañ caché ukamp chikt’at SDKs ukanakatakix caché ark luraña
+            short: Caché qillqata luraña
+        cmd:
+            long: Servicios empresariales ukanakatakix mantañ archivonaka luraña
+            short: Mantaña qillqata luraña
+        flags:
+            add-proto-files: Yaqha .proto qillqatanaka/carpeta thakhinaka apsuña wakisispa ukaxa janiwa pachpa carpeta ukankiti kunjamatixa .proto qillqata uñacht’ayata, aka lurawixa yapxatañapawa (janiwa qillqantayañakiti) thakhi wakicht’ata wakichawi qillqatanxa.
+            go-module-prefix: go_package thakhi .proto qillqatan wakicht’ata ukat chiqpach thakhitakix, aka amtawix wakicht’atawa
+            input: .proto phuqhat qillqat uñacht’ayaña
+            output-path: Aka amtawix wakicht’asispawa kunapachatix go_package thakhix wakicht’ata .proto qillqatanx jan walt’ayat thakhi thiyampi chiqpachan lurañax wakisi.
+            overwrite: Contenido ukax janiw wasitat luratäkaniti, ukax utjki uka contenido ukarux ch’amanchañamawa
+            proto-files: Yaqha .proto qillqatanaka/carpeta thakhinaka apsuñataki, ukaxa janiwa pachpa carpeta ukankiti, kunjamatixa .proto qillqata uñt’ayata, aka lurawixa mä amtawiwa wakicht’awi qillqatanxa wakicht’awi chiqaru chhaqtayañataki.
+            protoc: '`protoc` ukax mä jamuqaw thakhi'
+            protoc-gen-go: '`protoc-gen-go` ukax mä plugin thakhiwa'
+            tables-enable_field_created_at: Ukax created_at ukanx base de datos ukan configuración generación predeterminada ukar ch’amanchañati janicha
+            tables-enable_field_deleted_at: Ukax deleted_at ukan default ukan utt’ayatawa, ukax base de datos ukankiwa
+            tables-enable_field_id: Base de datos ukamp chikt’at yapunakatakix configuración de configuración predeterminada ukar ch’amanchaña
+            tables-enable_field_updated_at: Ukax updated_at ukanx default valor ukarux ch’amanchañapawa
+            tables-enable_gorm_tag_column: Ukax base de datos ukamp chikt’at gorm generación ukar ch’amanchañataki
+        long: Código generador, walja plantillas ukanakaruw yanapt’i
+        short: Código generador ukaxa
     help:
         additional_commands: Yaqha kamachinaka
         aliases: kamachi alias ukampi
@@ -27,5 +62,5 @@ cli:
                     usage: 'Jaqukipaña thakhi: Yanapt’awi kasta {{rango $key,$value := .Tipo}}{{$clave}}:{{$value}}{{end}}'
             long: Mä chiqat walja arut arsutanakax yaqha arunakan pachpa formato ukan qillqatanakaruw jaqukipata.
             short: jaqukipaña
-    long: ‘proto’-based backend framework, plantillas ukanakax apnaqatäki, ukatx walja arut jaqukipäwinakaw utji
-    short: Herramientas ukax mä juk’a pachanakanwa
+    long: Mä herramienta ukaw q’añu jaqinakatakix utt’ayata, ukax ‘proto’-based backend framework, plantillas ukanakax apnaqatawa, ukatx walja arut jaqukipatawa
+    short: Mä herramienta wakicht’ata q’añu jaqinakataki

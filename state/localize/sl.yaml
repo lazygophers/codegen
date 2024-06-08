@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Izhod podroben dnevnik
+    gen:
+        add-rpc:
+            flags:
+                action: Obnašanja, ki jih je treba dodati v paketih, poiščite podrobnosti v dokumentaciji o uporabi
+                default-role: Privzeta vloga paketno ustvarjenega vmesnika za podrobnosti glejte dokumentacijo o uporabi.
+                gen-to: Določite izhodno lokacijo ustvarjenih datotek .go
+                list-option: Seznam je mogoče tudi filtrirati, za podrobnosti poiščite dokumentacijo o uporabi.
+                model: Določite ime modela, podpirajte izpuščanje predpone `model`
+            long: Ustvarite vmesnike v paketih in dodajte vmesnik za določen model v datoteki .proto
+            short: Vmesnik za serijsko generiranje
+        all:
+            long: Ustvari vso kodo, ki jo podpira to orodje
+            short: Ustvari vso kodo
+        cache:
+            long: Ustvarite predpomnilniške datoteke za SDK-je, povezane s predpomnjenjem poslovnih klicev
+            short: Ustvari datoteko predpomnilnika
+        cmd:
+            long: Ustvarite vnosne datoteke za poslovne storitve
+            short: Ustvari vnosno datoteko
+        flags:
+            add-proto-files: Če morate uvoziti druge poti .proto datotek/map, ki niso v isti mapi kot podana datoteka .proto, bo ta operacija dodala (ne prepisala) pot, konfigurirano v konfiguracijski datoteki.
+            go-module-prefix: Za pot go_package, konfigurirano v datoteki .proto, in dejansko pot, lahko konfigurirate to možnost
+            input: Določite izvorno datoteko .proto, ki bo ustvarjena
+            output-path: To možnost je mogoče konfigurirati, če pot go_package, konfigurirana v datoteki .proto, ni skladna s podlago, ki jo je dejansko treba ustvariti.
+            overwrite: Za vsebino, ki ne bo ponovno ustvarjena, vsilite prepis obstoječe vsebine
+            proto-files: Če želite uvoziti druge datoteke .proto/mape poti, ki niso v isti mapi kot navedena datoteka .proto, je ta operacija možnost za preglasitev konfiguracijskega polja v konfiguracijski datoteki.
+            protoc: '`protoc` prilagodljiva pot datoteke'
+            protoc-gen-go: pot vtičnika `protoc-gen-go`
+            tables-enable_field_created_at: Ali naj se omogoči generiranje privzete konfiguracije polja created_at baze podatkov
+            tables-enable_field_deleted_at: Ali naj se omogoči privzeta nastavitev polja deleted_at v bazi podatkov
+            tables-enable_field_id: Omogoči privzeto generiranje konfiguracije za polja, povezana z bazo podatkov
+            tables-enable_field_updated_at: Ali naj se omogoči privzeta vrednost polja updated_at v bazi podatkov
+            tables-enable_gorm_tag_column: Ali naj se omogoči ustvarjanje gorm, povezanih z bazo podatkov
+        long: Generator kode, podpira več predlog
+        short: Generator kode
     help:
         additional_commands: Dodatni ukazi
         aliases: vzdevek ukaza
@@ -27,5 +62,5 @@ cli:
                     usage: 'Kanal prevajanja: Vrsta podpore {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Večjezične datoteke iz določenega vira se pretvorijo v datoteke v enakem formatu v drugih jezikih.
             short: prevesti
-    long: Vsebuje zaledno ogrodje, ki temelji na "proto", pogosto uporabljene predloge in prevode v več jezikov
-    short: Komplet orodij
+    long: Nabor orodij za lene ljudi, vključno z ogrodjem zaledja, ki temelji na "proto", pogosto uporabljenimi predlogami in prevodom v več jezikov
+    short: Set orodij za lenuhe

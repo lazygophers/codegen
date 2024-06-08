@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Kubuda kwakadzama log
+    gen:
+        add-rpc:
+            flags:
+                action: Maitiro anoda kuwedzerwa mumabhechi, ndapota tsvaga zvinyorwa zvekushandisa kuti uwane ruzivo
+                default-role: Basa rekutanga reiyo batch-yakagadzirwa interface Ndokumbira utarise kune zvinyorwa zvekushandisa.
+                gen-to: Tsanangura nzvimbo yakabuda yezvakagadzirwa .go mafaira
+                list-option: Rondedzero inogona zvakare kusefa, ndapota tsvaga zvinyorwa zvekushandisa kuti uwane ruzivo.
+                model: Taura zita remuenzaniso, tsigiro yekusiya `modhiyo` prefix
+            long: Gadzira mainterface mumabhechi uye wedzera chinongedzo cheimwe modhi mu.proto faira
+            short: Batch generation interface
+        all:
+            long: Gadzira kodhi yese inotsigirwa nechishandiso ichi
+            short: Gadzira kodhi yese
+        cache:
+            long: Gadzira cache mafaera ebhizinesi kufona caching ane hukama maSDK
+            short: Gadzira cache file
+        cmd:
+            long: Gadzira mafaera ekupinda emabhizinesi masevhisi
+            short: Gadzira faira rekupinda
+        flags:
+            add-proto-files: Kana uchida kuunza dzimwe .proto mafaira/mafolder nzira dzisiri mufolder yakafanana neyakatsanangurwa .proto file, oparesheni iyi ichawedzera (kwete kunyora pamusoro) nzira yakarongwa mufaira rekugadzirisa.
+            go-module-prefix: Panzira yego_package yakagadziridzwa mu.proto faira uye iyo chaiyo, unogona kugadzirisa iyi sarudzo.
+            input: Taura .proto source file ichagadzirwa
+            output-path: Iyi sarudzo inogona kugadzirwa kana nzira yego_package yakagadziriswa mu.proto file isingaenderane neroadbed inoda kugadzirwa.
+            overwrite: Zvemukati zvisingazogadziriswe patsva, manikidza kupeta pamusoro pezviripo
+            proto-files: Kupinza mamwe .proto mafaira/folder nzira dzisiri muforodha yakafanana neyakatsanangurwa .proto faira, oparesheni iyi isarudzo yekupfuura iyo yekumisikidza ndima mufaira rekugadzirisa.
+            protoc: '`protoc` customizable faira nzira'
+            protoc-gen-go: '`protoc-gen-go` plugin nzira'
+            tables-enable_field_created_at: Kunyangwe kugonesa iyo default gadziriso chizvarwa chedatabase rakagadzirwa_pamunda
+            tables-enable_field_deleted_at: Kunyangwe kugonesa kuseta kweiyo yakadzimwa_pamunda mudhatabhesi
+            tables-enable_field_id: Gonesa dhizaini yekumisikidza kugadzirwa kwenzvimbo dzine chekuita nedatabase
+            tables-enable_field_updated_at: Kunyangwe kugonesa kukosha kweiyo yakagadziridzwa_pamunda mudura redatabase
+            tables-enable_gorm_tag_column: Kunyangwe kugonesa dhatabhesi-inoenderana nekugadzira gorm
+        long: Code jenareta, inotsigira akawanda matemplate
+        short: Code jenareta
     help:
         additional_commands: Mimwe mirairo
         aliases: command alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Nzira yekushandura: Rudzi rwekutsigira {{range $key,$value := .Type}}{{$kiyi}}:{{$value}}{{end}}'
             long: Mafaira emitauro yakawanda kubva kune imwe nzvimbo anoshandurwa kuita mafaera ari muchimiro chimwe chete mune mimwe mitauro.
             short: shandura
-    long: Ine 'proto'-based backend framework, matemplate anowanzo shandiswa, uye shanduro dzemitauro yakawanda.
-    short: Toolkit
+    long: Chishandiso chakagadzirirwa vanhu vane usimbe, kusanganisira 'proto'-based backend framework, matemplate anowanzo shandiswa, uye kududzira mitauro yakawanda.
+    short: Mudziyo wakagadzirirwa simbe

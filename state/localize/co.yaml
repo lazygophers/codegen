@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Output log detallatu
+    gen:
+        add-rpc:
+            flags:
+                action: Cumportamenti chì deve esse aghjuntu in batch, per piacè truvate a documentazione di usu per i dettagli
+                default-role: U rolu predeterminatu di l'interfaccia generata in batch Per piacè riferite à a documentazione d'usu per i dettagli.
+                gen-to: Specificate u locu di output di i schedarii .go generati
+                list-option: A lista pò ancu esse filtrata, per piacè truvate a documentazione d'usu per i dettagli.
+                model: Specificate u nome di u mudellu, sustene l'omissione di u prefissu "mudellu".
+            long: Generate interfacce in batch è aghjunghje una interfaccia per un certu mudellu in u schedariu .proto
+            short: Interfaccia di generazione batch
+        all:
+            long: Generate tuttu u codice supportatu da stu strumentu
+            short: Generate tuttu u codice
+        cache:
+            long: Generate fugliali di cache per i SDK di cache di e chjama di cummerciale
+            short: Generate u schedariu cache
+        cmd:
+            long: Generate schedarii di ingressu per i servizii di l'affari
+            short: Generate un schedariu di entrata
+        flags:
+            add-proto-files: Sè avete bisognu di impurtà altri .proto files / folder paths chì ùn sò micca in u stessu cartulare cum'è u schedariu .proto specificatu, sta operazione appiccicarà (micca soprascrivite) a strada cunfigurata in u schedariu di cunfigurazione.
+            go-module-prefix: Per a strada di go_package cunfigurata in u schedariu .proto è l'attuale, pudete cunfigurà sta opzione
+            input: Specificate u schedariu di fonte .proto per esse generatu
+            output-path: Questa opzione pò esse cunfigurata quandu a strada di go_package cunfigurata in u schedariu .proto hè inconsistente cù a strada chì deve esse generata.
+            overwrite: Per u cuntenutu chì ùn serà micca rigeneratu, forza a soprascrittura di u cuntenutu esistenti
+            proto-files: Per impurtà altri .proto files / folder paths chì ùn sò micca in u stessu cartulare cum'è u schedariu .proto specificatu, questa operazione hè una opzione per annullà u campu di cunfigurazione in u schedariu di cunfigurazione.
+            protoc: '`protoc` percorso di file customizable'
+            protoc-gen-go: percorso di plugin `protoc-gen-go`
+            tables-enable_field_created_at: Sia per attivà a generazione di cunfigurazione predeterminata di a basa di dati creata_at campu
+            tables-enable_field_deleted_at: Sia per attivà u paràmetru predeterminatu di u campu deleted_at in a basa di dati
+            tables-enable_field_id: Abilita a generazione di cunfigurazione predeterminata per i campi di basa di dati
+            tables-enable_field_updated_at: Sia per attivà u valore predeterminatu di u campu updated_at in a basa di dati
+            tables-enable_gorm_tag_column: Sia per attivà a generazione di gorm in relazione à a basa di dati
+        long: Generatore di codice, supporta parechje mudelli
+        short: Generatore di codice
     help:
         additional_commands: Cumandamenti supplementari
         aliases: alias di cumandamentu
@@ -27,5 +62,5 @@ cli:
                     usage: 'Canale di traduzzione: tipu di supportu {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: I schedari multilingue da una certa fonte sò cunvertiti in i schedari in u listessu furmatu in altre lingue.
             short: traduce
-    long: Contene un framework backend basatu in "proto", mudelli cumunimenti utilizati è traduzioni multilingue
-    short: Toolkit
+    long: Un set di strumenti per i pigri, cumprese un framework di backend basatu in "proto", mudelli cumuni è traduzzione multilingue.
+    short: Un strumentu per i pigri

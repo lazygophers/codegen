@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Output chipchiar takin log
+    gen:
+        add-rpc:
+            flags:
+                action: Batch-a dah belh ngai behavior te, a chipchiar zawka hriat duh chuan usage documentation zawng rawh
+                default-role: Batch-generated interface-a default role A chipchiar zawkna chu hman dan documentation en rawh.
+                gen-to: .go file siam chhuah tawhte output location kha tarlang rawh
+                list-option: List pawh hi filter theih a ni a, a chipchiar zawka hriat duh chuan usage documentation zawng rawh.
+                model: Model hming kha tarlang la, `model` prefix tih loh chu support rawh
+            long: Batch hrang hranga interface siam la, .proto file ah model pakhat tana interface add rawh
+            short: Batch siam chhuahna interface a ni
+        all:
+            long: He tool hian a support code zawng zawng siam vek rawh
+            short: Code zawng zawng siam vek rawh
+        cache:
+            long: Business call caching nena inzawm SDK te tana cache file siam
+            short: Cache file siam rawh
+        cmd:
+            long: Business services atana entry file siam chhuah
+            short: Entry file siam rawh
+        flags:
+            add-proto-files: .proto file/folder path dang, .proto file tarlan nen folder khata awm lo import i mamawh a nih chuan, he operation hian configuration file-a configure path chu a append (overwrite lo) ang.
+            go-module-prefix: .proto file a go_package configure path leh a tak tak tan chuan he option hi configure theih a ni
+            input: .proto source file siam tur chu tarlang rawh
+            output-path: He option hi .proto file-a go_package configured path chu roadbed siam tak tak ngai nen a inmil lo a nih chuan configure theih a ni.
+            overwrite: Content siam thar leh loh tur tan chuan content awmsa chu overwriting kha force rawh
+            proto-files: .proto file/folder path dang .proto file tarlan nen folder khata awm lo import tur chuan he operation hi configuration file a configuration field override theihna option a ni.
+            protoc: '`protoc` file path chu a duh angin a siam theih'
+            protoc-gen-go: '`protoc-gen-go` plugin a kalna tur a ni'
+            tables-enable_field_created_at: Database created_at field-a default configuration generation enable tur nge tih
+            tables-enable_field_deleted_at: Database chhunga deleted_at field default setting kha enable tur nge tih
+            tables-enable_field_id: Database nena inzawm field hrang hrang tan default configuration generation enable rawh
+            tables-enable_field_updated_at: Database chhunga updated_at field default value enable tur nge tih
+            tables-enable_gorm_tag_column: Database nena inzawm gorm generation enable tur nge tih
+        long: Code generator, template tam tak a support thei
+        short: Code siamtu a ni
     help:
         additional_commands: Thupek dang a awm bawk
         aliases: thupek alias a ni
@@ -27,5 +62,5 @@ cli:
                     usage: 'Lehlinna channel: Support chi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Source pakhat atanga multilingual file te chu tawng dang format inang file ah an chantir thin.
             short: letling
-    long: ‘proto’-based backend framework, template hman tlanglawn tak tak, leh tawng hrang hranga lehlinna te a keng tel bawk
-    short: Toolkit a ni
+    long: Mi rilru hah tak takte tana hmanraw set, ‘proto’-based backend framework, template hman tlanglawn tak tak, leh multi-language translation te pawh a tel
+    short: Mi rilru hah tak takte tan hmanrua set

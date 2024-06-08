@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Výstup podrobného protokolu
+    gen:
+        add-rpc:
+            flags:
+                action: O správaní, ktoré je potrebné pridať v dávkach, nájdete podrobnosti v dokumentácii o používaní
+                default-role: Predvolená rola dávkovo generovaného rozhrania Podrobnosti nájdete v dokumentácii o používaní.
+                gen-to: Zadajte umiestnenie výstupu vygenerovaných súborov .go
+                list-option: Zoznam je možné aj filtrovať, podrobnosti nájdete v dokumentácii k použitiu.
+                model: Zadajte názov modelu, podporte vynechanie predpony „model“.
+            long: Generujte rozhrania v dávkach a pridajte rozhranie pre určitý model do súboru .proto
+            short: Rozhranie dávkového generovania
+        all:
+            long: Vygenerujte všetok kód podporovaný týmto nástrojom
+            short: Vygenerujte celý kód
+        cache:
+            long: Generujte súbory vyrovnávacej pamäte pre súpravy SDK súvisiace s ukladaním obchodných hovorov do vyrovnávacej pamäte
+            short: Vygenerujte súbor vyrovnávacej pamäte
+        cmd:
+            long: Generujte vstupné súbory pre obchodné služby
+            short: Vytvorte vstupný súbor
+        flags:
+            add-proto-files: Ak potrebujete importovať iné súbory .proto/cesty k priečinkom, ktoré nie sú v rovnakom priečinku ako zadaný súbor .proto, táto operácia pripojí (nie prepíše) cestu nakonfigurovanú v konfiguračnom súbore.
+            go-module-prefix: Pre cestu go_package nakonfigurovanú v súbore .proto a aktuálnu cestu môžete nakonfigurovať túto možnosť
+            input: Zadajte zdrojový súbor .proto, ktorý sa má vygenerovať
+            output-path: Túto možnosť je možné nakonfigurovať, keď cesta k go_package nakonfigurovaná v súbore .proto nie je konzistentná s cestným podkladom, ktorý je v skutočnosti potrebné vygenerovať.
+            overwrite: V prípade obsahu, ktorý sa nebude regenerovať, vynútiť prepísanie existujúceho obsahu
+            proto-files: Ak chcete importovať iné súbory .proto/cesty k priečinkom, ktoré nie sú v rovnakom priečinku ako zadaný súbor .proto, táto operácia je možnosťou na prepísanie konfiguračného poľa v konfiguračnom súbore.
+            protoc: '`protoc` prispôsobiteľná cesta k súboru'
+            protoc-gen-go: cesta doplnku `protoc-gen-go`
+            tables-enable_field_created_at: Či sa má povoliť predvolené generovanie konfigurácie poľa databázy created_at
+            tables-enable_field_deleted_at: Či povoliť predvolené nastavenie poľa delete_at v databáze
+            tables-enable_field_id: Povoliť generovanie predvolenej konfigurácie pre polia súvisiace s databázou
+            tables-enable_field_updated_at: Či sa má povoliť predvolená hodnota poľa updated_at v databáze
+            tables-enable_gorm_tag_column: Či povoliť generovanie gormov súvisiacich s databázou
+        long: Generátor kódu, podporuje viacero šablón
+        short: Generátor kódu
     help:
         additional_commands: Ďalšie príkazy
         aliases: alias príkazu
@@ -27,5 +62,5 @@ cli:
                     usage: 'Kanál prekladu: Typ podpory {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Viacjazyčné súbory z určitého zdroja sa skonvertujú na súbory v rovnakom formáte v iných jazykoch.
             short: preložiť
-    long: Obsahuje backendový rámec založený na „proto“, bežne používané šablóny a viacjazyčné preklady
-    short: Toolkit
+    long: Sada nástrojov pre lenivých ľudí vrátane backendového rámca založeného na „proto“, bežne používaných šablón a viacjazyčného prekladu
+    short: Sada nástrojov pre lenivcov

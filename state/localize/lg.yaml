@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Ebifulumizibwa ebikwata ku log
+    gen:
+        add-rpc:
+            flags:
+                action: Enneeyisa ezeetaaga okugattibwa mu bitundutundu, nsaba onoonye ebiwandiiko by'enkozesa okumanya ebisingawo
+                default-role: Omulimu ogusookerwako ogw'enkolagana ekoleddwa mu kibinja Nsaba otunule mu biwandiiko by'enkozesa okumanya ebisingawo.
+                gen-to: Laga ekifo ekifulumizibwa fayiro za .go ezikoleddwa
+                list-option: Olukalala era lusobola okusengekebwa, nsaba onoonye ebiwandiiko by'enkozesa okumanya ebisingawo.
+                model: Laga erinnya ly'ekyokulabirako, obuwagizi okulekayo entandikwa ya `ekyokulabirako`
+            long: Okukola interfaces mu batches era osseeko interface ya model emu mu fayiro .proto
+            short: Enkolagana y'okutondekawo batch
+        all:
+            long: Okukola code zonna eziwagirwa ekintu kino
+            short: Okukola koodi zonna
+        cache:
+            long: Okukola fayiro za cache ku SDK ezikwatagana n'okutereka okuyita mu bizinensi
+            short: Okukola fayiro ya cache
+        cmd:
+            long: Okukola fayiro z'okuyingira ku mpeereza za bizinensi
+            short: Okukola fayiro y'okuyingiza
+        flags:
+            add-proto-files: Bw'oba weetaaga okuyingiza fayiro endala .proto/amakubo ga folda agatali mu folda y'emu ne fayiro .proto eragiddwa, omulimu guno gujja kwongera (so si kuwandiika) ekkubo eritegekeddwa mu fayiro y'okusengeka.
+            go-module-prefix: Ku kkubo lya go_package eritegekeddwa mu fayiro .proto n'eyo yennyini, osobola okutegeka eky'okulonda kino
+            input: Laga fayiro y'ensibuko ya .proto egenda okukolebwa
+            output-path: Enkola eno esobola okutegekebwa nga ekkubo lya go_package eritegekeddwa mu fayiro .proto terikwatagana na roadbed mu butuufu eyeetaaga okukolebwa.
+            overwrite: Ku birimu ebitajja kuddamu kutondebwawo, kikaka okuwandiika ku birimu ebiriwo
+            proto-files: Okuyingiza fayiro endala .proto/amakubo ga folda agatali mu folda y'emu ne fayiro .proto eragiddwa, omulimu guno nkola ya kukyusa ekifo ky'okusengeka mu fayiro y'okusengeka.
+            protoc: '`protoc` ekkubo lya fayiro eriyinza okulongoosebwa'
+            protoc-gen-go: '`protoc-gen-go` ekkubo lya plugin'
+            tables-enable_field_created_at: Oba okusobozesa okutondebwa kw'okusengeka okusookerwako okwa database created_at field
+            tables-enable_field_deleted_at: Oba okusobozesa ensengeka esookerwako ey'ekifo deleted_at mu database
+            tables-enable_field_id: Ssobozesa okukola okusengeka okusookerwako ku nnimiro ezikwatagana ne database
+            tables-enable_field_updated_at: Oba okusobozesa omuwendo ogusookerwako ogw'ekifo updated_at mu database
+            tables-enable_gorm_tag_column: Oba okusobozesa okukola gorm ezikwatagana ne database
+        long: Code generator, ewagira templates eziwera
+        short: Jenereta ya koodi
     help:
         additional_commands: Ebiragiro ebirala
         aliases: ekiragiro erinnya
@@ -27,5 +62,5 @@ cli:
                     usage: 'Omukutu gw''okuvvuunula: Ekika ky''obuwagizi {{range $key,$value := .Ekika}}{{$key}}:{{$value}}{{end}}'
             long: Fayiro ez’ennimi nnyingi okuva mu nsibuko emu zikyusibwa ne zifuuka fayiro mu nkola y’emu mu nnimi endala.
             short: okuvvunula
-    long: Mulimu 'proto'-based backend framework, templates ezitera okukozesebwa, n'okuvvuunula ennimi nnyingi
-    short: Ekitabo ky’ebikozesebwa
+    long: Ekikozesebwa ekitegekeddwa abantu abagayaavu, omuli 'proto'-based backend framework, templates ezitera okukozesebwa, n'okuvvuunula ennimi nnyingi
+    short: Ekikozesebwa ekiteekeddwawo abantu abagayaavu

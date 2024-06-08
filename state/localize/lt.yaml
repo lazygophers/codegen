@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Išvesti išsamų žurnalą
+    gen:
+        add-rpc:
+            flags:
+                action: Elgesys, kuriuos reikia įtraukti į paketus, daugiau informacijos rasite naudojimo dokumentacijoje
+                default-role: Numatytasis paketiniu būdu sukurtos sąsajos vaidmuo Išsamesnės informacijos ieškokite naudojimo dokumentacijoje.
+                gen-to: Nurodykite sugeneruotų .go failų išvesties vietą
+                list-option: Sąrašas taip pat gali būti filtruojamas. Daugiau informacijos rasite naudojimo dokumentacijoje.
+                model: Nurodykite modelio pavadinimą, praleiskite priešdėlį „modelis“.
+            long: Kurkite sąsajas paketais ir pridėkite sąsają tam tikram modeliui .proto faile
+            short: Partijos generavimo sąsaja
+        all:
+            long: Sugeneruokite visą šio įrankio palaikomą kodą
+            short: Sugeneruoti visą kodą
+        cache:
+            long: Generuokite talpyklos failus, susijusius su verslo skambučių kaupimu talpykloje
+            short: Sukurti talpyklos failą
+        cmd:
+            long: Generuokite verslo paslaugų įvesties failus
+            short: Sugeneruoti įvesties failą
+        flags:
+            add-proto-files: Jei reikia importuoti kitus .proto failus/aplanko kelius, kurie nėra tame pačiame aplanke kaip nurodytas .proto failas, ši operacija pridės (ne perrašys) konfigūracijos faile sukonfigūruotą kelią.
+            go-module-prefix: Šią parinktį galite sukonfigūruoti go_package kelio, sukonfigūruoto .proto faile, ir tikrojo kelio
+            input: Nurodykite generuojamą .proto šaltinio failą
+            output-path: Šią parinktį galima sukonfigūruoti, kai .proto faile sukonfigūruotas go_package kelias nesutampa su kelio sankasa, kurią iš tikrųjų reikia sugeneruoti.
+            overwrite: Jei turinys nebus atkurtas, priverstinai perrašykite esamą turinį
+            proto-files: Norėdami importuoti kitus .proto failus / aplanko kelius, kurie nėra tame pačiame aplanke kaip nurodytas .proto failas, ši operacija yra parinktis, leidžianti nepaisyti konfigūracijos lauko konfigūracijos faile.
+            protoc: „protoko“ tinkinamas failo kelias
+            protoc-gen-go: „protoc-gen-go“ papildinio kelias
+            tables-enable_field_created_at: Ar įgalinti numatytąją duomenų bazės sukurta_at konfigūracijos generavimą
+            tables-enable_field_deleted_at: Ar duomenų bazėje įgalinti numatytąjį lauko deleted_at nustatymą
+            tables-enable_field_id: Įgalinti numatytąjį su duomenų baze susijusių laukų konfigūracijos generavimą
+            tables-enable_field_updated_at: Ar duomenų bazėje įgalinti numatytąją lauko updated_at reikšmę
+            tables-enable_gorm_tag_column: Ar įgalinti duomenų bazių generavimą
+        long: Kodo generatorius, palaiko kelis šablonus
+        short: Kodų generatorius
     help:
         additional_commands: Papildomos komandos
         aliases: komandos slapyvardis
@@ -27,5 +62,5 @@ cli:
                     usage: 'Vertimo kanalas: palaikymo tipas {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Daugiakalbiai failai iš tam tikro šaltinio konvertuojami į to paties formato failus kitomis kalbomis.
             short: išversti
-    long: Yra „proto“ pagrindu sukurta vidinė sistema, dažniausiai naudojami šablonai ir vertimai į kelias kalbas
-    short: įrankių rinkinys
+    long: Įrankių rinkinys tingiems žmonėms, įskaitant „proto“ pagrindu sukurtą pagrindinę sistemą, dažniausiai naudojamus šablonus ir vertimą į kelias kalbas
+    short: Priemonių rinkinys tinginiams

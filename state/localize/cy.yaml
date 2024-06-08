@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Log manwl allbwn
+    gen:
+        add-rpc:
+            flags:
+                action: Ymddygiadau y mae angen eu hychwanegu mewn sypiau, dewch o hyd i'r dogfennau defnydd am fanylion
+                default-role: Rôl ddiofyn y rhyngwyneb swp-gynhyrchu Cyfeiriwch at y ddogfennaeth ddefnydd am fanylion.
+                gen-to: Nodwch leoliad allbwn y ffeiliau .go a gynhyrchir
+                list-option: Gellir hidlo'r rhestr hefyd, dewch o hyd i'r dogfennau defnydd am fanylion.
+                model: Nodwch enw'r model, cefnogwch gan hepgor y rhagddodiad `model`
+            long: Cynhyrchu rhyngwynebau mewn sypiau ac ychwanegu rhyngwyneb ar gyfer model penodol yn y ffeil .proto
+            short: Rhyngwyneb swp cenhedlaeth
+        all:
+            long: Cynhyrchu pob cod a gefnogir gan yr offeryn hwn
+            short: Cynhyrchu pob cod
+        cache:
+            long: Cynhyrchu ffeiliau storfa ar gyfer SDKs sy'n gysylltiedig â chacio galwadau busnes
+            short: Cynhyrchu ffeil cache
+        cmd:
+            long: Cynhyrchu ffeiliau mynediad ar gyfer gwasanaethau busnes
+            short: Cynhyrchu ffeil mynediad
+        flags:
+            add-proto-files: Os oes angen i chi fewnforio ffeiliau .proto/llwybrau ffolder eraill nad ydynt yn yr un ffolder â'r ffeil .proto penodedig, bydd y gweithrediad hwn yn atodi (nid trosysgrifo) y llwybr a ffurfweddwyd yn y ffeil ffurfweddu.
+            go-module-prefix: Ar gyfer y llwybr go_package wedi'i ffurfweddu yn y ffeil .proto a'r un go iawn, gallwch chi ffurfweddu'r opsiwn hwn
+            input: Nodwch y ffeil ffynhonnell .proto i'w chynhyrchu
+            output-path: Gellir ffurfweddu'r opsiwn hwn pan fydd llwybr go_package sydd wedi'i ffurfweddu yn y ffeil .proto yn anghyson â'r gwely ffordd y mae angen ei gynhyrchu mewn gwirionedd.
+            overwrite: Ar gyfer cynnwys na fydd yn cael ei adfywio, gorfodi trosysgrifo cynnwys presennol
+            proto-files: I fewnforio ffeiliau .proto/llwybrau ffolder eraill nad ydynt yn yr un ffolder â'r ffeil .proto penodedig, mae'r weithred hon yn opsiwn i ddiystyru'r maes ffurfweddu yn y ffeil ffurfweddu.
+            protoc: llwybr ffeil y gellir ei addasu `protoc`
+            protoc-gen-go: llwybr ategyn `protoc-gen-go`
+            tables-enable_field_created_at: P'un ai i alluogi cynhyrchu cyfluniad rhagosodedig y maes cronfa ddata created_at
+            tables-enable_field_deleted_at: A ddylid galluogi gosodiad rhagosodedig y maes deleted_at yn y gronfa ddata
+            tables-enable_field_id: Galluogi cynhyrchu cyfluniad rhagosodedig ar gyfer meysydd cysylltiedig â chronfa ddata
+            tables-enable_field_updated_at: A ddylid galluogi gwerth rhagosodedig y maes updated_at yn y gronfa ddata
+            tables-enable_gorm_tag_column: A ddylid galluogi cynhyrchu gorm sy'n gysylltiedig â chronfa ddata
+        long: Generadur cod, yn cefnogi templedi lluosog
+        short: Generadur cod
     help:
         additional_commands: Gorchmynion ychwanegol
         aliases: alias gorchymyn
@@ -27,5 +62,5 @@ cli:
                     usage: 'Sianel gyfieithu: Math o gefnogaeth {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Mae ffeiliau amlieithog o ffynhonnell benodol yn cael eu trosi'n ffeiliau yn yr un fformat mewn ieithoedd eraill.
             short: cyfieithu
-    long: Yn cynnwys fframwaith ôl-wyneb seiliedig ar 'proto', templedi a ddefnyddir yn gyffredin, a chyfieithiadau aml-iaith
-    short: Pecyn cymorth
+    long: Set offer ar gyfer pobl ddiog, gan gynnwys fframwaith ôl-wyneb seiliedig ar 'proto', templedi a ddefnyddir yn gyffredin, a chyfieithu aml-iaith
+    short: Set offer ar gyfer pobl ddiog

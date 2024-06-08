@@ -1,6 +1,41 @@
 cli:
     flags:
         debug: Imveliso yelog eneenkcukacha
+    gen:
+        add-rpc:
+            flags:
+                action: Ukuziphatha okufuneka kongezwe kwiibhetshi, nceda ufumane amaxwebhu okusetyenziswa kwiinkcukacha
+                default-role: Indima emiselweyo yojongano oluveliswe ngebhetshi Nceda ubhekisele kumaxwebhu osetyenziso ngeenkcukacha.
+                gen-to: Chaza indawo yemveliso eyenziweyo yeefayile ze.go
+                list-option: Uluhlu lunokucocwa, nceda ufumane uxwebhu losetyenziso lweenkcukacha.
+                model: Chaza igama lemodeli, inkxaso eshiya `imodeli` isimaphambili
+            long: Yenza ujongano kwiibhetshi kwaye wongeze ujongano lwemodeli ethile kwifayile yeproto
+            short: Ujongano lokuvelisa ibhetshi
+        all:
+            long: Yenza yonke ikhowudi exhaswa sesi sixhobo
+            short: Yenza yonke ikhowudi
+        cache:
+            long: Yenza iifayile ze-cache ze-caching yeshishini ehambelana ne-SDKs
+            short: Yenza ifayile ye-cache
+        cmd:
+            long: Yenza iifayile zokungena kwiinkonzo zoshishino
+            short: Yenza ifayile yokungena
+        flags:
+            add-proto-files: Ukuba ufuna ukungenisa ezinye iifayile zeproto/iindlela zefolda ezingekho kwisiqulathi seefayili esifana nesefayile echaziweyo .proto, lo msebenzi uza kudibanisa (awuyi kubhala ngaphezulu) indlela eqwalaselweyo kwifayile yoqwalaselo.
+            go-module-prefix: Kumendo we go_package eqwalaselweyo kwifayile ye .proto kunye neyona eyiyo, ungaluqwalasela olu khetho.
+            input: Chaza ifayile yemvelaphi yeproto ekufuneka yenziwe
+            output-path: Olu khetho lunoqwalaselo xa umendo we-go_package uqwalaselwe kwifayile ye.proto ayihambelani nebhedi yendlela efuna ukwenziwa.
+            overwrite: Ngomxholo ongazukuphinda uhlaziywe, nyanzela ukubhala ngaphezulu komxholo okhoyo
+            proto-files: Ukungenisa ezinye .iifayile zeproto/iindlela zefolda ezingekho kwisiqulathi seefayili esifana nesefayile echaziweyo .proto, lo msebenzi lukhetho lokubeka ngaphezulu umhlaba woqwalaselo kwifayile yoqwalaselo.
+            protoc: '`protoc` indlela yefayile enokwenziwa ngokwezifiso'
+            protoc-gen-go: '`protoc-gen-go` indlela yokufaka iplagi'
+            tables-enable_field_created_at: Nokuba ngaba kukuvumela ukuveliswa koqwalaselo olungagqibekanga lwedathabheyisi eyenziwe_ kwindawo
+            tables-enable_field_deleted_at: Nokuba ngaba ukwenza useto olumiselweyo lwendawo ecinyiweyo_kwindawo egciniweyo
+            tables-enable_field_id: Yenza ulungelelwaniso oluhlala lukhona kwimihlaba enxulumene nedatabase
+            tables-enable_field_updated_at: Nokuba ngaba ukwenza ixabiso elimiselweyo lendawo ehlaziyiweyo_kwindawo egciniweyo
+            tables-enable_gorm_tag_column: Nokuba kwenzelwa ukuveliswa kwegorm enxulumene nedathabheyisi
+        long: Ikhowudi generator, ixhasa iitemplates ezininzi
+        short: Ikhowudi generator
     help:
         additional_commands: Imiyalelo eyongezelelweyo
         aliases: umyalelo alias
@@ -27,5 +62,5 @@ cli:
                     usage: 'Isitishi soguqulo: Uhlobo lwenkxaso {{uluhlu lwe-$sitshixo, i-$value := .Uhlobo}}{{$isitshixo}}:{{$value}}{{end}}'
             long: Iifayile zeelwimi ezininzi ezivela kumthombo othile ziguqulelwa kwiifayile ngendlela efanayo kwezinye iilwimi.
             short: guqulela
-    long: Iqulathe 'iproto'-based backend framework, itemplates ezisetyenziswa ngokuqhelekileyo, kunye neenguqulelo zeelwimi ezininzi
-    short: Izixhobo zokusebenza
+    long: Isixhobo esisetelwe abantu abasonqenayo, kuquka 'iproto'-based backend framework, itemplates ezisetyenziswa ngokuqhelekileyo, kunye noguqulelo lweelwimi ezininzi.
+    short: Isixhobo esilungiselelwe amavila
