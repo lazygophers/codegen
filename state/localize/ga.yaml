@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Aschur logáil mionsonraithe
+    help:
+        additional_commands: Orduithe breise
+        aliases: ailias ordú
+        available_commands: Orduithe tacaithe
+        command: Ordú
+        flags: paraiméadar
+        get_info: chun faisnéis níos mionsonraithe a fháil
+        global_flags: paraiméadair dhomhanda
+        use: úsáid
+    i18n:
+        long: Foireann uirlisí a bhaineann le hidirnáisiúnú ilteangach
+        short: Foireann uirlisí a bhaineann le hidirnáisiúnú ilteangach
+        tran:
+            flags:
+                all-language: Aistrigh na teangacha go léir a dtacaítear leo (más fíor tá bratach na dteangacha díchumasaithe)
+                force: Forscríobh aistriúcháin atá ann cheana féin
+                force-key-prefix: eochracha nach mór a éigean a fhorscríobh
+                generate-const: Gin luachanna áirimh le haghaidh glaoch éasca
+                languages: Sonraigh an sprioctheanga atá le haistriú
+                src-file: Comhad foinseach le haistriú (riachtanach)
+                src-language: Teanga an chomhaid foinse (mura bhfuil sé sonraithe, cinnfidh an uirlis an comhad foinse go huathoibríoch)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Cainéal aistriúcháin: Cineál tacaíochta {{ range $key, $value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Tiontaítear comhaid ilteangacha ó fhoinse áirithe go comhaid san fhormáid chéanna i dteangacha eile.
+            short: aistrigh
+    long: Tá creatlach bunaithe ar 'phrótacal' ann, teimpléid a úsáidtear go coitianta, agus aistriúcháin iltheangacha
+    short: Foireann uirlisí

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Wyprowadź szczegółowy dziennik
+    help:
+        additional_commands: Dodatkowe polecenia
+        aliases: alias polecenia
+        available_commands: Obsługiwane polecenia
+        command: Zamówienie
+        flags: parametr
+        get_info: aby uzyskać bardziej szczegółowe informacje
+        global_flags: parametry globalne
+        use: używać
+    i18n:
+        long: Wielojęzyczny zestaw narzędzi związany z internacjonalizacją
+        short: Wielojęzyczny zestaw narzędzi związany z internacjonalizacją
+        tran:
+            flags:
+                all-language: Przetłumacz wszystkie obsługiwane języki (jeśli to prawda, flaga języków jest wyłączona)
+                force: Zastąp istniejące tłumaczenia
+                force-key-prefix: klucze, które należy wymusić nadpisanie
+                generate-const: Generuj wartości wyliczeniowe dla łatwego dzwonienia
+                languages: Określ język docelowy tłumaczenia
+                src-file: Plik źródłowy do przetłumaczenia (wymagane)
+                src-language: Język pliku źródłowego (jeśli nie zostanie określony, narzędzie automatycznie określi plik źródłowy)
+                translater:
+                    google-free: Tłumacz internetowy Google
+                    usage: 'Kanał tłumaczeniowy: Typ wsparcia {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Pliki wielojęzyczne z określonego źródła są konwertowane na pliki w tym samym formacie w innych językach.
+            short: Tłumaczyć
+    long: Zawiera framework backendowy oparty na proto, często używane szablony i tłumaczenia na wiele języków
+    short: zestaw narzędzi

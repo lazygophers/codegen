@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: 詳細ログを出力する
+    help:
+        additional_commands: 追加のコマンド
+        aliases: コマンドエイリアス
+        available_commands: サポートされているコマンド
+        command: 注文
+        flags: パラメータ
+        get_info: より詳細な情報を得るには
+        global_flags: グローバルパラメータ
+        use: 使用
+    i18n:
+        long: 多言語国際化関連ツールキット
+        short: 多言語国際化関連ツールキット
+        tran:
+            flags:
+                all-language: サポートされているすべての言語を翻訳します (true の場合、言語フラグは無効になります)
+                force: 既存の翻訳を上書きする
+                force-key-prefix: 強制的に上書きする必要があるキー
+                generate-const: 列挙値を生成して簡単に呼び出すことができます
+                languages: 翻訳対象言語を指定します
+                src-file: 翻訳対象のソースファイル（必須）
+                src-language: ソース ファイルの言語 (指定しない場合、ツールが自動的にソース ファイルを決定します)
+                translater:
+                    google-free: Google ウェブ翻訳
+                    usage: '翻訳チャネル: サポート タイプ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: 特定のソースからの多言語ファイルは、他の言語の同じ形式のファイルに変換されます。
+            short: 翻訳する
+    long: 「プロト」ベースのバックエンド フレームワーク、一般的に使用されるテンプレート、多言語翻訳が含まれています
+    short: ツールキット

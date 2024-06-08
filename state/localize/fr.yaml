@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Journal détaillé de sortie
+    help:
+        additional_commands: Commandes supplémentaires
+        aliases: alias de commande
+        available_commands: Commandes prises en charge
+        command: Commande
+        flags: paramètre
+        get_info: pour obtenir des informations plus détaillées
+        global_flags: paramètres globaux
+        use: utiliser
+    i18n:
+        long: Boîte à outils relative à l'internationalisation multilingue
+        short: Boîte à outils relative à l'internationalisation multilingue
+        tran:
+            flags:
+                all-language: Traduisez toutes les langues prises en charge (si vrai, le drapeau des langues est désactivé)
+                force: Écraser les traductions existantes
+                force-key-prefix: les clés qui doivent être forcées à être écrasées
+                generate-const: Générez des valeurs d'énumération pour un appel facile
+                languages: Spécifiez la langue cible pour la traduction
+                src-file: Fichier source à traduire (obligatoire)
+                src-language: La langue du fichier source (si elle n'est pas précisée, l'outil déterminera automatiquement le fichier source)
+                translater:
+                    google-free: Google Web Traduction
+                    usage: 'Canal de traduction : Type de support {{range $key,$value := .Type}}{{$key}} :{{$value}}{{end}}'
+            long: Les fichiers multilingues provenant d'une certaine source sont convertis en fichiers au même format dans d'autres langues.
+            short: traduire
+    long: Contient un cadre backend basé sur un « proto », des modèles couramment utilisés et des traductions multilingues
+    short: Boîte à outils

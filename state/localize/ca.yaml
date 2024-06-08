@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Sortida del registre detallat
+    help:
+        additional_commands: Ordres addicionals
+        aliases: àlies de comanda
+        available_commands: Ordres admeses
+        command: Ordre
+        flags: paràmetre
+        get_info: per obtenir informació més detallada
+        global_flags: paràmetres globals
+        use: utilitzar
+    i18n:
+        long: Kit d'eines multilingüe relacionat amb la internacionalització
+        short: Kit d'eines multilingüe relacionat amb la internacionalització
+        tran:
+            flags:
+                all-language: Tradueix tots els idiomes admesos (si és cert, el senyalador d'idiomes està desactivat)
+                force: Sobreescriu les traduccions existents
+                force-key-prefix: claus que s'han de forçar a sobreescriure
+                generate-const: Genereu valors d'enumeració per fer trucades fàcils
+                languages: Especifiqueu l'idioma de destinació per a la traducció
+                src-file: Fitxer font que s'ha de traduir (obligatori)
+                src-language: L'idioma del fitxer font (si no s'especifica, l'eina determinarà automàticament el fitxer font)
+                translater:
+                    google-free: Traductor web de Google
+                    usage: 'Canal de traducció: tipus de suport {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Els fitxers multilingües d'una determinada font es converteixen en fitxers en el mateix format en altres idiomes.
+            short: traduir
+    long: Conté un marc de backend basat en "proto", plantilles d'ús habitual i traduccions en diversos idiomes
+    short: Kit d'eines

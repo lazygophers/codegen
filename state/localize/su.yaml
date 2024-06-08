@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Kaluaran log lengkep
+    help:
+        additional_commands: Paréntah tambahan
+        aliases: paréntah alias
+        available_commands: paréntah dirojong
+        command: pesenan
+        flags: parameter
+        get_info: pikeun meunangkeun inpo nu leuwih lengkep
+        global_flags: parameter global
+        use: ngagunakeun
+    i18n:
+        long: Toolkit patali internasionalisasi multibasa
+        short: Toolkit patali internasionalisasi multibasa
+        tran:
+            flags:
+                all-language: Tarjamahkeun sadaya basa anu dirojong (upami leres bendera basa dinonaktipkeun)
+                force: Nimpa tarjamahan anu aya
+                force-key-prefix: kenop nu kudu dipaksa pikeun overwritten
+                generate-const: Ngahasilkeun nilai enumerasi pikeun gampang nelepon
+                languages: Sebutkeun basa sasaran pikeun tarjamahan
+                src-file: Sumber file pikeun ditarjamahkeun (diperlukeun)
+                src-language: Basa file sumber (upami teu dieusian, alat bakal otomatis nangtukeun file sumber)
+                translater:
+                    google-free: Google Web Tarjamah
+                    usage: 'Saluran tarjamahan: Tipe rojongan {{rentang $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Payil multibasa tina sumber nu tangtu dirobah jadi payil dina format nu sarua dina basa séjén.
+            short: narjamahkeun
+    long: Ngandung kerangka backend dumasar 'proto', témplat anu biasa dianggo, sareng tarjamahan multi-basa
+    short: Toolkit

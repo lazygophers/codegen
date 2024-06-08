@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Ebifulumizibwa ebikwata ku log
+    help:
+        additional_commands: Ebiragiro ebirala
+        aliases: ekiragiro erinnya
+        available_commands: Ebiragiro ebiwagirwa
+        command: Okulagira
+        flags: parameter
+        get_info: okufuna ebisingawo ebikwata ku nsonga eno
+        global_flags: ebipimo by’ensi yonna
+        use: omugaso
+    i18n:
+        long: Ekitabo ky’ebikozesebwa ebikwatagana n’okuyingiza ennimi nnyingi mu nsi yonna
+        short: Ekitabo ky’ebikozesebwa ebikwatagana n’okuyingiza ennimi nnyingi mu nsi yonna
+        tran:
+            flags:
+                all-language: Okuvvuunula ennimi zonna eziwagirwa (bwe kiba kituufu bendera y'ennimi eremeddwa)
+                force: Wandiika ku nkyusa eziriwo
+                force-key-prefix: ebisumuluzo ebyetaaga okuwalirizibwa okuwandiikibwako
+                generate-const: Okukola emiwendo gy'okubala okusobola okwanguyirwa okuyita
+                languages: Laga olulimi lw’ogenderera okuvvuunula
+                src-file: Fayiro y'ensibuko egenda okuvvuunulwa (kyetaagisa) .
+                src-language: Olulimi lwa fayiro ensibuko (bwe kiba tekirambikiddwa, ekintu kijja kusalawo fayiro y'ensibuko mu ngeri ey'otoma)
+                translater:
+                    google-free: Google Web Okuvvuunula
+                    usage: 'Omukutu gw''okuvvuunula: Ekika ky''obuwagizi {{range $key,$value := .Ekika}}{{$key}}:{{$value}}{{end}}'
+            long: Fayiro ez’ennimi nnyingi okuva mu nsibuko emu zikyusibwa ne zifuuka fayiro mu nkola y’emu mu nnimi endala.
+            short: okuvvunula
+    long: Mulimu 'proto'-based backend framework, templates ezitera okukozesebwa, n'okuvvuunula ennimi nnyingi
+    short: Ekitabo ky’ebikozesebwa

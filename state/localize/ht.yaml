@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Sòti detaye boutèy demi lit
+    help:
+        additional_commands: Lòt kòmandman
+        aliases: kòmand alyas
+        available_commands: Kòmandman sipòte
+        command: Lòd
+        flags: paramèt
+        get_info: pou jwenn plis enfòmasyon detaye
+        global_flags: paramèt mondyal yo
+        use: itilize
+    i18n:
+        long: Kit zouti ki gen rapò ak entènasyonalizasyon miltiling
+        short: Kit zouti ki gen rapò ak entènasyonalizasyon miltiling
+        tran:
+            flags:
+                all-language: Tradui tout lang yo sipòte (si se vre drapo lang yo dezaktive)
+                force: Ranplase tradiksyon ki egziste deja yo
+                force-key-prefix: kle ki bezwen fòse yo dwe ranplase
+                generate-const: Jenere valè enimerasyon pou rele fasil
+                languages: Espesifye lang sib pou tradiksyon an
+                src-file: Fichye sous yo dwe tradui (obligatwa)
+                src-language: Lang nan dosye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Chanèl tradiksyon: Kalite sipò {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Fichye plizyè lang ki soti nan yon sèten sous yo konvèti nan dosye nan menm fòma nan lòt lang.
+            short: tradwi
+    long: Gen fondasyon backend ki baze sou 'proto', modèl yo itilize souvan, ak tradiksyon plizyè lang
+    short: Zouti

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Išvesti išsamų žurnalą
+    help:
+        additional_commands: Papildomos komandos
+        aliases: komandos slapyvardis
+        available_commands: Palaikomos komandos
+        command: Įsakymas
+        flags: parametras
+        get_info: norėdami gauti išsamesnės informacijos
+        global_flags: pasauliniai parametrai
+        use: naudoti
+    i18n:
+        long: Daugiakalbis internacionalizavimo priemonių rinkinys
+        short: Daugiakalbis internacionalizavimo priemonių rinkinys
+        tran:
+            flags:
+                all-language: Išversti visas palaikomas kalbas (jei tiesa, kalbų žyma išjungta)
+                force: Perrašyti esamus vertimus
+                force-key-prefix: raktus, kuriuos reikia priverstinai perrašyti
+                generate-const: Generuokite surašymo reikšmes, kad galėtumėte lengvai skambinti
+                languages: Nurodykite vertimo kalbą
+                src-file: Šaltinio failas, kurį reikia išversti (būtina)
+                src-language: Šaltinio failo kalba (jei nenurodyta, įrankis automatiškai nustatys šaltinio failą)
+                translater:
+                    google-free: Google žiniatinklio vertėjas
+                    usage: 'Vertimo kanalas: palaikymo tipas {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Daugiakalbiai failai iš tam tikro šaltinio konvertuojami į to paties formato failus kitomis kalbomis.
+            short: išversti
+    long: Yra „proto“ pagrindu sukurta vidinė sistema, dažniausiai naudojami šablonai ir vertimai į kelias kalbas
+    short: įrankių rinkinys

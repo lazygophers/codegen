@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Soosaar qoraal faahfaahsan
+    help:
+        additional_commands: Amarro dheeri ah
+        aliases: amar loo yaqaan
+        available_commands: Amarrada la taageeray
+        command: Dalbo
+        flags: halbeegga
+        get_info: si aad u hesho xog faahfaahsan
+        global_flags: xuduudaha caalamiga ah
+        use: isticmaal
+    i18n:
+        long: Xirmada caalamiga ah ee luuqadaha badan
+        short: Xirmada caalamiga ah ee luuqadaha badan
+        tran:
+            flags:
+                all-language: Turjun dhammaan luqadaha la taageero (haddii ay run tahay calanka luqadaha waa naafo)
+                force: Dib u qor turjumaadaha jira
+                force-key-prefix: furayaasha u baahan in lagu qasbo in dib loo qoro
+                generate-const: Samee qiyamka xisaabinta ee wacitaanka fudud
+                languages: Sheeg luqadda la beegsanayo ee tarjumaada
+                src-file: Faylka isha in la tarjumo (loo baahan yahay)
+                src-language: Luqadda faylka isha (haddii aan la cayimin, qalabku wuxuu si toos ah u go'aamin doonaa faylka isha)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Kanaalka turjumaada: Nooca taageerada {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{dhammaadka}}'
+            long: Faylasha ku hadla luqadaha badan ee meel gaar ah waxaa loo rogaa faylal isku qaab ah oo luuqado kale ah.
+            short: turjun
+    long: Waxa ku jira qaab-dhismeedka dambe ee ku salaysan 'proto', qaab-dhismeedka sida caadiga ah loo isticmaalo, iyo tarjumaadaha luqadaha badan
+    short: Qalabka qalabka

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Salida registro detallado rehegua
+    help:
+        additional_commands: Umi tembiapoukapy ambuéva
+        aliases: tembiapoukapy alias
+        available_commands: Umi tembiapoukapy oipytyvõva
+        command: Hekopete
+        flags: parámetro rehegua
+        get_info: ohupyty haguã marandu detalladove
+        global_flags: umi parámetro global rehegua
+        use: poru
+    i18n:
+        long: Tembipuru’i internacionalización heta ñe’ẽ rehegua
+        short: Tembipuru’i internacionalización heta ñe’ẽ rehegua
+        tran:
+            flags:
+                all-language: Embohasa opaite ñe’ẽ oipytyvõva (añete ramo oñembogue umi ñe’ẽ poyvi)
+                force: Ehai umi ñe’ẽasa oĩmava ári
+                force-key-prefix: umi clave tekotevẽva ojeforsa ojehai hag̃ua hese
+                generate-const: Emoheñói valor enumeración rehegua oñehenói hag̃ua ndahasýiva
+                languages: Emombe’u ñe’ẽ ojehekahápe oñembohasa hag̃ua
+                src-file: Archivo ypykue oñembohasava’erã (oñeikotevẽva) .
+                src-language: Ñe’ẽ vore ypykue rehegua (noñemombe’úiramo, tembipuru ohechakuaáta ijeheguiete vore ypykue) .
+                translater:
+                    google-free: Google Web Ñembohasaha
+                    usage: 'Ñembohasaha rape: Ñepytyvõ ñemohenda {{rango $clave,$valor := .Tipo}}{{$clave}}:{{$valor}}{{end}}'
+            long: Umi vore heta ñeꞌepypegua peteĩ ypykuegui oñembohasa vore peteĩchagua formato-pe ambue ñeꞌeme.
+            short: ñe'ẽmbohasa
+    long: Oguereko ‘proto’-pegua marco backend rehegua, plantilla ojeporúva jepi ha ñembohasa heta ñe’ẽme
+    short: Tembipururã ryru

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Irteera erregistro zehatza
+    help:
+        additional_commands: Agindu osagarriak
+        aliases: komandoaren ezizena
+        available_commands: Onartutako komandoak
+        command: Agindu
+        flags: parametroa
+        get_info: informazio zehatzagoa lortzeko
+        global_flags: parametro globalak
+        use: erabili
+    i18n:
+        long: Nazioartekotzeari lotutako tresna eleaniztunak
+        short: Nazioartekotzeari lotutako tresna eleaniztunak
+        tran:
+            flags:
+                all-language: Itzuli onartzen diren hizkuntza guztiak (egia bada, hizkuntzen bandera desgaituta dago)
+                force: Gainidatzi lehendik dauden itzulpenak
+                force-key-prefix: gainidatzi behar diren gakoak
+                generate-const: Sortu zenbazio-balioak erraz deitzeko
+                languages: Zehaztu itzulpenerako xede-hizkuntza
+                src-file: Itzuli beharreko iturburu-fitxategia (beharrezkoa)
+                src-language: Iturburu-fitxategiaren hizkuntza (zehazten ez bada, tresnak automatikoki zehaztuko du iturburu-fitxategia)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Itzulpen-kanala: laguntza mota {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Iturburu jakin bateko fitxategi eleaniztunak beste hizkuntza batzuetan formatu bereko fitxategietan bihurtzen dira.
+            short: itzuli
+    long: '''Proto''-n oinarritutako backend esparrua, erabili ohi diren txantiloiak eta hizkuntza anitzeko itzulpenak ditu'
+    short: Tresna-kutxa

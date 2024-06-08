@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Ayrıntılı günlüğün çıktısını alın
+    help:
+        additional_commands: Ek komutlar
+        aliases: komut takma adı
+        available_commands: Desteklenen komutlar
+        command: Emir
+        flags: parametre
+        get_info: daha detaylı bilgi almak için
+        global_flags: küresel parametreler
+        use: kullanmak
+    i18n:
+        long: Çok dilli uluslararasılaştırmayla ilgili araç seti
+        short: Çok dilli uluslararasılaştırmayla ilgili araç seti
+        tran:
+            flags:
+                all-language: Desteklenen tüm dilleri çevirin (doğruysa dil bayrağı devre dışı bırakılır)
+                force: Mevcut çevirilerin üzerine yaz
+                force-key-prefix: Üzerine yazılmaya zorlanması gereken anahtarlar
+                generate-const: Kolay arama için numaralandırma değerleri oluşturun
+                languages: Çeviri için hedef dili belirtin
+                src-file: Çevrilecek kaynak dosya (gerekli)
+                src-language: Kaynak dosyanın dili (belirtilmezse araç kaynak dosyayı otomatik olarak belirleyecektir)
+                translater:
+                    google-free: Google Web Çevirisi
+                    usage: 'Çeviri kanalı: Destek türü {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Belirli bir kaynaktan gelen çok dilli dosyalar, diğer dillerdeki aynı formattaki dosyalara dönüştürülür.
+            short: Çevirmek
+    long: '''Proto'' tabanlı arka uç çerçevesini, yaygın olarak kullanılan şablonları ve çok dilli çevirileri içerir'
+    short: Araç seti

@@ -1,0 +1,31 @@
+cli:
+    short: "工具包"
+    long: "包含基于 'proto' 的后端框架、常用模板，以及多语言翻译"
+    flags:
+        debug: 输出详细日志
+    i18n:
+        short: 多语言国际化相关工具包
+        long: 多语言国际化相关工具包
+        tran:
+            short: 翻译
+            long: 通过某一个源多语言文件还以为其它语言相同格式的文件
+            flags:
+                src-file: 需要被翻译的源文件（必填）
+                src-language: 源文件的语言（如果不指定，则会工具源文件自动判断）
+                all-language: 翻译所有支持的语言（如果为 true 则 languages 标记失效）
+                languages: 指定翻译的目标语言
+                generate-const: 生成枚举值，方便调用
+                translater:
+                    usage: 翻译通道：支持类型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
+                    google-free: Google 网页翻译
+                force: 覆盖已存在的翻译
+                force-key-prefix: 需要被强制覆盖的 keys
+    help:
+        use: 使用
+        get_info: 来获取更详细的信息
+        command: 命令
+        available_commands: 支持的命令
+        additional_commands: 附加命令
+        aliases: 命令别名
+        flags: 参数
+        global_flags: 全局参数

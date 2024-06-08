@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Kutulutsa mwatsatanetsatane chipika
+    help:
+        additional_commands: Malamulo owonjezera
+        aliases: command alias
+        available_commands: Malamulo ochirikizidwa
+        command: Order
+        flags: parameter
+        get_info: kuti mudziwe zambiri
+        global_flags: magawo apadziko lonse lapansi
+        use: ntchito
+    i18n:
+        long: Multilingual internationalization related toolkit
+        short: Multilingual internationalization related toolkit
+        tran:
+            flags:
+                all-language: Tanthauzirani zilankhulo zonse zothandizira (ngati zowona mbendera ya zilankhulo yayimitsidwa)
+                force: Lembani zomasulira zomwe zilipo
+                force-key-prefix: makiyi omwe amafunika kukakamizidwa kuti alembetsedwe
+                generate-const: Pangani zowerengera kuti muyimbe mosavuta
+                languages: Tchulani chinenero chomwe mumasulire
+                src-file: Fayilo yochokera kuti itanthauziridwe (yofunikira)
+                src-language: Chilankhulo cha fayilo yochokera (ngati sichinatchulidwe, chidacho chidzadziwiratu fayilo yochokera)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Njira yomasulira: Mtundu wothandizira {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Mafayilo azinenero zambiri amasinthidwa kukhala mafayilo amtundu womwewo m'zinenero zina.
+            short: masulira
+    long: Lili ndi 'proto'-based backend framework, ma templates omwe amagwiritsidwa ntchito kwambiri, ndi matanthauzidwe azilankhulo zambiri
+    short: Zida

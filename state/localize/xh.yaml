@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Imveliso yelog eneenkcukacha
+    help:
+        additional_commands: Imiyalelo eyongezelelweyo
+        aliases: umyalelo alias
+        available_commands: Imiyalelo exhaswayo
+        command: Umyalelo
+        flags: ipharamitha
+        get_info: ukufumana ulwazi oluthe vetshe
+        global_flags: iiparamitha zehlabathi
+        use: sebenzisa
+    i18n:
+        long: Izixhobo ezihambelana nokudityaniswa kweelwimi zamazwe ngamazwe
+        short: Izixhobo ezihambelana nokudityaniswa kweelwimi zamazwe ngamazwe
+        tran:
+            flags:
+                all-language: Guqulela zonke iilwimi ezixhaswayo (ukuba yinyani iflegi yeelwimi ivaliwe)
+                force: Bhala phezu kweenguqulelo ezikhoyo
+                force-key-prefix: izitshixo ezifuna ukunyanzeliswa ukuba zibhalwe ngaphezulu
+                generate-const: Veza amaxabiso okubalwa ukufowuna lula
+                languages: Chaza ulwimi ekujoliswe kulo ukuze uguqulelwe
+                src-file: Umthombo wefayile eza kuguqulelwa (kuyafuneka)
+                src-language: Ulwimi lwefayile yemvelaphi (ukuba ayichazwanga, isixhobo siya kumisela ngokuzenzekelayo ifayile yemvelaphi)
+                translater:
+                    google-free: IToliki yeWebhu kaGoogle
+                    usage: 'Isitishi soguqulo: Uhlobo lwenkxaso {{uluhlu lwe-$sitshixo, i-$value := .Uhlobo}}{{$isitshixo}}:{{$value}}{{end}}'
+            long: Iifayile zeelwimi ezininzi ezivela kumthombo othile ziguqulelwa kwiifayile ngendlela efanayo kwezinye iilwimi.
+            short: guqulela
+    long: Iqulathe 'iproto'-based backend framework, itemplates ezisetyenziswa ngokuqhelekileyo, kunye neenguqulelo zeelwimi ezininzi
+    short: Izixhobo zokusebenza

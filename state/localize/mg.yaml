@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output log details
+    help:
+        additional_commands: Didy fanampiny
+        aliases: baiko alias
+        available_commands: Baiko tohanana
+        command: mba
+        flags: fikirana
+        get_info: mba hahazoana fampahalalana amin'ny antsipiriany kokoa
+        global_flags: masontsivana manerantany
+        use: Ampiasao
+    i18n:
+        long: Fitaovana mifandraika amin'ny iraisam-pirenena amin'ny fiteny maro
+        short: Fitaovana mifandraika amin'ny iraisam-pirenena amin'ny fiteny maro
+        tran:
+            flags:
+                all-language: Adikao ny fiteny tohanana rehetra (raha marina ny sainam-pirenena dia kilemaina)
+                force: Soraty ny dikanteny efa misy
+                force-key-prefix: fanalahidy izay mila terena hosoloina
+                generate-const: Mamorona soatoavina fanisana ho mora fiantsoana
+                languages: Lazao ny fiteny kendrena handikana
+                src-file: rakitra loharano hadika (takina)
+                src-language: Ny fitenin'ny rakitra loharano (raha tsy voafaritra dia hamaritra ho azy ny rakitra loharano ny fitaovana)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Fantsona fandikan-teny: Karazana fanohanana {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Ny rakitra amin'ny fiteny maro avy amin'ny loharano iray dia avadika ho rakitra mitovy endrika amin'ny fiteny hafa.
+            short: translate
+    long: Ahitana rafitra backend mifototra amin'ny 'proto', môdely fampiasa matetika ary dikanteny amin'ny fiteny maro.
+    short: Toolkit

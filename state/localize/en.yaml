@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output detailed log
+    help:
+        additional_commands: Additional commands
+        aliases: command alias
+        available_commands: Supported commands
+        command: Order
+        flags: parameter
+        get_info: to get more detailed information
+        global_flags: global parameters
+        use: use
+    i18n:
+        long: Multilingual internationalization related toolkit
+        short: Multilingual internationalization related toolkit
+        tran:
+            flags:
+                all-language: Translate all supported languages ​​(if true the languages ​​flag is disabled)
+                force: Overwrite existing translations
+                force-key-prefix: keys that need to be forced to be overwritten
+                generate-const: Generate enumeration values ​​for easy calling
+                languages: Specify the target language for translation
+                src-file: Source file to be translated (required)
+                src-language: The language of the source file (if not specified, the tool will automatically determine the source file)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Translation channel: Support type {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Multilingual files from a certain source are converted into files in the same format in other languages.
+            short: translate
+    long: Contains 'proto'-based backend framework, commonly used templates, and multi-language translations
+    short: Toolkit

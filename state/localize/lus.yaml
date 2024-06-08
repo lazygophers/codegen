@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output chipchiar takin log
+    help:
+        additional_commands: Thupek dang a awm bawk
+        aliases: thupek alias a ni
+        available_commands: Command supported te pawh a awm
+        command: Thupek
+        flags: parameter a ni
+        get_info: thu chiang zawk hriat theih nan
+        global_flags: khawvel pum huap parameters a ni
+        use: hmang
+    i18n:
+        long: Multilingual internationalization nena inzawm hmanrua
+        short: Multilingual internationalization nena inzawm hmanrua
+        tran:
+            flags:
+                all-language: Supported language zawng zawng lehlin vek (a dik a nih chuan languages ​​flag chu disabled a ni)
+                force: Lehlin awm tawhte chu overwrite rawh
+                force-key-prefix: keys te chu overwrite tura nawr a ngai a ni
+                generate-const: Call awlsam zawk nan enumeration value siam rawh
+                languages: Lehlinna tur target language chu tarlang rawh
+                src-file: Source file lehlin tur (a tul) .
+                src-language: Source file tawng (a tarlan loh chuan tool hian source file chu a hril nghal ang)
+                translater:
+                    google-free: Google Web Translate tih a ni
+                    usage: 'Lehlinna channel: Support chi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Source pakhat atanga multilingual file te chu tawng dang format inang file ah an chantir thin.
+            short: letling
+    long: ‘proto’-based backend framework, template hman tlanglawn tak tak, leh tawng hrang hranga lehlinna te a keng tel bawk
+    short: Toolkit a ni

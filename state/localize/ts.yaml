@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Vuhumelerisi bya vuxokoxoko bya log
+    help:
+        additional_commands: Swileriso leswi engetelekeke
+        aliases: vito ra xileriso
+        available_commands: Swileriso leswi seketeriwaka
+        command: Xileriso
+        flags: parameter
+        get_info: ku kuma vuxokoxoko lebyi engetelekeke
+        global_flags: tipharamitha ta misava hinkwayo
+        use: tirhisa
+    i18n:
+        long: Xitirhisiwa lexi fambelanaka na ku hlanganisiwa ka tindzimi to tala ta matiko ya misava
+        short: Xitirhisiwa lexi fambelanaka na ku hlanganisiwa ka tindzimi to tala ta matiko ya misava
+        tran:
+            flags:
+                all-language: Hundzuluxela tindzimi hinkwato leti seketeriwaka (loko ku ri ntiyiso mujeko wa tindzimi wu pfaleriwile)
+                force: Tsala ehenhla ka vuhundzuluxeri lebyi nga kona
+                force-key-prefix: swilotlelo leswi lavaka ku sindzisiwa ku tsariwa ehenhla
+                generate-const: Endla mimpimo ya ku hlayela ku olova ku vitana
+                languages: Boxa ririmi leri kongomisiweke eka vuhundzuluxeri
+                src-file: Fayili ya xihlovo leyi nga ta hundzuluxeriwa (ya laveka) .
+                src-language: Ririmi ra fayili ya xihlovo (loko ri nga boxiwanga, xitirhisiwa xi ta tihlawulela hi ku tisungulela fayili ya xihlovo) .
+                translater:
+                    google-free: Google Web Hundzuluxa
+                    usage: 'Xiyenge xa ​​vuhundzuluxi: Muxaka wa nseketelo {{range $key,$value := .Muxaka}}{{$key}}:{{$value}}{{end}}'
+            long: Tifayili ta tindzimi to tala leti humaka eka xihlovo xo karhi ti hundzuriwa ti va tifayela ta xivumbeko lexi fanaka hi tindzimi tin’wana.
+            short: hundzuluxa
+    long: Yi na rimba ra le ndzhaku leri simekiweke eka ‘proto’, tithempleyiti leti tirhisiwaka ngopfu, na vuhundzuluxi bya tindzimi to tala
+    short: Xitirhisiwa xa Switirhisiwa

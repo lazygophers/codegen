@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Ilogi enemininingwane yokuphuma
+    help:
+        additional_commands: Imiyalo eyengeziwe
+        aliases: umyalo alias
+        available_commands: Imiyalo esekelwe
+        command: Oda
+        flags: ipharamitha
+        get_info: ukuze uthole ulwazi oluningiliziwe
+        global_flags: imingcele yomhlaba
+        use: sebenzisa
+    i18n:
+        long: Ikhithi yamathuluzi ehlobene nokuhwebelana kwamanye amazwe
+        short: Ikhithi yamathuluzi ehlobene nokuhwebelana kwamanye amazwe
+        tran:
+            flags:
+                all-language: Humusha zonke izilimi ezisekelwayo (uma kuyiqiniso ifulegi lezilimi livaliwe)
+                force: Bhala phezu kokuhumusha okukhona
+                force-key-prefix: okhiye abadinga ukuphoqwa ukuthi babhalwe ngaphezulu
+                generate-const: Khiqiza amanani okubala ukuze uthole ukushaya okulula
+                languages: Cacisa ulimi okuqondiwe kulo ukuze kuhunyushwe
+                src-file: Ifayela elingumthombo elizohunyushwa (kuyadingeka)
+                src-language: Ulimi lwefayela elingumthombo (uma lungacacisiwe, ithuluzi lizonquma ngokuzenzakalelayo ifayela elingumthombo)
+                translater:
+                    google-free: I-Google Web Translate
+                    usage: 'Isiteshi sokuhumusha: Uhlobo losekelo {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Amafayela ezilimi eziningi asuka emthonjeni othile aguqulwa abe amafayela ngefomethi efanayo kwezinye izilimi.
+            short: humusha
+    long: Iqukethe 'i-proto'-based backend framework, izifanekiso ezisetshenziswa kakhulu, nokuhunyushwa kwezilimi eziningi
+    short: Ikhithi yamathuluzi

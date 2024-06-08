@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Kubuda kwakadzama log
+    help:
+        additional_commands: Mimwe mirairo
+        aliases: command alias
+        available_commands: Mirairo inotsigirwa
+        command: Order
+        flags: parameter
+        get_info: kuti uwane rumwe ruzivo rwakadzama
+        global_flags: global parameters
+        use: use
+    i18n:
+        long: Multilingual internationalization inoenderana neturusi
+        short: Multilingual internationalization inoenderana neturusi
+        tran:
+            flags:
+                all-language: Shandura mitauro yese inotsigirwa (kana ichokwadi mureza wakadzimwa)
+                force: Nyora shanduro dziripo
+                force-key-prefix: makiyi anoda kumanikidzwa kunyorwa
+                generate-const: Gadzira enumeration kukosha kwekufona kuri nyore
+                languages: Taura mutauro waunoshandura
+                src-file: Kwakabva faira rinofanira kushandurwa (rinodiwa)
+                src-language: Mutauro weiyo faira faira (kana isina kutaurwa, chishandiso chinongoona faira rekubva)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Nzira yekushandura: Rudzi rwekutsigira {{range $key,$value := .Type}}{{$kiyi}}:{{$value}}{{end}}'
+            long: Mafaira emitauro yakawanda kubva kune imwe nzvimbo anoshandurwa kuita mafaera ari muchimiro chimwe chete mune mimwe mitauro.
+            short: shandura
+    long: Ine 'proto'-based backend framework, matemplate anowanzo shandiswa, uye shanduro dzemitauro yakawanda.
+    short: Toolkit

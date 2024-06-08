@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Lethathamo le felletseng la lintlha
+    help:
+        additional_commands: Litaelo tse ling
+        aliases: laela alias
+        available_commands: Litaelo tse tšehelitsoeng
+        command: Taelo
+        flags: paramethara
+        get_info: ho fumana lintlha tse qaqileng haholoanyane
+        global_flags: mekhahlelo ea lefatše
+        use: tshebediso
+    i18n:
+        long: Multilingual internationalization related toolkit
+        short: Multilingual internationalization related toolkit
+        tran:
+            flags:
+                all-language: Fetolela lipuo tsohle tse tšehetsoeng (haeba ke 'nete folakha ea lipuo e koetsoe)
+                force: Ngola liphetolelo tse teng
+                force-key-prefix: linotlolo tse hlokang ho qobelloa ho ngoloa
+                generate-const: Hlahisa litekanyetso tsa lipalo bakeng sa ho letsetsa habonolo
+                languages: Hlalosa puo eo ho fetoleloang ho eona
+                src-file: Faele ea mohloli e tla fetoleloa (ea hlokahala)
+                src-language: Puo ea faele ea mohloli (haeba e sa hlalosoa, sesebelisoa se tla ikhethela faele ea mohloli)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Lenaneo la phetolelo: Mofuta oa tšehetso {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Lifaele tsa lipuo tse ngata tse tsoang mohloling o itseng li fetoloa lifaele ka mokhoa o tšoanang lipuong tse ling.
+            short: fetolela
+    long: E na le 'proto'-based backend framework, lithempleite tse sebelisoang hangata, le liphetolelo tsa lipuo tse ngata
+    short: Toolkit

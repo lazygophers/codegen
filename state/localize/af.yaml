@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Voer gedetailleerde log uit
+    help:
+        additional_commands: Bykomende opdragte
+        aliases: bevel alias
+        available_commands: Ondersteunde opdragte
+        command: Orde
+        flags: parameter
+        get_info: om meer gedetailleerde inligting te kry
+        global_flags: globale parameters
+        use: gebruik
+    i18n:
+        long: Meertalige internasionaliseringsverwante gereedskapstel
+        short: Meertalige internasionaliseringsverwante gereedskapstel
+        tran:
+            flags:
+                all-language: Vertaal alle ondersteunde tale (indien waar is die talevlag gedeaktiveer)
+                force: Oorskryf bestaande vertalings
+                force-key-prefix: sleutels wat gedwing moet word om oorskryf te word
+                generate-const: Genereer opsommingswaardes vir maklike oproepe
+                languages: Spesifiseer die doeltaal vir vertaling
+                src-file: Bronlêer wat vertaal moet word (vereis)
+                src-language: Die taal van die bronlêer (indien nie gespesifiseer nie, sal die instrument outomaties die bronlêer bepaal)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Vertaalkanaal: Ondersteuningstipe {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Veeltalige lêers van 'n sekere bron word omgeskakel na lêers in dieselfde formaat in ander tale.
+            short: vertaal
+    long: Bevat 'proto'-gebaseerde backend-raamwerk, algemeen gebruikte sjablone en veeltalige vertalings
+    short: Gereedskapstel

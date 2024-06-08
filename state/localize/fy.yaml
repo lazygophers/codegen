@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Utfier detaillearre log
+    help:
+        additional_commands: Oanfoljende kommando's
+        aliases: kommando alias
+        available_commands: Stipe kommando's
+        command: Oarder
+        flags: parameter
+        get_info: om mear detaillearre ynformaasje te krijen
+        global_flags: globale parameters
+        use: brûke
+    i18n:
+        long: Meartalige ynternasjonalisearring relatearre toolkit
+        short: Meartalige ynternasjonalisearring relatearre toolkit
+        tran:
+            flags:
+                all-language: Oersette alle stipe talen (as wier is de talenflagge útskeakele)
+                force: Oerskriuwe besteande oersettingen
+                force-key-prefix: kaaien dy't twongen wurde moatte wurde oerskreaun
+                generate-const: Generearje enumeraasjewearden foar maklik skiljen
+                languages: Spesifisearje de doeltaal foar oersetting
+                src-file: Boarnebestân om te oersetten (ferplicht)
+                src-language: De taal fan it boarnebestân (as net oantsjutte, sil it ark automatysk it boarnebestân bepale)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Oersetkanaal: Support type {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Meartalige bestannen fan in bepaalde boarne wurde omset yn bestannen yn itselde formaat yn oare talen.
+            short: oersette
+    long: Befettet 'proto'-basearre backend-framework, algemien brûkte sjabloanen, en meartalige oersettingen
+    short: Toolkit

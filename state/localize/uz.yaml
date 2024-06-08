@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Batafsil jurnalni chiqarish
+    help:
+        additional_commands: Qo'shimcha buyruqlar
+        aliases: buyruq taxallus
+        available_commands: Qo'llab-quvvatlanadigan buyruqlar
+        command: Buyurtma
+        flags: parametr
+        get_info: batafsil ma'lumot olish uchun
+        global_flags: global parametrlar
+        use: foydalanish
+    i18n:
+        long: Ko'p tilli xalqarolashtirish bilan bog'liq asboblar to'plami
+        short: Ko'p tilli xalqarolashtirish bilan bog'liq asboblar to'plami
+        tran:
+            flags:
+                all-language: Barcha qo'llab-quvvatlanadigan tillarni tarjima qiling (agar rost bo'lsa, tillar bayrog'i o'chirilgan bo'lsa)
+                force: Mavjud tarjimalarni qayta yozing
+                force-key-prefix: ustiga yozishga majbur bo'lishi kerak bo'lgan kalitlar
+                generate-const: Oson qo'ng'iroq qilish uchun ro'yxat qiymatlarini yarating
+                languages: Tarjima uchun maqsadli tilni belgilang
+                src-file: Tarjima qilinadigan manba fayl (majburiy)
+                src-language: Manba faylining tili (agar ko'rsatilmagan bo'lsa, vosita avtomatik ravishda manba faylni aniqlaydi)
+                translater:
+                    google-free: Google veb-tarjimoni
+                    usage: 'Tarjima kanali: Yordam turi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Muayyan manbadan olingan ko'p tilli fayllar boshqa tillardagi bir xil formatdagi fayllarga aylantiriladi.
+            short: tarjima qiling
+    long: '"Proto"-ga asoslangan backend ramkasi, tez-tez ishlatiladigan andozalar va ko''p tilli tarjimalarni o''z ichiga oladi'
+    short: Asboblar to'plami

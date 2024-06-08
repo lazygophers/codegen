@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output detalyadong log
+    help:
+        additional_commands: Mga karagdagang utos
+        aliases: utos ng alyas
+        available_commands: Mga suportadong utos
+        command: Umorder
+        flags: parameter
+        get_info: para makakuha ng mas detalyadong impormasyon
+        global_flags: pandaigdigang mga parameter
+        use: gamitin
+    i18n:
+        long: Toolkit na nauugnay sa multilingual na internasyonalisasyon
+        short: Toolkit na nauugnay sa multilingual na internasyonalisasyon
+        tran:
+            flags:
+                all-language: Isalin ang lahat ng sinusuportahang wika (kung totoo ang flag ng mga wika ay hindi pinagana)
+                force: I-overwrite ang mga kasalukuyang pagsasalin
+                force-key-prefix: mga susi na kailangang pilitin na ma-overwrite
+                generate-const: Bumuo ng mga halaga ng enumeration para sa madaling pagtawag
+                languages: Tukuyin ang target na wika para sa pagsasalin
+                src-file: Source file na isasalin (kinakailangan)
+                src-language: Ang wika ng source file (kung hindi tinukoy, awtomatikong tutukuyin ng tool ang source file)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Channel ng pagsasalin: Uri ng suporta {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Ang mga multilingual na file mula sa isang partikular na pinagmulan ay kino-convert sa mga file sa parehong format sa ibang mga wika.
+            short: Isalin
+    long: Naglalaman ng 'proto' na nakabatay sa backend framework, karaniwang ginagamit na mga template, at mga pagsasalin sa maraming wika
+    short: Toolkit

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Galmee bal'aa baasaa
+    help:
+        additional_commands: Ajajoota dabalataa
+        aliases: maqaa biraa ajaja
+        available_commands: Ajajoota deeggaraman
+        command: Ajajuu
+        flags: parameetara
+        get_info: odeeffannoo bal’aa argachuuf
+        global_flags: parameetaroota addunyaa
+        use: fayyadamuu
+    i18n:
+        long: Meeshaa afaanota hedduu idil-addunyaa waliin walqabatu
+        short: Meeshaa afaanota hedduu idil-addunyaa waliin walqabatu
+        tran:
+            flags:
+                all-language: Afaanota deeggaraman hunda hiikuu (yoo dhugaa ta'e alaabaa afaanota ni hanqifama)
+                force: Hiikkaawwan jiran irra barreessi
+                force-key-prefix: furtuuwwan dirqiin irra barreeffamuu qaban
+                generate-const: Waamicha salphaadhaaf gatiiwwan lakkaa'uu uumi
+                languages: Afaan galma hiikkaa ifteessi
+                src-file: Faayilii madda hiikamuu qabu (barbaachisaa) .
+                src-language: Afaan faayilii madda (yoo hin ibsamne, meeshaan ofumaan faayilii madda murteessa) .
+                translater:
+                    google-free: Google Web Hiikkaa jedhu
+                    usage: 'Chaanaalii hiikkaa: Gosa deeggarsa {{range $key,$value := .Akkaataa}}{{$key}}:{{$value}}{{end}}'
+            long: Faayiloonni afaanota hedduu madda murtaa'e irraa gara faayilii bifa walfakkaataa afaanota birootiin jijjiiramu.
+            short: hiikuu
+    long: Unka duubbee 'proto' irratti hundaa'e, unkaalee yeroo baay'ee fayyadaman, fi hiika afaanota hedduu of keessaa qaba
+    short: Meeshaa

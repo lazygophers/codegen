@@ -1,6 +1,9 @@
 package cli
 
 import (
+	"github.com/lazygophers/codegen/cli/gen"
+	"github.com/lazygophers/codegen/cli/i18n"
+	"github.com/lazygophers/codegen/cli/utils"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/pterm/pterm"
@@ -13,7 +16,7 @@ var rootCmd = &cobra.Command{
 	Use:   "codegen",
 	Short: "codegen",
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) (err error) {
-		if getBool("debug", cmd) {
+		if utils.GetBool("debug", cmd) {
 			pterm.EnableDebugMessages()
 			log.SetLevel(log.DebugLevel)
 			log.SetOutput(os.Stdout)
@@ -22,14 +25,6 @@ var rootCmd = &cobra.Command{
 		} else {
 			log.SetLevel(log.InfoLevel)
 			log.SetOutput(io.Discard)
-		}
-
-		// 加载配置文件
-		err = state.Load()
-		if err != nil {
-			pterm.Error.Printfln("load state error\n%s", err.Error())
-			log.Errorf("err:%v", err)
-			return err
 		}
 
 		return nil
@@ -43,7 +38,19 @@ func Run() {
 	cobra.EnableCommandSorting = true
 	cobra.EnableTraverseRunHooks = true
 
-	rootCmd.PersistentFlags().BoolP("debug", "d", false, "debug output")
+	// 加载配置文件
+	err = state.Load()
+	if err != nil {
+		pterm.Error.Printfln("load state error\n%s", err.Error())
+		log.Errorf("err:%v", err)
+		return
+	}
+
+	rootCmd.PersistentFlags().BoolP("debug", "d", false, state.Localize(state.I18nTagCliFlagsDebug))
+
+	initHelper()
+	gen.Load(rootCmd)
+	i18n.Load(rootCmd)
 
 	err = rootCmd.Execute()
 	if err != nil {

@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Clàr toraidh mionaideach
+    help:
+        additional_commands: Òrdughan a bharrachd
+        aliases: ailias àithne
+        available_commands: Òrdughan le taic
+        command: Òrdugh
+        flags: paramadair
+        get_info: gus fiosrachadh nas mionaidiche fhaighinn
+        global_flags: crìochan cruinne
+        use: cleachdadh
+    i18n:
+        long: Inneal ioma-chànanach co-cheangailte ri eadar-nàiseantachd
+        short: Inneal ioma-chànanach co-cheangailte ri eadar-nàiseantachd
+        tran:
+            flags:
+                all-language: Eadar-theangaich a h-uile cànan le taic (ma tha e fìor tha bratach nan cànanan à comas)
+                force: Sgrìobh thairis air eadar-theangachaidhean gnàthaichte
+                force-key-prefix: iuchraichean a dh'fheumas a bhith air an èigneachadh a bhith air an sgrìobhadh thairis
+                generate-const: Cruthaich luachan àireamhachd airson gairm furasta
+                languages: Sònraich an cànan targaid airson eadar-theangachadh
+                src-file: Faidhle stòr ri eadar-theangachadh (riatanach)
+                src-language: Cànan an fhaidhle stòr (mura h-eil e air a shònrachadh, dearbhaidh an inneal am faidhle tùsail gu fèin-ghluasadach)
+                translater:
+                    google-free: Eadar-theangachadh Lìn Google
+                    usage: 'Seanail eadar-theangachaidh: Seòrsa taic {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Bidh faidhlichean ioma-chànanach bho thùs sònraichte air an tionndadh gu faidhlichean san aon chruth ann an cànanan eile.
+            short: eadar-theangachadh
+    long: Tha frèam backend stèidhichte air 'proto', teamplaidean air an cleachdadh gu cumanta, agus eadar-theangachaidhean ioma-chànan
+    short: Inneal-lìonaidh

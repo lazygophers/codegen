@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Output log terperinci
+    help:
+        additional_commands: Perintah tambahan
+        aliases: alias arahan
+        available_commands: Perintah yang disokong
+        command: Pesanan
+        flags: parameter
+        get_info: untuk mendapatkan maklumat yang lebih terperinci
+        global_flags: parameter global
+        use: guna
+    i18n:
+        long: Kit alat berkaitan pengantarabangsaan berbilang bahasa
+        short: Kit alat berkaitan pengantarabangsaan berbilang bahasa
+        tran:
+            flags:
+                all-language: Terjemah semua bahasa yang disokong (jika benar bendera bahasa dilumpuhkan)
+                force: Tulis ganti terjemahan sedia ada
+                force-key-prefix: kunci yang perlu dipaksa untuk ditimpa
+                generate-const: Hasilkan nilai penghitungan untuk memudahkan panggilan
+                languages: Tentukan bahasa sasaran untuk terjemahan
+                src-file: Fail sumber untuk diterjemahkan (diperlukan)
+                src-language: Bahasa fail sumber (jika tidak dinyatakan, alat akan menentukan fail sumber secara automatik)
+                translater:
+                    google-free: Terjemahan Web Google
+                    usage: 'Saluran terjemahan: Jenis sokongan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Fail berbilang bahasa daripada sumber tertentu ditukar kepada fail dalam format yang sama dalam bahasa lain.
+            short: menterjemah
+    long: Mengandungi rangka kerja bahagian belakang berasaskan 'proto', templat yang biasa digunakan dan terjemahan berbilang bahasa
+    short: Kit alat

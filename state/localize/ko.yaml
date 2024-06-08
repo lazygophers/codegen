@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: 상세 로그 출력
+    help:
+        additional_commands: 추가 명령
+        aliases: 명령 별명
+        available_commands: 지원되는 명령
+        command: 주문하다
+        flags: 매개변수
+        get_info: 더 자세한 정보를 얻으려면
+        global_flags: 전역 매개변수
+        use: 사용
+    i18n:
+        long: 다국어 국제화 관련 툴킷
+        short: 다국어 국제화 관련 툴킷
+        tran:
+            flags:
+                all-language: 지원되는 모든 언어를 번역합니다(true인 경우 언어 플래그가 비활성화됩니다).
+                force: 기존 번역 덮어쓰기
+                force-key-prefix: 강제로 덮어써야 하는 키
+                generate-const: 쉬운 호출을 위한 열거값 생성
+                languages: 번역할 대상 언어를 지정하세요.
+                src-file: 번역할 원본 파일 (필수)
+                src-language: 소스 파일의 언어(지정하지 않으면 도구가 자동으로 소스 파일을 결정합니다)
+                translater:
+                    google-free: Google 웹 번역
+                    usage: '번역 채널: 지원 유형 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: 특정 소스의 다국어 파일은 다른 언어의 동일한 형식의 파일로 변환됩니다.
+            short: 번역하다
+    long: '''proto'' 기반 백엔드 프레임워크, 일반적으로 사용되는 템플릿, 다국어 번역 포함'
+    short: 툴킷

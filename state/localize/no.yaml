@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Utdata detaljert logg
+    help:
+        additional_commands: Ytterligere kommandoer
+        aliases: kommando alias
+        available_commands: Støttede kommandoer
+        command: Rekkefølge
+        flags: parameter
+        get_info: for å få mer detaljert informasjon
+        global_flags: globale parametere
+        use: bruk
+    i18n:
+        long: Flerspråklig internasjonaliseringsrelatert verktøysett
+        short: Flerspråklig internasjonaliseringsrelatert verktøysett
+        tran:
+            flags:
+                all-language: Oversett alle støttede språk (hvis sant er språkflagget deaktivert)
+                force: Overskriv eksisterende oversettelser
+                force-key-prefix: nøkler som må tvinges til å bli overskrevet
+                generate-const: Generer oppregningsverdier for enkelt å ringe
+                languages: Angi målspråket for oversettelse
+                src-file: Kildefil som skal oversettes (obligatorisk)
+                src-language: Språket til kildefilen (hvis ikke spesifisert, vil verktøyet automatisk bestemme kildefilen)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Oversettelseskanal: Støttetype {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Flerspråklige filer fra en bestemt kilde konverteres til filer i samme format på andre språk.
+            short: oversette
+    long: Inneholder 'proto'-basert backend-rammeverk, ofte brukte maler og flerspråklige oversettelser
+    short: Verktøysett

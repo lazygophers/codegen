@@ -12,6 +12,31 @@ proto_files:
     - "./lrpc/"
     - "~/proto/"
 
+# 工具语言，默认会按照以下顺序获取当前工具使用的语言
+#   配置文件
+#   环境变量 LANG
+#   系统默认语言
+#   英文
+language: "en"
+
+# 国际化相关配置
+i18n:
+    # 是否开启生成 枚举
+    generate_const: false
+
+    # 国际化语言，如果存在则使用此数据
+    languages:
+        - en
+        - zh
+        - de
+        - de
+        - ja
+        - ko
+        - it
+        - ru
+    # 是否翻译全部支持的语言，如果为 true 则 i18n.languages 字段失效
+    all_languages: true
+
 style:
     # 命名风格，支持以下格式
     #   snake
@@ -108,6 +133,9 @@ template:
 
     #.dockerignore 模板文件
     dockerignore: "<.dockerignore> 模板文件路径"
+
+    # i18n 枚举生成模板文件
+    i18n_const: "i18n 枚举生成模板文件路径"
 
 # 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
 default_tag:

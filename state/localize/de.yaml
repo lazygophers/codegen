@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Detailliertes Protokoll ausgeben
+    help:
+        additional_commands: Zusätzliche Befehle
+        aliases: Befehlsalias
+        available_commands: Unterstützte Befehle
+        command: Befehl
+        flags: Parameter
+        get_info: um detailliertere Informationen zu erhalten
+        global_flags: globale Parameter
+        use: verwenden
+    i18n:
+        long: Mehrsprachiges Toolkit für die Internationalisierung
+        short: Mehrsprachiges Toolkit für die Internationalisierung
+        tran:
+            flags:
+                all-language: Alle unterstützten Sprachen übersetzen (falls wahr, ist das Sprachen-Flag deaktiviert)
+                force: Vorhandene Übersetzungen überschreiben
+                force-key-prefix: Schlüssel, deren Überschreiben erzwungen werden muss
+                generate-const: Generieren Sie Aufzählungswerte für einen einfachen Aufruf
+                languages: Geben Sie die Zielsprache für die Übersetzung an
+                src-file: Zu übersetzende Quelldatei (erforderlich)
+                src-language: Die Sprache der Quelldatei (falls nicht angegeben, ermittelt das Tool die Quelldatei automatisch)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Übersetzungskanal: Support-Typ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Mehrsprachige Dateien aus einer bestimmten Quelle werden in Dateien im gleichen Format in anderen Sprachen umgewandelt.
+            short: übersetzen
+    long: Enthält ein „Proto“-basiertes Backend-Framework, häufig verwendete Vorlagen und mehrsprachige Übersetzungen
+    short: Toolkit

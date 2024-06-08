@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Utdata detaljerad logg
+    help:
+        additional_commands: Ytterligare kommandon
+        aliases: kommandoalias
+        available_commands: Kommandon som stöds
+        command: Beställa
+        flags: parameter
+        get_info: för att få mer detaljerad information
+        global_flags: globala parametrar
+        use: använda sig av
+    i18n:
+        long: Flerspråkig internationaliseringsrelaterad verktygslåda
+        short: Flerspråkig internationaliseringsrelaterad verktygslåda
+        tran:
+            flags:
+                all-language: Översätt alla språk som stöds (om det är sant är språkflaggan inaktiverad)
+                force: Skriv över befintliga översättningar
+                force-key-prefix: nycklar som måste tvingas skrivas över
+                generate-const: Generera uppräkningsvärden för att enkelt ringa
+                languages: Ange målspråk för översättning
+                src-file: Källfil som ska översättas (krävs)
+                src-language: Språket för källfilen (om det inte anges kommer verktyget automatiskt att avgöra källfilen)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Översättningskanal: Supporttyp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Flerspråkiga filer från en viss källa konverteras till filer i samma format på andra språk.
+            short: Översätt
+    long: Innehåller "proto"-baserad backend-ramverk, vanliga mallar och flerspråkiga översättningar
+    short: Verktygslåda

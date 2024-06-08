@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Framleiðsla nákvæma annál
+    help:
+        additional_commands: Viðbótarskipanir
+        aliases: skipunarnefni
+        available_commands: Stuðar skipanir
+        command: Panta
+        flags: færibreytu
+        get_info: til að fá ítarlegri upplýsingar
+        global_flags: alþjóðlegar breytur
+        use: nota
+    i18n:
+        long: Verkfærakista sem tengist fjöltyngdum alþjóðavæðingu
+        short: Verkfærakista sem tengist fjöltyngdum alþjóðavæðingu
+        tran:
+            flags:
+                all-language: Þýddu öll studd tungumál (ef satt er tungumálsfáninn óvirkur)
+                force: Skrifaðu yfir núverandi þýðingar
+                force-key-prefix: lykla sem þarf að neyða til að skrifa yfir
+                generate-const: Búðu til upptalningargildi til að auðvelda hringingu
+                languages: Tilgreindu marktungumálið fyrir þýðingar
+                src-file: Upprunaskrá sem á að þýða (krafist)
+                src-language: Tungumál frumskrárinnar (ef ekki tilgreint mun tólið sjálfkrafa ákvarða upprunaskrána)
+                translater:
+                    google-free: Google Web Translate
+                    usage: 'Þýðingarrás: Stuðningstegund {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Fjöltyngdum skrám frá ákveðnum uppruna er breytt í skrár á sama sniði á öðrum tungumálum.
+            short: þýða
+    long: Inniheldur „frumu“-byggðan bakenda ramma, almennt notuð sniðmát og þýðingar á mörgum tungumálum
+    short: Verkfærakista

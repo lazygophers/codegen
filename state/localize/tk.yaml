@@ -1,0 +1,31 @@
+cli:
+    flags:
+        debug: Jikme-jik gündeligi
+    help:
+        additional_commands: Goşmaça buýruklar
+        aliases: lakam
+        available_commands: Goldanýan buýruklar
+        command: Sargyt
+        flags: parametri
+        get_info: has giňişleýin maglumat almak üçin
+        global_flags: global parametrler
+        use: ulanmak
+    i18n:
+        long: Köp dilli halkaralaşma bilen baglanyşykly gurallar toplumy
+        short: Köp dilli halkaralaşma bilen baglanyşykly gurallar toplumy
+        tran:
+            flags:
+                all-language: Goldanýan dilleriň hemmesini terjime ediň (eger hakykat bolsa dilleriň baýdagy ýapyk)
+                force: Bar bolan terjimeleriň üstünden ýazyň
+                force-key-prefix: gaýtadan ýazylmaga mejbur edilmeli düwmeler
+                generate-const: Easyeňil jaň etmek üçin sanama bahalaryny dörediň
+                languages: Terjime etmek üçin maksat dilini görkeziň
+                src-file: Terjime edilmeli çeşme faýly (zerur)
+                src-language: Çeşme faýlynyň dili (görkezilmedik bolsa, gural deslapky faýly awtomatiki kesgitlär)
+                translater:
+                    google-free: Google Web Terjime
+                    usage: 'Terjime kanaly: Goldaw görnüşi {{diapazony $ açary, $ bahasy: = .Tip}} {{$ açar}}: {{$ bahasy}} {{end}}'
+            long: Belli bir çeşmeden köp dilli faýllar beýleki dillerde şol bir formatdaky faýllara öwrüler.
+            short: terjime et
+    long: “Proto” esasly arka çarçuwasy, köplenç ulanylýan şablonlar we köp dilli terjimeler bar
+    short: Gurallar toplumy
