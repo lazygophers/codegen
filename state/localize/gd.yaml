@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Clàr toraidh mionaideach
+    gen:
+        add-rpc:
+            flags:
+                action: Giùlan a dh’ fheumar a chuir ann an baidsean, feuch an lorg thu na sgrìobhainnean cleachdaidh airson mion-fhiosrachadh
+                default-role: Dreuchd bunaiteach an eadar-aghaidh a chaidh a chruthachadh le baidse Thoir sùil air na sgrìobhainnean cleachdaidh airson mion-fhiosrachadh.
+                gen-to: Sònraich suidheachadh toraidh nam faidhlichean .go a chaidh a chruthachadh
+                list-option: Faodar an liosta a shìoladh cuideachd, feuch an lorg thu na sgrìobhainnean cleachdaidh airson mion-fhiosrachadh.
+                model: Sònraich ainm a’ mhodail, cuir taic ris an ro-leasachan `model`
+            long: Cruthaich eadar-aghaidh ann an baidsean agus cuir eadar-aghaidh airson modail sònraichte anns an fhaidhle .proto
+            short: Eadar-aghaidh ginealach baidse
+        all:
+            long: Cruthaich a h-uile còd le taic bhon inneal seo
+            short: Cruthaich a h-uile còd
+        cache:
+            long: Cruthaich faidhlichean tasgadan airson SDKan co-cheangailte ri tasgadh gairm gnìomhachais
+            short: Cruthaich faidhle cache
+        cmd:
+            long: Cruthaich faidhlichean inntrigidh airson seirbheisean gnìomhachais
+            short: Cruthaich faidhle inntrigidh
+        conf:
+            long: Cruthaich faidhlichean rèiteachaidh airson leughadh rèiteachaidh de sheirbheisean gnìomhachais
+            short: Cruthaich faidhle rèiteachaidh
+        dockerignore:
+            long: Cruthaich faidhle .dockerignore airson togail ìomhaigh Docker gus dearmad a dhèanamh air riaghladh fhaidhlichean
+            short: Cruthaich faidhle .dockerigore
+        editorconfig:
+            long: Cruthaich faidhle .editorconfig airson rèiteachadh deasaiche
+            short: Cruthaich faidhle .editorconfig
+        flags:
+            add-proto-files: Ma dh’fheumas tu faidhlichean .proto/slighean pasgan eile a thoirt a-steach nach eil san aon phasgan ris an fhaidhle .proto ainmichte, cuiridh an obrachadh seo (gun ath-sgrìobhadh) ris an t-slighe a chaidh a rèiteachadh san fhaidhle rèiteachaidh.
+            go-module-prefix: Airson an t-slighe go_package air a rèiteachadh anns an fhaidhle .proto agus am fear fhèin, faodaidh tu an roghainn seo a rèiteachadh
+            input: Sònraich am faidhle stòr .proto a thèid a ghineadh
+            output-path: Faodar an roghainn seo a rèiteachadh nuair a tha an t-slighe go_package a chaidh a rèiteachadh san fhaidhle .proto neo-chunbhalach leis an rathad-rathaid a dh'fheumas a bhith air a chruthachadh.
+            overwrite: Airson susbaint nach tèid ath-nuadhachadh, thoir air ath-sgrìobhadh den t-susbaint a th’ ann mar-thà
+            proto-files: Gus faidhlichean .proto / slighean pasgan eile a thoirt a-steach nach eil san aon phasgan ris an fhaidhle .proto ainmichte, tha an obrachadh seo na roghainn gus faighinn thairis air an raon rèiteachaidh san fhaidhle rèiteachaidh.
+            protoc: slighe faidhle gnàthaichte `protoc`
+            protoc-gen-go: slighe plugan `protoc-gen-go`
+            tables-enable_field_created_at: Co-dhiù an cuir thu an comas ginealach rèiteachaidh bunaiteach an stòr-dàta created_at field
+            tables-enable_field_deleted_at: Co-dhiù an cuir thu an comas suidheachadh bunaiteach an raon deleted_at san stòr-dàta
+            tables-enable_field_id: Dèan comas air gineadh rèiteachaidh bunaiteach airson raointean co-cheangailte ri stòr-dàta
+            tables-enable_field_updated_at: Co-dhiù an cuir thu an comas luach bunaiteach an raoin updated_at san stòr-dàta
+            tables-enable_gorm_tag_column: Am bu chòir gineadh gorm co-cheangailte ri stòr-dàta a chomasachadh
+        gitignote:
+            long: Cruthaich faidhlichean .gitignore airson stiùireadh fhaidhlichean nach deach a leigeil seachad ann an smachd dreach
+            short: Cruthaich faidhle .gitnore
+        golang-lint:
+            long: Generate .golangci.yml faidhle airson sgrùdadh càileachd còd
+            short: Cruthaich faidhle .golangci.yml
+        goreleaser:
+            long: Cruthaich faidhle .goreleaser.yml airson rèiteachadh innealan fuasglaidh
+            short: Cruthaich faidhle .goreleaseer.yml
+        impl:
+            long: Cruthaich faidhlichean buileachaidh airson buileachadh seirbheisean gnìomhachais
+            short: Cruthaich faidhlichean buileachaidh
+        long: Gineadair còd, a 'toirt taic do dh'iomadh teamplaid
+        makefile:
+            long: Cruthaich faidhlichean Makefile airson innealan togail agus òrdughan co-cheangailte eile
+            short: Cruthaich Makefile
+        mod:
+            long: Cruthaich faidhle go.mod airson riaghladh eisimeileachd
+            short: Cruthaich faidhle go.mod
+        pb:
+            long: Cruthaich faidhlichean .pb.go airson faidhlichean .proto a ghineadh,
+            short: Cruthaich faidhle .pb.go
+        short: Gineadair còd
+        state:
+            long: Cruthaich a h-uile gnìomh stàite co-cheangailte airson goireasan stàiteil no riaghladh ghoireasan statach de sheirbheisean gnìomhachais
+            short: A h-uile gnìomh buntainneach airson stàite gineadh
+        table:
+            long: A h-uile gnìomh co-cheangailte ri bhith a’ cruthachadh chlàran airson goireasan stàiteil no goireasan statach a riaghladh seirbheisean gnìomhachais
+            short: A h-uile gnìomh co-cheangailte airson bùird a ghineadh
     help:
         additional_commands: Òrdughan a bharrachd
         aliases: ailias àithne
@@ -27,5 +98,5 @@ cli:
                     usage: 'Seanail eadar-theangachaidh: Seòrsa taic {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Bidh faidhlichean ioma-chànanach bho thùs sònraichte air an tionndadh gu faidhlichean san aon chruth ann an cànanan eile.
             short: eadar-theangachadh
-    long: Tha frèam backend stèidhichte air 'proto', teamplaidean air an cleachdadh gu cumanta, agus eadar-theangachaidhean ioma-chànan
-    short: Inneal-lìonaidh
+    long: Seata inneal airson daoine leisg, a’ toirt a-steach frèam backend stèidhichte air ‘proto’, teamplaidean air an cleachdadh gu cumanta, agus eadar-theangachadh ioma-chànan
+    short: Seata inneal airson daoine leisg

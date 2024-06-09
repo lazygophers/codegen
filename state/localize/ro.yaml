@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Ieșire jurnal detaliat
+    gen:
+        add-rpc:
+            flags:
+                action: Comportamentele care trebuie adăugate în loturi, vă rugăm să găsiți documentația de utilizare pentru detalii
+                default-role: Rolul implicit al interfeței generate în loturi Vă rugăm să consultați documentația de utilizare pentru detalii.
+                gen-to: Specificați locația de ieșire a fișierelor .go generate
+                list-option: Lista poate fi, de asemenea, filtrată, vă rugăm să găsiți documentația de utilizare pentru detalii.
+                model: Specificați numele modelului, acceptând omiterea prefixului „model”.
+            long: Generați interfețe în loturi și adăugați o interfață pentru un anumit model în fișierul .proto
+            short: Interfață de generare a loturilor
+        all:
+            long: Generați tot codul acceptat de acest instrument
+            short: Generați tot codul
+        cache:
+            long: Generați fișiere cache pentru SDK-uri legate de stocarea în cache a apelurilor de afaceri
+            short: Generați fișierul cache
+        cmd:
+            long: Generați fișiere de intrare pentru serviciile de afaceri
+            short: Generați fișierul de intrare
+        conf:
+            long: Generați fișiere de configurare pentru citirea configurației serviciilor de afaceri
+            short: Generați fișierul de configurare
+        dockerignore:
+            long: Generați fișierul .dockerignore pentru construirea imaginii Docker pentru a ignora gestionarea fișierelor
+            short: Generați fișierul .dockerignore
+        editorconfig:
+            long: Generați fișierul .editorconfig pentru configurarea editorului
+            short: Generați fișierul .editorconfig
+        flags:
+            add-proto-files: Dacă trebuie să importați alte fișiere .proto/căi de foldere care nu se află în același folder cu fișierul .proto specificat, această operație va adăuga (nu va suprascrie) calea configurată în fișierul de configurare.
+            go-module-prefix: Pentru calea go_package configurată în fișierul .proto și cea actuală, puteți configura această opțiune
+            input: Specificați fișierul sursă .proto care urmează să fie generat
+            output-path: Această opțiune poate fi configurată atunci când calea go_package configurată în fișierul .proto este incompatibilă cu platforma care trebuie generată de fapt.
+            overwrite: Pentru conținutul care nu va fi regenerat, forțați suprascrierea conținutului existent
+            proto-files: Pentru a importa alte fișiere .proto/căi de foldere care nu se află în același folder cu fișierul .proto specificat, această operație este o opțiune pentru a suprascrie câmpul de configurare din fișierul de configurare.
+            protoc: calea fișierului personalizabilă `protoc`
+            protoc-gen-go: Calea pluginului `protoc-gen-go`
+            tables-enable_field_created_at: Dacă se activează generarea configurației implicite a câmpului bazei de date create_at
+            tables-enable_field_deleted_at: Dacă se activează setarea implicită a câmpului deleted_at din baza de date
+            tables-enable_field_id: Activați generarea configurației implicite pentru câmpurile legate de bazele de date
+            tables-enable_field_updated_at: Dacă se activează valoarea implicită a câmpului updated_at din baza de date
+            tables-enable_gorm_tag_column: Dacă se activează generarea de gorm legate de baze de date
+        gitignote:
+            long: Generați fișiere .gitignore pentru gestionarea fișierelor ignorate în controlul versiunilor
+            short: Generați fișierul .gitignore
+        golang-lint:
+            long: Generați fișierul .golangci.yml pentru inspecția calității codului
+            short: Generați fișierul .golangci.yml
+        goreleaser:
+            long: Generați fișierul .goreleaser.yml pentru configurarea instrumentelor de lansare
+            short: Generați fișierul .goreleaser.yml
+        impl:
+            long: Generați fișiere de implementare pentru implementarea serviciilor de afaceri
+            short: Generați fișiere de implementare
+        long: Generator de cod, acceptă mai multe șabloane
+        makefile:
+            long: Generați fișiere Makefile pentru instrumente de construcție și alte comenzi asociate
+            short: Generați Makefile
+        mod:
+            long: Generați fișierul go.mod pentru gestionarea dependenței
+            short: Generați fișierul go.mod
+        pb:
+            long: Generați fișiere .pb.go pentru a genera fișiere .proto,
+            short: Generați fișierul .pb.go
+        short: Generator de cod
+        state:
+            long: Generați toate funcțiile conexe de stat pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
+            short: Toate funcțiile relevante pentru generarea stării
+        table:
+            long: Toate funcțiile conexe de generare a tabelelor pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
+            short: Toate funcțiile conexe pentru generarea tabelelor
     help:
         additional_commands: Comenzi suplimentare
         aliases: alias de comandă
@@ -27,5 +98,5 @@ cli:
                     usage: 'Canal de traducere: tip de suport {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fișierele multilingve dintr-o anumită sursă sunt convertite în fișiere în același format în alte limbi.
             short: Traduceți
-    long: Conține un cadru backend bazat pe „proto”, șabloane utilizate în mod obișnuit și traduceri în mai multe limbi
-    short: Trusa de instrumente
+    long: Un set de instrumente pentru oameni leneși, inclusiv un cadru backend bazat pe „proto”, șabloane utilizate în mod obișnuit și traducere în mai multe limbi
+    short: Un set de instrumente pentru leneși

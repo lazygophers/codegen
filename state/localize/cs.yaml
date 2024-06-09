@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Výstup podrobného protokolu
+    gen:
+        add-rpc:
+            flags:
+                action: Chování, která je třeba přidat v dávkách, najdete podrobnosti v dokumentaci k použití
+                default-role: Výchozí role dávkově generovaného rozhraní Podrobnosti naleznete v dokumentaci k použití.
+                gen-to: Zadejte výstupní umístění vygenerovaných souborů .go
+                list-option: Seznam lze také filtrovat, podrobnosti naleznete v dokumentaci k použití.
+                model: Zadejte název modelu, podporuje vynechání předpony `model`
+            long: Generujte rozhraní v dávkách a přidejte rozhraní pro určitý model do souboru .proto
+            short: Rozhraní pro dávkové generování
+        all:
+            long: Vygenerujte veškerý kód podporovaný tímto nástrojem
+            short: Vygenerujte veškerý kód
+        cache:
+            long: Generujte soubory mezipaměti pro sady SDK související s ukládáním obchodních hovorů do mezipaměti
+            short: Vygenerujte soubor mezipaměti
+        cmd:
+            long: Generujte vstupní soubory pro obchodní služby
+            short: Vygenerujte vstupní soubor
+        conf:
+            long: Generujte konfigurační soubory pro čtení konfigurace obchodních služeb
+            short: Vygenerujte konfigurační soubor
+        dockerignore:
+            long: Vygenerujte soubor .dockerignore pro vytváření bitové kopie Dockeru, abyste ignorovali správu souborů
+            short: Vygenerujte soubor .dockerignore
+        editorconfig:
+            long: Vygenerujte soubor .editorconfig pro konfiguraci editoru
+            short: Vygenerujte soubor .editorconfig
+        flags:
+            add-proto-files: Pokud potřebujete importovat další soubory/cesty ke složce .proto, které nejsou ve stejné složce jako zadaný soubor .proto, tato operace připojí (ne přepíše) cestu nakonfigurovanou v konfiguračním souboru.
+            go-module-prefix: Pro cestu go_package nakonfigurovanou v souboru .proto a aktuální cestu můžete nakonfigurovat tuto možnost
+            input: Zadejte zdrojový soubor .proto, který se má vygenerovat
+            output-path: Tuto volbu lze nakonfigurovat, když cesta k go_package nakonfigurovaná v souboru .proto není konzistentní s vozovkou, kterou je ve skutečnosti třeba vygenerovat.
+            overwrite: U obsahu, který nebude obnoven, vynutit přepsání stávajícího obsahu
+            proto-files: Chcete-li importovat další soubory .proto/cesty ke složkám, které nejsou ve stejné složce jako zadaný soubor .proto, je tato operace možností, jak přepsat pole konfigurace v konfiguračním souboru.
+            protoc: přizpůsobitelná cesta k souboru `protoc`
+            protoc-gen-go: cesta k pluginu `protoc-gen-go`
+            tables-enable_field_created_at: Zda povolit výchozí generování konfigurace pole databáze created_at
+            tables-enable_field_deleted_at: Zda povolit výchozí nastavení pole delete_at v databázi
+            tables-enable_field_id: Povolit výchozí generování konfigurace pro pole související s databází
+            tables-enable_field_updated_at: Zda povolit výchozí hodnotu pole updated_at v databázi
+            tables-enable_gorm_tag_column: Zda povolit generování gormů souvisejících s databází
+        gitignote:
+            long: Generujte soubory .gitignore pro správu ignorovaných souborů ve správě verzí
+            short: Vygenerujte soubor .gitignore
+        golang-lint:
+            long: Vygenerujte soubor .golangci.yml pro kontrolu kvality kódu
+            short: Vygenerujte soubor .golangci.yml
+        goreleaser:
+            long: Vygenerujte soubor .goreleaser.yml pro konfiguraci nástrojů pro vydání
+            short: Vygenerujte soubor .goreleaser.yml
+        impl:
+            long: Generování implementačních souborů pro implementaci podnikových služeb
+            short: Vygenerujte implementační soubory
+        long: Generátor kódu, podporuje více šablon
+        makefile:
+            long: Generujte soubory Makefile pro stavební nástroje a další související příkazy
+            short: Generovat Makefile
+        mod:
+            long: Vygenerujte soubor go.mod pro správu závislostí
+            short: Vygenerujte soubor go.mod
+        pb:
+            long: Generovat soubory .pb.go pro generování souborů .proto,
+            short: Vygenerujte soubor .pb.go
+        short: Generátor kódů
+        state:
+            long: Generujte všechny související funkce stavu pro stavové zdroje nebo statickou správu zdrojů obchodních služeb
+            short: Všechny relevantní funkce pro generování stavu
+        table:
+            long: Všechny související funkce generování tabulek pro správu stavových zdrojů nebo statických zdrojů obchodních služeb
+            short: Všechny související funkce pro generování tabulek
     help:
         additional_commands: Další příkazy
         aliases: alias příkazu
@@ -27,5 +98,5 @@ cli:
                     usage: 'Překladový kanál: Typ podpory {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Vícejazyčné soubory z určitého zdroje jsou převedeny na soubory ve stejném formátu v jiných jazycích.
             short: přeložit
-    long: Obsahuje backendový rámec založený na „proto“, běžně používané šablony a vícejazyčné překlady
-    short: Toolkit
+    long: Sada nástrojů pro líné lidi, včetně backend frameworku založeného na „proto“, běžně používaných šablon a vícejazyčného překladu
+    short: Sada nářadí pro lenochy

@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Output tsitotsito log
+    gen:
+        add-rpc:
+            flags:
+                action: Nuwɔna siwo wòle be woatsɔ akpe ɖe eŋu le hatsotsowo me, taflatse di zazã ŋuti nuŋlɔɖiwo hena nyatakakawo
+                default-role: Dɔ si batch-generated interface wɔna gbã Taflatse kpɔ zazã ŋuti nuŋlɔɖiwo hena nyatakakawo.
+                gen-to: Tsɔ teƒe si .go faɛl siwo wowɔ la ado le
+                list-option: Woateŋu akɔ xexlẽdzesiawo hã me, taflatse di zazã ŋuti nuŋlɔɖiwo hena numeɖeɖe tsitotsito.
+                model: Tsɔ kpɔɖeŋu ŋkɔ, do alɔ asiɖeɖe le `kpɔɖeŋu` ŋgɔdonya ŋu
+            long: Wɔ ŋgɔdonyawo le hatsotsowo me eye nàtsɔ ŋgɔdonya akpe ɖe kpɔɖeŋu aɖe koŋ ŋu le .proto faɛl la me
+            short: Batch dzidzime ƒe ŋgɔdonya
+        all:
+            long: Wɔ kɔpi siwo katã dɔwɔnu sia do alɔe
+            short: Wɔ kɔpiwo katã
+        cache:
+            long: Wɔ cache files na business call caching si do ƒome kple SDKs
+            short: Wɔ cache faɛl
+        cmd:
+            long: Wɔ nyatakakadzraɖoƒea ƒe faɛlwo na asitsadɔwo
+            short: Wɔ nya siwo woŋlɔ ɖe eme ƒe faɛl
+        conf:
+            long: Wɔ ɖoɖowɔɖi ƒe faɛlwo na ɖoɖowɔɖi xexlẽ le asitsadɔwo me
+            short: Wɔ ɖoɖowɔɖi ƒe faɛl
+        dockerignore:
+            long: Wɔ .dockerignore faɛl na Docker nɔnɔmetata tutu be nàŋe aɖaba aƒu faɛl dzikpɔkpɔ dzi
+            short: Wɔ .dockerignore faɛl
+        editorconfig:
+            long: Wɔ .editorconfig faɛl na nuŋlɔla ƒe ɖoɖowɔwɔ
+            short: Wɔ .editorconfig faɛl
+        flags:
+            add-proto-files: Ne ehiã be nàxɔ .proto faɛl/agbalẽdzraɖoƒe ƒe mɔ bubu siwo mele agbalẽdzraɖoƒe ɖeka me kple .proto faɛl si woɖo la o la, dɔwɔwɔ sia atsɔ mɔ si woɖo ɖe ɖoɖowɔɖi ƒe faɛl la me akpe ɖe eŋu (maŋlɔe ɖe edzi o).
+            go-module-prefix: Le go_package ƒe mɔ si woɖo ɖe .proto faɛl me kple esi ŋutɔŋutɔ gome la, àteŋu aɖo tiatia sia
+            input: Tsɔ .proto dzɔtsoƒe faɛl si woawɔ
+            output-path: Woateŋu aɖo tiatia sia ne go_package ƒe mɔ si woɖo le .proto faɛl me mewɔ ɖeka kple mɔdodo si hiã ŋutɔŋutɔ be woawɔ o.
+            overwrite: Le nyatakaka siwo womagbugbɔ awɔ o gome la, zi nyatakaka siwo li xoxo dzi ŋɔŋlɔ ɖe edzi
+            proto-files: Be nàxɔ .proto faɛl/agbalẽdzraɖoƒe ƒe mɔ bubu siwo mele agbalẽdzraɖoƒe ɖeka me kple .proto faɛl si woɖo la o la, dɔwɔwɔ sia nye tiatia be woaɖe ɖoɖowɔɖi ƒe akpa si le ɖoɖowɔɖi ƒe faɛl la me ɖa.
+            protoc: '`protoc` ƒe faɛl ƒe mɔ si woate ŋu atrɔ asi le'
+            protoc-gen-go: '`protoc-gen-go` ƒe mɔnu'
+            tables-enable_field_created_at: Nenye be woawɔ ɖoɖowɔɖi ƒe dzidzime gbãtɔ si le nyatakakadzraɖoƒe created_at field la ŋudɔ
+            tables-enable_field_deleted_at: Nenye be woawɔ deleted_at ƒe akpa si le nyatakakadzraɖoƒea ƒe ɖoɖo gbãtɔa ŋudɔ
+            tables-enable_field_id: Na ɖoɖowɔɖi ƒe dzidzi gbãtɔ nawɔ dɔ na agble siwo do ƒome kple nyatakakadzraɖoƒe
+            tables-enable_field_updated_at: Nenye be woawɔ updated_at ƒe akpa si le nyatakakadzraɖoƒea ƒe asixɔxɔ gbãtɔ ŋudɔ
+            tables-enable_gorm_tag_column: Nenye be woawɔ gorm dzidzi si ku ɖe nyatakakadzraɖoƒe ŋudɔ
+        gitignote:
+            long: Wɔ .gitignore faɛlwo na faɛl dzikpɔkpɔ si dzi woŋe aɖaba ƒui le version control me
+            short: Wɔ .gitignore faɛl
+        golang-lint:
+            long: Wɔ .golangci.yml faɛl hena kɔda ƒe nyonyome me dzodzro
+            short: Wɔ .golangci.yml faɛl
+        goreleaser:
+            long: Wɔ .goreleaser.yml faɛl hena ɖoɖowɔwɔ ɖe asiɖeɖe le dɔwɔnuwo ŋu
+            short: Wɔ .goreleaser.yml faɛl
+        impl:
+            long: Wɔ dɔwɔwɔ ƒe faɛlwo hena asitsatsa ƒe dɔwɔnawo ƒe dɔwɔwɔ
+            short: Wɔ dɔwɔwɔ ƒe faɛlwo
+        long: Code generator, doa alɔ template geɖewo
+        makefile:
+            long: Wɔ Makefile faɛlwo na xɔtudɔwɔnuwo kple sedede bubu siwo do ƒome kplii
+            short: Wɔ Makefile ƒe wɔwɔme
+        mod:
+            long: Wɔ go.mod faɛl na nusiwo dzi woanɔ te ɖo dzikpɔkpɔ
+            short: Wɔ go.mod faɛl
+        pb:
+            long: Wɔ .pb.go faɛlwo hena .proto faɛlwo wɔwɔ, .
+            short: Wɔ .pb.go faɛl
+        short: Kɔdamɔnu ƒe mɔ̃
+        state:
+            long: Dzra dziɖuɖu ƒe dɔwɔwɔ siwo katã do ƒome kplii na stateful resource alo static resource management of business services
+            short: Dɔwɔwɔ siwo katã sɔ na dzidzi ƒe nɔnɔme
+        table:
+            long: Dɔ siwo katã do ƒome kplii le kplɔ̃wo wɔwɔ na stateful resource alo static resource management of business services
+            short: Dɔwɔwɔ siwo katã do ƒome kplii hena kplɔ̃wo wɔwɔ
     help:
         additional_commands: Sedede bubuwo
         aliases: sedede ƒe ŋkɔ bubu
@@ -27,5 +98,5 @@ cli:
                     usage: 'Gbegɔmeɖeɖe mɔnu: Kpekpeɖeŋu ƒomevi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Wotrɔa gbegbɔgblɔ geɖe me faɛl siwo tso teƒe aɖe la wozua faɛl siwo le nɔnɔme ɖeka me le gbe bubuwo me.
             short: ɖe gbe gɔme
-    long: '''proto''-based backend framework, template siwo wozãna zi geɖe, kple gbegbɔgblɔ geɖe me gɔmeɖeɖewo le eme'
-    short: Dɔwɔnuawo ƒe Agbalẽ
+    long: Dɔwɔnu si woɖo na kuviatɔwo, siwo dometɔ aɖewoe nye ‘proto’-based backend framework, template siwo wozãna zi geɖe, kple gbegbɔgblɔ geɖe me gbegɔmeɖeɖe
+    short: Dɔwɔnu si woɖo na kuviatɔwo

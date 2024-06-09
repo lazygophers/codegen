@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Detailliertes Protokoll ausgeben
+    gen:
+        add-rpc:
+            flags:
+                action: Verhaltensweisen, die stapelweise hinzugefügt werden müssen, finden Sie in der Nutzungsdokumentation für Einzelheiten
+                default-role: Die Standardrolle der stapelweise generierten Schnittstelle finden Sie in der Nutzungsdokumentation.
+                gen-to: Geben Sie den Ausgabespeicherort der generierten .go-Dateien an
+                list-option: Die Liste kann auch gefiltert werden. Weitere Informationen finden Sie in der Nutzungsdokumentation.
+                model: Geben Sie den Modellnamen an und unterstützen Sie das Weglassen des Präfixes „Modell“.
+            long: Generieren Sie Schnittstellen stapelweise und fügen Sie eine Schnittstelle für ein bestimmtes Modell in der .proto-Datei hinzu
+            short: Schnittstelle zur Batch-Generierung
+        all:
+            long: Generieren Sie den gesamten von diesem Tool unterstützten Code
+            short: Generieren Sie den gesamten Code
+        cache:
+            long: Generieren Sie Cache-Dateien für SDKs im Zusammenhang mit dem Caching von Geschäftsanrufen
+            short: Cache-Datei generieren
+        cmd:
+            long: Erstellen Sie Eintragsdateien für Unternehmensdienstleistungen
+            short: Eintragsdatei erstellen
+        conf:
+            long: Generieren Sie Konfigurationsdateien zum Lesen der Konfiguration von Geschäftsdiensten
+            short: Konfigurationsdatei generieren
+        dockerignore:
+            long: Generieren Sie eine .dockerignore-Datei für die Docker-Image-Erstellung, um die Dateiverwaltung zu ignorieren
+            short: Generieren Sie eine .dockerignore-Datei
+        editorconfig:
+            long: Generieren Sie eine .editorconfig-Datei für die Editorkonfiguration
+            short: Generieren Sie eine .editorconfig-Datei
+        flags:
+            add-proto-files: Wenn Sie andere .proto-Dateien/Ordnerpfade importieren müssen, die sich nicht im selben Ordner wie die angegebene .proto-Datei befinden, wird durch diesen Vorgang der in der Konfigurationsdatei konfigurierte Pfad angehängt (nicht überschrieben).
+            go-module-prefix: Für den in der .proto-Datei konfigurierten und den tatsächlichen Pfad von go_package können Sie diese Option konfigurieren
+            input: Geben Sie die zu generierende .proto-Quelldatei an
+            output-path: Diese Option kann konfiguriert werden, wenn der in der .proto-Datei konfigurierte Pfad von go_package nicht mit dem Straßenbett übereinstimmt, das tatsächlich generiert werden muss.
+            overwrite: Für Inhalte, die nicht neu generiert werden, erzwingen Sie das Überschreiben vorhandener Inhalte
+            proto-files: Um andere .proto-Dateien/Ordnerpfade zu importieren, die sich nicht im selben Ordner wie die angegebene .proto-Datei befinden, ist dieser Vorgang eine Option zum Überschreiben des Konfigurationsfelds in der Konfigurationsdatei.
+            protoc: „Protoc“ anpassbarer Dateipfad
+            protoc-gen-go: „protoc-gen-go“-Plugin-Pfad
+            tables-enable_field_created_at: Ob die Standardkonfigurationsgenerierung des Datenbankfelds „created_at“ aktiviert werden soll
+            tables-enable_field_deleted_at: Ob die Standardeinstellung des Feldes delete_at in der Datenbank aktiviert werden soll
+            tables-enable_field_id: Aktivieren Sie die Standardkonfigurationsgenerierung für datenbankbezogene Felder
+            tables-enable_field_updated_at: Ob der Standardwert des Feldes „update_at“ in der Datenbank aktiviert werden soll
+            tables-enable_gorm_tag_column: Ob die datenbankbezogene Gorm-Generierung aktiviert werden soll
+        gitignote:
+            long: Generieren Sie .gitignore-Dateien für die Verwaltung ignorierter Dateien in der Versionskontrolle
+            short: Generieren Sie eine .gitignore-Datei
+        golang-lint:
+            long: Generieren Sie die Datei .golangci.yml zur Überprüfung der Codequalität
+            short: Generieren Sie die Datei .golangci.yml
+        goreleaser:
+            long: Generieren Sie die Datei .goreleaser.yml zur Konfiguration der Release-Tools
+            short: Generieren Sie die Datei .goreleaser.yml
+        impl:
+            long: Generieren Sie Implementierungsdateien für die Implementierung von Business Services
+            short: Generieren Sie Implementierungsdateien
+        long: Codegenerator, unterstützt mehrere Vorlagen
+        makefile:
+            long: Generieren Sie Makefile-Dateien zum Erstellen von Tools und anderen zugehörigen Befehlen
+            short: Makefile generieren
+        mod:
+            long: Generieren Sie die Datei go.mod für die Abhängigkeitsverwaltung
+            short: Generieren Sie die Datei go.mod
+        pb:
+            long: Generieren Sie .pb.go-Dateien zum Generieren von .proto-Dateien.
+            short: Generieren Sie eine .pb.go-Datei
+        short: Code Generator
+        state:
+            long: Generieren Sie alle zugehörigen Statusfunktionen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
+            short: Alle relevanten Funktionen zur Zustandsgenerierung
+        table:
+            long: Alle zugehörigen Funktionen zur Generierung von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
+            short: Alle zugehörigen Funktionen zur Tabellenerstellung
     help:
         additional_commands: Zusätzliche Befehle
         aliases: Befehlsalias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Übersetzungskanal: Support-Typ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Mehrsprachige Dateien aus einer bestimmten Quelle werden in Dateien im gleichen Format in anderen Sprachen umgewandelt.
             short: übersetzen
-    long: Enthält ein „Proto“-basiertes Backend-Framework, häufig verwendete Vorlagen und mehrsprachige Übersetzungen
-    short: Toolkit
+    long: Ein Toolset für Faule, einschließlich „Proto“-basiertem Backend-Framework, häufig verwendeten Vorlagen und mehrsprachiger Übersetzung
+    short: Ein Werkzeugset für Faule

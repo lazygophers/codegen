@@ -2,17 +2,14 @@ package gen
 
 import (
 	"github.com/lazygophers/codegen/codegen"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/pterm/pterm"
 	"github.com/spf13/cobra"
 )
 
 var pbCmd = &cobra.Command{
-	Use:   "pb",
-	Short: "Generate .pb.go",
-	Long: `Generate .pb.go file from proto file.
-Add fields tags to the generated file(.pb.go).
-`,
+	Use:  "pb",
 	RunE: runGenPb,
 }
 
@@ -35,6 +32,9 @@ func runGenPb(cmd *cobra.Command, args []string) (err error) {
 	return nil
 }
 
-func init() {
+func initPb() {
+	pbCmd.Short = state.Localize(state.I18nTagCliGenPbShort)
+	pbCmd.Long = state.Localize(state.I18nTagCliGenPbLong)
+
 	genCmd.AddCommand(pbCmd)
 }

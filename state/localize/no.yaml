@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Utdata detaljert logg
+    gen:
+        add-rpc:
+            flags:
+                action: Atferd som må legges til i batcher, se bruksdokumentasjonen for detaljer
+                default-role: Standardrollen til det batchgenererte grensesnittet Se bruksdokumentasjonen for detaljer.
+                gen-to: Angi utdataplasseringen til de genererte .go-filene
+                list-option: Listen kan også filtreres, se bruksdokumentasjonen for detaljer.
+                model: Spesifiser modellnavnet, støtte å utelate `modell`-prefikset
+            long: Generer grensesnitt i batcher og legg til et grensesnitt for en bestemt modell i .proto-filen
+            short: Batchgenereringsgrensesnitt
+        all:
+            long: Generer all kode som støttes av dette verktøyet
+            short: Generer all kode
+        cache:
+            long: Generer hurtigbufferfiler for cache-relaterte SDK-er for forretningsanrop
+            short: Generer cache-fil
+        cmd:
+            long: Generer oppføringsfiler for forretningstjenester
+            short: Generer oppføringsfil
+        conf:
+            long: Generer konfigurasjonsfiler for konfigurasjonslesing av forretningstjenester
+            short: Generer konfigurasjonsfil
+        dockerignore:
+            long: Generer .dockerignore-fil for Docker-bildebygging for å ignorere filbehandling
+            short: Generer .dockerignore-fil
+        editorconfig:
+            long: Generer .editorconfig-fil for redigeringskonfigurasjon
+            short: Generer .editorconfig-fil
+        flags:
+            add-proto-files: Hvis du trenger å importere andre .proto-filer/mappebaner som ikke er i samme mappe som den spesifiserte .proto-filen, vil denne operasjonen legge til (ikke overskrive) banen som er konfigurert i konfigurasjonsfilen.
+            go-module-prefix: For banen til go_package som er konfigurert i .proto-filen og den faktiske, kan du konfigurere dette alternativet
+            input: Spesifiser .proto-kildefilen som skal genereres
+            output-path: Dette alternativet kan konfigureres når banen til go_package konfigurert i .proto-filen er inkonsistent med veibanen som faktisk må genereres.
+            overwrite: For innhold som ikke vil bli regenerert, tving overskriving av eksisterende innhold
+            proto-files: For å importere andre .proto-filer/mappebaner som ikke er i samme mappe som den spesifiserte .proto-filen, er denne operasjonen et alternativ for å overstyre konfigurasjonsfeltet i konfigurasjonsfilen.
+            protoc: '"Protoc" tilpassbar filbane'
+            protoc-gen-go: '"protoc-gen-go" plugin-bane'
+            tables-enable_field_created_at: Om standardkonfigurasjonsgenerering av databasen opprettet_at-feltet skal aktiveres
+            tables-enable_field_deleted_at: Om standardinnstillingen for deleted_at-feltet i databasen skal aktiveres
+            tables-enable_field_id: Aktiver generering av standard konfigurasjon for databaserelaterte felt
+            tables-enable_field_updated_at: Om standardverdien for updated_at-feltet skal aktiveres i databasen
+            tables-enable_gorm_tag_column: Om databaserelatert gorm-generering skal aktiveres
+        gitignote:
+            long: Generer .gitignore-filer for ignorert filbehandling i versjonskontroll
+            short: Generer .gitignore-fil
+        golang-lint:
+            long: Generer .golangci.yml-fil for inspeksjon av kodekvalitet
+            short: Generer .golangci.yml-fil
+        goreleaser:
+            long: Generer .goreleaser.yml-fil for konfigurasjon av utgivelsesverktøy
+            short: Generer .goreleaser.yml-fil
+        impl:
+            long: Generer implementeringsfiler for implementering av forretningstjenester
+            short: Generer implementeringsfiler
+        long: Kodegenerator, støtter flere maler
+        makefile:
+            long: Generer Makefile-filer for byggeverktøy og andre relaterte kommandoer
+            short: Generer Makefile
+        mod:
+            long: Generer go.mod-fil for avhengighetsbehandling
+            short: Generer go.mod-fil
+        pb:
+            long: Generer .pb.go-filer for å generere .proto-filer,
+            short: Generer .pb.go-fil
+        short: Kode generator
+        state:
+            long: Generer alle relaterte funksjoner til staten for statisk ressurs- eller statisk ressursstyring av forretningstjenester
+            short: Alle relevante funksjoner for å generere tilstand
+        table:
+            long: Alle relaterte funksjoner for å generere tabeller for statisk ressurs- eller statisk ressursstyring av forretningstjenester
+            short: Alle relaterte funksjoner for å generere tabeller
     help:
         additional_commands: Ytterligere kommandoer
         aliases: kommando alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Oversettelseskanal: Støttetype {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Flerspråklige filer fra en bestemt kilde konverteres til filer i samme format på andre språk.
             short: oversette
-    long: Inneholder 'proto'-basert backend-rammeverk, ofte brukte maler og flerspråklige oversettelser
-    short: Verktøysett
+    long: Et verktøysett for late mennesker, inkludert 'proto'-basert backend-rammeverk, ofte brukte maler og flerspråklig oversettelse
+    short: Et verktøysett for late mennesker

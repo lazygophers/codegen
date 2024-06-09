@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Output log details
+    gen:
+        add-rpc:
+            flags:
+                action: Fitondran-tena mila ampiana andiany dia tadiavo azafady ny antontan-taratasim-pampiasana ho an'ny antsipiriany
+                default-role: Ny andraikitry ny interface voaforona batch azafady jereo ny antontan-taratasy momba ny fampiasana raha mila fanazavana fanampiny.
+                gen-to: Lazao ny toerana famoahana ireo rakitra .go novokarina
+                list-option: Ny lisitra dia azo sivana ihany koa, tadiavo azafady ny antontan-taratasy momba ny fampiasana ho an'ny antsipiriany.
+                model: Lazao ny anaran'ny maodely, tohano ny fanalana ny tovana `modely`
+            long: Mamorona fifandraisana amin'ny andiany ary ampio interface tsara ho an'ny modely sasany ao amin'ny rakitra .proto
+            short: Interface famokarana batch
+        all:
+            long: Mamorona kaody rehetra tohanan'ity fitaovana ity
+            short: Mamorona kaody rehetra
+        cache:
+            long: Mamorona rakitra cache ho an'ny SDK mifandraika amin'ny caching antso
+            short: Mamorona rakitra cache
+        cmd:
+            long: Mamorona rakitra fidirana ho an'ny serivisy fandraharahana
+            short: Mamorona rakitra fidirana
+        conf:
+            long: Mamorona rakitra fikirakirana ho an'ny famakiana fandrindrana ny serivisy fandraharahana
+            short: Mamorona rakitra fikirakirana
+        dockerignore:
+            long: Mamorona rakitra .dockerignore ho an'ny fananganana sary Docker mba tsy hiraharaha ny fitantanana rakitra
+            short: Mamorona rakitra .dockerignore
+        editorconfig:
+            long: Mamorona rakitra .editorconfig ho an'ny fanitsiana ny editor
+            short: Mamorona rakitra .editorconfig
+        flags:
+            add-proto-files: Raha mila manafatra rakitra .proto/folder hafa izay tsy ao anatin'ny lahatahiry mitovy amin'ilay rakitra .proto voatondro ianao, dia hampiana (tsy overwrite) ny lalana voafefy ao amin'ny fichier configuration ity asa ity.
+            go-module-prefix: Ho an'ny lalan'ny go_package namboarina ao amin'ny rakitra .proto sy ny tena izy dia azonao atao ny manitsy ity safidy ity
+            input: Lazao ny rakitra loharano .proto hatsangana
+            output-path: Ity safidy ity dia azo amboarina rehefa tsy mifanaraka amin'ny sisin-dalana ny lalan'ny go_package namboarina ao amin'ny rakitra .proto izay tena mila amboarina.
+            overwrite: Ho an'ny atiny izay tsy havaozina, hanery ny fanoratana ny atiny efa misy
+            proto-files: Raha hanafatra rakitra .proto/folder hafa izay tsy ao anatin'ny lahatahiry mitovy amin'ilay rakitra .proto voatondro, ity fandidiana ity dia safidy hanilihana ny saha fanamafisam-peo ao amin'ny rakitra fikirakirana.
+            protoc: '`protoc` lalana rakitra azo zahana'
+            protoc-gen-go: lalana plugin `protoc-gen-go`
+            tables-enable_field_created_at: Na azo atao ny mamorona fandrindrana default amin'ny angon-drakitra created_at saha
+            tables-enable_field_deleted_at: Na azo atao ny mametraka ny default amin'ny saha deleted_at ao amin'ny tahiry
+            tables-enable_field_id: Ampidiro ny famoronana fandrindrana default ho an'ny saha mifandraika amin'ny angona
+            tables-enable_field_updated_at: Raha azo atao ny sandan'ny default amin'ny saha updated_at ao amin'ny tahiry
+            tables-enable_gorm_tag_column: Na azo atao ny mamorona gorm mifandraika amin'ny database
+        gitignote:
+            long: Mamorona rakitra .gitignore ho an'ny fitantanana rakitra tsy noraharahiana amin'ny fifehezana dikan-teny
+            short: Mamorona rakitra .giignore
+        golang-lint:
+            long: Mamorona rakitra .golangci.yml ho fitsirihana ny kalitaon'ny kaody
+            short: Mamorona rakitra .golangci.yml
+        goreleaser:
+            long: Mamorona rakitra .goreleaser.yml ho an'ny fanamboarana fitaovana famoahana
+            short: Mamorona rakitra .goreleaser.yml
+        impl:
+            long: Mamorona rakitra fampiharana ho an'ny fampiharana ny serivisy fandraharahana
+            short: Mamorona rakitra fampiharana
+        long: Mpamorona kaody, manohana modely maro
+        makefile:
+            long: Mamorona rakitra Makefile ho an'ny fitaovana fananganana sy baiko mifandraika amin'izany
+            short: Mamorona Makefile
+        mod:
+            long: Mamorona rakitra go.mod ho an'ny fitantanana ny fiankinan-doha
+            short: Mamorona rakitra go.mod
+        pb:
+            long: Mamorona rakitra .pb.go mba hamoronana rakitra .proto,
+            short: Mamorona rakitra .pb.go
+        short: Mpamorona kaody
+        state:
+            long: Mamorona asa rehetra mifandraika amin'ny fanjakana ho an'ny fitantanana loharanon-karena na static amin'ny serivisy fandraharahana
+            short: Ny asa rehetra mifandraika amin'ny famoronana fanjakana
+        table:
+            long: Ny asa rehetra mifandraika amin'ny famoronana latabatra ho an'ny loharanon-karena ara-panjakana na fitantanana loharanon-karena static amin'ny serivisy fandraharahana
+            short: Ny fiasa rehetra mifandraika amin'ny famoronana latabatra
     help:
         additional_commands: Didy fanampiny
         aliases: baiko alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Fantsona fandikan-teny: Karazana fanohanana {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ny rakitra amin'ny fiteny maro avy amin'ny loharano iray dia avadika ho rakitra mitovy endrika amin'ny fiteny hafa.
             short: translate
-    long: Ahitana rafitra backend mifototra amin'ny 'proto', môdely fampiasa matetika ary dikanteny amin'ny fiteny maro.
-    short: Toolkit
+    long: Fitaovana napetraka ho an'ny kamo, ao anatin'izany ny rafitra backend mifototra amin'ny 'proto', môdely fampiasa matetika ary fandikana amin'ny fiteny maro.
+    short: Fitaovana ho an'ny kamo

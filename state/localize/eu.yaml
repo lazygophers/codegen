@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Irteera erregistro zehatza
+    gen:
+        add-rpc:
+            flags:
+                action: Loteka gehitu behar diren portaerak, bilatu erabilera-dokumentazioa xehetasunetarako
+                default-role: Batch sortutako interfazearen funtzio lehenetsia. Ikus ezazu erabilera-dokumentazioa xehetasunetarako.
+                gen-to: Zehaztu sortutako .go fitxategien irteerako kokapena
+                list-option: Zerrenda ere iragazi daiteke, mesedez aurkitu erabilera-dokumentazioa xehetasunetarako.
+                model: Zehaztu ereduaren izena, onartzen `model` aurrizkia ezabatzea
+            long: Sortu interfazeak loteka eta gehitu eredu jakin baterako interfaze bat .proto fitxategian
+            short: Batch sortzeko interfazea
+        all:
+            long: Sortu tresna honek onartzen duen kode guztia
+            short: Sortu kode guztia
+        cache:
+            long: Sortu cache fitxategiak negozio-deien cachean erlazionatutako SDKetarako
+            short: Sortu cache fitxategia
+        cmd:
+            long: Sortu enpresa-zerbitzuetarako sarrera fitxategiak
+            short: Sortu sarrera fitxategia
+        conf:
+            long: Sortu konfigurazio-fitxategiak negozio-zerbitzuen konfigurazioa irakurtzeko
+            short: Sortu konfigurazio fitxategia
+        dockerignore:
+            long: Sortu .dockerignore fitxategia Docker irudia eraikitzeko, fitxategien kudeaketa alde batera uzteko
+            short: Sortu .dockerignore fitxategia
+        editorconfig:
+            long: Sortu .editorconfig fitxategia editorearen konfiguraziorako
+            short: Sortu .editorconfig fitxategia
+        flags:
+            add-proto-files: Zehaztutako .proto fitxategiaren karpeta berean ez dauden beste .proto fitxategi/karpeta bide batzuk inportatu behar badituzu, eragiketa honek konfigurazio fitxategian konfiguratutako bidea erantsiko du (ez gainidatziko du).
+            go-module-prefix: .proto fitxategian konfiguratutako go_package biderako eta benetakorako, aukera hau konfigura dezakezu
+            input: Zehaztu sortuko den .proto iturburu-fitxategia
+            output-path: Aukera hau konfigura daiteke .proto fitxategian konfiguratutako go_package-ren bidea benetan sortu behar den errepidearekin bat ez datorrenean.
+            overwrite: Birsortuko ez den edukirako, behartu lehendik dagoen edukia gainidaztea
+            proto-files: Zehaztutako .proto fitxategiaren karpeta berean ez dauden beste .proto fitxategi/karpeta bide batzuk inportatzeko, eragiketa hau konfigurazio fitxategiko konfigurazio eremua gainidazteko aukera da.
+            protoc: '`protoc` fitxategi-bide pertsonalizagarria'
+            protoc-gen-go: '`protoc-gen-go` pluginaren bidea'
+            tables-enable_field_created_at: Create_at eremuaren datu-basearen konfigurazio lehenetsia gaitu ala ez
+            tables-enable_field_deleted_at: Datu-basean deleted_at eremuaren ezarpen lehenetsia gaitu ala ez
+            tables-enable_field_id: Gaitu datu-basearekin erlazionatutako eremuetarako konfigurazio lehenetsia sortzea
+            tables-enable_field_updated_at: Datu-basean updated_at eremuaren balio lehenetsia gaitu ala ez
+            tables-enable_gorm_tag_column: Datu-basearekin erlazionatutako gorm sorrera gaitu ala ez
+        gitignote:
+            long: Sortu .gitignore fitxategiak bertsio-kontrolean baztertuta dauden fitxategien kudeaketarako
+            short: Sortu .gitignore fitxategia
+        golang-lint:
+            long: Sortu .golangci.yml fitxategia kodearen kalitatea ikuskatzeko
+            short: Sortu .golangci.yml fitxategia
+        goreleaser:
+            long: Sortu .goreleaser.yml fitxategia kaleratzeko tresnen konfiguraziorako
+            short: Sortu .goreleaser.yml fitxategia
+        impl:
+            long: Enpresa-zerbitzuak ezartzeko ezarpen-fitxategiak sortzea
+            short: Sortu ezarpen-fitxategiak
+        long: Kode-sorgailua, hainbat txantiloi onartzen ditu
+        makefile:
+            long: Sortu Makefile fitxategiak tresnak eta erlazionatutako beste komando batzuk eraikitzeko
+            short: Sortu Makefile
+        mod:
+            long: Sortu go.mod fitxategia dependentzia kudeatzeko
+            short: Sortu go.mod fitxategia
+        pb:
+            long: Sortu .pb.go fitxategiak .proto fitxategiak sortzeko,
+            short: Sortu .pb.go fitxategia
+        short: Kode sortzailea
+        state:
+            long: Sortu egoera erlazionatutako funtzio guztiak enpresa-zerbitzuen baliabideen egoera edo baliabide estatikoen kudeaketarako
+            short: Egoera sortzeko funtzio garrantzitsu guztiak
+        table:
+            long: Taulak sortzeko erlazionatutako funtzio guztiak enpresa-zerbitzuen baliabideen egoera edo baliabide estatikoen kudeaketarako
+            short: Taulak sortzeko erlazionatutako funtzio guztiak
     help:
         additional_commands: Agindu osagarriak
         aliases: komandoaren ezizena
@@ -27,5 +98,5 @@ cli:
                     usage: 'Itzulpen-kanala: laguntza mota {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Iturburu jakin bateko fitxategi eleaniztunak beste hizkuntza batzuetan formatu bereko fitxategietan bihurtzen dira.
             short: itzuli
-    long: '''Proto''-n oinarritutako backend esparrua, erabili ohi diren txantiloiak eta hizkuntza anitzeko itzulpenak ditu'
-    short: Tresna-kutxa
+    long: Alferentzako tresna multzoa, "proto"-n oinarritutako backend esparrua, erabili ohi diren txantiloiak eta hizkuntza anitzeko itzulpena barne.
+    short: Alferrarentzat tresna multzoa

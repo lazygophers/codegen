@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: 输出详细日志
+    gen:
+        add-rpc:
+            flags:
+                action: 需要批量添加的行为，具体请查找使用文档
+                default-role: 批量生成的接口默认的角色，具体请查看使用文档
+                gen-to: 指定生成的 .go 文件的输出位置
+                list-option: 列表也的筛选，具体请查找使用文档
+                model: 指定模型名，支持 省略 `model` 前缀
+            long: 批量生成接口，在.proto 文件中增加针对某个模型的接口
+            short: 批量生成接口
+        all:
+            long: 生成本工具所支持的所有的代码
+            short: 生成所有代码
+        cache:
+            long: 生成缓存文件，用于业务调用缓存的相关 SDK
+            short: 生成缓存文件
+        cmd:
+            long: 生成入口文件，用于业务服务的
+            short: 生成入口文件
+        conf:
+            long: 生成配置文件，用于业务服务的配置读取
+            short: 生成配置文件
+        dockerignore:
+            long: 生成.dockerignore 文件，用于 Docker 镜像构建忽略文件管理
+            short: 生成.dockerignore 文件
+        editorconfig:
+            long: 生成.editorconfig 文件，用于编辑器的配置
+            short: 生成.editorconfig 文件
+        flags:
+            add-proto-files: 需要引入的其它和指定的 .proto 文件不在同一个文件夹内的其它 .proto 文件/文件夹路径，本操作会对 配置文件中已配置的路径进行追加（非覆盖）
+            go-module-prefix: 对于 .proto 文件 中配置的 go_package 的路径与实际的，可以配置该选项
+            input: 指定要生成的 .proto 源文件
+            output-path: 对于 .proto 文件 中配置的 go_package 的路径与实际需要生成的路基不一致时，可配置此选项
+            overwrite: 对于不会重复生成的内容，强制覆盖已存在的内容
+            proto-files: 需要引入的其它和指定的 .proto 文件不在同一个文件夹内的其它 .proto 文件/文件夹路径，本操作是覆盖配置文件中的配置字段的选项
+            protoc: '`protoc` 可自行文件路径'
+            protoc-gen-go: '`protoc-gen-go` 插件路径'
+            tables-enable_field_created_at: 是否开启数据库 created_at 字段的默认配置生成
+            tables-enable_field_deleted_at: 是否开启数据库 deleted_at 字段的默认
+            tables-enable_field_id: 开启数据库相关字段的默认配置生成
+            tables-enable_field_updated_at: 是否开启数据库 updated_at 字段的默认
+            tables-enable_gorm_tag_column: 是否开启数据库相关的 gorm 生成
+        gitignote:
+            long: 生成.gitignore 文件，用于版本控制的忽略文件管理
+            short: 生成.gitignore 文件
+        golang-lint:
+            long: 生成.golangci.yml 文件，用于代码质量检测
+            short: 生成.golangci.yml 文件
+        goreleaser:
+            long: 生成.goreleaser.yml 文件，用于发布工具的配置
+            short: 生成.goreleaser.yml 文件
+        impl:
+            long: 生成实现文件，用于业务服务的实现
+            short: 生成实现文件
+        long: 代码生成器，支持多种模板
+        makefile:
+            long: 生成 Makefile 文件，用于构建工具等相关命令
+            short: 生成 Makefile 文件
+        mod:
+            long: 生成 go.mod 文件，用于依赖管理
+            short: 生成 go.mod 文件
+        pb:
+            long: 生成.pb.go 文件，用于 .proto 文件的生成，
+            short: 生成.pb.go 文件
+        short: 代码生成器
+        state:
+            long: 生成 state 的所有相关功能，用于业务服务的有状态的资源或静态资源管理
+            short: 生成 state 的所有相关功能
+        table:
+            long: 生成 table 的所有相关功能，用于业务服务的有状态的资源或静态资源管理
+            short: 生成 table 的所有相关功能
     help:
         additional_commands: 附加命令
         aliases: 命令别名
@@ -27,5 +98,5 @@ cli:
                     usage: 翻译通道：支持类型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
             long: 通过某一个源多语言文件还以为其它语言相同格式的文件
             short: 翻译
-    long: 包含基于 'proto' 的后端框架、常用模板，以及多语言翻译
-    short: 工具包
+    long: 一个适合懒人工具集，包含基于 'proto' 的后端框架、常用模板，以及多语言翻译
+    short: 一个适合懒人工具集

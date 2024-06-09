@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Emette un registro dettagliato
+    gen:
+        add-rpc:
+            flags:
+                action: Comportamenti che devono essere aggiunti in batch, per i dettagli consulta la documentazione sull'utilizzo
+                default-role: Il ruolo predefinito dell'interfaccia generata in batch. Per i dettagli, fare riferimento alla documentazione sull'utilizzo.
+                gen-to: Specificare il percorso di output dei file .go generati
+                list-option: L'elenco può anche essere filtrato, per i dettagli consultare la documentazione sull'utilizzo.
+                model: Specificare il nome del modello, supportare l'omissione del prefisso "modello".
+            long: Genera interfacce in batch e aggiungi un'interfaccia per un determinato modello nel file .proto
+            short: Interfaccia di generazione batch
+        all:
+            long: Genera tutto il codice supportato da questo strumento
+            short: Genera tutto il codice
+        cache:
+            long: Genera file di cache per gli SDK correlati alla memorizzazione nella cache delle chiamate aziendali
+            short: Genera file di cache
+        cmd:
+            long: Genera file di ingresso per i servizi aziendali
+            short: Genera file di ingresso
+        conf:
+            long: Genera file di configurazione per la lettura della configurazione dei servizi aziendali
+            short: Genera file di configurazione
+        dockerignore:
+            long: Genera il file .dockerignore per la creazione di immagini Docker per ignorare la gestione dei file
+            short: Genera il file .dockerignore
+        editorconfig:
+            long: Genera il file .editorconfig per la configurazione dell'editor
+            short: Genera il file .editorconfig
+        flags:
+            add-proto-files: Se è necessario importare altri file .proto/percorsi di cartelle che non si trovano nella stessa cartella del file .proto specificato, questa operazione aggiungerà (non sovrascriverà) il percorso configurato nel file di configurazione.
+            go-module-prefix: Per il percorso di go_package configurato nel file .proto e quello attuale, puoi configurare questa opzione
+            input: Specificare il file sorgente .proto da generare
+            output-path: Questa opzione può essere configurata quando il percorso di go_package configurato nel file .proto non è coerente con il fondo stradale che deve effettivamente essere generato.
+            overwrite: Per il contenuto che non verrà rigenerato, forza la sovrascrittura del contenuto esistente
+            proto-files: Per importare altri file .proto/percorsi di cartelle che non si trovano nella stessa cartella del file .proto specificato, questa operazione è un'opzione per sovrascrivere il campo di configurazione nel file di configurazione.
+            protoc: Percorso file personalizzabile "protoc".
+            protoc-gen-go: Percorso del plugin "protoc-gen-go".
+            tables-enable_field_created_at: Se abilitare la generazione della configurazione predefinita del campo create_at del database
+            tables-enable_field_deleted_at: Se abilitare l'impostazione predefinita del campo delete_at nel database
+            tables-enable_field_id: Abilita la generazione della configurazione predefinita per i campi relativi al database
+            tables-enable_field_updated_at: Se abilitare il valore predefinito del campo aggiornato_at nel database
+            tables-enable_gorm_tag_column: Se abilitare la generazione di gorm relativi al database
+        gitignote:
+            long: Genera file .gitignore per la gestione dei file ignorati nel controllo della versione
+            short: Genera il file .gitignore
+        golang-lint:
+            long: Genera il file .golangci.yml per il controllo della qualità del codice
+            short: Genera il file .golangci.yml
+        goreleaser:
+            long: Genera il file .goreleaser.yml per la configurazione degli strumenti di rilascio
+            short: Genera il file .goreleaser.yml
+        impl:
+            long: Generare file di implementazione per l'implementazione dei servizi aziendali
+            short: Generare file di implementazione
+        long: Generatore di codice, supporta più modelli
+        makefile:
+            long: Genera file Makefile per la creazione di strumenti e altri comandi correlati
+            short: Genera makefile
+        mod:
+            long: Genera il file go.mod per la gestione delle dipendenze
+            short: Genera il file go.mod
+        pb:
+            long: Genera file .pb.go per generare file .proto,
+            short: Genera il file .pb.go
+        short: Generatore di codici
+        state:
+            long: Genera tutte le funzioni di stato correlate per la gestione delle risorse con stato o delle risorse statiche dei servizi aziendali
+            short: Tutte le funzioni rilevanti per la generazione dello stato
+        table:
+            long: Tutte le funzioni correlate di generazione di tabelle per la gestione delle risorse con stato o delle risorse statiche dei servizi aziendali
+            short: Tutte le funzioni correlate per la generazione di tabelle
     help:
         additional_commands: Comandi aggiuntivi
         aliases: alias del comando
@@ -27,5 +98,5 @@ cli:
                     usage: 'Canale di traduzione: Tipo di supporto {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: I file multilingue provenienti da una determinata fonte vengono convertiti in file dello stesso formato in altre lingue.
             short: tradurre
-    long: Contiene framework backend basato su "proto", modelli comunemente utilizzati e traduzioni multilingue
-    short: Kit di strumenti
+    long: Un set di strumenti per persone pigre, incluso un framework backend basato su "proto", modelli comunemente usati e traduzione multilingue
+    short: Un set di strumenti per i pigri

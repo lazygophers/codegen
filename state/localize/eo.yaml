@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Eligi detalan protokolon
+    gen:
+        add-rpc:
+            flags:
+                action: Kondutoj kiuj devas esti aldonitaj en aroj, bonvolu trovi la uzadodokumentaron por detaloj
+                default-role: La defaŭlta rolo de la grup-generita interfaco Bonvolu konsulti la uzdokumentadon por detaloj.
+                gen-to: Specifu la eliglokon de la generitaj .go dosieroj
+                list-option: La listo ankaŭ povas esti filtrita, bonvolu trovi la uzan dokumentaron por detaloj.
+                model: Specifu la modelnomon, subtenu preterlasi la prefikson `modelo`
+            long: Generu interfacojn en aroj kaj aldonu interfacon por certa modelo en la .proto-dosiero
+            short: Interfaco de bata generacio
+        all:
+            long: Generu ĉiujn kodojn subtenatajn de ĉi tiu ilo
+            short: Generu ĉiun kodon
+        cache:
+            long: Generu kaŝmemordosierojn por komercaj alvokoj rilataj SDK-oj
+            short: Generu kaŝmemordosieron
+        cmd:
+            long: Generu enirajn dosierojn por komercaj servoj
+            short: Generu enirdosieron
+        conf:
+            long: Generu agordajn dosierojn por agorda legado de komercaj servoj
+            short: Generu agordan dosieron
+        dockerignore:
+            long: Generu .dockerignore dosieron por Docker-bildkonstruado por ignori dosieradministradon
+            short: Generu dosieron .dockerignore
+        editorconfig:
+            long: Generu .editorconfig dosieron por redaktila agordo
+            short: Generu .editorconfig dosieron
+        flags:
+            add-proto-files: Se vi bezonas importi aliajn .proto dosierojn/dosierujojn vojojn kiuj ne estas en la sama dosierujo kiel la specifita .proto dosiero, ĉi tiu operacio aldonos (ne anstataŭigos) la vojon agordita en la agorda dosiero.
+            go-module-prefix: Por la vojo de go_package agordita en la .proto-dosiero kaj la efektiva, vi povas agordi ĉi tiun opcion
+            input: Specifu la .proto fontdosieron esti generita
+            output-path: Ĉi tiu opcio povas esti agordita kiam la vojo de go_package agordita en la .proto-dosiero estas malkonsekvenca kun la vojo, kiu efektive devas esti generita.
+            overwrite: Por enhavo, kiu ne estos regenerita, devigu anstataŭigon de ekzistanta enhavo
+            proto-files: Por importi aliajn .proto-dosierujojn/dosierujojn kiuj ne estas en la sama dosierujo kiel la specifita .proto-dosiero, ĉi tiu operacio estas opcio por anstataŭi la agordan kampon en la agorda dosiero.
+            protoc: '`protoc` agordebla dosiervojo'
+            protoc-gen-go: '`protoc-gen-go` kromvojo'
+            tables-enable_field_created_at: Ĉu ebligi la defaŭltan agordan generacion de la datumbazo created_at-kampo
+            tables-enable_field_deleted_at: Ĉu ebligi la defaŭltan agordon de la kampo deleted_at en la datumbazo
+            tables-enable_field_id: Ebligu defaŭltan agordan generacion por datumbazaj kampoj
+            tables-enable_field_updated_at: Ĉu ebligi la defaŭltan valoron de la kampo updated_at en la datumbazo
+            tables-enable_gorm_tag_column: Ĉu ebligi datumbaz-rilatan gorm-generadon
+        gitignote:
+            long: Generu .gitignore dosierojn por ignorita dosieradministrado en versio-kontrolo
+            short: Generu dosieron .gitignore
+        golang-lint:
+            long: Generu .golangci.yml dosieron por koda kvalito-inspektado
+            short: Generu .golangci.yml dosieron
+        goreleaser:
+            long: Generu .goreleaser.yml dosieron por agordo de eldonaj iloj
+            short: Generu .goreleaser.yml dosieron
+        impl:
+            long: Generu realigajn dosierojn por efektivigo de komercaj servoj
+            short: Generu realigajn dosierojn
+        long: Kodgeneratoro, subtenas plurajn ŝablonojn
+        makefile:
+            long: Generu Makefile-dosierojn por konstrui ilojn kaj aliajn rilatajn komandojn
+            short: Generu Makefile
+        mod:
+            long: Generu go.mod dosieron por dependeca administrado
+            short: Generu go.mod dosieron
+        pb:
+            long: Generu .pb.go dosierojn por generi .proto dosierojn,
+            short: Generu .pb.go dosieron
+        short: Kodgeneratoro
+        state:
+            long: Generu ĉiujn rilatajn funkciojn de ŝtato por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
+            short: Ĉiuj rilataj funkcioj por generado de stato
+        table:
+            long: Ĉiuj rilataj funkcioj de generado de tabeloj por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
+            short: Ĉiuj rilataj funkcioj por generi tabelojn
     help:
         additional_commands: Kromaj komandoj
         aliases: komando kaŝnomo
@@ -27,5 +98,5 @@ cli:
                     usage: 'Traduka kanalo: Subtena tipo {{range $key,$value := .Type}}{{$key}}:{{$valoro}}{{end}}'
             long: Plurlingvaj dosieroj de certa fonto estas konvertitaj en dosierojn en la sama formato en aliaj lingvoj.
             short: traduki
-    long: Enhavas 'proto'-bazitan backend kadron, ofte uzatajn ŝablonojn kaj plurlingvajn tradukojn
-    short: Ilaro
+    long: Ilaro por maldiligentaj homoj, inkluzive de "proto"-bazita backend kadro, ofte uzataj ŝablonoj kaj plurlingva traduko
+    short: Ilaro por maldiligentaj homoj

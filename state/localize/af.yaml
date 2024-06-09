@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Voer gedetailleerde log uit
+    gen:
+        add-rpc:
+            flags:
+                action: Gedrag wat in bondels bygevoeg moet word, vind asseblief die gebruiksdokumentasie vir besonderhede
+                default-role: Die verstekrol van die bondel-gegenereerde koppelvlak Verwys asseblief na die gebruiksdokumentasie vir besonderhede.
+                gen-to: Spesifiseer die uitsetligging van die gegenereerde .go-lêers
+                list-option: Die lys kan ook gefiltreer word, vind asseblief die gebruiksdokumentasie vir besonderhede.
+                model: Spesifiseer die modelnaam, ondersteun deur die 'model'-voorvoegsel weg te laat
+            long: Genereer koppelvlakke in bondels en voeg 'n koppelvlak vir 'n sekere model in die .proto-lêer by
+            short: Batch generasie koppelvlak
+        all:
+            long: Genereer alle kode wat deur hierdie instrument ondersteun word
+            short: Genereer alle kode
+        cache:
+            long: Genereer kaslêers vir besigheidsoproepkasverwante SDK's
+            short: Genereer kaslêer
+        cmd:
+            long: Genereer inskrywingslêers vir besigheidsdienste
+            short: Genereer inskrywingslêer
+        conf:
+            long: Genereer konfigurasielêers vir konfigurasielees van besigheidsdienste
+            short: Genereer konfigurasielêer
+        dockerignore:
+            long: Genereer .dockerignore-lêer vir Docker-beeldbou om lêerbestuur te ignoreer
+            short: Genereer .dockerignore-lêer
+        editorconfig:
+            long: Genereer .editorconfig-lêer vir redakteurkonfigurasie
+            short: Genereer .editorconfig-lêer
+        flags:
+            add-proto-files: As jy ander .proto-lêers/vouerpaaie moet invoer wat nie in dieselfde vouer as die gespesifiseerde .proto-lêer is nie, sal hierdie bewerking die pad wat in die konfigurasielêer gekonfigureer is, byvoeg (nie oorskryf nie).
+            go-module-prefix: Vir die pad van go_package wat in die .proto-lêer gekonfigureer is en die werklike een, kan jy hierdie opsie instel
+            input: Spesifiseer die .proto-bronlêer wat gegenereer moet word
+            output-path: Hierdie opsie kan gekonfigureer word wanneer die pad van go_package wat in die .proto-lêer gekonfigureer is, nie ooreenstem met die padbed wat eintlik gegenereer moet word nie.
+            overwrite: Vir inhoud wat nie geregenereer sal word nie, dwing die oorskrywing van bestaande inhoud af
+            proto-files: Om ander .proto-lêers/vouerpaaie in te voer wat nie in dieselfde vouer as die gespesifiseerde .proto-lêer is nie, is hierdie bewerking 'n opsie om die konfigurasieveld in die konfigurasielêer te ignoreer.
+            protoc: '`protoc` aanpasbare lêerpad'
+            protoc-gen-go: '`protoc-gen-go`-inproppad'
+            tables-enable_field_created_at: Of die verstekkonfigurasiegenerering van die databasis created_at-veld geaktiveer moet word
+            tables-enable_field_deleted_at: Of die verstekinstelling van die deleted_at-veld in die databasis geaktiveer moet word
+            tables-enable_field_id: Aktiveer verstekkonfigurasiegenerering vir databasisverwante velde
+            tables-enable_field_updated_at: Of die verstekwaarde van die updated_at-veld in die databasis geaktiveer moet word
+            tables-enable_gorm_tag_column: Of databasisverwante gorm-generering moontlik gemaak moet word
+        gitignote:
+            long: Genereer .gitignore-lêers vir geïgnoreer lêerbestuur in weergawebeheer
+            short: Genereer .gitignore-lêer
+        golang-lint:
+            long: Genereer .golangci.yml lêer vir kode kwaliteit inspeksie
+            short: Genereer .golangci.yml lêer
+        goreleaser:
+            long: Genereer .goreleaser.yml lêer vir konfigurasie van vrystelling gereedskap
+            short: Genereer .goreleaser.yml-lêer
+        impl:
+            long: Genereer implementeringslêers vir die implementering van besigheidsdienste
+            short: Genereer implementeringslêers
+        long: Kodegenerator, ondersteun verskeie sjablone
+        makefile:
+            long: Genereer Makefile-lêers vir die bou van gereedskap en ander verwante opdragte
+            short: Genereer Makefile
+        mod:
+            long: Genereer go.mod-lêer vir afhanklikheidsbestuur
+            short: Genereer go.mod lêer
+        pb:
+            long: Genereer .pb.go-lêers vir die generering van .proto-lêers,
+            short: Genereer .pb.go-lêer
+        short: Kode kragopwekker
+        state:
+            long: Genereer alle verwante funksies van die staat vir staatkundige hulpbron- of statiese hulpbronbestuur van besigheidsdienste
+            short: Alle relevante funksies vir die generering van staat
+        table:
+            long: Alle verwante funksies van die generering van tabelle vir statiese hulpbron- of statiese hulpbronbestuur van besigheidsdienste
+            short: Alle verwante funksies vir die generering van tabelle
     help:
         additional_commands: Bykomende opdragte
         aliases: bevel alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Vertaalkanaal: Ondersteuningstipe {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Veeltalige lêers van 'n sekere bron word omgeskakel na lêers in dieselfde formaat in ander tale.
             short: vertaal
-    long: Bevat 'proto'-gebaseerde backend-raamwerk, algemeen gebruikte sjablone en veeltalige vertalings
-    short: Gereedskapstel
+    long: '''n Gereedskapstel vir lui mense, insluitend ''proto''-gebaseerde backend-raamwerk, algemeen gebruikte sjablone en multi-taal vertaling'
+    short: '''n Gereedskapstel vir lui mense'

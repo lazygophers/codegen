@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Output log dettaljat
+    gen:
+        add-rpc:
+            flags:
+                action: Imġieba li jeħtieġ li jiġu miżjuda f'lottijiet, jekk jogħġbok sib id-dokumentazzjoni tal-użu għad-dettalji
+                default-role: Ir-rwol default tal-interface ġġenerata mill-lott Jekk jogħġbok irreferi għad-dokumentazzjoni tal-użu għad-dettalji.
+                gen-to: Speċifika l-post tal-ħruġ tal-fajls .go ġġenerati
+                list-option: Il-lista tista 'wkoll tiġi ffiltrata, jekk jogħġbok sib id-dokumentazzjoni tal-użu għad-dettalji.
+                model: Speċifika l-isem tal-mudell, appoġġ li tħalli barra l-prefiss "mudell".
+            long: Iġġenera interfaces f'lottijiet u żid interface għal ċertu mudell fil-fajl .proto
+            short: Interface tal-ġenerazzjoni tal-lott
+        all:
+            long: Iġġenera l-kodiċi kollu appoġġjat minn din l-għodda
+            short: Iġġenera l-kodiċi kollu
+        cache:
+            long: Iġġenera fajls cache għal SDKs relatati mal-caching tas-sejħiet kummerċjali
+            short: Iġġenera fajl cache
+        cmd:
+            long: Iġġenera fajls tad-dħul għas-servizzi tan-negozju
+            short: Iġġenera fajl tad-dħul
+        conf:
+            long: Iġġenera fajls tal-konfigurazzjoni għall-qari tal-konfigurazzjoni tas-servizzi tan-negozju
+            short: Iġġenera fajl tal-konfigurazzjoni
+        dockerignore:
+            long: Iġġenera fajl .dockerignore għall-bini tal-immaġni Docker biex tinjora l-ġestjoni tal-fajls
+            short: Iġġenera fajl .dockerignore
+        editorconfig:
+            long: Iġġenera fajl .editorconfig għall-konfigurazzjoni tal-editur
+            short: Iġġenera fajl .editorconfig
+        flags:
+            add-proto-files: Jekk għandek bżonn timporta fajls .proto/mogħdijiet ta' folders oħra li mhumiex fl-istess folder bħall-fajl .proto speċifikat, din l-operazzjoni se tehmeż (mhux tissostitwixxi) il-mogħdija kkonfigurata fil-fajl tal-konfigurazzjoni.
+            go-module-prefix: Għall-mogħdija ta 'go_package kkonfigurat fil-fajl .proto u dak attwali, tista' tikkonfigura din l-għażla
+            input: Speċifika l-fajl tas-sors .proto li għandu jiġi ġġenerat
+            output-path: Din l-għażla tista 'tiġi kkonfigurata meta l-mogħdija ta' go_package konfigurata fil-fajl .proto tkun inkonsistenti mat-triq li fil-fatt jeħtieġ li tiġi ġġenerata.
+            overwrite: Għal kontenut li mhux se jiġi riġenerat, iġiegħel il-kitba fuq il-kontenut eżistenti
+            proto-files: Biex timporta fajls .proto/mogħdijiet ta' folders oħra li mhumiex fl-istess folder bħall-fajl .proto speċifikat, din l-operazzjoni hija għażla biex tegħleb il-qasam tal-konfigurazzjoni fil-fajl tal-konfigurazzjoni.
+            protoc: '`protoc` mogħdija tal-fajl customizable'
+            protoc-gen-go: '`protoc-gen-go` mogħdija tal-plugin'
+            tables-enable_field_created_at: Jekk tippermettix il-ġenerazzjoni tal-konfigurazzjoni default tad-database created_at field
+            tables-enable_field_deleted_at: Jekk tiġix attivata l-issettjar default tal-qasam deleted_at fid-database
+            tables-enable_field_id: Ippermetti l-ġenerazzjoni tal-konfigurazzjoni default għal oqsma relatati mad-database
+            tables-enable_field_updated_at: Jekk għandhiex tippermetti l-valur default tal-qasam updated_at fid-database
+            tables-enable_gorm_tag_column: Jekk tippermettix il-ġenerazzjoni tal-gorm relatata mad-database
+        gitignote:
+            long: Iġġenera fajls .gitignore għall-ġestjoni tal-fajls injorati fil-kontroll tal-verżjoni
+            short: Iġġenera fajl .gitignore
+        golang-lint:
+            long: Iġġenera fajl .golangci.yml għall-ispezzjoni tal-kwalità tal-kodiċi
+            short: Iġġenera fajl .golangci.yml
+        goreleaser:
+            long: Iġġenera fajl .gorelaser.yml għall-konfigurazzjoni ta 'għodod ta' rilaxx
+            short: Iġġenera fajl .gorelaser.yml
+        impl:
+            long: Iġġenera fajls ta 'implimentazzjoni għall-implimentazzjoni ta' servizzi tan-negozju
+            short: Iġġenera fajls ta' implimentazzjoni
+        long: Ġeneratur tal-kodiċi, jappoġġja mudelli multipli
+        makefile:
+            long: Iġġenera fajls Makefile għall-għodod tal-bini u kmandi oħra relatati
+            short: Iġġenera Makefile
+        mod:
+            long: Iġġenera fajl go.mod għall-ġestjoni tad-dipendenza
+            short: Iġġenera fajl go.mod
+        pb:
+            long: Iġġenera fajls .pb.go biex tiġġenera fajls .proto,
+            short: Iġġenera fajl .pb.go
+        short: Ġeneratur tal-kodiċi
+        state:
+            long: Iġġenera l-funzjonijiet kollha relatati tal-istat għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
+            short: Il-funzjonijiet kollha rilevanti għall-ġenerazzjoni tal-istat
+        table:
+            long: Il-funzjonijiet kollha relatati ta 'ġenerazzjoni ta' tabelli għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
+            short: Il-funzjonijiet kollha relatati għall-ġenerazzjoni ta' tabelli
     help:
         additional_commands: Kmandi addizzjonali
         aliases: alias tal-kmand
@@ -27,5 +98,5 @@ cli:
                     usage: 'Kanal tat-traduzzjoni: Tip ta'' appoġġ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fajls multilingwi minn ċertu sors huma kkonvertiti f'fajls fl-istess format f'lingwi oħra.
             short: tittraduċi
-    long: Fih qafas backend ibbażat fuq 'proto', mudelli użati komunement, u traduzzjonijiet b'diversi lingwi
-    short: Toolkit
+    long: Sett ta' għodda għall-għażżien, inkluż qafas ta' backend ibbażat fuq 'proto', mudelli użati b'mod komuni, u traduzzjoni b'ħafna lingwi
+    short: Sett għodda għall-għażżien

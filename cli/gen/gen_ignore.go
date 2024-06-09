@@ -2,14 +2,14 @@ package gen
 
 import (
 	"github.com/lazygophers/codegen/codegen"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/spf13/cobra"
 )
 
 var gitignoreCmd = &cobra.Command{
-	Use:   "gitignote",
-	Short: "Generate .gitignote file",
-	RunE:  runGitignote,
+	Use:  "gitignote",
+	RunE: runGitignote,
 }
 
 func runGitignote(cmd *cobra.Command, args []string) (err error) {
@@ -22,10 +22,9 @@ func runGitignote(cmd *cobra.Command, args []string) (err error) {
 	return nil
 }
 
-var genDockerignoteCmd = &cobra.Command{
-	Use:   "dockerignore",
-	Short: "Generate .dockerignore file",
-	RunE:  runDockerignote,
+var dockerignoteCmd = &cobra.Command{
+	Use:  "dockerignore",
+	RunE: runDockerignote,
 }
 
 func runDockerignote(cmd *cobra.Command, args []string) (err error) {
@@ -38,6 +37,15 @@ func runDockerignote(cmd *cobra.Command, args []string) (err error) {
 	return nil
 }
 
-func init() {
-	genCmd.AddCommand(gitignoreCmd, genDockerignoteCmd)
+func initIgnote() {
+	gitignoreCmd.Short = state.Localize(state.I18nTagCliGenGitignoteShort)
+	gitignoreCmd.Long = state.Localize(state.I18nTagCliGenGitignoteLong)
+
+	dockerignoteCmd.Short = state.Localize(state.I18nTagCliGenDockerignoreShort)
+	dockerignoteCmd.Long = state.Localize(state.I18nTagCliGenDockerignoreLong)
+
+	genCmd.AddCommand(
+		gitignoreCmd,
+		dockerignoteCmd,
+	)
 }

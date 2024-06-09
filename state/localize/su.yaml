@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Kaluaran log lengkep
+    gen:
+        add-rpc:
+            flags:
+                action: Paripolah anu kudu ditambahkeun dina bets, mangga manggihan dokuméntasi pamakéan pikeun detil
+                default-role: Peran standar antarmuka anu dibangkitkeun bets Mangga tingal dokuméntasi pamakean pikeun detil.
+                gen-to: Sebutkeun lokasi kaluaran tina file .go nu dihasilkeun
+                list-option: Daptar ogé bisa disaring, mangga manggihan dokuméntasi pamakéan pikeun detil.
+                model: Sebutkeun nami modél, dukungan ngaleungitkeun awalan `model`
+            long: Ngahasilkeun interfaces dina bets tur nambahkeun hiji panganteur pikeun model tangtu dina file .proto
+            short: Antarbeungeut generasi angkatan
+        all:
+            long: Ngahasilkeun sadaya kode anu dirojong ku alat ieu
+            short: Ngahasilkeun sadaya kode
+        cache:
+            long: Ngahasilkeun file cache pikeun SDK anu aya hubunganana sareng cache telepon bisnis
+            short: Ngahasilkeun file cache
+        cmd:
+            long: Ngahasilkeun file éntri pikeun jasa bisnis
+            short: Ngahasilkeun file éntri
+        conf:
+            long: Ngahasilkeun file konfigurasi pikeun maca konfigurasi jasa bisnis
+            short: Ngahasilkeun file konfigurasi
+        dockerignore:
+            long: Ngahasilkeun file .dockerignore pikeun wangunan gambar Docker malire manajemén file
+            short: Ngahasilkeun file .dockerignore
+        editorconfig:
+            long: Ngahasilkeun file .editorconfig pikeun konfigurasi redaktur
+            short: Ngahasilkeun file .editorconfig
+        flags:
+            add-proto-files: Lamun perlu ngimpor file .proto séjén / jalur folder nu teu di folder sarua salaku file .proto dieusian, operasi ieu bakal append (teu nimpa) jalur ngonpigurasi dina file konfigurasi.
+            go-module-prefix: Pikeun jalur go_package anu dikonpigurasi dina file .proto sareng anu saleresna, anjeun tiasa ngonpigurasikeun pilihan ieu.
+            input: Sebutkeun file sumber .proto bakal dihasilkeun
+            output-path: pilihan ieu bisa ngonpigurasi nalika jalur go_package ngonpigurasi dina file .proto nyaeta inconsistent jeung roadbed nu sabenerna kudu dihasilkeun.
+            overwrite: Pikeun eusi nu moal regenerated, maksakeun overwriting eusi aya
+            proto-files: Pikeun ngimpor file .proto séjén / jalur folder nu teu di folder sarua salaku file .proto dieusian, operasi ieu mangrupa pilihan pikeun override widang konfigurasi dina file konfigurasi.
+            protoc: '`protoc` jalur file customizable'
+            protoc-gen-go: '`protoc-gen-go` jalur plugin'
+            tables-enable_field_created_at: Naha ngaktipkeun generasi konfigurasi standar tina database created_at widang
+            tables-enable_field_deleted_at: Naha ngaktipkeun setelan standar tina widang deleted_at dina database
+            tables-enable_field_id: Aktipkeun generasi konfigurasi standar pikeun widang nu patali database
+            tables-enable_field_updated_at: Naha ngaktipkeun nilai standar tina widang updated_at dina database
+            tables-enable_gorm_tag_column: Naha ngaktipkeun generasi gorm nu patali database
+        gitignote:
+            long: Ngahasilkeun file .gitignore pikeun manajemén file dipaliré dina kadali versi
+            short: Ngahasilkeun file .giignore
+        golang-lint:
+            long: Ngahasilkeun file .golangci.yml pikeun pamariksaan kualitas kode
+            short: Generate file .golangci.yml
+        goreleaser:
+            long: Ngahasilkeun file .goreleaser.yml pikeun konfigurasi pakakas release
+            short: Ngahasilkeun file .goreleaser.yml
+        impl:
+            long: Ngahasilkeun file palaksanaan pikeun palaksanaan jasa bisnis
+            short: Ngahasilkeun file palaksanaan
+        long: Kode generator, ngarojong sababaraha témplat
+        makefile:
+            long: Ngahasilkeun file Makefile pikeun alat ngawangun sareng paréntah anu aya hubunganana
+            short: Ngahasilkeun Makefile
+        mod:
+            long: Ngahasilkeun file go.mod pikeun manajemén kagumantungan
+            short: Ngahasilkeun file go.mod
+        pb:
+            long: Jieun file .pb.go pikeun ngahasilkeun file .proto,
+            short: Ngahasilkeun file .pb.go
+        short: Generator kode
+        state:
+            long: Ngahasilkeun sagala fungsi patali nagara pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
+            short: Sadaya fungsi anu relevan pikeun ngahasilkeun kaayaan
+        table:
+            long: Kabéh fungsi patali generating tabel pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
+            short: Sadaya fungsi anu aya hubunganana pikeun ngahasilkeun tabel
     help:
         additional_commands: Paréntah tambahan
         aliases: paréntah alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Saluran tarjamahan: Tipe rojongan {{rentang $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Payil multibasa tina sumber nu tangtu dirobah jadi payil dina format nu sarua dina basa séjén.
             short: narjamahkeun
-    long: Ngandung kerangka backend dumasar 'proto', témplat anu biasa dianggo, sareng tarjamahan multi-basa
-    short: Toolkit
+    long: Alat anu disetél pikeun jalma anu teu puguh, kalebet kerangka backend basis proto, témplat anu biasa dianggo, sareng tarjamahan multi-basa.
+    short: Hiji alat set pikeun jalma puguh

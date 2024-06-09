@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Sòti detaye boutèy demi lit
+    gen:
+        add-rpc:
+            flags:
+                action: Konpòtman ki bezwen ajoute nan pakèt, tanpri jwenn dokiman sou itilizasyon an pou plis detay
+                default-role: Wòl default nan koòdone pakèt pwodwi a Tanpri, al gade nan dokiman itilizasyon an pou plis detay.
+                gen-to: Espesifye kote pwodiksyon .go dosye yo te pwodwi
+                list-option: Lis la ka filtre tou, tanpri jwenn dokiman sou itilizasyon an pou plis detay.
+                model: Espesifye non modèl la, sipòte omisyon prefiks "modèl la".
+            long: Jenere interfaces nan pakèt epi ajoute yon koòdone pou yon modèl sèten nan dosye a .proto
+            short: Koòdone jenerasyon pakèt
+        all:
+            long: Jenere tout kòd ki sipòte pa zouti sa a
+            short: Jenere tout kòd
+        cache:
+            long: Jenere dosye kachèt pou kachèt apèl biznis ki gen rapò SDK
+            short: Jenere dosye kachèt
+        cmd:
+            long: Jenere dosye antre pou sèvis biznis
+            short: Jenere dosye antre
+        conf:
+            long: Jenere fichye konfigirasyon pou lekti konfigirasyon sèvis biznis yo
+            short: Jenere fichye konfigirasyon
+        dockerignore:
+            long: Jenere fichye .dockerignore pou bilding imaj Docker pou inyore jesyon dosye
+            short: Jenere fichye .dockerignore
+        editorconfig:
+            long: Jenere .editorconfig fichye pou konfigirasyon editè
+            short: Jenere dosye .editorconfig
+        flags:
+            add-proto-files: Si ou bezwen enpòte lòt .proto fichye/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a pral ajoute (pa ranplase) chemen ki konfigire nan fichye konfigirasyon an.
+            go-module-prefix: Pou chemen an nan go_package configuré nan .proto fichye a ak youn aktyèl la, ou ka configured opsyon sa a
+            input: Espesifye fichye sous .proto yo dwe pwodwi
+            output-path: Opsyon sa a ka konfigirasyon lè chemen go_package configuré nan fichye .proto a pa konsistan avèk roadbed ki aktyèlman bezwen pwodwi.
+            overwrite: Pou kontni ki pa pral rejenere, fòse ranplase kontni ki egziste deja
+            proto-files: Pou enpòte lòt .proto fichye/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a se yon opsyon pou pase sou pye konfigirasyon nan dosye konfigirasyon an.
+            protoc: '`protoc` chemen fichye personnalisable'
+            protoc-gen-go: '`protoc-gen-go` chemen plugin'
+            tables-enable_field_created_at: Kit pou pèmèt jenerasyon default konfigirasyon baz done create_at jaden an
+            tables-enable_field_deleted_at: Kit pou pèmèt anviwònman an default nan deleted_at jaden an nan baz done a
+            tables-enable_field_id: Pèmèt jenerasyon konfigirasyon default pou jaden ki gen rapò ak baz done yo
+            tables-enable_field_updated_at: Kit pou pèmèt valè defo a nan jaden updated_at nan baz done a
+            tables-enable_gorm_tag_column: Kit pou pèmèt jenerasyon gorm ki gen rapò ak baz done a
+        gitignote:
+            long: Jenere fichye .gitignore pou jesyon dosye inyore nan kontwòl vèsyon
+            short: Jenere dosye .gitignore
+        golang-lint:
+            long: Jenere fichye .golangci.yml pou enspeksyon kalite kòd
+            short: Jenere fichye .golangci.yml
+        goreleaser:
+            long: Jenere fichye .goreleaser.yml pou konfigirasyon zouti lage yo
+            short: Jenere fichye .goreleaser.yml
+        impl:
+            long: Jenere dosye aplikasyon pou aplikasyon sèvis biznis yo
+            short: Jenere dosye aplikasyon yo
+        long: Kòd dèlko, sipòte plizyè modèl
+        makefile:
+            long: Jenere dosye Makefile pou bati zouti ak lòt kòmandman ki gen rapò
+            short: Jenere Makefile
+        mod:
+            long: Jenere dosye go.mod pou jesyon depandans
+            short: Jenere dosye go.mod
+        pb:
+            long: Jenere fichye .pb.go pou jenere fichye .proto,
+            short: Jenere fichye .pb.go
+        short: Kòd dèlko
+        state:
+            long: Jenere tout fonksyon ki gen rapò nan eta pou resous eta oswa jesyon resous estatik nan sèvis biznis
+            short: Tout fonksyon ki enpòtan pou jenere eta
+        table:
+            long: Tout fonksyon ki gen rapò ak jenere tab pou resous etatik oswa jesyon resous estatik nan sèvis biznis
+            short: Tout fonksyon ki gen rapò pou jenere tab
     help:
         additional_commands: Lòt kòmandman
         aliases: kòmand alyas
@@ -27,5 +98,5 @@ cli:
                     usage: 'Chanèl tradiksyon: Kalite sipò {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fichye plizyè lang ki soti nan yon sèten sous yo konvèti nan dosye nan menm fòma nan lòt lang.
             short: tradwi
-    long: Gen fondasyon backend ki baze sou 'proto', modèl yo itilize souvan, ak tradiksyon plizyè lang
-    short: Zouti
+    long: Yon seri zouti pou moun ki parese, ki gen ladan kad backend ki baze sou 'proto', modèl yo itilize souvan, ak tradiksyon plizyè lang.
+    short: Yon seri zouti pou moun ki parese

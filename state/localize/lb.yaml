@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Output detailléierte Logbuch
+    gen:
+        add-rpc:
+            flags:
+                action: Behuelen déi a Chargen bäigefüügt musse ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer
+                default-role: D'Standardroll vum Batch-generéierten Interface kuckt w.e.g. op d'Benotzungsdokumentatioun fir Detailer.
+                gen-to: Gitt d'Ausgangsplaz vun den generéierten .go Dateien un
+                list-option: D'Lëscht kann och gefiltert ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer.
+                model: Gitt de Modellnumm un, ënnerstëtzen de Präfix "Modell" auszeginn
+            long: Generéiere Schnëttplazen a Chargen a fügen eng Interface fir e bestëmmte Modell an der .proto Datei
+            short: Batch Generatioun Interface
+        all:
+            long: Generéiere all Code ënnerstëtzt vun dësem Tool
+            short: Generéiere all Code
+        cache:
+            long: Generéiere Cache Dateien fir Business Call Caching verbonne SDKs
+            short: Cache Datei generéieren
+        cmd:
+            long: Generéiere Entréesdateien fir Geschäftsservicer
+            short: Entry Datei generéieren
+        conf:
+            long: Generéiere Konfiguratiounsdateien fir Konfiguratiounsliesen vu Geschäftsservicer
+            short: Konfiguratiounsdatei generéieren
+        dockerignore:
+            long: Generéiere .dockerignore-Datei fir Docker-Bildgebai fir Dateieverwaltung ze ignoréieren
+            short: Generéiere .dockerignore Fichier
+        editorconfig:
+            long: Generéiere .editorconfig Fichier fir Redakter Configuratioun
+            short: Generéiere .editorconfig Datei
+        flags:
+            add-proto-files: Wann Dir aner .proto-Dateien / Dossierweeër importéiere musst, déi net am selwechten Dossier wéi déi spezifizéiert .proto-Datei sinn, wäert dës Operatioun de Wee, deen an der Konfiguratiounsdatei konfiguréiert ass, addéieren (net iwwerschreiwe).
+            go-module-prefix: Fir de Wee vun go_package konfiguréiert an der .proto Datei an déi aktuell, Dir kënnt dës Optioun konfiguréieren
+            input: Gitt d'.proto Quelldatei un, déi generéiert gëtt
+            output-path: Dës Optioun kann konfiguréiert ginn, wann de Wee vum go_package, deen an der .proto-Datei konfiguréiert ass, net konsequent mat der Stroossebedéngung ass, déi tatsächlech generéiert muss ginn.
+            overwrite: Fir Inhalt deen net regeneréiert gëtt, zwéngt d'Iwwerschreiwe vum existente Inhalt
+            proto-files: Fir aner .proto Dateien/Dossierweeër z'importéieren déi net am selwechten Dossier wéi déi spezifizéiert .proto Datei sinn, ass dës Operatioun eng Optioun fir d'Konfiguratiounsfeld an der Konfiguratiounsdatei ze iwwerschreiden.
+            protoc: '''Protoc'' personaliséierbar Dateiwee'
+            protoc-gen-go: '`protoc-gen-go` Plugin Wee'
+            tables-enable_field_created_at: Ob d'Standardkonfiguratioun Generatioun vun der Datebank create_at Feld aktivéiert
+            tables-enable_field_deleted_at: Ob d'Standardastellung vum deleted_at Feld an der Datebank aktivéiert gëtt
+            tables-enable_field_id: Aktivéiert Standardkonfiguratiounsgeneratioun fir Datebankbezunnen Felder
+            tables-enable_field_updated_at: Ob de Standardwäert vum Updated_at Feld an der Datebank aktivéiert gëtt
+            tables-enable_gorm_tag_column: Ob Datebank-Zesummenhang Gorm Generatioun aktivéiert
+        gitignote:
+            long: Generéiere .gitignore Fichieren fir ignoréiert Fichier Gestioun an Versioun Kontroll
+            short: Generéiere .gitignore Fichier
+        golang-lint:
+            long: Generéiere .golangci.yml Fichier fir Code Qualitéit Inspektioun
+            short: Generéiere .golangci.yml Fichier
+        goreleaser:
+            long: Generéiere .goreleaser.yml Fichier fir Configuratioun vun Fräisetzung Handwierksgeschir
+            short: Generéiere .goreleaser.yml Fichier
+        impl:
+            long: Generéiere Implementatiounsdateien fir d'Ëmsetzung vu Geschäftsservicer
+            short: Generéiere Implementatiounsdateien
+        long: Code Generator, ënnerstëtzt verschidde Templates
+        makefile:
+            long: Generéiere Makefile Dateien fir Tools ze bauen an aner verbonne Kommandoen
+            short: Generéiere Makefile
+        mod:
+            long: Generéiere go.mod Fichier fir Ofhängegkeet Gestioun
+            short: Generéiere go.mod Datei
+        pb:
+            long: Generéiere .pb.go Dateien fir .proto Dateien ze generéieren,
+            short: Generéiere .pb.go Fichier
+        short: Code Generator
+        state:
+            long: Generéiere all Zesummenhang Funktiounen vum Staat fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
+            short: All relevant Funktiounen fir Generéiere Staat
+        table:
+            long: All Zesummenhang Funktiounen vun Generéiere Dëscher fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
+            short: All Zesummenhang Funktiounen fir Generéiere Dëscher
     help:
         additional_commands: Zousätzlech Kommandoen
         aliases: Kommando alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Iwwersetzungskanal: Ënnerstëtzungstyp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Méisproocheg Dateien aus enger bestëmmter Quell ginn an Dateien am selwechte Format an anere Sproochen ëmgewandelt.
             short: iwwersetzen
-    long: Enthält 'Proto'-baséiert Backend Kader, allgemeng benotzt Templates, a Multi-Sprooch Iwwersetzungen
-    short: Toolkit
+    long: En Toolset fir faul Leit, dorënner 'Proto'-baséiert Backend Framework, allgemeng benotzt Templates, a Multi-Sprooch Iwwersetzung
+    short: En Toolset fir faul Leit

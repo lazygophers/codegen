@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Journal détaillé de sortie
+    gen:
+        add-rpc:
+            flags:
+                action: Comportements qui doivent être ajoutés par lots, veuillez trouver la documentation d'utilisation pour plus de détails
+                default-role: Le rôle par défaut de l'interface générée par lots. Veuillez vous référer à la documentation d'utilisation pour plus de détails.
+                gen-to: Spécifiez l'emplacement de sortie des fichiers .go générés
+                list-option: La liste peut également être filtrée, veuillez trouver la documentation d'utilisation pour plus de détails.
+                model: Spécifiez le nom du modèle, prise en charge de l'omission du préfixe « modèle »
+            long: Générez des interfaces par lots et ajoutez une interface pour un certain modèle dans le fichier .proto
+            short: Interface de génération par lots
+        all:
+            long: Générez tout le code pris en charge par cet outil
+            short: Générer tout le code
+        cache:
+            long: Générer des fichiers de cache pour les SDK liés à la mise en cache des appels professionnels
+            short: Générer un fichier cache
+        cmd:
+            long: Générer des fichiers de saisie pour les services métiers
+            short: Générer un fichier d'entrée
+        conf:
+            long: Générer des fichiers de configuration pour la lecture de la configuration des services métiers
+            short: Générer le fichier de configuration
+        dockerignore:
+            long: Générez un fichier .dockerignore pour la création d'images Docker afin d'ignorer la gestion des fichiers
+            short: Générer le fichier .dockerignore
+        editorconfig:
+            long: Générer un fichier .editorconfig pour la configuration de l'éditeur
+            short: Générer le fichier .editorconfig
+        flags:
+            add-proto-files: Si vous devez importer d'autres chemins de fichiers/dossiers .proto qui ne se trouvent pas dans le même dossier que le fichier .proto spécifié, cette opération ajoutera (et non écrasera) le chemin configuré dans le fichier de configuration.
+            go-module-prefix: Pour le chemin de go_package configuré dans le fichier .proto et celui actuel, vous pouvez configurer cette option
+            input: Spécifiez le fichier source .proto à générer
+            output-path: Cette option peut être configurée lorsque le chemin de go_package configuré dans le fichier .proto est incohérent avec la plate-forme qui doit réellement être générée.
+            overwrite: Pour le contenu qui ne sera pas régénéré, forcez l'écrasement du contenu existant
+            proto-files: Pour importer d'autres chemins de fichiers/dossiers .proto qui ne se trouvent pas dans le même dossier que le fichier .proto spécifié, cette opération est une option permettant de remplacer le champ de configuration dans le fichier de configuration.
+            protoc: Chemin de fichier personnalisable `protoc`
+            protoc-gen-go: Chemin du plugin `protoc-gen-go`
+            tables-enable_field_created_at: S'il faut activer la génération de configuration par défaut du champ create_at de la base de données
+            tables-enable_field_deleted_at: S'il faut activer le paramètre par défaut du champ delete_at dans la base de données
+            tables-enable_field_id: Activer la génération de configuration par défaut pour les champs liés à la base de données
+            tables-enable_field_updated_at: S'il faut activer la valeur par défaut du champ update_at dans la base de données
+            tables-enable_gorm_tag_column: S'il faut activer la génération de gorm liée à la base de données
+        gitignote:
+            long: Générez des fichiers .gitignore pour la gestion des fichiers ignorés dans le contrôle de version
+            short: Générer un fichier .gitignore
+        golang-lint:
+            long: Générer un fichier .golangci.yml pour l'inspection de la qualité du code
+            short: Générer le fichier .golangci.yml
+        goreleaser:
+            long: Générer le fichier .goreleaser.yml pour la configuration des outils de publication
+            short: Générer le fichier .goreleaser.yml
+        impl:
+            long: Générer des fichiers d'implémentation pour la mise en œuvre des services métiers
+            short: Générer des fichiers d'implémentation
+        long: Générateur de code, prend en charge plusieurs modèles
+        makefile:
+            long: Générer des fichiers Makefile pour créer des outils et d'autres commandes associées
+            short: Générer un fichier Make
+        mod:
+            long: Générer un fichier go.mod pour la gestion des dépendances
+            short: Générer le fichier go.mod
+        pb:
+            long: Générez des fichiers .pb.go pour générer des fichiers .proto,
+            short: Générer un fichier .pb.go
+        short: Générateur de code
+        state:
+            long: Générer toutes les fonctions d'état associées pour la gestion des ressources avec état ou des ressources statiques des services métiers
+            short: Toutes les fonctions pertinentes pour générer l'état
+        table:
+            long: Toutes les fonctions associées à la génération de tables pour la gestion des ressources avec état ou des ressources statiques des services métiers
+            short: Toutes les fonctions associées à la génération de tables
     help:
         additional_commands: Commandes supplémentaires
         aliases: alias de commande
@@ -27,5 +98,5 @@ cli:
                     usage: 'Canal de traduction : Type de support {{range $key,$value := .Type}}{{$key}} :{{$value}}{{end}}'
             long: Les fichiers multilingues provenant d'une certaine source sont convertis en fichiers au même format dans d'autres langues.
             short: traduire
-    long: Contient un cadre backend basé sur un « proto », des modèles couramment utilisés et des traductions multilingues
-    short: Boîte à outils
+    long: Un ensemble d'outils pour les paresseux, comprenant un cadre backend basé sur des « proto », des modèles couramment utilisés et une traduction multilingue
+    short: Un ensemble d'outils pour les paresseux

@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Output detalyado nga log
+    gen:
+        add-rpc:
+            flags:
+                action: Mga pamatasan nga kinahanglan idugang sa mga batch, palihug pangitaa ang dokumentasyon sa paggamit alang sa mga detalye
+                default-role: Ang default nga papel sa batch-generated interface Palihog tan-awa ang dokumentasyon sa paggamit alang sa mga detalye.
+                gen-to: Ipiho ang output nga lokasyon sa namugna nga .go files
+                list-option: Mahimo usab nga masala ang lista, palihug pangitaa ang dokumentasyon sa paggamit alang sa mga detalye.
+                model: Ipiho ang ngalan sa modelo, suportahan ang pagtangtang sa prefix nga `modelo`
+            long: Paghimo mga interface sa mga batch ug pagdugang usa ka interface alang sa usa ka piho nga modelo sa .proto file
+            short: Batch nga henerasyon nga interface
+        all:
+            long: Paghimo sa tanan nga code nga gisuportahan niini nga himan
+            short: Paghimo sa tanan nga code
+        cache:
+            long: Paghimo mga file sa cache alang sa mga SDK nga may kalabotan sa pag-cache sa tawag sa negosyo
+            short: Paghimo cache file
+        cmd:
+            long: Paghimo mga entry file alang sa mga serbisyo sa negosyo
+            short: Paghimo entry file
+        conf:
+            long: Paghimo mga file sa pag-configure alang sa pagbasa sa pagsumpo sa mga serbisyo sa negosyo
+            short: Paghimo configuration file
+        dockerignore:
+            long: Paghimo og .dockerignore nga file para sa Docker image building aron dili ibaliwala ang pagdumala sa file
+            short: Paghimo og .dockerignore nga payl
+        editorconfig:
+            long: Paghimo og .editorconfig file para sa editor configuration
+            short: Paghimo og .editorconfig file
+        flags:
+            add-proto-files: Kung kinahanglan nimo nga i-import ang ubang mga .proto file/folder nga mga agianan nga wala sa parehas nga folder sa gitakda nga .proto file, kini nga operasyon magdugang (dili mag-overwrite) sa agianan nga gi-configure sa file sa pag-configure.
+            go-module-prefix: Alang sa agianan sa go_package nga gi-configure sa .proto file ug ang aktuwal, mahimo nimong i-configure kini nga kapilian
+            input: Ipiho ang .proto source file nga himoon
+            output-path: Kini nga opsyon mahimong ma-configure kung ang agianan sa go_package nga gi-configure sa .proto file dili uyon sa roadbed nga kinahanglan gayud nga mamugna.
+            overwrite: Alang sa sulod nga dili mabag-o, pugsa ang pag-overwrite sa kasamtangan nga sulod
+            proto-files: Aron ma-import ang ubang mga .proto file/folder path nga wala sa parehas nga folder sa gipiho nga .proto file, kini nga operasyon usa ka kapilian sa pag-override sa configuration field sa configuration file.
+            protoc: '`protoc` napasibo nga agianan sa file'
+            protoc-gen-go: '`protoc-gen-go` nga agianan sa plugin'
+            tables-enable_field_created_at: Kung mahimo ba ang default nga paghimo sa pag-configure sa database nga gibuhat_sa natad
+            tables-enable_field_deleted_at: Kung mahimo ba ang default setting sa deleted_at field sa database
+            tables-enable_field_id: I-enable ang default configuration generation para sa database-related nga mga field
+            tables-enable_field_updated_at: Kung mahimo ba ang default nga kantidad sa updated_at field sa database
+            tables-enable_gorm_tag_column: Kung mahimo ba ang paghimo sa gorm nga may kalabutan sa database
+        gitignote:
+            long: Paghimo og mga .gitignore nga mga file alang sa wala panumbalinga nga pagdumala sa file sa pagkontrol sa bersyon
+            short: Paghimo og .gitignore nga payl
+        golang-lint:
+            long: Paghimo og .golangci.yml file para sa code quality inspection
+            short: Paghimo og .golangci.yml file
+        goreleaser:
+            long: Paghimo og .goreleaser.yml file para sa pag-configure sa mga himan sa pagpagawas
+            short: Paghimo og .goreleaser.yml file
+        impl:
+            long: Paghimo mga file sa pagpatuman alang sa pagpatuman sa mga serbisyo sa negosyo
+            short: Paghimo mga file sa pagpatuman
+        long: Code generator, nagsuporta sa daghang mga templates
+        makefile:
+            long: Paghimo og mga file sa Makefile alang sa paghimo og mga himan ug uban pang may kalabutan nga mga sugo
+            short: Paghimo Makefile
+        mod:
+            long: Paghimo og go.mod file alang sa pagdumala sa dependency
+            short: Paghimo go.mod file
+        pb:
+            long: Paghimo og .pb.go nga mga file para sa pagmugna og .proto nga mga file,
+            short: Paghimo og .pb.go file
+        short: Generator sa code
+        state:
+            long: Paghimo sa tanan nga may kalabutan nga mga gimbuhaton sa estado alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
+            short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa pagmugna sa estado
+        table:
+            long: Ang tanan nga may kalabutan nga mga gimbuhaton sa paghimo sa mga lamesa alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
+            short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa paghimo og mga lamesa
     help:
         additional_commands: Dugang nga mga sugo
         aliases: command alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Hubad nga channel: Suporta nga matang {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ang multilingual nga mga file gikan sa usa ka piho nga tinubdan gi-convert ngadto sa mga file sa samang format sa ubang mga pinulongan.
             short: paghubad
-    long: Naglangkob sa 'proto'-based backend framework, sagad gigamit nga templates, ug multi-language translations
-    short: Toolkit
+    long: Usa ka himan nga gitakda para sa mga tapolan, lakip ang 'proto' nga nakabase sa backend framework, kasagarang gigamit nga templates, ug multi-language nga paghubad
+    short: Usa ka set nga himan alang sa mga tapolan nga tawo

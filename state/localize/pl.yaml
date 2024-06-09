@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Wyprowadź szczegółowy dziennik
+    gen:
+        add-rpc:
+            flags:
+                action: Zachowania, które należy dodawać partiami, szczegółowe informacje można znaleźć w dokumentacji użytkowania
+                default-role: Domyślna rola interfejsu generowanego wsadowo. Szczegółowe informacje można znaleźć w dokumentacji użytkowania.
+                gen-to: Określ lokalizację wyjściową wygenerowanych plików .go
+                list-option: Listę można również filtrować. Szczegółowe informacje można znaleźć w dokumentacji użytkowania.
+                model: Podaj nazwę modelu, możliwe pominięcie przedrostka `model`
+            long: Generuj interfejsy partiami i dodawaj interfejs dla określonego modelu w pliku .proto
+            short: Interfejs generowania wsadowego
+        all:
+            long: Wygeneruj cały kod obsługiwany przez to narzędzie
+            short: Wygeneruj cały kod
+        cache:
+            long: Generuj pliki pamięci podręcznej dla zestawów SDK związanych z buforowaniem połączeń biznesowych
+            short: Wygeneruj plik pamięci podręcznej
+        cmd:
+            long: Generuj pliki wpisów dla usług biznesowych
+            short: Wygeneruj plik wejściowy
+        conf:
+            long: Generuj pliki konfiguracyjne do odczytu konfiguracji usług biznesowych
+            short: Wygeneruj plik konfiguracyjny
+        dockerignore:
+            long: Wygeneruj plik .dockerignore do tworzenia obrazu Dockera, aby zignorować zarządzanie plikami
+            short: Wygeneruj plik .dockerignore
+        editorconfig:
+            long: Wygeneruj plik .editorconfig do konfiguracji edytora
+            short: Wygeneruj plik .editorconfig
+        flags:
+            add-proto-files: Jeśli chcesz zaimportować inne pliki/ścieżki folderów .proto, które nie znajdują się w tym samym folderze, co określony plik .proto, ta operacja doda (nie zastąpi) ścieżkę skonfigurowaną w pliku konfiguracyjnym.
+            go-module-prefix: Dla ścieżki go_package skonfigurowanej w pliku .proto i ścieżki rzeczywistej możesz skonfigurować tę opcję
+            input: Określ plik źródłowy .proto, który ma zostać wygenerowany
+            output-path: Opcję tę można skonfigurować, gdy ścieżka go_package skonfigurowana w pliku .proto jest niezgodna z trasą, którą faktycznie należy wygenerować.
+            overwrite: W przypadku treści, które nie zostaną zregenerowane, wymuś zastąpienie istniejącej treści
+            proto-files: Aby zaimportować inne pliki/ścieżki folderów .proto, które nie znajdują się w tym samym folderze, co określony plik .proto, ta operacja umożliwia zastąpienie pola konfiguracyjnego w pliku konfiguracyjnym.
+            protoc: Konfigurowalna ścieżka pliku `protoc`
+            protoc-gen-go: Ścieżka wtyczki `protoc-gen-go`
+            tables-enable_field_created_at: Czy włączyć generowanie domyślnej konfiguracji pola utworzonej_at bazy danych
+            tables-enable_field_deleted_at: Określa, czy włączyć domyślne ustawienie pola usunięte_at w bazie danych
+            tables-enable_field_id: Włącz generowanie domyślnej konfiguracji dla pól związanych z bazą danych
+            tables-enable_field_updated_at: Określa, czy włączyć domyślną wartość pola zaktualizowanego_at w bazie danych
+            tables-enable_gorm_tag_column: Określa, czy włączyć generowanie gormów związanych z bazą danych
+        gitignote:
+            long: Generuj pliki .gitignore do zarządzania plikami ignorowanymi w kontroli wersji
+            short: Wygeneruj plik .gitignore
+        golang-lint:
+            long: Wygeneruj plik .golangci.yml do kontroli jakości kodu
+            short: Wygeneruj plik .golangci.yml
+        goreleaser:
+            long: Wygeneruj plik .goreleaser.yml w celu konfiguracji narzędzi wydających
+            short: Wygeneruj plik .goreleaser.yml
+        impl:
+            long: Generowanie plików wdrożeniowych w celu wdrożenia usług biznesowych
+            short: Wygeneruj pliki implementacyjne
+        long: Generator kodu, obsługuje wiele szablonów
+        makefile:
+            long: Generuj pliki Makefile do tworzenia narzędzi i innych powiązanych poleceń
+            short: Wygeneruj plik Makefile
+        mod:
+            long: Wygeneruj plik go.mod do zarządzania zależnościami
+            short: Wygeneruj plik go.mod
+        pb:
+            long: Generowanie plików .pb.go w celu generowania plików .proto,
+            short: Wygeneruj plik .pb.go
+        short: Generator kodów
+        state:
+            long: Generuj wszystkie powiązane funkcje stanu dla zarządzania zasobami stanowymi lub statycznymi usług biznesowych
+            short: Wszystkie istotne funkcje generowania stanu
+        table:
+            long: Wszystkie powiązane funkcje generowania tabel do zarządzania zasobami stanowymi lub statycznymi usług biznesowych
+            short: Wszystkie powiązane funkcje generowania tabel
     help:
         additional_commands: Dodatkowe polecenia
         aliases: alias polecenia
@@ -27,5 +98,5 @@ cli:
                     usage: 'Kanał tłumaczeniowy: Typ wsparcia {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Pliki wielojęzyczne z określonego źródła są konwertowane na pliki w tym samym formacie w innych językach.
             short: Tłumaczyć
-    long: Zawiera framework backendowy oparty na proto, często używane szablony i tłumaczenia na wiele języków
-    short: zestaw narzędzi
+    long: Zestaw narzędzi dla leniwych, obejmujący framework backendowy oparty na proto, powszechnie używane szablony i tłumaczenie na wiele języków
+    short: Zestaw narzędzi dla leniwych

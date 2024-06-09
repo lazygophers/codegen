@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Soosaar qoraal faahfaahsan
+    gen:
+        add-rpc:
+            flags:
+                action: Dabeecadaha u baahan in lagu daro dufcad, fadlan u hel dukumentiga isticmaalka wixii faahfaahin ah
+                default-role: Doorka caadiga ah ee interface-ka Dufcaddii la soo saaray Fadlan tixraac dukumentiga isticmaalka.
+                gen-to: Sheeg goobta wax soo saarka ee faylasha .go ee la sameeyay
+                list-option: Liiska sidoo kale waa la shaandheyn karaa, fadlan u hel dukumeentiga isticmaalka wixii faahfaahin ah.
+                model: Sheeg magaca moodeelka, taageer ka saarida horgalayaasha 'model'
+            long: Samee isdhexgalyada dufcadaha oo ku dar interface qaab nooc gaar ah faylka .protoka
+            short: Interface jiilka Dufcaddii
+        all:
+            long: Samee dhammaan koodka uu taageerayo qalabkan
+            short: Samee dhammaan koodka
+        cache:
+            long: U samee faylalka kaydinta kaydinta wicitaanka ganacsiga ee SDK-yada la xiriira
+            short: Samee faylka kaydinta
+        cmd:
+            long: U samee galalka gelitaanka adeegyada ganacsiga
+            short: Samee faylka gelitaanka
+        conf:
+            long: Samee faylasha habaynta ee akhrinta habaynta adeegyada ganacsiga
+            short: Samee faylka qaabeynta
+        dockerignore:
+            long: U samee faylka .dockerignore ee dhismaha sawirka Docker si aad isaga indho tirto maamulka faylka
+            short: Samee faylka dockerignore
+        editorconfig:
+            long: Samee .editorconfig faylka qaabeynta tafatiraha
+            short: Samee faylka .editorconfig
+        flags:
+            add-proto-files: Haddii aad u baahan tahay inaad soo dejiso faylasha kale ee .proto / dariiqyada faylalka ee aan ku jirin galka la midka ah ee faylka .proto ee la cayimay, hawlgalkani wuxuu ku lifaaqi doonaa (ma beddeli doono) waddada lagu habeeyay faylka qaabeynta.
+            go-module-prefix: Jidka go_package ee lagu habeeyay faylka .proto iyo midka dhabta ah, waxaad u habayn kartaa doorashadan
+            input: Sheeg faylka isha proto ee la soo saarayo
+            output-path: Doorashadan waxa la habayn karaa marka dariiqa go_package lagu habeeyay faylka .proto-ka uu yahay mid aan waafaqsanayn sariirta wadada ee runtii u baahan in la soo saaro.
+            overwrite: Wixii ka kooban ee aan dib loo soo saari doonin, ku qasbbi in wax laga beddelo waxa jira
+            proto-files: Si aad u soo dejiso .proto-gale/dariiqyada galka ee aan ku jirin galka la midka ah ee faylka .proto ee la cayimay, hawlgalkani waa ikhtiyaar lagu baabi'inayo goobta qaabeynta ee faylka qaabeynta.
+            protoc: Jidka faylalka 'protoc' la beddeli karo
+            protoc-gen-go: Waddada 'protoc-gen-go' plugin
+            tables-enable_field_created_at: Haddi la awoodo jiilka qaabaynta caadiga ah ee kaydka created_at
+            tables-enable_field_deleted_at: Haddii la awoodo dejinta default_at garoonka ku jira kaydka xogta
+            tables-enable_field_id: U sahle jiilka qaabeynta caadiga ah ee meelaha xogta la xiriira
+            tables-enable_field_updated_at: Haddii la awoodo qiimaha caadiga ah ee goobta updated_at ee kaydka xogta
+            tables-enable_gorm_tag_column: Haddii la awoodo jiilka gorm ee la xidhiidha database-ka
+        gitignote:
+            long: U samee faylasha .gitignore ee maaraynta faylka la iska indhotiray ee xakamaynta nooca
+            short: Samee faylka .gitignore
+        golang-lint:
+            long: Samee faylka .golangci.yml ee hubinta tayada code
+            short: Samee faylka .golangci.yml
+        goreleaser:
+            long: Samee faylka .goreleaser.yml ee habaynta qalabka sii daynta
+            short: Samee faylka .goreleaser.yml
+        impl:
+            long: Samee faylalka fulinta ee hirgelinta adeegyada ganacsiga
+            short: Abuur faylasha fulinta
+        long: Soo-saare kood, waxa uu taageeraa qaabab badan
+        makefile:
+            long: Samee faylalka Makefile ee qalabka dhismaha iyo amarada kale ee la xiriira
+            short: Samee Makefile
+        mod:
+            long: Samee faylka go.mod ee maaraynta ku tiirsanaanta
+            short: Samee faylka go.mod
+        pb:
+            long: Samee faylasha .pb.go si loo soo saaro faylasha .proto,
+            short: Samee faylka .pb.go
+        short: Koronto dhaliyaha
+        state:
+            long: U samee dhammaan hawlaha la xidhiidha gobolka ee kheyraadka gobolka ama maamulka kheyraadka taagan ee adeegyada ganacsiga
+            short: Dhammaan hawlaha khuseeya soo saarista gobolka
+        table:
+            long: Dhammaan shaqooyinka la xidhiidha soo saarista miisaska kheyraadka gobolka ama maamulka kheyraadka taagan ee adeegyada ganacsiga
+            short: Dhammaan hawlaha la xidhiidha abuurista miisaska
     help:
         additional_commands: Amarro dheeri ah
         aliases: amar loo yaqaan
@@ -27,5 +98,5 @@ cli:
                     usage: 'Kanaalka turjumaada: Nooca taageerada {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{dhammaadka}}'
             long: Faylasha ku hadla luqadaha badan ee meel gaar ah waxaa loo rogaa faylal isku qaab ah oo luuqado kale ah.
             short: turjun
-    long: Waxa ku jira qaab-dhismeedka dambe ee ku salaysan 'proto', qaab-dhismeedka sida caadiga ah loo isticmaalo, iyo tarjumaadaha luqadaha badan
-    short: Qalabka qalabka
+    long: Qalab loo dejiyay dadka caajiska ah, oo ay ku jiraan qaab-dhismeedka dambe ee ku salaysan 'proto', qaab-dhismeedka caadiga ah ee la isticmaalo, iyo tarjumaada luqadaha badan
+    short: Qalab loogu talagalay dadka caajiska ah

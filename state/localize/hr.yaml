@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Ispis detaljnog dnevnika
+    gen:
+        add-rpc:
+            flags:
+                action: Ponašanja koja je potrebno dodati u serijama, pojedinosti potražite u dokumentaciji o korištenju
+                default-role: Zadana uloga skupno generiranog sučelja za detalje pogledajte dokumentaciju o korištenju.
+                gen-to: Navedite izlaznu lokaciju generiranih .go datoteka
+                list-option: Popis se također može filtrirati, pojedinosti potražite u dokumentaciji o korištenju.
+                model: Navedite naziv modela, podržavajte izostavljanje prefiksa `model`
+            long: Generirajte sučelja u serijama i dodajte sučelje za određeni model u .proto datoteku
+            short: Sučelje za skupno generiranje
+        all:
+            long: Generirajte sav kod koji podržava ovaj alat
+            short: Generirajte sav kod
+        cache:
+            long: Generirajte datoteke predmemorije za SDK-ove povezane s predmemorijom poslovnih poziva
+            short: Generiraj datoteku predmemorije
+        cmd:
+            long: Generirajte ulazne datoteke za poslovne usluge
+            short: Generirajte ulaznu datoteku
+        conf:
+            long: Generirajte konfiguracijske datoteke za očitavanje konfiguracije poslovnih usluga
+            short: Generiraj konfiguracijsku datoteku
+        dockerignore:
+            long: Generirajte .dockerignore datoteku za izgradnju Docker slike da biste zanemarili upravljanje datotekama
+            short: Generirajte .dockerignore datoteku
+        editorconfig:
+            long: Generirajte .editorconfig datoteku za konfiguraciju uređivača
+            short: Generirajte .editorconfig datoteku
+        flags:
+            add-proto-files: Ako trebate uvesti druge staze .proto datoteka/mapa koje nisu u istoj mapi kao navedena .proto datoteka, ova će operacija dodati (ne prebrisati) stazu konfiguriranu u konfiguracijskoj datoteci.
+            go-module-prefix: Za stazu go_package konfiguriranu u .proto datoteci i stvarnu, možete konfigurirati ovu opciju
+            input: Navedite .proto izvornu datoteku koja će se generirati
+            output-path: Ova se opcija može konfigurirati kada staza go_package konfigurirana u .proto datoteci nije u skladu s temeljem puta koji zapravo treba generirati.
+            overwrite: Za sadržaj koji se neće ponovno generirati, prisilno prebrišite postojeći sadržaj
+            proto-files: Za uvoz drugih .proto datoteka/putanja mapa koje nisu u istoj mapi kao navedena .proto datoteka, ova operacija je opcija za nadjačavanje konfiguracijskog polja u konfiguracijskoj datoteci.
+            protoc: '`protoc` prilagodljiv put datoteke'
+            protoc-gen-go: put dodatka `protoc-gen-go`
+            tables-enable_field_created_at: Treba li omogućiti generiranje zadane konfiguracije polja created_at baze podataka
+            tables-enable_field_deleted_at: Treba li omogućiti zadanu postavku polja deleted_at u bazi podataka
+            tables-enable_field_id: Omogući generiranje zadane konfiguracije za polja povezana s bazom podataka
+            tables-enable_field_updated_at: Treba li omogućiti zadanu vrijednost polja updated_at u bazi podataka
+            tables-enable_gorm_tag_column: Treba li omogućiti generiranje gormova vezanih uz bazu podataka
+        gitignote:
+            long: Generirajte .gitignore datoteke za upravljanje zanemarenim datotekama u kontroli verzija
+            short: Generirajte .gitignore datoteku
+        golang-lint:
+            long: Generirajte .golangci.yml datoteku za pregled kvalitete koda
+            short: Generirajte .golangci.yml datoteku
+        goreleaser:
+            long: Generirajte datoteku .goreleaser.yml za konfiguraciju alata za izdavanje
+            short: Generiraj datoteku .goreleaser.yml
+        impl:
+            long: Generirati implementacijske datoteke za implementaciju poslovnih usluga
+            short: Generirajte implementacijske datoteke
+        long: Generator koda, podržava više predložaka
+        makefile:
+            long: Generirajte Makefile datoteke za alate za izgradnju i druge povezane naredbe
+            short: Generirajte Makefile
+        mod:
+            long: Generirajte go.mod datoteku za upravljanje ovisnostima
+            short: Generirajte datoteku go.mod
+        pb:
+            long: Generirajte .pb.go datoteke za generiranje .proto datoteka,
+            short: Generirajte .pb.go datoteku
+        short: Generator koda
+        state:
+            long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
+            short: Sve relevantne funkcije za generiranje stanja
+        table:
+            long: Sve povezane funkcije generiranja tablica za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
+            short: Sve povezane funkcije za generiranje tablica
     help:
         additional_commands: Dodatne naredbe
         aliases: zapovjedni alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Kanal prijevoda: Vrsta podrške {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Višejezične datoteke iz određenog izvora pretvaraju se u datoteke u istom formatu na drugim jezicima.
             short: Prevedi
-    long: Sadrži pozadinski okvir temeljen na 'protou', često korištene predloške i višejezične prijevode
-    short: Alati
+    long: Skup alata za lijene ljude, uključujući 'proto' temeljen pozadinski okvir, često korištene predloške i višejezični prijevod
+    short: Set alata za lijene ljude

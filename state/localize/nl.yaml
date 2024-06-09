@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Uitvoer gedetailleerd logboek
+    gen:
+        add-rpc:
+            flags:
+                action: Gedrag dat in batches moet worden toegevoegd, vindt u in de gebruiksdocumentatie voor meer informatie
+                default-role: De standaardrol van de batch-gegenereerde interface. Raadpleeg de gebruiksdocumentatie voor meer informatie.
+                gen-to: Geef de uitvoerlocatie op van de gegenereerde .go-bestanden
+                list-option: De lijst kan ook worden gefilterd. Raadpleeg de gebruiksdocumentatie voor meer informatie.
+                model: Specificeer de modelnaam en ondersteun het weglaten van het voorvoegsel `model`
+            long: Genereer interfaces in batches en voeg een interface voor een bepaald model toe in het .proto-bestand
+            short: Interface voor het genereren van batches
+        all:
+            long: Genereer alle code die door deze tool wordt ondersteund
+            short: Genereer alle code
+        cache:
+            long: Genereer cachebestanden voor zakelijke oproepcaching-gerelateerde SDK's
+            short: Cachebestand genereren
+        cmd:
+            long: Genereer boekingsbestanden voor de zakelijke dienstverlening
+            short: Invoerbestand genereren
+        conf:
+            long: Genereer configuratiebestanden voor het configuratielezen van zakelijke services
+            short: Configuratiebestand genereren
+        dockerignore:
+            long: Genereer een .dockerignore-bestand voor het maken van Docker-images om bestandsbeheer te negeren
+            short: Genereer een .dockerignore-bestand
+        editorconfig:
+            long: Genereer een .editorconfig-bestand voor editorconfiguratie
+            short: Genereer een .editorconfig-bestand
+        flags:
+            add-proto-files: Als u andere .proto-bestanden/mappaden moet importeren die zich niet in dezelfde map bevinden als het opgegeven .proto-bestand, zal deze bewerking het pad dat in het configuratiebestand is geconfigureerd toevoegen (niet overschrijven).
+            go-module-prefix: Voor het pad van go_package dat is geconfigureerd in het .proto-bestand en het daadwerkelijke pad, kunt u deze optie configureren
+            input: Geef het .proto-bronbestand op dat moet worden gegenereerd
+            output-path: Deze optie kan worden geconfigureerd als het pad van go_package dat is geconfigureerd in het .proto-bestand inconsistent is met het wegdek dat feitelijk moet worden gegenereerd.
+            overwrite: Voor inhoud die niet opnieuw wordt gegenereerd, forceert u het overschrijven van bestaande inhoud
+            proto-files: Om andere .proto-bestanden/mappaden te importeren die niet in dezelfde map staan ​​als het opgegeven .proto-bestand, is deze bewerking een optie om het configuratieveld in het configuratiebestand te overschrijven.
+            protoc: Aanpasbaar bestandspad `protoc`
+            protoc-gen-go: '`protoc-gen-go` plug-inpad'
+            tables-enable_field_created_at: Of de standaardconfiguratiegeneratie van het veld database Created_at moet worden ingeschakeld
+            tables-enable_field_deleted_at: Of de standaardinstelling van het veld delete_at in de database moet worden ingeschakeld
+            tables-enable_field_id: Schakel het genereren van standaardconfiguraties in voor databasegerelateerde velden
+            tables-enable_field_updated_at: Of de standaardwaarde van het veld Updated_at in de database moet worden ingeschakeld
+            tables-enable_gorm_tag_column: Of databasegerelateerde gorm-generatie moet worden ingeschakeld
+        gitignote:
+            long: Genereer .gitignore-bestanden voor genegeerd bestandsbeheer in versiebeheer
+            short: Genereer een .gitignore-bestand
+        golang-lint:
+            long: Genereer een .golangci.yml-bestand voor inspectie van de codekwaliteit
+            short: Genereer het .golangci.yml-bestand
+        goreleaser:
+            long: Genereer het .goreleaser.yml-bestand voor de configuratie van releasetools
+            short: Genereer het .goreleaser.yml-bestand
+        impl:
+            long: Implementatiebestanden genereren voor de implementatie van zakelijke dienstverlening
+            short: Implementatiebestanden genereren
+        long: Codegenerator, ondersteunt meerdere sjablonen
+        makefile:
+            long: Genereer Makefile-bestanden voor het bouwen van tools en andere gerelateerde opdrachten
+            short: Makefile genereren
+        mod:
+            long: Genereer het go.mod-bestand voor afhankelijkheidsbeheer
+            short: Genereer het go.mod-bestand
+        pb:
+            long: Genereer .pb.go-bestanden voor het genereren van .proto-bestanden,
+            short: Genereer een .pb.go-bestand
+        short: Codegenerator
+        state:
+            long: Genereer alle gerelateerde statusfuncties voor stateful resource- of statisch resourcebeheer van zakelijke services
+            short: Alle relevante functies voor het genereren van status
+        table:
+            long: Alle gerelateerde functies voor het genereren van tabellen voor stateful resource- of statisch resourcebeheer van zakelijke services
+            short: Alle gerelateerde functies voor het genereren van tabellen
     help:
         additional_commands: Extra opdrachten
         aliases: opdrachtalias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Vertaalkanaal: Ondersteuningstype {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Meertalige bestanden uit een bepaalde bron worden omgezet naar bestanden in hetzelfde formaat in andere talen.
             short: vertalen
-    long: Bevat een op 'proto' gebaseerd backend-framework, veelgebruikte sjablonen en meertalige vertalingen
-    short: Gereedschapskist
+    long: Een toolset voor luie mensen, inclusief een op 'proto' gebaseerd backend-framework, veelgebruikte sjablonen en meertalige vertaling
+    short: Een gereedschapsset voor luie mensen

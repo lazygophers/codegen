@@ -2,14 +2,14 @@ package gen
 
 import (
 	"github.com/lazygophers/codegen/codegen"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/spf13/cobra"
 )
 
 var editorconfigCmd = &cobra.Command{
-	Use:   "editorconfig",
-	Short: "Generate .editorconfig file",
-	RunE:  runEditorconfig,
+	Use:  "editorconfig",
+	RunE: runEditorconfig,
 }
 
 func runEditorconfig(cmd *cobra.Command, args []string) (err error) {
@@ -22,6 +22,9 @@ func runEditorconfig(cmd *cobra.Command, args []string) (err error) {
 	return nil
 }
 
-func init() {
+func initEditorconfig() {
+	editorconfigCmd.Short = state.Localize(state.I18nTagCliGenEditorconfigShort)
+	editorconfigCmd.Long = state.Localize(state.I18nTagCliGenEditorconfigLong)
+
 	genCmd.AddCommand(editorconfigCmd)
 }

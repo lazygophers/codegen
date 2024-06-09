@@ -13,8 +13,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "codegen",
-	Short: "codegen",
+	Use: "codegen",
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) (err error) {
 		if utils.GetBool("debug", cmd) {
 			pterm.EnableDebugMessages()
@@ -45,6 +44,9 @@ func Run() {
 		log.Errorf("err:%v", err)
 		return
 	}
+
+	rootCmd.Short = state.Localize(state.I18nTagCliShort)
+	rootCmd.Long = state.Localize(state.I18nTagCliLong)
 
 	rootCmd.PersistentFlags().BoolP("debug", "d", false, state.Localize(state.I18nTagCliFlagsDebug))
 

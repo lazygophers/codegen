@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Väljund üksikasjalik logi
+    gen:
+        add-rpc:
+            flags:
+                action: Käitumised, mis tuleb lisada partiidena, leiate üksikasjaliku teabe saamiseks kasutusdokumentatsioonist
+                default-role: Pakiga loodud liidese vaikeroll. Üksikasju vaadake kasutusdokumentatsioonist.
+                gen-to: Määrake loodud .go-failide väljundi asukoht
+                list-option: Loendit saab ka filtreerida, lisateabe saamiseks vaadake kasutusdokumentatsiooni.
+                model: Määrake mudeli nimi, toetage eesliite "mudel" väljajätmist
+            long: Loo liidesed partiidena ja lisa teatud mudeli jaoks liides .proto-faili
+            short: Partii genereerimise liides
+        all:
+            long: Looge kogu kood, mida see tööriist toetab
+            short: Genereeri kogu kood
+        cache:
+            long: Looge vahemälufaile ärikõnede vahemällu salvestamisega seotud SDK-de jaoks
+            short: Loo vahemälufail
+        cmd:
+            long: Looge äriteenuste jaoks sisestusfailid
+            short: Loo sisestusfail
+        conf:
+            long: Looge konfiguratsioonifaile äriteenuste konfiguratsiooni lugemiseks
+            short: Loo konfiguratsioonifail
+        dockerignore:
+            long: Failihalduse ignoreerimiseks looge Dockeri pildiloome jaoks .dockerignore-fail
+            short: Loo .dockerignore fail
+        editorconfig:
+            long: Redaktori seadistamiseks genereerige .editorconfig-fail
+            short: Looge editorconfig fail
+        flags:
+            add-proto-files: Kui teil on vaja importida teisi protofaile/kaustateid, mis ei asu määratud protofailiga samas kaustas, lisab see toiming (mitte kirjuta üle) konfiguratsioonifailis konfigureeritud tee.
+            go-module-prefix: Proto failis konfigureeritud go_package tee ja tegeliku tee jaoks saate seda suvandit seadistada
+            input: Määrake genereeritav .proto lähtefail
+            output-path: Seda suvandit saab konfigureerida, kui failis .proto konfigureeritud go_package tee on vastuolus tegelikult genereeritava teepõhjaga.
+            overwrite: Sisu puhul, mida uuesti ei genereerita, sunnige olemasolev sisu üle kirjutama
+            proto-files: Teiste protofailide/kaustateede importimiseks, mis ei asu määratud protofailiga samas kaustas, on see toiming konfiguratsioonifaili konfiguratsioonivälja alistamiseks.
+            protoc: '"protokoll" kohandatav failitee'
+            protoc-gen-go: '"protoc-gen-go" plugina tee'
+            tables-enable_field_created_at: Kas lubada andmebaasi loodud_at väljal vaikekonfiguratsiooni genereerimine
+            tables-enable_field_deleted_at: Kas lubada andmebaasis välja deleted_at vaikesäte
+            tables-enable_field_id: Lubage andmebaasiga seotud väljade jaoks vaikekonfiguratsiooni genereerimine
+            tables-enable_field_updated_at: Kas lubada andmebaasis välja updated_at vaikeväärtus
+            tables-enable_gorm_tag_column: Kas lubada andmebaasiga seotud gormide genereerimine
+        gitignote:
+            long: Genereerige .gitignore-faile versioonihalduses ignoreeritud failihalduse jaoks
+            short: Looge .gitignore fail
+        golang-lint:
+            long: Koodi kvaliteedi kontrollimiseks genereerige fail .golangci.yml
+            short: Looge fail .golangci.yml
+        goreleaser:
+            long: Looge väljalasketööriistade konfigureerimiseks fail .goreleaser.yml
+            short: Looge fail .goreleaser.yml
+        impl:
+            long: Looge äriteenuste juurutamiseks rakendusfaile
+            short: Loo rakendusfailid
+        long: Koodigeneraator, toetab mitut malli
+        makefile:
+            long: Looge Makefile'i faile tööriistade ja muude seotud käskude jaoks
+            short: Loo Makefile
+        mod:
+            long: Sõltuvuste haldamiseks genereerige fail go.mod
+            short: Looge fail go.mod
+        pb:
+            long: Pb.go-failide genereerimine protofailide loomiseks,
+            short: Looge fail .pb.go
+        short: Koodigeneraator
+        state:
+            long: Looge kõik seotud olekufunktsioonid äriteenuste olekupõhiseks või staatiliseks ressursihalduseks
+            short: Kõik oleku genereerimiseks vajalikud funktsioonid
+        table:
+            long: Kõik seotud funktsioonid tabelite genereerimiseks äriteenuste olekupõhiste ressursside või staatilise ressursside haldamiseks
+            short: Kõik seotud funktsioonid tabelite genereerimiseks
     help:
         additional_commands: Täiendavad käsud
         aliases: käsu varjunimi
@@ -27,5 +98,5 @@ cli:
                     usage: 'Tõlkekanal: toe tüüp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Teatud allikast pärit mitmekeelsed failid teisendatakse teistes keeltes samas vormingus failideks.
             short: tõlkida
-    long: Sisaldab "proto"põhist taustaraamistikku, tavaliselt kasutatavaid malle ja mitmekeelseid tõlkeid
-    short: Tööriistakomplekt
+    long: Tööriistakomplekt laiskadele inimestele, sealhulgas "proto"-põhine taustaraamistik, tavaliselt kasutatavad mallid ja mitmekeelsed tõlked
+    short: Tööriistade komplekt laiskadele inimestele

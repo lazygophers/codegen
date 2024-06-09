@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Output detailed iniuriarum
+    gen:
+        add-rpc:
+            flags:
+                action: Mores qui in batches addi necesse est, quaeso reperire usum documentorum pro singulis
+                default-role: Default munus interfaciendi generatae. Placere referri ad usum documentorum pro singulis.
+                gen-to: Specificare output locum generatae .go files
+                list-option: Album etiam eliquari potest, quaeso, documentum usus in singulis reperire.
+                model: Specificare nomen exemplar, subsidium omissis `model` praefixis
+            long: Interfaces in batches generate et interfaciem adde pro quodam exemplari in .proto fasciculo
+            short: Batch generation interface
+        all:
+            long: Generare totum codicem hoc instrumentum subnixa
+            short: Omnia genera codice
+        cache:
+            long: Generare files cache ad negotium vocationis caching SDKs
+            short: Generare cache file
+        cmd:
+            long: Generare viscus files ad negotium muneris
+            short: Generare ingressum file
+        conf:
+            long: Configurationis generare lima pro configuratione lectionis negotii officia
+            short: Configuratione file generate
+        dockerignore:
+            long: Generare .dockerignore lima pro Docker imaginem aedificii ignorare lima procuratio
+            short: Generare .dockerignore file
+        editorconfig:
+            long: Generate .editorconfig lima pro editore configuratione
+            short: Generate file .editorconfig
+        flags:
+            add-proto-files: Si alias .proto lima/folder vias importare quae non sunt in eodem folder ac .proto lima, haec operatio (non overscribe) iter in file configurationis figuratum apponet.
+            go-module-prefix: Pro iter go_package figuratum in .proto lima et re vera, hanc optionem configurare potes.
+            input: Specificare .proto fonte lima ut generaretur
+            output-path: Haec optio configurari potest cum iter go_package configuratur in .proto fasciculi repugnat cursui qui generari actu indiget.
+            overwrite: Contentum enim quod regenerari non potest, vim overwriting contenti existendi
+            proto-files: Ad alias .proto lima/folder vias quae non sunt in eodem folder ut .proto lima definito, haec operatio est optio ut in lima configurationis campum vincat.
+            protoc: '`Protoc` customizable file semita'
+            protoc-gen-go: '`protoc-gen-go` plugin path'
+            tables-enable_field_created_at: Utrum efficere possit defaltam configurationem generationi datorum campi creato
+            tables-enable_field_deleted_at: Utrum efficere possit default occasus agri delevit_at in datorum
+            tables-enable_field_id: Admitte default configuratione generation pro database relatas agros
+            tables-enable_field_updated_at: Utrum valorem default updated_at agri in database!
+            tables-enable_gorm_tag_column: Utrum ad enable generationis database relatas gorm?
+        gitignote:
+            long: Generare .gitignore lima pro neglecta lima administratione in versione control
+            short: Generate .gitignore file
+        golang-lint:
+            long: Generate .golangci.yml lima pro code qualis inspectionem
+            short: Generare .golangci.yml file
+        goreleaser:
+            long: Generare .goreleaser.yml lima pro configuratione emissionis instrumenta
+            short: Generare .goreleaser.yml file
+        impl:
+            long: Exsequendam files generare ad officia exsequendam negotiationem
+            short: Generare files implementation
+        long: Codicis generator multiplex templates adiuvat
+        makefile:
+            long: Generare files Makefile instrumenta aedificandi et alia mandata cognata
+            short: Generare Makefile
+        mod:
+            long: Generare go.mod lima pro dependentiae administratione
+            short: Generare go.mod file
+        pb:
+            long: Files generare .pb.go .proto files generandi;
+            short: Generare .pb.go file
+        short: Code generans
+        state:
+            long: Generare omnia munera publica pertinentia ad statum resource aut static subsidii administratione negotiorum officiorum
+            short: Omnes munera ad statum generandi pertinet
+        table:
+            long: Munera omnia cognata generandi mensas pro subsidio statorum vel subsidiorum administratione negotiorum officiorum
+            short: Omnes munera cognata ad tabulas generandas
     help:
         additional_commands: Additional imperium
         aliases: imperium alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Canale translatio: Support typus {{ range $clavem,$ valorem := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Multilinguales fasciculi ex quodam fonte convertuntur in lima forma in aliis linguis.
             short: translate
-    long: Continet 'proto'-substructio compago dorsi, exempla consueta, et translationes multi-linguae.
-    short: Toolkit
+    long: Instrumentum pro pigris hominibus appositum, inter 'proto'-substructio compago dorsi, usui communium usuum, ac multi-linguarum translationum.
+    short: A instrumentum ad populum piger posuit

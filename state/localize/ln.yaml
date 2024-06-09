@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Sortie journal détaillé
+    gen:
+        add-rpc:
+            flags:
+                action: Bizaleli oyo esengeli kobakisa na ba lots, luka mikanda ya bosaleli mpo na makambo ya mikemike
+                default-role: Mosala ya liboso ya interface oyo esalemi na lote Svp tala mikanda ya bosaleli mpo na makambo ya mikemike.
+                gen-to: Lakisa esika ya kobima ya ba fichiers .go oyo esalemi
+                list-option: Liste ekoki pe ko filtrer, svp luka mikanda ya usage pona ba détails.
+                model: Lakisa kombo ya modèle, lisungi kolongolaka liboso ya `modèle`
+            long: Bosala ba interfaces na ba lots pe bobakisa interface pona modèle moko boye na fichier .proto
+            short: Interface ya génération ya batch
+        all:
+            long: Bosala ba code nionso oyo esungami na esaleli oyo
+            short: Generer ba code nionso
+        cache:
+            long: Bosala ba fichiers ya cache pona ba SDK oyo etali caching ya ba appels d'affaires
+            short: Bosala fichier ya cache
+        cmd:
+            long: Kosala ba fichiers ya entrée pona ba services ya commerce
+            short: Générer fichier ya entrée
+        conf:
+            long: Kosala ba fichiers ya configuration pona botangi ya configuration ya ba services d'affaires
+            short: Bosala fichier ya configuration
+        dockerignore:
+            long: Bosala fisyé .dockerignore mpo na botongi ya bilili ya Docker mpo na koboya boyangeli fisyé
+            short: Bosala fisyé .dockerignore
+        editorconfig:
+            long: Bosala fisyé .editorconfig mpo na bobongisi ya mobongisi
+            short: Bosala fisyé .editorconfig
+        flags:
+            add-proto-files: Soki osengeli kokɔtisa ba fisyé/banzela mosusu ya dossier .proto oyo ezali na dossier moko te na fisyé .proto oyo elakisami, mosala oyo ekobakisa (kokoma likolo te) nzela oyo ebongisami na fisyé ya bobongisi.
+            go-module-prefix: Pona nzela ya go_package configuré na fichier .proto pe oyo ya solo, okoki ko configurer option oyo
+            input: Lakisa fisyé ya source .proto oyo esengeli kobimisama
+            output-path: Option oyo ekoki kozala configuré tango nzela ya go_package configuré na fichier .proto ezali inconsistent na roadbed oyo esengeli vraiment ezala généré.
+            overwrite: Mpo na makambo oyo ekozongisama lisusu te, na makasi okoma likolo ya makambo oyo ezali
+            proto-files: Mpo na kokɔtisa ba fisyé/banzela mosusu ya dossier .proto oyo ezali te na dossier moko na fisyé .proto oyo elakisami, mosala oyo ezali nzela ya koboya esika ya bobongisi na fisyé ya bobongisi.
+            protoc: '`protoc` nzela ya fisyé oyo ekoki kobongisama'
+            protoc-gen-go: '`protoc-gen-go` nzela ya plugin'
+            tables-enable_field_created_at: Soki ko activer génération ya configuration par défaut ya esika ya base de données created_at
+            tables-enable_field_deleted_at: Soki ko activer paramètre par défaut ya champ deleted_at na base de données
+            tables-enable_field_id: Activer génération ya configuration par défaut pona ba champs oyo etali base de données
+            tables-enable_field_updated_at: Soki ko activer valeur par défaut ya champ updated_at na base de données
+            tables-enable_gorm_tag_column: Soki ko activer génération ya gorm oyo etali base de données
+        gitignote:
+            long: Bosala ba fichiers .gitignore pona gestion ya ba fichiers ignoré na contrôle ya version
+            short: Bosala fisyé .gitignore
+        golang-lint:
+            long: Bosala fichier .golangci.yml pona inspection ya qualité ya code
+            short: Bosala fisyé .golangci.yml
+        goreleaser:
+            long: Bosala fisyé .goreleaser.yml mpo na bobongisi ya bisaleli ya kobimisa
+            short: Bosala fisyé .goreleaser.yml
+        impl:
+            long: Kosala ba fichiers ya mise en œuvre pona mise en œuvre ya ba services d’affaires
+            short: Kosala ba fichiers ya mise en œuvre
+        long: Générateur ya code, esimbaka ba modèles ebele
+        makefile:
+            long: Bosala ba fichiers Makefile pona kotonga bisaleli pe ba commandes misusu oyo etali yango
+            short: Kosala Makefile
+        mod:
+            long: Générer fichier go.mod pona gestion ya dépendance
+            short: Bosala fichier go.mod
+        pb:
+            long: Kosala ba fichiers .pb.go pona kosala ba fichiers .proto, .
+            short: Bosala fisyé .pb.go
+        short: Générateur ya code
+        state:
+            long: Kosala misala nionso ya l’Etat oyo etali yango pona gestion ya ressource état to ya ressource statique ya ba services d’affaires
+            short: Ba fonctions nionso oyo etali yango pona ko générer état
+        table:
+            long: Misala nionso oyo etali yango ya kobimisa ba tableaux pona gestion ya ressource état to gestion ya ressource statique ya ba services d'affaires
+            short: Ba fonctions nionso oyo etali yango pona ko générer ba tableaux
     help:
         additional_commands: Ba commandes ya kobakisa
         aliases: alias ya komande
@@ -27,5 +98,5 @@ cli:
                     usage: 'Nzela ya bobongoli: Lolenge ya lisungi {{range $key,$value := .Lolenge}}{{$key}}:{{$value}}{{nsuka}}'
             long: Ba fichiers ya minoko ebele oyo ewutaka na source moko boye ebongwanaka na ba fichiers na format moko na minoko misusu.
             short: kobongola
-    long: Ezali na cadre ya sima oyo esalemi na 'proto', ba modèles oyo esalelamaka mingi, mpe mabongoli ya minoko ebele
-    short: Bokumbi bisaleli
+    long: Esaleli oyo ebongisami mpo na bato ya paresseux, bakisa mpe cadre ya sima oyo esalemi na ‘proto’, ba modèles oyo basalelaka mingi, mpe bobongoli ya minoko mingi
+    short: Ensemble ya esaleli mpo na bato ya paresseux

@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Xuất nhật ký chi tiết
+    gen:
+        add-rpc:
+            flags:
+                action: Các hành vi cần được thêm theo đợt, vui lòng tìm tài liệu sử dụng để biết chi tiết
+                default-role: Vai trò mặc định của giao diện được tạo hàng loạt. Vui lòng tham khảo tài liệu sử dụng để biết chi tiết.
+                gen-to: Chỉ định vị trí đầu ra của tệp .go được tạo
+                list-option: Danh sách cũng có thể được lọc, vui lòng tìm tài liệu sử dụng để biết chi tiết.
+                model: Chỉ định tên model, hỗ trợ bỏ tiền tố `model`
+            long: Tạo giao diện theo lô và thêm giao diện cho một mô hình nhất định trong tệp .proto
+            short: Giao diện tạo hàng loạt
+        all:
+            long: Tạo tất cả mã được công cụ này hỗ trợ
+            short: Tạo tất cả mã
+        cache:
+            long: Tạo tệp bộ nhớ đệm cho các SDK liên quan đến bộ nhớ đệm cuộc gọi kinh doanh
+            short: Tạo tập tin bộ đệm
+        cmd:
+            long: Tạo tập tin đầu vào cho các dịch vụ kinh doanh
+            short: Tạo tập tin đầu vào
+        conf:
+            long: Tạo tệp cấu hình để đọc cấu hình dịch vụ kinh doanh
+            short: Tạo tập tin cấu hình
+        dockerignore:
+            long: Tạo tệp .dockerignore để xây dựng hình ảnh Docker để bỏ qua việc quản lý tệp
+            short: Tạo tệp .dockerignore
+        editorconfig:
+            long: Tạo tệp .editorconfig cho cấu hình trình chỉnh sửa
+            short: Tạo tệp .editorconfig
+        flags:
+            add-proto-files: Nếu bạn cần nhập các tệp .proto/đường dẫn thư mục khác không nằm trong cùng thư mục với tệp .proto đã chỉ định, thao tác này sẽ nối thêm (không ghi đè) đường dẫn được định cấu hình trong tệp cấu hình.
+            go-module-prefix: Đối với đường dẫn của go_package được định cấu hình trong tệp .proto và tệp thực tế, bạn có thể định cấu hình tùy chọn này
+            input: Chỉ định tệp nguồn .proto sẽ được tạo
+            output-path: Tùy chọn này có thể được định cấu hình khi đường dẫn của go_package được định cấu hình trong tệp .proto không nhất quán với nền đường thực sự cần được tạo.
+            overwrite: Đối với nội dung sẽ không được tạo lại, buộc ghi đè nội dung hiện có
+            proto-files: Để nhập các tệp .proto/đường dẫn thư mục khác không nằm trong cùng thư mục với tệp .proto đã chỉ định, thao tác này là một tùy chọn để ghi đè trường cấu hình trong tệp cấu hình.
+            protoc: đường dẫn tệp có thể tùy chỉnh `protoc`
+            protoc-gen-go: đường dẫn plugin `protoc-gen-go`
+            tables-enable_field_created_at: Có bật tính năng tạo cấu hình mặc định của trường create_at cơ sở dữ liệu hay không
+            tables-enable_field_deleted_at: Có bật cài đặt mặc định của trường đã xóa trong cơ sở dữ liệu hay không
+            tables-enable_field_id: Cho phép tạo cấu hình mặc định cho các trường liên quan đến cơ sở dữ liệu
+            tables-enable_field_updated_at: Có bật giá trị mặc định của trường update_at trong cơ sở dữ liệu hay không
+            tables-enable_gorm_tag_column: Có bật tính năng tạo gorm liên quan đến cơ sở dữ liệu hay không
+        gitignote:
+            long: Tạo tệp .gitignore để quản lý tệp bị bỏ qua trong kiểm soát phiên bản
+            short: Tạo tệp .gitignore
+        golang-lint:
+            long: Tạo tệp .golangci.yml để kiểm tra chất lượng mã
+            short: Tạo tệp .golangci.yml
+        goreleaser:
+            long: Tạo tệp .goreleaser.yml để cấu hình các công cụ phát hành
+            short: Tạo tệp .goreleaser.yml
+        impl:
+            long: Tạo các tệp triển khai để triển khai các dịch vụ kinh doanh
+            short: Tạo tập tin triển khai
+        long: Trình tạo mã, hỗ trợ nhiều mẫu
+        makefile:
+            long: Tạo tệp Makefile cho các công cụ xây dựng và các lệnh liên quan khác
+            short: Tạo tệp Makefile
+        mod:
+            long: Tạo tệp go.mod để quản lý phụ thuộc
+            short: Tạo tập tin go.mod
+        pb:
+            long: Tạo tệp .pb.go để tạo tệp .proto,
+            short: Tạo tệp .pb.go
+        short: Trình tạo mã
+        state:
+            long: Tạo ra tất cả các chức năng liên quan của trạng thái để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
+            short: Tất cả các chức năng liên quan để tạo trạng thái
+        table:
+            long: Tất cả các chức năng liên quan đến việc tạo bảng để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
+            short: Tất cả các hàm liên quan để tạo bảng
     help:
         additional_commands: Các lệnh bổ sung
         aliases: bí danh lệnh
@@ -27,5 +98,5 @@ cli:
                     usage: 'Kênh dịch: Loại hỗ trợ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Các tệp đa ngôn ngữ từ một nguồn nhất định sẽ được chuyển đổi thành các tệp có cùng định dạng ở các ngôn ngữ khác.
             short: dịch
-    long: Chứa khung phụ trợ dựa trên 'proto', các mẫu thường được sử dụng và bản dịch đa ngôn ngữ
-    short: Bộ công cụ
+    long: Bộ công cụ dành cho người lười biếng, bao gồm khung phụ trợ dựa trên 'proto', các mẫu thường được sử dụng và dịch thuật đa ngôn ngữ
+    short: Bộ công cụ dành cho người lười biếng

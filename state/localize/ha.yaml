@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Fitar da cikakken log
+    gen:
+        add-rpc:
+            flags:
+                action: Halayen da ake buƙatar ƙarawa cikin batches, da fatan za a nemo takaddun amfani don cikakkun bayanai
+                default-role: Matsayin tsoho na ƙirar tsari da aka samar da fatan za a koma ga takaddun amfani don cikakkun bayanai.
+                gen-to: Ƙayyade wurin fitarwa na fayilolin .go da aka samar
+                list-option: Hakanan za'a iya tace lissafin, da fatan za a nemo takaddun amfani don cikakkun bayanai.
+                model: Ƙayyade sunan ƙira, goyan bayan cire prefix ɗin 'samfurin'
+            long: Ƙirƙirar musaya a cikin batches kuma ƙara abin dubawa don takamaiman samfuri a cikin fayil ɗin .proto
+            short: Batch tsara dubawa
+        all:
+            long: Ƙirƙirar duk lambar da ke da goyan bayan wannan kayan aikin
+            short: Ƙirƙirar duk lambar
+        cache:
+            long: Ƙirƙirar fayilolin cache don kiran kasuwanci mai alaƙa SDKs
+            short: Ƙirƙirar fayil ɗin cache
+        cmd:
+            long: Ƙirƙirar fayilolin shigarwa don ayyukan kasuwanci
+            short: Ƙirƙirar fayil ɗin shigarwa
+        conf:
+            long: Ƙirƙirar fayilolin daidaitawa don daidaita karatun ayyukan kasuwanci
+            short: Ƙirƙirar fayil ɗin sanyi
+        dockerignore:
+            long: Ƙirƙirar fayil ɗin .dockerignore don ginin hoton Docker don yin watsi da sarrafa fayil
+            short: Ƙirƙirar .dockerignore fayil
+        editorconfig:
+            long: Ƙirƙirar fayil ɗin .editorconfig don daidaitawar edita
+            short: Ƙirƙirar fayil ɗin .editorconfig
+        flags:
+            add-proto-files: Idan kana buƙatar shigo da wasu fayilolin .proto/hanyoyin manyan fayiloli waɗanda basa cikin babban fayil ɗaya da ƙayyadadden fayil ɗin .proto, wannan aikin zai ƙara (ba a sake rubutawa) hanyar da aka saita a cikin fayil ɗin sanyi ba.
+            go-module-prefix: Don hanyar go_package da aka saita a cikin fayil ɗin .proto da ainihin ɗaya, zaku iya saita wannan zaɓi.
+            input: Ƙayyade fayil ɗin tushen proto da za a ƙirƙira
+            output-path: Ana iya saita wannan zaɓi lokacin da aka saita hanyar go_package a cikin fayil ɗin .proto bai dace da gadon titin ba wanda a zahiri yana buƙatar ƙirƙirar.
+            overwrite: Don abun ciki wanda ba za a sabunta shi ba, tilasta sake rubuta abubuwan da ke akwai
+            proto-files: Don shigo da wasu fayilolin .proto/hanyoyin babban fayil waɗanda basa cikin babban fayil ɗaya da ƙayyadadden fayil ɗin .proto, wannan aiki zaɓi ne don soke filin daidaitawa a cikin fayil ɗin sanyi.
+            protoc: '''protoc'' hanyar fayil ɗin da za a iya gyarawa'
+            protoc-gen-go: Hanyar plugin 'protoc-gen-go'
+            tables-enable_field_created_at: Ko don kunna tsohowar tsara tsara bayanai na filin da aka halitta_at
+            tables-enable_field_deleted_at: Ko don kunna saitunan tsoho na filin deleted_at a cikin bayanan
+            tables-enable_field_id: Kunna tsara tsara tsoho don filayen da ke da alaƙa da bayanai
+            tables-enable_field_updated_at: Ko don kunna tsohuwar ƙimar filin updated_at a cikin bayanan
+            tables-enable_gorm_tag_column: Ko don ba da damar samar da gorm masu alaƙa da bayanai
+        gitignote:
+            long: Ƙirƙirar fayilolin .gitignore don sarrafa fayil da aka yi watsi da su a cikin sarrafa sigar
+            short: Ƙirƙirar fayil ɗin .gitignore
+        golang-lint:
+            long: Ƙirƙirar fayil ɗin .golangci.yml don duba ingancin lambar
+            short: Ƙirƙirar fayil ɗin .golangci.yml
+        goreleaser:
+            long: Ƙirƙirar fayil ɗin .goreleaser.yml don daidaita kayan aikin saki
+            short: Ƙirƙirar fayil ɗin .goreleaser.yml
+        impl:
+            long: Ƙirƙirar fayilolin aiwatarwa don aiwatar da ayyukan kasuwanci
+            short: Ƙirƙirar fayilolin aiwatarwa
+        long: Lambar janareta, tana goyan bayan samfura da yawa
+        makefile:
+            long: Ƙirƙirar fayilolin Makefile don kayan aikin gini da sauran umarni masu alaƙa
+            short: Ƙirƙirar Makefile
+        mod:
+            long: Ƙirƙirar fayil ɗin go.mod don sarrafa abin dogaro
+            short: Ƙirƙirar fayil ɗin go.mod
+        pb:
+            long: Ƙirƙirar fayilolin .pb.go don ƙirƙirar fayilolin .proto,
+            short: Ƙirƙirar fayil ɗin .pb.go
+        short: Code janareta
+        state:
+            long: Ƙirƙirar duk ayyukan da ke da alaƙa na jihar don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
+            short: Duk ayyuka masu dacewa don haifar da yanayi
+        table:
+            long: Duk ayyukan da ke da alaƙa na samar da teburi don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
+            short: Duk ayyuka masu alaƙa don samar da tebur
     help:
         additional_commands: Ƙarin umarni
         aliases: umarni mai lakabi
@@ -27,5 +98,5 @@ cli:
                     usage: 'Tashar fassarar: Nau''in tallafi {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fayilolin yaruka da yawa daga wani tushe ana jujjuya su zuwa fayiloli a cikin tsari iri ɗaya a cikin wasu harsuna.
             short: fassara
-    long: Ya ƙunshi tsarin baya na tushen 'proto', samfuran da aka saba amfani da su, da fassarorin harsuna da yawa
-    short: Kayan aiki
+    long: Saitin kayan aiki don malalaci, gami da tsarin baya na tushen 'proto', samfuran da aka saba amfani da su, da fassarar harsuna da yawa
+    short: Kayan aiki da aka saita don mutane malalaci

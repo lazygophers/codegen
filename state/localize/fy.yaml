@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Utfier detaillearre log
+    gen:
+        add-rpc:
+            flags:
+                action: Gedrachs dy't moatte wurde tafoege yn batches, fine asjebleaft de gebrûksdokumintaasje foar details
+                default-role: De standertrol fan de batch-generearre ynterface Sjoch asjebleaft de gebrûksdokumintaasje foar details.
+                gen-to: Spesifisearje de útfier lokaasje fan de oanmakke .go triemmen
+                list-option: De list kin ek wurde filtere, fine asjebleaft de gebrûksdokumintaasje foar details.
+                model: Spesifisearje de modelnamme, stipe troch it weilitten fan it foarheaksel 'model'
+            long: Generearje ynterfaces yn batches en foegje in ynterface ta foar in bepaald model yn it .proto-bestân
+            short: Batch generaasje ynterface
+        all:
+            long: Generearje alle koade stipe troch dit ark
+            short: Generearje alle koade
+        cache:
+            long: Generearje cache-bestannen foar saaklike oprop-caching-relatearre SDK's
+            short: Generearje cache triem
+        cmd:
+            long: Generearje yngongbestannen foar saaklike tsjinsten
+            short: Generearje yngongtriem
+        conf:
+            long: Generearje konfiguraasjebestannen foar konfiguraasjelêzing fan saaklike tsjinsten
+            short: Generearje konfiguraasjetriem
+        dockerignore:
+            long: Generearje .dockerignore-bestân foar Docker-ôfbyldingsbou om triembehear te negearjen
+            short: Generearje .dockerignore triem
+        editorconfig:
+            long: Generearje .editorconfig triem foar bewurker konfiguraasje
+            short: Generearje .editorconfig triem
+        flags:
+            add-proto-files: As jo ​​moatte ymportearje oare .proto triemmen / map paden dy't net yn deselde map as de oantsjutte .proto triem, dizze operaasje sil taheakje (net oerskriuwe) it paad konfigurearre yn de konfiguraasje triem.
+            go-module-prefix: Foar it paad fan go_package konfigurearre yn it .proto-bestân en de eigentlike, kinne jo dizze opsje ynstelle
+            input: Spesifisearje it .proto-boarnebestân dat oanmakke wurde moat
+            output-path: Dizze opsje kin konfigurearre wurde as it paad fan go_package konfigurearre yn 'e .proto-bestân ynkonsistint is mei it roadbed dat eins oanmakke wurde moat.
+            overwrite: Foar ynhâld dy't net wurde regenerearre, twingt oerskriuwen fan besteande ynhâld
+            proto-files: Om oare .proto-bestannen/mappaden te ymportearjen dy't net yn deselde map steane as de oantsjutte .proto-bestân, is dizze operaasje in opsje om it konfiguraasjefjild yn it konfiguraasjetriem te oerskriuwen.
+            protoc: '`protoc` oanpasbere triempaad'
+            protoc-gen-go: '`protoc-gen-go` plugin paad'
+            tables-enable_field_created_at: Oft de standertkonfiguraasjegeneraasje fan it fjild oanmakke_at-database ynskeakelje moat
+            tables-enable_field_deleted_at: Of de standertynstelling fan it fjild deleted_at yn 'e databank ynskeakelje moat
+            tables-enable_field_id: Ynskeakelje standert konfiguraasje generaasje foar database-relatearre fjilden
+            tables-enable_field_updated_at: Of de standertwearde fan it updated_at-fjild yn 'e databank ynskeakelje moat
+            tables-enable_gorm_tag_column: Oft te ynskeakeljen database-relatearre gorm generaasje
+        gitignote:
+            long: Generearje .gitignore-bestannen foar negearre triembehear yn ferzjekontrôle
+            short: Generearje .gitignore triem
+        golang-lint:
+            long: Generearje .golangci.yml triem foar koade kwaliteit ynspeksje
+            short: Generearje .golangci.yml triem
+        goreleaser:
+            long: Generearje .goreleaser.yml triem foar konfiguraasje fan release ark
+            short: Generearje .goreleaser.yml triem
+        impl:
+            long: Generearje ymplemintaasjebestannen foar de ymplemintaasje fan saaklike tsjinsten
+            short: Generearje ymplemintaasjebestannen
+        long: Koadegenerator, stipet meardere sjabloanen
+        makefile:
+            long: Generearje Makefile-bestannen foar it bouwen fan ark en oare relatearre kommando's
+            short: Generearje Makefile
+        mod:
+            long: Generearje go.mod-bestân foar ôfhinklikensbehear
+            short: Generearje go.mod triem
+        pb:
+            long: Generearje .pb.go-bestannen foar it generearjen fan .proto-bestannen,
+            short: Generearje .pb.go triem
+        short: Koade generator
+        state:
+            long: Generearje alle besibbe funksjes fan steat foar stateful boarne of statyske boarne behear fan saaklike tsjinsten
+            short: Alle relevante funksjes foar it generearjen fan steat
+        table:
+            long: Alle besibbe funksjes fan it generearjen fan tabellen foar stateful boarne of statyske boarne behear fan saaklike tsjinsten
+            short: Alle relatearre funksjes foar it generearjen fan tabellen
     help:
         additional_commands: Oanfoljende kommando's
         aliases: kommando alias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Oersetkanaal: Support type {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Meartalige bestannen fan in bepaalde boarne wurde omset yn bestannen yn itselde formaat yn oare talen.
             short: oersette
-    long: Befettet 'proto'-basearre backend-framework, algemien brûkte sjabloanen, en meartalige oersettingen
-    short: Toolkit
+    long: In ark set foar luie minsken, ynklusyf 'proto'-basearre backend framework, gewoan brûkte sjabloanen, en meartalige oersetting
+    short: In ark set foar luie minsken

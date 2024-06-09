@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Utdata detaljerad logg
+    gen:
+        add-rpc:
+            flags:
+                action: Beteenden som måste läggas till i omgångar, vänligen se användardokumentationen för detaljer
+                default-role: Standardrollen för det batchgenererade gränssnittet Se användardokumentationen för detaljer.
+                gen-to: Ange utdataplatsen för de genererade .go-filerna
+                list-option: Listan kan också filtreras, se användardokumentationen för detaljer.
+                model: Ange modellnamnet, stöd genom att utelämna prefixet `modell`
+            long: Generera gränssnitt i omgångar och lägg till ett gränssnitt för en viss modell i .proto-filen
+            short: Batchgenereringsgränssnitt
+        all:
+            long: Generera all kod som stöds av detta verktyg
+            short: Generera all kod
+        cache:
+            long: Generera cachefiler för cache-relaterade SDK:er för affärssamtal
+            short: Generera cache-fil
+        cmd:
+            long: Generera inmatningsfiler för företagstjänster
+            short: Skapa inmatningsfil
+        conf:
+            long: Generera konfigurationsfiler för konfigurationsläsning av företagstjänster
+            short: Generera konfigurationsfil
+        dockerignore:
+            long: Generera .dockerignore-fil för Docker-bildbyggnad för att ignorera filhantering
+            short: Generera .dockerignore-fil
+        editorconfig:
+            long: Generera .editorconfig-fil för redigeringskonfiguration
+            short: Generera .editorconfig-fil
+        flags:
+            add-proto-files: Om du behöver importera andra .proto-filer/mappsökvägar som inte finns i samma mapp som den angivna .proto-filen, kommer denna åtgärd att lägga till (inte skriva över) sökvägen som konfigurerats i konfigurationsfilen.
+            go-module-prefix: För sökvägen till go_package som konfigurerats i .proto-filen och den faktiska, kan du konfigurera detta alternativ
+            input: Ange .proto-källfilen som ska genereras
+            output-path: Det här alternativet kan konfigureras när sökvägen för go_package som konfigurerats i .proto-filen inte är förenlig med vägbädden som faktiskt behöver genereras.
+            overwrite: För innehåll som inte kommer att återskapas, tvinga överskrivning av befintligt innehåll
+            proto-files: För att importera andra .proto-filer/mappsökvägar som inte finns i samma mapp som den angivna .proto-filen, är denna operation ett alternativ för att åsidosätta konfigurationsfältet i konfigurationsfilen.
+            protoc: '"protoc" anpassningsbar filsökväg'
+            protoc-gen-go: '"protoc-gen-go" plugin sökväg'
+            tables-enable_field_created_at: Om du vill aktivera standardkonfigurationsgenereringen av databasen create_at-fältet
+            tables-enable_field_deleted_at: Om standardinställningen för fältet deleted_at ska aktiveras i databasen
+            tables-enable_field_id: Aktivera generering av standardkonfiguration för databasrelaterade fält
+            tables-enable_field_updated_at: Om standardvärdet för fältet updated_at ska aktiveras i databasen
+            tables-enable_gorm_tag_column: Om databasrelaterad gormgenerering ska aktiveras
+        gitignote:
+            long: Generera .gitignore-filer för ignorerad filhantering i versionskontroll
+            short: Generera .gitignore-fil
+        golang-lint:
+            long: Generera .golangci.yml-fil för kontroll av kodkvalitet
+            short: Generera .golangci.yml-fil
+        goreleaser:
+            long: Generera .goreleaser.yml-fil för konfiguration av releaseverktyg
+            short: Generera filen .goreleaser.yml
+        impl:
+            long: Generera implementeringsfiler för implementering av företagstjänster
+            short: Generera implementeringsfiler
+        long: Kodgenerator, stöder flera mallar
+        makefile:
+            long: Generera Makefile-filer för att bygga verktyg och andra relaterade kommandon
+            short: Generera Makefile
+        mod:
+            long: Generera go.mod-fil för beroendehantering
+            short: Generera go.mod-fil
+        pb:
+            long: Generera .pb.go-filer för att generera .proto-filer,
+            short: Generera .pb.go-fil
+        short: Kod generator
+        state:
+            long: Generera alla relaterade funktioner i staten för statisk resurs- eller statisk resurshantering av företagstjänster
+            short: Alla relevanta funktioner för att generera tillstånd
+        table:
+            long: Alla relaterade funktioner för att generera tabeller för statisk resurs- eller statisk resurshantering av affärstjänster
+            short: Alla relaterade funktioner för att generera tabeller
     help:
         additional_commands: Ytterligare kommandon
         aliases: kommandoalias
@@ -27,5 +98,5 @@ cli:
                     usage: 'Översättningskanal: Supporttyp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Flerspråkiga filer från en viss källa konverteras till filer i samma format på andra språk.
             short: Översätt
-    long: Innehåller "proto"-baserad backend-ramverk, vanliga mallar och flerspråkiga översättningar
-    short: Verktygslåda
+    long: En verktygsuppsättning för lata människor, inklusive 'proto'-baserat backend-ramverk, vanliga mallar och flerspråkig översättning
+    short: Ett verktygsset för lata människor

@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Jikme-jik gündeligi
+    gen:
+        add-rpc:
+            flags:
+                action: Toparlara goşulmaly häsiýetler, jikme-jiklikler üçin ulanyş resminamalaryny tapmagyňyzy haýyş edýäris
+                default-role: Topar bilen döredilen interfeýsiň esasy roly, jikme-jiklikler üçin ulanyş resminamalaryna serediň.
+                gen-to: Döredilen .go faýllarynyň çykyş ýerini görkeziň
+                list-option: Sanawy süzüp hem bolýar, jikme-jiklikler üçin ulanyş resminamalaryny tapmagyňyzy haýyş edýäris.
+                model: Modeliň adyny görkeziň, "model" prefiksini goýmagy goldaň
+            long: Toparlarda interfeýs dörediň we .proto faýlynda belli bir model üçin interfeýs goşuň
+            short: Topar öndürmek interfeýsi
+        all:
+            long: Bu gural bilen goldanýan ähli kodlary dörediň
+            short: Codehli kod dörediň
+        cache:
+            long: Işewürlik jaňlary bilen baglanyşykly SDK-lar üçin keş keş faýllaryny dörediň
+            short: Keş faýly dörediň
+        cmd:
+            long: Iş hyzmatlary üçin giriş faýllaryny dörediň
+            short: Giriş faýly dörediň
+        conf:
+            long: Iş hyzmatlaryny konfigurasiýa okamak üçin konfigurasiýa faýllaryny dörediň
+            short: Sazlama faýly dörediň
+        dockerignore:
+            long: Faýl dolandyryşyny äsgermezlik etmek üçin Docker şekil binasy üçin .dockerignore faýly dörediň
+            short: .Dockerignore faýly dörediň
+        editorconfig:
+            long: Redaktor konfigurasiýasy üçin .editorconfig faýly dörediň
+            short: .Editorconfig faýly dörediň
+        flags:
+            add-proto-files: Görkezilen .proto faýly bilen bir bukjada bolmadyk beýleki .proto faýllary / bukja ýollaryny import etmeli bolsaňyz, bu amal konfigurasiýa faýlynda düzülen ýoly goşar (gaýtadan ýazmaz).
+            go-module-prefix: .Proto faýlynda düzülen we hakyky faýly üçin go_package ýoly üçin bu opsiýany düzüp bilersiňiz
+            input: Döredilmeli .proto çeşme faýlyny görkeziň
+            output-path: Bu opsiýa .proto faýlynda düzülen go_package ýoly aslynda döredilmeli ýol ýassygy bilen gabat gelmedik ýagdaýynda düzülip bilner.
+            overwrite: Täzelenmejek mazmun üçin, bar bolan mazmuny täzeden ýazmaga mejbur ediň
+            proto-files: Görkezilen .proto faýly bilen bir bukjada bolmadyk beýleki .proto faýllary / bukja ýollaryny import etmek üçin bu amal, konfigurasiýa faýlyndaky konfigurasiýa meýdançasyny ýok etmek üçin bir wariantdyr.
+            protoc: '`protokol ''düzülip bilinýän faýl ýoly'
+            protoc-gen-go: '`protoc-gen-go ''plugin ýoly'
+            tables-enable_field_created_at: Döredilen_at meýdançasynyň deslapky konfigurasiýa neslini işletmelimi
+            tables-enable_field_deleted_at: Maglumat bazasyndaky öçürilen_at meýdançasynyň deslapky sazlamasyny işletmelimi
+            tables-enable_field_id: Maglumat bazasy bilen baglanyşykly meýdanlar üçin deslapky konfigurasiýa döredilmegini işjeňleşdiriň
+            tables-enable_field_updated_at: Maglumat bazasyndaky täzelenen_at meýdançasynyň deslapky bahasyny işletmelimi
+            tables-enable_gorm_tag_column: Maglumatlar bazasy bilen baglanyşykly gurçuk döretmäge mümkinçilik bermelimi
+        gitignote:
+            long: Wersiýa dolandyryşynda hasaba alynmadyk faýl dolandyryşy üçin .gitignore faýllaryny dörediň
+            short: .Gitignore faýly dörediň
+        golang-lint:
+            long: Kodyň hilini barlamak üçin .golangci.yml faýly dörediň
+            short: .Golangci.yml faýly dörediň
+        goreleaser:
+            long: Goýberiş gurallarynyň konfigurasiýasy üçin .goreleaser.yml faýly dörediň
+            short: .Goreleaser.yml faýly dörediň
+        impl:
+            long: Iş hyzmatlaryny amala aşyrmak üçin ýerine ýetiriş faýllaryny dörediň
+            short: Implementationerine ýetiriş faýllaryny dörediň
+        long: Kod generatory, birnäçe galyplary goldaýar
+        makefile:
+            long: Gurluş gurallary we beýleki baglanyşykly buýruklar üçin Makefile faýllaryny dörediň
+            short: Makefile dörediň
+        mod:
+            long: Garaşlylygy dolandyrmak üçin go.mod faýly dörediň
+            short: Go.mod faýly dörediň
+        pb:
+            long: .Prot faýllaryny döretmek üçin .pb.go faýllaryny dörediň,
+            short: .Pb.go faýly dörediň
+        short: Kod generatory
+        state:
+            long: Döwlet çeşmelerini ýa-da işewürlik hyzmatlaryny statiki dolandyrmak üçin döwletiň ähli degişli funksiýalaryny dörediň
+            short: Döwlet döretmek üçin ähli degişli funksiýalar
+        table:
+            long: Döwlet çeşmesi ýa-da iş hyzmatlarynyň statiki çeşme dolandyryşy üçin tablisalary döretmek bilen baglanyşykly ähli funksiýalar
+            short: Tablisa döretmek üçin ähli degişli funksiýalar
     help:
         additional_commands: Goşmaça buýruklar
         aliases: lakam
@@ -27,5 +98,5 @@ cli:
                     usage: 'Terjime kanaly: Goldaw görnüşi {{diapazony $ açary, $ bahasy: = .Tip}} {{$ açar}}: {{$ bahasy}} {{end}}'
             long: Belli bir çeşmeden köp dilli faýllar beýleki dillerde şol bir formatdaky faýllara öwrüler.
             short: terjime et
-    long: “Proto” esasly arka çarçuwasy, köplenç ulanylýan şablonlar we köp dilli terjimeler bar
-    short: Gurallar toplumy
+    long: Yalta adamlar üçin gural, şol sanda 'proto' esasly arka çarçuwasy, köplenç ulanylýan şablonlar we köp dilli terjime
+    short: Yalta adamlar üçin gural

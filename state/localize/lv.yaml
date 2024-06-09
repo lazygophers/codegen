@@ -1,6 +1,77 @@
 cli:
     flags:
         debug: Izvadiet detalizētu žurnālu
+    gen:
+        add-rpc:
+            flags:
+                action: Rīcības, kas jāpievieno pa daļām, lūdzu, skatiet lietošanas dokumentāciju, lai iegūtu sīkāku informāciju
+                default-role: Paketē ģenerētās saskarnes noklusējuma loma, lūdzu, skatiet lietošanas dokumentāciju.
+                gen-to: Norādiet ģenerēto .go failu izvades vietu
+                list-option: Sarakstu var arī filtrēt, lūdzu, skatiet lietošanas dokumentāciju, lai iegūtu sīkāku informāciju.
+                model: Norādiet modeļa nosaukumu, atbalstiet prefiksa "model" izlaišanu
+            long: Ģenerējiet saskarnes partijās un pievienojiet saskarni noteiktam modelim .proto failā
+            short: Partijas paaudzes interfeiss
+        all:
+            long: Ģenerējiet visu kodu, ko atbalsta šis rīks
+            short: Ģenerējiet visu kodu
+        cache:
+            long: Ģenerējiet kešatmiņas failus ar biznesa zvanu kešatmiņu saistītajiem SDK
+            short: Ģenerēt kešatmiņas failu
+        cmd:
+            long: Ģenerējiet biznesa pakalpojumu ievades failus
+            short: Ģenerējiet ievades failu
+        conf:
+            long: Ģenerējiet konfigurācijas failus biznesa pakalpojumu konfigurācijas lasīšanai
+            short: Ģenerējiet konfigurācijas failu
+        dockerignore:
+            long: Ģenerējiet .dockerignore failu Docker attēlu veidošanai, lai ignorētu failu pārvaldību
+            short: Ģenerējiet .dockerignore failu
+        editorconfig:
+            long: Ģenerējiet .editorconfig failu redaktora konfigurācijai
+            short: Ģenerējiet .editorconfig failu
+        flags:
+            add-proto-files: Ja jums ir jāimportē citi .proto faili/mapes ceļi, kas neatrodas tajā pašā mapē ar norādīto .proto failu, šī darbība pievienos (nepārrakstīs) konfigurācijas failā konfigurēto ceļu.
+            go-module-prefix: Varat konfigurēt šo opciju go_package ceļam, kas konfigurēts .proto failā un faktiskajam.
+            input: Norādiet ģenerējamo .proto avota failu
+            output-path: Šo opciju var konfigurēt, ja .proto failā konfigurētais go_package ceļš neatbilst ceļa pamatnei, kas faktiski ir jāģenerē.
+            overwrite: Saturam, kas netiks atjaunots, piespiediet pārrakstīt esošo saturu
+            proto-files: Lai importētu citus .proto failus/mapes ceļus, kas neatrodas tajā pašā mapē ar norādīto .proto failu, šī darbība ir iespēja ignorēt konfigurācijas lauku konfigurācijas failā.
+            protoc: '"protoks" pielāgojams faila ceļš'
+            protoc-gen-go: “protoc-gen-go” spraudņa ceļš
+            tables-enable_field_created_at: Vai iespējot noklusējuma konfigurācijas ģenerēšanu laukam Created_at
+            tables-enable_field_deleted_at: Vai datu bāzē iespējot lauka deleted_at noklusējuma iestatījumu
+            tables-enable_field_id: Iespējot noklusējuma konfigurācijas ģenerēšanu ar datu bāzi saistītiem laukiem
+            tables-enable_field_updated_at: Vai datu bāzē iespējot lauka updated_at noklusējuma vērtību
+            tables-enable_gorm_tag_column: Vai iespējot ar datu bāzi saistītu grupu ģenerēšanu
+        gitignote:
+            long: Ģenerējiet .gitignore failus ignorēto failu pārvaldībai versiju kontrolē
+            short: Ģenerējiet .gitignore failu
+        golang-lint:
+            long: Ģenerējiet .golangci.yml failu koda kvalitātes pārbaudei
+            short: Ģenerējiet .golangci.yml failu
+        goreleaser:
+            long: Ģenerējiet .goreleaser.yml failu izlaišanas rīku konfigurēšanai
+            short: Ģenerējiet .goreleaser.yml failu
+        impl:
+            long: Ģenerēt ieviešanas failus biznesa pakalpojumu ieviešanai
+            short: Ģenerējiet ieviešanas failus
+        long: Kodu ģenerators, atbalsta vairākas veidnes
+        makefile:
+            long: Ģenerējiet Makefile failus, lai izveidotu rīkus un citas saistītas komandas
+            short: Ģenerēt Makefile
+        mod:
+            long: Ģenerējiet failu go.mod atkarības pārvaldībai
+            short: Ģenerējiet failu go.mod
+        pb:
+            long: Ģenerēt .pb.go failus .proto failu ģenerēšanai,
+            short: Ģenerējiet .pb.go failu
+        short: Kodu ģenerators
+        state:
+            long: Ģenerējiet visas saistītās valsts funkcijas uzņēmējdarbības pakalpojumu statusa resursu vai statisku resursu pārvaldībai
+            short: Visas attiecīgās funkcijas stāvokļa ģenerēšanai
+        table:
+            long: Visas saistītās tabulu ģenerēšanas funkcijas statusa resursu vai statisko resursu pārvaldībai biznesa pakalpojumiem
+            short: Visas saistītās funkcijas tabulu ģenerēšanai
     help:
         additional_commands: Papildu komandas
         aliases: komandas aizstājvārds
@@ -27,5 +98,5 @@ cli:
                     usage: 'Tulkošanas kanāls: atbalsta veids {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Daudzvalodu faili no noteikta avota tiek pārvērsti failos tādā pašā formātā citās valodās.
             short: tulkot
-    long: Ietver uz "proto" balstītu aizmugursistēmas sistēmu, bieži lietotas veidnes un vairāku valodu tulkojumus
-    short: Rīku komplekts
+    long: Rīku komplekts slinkiem cilvēkiem, tostarp uz “proto” balstīta aizmugursistēmas sistēma, bieži lietotas veidnes un tulkošana vairākās valodās
+    short: Instrumentu komplekts slinkiem cilvēkiem
