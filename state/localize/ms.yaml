@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Hasilkan fail kemasukan untuk perkhidmatan perniagaan
             short: Hasilkan fail kemasukan
+        conf:
+            long: Hasilkan fail konfigurasi untuk bacaan konfigurasi perkhidmatan perniagaan
+            short: Hasilkan fail konfigurasi
+        dockerignore:
+            long: Hasilkan fail .dockerignore untuk pembinaan imej Docker untuk mengabaikan pengurusan fail
+            short: Hasilkan fail .dockerignore
+        editorconfig:
+            long: Hasilkan fail .editorconfig untuk konfigurasi editor
+            short: Hasilkan fail .editorconfig
         flags:
             add-proto-files: Jika anda perlu mengimport fail .proto/laluan folder lain yang tidak berada dalam folder yang sama dengan fail .proto yang ditentukan, operasi ini akan menambahkan (tidak menulis ganti) laluan yang dikonfigurasikan dalam fail konfigurasi.
             go-module-prefix: Untuk laluan go_package yang dikonfigurasikan dalam fail .proto dan yang sebenar, anda boleh mengkonfigurasi pilihan ini
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Dayakan penjanaan konfigurasi lalai untuk medan berkaitan pangkalan data
             tables-enable_field_updated_at: Sama ada untuk mendayakan nilai lalai medan updated_at dalam pangkalan data
             tables-enable_gorm_tag_column: Sama ada untuk mendayakan penjanaan gorm berkaitan pangkalan data
+        gitignote:
+            long: Hasilkan fail .gitignore untuk pengurusan fail yang diabaikan dalam kawalan versi
+            short: Hasilkan fail .giignore
+        golang-lint:
+            long: Hasilkan fail .golangci.yml untuk pemeriksaan kualiti kod
+            short: Hasilkan fail .golangci.yml
+        goreleaser:
+            long: Hasilkan fail .goreleaser.yml untuk konfigurasi alat keluaran
+            short: Hasilkan fail .goreleaser.yml
+        impl:
+            long: Hasilkan fail pelaksanaan untuk pelaksanaan perkhidmatan perniagaan
+            short: Hasilkan fail pelaksanaan
         long: Penjana kod, menyokong berbilang templat
+        makefile:
+            long: Hasilkan fail Makefile untuk membina alatan dan arahan lain yang berkaitan
+            short: Hasilkan Makefile
+        mod:
+            long: Hasilkan fail go.mod untuk pengurusan pergantungan
+            short: Hasilkan fail go.mod
+        pb:
+            long: Hasilkan fail .pb.go untuk menjana fail .proto,
+            short: Hasilkan fail .pb.go
         short: Penjana kod
+        state:
+            long: Hasilkan semua fungsi negara yang berkaitan untuk sumber stateful atau pengurusan sumber statik perkhidmatan perniagaan
+            short: Semua fungsi yang berkaitan untuk menjana keadaan
+        table:
+            long: Semua fungsi berkaitan penjanaan jadual untuk sumber stateful atau pengurusan sumber statik perkhidmatan perniagaan
+            short: Semua fungsi berkaitan untuk menjana jadual
     help:
         additional_commands: Perintah tambahan
         aliases: alias arahan

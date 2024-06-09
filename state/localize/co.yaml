@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generate schedarii di ingressu per i servizii di l'affari
             short: Generate un schedariu di entrata
+        conf:
+            long: Generate fugliali di cunfigurazione per a lettura di cunfigurazione di servizii cummerciale
+            short: Generate u schedariu di cunfigurazione
+        dockerignore:
+            long: Generate .dockerignore file per a creazione di l'imaghjini Docker per ignurà a gestione di u schedariu
+            short: Generate u schedariu .dockerignore
+        editorconfig:
+            long: Generate .editorconfig file per a cunfigurazione di l'editore
+            short: Generate u schedariu .editorconfig
         flags:
             add-proto-files: Sè avete bisognu di impurtà altri .proto files / folder paths chì ùn sò micca in u stessu cartulare cum'è u schedariu .proto specificatu, sta operazione appiccicarà (micca soprascrivite) a strada cunfigurata in u schedariu di cunfigurazione.
             go-module-prefix: Per a strada di go_package cunfigurata in u schedariu .proto è l'attuale, pudete cunfigurà sta opzione
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Abilita a generazione di cunfigurazione predeterminata per i campi di basa di dati
             tables-enable_field_updated_at: Sia per attivà u valore predeterminatu di u campu updated_at in a basa di dati
             tables-enable_gorm_tag_column: Sia per attivà a generazione di gorm in relazione à a basa di dati
+        gitignote:
+            long: Generate schedarii .gitignore per a gestione di i schedari ignorati in u cuntrollu di versione
+            short: Generate u schedariu .gitignore
+        golang-lint:
+            long: Generate u schedariu .golangci.yml per l'ispezione di qualità di codice
+            short: Generate u schedariu .golangci.yml
+        goreleaser:
+            long: Generate u schedariu .gorelaser.yml per a cunfigurazione di l'arnesi di liberazione
+            short: Generate u schedariu .goreleaser.yml
+        impl:
+            long: Generate fugliali di implementazione per l'implementazione di servizii cummerciale
+            short: Generate schedarii di implementazione
         long: Generatore di codice, supporta parechje mudelli
+        makefile:
+            long: Generate fugliali Makefile per l'arnesi di custruzzione è altri cumandamenti rilativi
+            short: Generate Makefile
+        mod:
+            long: Generate u schedariu go.mod per a gestione di a dependenza
+            short: Generate u schedariu go.mod
+        pb:
+            long: Generate schedarii .pb.go per generà schedarii .proto,
+            short: Generate u schedariu .pb.go
         short: Generatore di codice
+        state:
+            long: Genera tutte e funzioni di u statu ligate per a risorsa statale o a gestione di risorse statiche di i servizii cummerciale
+            short: Tutte e funzioni pertinenti per a generazione di u statu
+        table:
+            long: Tutte e funzioni cunnesse di generazione di tabelle per a gestione di risorse stateful o di risorse statiche di servizii di cummerciale
+            short: Tutte e funzioni relative per a generazione di tavule
     help:
         additional_commands: Cumandamenti supplementari
         aliases: alias di cumandamentu

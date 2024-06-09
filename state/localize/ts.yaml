@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Endla tifayela to nghena ta vukorhokeri bya bindzu
             short: Endla fayili yo nghena
+        conf:
+            long: Endla tifayela ta vukorhokeri bya ku hlaya ka vuhlanganisi bya vukorhokeri bya bindzu
+            short: Endla fayili ya vuhlanganisi
+        dockerignore:
+            long: Endla fayili ya .dockerignore ya ku aka swifaniso swa Docker ku honisa vulawuri bya fayili
+            short: Endla fayili ya .dockerignore
+        editorconfig:
+            long: Endla fayili ya .editorconfig ya vukorhokeri bya muhleri
+            short: Endla fayili ya .editorconfig
         flags:
             add-proto-files: Loko u lava ku nghenisa tifayela tin’wana ta .proto/tindlela ta folda leti nga riki eka folda yin’we na fayili ya .proto leyi boxiweke, ntirho lowu wu ta engetela (ku nga ri ku tsala ehenhla) ndlela leyi hleriweke eka fayili ya vuhlanganisi.
             go-module-prefix: Eka ndlela ya go_package leyi hleriweke eka fayili ya .proto na ya xiviri, u nga lulamisa nhlawulo lowu
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Endla leswaku ku tumbuluxiwa ka vukorhokeri bya xiviri eka tinsimu leti fambelanaka na database
             tables-enable_field_updated_at: Loko ku ri ku pfumelela ntikelo wa xiviri wa nsimu ya updated_at eka database
             tables-enable_gorm_tag_column: Leswaku ku endliwa leswaku ku va na ku tumbuluxiwa ka gorm loku fambelanaka na database
+        gitignote:
+            long: Endla tifayela ta .gitignore ta vulawuri bya fayili lebyi honisiweke eka vulawuri bya vuhundzuluxi
+            short: Endla fayili ya .gitignore
+        golang-lint:
+            long: Endla fayili ya .golangci.yml ku kambela khwalithi ya khodi
+            short: Endla fayili ya .golangci.yml
+        goreleaser:
+            long: Endla fayili ya .goreleaser.yml ya ku lulamisa switirhisiwa swo humesa
+            short: Endla fayili ya .goreleaser.yml
+        impl:
+            long: Ku tumbuluxa tifayela ta ku tirhisiwa ta ku tirhisiwa ka vukorhokeri bya bindzu
+            short: Endla tifayela ta ku tirhisiwa
         long: Khodi generator, yi seketela tithempleyiti to tala
+        makefile:
+            long: Endla tifayela ta Makefile ta switirhisiwa swo aka na swileriso swin’wana leswi fambelanaka
+            short: Ku tumbuluxa Makefile
+        mod:
+            long: Endla fayili ya go.mod ya vulawuri bya ku titshega
+            short: Endla fayili ya go.mod
+        pb:
+            long: Endla tifayela ta .pb.go to tumbuluxa tifayela ta .proto, .
+            short: Endla fayili ya .pb.go
         short: Muendli wa khodi
+        state:
+            long: Ku tumbuluxa mintirho hinkwayo leyi fambelanaka ya mfumo ya switirhisiwa swa xiyimo kumbe vufambisi bya switirhisiwa leswi nga cinciki swa vukorhokeri bya bindzu
+            short: Mintirho hinkwayo leyi faneleke ya ku tumbuluxa xiyimo
+        table:
+            long: Mintirho hinkwayo leyi fambelanaka ya ku tumbuluxa matafula ya switirhisiwa swa xiyimo kumbe vulawuri bya switirhisiwa leswi nga cinciki swa vukorhokeri bya bindzu
+            short: Mintirho hinkwayo leyi fambelanaka yo tumbuluxa matafula
     help:
         additional_commands: Swileriso leswi engetelekeke
         aliases: vito ra xileriso

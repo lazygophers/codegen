@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Hasilkan file entri untuk layanan bisnis
             short: Hasilkan file entri
+        conf:
+            long: Hasilkan file konfigurasi untuk pembacaan konfigurasi layanan bisnis
+            short: Hasilkan file konfigurasi
+        dockerignore:
+            long: Hasilkan file .dockerignore untuk pembuatan image Docker untuk mengabaikan manajemen file
+            short: Hasilkan file .dockerignore
+        editorconfig:
+            long: Hasilkan file .editorconfig untuk konfigurasi editor
+            short: Hasilkan file .editorconfig
         flags:
             add-proto-files: Jika Anda perlu mengimpor jalur file/folder .proto lain yang tidak berada dalam folder yang sama dengan file .proto yang ditentukan, operasi ini akan menambahkan (tidak menimpa) jalur yang dikonfigurasi dalam file konfigurasi.
             go-module-prefix: Untuk jalur go_package yang dikonfigurasi dalam file .proto dan jalur sebenarnya, Anda dapat mengonfigurasi opsi ini
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktifkan pembuatan konfigurasi default untuk bidang terkait database
             tables-enable_field_updated_at: Apakah akan mengaktifkan nilai default bidang update_at di database
             tables-enable_gorm_tag_column: Apakah akan mengaktifkan pembuatan gorm terkait database
+        gitignote:
+            long: Hasilkan file .gitignore untuk manajemen file yang diabaikan dalam kontrol versi
+            short: Hasilkan file .gitignore
+        golang-lint:
+            long: Hasilkan file .golangci.yml untuk pemeriksaan kualitas kode
+            short: Hasilkan file .golangci.yml
+        goreleaser:
+            long: Hasilkan file .goreleaser.yml untuk konfigurasi alat rilis
+            short: Hasilkan file .goreleaser.yml
+        impl:
+            long: Hasilkan file implementasi untuk implementasi layanan bisnis
+            short: Hasilkan file implementasi
         long: Generator kode, mendukung banyak templat
+        makefile:
+            long: Hasilkan file Makefile untuk alat bangunan dan perintah terkait lainnya
+            short: Hasilkan Makefile
+        mod:
+            long: Hasilkan file go.mod untuk manajemen ketergantungan
+            short: Hasilkan file go.mod
+        pb:
+            long: Hasilkan file .pb.go untuk menghasilkan file .proto,
+            short: Hasilkan file .pb.go
         short: Generator kode
+        state:
+            long: Hasilkan semua fungsi negara terkait untuk sumber daya stateful atau manajemen sumber daya statis layanan bisnis
+            short: Semua fungsi yang relevan untuk menghasilkan status
+        table:
+            long: Semua fungsi terkait pembuatan tabel untuk sumber daya stateful atau manajemen sumber daya statis layanan bisnis
+            short: Semua fungsi terkait untuk menghasilkan tabel
     help:
         additional_commands: Perintah tambahan
         aliases: alias perintah

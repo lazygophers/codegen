@@ -38,6 +38,42 @@ cli:
         cmd:
             short: 生成入口文件
             long: 生成入口文件，用于业务服务的
+        conf:
+            short: 生成配置文件
+            long: 生成配置文件，用于业务服务的配置读取
+        editorconfig:
+            short: 生成.editorconfig 文件
+            long: 生成.editorconfig 文件，用于编辑器的配置
+        golang-lint:
+            short: 生成.golangci.yml 文件
+            long: 生成.golangci.yml 文件，用于代码质量检测
+        goreleaser:
+            short: 生成.goreleaser.yml 文件
+            long: 生成.goreleaser.yml 文件，用于发布工具的配置
+        gitignote:
+            short: 生成.gitignore 文件
+            long: 生成.gitignore 文件，用于版本控制的忽略文件管理
+        dockerignore:
+            short: 生成.dockerignore 文件
+            long: 生成.dockerignore 文件，用于 Docker 镜像构建忽略文件管理
+        impl:
+            short: 生成实现文件
+            long: 生成实现文件，用于业务服务的实现
+        makefile:
+            short: 生成 Makefile 文件
+            long: 生成 Makefile 文件，用于构建工具等相关命令
+        mod:
+            short: 生成 go.mod 文件
+            long: 生成 go.mod 文件，用于依赖管理
+        pb:
+            short: 生成.pb.go 文件
+            long: 生成.pb.go 文件，用于 .proto 文件的生成，会根据配置自动添加相关的字段标签
+        state:
+            short: 生成 state 的所有相关功能
+            long: 生成 state 的所有相关功能，用于业务服务的有状态的资源或静态资源管理
+        table:
+            short: 生成 table 的所有相关功能
+            long: 生成 table 的所有相关功能，用于业务服务的有状态的资源或静态资源管理
     i18n:
         short: 多语言国际化相关工具包
         long: 多语言国际化相关工具包

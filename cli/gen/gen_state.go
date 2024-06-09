@@ -2,6 +2,7 @@ package gen
 
 import (
 	"github.com/lazygophers/codegen/codegen"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/spf13/cobra"
 )
@@ -13,9 +14,8 @@ var GenStateHook = []GenHook{
 }
 
 var stateCmd = &cobra.Command{
-	Use:   "state",
-	Short: "Generates state and state folder",
-	RunE:  runGenState,
+	Use:  "state",
+	RunE: runGenState,
 }
 
 func runGenState(cmd *cobra.Command, args []string) (err error) {
@@ -36,6 +36,9 @@ func runGenState(cmd *cobra.Command, args []string) (err error) {
 	return nil
 }
 
-func init() {
+func initState() {
+	stateCmd.Short = state.Localize(state.I18nTagCliGenStateShort)
+	stateCmd.Long = state.Localize(state.I18nTagCliGenStateLong)
+
 	genCmd.AddCommand(stateCmd)
 }

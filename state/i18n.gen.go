@@ -2,7 +2,7 @@
 //	versions:
 //		codegen	v0.0.0-SNAPSHOT-2f7005e
 //		go		go1.22.3
-//	update:	1717862981
+//	update:	1717896332
 
 package state
 
@@ -21,6 +21,12 @@ const (
 	I18nTagCliGenCacheShort		= `cli.gen.cache.short`
 	I18nTagCliGenCmdLong		= `cli.gen.cmd.long`
 	I18nTagCliGenCmdShort		= `cli.gen.cmd.short`
+	I18nTagCliGenConfLong		= `cli.gen.conf.long`
+	I18nTagCliGenConfShort		= `cli.gen.conf.short`
+	I18nTagCliGenDockerignoreLong		= `cli.gen.dockerignore.long`
+	I18nTagCliGenDockerignoreShort		= `cli.gen.dockerignore.short`
+	I18nTagCliGenEditorconfigLong		= `cli.gen.editorconfig.long`
+	I18nTagCliGenEditorconfigShort		= `cli.gen.editorconfig.short`
 	I18nTagCliGenFlagsAddProtoFiles		= `cli.gen.flags.add-proto-files`
 	I18nTagCliGenFlagsGoModulePrefix		= `cli.gen.flags.go-module-prefix`
 	I18nTagCliGenFlagsInput		= `cli.gen.flags.input`
@@ -34,8 +40,26 @@ const (
 	I18nTagCliGenFlagsTablesEnableFieldId		= `cli.gen.flags.tables-enable_field_id`
 	I18nTagCliGenFlagsTablesEnableFieldUpdatedAt		= `cli.gen.flags.tables-enable_field_updated_at`
 	I18nTagCliGenFlagsTablesEnableGormTagColumn		= `cli.gen.flags.tables-enable_gorm_tag_column`
+	I18nTagCliGenGitignoteLong		= `cli.gen.gitignote.long`
+	I18nTagCliGenGitignoteShort		= `cli.gen.gitignote.short`
+	I18nTagCliGenGolangLintLong		= `cli.gen.golang-lint.long`
+	I18nTagCliGenGolangLintShort		= `cli.gen.golang-lint.short`
+	I18nTagCliGenGoreleaserLong		= `cli.gen.goreleaser.long`
+	I18nTagCliGenGoreleaserShort		= `cli.gen.goreleaser.short`
+	I18nTagCliGenImplLong		= `cli.gen.impl.long`
+	I18nTagCliGenImplShort		= `cli.gen.impl.short`
 	I18nTagCliGenLong		= `cli.gen.long`
+	I18nTagCliGenMakefileLong		= `cli.gen.makefile.long`
+	I18nTagCliGenMakefileShort		= `cli.gen.makefile.short`
+	I18nTagCliGenModLong		= `cli.gen.mod.long`
+	I18nTagCliGenModShort		= `cli.gen.mod.short`
+	I18nTagCliGenPbLong		= `cli.gen.pb.long`
+	I18nTagCliGenPbShort		= `cli.gen.pb.short`
 	I18nTagCliGenShort		= `cli.gen.short`
+	I18nTagCliGenStateLong		= `cli.gen.state.long`
+	I18nTagCliGenStateShort		= `cli.gen.state.short`
+	I18nTagCliGenTableLong		= `cli.gen.table.long`
+	I18nTagCliGenTableShort		= `cli.gen.table.short`
 	I18nTagCliHelpAdditionalCommands		= `cli.help.additional_commands`
 	I18nTagCliHelpAliases		= `cli.help.aliases`
 	I18nTagCliHelpAvailableCommands		= `cli.help.available_commands`

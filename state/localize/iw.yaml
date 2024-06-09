@@ -20,6 +20,15 @@ cli:
         cmd:
             long: הפקת קבצי כניסה לשירותים עסקיים
             short: צור קובץ כניסה
+        conf:
+            long: הפקת קבצי תצורה לקריאת תצורה של שירותים עסקיים
+            short: צור קובץ תצורה
+        dockerignore:
+            long: צור קובץ .docerignore לבניית תמונה של Docker כדי להתעלם מניהול קבצים
+            short: צור קובץ .docerignore
+        editorconfig:
+            long: צור קובץ .editorconfig עבור תצורת העורך
+            short: צור קובץ .editorconfig
         flags:
             add-proto-files: אם אתה צריך לייבא קבצי .proto/נתיבי תיקיות אחרים שאינם נמצאים באותה תיקיה כמו קובץ ה-.proto שצוין, פעולה זו תוסיף (לא תחליף) את הנתיב שהוגדר בקובץ התצורה.
             go-module-prefix: עבור הנתיב של go_package המוגדר בקובץ .proto והנמצא בפועל, תוכל להגדיר אפשרות זו
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: אפשר יצירת תצורת ברירת מחדל עבור שדות הקשורים למסד נתונים
             tables-enable_field_updated_at: האם להפעיל את ערך ברירת המחדל של השדה updated_at במסד הנתונים
             tables-enable_gorm_tag_column: האם לאפשר יצירת gorm הקשורה למסד נתונים
+        gitignote:
+            long: צור קבצי .gitignore עבור ניהול קבצים שמתעלמים ממנו בבקרת גרסאות
+            short: צור קובץ .gitignore
+        golang-lint:
+            long: צור קובץ .golangci.yml לבדיקת איכות הקוד
+            short: צור קובץ .golangci.yml
+        goreleaser:
+            long: צור קובץ .goreleaser.yml עבור תצורה של כלי שחרור
+            short: צור קובץ .goreleaser.yml
+        impl:
+            long: הפקת קבצי הטמעה להטמעת שירותים עסקיים
+            short: יצירת קבצי יישום
         long: מחולל קוד, תומך במספר תבניות
+        makefile:
+            long: צור קבצי Makefile לבניית כלים ופקודות קשורות אחרות
+            short: צור Makefile
+        mod:
+            long: צור קובץ go.mod לניהול תלות
+            short: צור קובץ go.mod
+        pb:
+            long: צור קבצי .pb.go ליצירת קבצי .proto,
+            short: צור קובץ .pb.go
         short: מחולל קודים
+        state:
+            long: צור את כל הפונקציות הקשורות למדינה לניהול משאבים סטטיים או סטטיים של שירותים עסקיים
+            short: כל הפונקציות הרלוונטיות ליצירת מצב
+        table:
+            long: כל הפונקציות הקשורות ליצירת טבלאות לניהול משאבים סטטיים או סטטיים של שירותים עסקיים
+            short: כל הפונקציות הקשורות ליצירת טבלאות
     help:
         additional_commands: פקודות נוספות
         aliases: כינוי פקודה

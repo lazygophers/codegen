@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Cruthaich faidhlichean inntrigidh airson seirbheisean gnìomhachais
             short: Cruthaich faidhle inntrigidh
+        conf:
+            long: Cruthaich faidhlichean rèiteachaidh airson leughadh rèiteachaidh de sheirbheisean gnìomhachais
+            short: Cruthaich faidhle rèiteachaidh
+        dockerignore:
+            long: Cruthaich faidhle .dockerignore airson togail ìomhaigh Docker gus dearmad a dhèanamh air riaghladh fhaidhlichean
+            short: Cruthaich faidhle .dockerigore
+        editorconfig:
+            long: Cruthaich faidhle .editorconfig airson rèiteachadh deasaiche
+            short: Cruthaich faidhle .editorconfig
         flags:
             add-proto-files: Ma dh’fheumas tu faidhlichean .proto/slighean pasgan eile a thoirt a-steach nach eil san aon phasgan ris an fhaidhle .proto ainmichte, cuiridh an obrachadh seo (gun ath-sgrìobhadh) ris an t-slighe a chaidh a rèiteachadh san fhaidhle rèiteachaidh.
             go-module-prefix: Airson an t-slighe go_package air a rèiteachadh anns an fhaidhle .proto agus am fear fhèin, faodaidh tu an roghainn seo a rèiteachadh
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Dèan comas air gineadh rèiteachaidh bunaiteach airson raointean co-cheangailte ri stòr-dàta
             tables-enable_field_updated_at: Co-dhiù an cuir thu an comas luach bunaiteach an raoin updated_at san stòr-dàta
             tables-enable_gorm_tag_column: Am bu chòir gineadh gorm co-cheangailte ri stòr-dàta a chomasachadh
+        gitignote:
+            long: Cruthaich faidhlichean .gitignore airson stiùireadh fhaidhlichean nach deach a leigeil seachad ann an smachd dreach
+            short: Cruthaich faidhle .gitnore
+        golang-lint:
+            long: Generate .golangci.yml faidhle airson sgrùdadh càileachd còd
+            short: Cruthaich faidhle .golangci.yml
+        goreleaser:
+            long: Cruthaich faidhle .goreleaser.yml airson rèiteachadh innealan fuasglaidh
+            short: Cruthaich faidhle .goreleaseer.yml
+        impl:
+            long: Cruthaich faidhlichean buileachaidh airson buileachadh seirbheisean gnìomhachais
+            short: Cruthaich faidhlichean buileachaidh
         long: Gineadair còd, a 'toirt taic do dh'iomadh teamplaid
+        makefile:
+            long: Cruthaich faidhlichean Makefile airson innealan togail agus òrdughan co-cheangailte eile
+            short: Cruthaich Makefile
+        mod:
+            long: Cruthaich faidhle go.mod airson riaghladh eisimeileachd
+            short: Cruthaich faidhle go.mod
+        pb:
+            long: Cruthaich faidhlichean .pb.go airson faidhlichean .proto a ghineadh,
+            short: Cruthaich faidhle .pb.go
         short: Gineadair còd
+        state:
+            long: Cruthaich a h-uile gnìomh stàite co-cheangailte airson goireasan stàiteil no riaghladh ghoireasan statach de sheirbheisean gnìomhachais
+            short: A h-uile gnìomh buntainneach airson stàite gineadh
+        table:
+            long: A h-uile gnìomh co-cheangailte ri bhith a’ cruthachadh chlàran airson goireasan stàiteil no goireasan statach a riaghladh seirbheisean gnìomhachais
+            short: A h-uile gnìomh co-cheangailte airson bùird a ghineadh
     help:
         additional_commands: Òrdughan a bharrachd
         aliases: ailias àithne

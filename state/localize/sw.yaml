@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Tengeneza faili za kuingia kwa huduma za biashara
             short: Tengeneza faili ya kuingia
+        conf:
+            long: Tengeneza faili za usanidi kwa usomaji wa usanidi wa huduma za biashara
+            short: Tengeneza faili ya usanidi
+        dockerignore:
+            long: Tengeneza faili ya .dockerignore ya ujenzi wa picha ya Docker ili kupuuza usimamizi wa faili
+            short: Tengeneza faili ya .dockerignore
+        editorconfig:
+            long: Tengeneza faili ya .editorconfig kwa usanidi wa kihariri
+            short: Tengeneza faili ya .editorconfig
         flags:
             add-proto-files: Iwapo unahitaji kuleta faili/njia zingine za .proto ambazo haziko katika folda sawa na faili iliyobainishwa ya .proto, operesheni hii itaambatisha (sio kubatilisha) njia iliyosanidiwa katika faili ya usanidi.
             go-module-prefix: Kwa njia ya go_package iliyosanidiwa katika faili ya .proto na ile halisi, unaweza kusanidi chaguo hili.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Washa uundaji wa usanidi chaguo-msingi kwa sehemu zinazohusiana na hifadhidata
             tables-enable_field_updated_at: Ikiwa itawasha thamani chaguomsingi ya sehemu iliyosasishwa_katika hifadhidata
             tables-enable_gorm_tag_column: Iwapo itawasha uzalishaji wa gorm unaohusiana na hifadhidata
+        gitignote:
+            long: Tengeneza faili za .gitignore kwa usimamizi wa faili uliopuuzwa katika udhibiti wa toleo
+            short: Tengeneza faili ya .gitignore
+        golang-lint:
+            long: Tengeneza faili ya .golangci.yml kwa ukaguzi wa ubora wa msimbo
+            short: Tengeneza faili ya .golangci.yml
+        goreleaser:
+            long: Tengeneza faili ya .goreleaser.yml kwa usanidi wa zana za kutoa
+            short: Tengeneza faili ya .goreleaser.yml
+        impl:
+            long: Tengeneza faili za utekelezaji kwa utekelezaji wa huduma za biashara
+            short: Tengeneza faili za utekelezaji
         long: Jenereta ya msimbo, inasaidia violezo vingi
+        makefile:
+            long: Tengeneza faili za Makefile za zana za ujenzi na amri zingine zinazohusiana
+            short: Tengeneza Makefile
+        mod:
+            long: Tengeneza faili ya go.mod kwa udhibiti wa utegemezi
+            short: Tengeneza faili ya go.mod
+        pb:
+            long: Tengeneza faili za .pb.go za kutengeneza faili za .proto,
+            short: Tengeneza faili ya .pb.go
         short: Jenereta ya kanuni
+        state:
+            long: Tengeneza kazi zote zinazohusiana za serikali kwa rasilimali za hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
+            short: Vipengele vyote muhimu vya kuunda serikali
+        table:
+            long: Kazi zote zinazohusiana za kutengeneza majedwali kwa rasilimali ya hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
+            short: Vipengele vyote vinavyohusiana vya kutengeneza jedwali
     help:
         additional_commands: Amri za ziada
         aliases: amri jina lak

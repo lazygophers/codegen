@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Iş hyzmatlary üçin giriş faýllaryny dörediň
             short: Giriş faýly dörediň
+        conf:
+            long: Iş hyzmatlaryny konfigurasiýa okamak üçin konfigurasiýa faýllaryny dörediň
+            short: Sazlama faýly dörediň
+        dockerignore:
+            long: Faýl dolandyryşyny äsgermezlik etmek üçin Docker şekil binasy üçin .dockerignore faýly dörediň
+            short: .Dockerignore faýly dörediň
+        editorconfig:
+            long: Redaktor konfigurasiýasy üçin .editorconfig faýly dörediň
+            short: .Editorconfig faýly dörediň
         flags:
             add-proto-files: Görkezilen .proto faýly bilen bir bukjada bolmadyk beýleki .proto faýllary / bukja ýollaryny import etmeli bolsaňyz, bu amal konfigurasiýa faýlynda düzülen ýoly goşar (gaýtadan ýazmaz).
             go-module-prefix: .Proto faýlynda düzülen we hakyky faýly üçin go_package ýoly üçin bu opsiýany düzüp bilersiňiz
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Maglumat bazasy bilen baglanyşykly meýdanlar üçin deslapky konfigurasiýa döredilmegini işjeňleşdiriň
             tables-enable_field_updated_at: Maglumat bazasyndaky täzelenen_at meýdançasynyň deslapky bahasyny işletmelimi
             tables-enable_gorm_tag_column: Maglumatlar bazasy bilen baglanyşykly gurçuk döretmäge mümkinçilik bermelimi
+        gitignote:
+            long: Wersiýa dolandyryşynda hasaba alynmadyk faýl dolandyryşy üçin .gitignore faýllaryny dörediň
+            short: .Gitignore faýly dörediň
+        golang-lint:
+            long: Kodyň hilini barlamak üçin .golangci.yml faýly dörediň
+            short: .Golangci.yml faýly dörediň
+        goreleaser:
+            long: Goýberiş gurallarynyň konfigurasiýasy üçin .goreleaser.yml faýly dörediň
+            short: .Goreleaser.yml faýly dörediň
+        impl:
+            long: Iş hyzmatlaryny amala aşyrmak üçin ýerine ýetiriş faýllaryny dörediň
+            short: Implementationerine ýetiriş faýllaryny dörediň
         long: Kod generatory, birnäçe galyplary goldaýar
+        makefile:
+            long: Gurluş gurallary we beýleki baglanyşykly buýruklar üçin Makefile faýllaryny dörediň
+            short: Makefile dörediň
+        mod:
+            long: Garaşlylygy dolandyrmak üçin go.mod faýly dörediň
+            short: Go.mod faýly dörediň
+        pb:
+            long: .Prot faýllaryny döretmek üçin .pb.go faýllaryny dörediň,
+            short: .Pb.go faýly dörediň
         short: Kod generatory
+        state:
+            long: Döwlet çeşmelerini ýa-da işewürlik hyzmatlaryny statiki dolandyrmak üçin döwletiň ähli degişli funksiýalaryny dörediň
+            short: Döwlet döretmek üçin ähli degişli funksiýalar
+        table:
+            long: Döwlet çeşmesi ýa-da iş hyzmatlarynyň statiki çeşme dolandyryşy üçin tablisalary döretmek bilen baglanyşykly ähli funksiýalar
+            short: Tablisa döretmek üçin ähli degişli funksiýalar
     help:
         additional_commands: Goşmaça buýruklar
         aliases: lakam

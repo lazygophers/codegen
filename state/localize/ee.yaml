@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Wɔ nyatakakadzraɖoƒea ƒe faɛlwo na asitsadɔwo
             short: Wɔ nya siwo woŋlɔ ɖe eme ƒe faɛl
+        conf:
+            long: Wɔ ɖoɖowɔɖi ƒe faɛlwo na ɖoɖowɔɖi xexlẽ le asitsadɔwo me
+            short: Wɔ ɖoɖowɔɖi ƒe faɛl
+        dockerignore:
+            long: Wɔ .dockerignore faɛl na Docker nɔnɔmetata tutu be nàŋe aɖaba aƒu faɛl dzikpɔkpɔ dzi
+            short: Wɔ .dockerignore faɛl
+        editorconfig:
+            long: Wɔ .editorconfig faɛl na nuŋlɔla ƒe ɖoɖowɔwɔ
+            short: Wɔ .editorconfig faɛl
         flags:
             add-proto-files: Ne ehiã be nàxɔ .proto faɛl/agbalẽdzraɖoƒe ƒe mɔ bubu siwo mele agbalẽdzraɖoƒe ɖeka me kple .proto faɛl si woɖo la o la, dɔwɔwɔ sia atsɔ mɔ si woɖo ɖe ɖoɖowɔɖi ƒe faɛl la me akpe ɖe eŋu (maŋlɔe ɖe edzi o).
             go-module-prefix: Le go_package ƒe mɔ si woɖo ɖe .proto faɛl me kple esi ŋutɔŋutɔ gome la, àteŋu aɖo tiatia sia
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Na ɖoɖowɔɖi ƒe dzidzi gbãtɔ nawɔ dɔ na agble siwo do ƒome kple nyatakakadzraɖoƒe
             tables-enable_field_updated_at: Nenye be woawɔ updated_at ƒe akpa si le nyatakakadzraɖoƒea ƒe asixɔxɔ gbãtɔ ŋudɔ
             tables-enable_gorm_tag_column: Nenye be woawɔ gorm dzidzi si ku ɖe nyatakakadzraɖoƒe ŋudɔ
+        gitignote:
+            long: Wɔ .gitignore faɛlwo na faɛl dzikpɔkpɔ si dzi woŋe aɖaba ƒui le version control me
+            short: Wɔ .gitignore faɛl
+        golang-lint:
+            long: Wɔ .golangci.yml faɛl hena kɔda ƒe nyonyome me dzodzro
+            short: Wɔ .golangci.yml faɛl
+        goreleaser:
+            long: Wɔ .goreleaser.yml faɛl hena ɖoɖowɔwɔ ɖe asiɖeɖe le dɔwɔnuwo ŋu
+            short: Wɔ .goreleaser.yml faɛl
+        impl:
+            long: Wɔ dɔwɔwɔ ƒe faɛlwo hena asitsatsa ƒe dɔwɔnawo ƒe dɔwɔwɔ
+            short: Wɔ dɔwɔwɔ ƒe faɛlwo
         long: Code generator, doa alɔ template geɖewo
+        makefile:
+            long: Wɔ Makefile faɛlwo na xɔtudɔwɔnuwo kple sedede bubu siwo do ƒome kplii
+            short: Wɔ Makefile ƒe wɔwɔme
+        mod:
+            long: Wɔ go.mod faɛl na nusiwo dzi woanɔ te ɖo dzikpɔkpɔ
+            short: Wɔ go.mod faɛl
+        pb:
+            long: Wɔ .pb.go faɛlwo hena .proto faɛlwo wɔwɔ, .
+            short: Wɔ .pb.go faɛl
         short: Kɔdamɔnu ƒe mɔ̃
+        state:
+            long: Dzra dziɖuɖu ƒe dɔwɔwɔ siwo katã do ƒome kplii na stateful resource alo static resource management of business services
+            short: Dɔwɔwɔ siwo katã sɔ na dzidzi ƒe nɔnɔme
+        table:
+            long: Dɔ siwo katã do ƒome kplii le kplɔ̃wo wɔwɔ na stateful resource alo static resource management of business services
+            short: Dɔwɔwɔ siwo katã do ƒome kplii hena kplɔ̃wo wɔwɔ
     help:
         additional_commands: Sedede bubuwo
         aliases: sedede ƒe ŋkɔ bubu

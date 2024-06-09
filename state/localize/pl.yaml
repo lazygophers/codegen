@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generuj pliki wpisów dla usług biznesowych
             short: Wygeneruj plik wejściowy
+        conf:
+            long: Generuj pliki konfiguracyjne do odczytu konfiguracji usług biznesowych
+            short: Wygeneruj plik konfiguracyjny
+        dockerignore:
+            long: Wygeneruj plik .dockerignore do tworzenia obrazu Dockera, aby zignorować zarządzanie plikami
+            short: Wygeneruj plik .dockerignore
+        editorconfig:
+            long: Wygeneruj plik .editorconfig do konfiguracji edytora
+            short: Wygeneruj plik .editorconfig
         flags:
             add-proto-files: Jeśli chcesz zaimportować inne pliki/ścieżki folderów .proto, które nie znajdują się w tym samym folderze, co określony plik .proto, ta operacja doda (nie zastąpi) ścieżkę skonfigurowaną w pliku konfiguracyjnym.
             go-module-prefix: Dla ścieżki go_package skonfigurowanej w pliku .proto i ścieżki rzeczywistej możesz skonfigurować tę opcję
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Włącz generowanie domyślnej konfiguracji dla pól związanych z bazą danych
             tables-enable_field_updated_at: Określa, czy włączyć domyślną wartość pola zaktualizowanego_at w bazie danych
             tables-enable_gorm_tag_column: Określa, czy włączyć generowanie gormów związanych z bazą danych
+        gitignote:
+            long: Generuj pliki .gitignore do zarządzania plikami ignorowanymi w kontroli wersji
+            short: Wygeneruj plik .gitignore
+        golang-lint:
+            long: Wygeneruj plik .golangci.yml do kontroli jakości kodu
+            short: Wygeneruj plik .golangci.yml
+        goreleaser:
+            long: Wygeneruj plik .goreleaser.yml w celu konfiguracji narzędzi wydających
+            short: Wygeneruj plik .goreleaser.yml
+        impl:
+            long: Generowanie plików wdrożeniowych w celu wdrożenia usług biznesowych
+            short: Wygeneruj pliki implementacyjne
         long: Generator kodu, obsługuje wiele szablonów
+        makefile:
+            long: Generuj pliki Makefile do tworzenia narzędzi i innych powiązanych poleceń
+            short: Wygeneruj plik Makefile
+        mod:
+            long: Wygeneruj plik go.mod do zarządzania zależnościami
+            short: Wygeneruj plik go.mod
+        pb:
+            long: Generowanie plików .pb.go w celu generowania plików .proto,
+            short: Wygeneruj plik .pb.go
         short: Generator kodów
+        state:
+            long: Generuj wszystkie powiązane funkcje stanu dla zarządzania zasobami stanowymi lub statycznymi usług biznesowych
+            short: Wszystkie istotne funkcje generowania stanu
+        table:
+            long: Wszystkie powiązane funkcje generowania tabel do zarządzania zasobami stanowymi lub statycznymi usług biznesowych
+            short: Wszystkie powiązane funkcje generowania tabel
     help:
         additional_commands: Dodatkowe polecenia
         aliases: alias polecenia

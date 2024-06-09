@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Business services atana entry file siam chhuah
             short: Entry file siam rawh
+        conf:
+            long: Business services-a configuration chhiarna tur configuration file siam
+            short: Configuration file siam rawh
+        dockerignore:
+            long: File management ngaihthah nan Docker image building atan .dockerignore file siam rawh
+            short: .dockerignore file siam rawh
+        editorconfig:
+            long: Editor configuration atan .editorconfig file siam rawh
+            short: .editorconfig file siam rawh
         flags:
             add-proto-files: .proto file/folder path dang, .proto file tarlan nen folder khata awm lo import i mamawh a nih chuan, he operation hian configuration file-a configure path chu a append (overwrite lo) ang.
             go-module-prefix: .proto file a go_package configure path leh a tak tak tan chuan he option hi configure theih a ni
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Database nena inzawm field hrang hrang tan default configuration generation enable rawh
             tables-enable_field_updated_at: Database chhunga updated_at field default value enable tur nge tih
             tables-enable_gorm_tag_column: Database nena inzawm gorm generation enable tur nge tih
+        gitignote:
+            long: Version control-a ignoreed file management atan .gitignore file siam rawh
+            short: .gitignore file siam rawh
+        golang-lint:
+            long: Code quality enfiahna atan .golangci.yml file siam rawh
+            short: .golangci.yml file siam rawh
+        goreleaser:
+            long: Release tools configuration atan .goreleaser.yml file siam rawh
+            short: .goreleaser.yml file siam rawh
+        impl:
+            long: Business services kalpui dan tur implementation file siam
+            short: Implementation file siam chhuah
         long: Code generator, template tam tak a support thei
+        makefile:
+            long: Building tools leh a kaihhnawih command dangte atan Makefile file siam rawh
+            short: Makefile siam rawh
+        mod:
+            long: Dependance management atan go.mod file siam rawh
+            short: go.mod file siam rawh
+        pb:
+            long: .proto file siam nan .pb.go file siam la, .
+            short: .pb.go file siam rawh
         short: Code siamtu a ni
+        state:
+            long: Business services-a stateful resource emaw static resource management emaw atan state-a function kaihhnawih zawng zawng siam chhuah
+            short: State siamna atana function kaihhnawih zawng zawng
+        table:
+            long: Business services-a stateful resource emaw static resource management emaw atana table siamna hna inzawm zawng zawng
+            short: Table siamna atana function inzawm zawng zawng
     help:
         additional_commands: Thupek dang a awm bawk
         aliases: thupek alias a ni

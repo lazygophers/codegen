@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Ngahasilkeun file éntri pikeun jasa bisnis
             short: Ngahasilkeun file éntri
+        conf:
+            long: Ngahasilkeun file konfigurasi pikeun maca konfigurasi jasa bisnis
+            short: Ngahasilkeun file konfigurasi
+        dockerignore:
+            long: Ngahasilkeun file .dockerignore pikeun wangunan gambar Docker malire manajemén file
+            short: Ngahasilkeun file .dockerignore
+        editorconfig:
+            long: Ngahasilkeun file .editorconfig pikeun konfigurasi redaktur
+            short: Ngahasilkeun file .editorconfig
         flags:
             add-proto-files: Lamun perlu ngimpor file .proto séjén / jalur folder nu teu di folder sarua salaku file .proto dieusian, operasi ieu bakal append (teu nimpa) jalur ngonpigurasi dina file konfigurasi.
             go-module-prefix: Pikeun jalur go_package anu dikonpigurasi dina file .proto sareng anu saleresna, anjeun tiasa ngonpigurasikeun pilihan ieu.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktipkeun generasi konfigurasi standar pikeun widang nu patali database
             tables-enable_field_updated_at: Naha ngaktipkeun nilai standar tina widang updated_at dina database
             tables-enable_gorm_tag_column: Naha ngaktipkeun generasi gorm nu patali database
+        gitignote:
+            long: Ngahasilkeun file .gitignore pikeun manajemén file dipaliré dina kadali versi
+            short: Ngahasilkeun file .giignore
+        golang-lint:
+            long: Ngahasilkeun file .golangci.yml pikeun pamariksaan kualitas kode
+            short: Generate file .golangci.yml
+        goreleaser:
+            long: Ngahasilkeun file .goreleaser.yml pikeun konfigurasi pakakas release
+            short: Ngahasilkeun file .goreleaser.yml
+        impl:
+            long: Ngahasilkeun file palaksanaan pikeun palaksanaan jasa bisnis
+            short: Ngahasilkeun file palaksanaan
         long: Kode generator, ngarojong sababaraha témplat
+        makefile:
+            long: Ngahasilkeun file Makefile pikeun alat ngawangun sareng paréntah anu aya hubunganana
+            short: Ngahasilkeun Makefile
+        mod:
+            long: Ngahasilkeun file go.mod pikeun manajemén kagumantungan
+            short: Ngahasilkeun file go.mod
+        pb:
+            long: Jieun file .pb.go pikeun ngahasilkeun file .proto,
+            short: Ngahasilkeun file .pb.go
         short: Generator kode
+        state:
+            long: Ngahasilkeun sagala fungsi patali nagara pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
+            short: Sadaya fungsi anu relevan pikeun ngahasilkeun kaayaan
+        table:
+            long: Kabéh fungsi patali generating tabel pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
+            short: Sadaya fungsi anu aya hubunganana pikeun ngahasilkeun tabel
     help:
         additional_commands: Paréntah tambahan
         aliases: paréntah alias

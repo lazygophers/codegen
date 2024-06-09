@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Ustvarite vnosne datoteke za poslovne storitve
             short: Ustvari vnosno datoteko
+        conf:
+            long: Ustvarite konfiguracijske datoteke za branje konfiguracije poslovnih storitev
+            short: Ustvari konfiguracijsko datoteko
+        dockerignore:
+            long: Ustvarite datoteko .dockerignore za gradnjo slike Docker, da prezrete upravljanje datotek
+            short: Ustvari datoteko .dockerignore
+        editorconfig:
+            long: Ustvari datoteko .editorconfig za konfiguracijo urejevalnika
+            short: Ustvari datoteko .editorconfig
         flags:
             add-proto-files: Če morate uvoziti druge poti .proto datotek/map, ki niso v isti mapi kot podana datoteka .proto, bo ta operacija dodala (ne prepisala) pot, konfigurirano v konfiguracijski datoteki.
             go-module-prefix: Za pot go_package, konfigurirano v datoteki .proto, in dejansko pot, lahko konfigurirate to možnost
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Omogoči privzeto generiranje konfiguracije za polja, povezana z bazo podatkov
             tables-enable_field_updated_at: Ali naj se omogoči privzeta vrednost polja updated_at v bazi podatkov
             tables-enable_gorm_tag_column: Ali naj se omogoči ustvarjanje gorm, povezanih z bazo podatkov
+        gitignote:
+            long: Ustvari datoteke .gitignore za upravljanje prezrtih datotek v nadzoru različic
+            short: Ustvari datoteko .gitignore
+        golang-lint:
+            long: Ustvari datoteko .golangci.yml za pregled kakovosti kode
+            short: Ustvari datoteko .golangci.yml
+        goreleaser:
+            long: Ustvari datoteko .goreleaser.yml za konfiguracijo orodij za izdajo
+            short: Ustvari datoteko .goreleaser.yml
+        impl:
+            long: Generirajte implementacijske datoteke za implementacijo poslovnih storitev
+            short: Ustvari izvedbene datoteke
         long: Generator kode, podpira več predlog
+        makefile:
+            long: Ustvari datoteke Makefile za orodja za gradnjo in druge povezane ukaze
+            short: Ustvari Makefile
+        mod:
+            long: Ustvari datoteko go.mod za upravljanje odvisnosti
+            short: Ustvari datoteko go.mod
+        pb:
+            long: Ustvari datoteke .pb.go za ustvarjanje datotek .proto,
+            short: Ustvari datoteko .pb.go
         short: Generator kode
+        state:
+            long: Ustvarite vse povezane funkcije stanja za upravljanje virov s stanjem ali statično upravljanje poslovnih storitev
+            short: Vse ustrezne funkcije za generiranje stanja
+        table:
+            long: Vse povezane funkcije generiranja tabel za upravljanje virov s stanjem ali statično upravljanje poslovnih storitev
+            short: Vse povezane funkcije za generiranje tabel
     help:
         additional_commands: Dodatni ukazi
         aliases: vzdevek ukaza

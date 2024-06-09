@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generu enirajn dosierojn por komercaj servoj
             short: Generu enirdosieron
+        conf:
+            long: Generu agordajn dosierojn por agorda legado de komercaj servoj
+            short: Generu agordan dosieron
+        dockerignore:
+            long: Generu .dockerignore dosieron por Docker-bildkonstruado por ignori dosieradministradon
+            short: Generu dosieron .dockerignore
+        editorconfig:
+            long: Generu .editorconfig dosieron por redaktila agordo
+            short: Generu .editorconfig dosieron
         flags:
             add-proto-files: Se vi bezonas importi aliajn .proto dosierojn/dosierujojn vojojn kiuj ne estas en la sama dosierujo kiel la specifita .proto dosiero, ĉi tiu operacio aldonos (ne anstataŭigos) la vojon agordita en la agorda dosiero.
             go-module-prefix: Por la vojo de go_package agordita en la .proto-dosiero kaj la efektiva, vi povas agordi ĉi tiun opcion
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Ebligu defaŭltan agordan generacion por datumbazaj kampoj
             tables-enable_field_updated_at: Ĉu ebligi la defaŭltan valoron de la kampo updated_at en la datumbazo
             tables-enable_gorm_tag_column: Ĉu ebligi datumbaz-rilatan gorm-generadon
+        gitignote:
+            long: Generu .gitignore dosierojn por ignorita dosieradministrado en versio-kontrolo
+            short: Generu dosieron .gitignore
+        golang-lint:
+            long: Generu .golangci.yml dosieron por koda kvalito-inspektado
+            short: Generu .golangci.yml dosieron
+        goreleaser:
+            long: Generu .goreleaser.yml dosieron por agordo de eldonaj iloj
+            short: Generu .goreleaser.yml dosieron
+        impl:
+            long: Generu realigajn dosierojn por efektivigo de komercaj servoj
+            short: Generu realigajn dosierojn
         long: Kodgeneratoro, subtenas plurajn ŝablonojn
+        makefile:
+            long: Generu Makefile-dosierojn por konstrui ilojn kaj aliajn rilatajn komandojn
+            short: Generu Makefile
+        mod:
+            long: Generu go.mod dosieron por dependeca administrado
+            short: Generu go.mod dosieron
+        pb:
+            long: Generu .pb.go dosierojn por generi .proto dosierojn,
+            short: Generu .pb.go dosieron
         short: Kodgeneratoro
+        state:
+            long: Generu ĉiujn rilatajn funkciojn de ŝtato por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
+            short: Ĉiuj rilataj funkcioj por generado de stato
+        table:
+            long: Ĉiuj rilataj funkcioj de generado de tabeloj por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
+            short: Ĉiuj rilataj funkcioj por generi tabelojn
     help:
         additional_commands: Kromaj komandoj
         aliases: komando kaŝnomo

@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Ji bo karûbarên karsaziyê pelên têketinê biafirînin
             short: Pelê têketinê çêbikin
+        conf:
+            long: Ji bo xwendina veavakirina karûbarên karsaziyê pelên mîhengê biafirînin
+            short: Pelê veavakirinê çêbike
+        dockerignore:
+            long: Ji bo avakirina wêneya Docker pelê .dockerignore biafirîne ku rêveberiya pelê paşguh bike
+            short: Pelê .dockerignore biafirîne
+        editorconfig:
+            long: Ji bo veavakirina edîtorê pelê .editorconfig biafirîne
+            short: Pelê .editorconfig biafirîne
         flags:
             add-proto-files: Ger hewce be ku hûn pelên .proto/rêyên din ên peldanka ku di peldanka .proto ya diyarkirî de ne di heman peldankê de ne îtxal bikin, ev kar dê riya ku di pelê veavakirinê de hatî mîheng kirin zêde bike (ne li ser binivîse).
             go-module-prefix: Ji bo riya go_package ku di pelê .proto de hatî mîheng kirin û ya rastîn, hûn dikarin vê vebijarkê mîheng bikin.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Ji bo qadên girêdayî databasê hilberîna veavakirina xwerû çalak bike
             tables-enable_field_updated_at: Ma nirxa xwerû ya qada updated_at di databasê de çalak bike
             tables-enable_gorm_tag_column: Ma meriv hilberîna gormê ya girêdayî databasê çalak bike
+        gitignote:
+            long: Di kontrola guhertoyê de ji bo rêveberiya pelê ya paşguhkirî pelên .gitignore biafirînin
+            short: Pelê .gitignore çêbike
+        golang-lint:
+            long: Ji bo kontrolkirina kalîteya kodê pelê .golangci.yml biafirînin
+            short: Pelê .golangci.yml çêbike
+        goreleaser:
+            long: Ji bo veavakirina amûrên berdanê pelê .goreleaser.yml biafirînin
+            short: Pelê .goreleaser.yml çêbike
+        impl:
+            long: Ji bo pêkanîna karûbarên karsaziyê pelên pêkanînê biafirînin
+            short: Pelên pêkanînê biafirînin
         long: Hilberînerê kodê, gelek şablonan piştgirî dike
+        makefile:
+            long: Pelên Makefile ji bo avakirina amûr û fermanên din ên têkildar biafirînin
+            short: Makefile çêbikin
+        mod:
+            long: Ji bo rêveberiya girêdayîbûnê pelê go.mod biafirînin
+            short: Pelê go.mod biafirîne
+        pb:
+            long: Ji bo çêkirina pelên .proto pelên .pb.go biafirînin,
+            short: Pelê .pb.go çêbike
         short: jeneratorê kodê
+        state:
+            long: Hemî fonksiyonên têkildar ên dewletê ji bo çavkaniya dewletparêz an rêveberiya çavkaniya statîk a karûbarên karsaziyê biafirînin
+            short: Hemî fonksiyonên têkildar ji bo hilberîna dewletê
+        table:
+            long: Hemî fonksiyonên têkildar ên hilberîna tabloyan ji bo çavkaniya dewletparêz an rêveberiya çavkaniya statîk a karûbarên karsaziyê
+            short: Hemî fonksiyonên têkildar ji bo hilberîna tabloyan
     help:
         additional_commands: fermanên Additional
         aliases: fermana nasnav

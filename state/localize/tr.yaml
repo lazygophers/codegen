@@ -20,6 +20,15 @@ cli:
         cmd:
             long: İş hizmetleri için giriş dosyaları oluşturun
             short: Giriş dosyası oluştur
+        conf:
+            long: İş hizmetlerinin konfigürasyon okuması için konfigürasyon dosyaları oluşturun
+            short: Yapılandırma dosyası oluştur
+        dockerignore:
+            long: Dosya yönetimini yoksaymak amacıyla Docker görüntüsü oluşturma için .dockerignore dosyası oluşturun
+            short: .dockerignore dosyası oluştur
+        editorconfig:
+            long: Düzenleyici yapılandırması için .editorconfig dosyası oluşturun
+            short: .editorconfig dosyası oluştur
         flags:
             add-proto-files: Belirtilen .proto dosyasıyla aynı klasörde olmayan diğer .proto dosyalarını/klasör yollarını içe aktarmanız gerekirse, bu işlem, yapılandırma dosyasında yapılandırılan yolu ekler (üzerine yazmaz).
             go-module-prefix: .proto dosyasında yapılandırılan go_package yolu ve asıl yol için bu seçeneği yapılandırabilirsiniz
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Veritabanıyla ilgili alanlar için varsayılan konfigürasyon oluşturmayı etkinleştir
             tables-enable_field_updated_at: Veritabanındaki güncellendi_at alanının varsayılan değerinin etkinleştirilip etkinleştirilmeyeceği
             tables-enable_gorm_tag_column: Veritabanıyla ilgili gorm oluşturmanın etkinleştirilip etkinleştirilmeyeceği
+        gitignote:
+            long: Sürüm kontrolünde yoksayılan dosya yönetimi için .gitignore dosyaları oluşturun
+            short: .gitignore dosyası oluştur
+        golang-lint:
+            long: Kod kalitesi denetimi için .golangci.yml dosyası oluşturun
+            short: .golangci.yml dosyasını oluştur
+        goreleaser:
+            long: Sürüm araçlarının yapılandırılması için .goreleaser.yml dosyası oluşturun
+            short: .goreleaser.yml dosyasını oluşturun
+        impl:
+            long: İş hizmetlerinin uygulanması için uygulama dosyaları oluşturun
+            short: Uygulama dosyaları oluşturun
         long: Kod oluşturucu, birden fazla şablonu destekler
+        makefile:
+            long: Araçlar ve diğer ilgili komutlar oluşturmak için Makefile dosyaları oluşturun
+            short: Makefile oluştur
+        mod:
+            long: Bağımlılık yönetimi için go.mod dosyası oluşturun
+            short: go.mod dosyası oluştur
+        pb:
+            long: .proto dosyaları oluşturmak için .pb.go dosyaları oluşturun,
+            short: .pb.go dosyasını oluştur
         short: Kod üreteci
+        state:
+            long: İş hizmetlerinin durum bilgisi olan kaynak veya statik kaynak yönetimi için tüm ilgili durum işlevlerini oluşturun
+            short: Durum oluşturmaya yönelik tüm ilgili işlevler
+        table:
+            long: İş hizmetlerinin durum bilgisi olan kaynak veya statik kaynak yönetimi için tablo oluşturmayla ilgili tüm işlevler
+            short: Tablo oluşturmaya yönelik tüm ilgili işlevler
     help:
         additional_commands: Ek komutlar
         aliases: komut takma adı

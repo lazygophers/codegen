@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Negocio yanapakuykunapaq yaykuna willañiqikunata ruway
             short: Yaykuna willañiqita paqarichiy
+        conf:
+            long: Negocio yanapakuykunamanta wakichiy ñawiriypaq ruwanakuna willañiqikuna ruway
+            short: Wakichiy willañiqita paqarichiy
+        dockerignore:
+            long: Docker siq'i wasipaq .dockerignore willañiqita paqarichiy, willañiqi kamachiyta mana qhawanapaq
+            short: .dockerignore willañiqita paqarichiy
+        editorconfig:
+            long: Llamk'apuy wakichiypaq .editorconfig willañiqita paqarichiy
+            short: .editorconfig willañiqita paqarichiy
         flags:
             add-proto-files: Sichus huk .proto willañiqikunata/karpeta ñankunata hawaman apamunayki tiyan, mana kikin qillqana mayt'upichu, nisqa .proto willañiqiwan, kay llamk'ayqa yapanqa (mana hawa qillqanachu) ruwana willañiqipi wakichisqa ñanta.
             go-module-prefix: .proto willañiqipi wakichisqa go_package ñanpaq chaymanta chiqap kaqpaq, kay akllanata wakichiyta atikunki
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Willaypa tiyapuyninwan tupaq pampakunapaq ñawpaqmanta ruwasqa wakichiy mirachiyta atichiy
             tables-enable_field_updated_at: Willayta waqaychanapi updated_at pampap ñawpaqmanta chaninninta atichinapaqchu icha manachu
             tables-enable_gorm_tag_column: Willayta waqaychanawan tupaq gorm mirachiyta atichinapaqchu icha manachu
+        gitignote:
+            long: .gitignore willañiqikunata paqarichiy mana qhawasqa willañiqi kamachiypaq laya kamachiypi
+            short: .gitignore willañiqita paqarichiy
+        golang-lint:
+            long: .golangci.yml willañiqita paqarichiy, chiqap allin qhawaypaq
+            short: .golangci.yml willañiqita paqarichiy
+        goreleaser:
+            long: .goreleaser.yml willañiqita paqarichiy, kacharinapaq yanapakuykunata wakichinapaq
+            short: .goreleaser.yml willañiqita paqarichiy
+        impl:
+            long: Negocio serviciokuna ruwanapaq implementacion archivokuna ruway
+            short: Ruway qillqakunata paqarichiy
         long: Código generador, achka plantillakunata yanapan
+        makefile:
+            long: Makefile willañiqikunata paqarichiy llamkanakuna ruwanapaq chaymanta wak tupaq kamachiykunapaq
+            short: Makefile nisqa paqarichiy
+        mod:
+            long: go.mod willañiqita paqarichiy, hapipakuy kamachiypaq
+            short: go.mod willañiqita paqarichiy
+        pb:
+            long: .pb.go willañiqikunata paqarichiy .proto willañiqikunata paqarichinanpaq,
+            short: .pb.go willañiqita paqarichiy
         short: Código generador nisqa
+        state:
+            long: Llapan tupaq ruwanakuna estado kaqmanta paqarichiy estadoyuq recursopaq utaq estático recurso kamachiypaq negocio yanapakuykunamanta
+            short: Llapan tupaq ruwaykuna estado paqarichinanpaq
+        table:
+            long: Llapan tupaq ruwanakuna tablakuna ruwaymanta estadoyuq recursopaq utaq estático recurso kamachiypaq negocio yanapakuykunamanta
+            short: Tukuy tupaq ruwanakuna tablakuna paqarichiypaq
     help:
         additional_commands: Yapa kamachiykuna
         aliases: kamachiy alias

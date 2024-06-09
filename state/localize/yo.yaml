@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Ṣẹda awọn faili titẹsi fun awọn iṣẹ iṣowo
             short: Ṣe ina iwọle faili
+        conf:
+            long: Ṣe ina awọn faili iṣeto ni fun kika iṣeto ni ti awọn iṣẹ iṣowo
+            short: Ṣe ina iṣeto ni faili
+        dockerignore:
+            long: Ṣe ipilẹṣẹ faili .dockerignore fun ile aworan Docker lati foju kọ iṣakoso faili
+            short: Ṣe ina .dockerignore faili
+        editorconfig:
+            long: Ṣe ina .editorconfig faili fun atunto olootu
+            short: Ṣe ina .editorconfig faili
         flags:
             add-proto-files: Ti o ba nilo lati gbe awọn faili .proto miiran / awọn ọna folda ti ko si ni folda kanna bi faili .proto ti a ti sọ tẹlẹ, isẹ yii yoo fi kun (kii ṣe atunṣe) ọna ti a tunto ni faili iṣeto ni.
             go-module-prefix: Fun ọna ti a tunto go_package ninu faili .proto ati ọkan gangan, o le tunto aṣayan yii
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Jeki iran iṣeto aiyipada ṣiṣẹ fun awọn aaye data ti o ni ibatan
             tables-enable_field_updated_at: Boya lati jẹki iye aiyipada ti aaye imudojuiwọn_at ninu aaye data
             tables-enable_gorm_tag_column: Boya lati jeki database-jẹmọ gorm iran
+        gitignote:
+            long: Ṣe ina awọn faili .gitignore fun iṣakoso faili ti a ko bikita ni iṣakoso ẹya
+            short: Ṣe ina .gitignore faili
+        golang-lint:
+            long: Ṣe ina .golangci.yml faili fun ayẹwo didara koodu
+            short: Ṣe ina .golangci.yml faili
+        goreleaser:
+            long: Ṣe ina .goreleaser.yml faili fun iṣeto ti awọn irinṣẹ idasilẹ
+            short: Ṣe ina .goreleaser.yml faili
+        impl:
+            long: Ṣẹda awọn faili imuse fun imuse awọn iṣẹ iṣowo
+            short: Ṣe ina imuse awọn faili
         long: Olupilẹṣẹ koodu, ṣe atilẹyin awọn awoṣe pupọ
+        makefile:
+            long: Ṣe ina awọn faili Makefile fun awọn irinṣẹ ile ati awọn aṣẹ miiran ti o jọmọ
+            short: Ṣẹda Makefile
+        mod:
+            long: Ṣe ina go.mod faili fun iṣakoso igbẹkẹle
+            short: Ṣe ina go.mod faili
+        pb:
+            long: Ṣe ipilẹṣẹ awọn faili .pb.go fun ṣiṣẹda awọn faili .proto,
+            short: Ṣe ina .pb.go faili
         short: Code monomono
+        state:
+            long: Ṣe ipilẹṣẹ gbogbo awọn iṣẹ ti o ni ibatan ti ipinlẹ fun awọn orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
+            short: Gbogbo awọn iṣẹ ti o yẹ fun ipilẹṣẹ ipo
+        table:
+            long: Gbogbo awọn iṣẹ ti o ni ibatan ti awọn tabili ipilẹṣẹ fun orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
+            short: Gbogbo jẹmọ awọn iṣẹ fun ti o npese tabili
     help:
         additional_commands: Awọn aṣẹ afikun
         aliases: aṣẹ inagijẹ

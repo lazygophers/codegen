@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Looge äriteenuste jaoks sisestusfailid
             short: Loo sisestusfail
+        conf:
+            long: Looge konfiguratsioonifaile äriteenuste konfiguratsiooni lugemiseks
+            short: Loo konfiguratsioonifail
+        dockerignore:
+            long: Failihalduse ignoreerimiseks looge Dockeri pildiloome jaoks .dockerignore-fail
+            short: Loo .dockerignore fail
+        editorconfig:
+            long: Redaktori seadistamiseks genereerige .editorconfig-fail
+            short: Looge editorconfig fail
         flags:
             add-proto-files: Kui teil on vaja importida teisi protofaile/kaustateid, mis ei asu määratud protofailiga samas kaustas, lisab see toiming (mitte kirjuta üle) konfiguratsioonifailis konfigureeritud tee.
             go-module-prefix: Proto failis konfigureeritud go_package tee ja tegeliku tee jaoks saate seda suvandit seadistada
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Lubage andmebaasiga seotud väljade jaoks vaikekonfiguratsiooni genereerimine
             tables-enable_field_updated_at: Kas lubada andmebaasis välja updated_at vaikeväärtus
             tables-enable_gorm_tag_column: Kas lubada andmebaasiga seotud gormide genereerimine
+        gitignote:
+            long: Genereerige .gitignore-faile versioonihalduses ignoreeritud failihalduse jaoks
+            short: Looge .gitignore fail
+        golang-lint:
+            long: Koodi kvaliteedi kontrollimiseks genereerige fail .golangci.yml
+            short: Looge fail .golangci.yml
+        goreleaser:
+            long: Looge väljalasketööriistade konfigureerimiseks fail .goreleaser.yml
+            short: Looge fail .goreleaser.yml
+        impl:
+            long: Looge äriteenuste juurutamiseks rakendusfaile
+            short: Loo rakendusfailid
         long: Koodigeneraator, toetab mitut malli
+        makefile:
+            long: Looge Makefile'i faile tööriistade ja muude seotud käskude jaoks
+            short: Loo Makefile
+        mod:
+            long: Sõltuvuste haldamiseks genereerige fail go.mod
+            short: Looge fail go.mod
+        pb:
+            long: Pb.go-failide genereerimine protofailide loomiseks,
+            short: Looge fail .pb.go
         short: Koodigeneraator
+        state:
+            long: Looge kõik seotud olekufunktsioonid äriteenuste olekupõhiseks või staatiliseks ressursihalduseks
+            short: Kõik oleku genereerimiseks vajalikud funktsioonid
+        table:
+            long: Kõik seotud funktsioonid tabelite genereerimiseks äriteenuste olekupõhiste ressursside või staatilise ressursside haldamiseks
+            short: Kõik seotud funktsioonid tabelite genereerimiseks
     help:
         additional_commands: Täiendavad käsud
         aliases: käsu varjunimi

@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Emoheñói archivo jeikerã umi servicio empresarial-pe g̃uarã
             short: Omoheñói archivo jeikerã
+        conf:
+            long: Emoheñói archivo configuración rehegua moñeꞌerã configuración rehegua umi servicio empresarial rehegua
+            short: Emoheñói vore ñembohekorã
+        dockerignore:
+            long: Emoheñói .dockerignore vore Docker ta’ãngamýi ñemopu’ãrã emboyke hag̃ua vore jesareko
+            short: Emoheñói .dockerignore rembiapokue
+        editorconfig:
+            long: Emoheñói .editorconfig vore editor ñembohekorã
+            short: Emoheñói .editorconfig rembiapokue
         flags:
             add-proto-files: Tekotevẽramo egueru ambue .proto vore/kundaha rape noĩriva peteĩ kundahárape .proto vore ojeꞌevaꞌekue ndive, ko tembiapo ombojoapýta (ndahaꞌei ohai jey) tape oñembohekopyréva vore ñembohekorãme.
             go-module-prefix: Go_package rape oñembohekopyréva .proto vore ha añeteguápe g̃uarã, ikatu emohenda ko jeporavopyre
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Emboguata ñemboheko ñepyrũrã ñemoheñói umi tenda ojoajúva ñanduti renda rehe
             tables-enable_field_updated_at: Oñembohapétapa pe valor por defecto pe tenda updated_at rehegua ñanduti rendápe
             tables-enable_gorm_tag_column: Oñembohapétapa gorm generación ojoajúva base de datos rehe
+        gitignote:
+            long: Emoheñói .gitignore vorekuéra vore jesarekorã oñemboykévape g̃uarã versión control-pe
+            short: Emoheñói .gitignore rembiapokue
+        golang-lint:
+            long: Emoheñói vore .golangci.yml ojehecha hag̃ua kódigo calidad
+            short: Emoheñói .golangci.yml rembiapokue
+        goreleaser:
+            long: Emoheñói .goreleaser.yml vore tembipuru’i ñeguenohẽ ñembohekorã
+            short: Emoheñói .goreleaser.yml rembiapokue
+        impl:
+            long: Omoheñói archivo implementación rehegua oñemboguata haguã servicio empresarial
+            short: Omoheñói archivo implementación rehegua
         long: Código generador, oipytyvõ heta plantilla
+        makefile:
+            long: Emoheñói Makefile rembiapokue emopuꞌa hag̃ua tembipuru ha ambue tembiapoukapy ojoajúva hese
+            short: Ojejapo Makefile rehegua
+        mod:
+            long: Emoheñói vore go.mod jesarekorã dependencia rehegua
+            short: Emoheñói vore go.mod rehegua
+        pb:
+            long: Emoheñói .pb.go vore emoheñói hag̃ua .proto vore, .
+            short: Emoheñói .pb.go rembiapokue
         short: Código generador rehegua
+        state:
+            long: Omoheñói opaite función estado rehegua ojoajúva recurso estatal térã recurso estático gestión servicio empresarial rehegua
+            short: Opaite tembiaporã iñimportánteva ojejapo hag̃ua estado
+        table:
+            long: Opaite tembiapo ojoajúva omoheñóivo cuadro recurso estatal térã recurso estático gestión servicio empresarial-pe g̃uarã
+            short: Opaite tembiaporã ojoajúva ojejapo hag̃ua tabla
     help:
         additional_commands: Umi tembiapoukapy ambuéva
         aliases: tembiapoukapy alias

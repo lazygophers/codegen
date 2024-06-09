@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Bejegyzési fájlokat generál az üzleti szolgáltatásokhoz
             short: Belépési fájl létrehozása
+        conf:
+            long: Konfigurációs fájlokat generál az üzleti szolgáltatások konfigurációs olvasásához
+            short: Konfigurációs fájl létrehozása
+        dockerignore:
+            long: A fájlkezelés figyelmen kívül hagyásához hozzon létre .dockerignore fájlt a Docker lemezképkészítéshez
+            short: Hozzon létre .dockerignore fájlt
+        editorconfig:
+            long: Hozzon létre .editorconfig fájlt a szerkesztő beállításához
+            short: Hozzon létre .editorconfig fájlt
         flags:
             add-proto-files: Ha más .proto fájlokat/mappa elérési útvonalakat kell importálnia, amelyek nem ugyanabban a mappában vannak, mint a megadott .proto fájl, akkor ez a művelet hozzáfűzi (nem írja felül) a konfigurációs fájlban konfigurált elérési utat.
             go-module-prefix: A .proto fájlban konfigurált go_package elérési útjához és a ténylegeshez konfigurálhatja ezt az opciót
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Az adatbázishoz kapcsolódó mezők alapértelmezett konfigurációgenerálásának engedélyezése
             tables-enable_field_updated_at: Engedélyezze-e az updated_at mező alapértelmezett értékét az adatbázisban
             tables-enable_gorm_tag_column: Engedélyezze-e az adatbázissal kapcsolatos gorm-generálást
+        gitignote:
+            long: Generáljon .gitignore fájlokat a figyelmen kívül hagyott fájlkezeléshez a verziókezelésben
+            short: Hozzon létre .gitignore fájlt
+        golang-lint:
+            long: A kód minőségének ellenőrzéséhez hozzon létre .golangci.yml fájlt
+            short: Hozzon létre .golangci.yml fájlt
+        goreleaser:
+            long: A kiadási eszközök konfigurálásához hozzon létre .goreleaser.yml fájlt
+            short: Hozzon létre .goreleaser.yml fájlt
+        impl:
+            long: Implementációs fájlok létrehozása az üzleti szolgáltatások megvalósításához
+            short: Implementációs fájlok létrehozása
         long: Kódgenerátor, több sablont is támogat
+        makefile:
+            long: Makefile fájlok létrehozása az eszközök és más kapcsolódó parancsok létrehozásához
+            short: Makefile létrehozása
+        mod:
+            long: Hozzon létre go.mod fájlt a függőségek kezeléséhez
+            short: Hozzon létre go.mod fájlt
+        pb:
+            long: .pb.go fájlok generálása .proto fájlok létrehozásához,
+            short: Hozzon létre .pb.go fájlt
         short: Kódgenerátor
+        state:
+            long: Az állapot összes kapcsolódó funkciójának létrehozása az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez
+            short: Az állapot generálásához szükséges összes funkció
+        table:
+            long: Az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez szükséges táblák előállításához kapcsolódó összes funkció
+            short: Minden kapcsolódó függvény táblázatok generálásához
     help:
         additional_commands: További parancsok
         aliases: parancs alias

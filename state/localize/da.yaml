@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generer indgangsfiler til forretningstjenester
             short: Generer indtastningsfil
+        conf:
+            long: Generer konfigurationsfiler til konfigurationslæsning af forretningstjenester
+            short: Generer konfigurationsfil
+        dockerignore:
+            long: Generer .dockerignore-fil til Docker-billedbygning for at ignorere filhåndtering
+            short: Generer .dockerignore-fil
+        editorconfig:
+            long: Generer .editorconfig-fil til editorkonfiguration
+            short: Generer .editorconfig-fil
         flags:
             add-proto-files: Hvis du har brug for at importere andre .proto-filer/mappestier, der ikke er i samme mappe som den angivne .proto-fil, vil denne handling tilføje (ikke overskrive) stien, der er konfigureret i konfigurationsfilen.
             go-module-prefix: For stien til go_package konfigureret i .proto-filen og den faktiske, kan du konfigurere denne mulighed
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktiver generering af standardkonfiguration for databaserelaterede felter
             tables-enable_field_updated_at: Om standardværdien for feltet updated_at skal aktiveres i databasen
             tables-enable_gorm_tag_column: Om databaserelateret gorm-generering skal aktiveres
+        gitignote:
+            long: Generer .gitignore-filer til ignoreret filhåndtering i versionskontrol
+            short: Generer .gitignore-fil
+        golang-lint:
+            long: Generer .golangci.yml-fil til inspektion af kodekvalitet
+            short: Generer .golangci.yml-fil
+        goreleaser:
+            long: Generer .goreleaser.yml-fil til konfiguration af udgivelsesværktøjer
+            short: Generer .goreleaser.yml-fil
+        impl:
+            long: Generer implementeringsfiler til implementering af forretningstjenester
+            short: Generer implementeringsfiler
         long: Kodegenerator, understøtter flere skabeloner
+        makefile:
+            long: Generer Makefile-filer til byggeværktøjer og andre relaterede kommandoer
+            short: Generer Makefile
+        mod:
+            long: Generer go.mod-fil til afhængighedsstyring
+            short: Generer go.mod fil
+        pb:
+            long: Generer .pb.go-filer til generering af .proto-filer,
+            short: Generer .pb.go-fil
         short: Kode generator
+        state:
+            long: Generer alle relaterede funktioner i staten til stateful ressource- eller statisk ressourcestyring af forretningstjenester
+            short: Alle relevante funktioner til generering af tilstand
+        table:
+            long: Alle relaterede funktioner til generering af tabeller til stateful ressource- eller statisk ressourcestyring af forretningstjenester
+            short: Alle relaterede funktioner til generering af tabeller
     help:
         additional_commands: Yderligere kommandoer
         aliases: kommando alias

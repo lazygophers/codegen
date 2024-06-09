@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Paghimo mga entry file alang sa mga serbisyo sa negosyo
             short: Paghimo entry file
+        conf:
+            long: Paghimo mga file sa pag-configure alang sa pagbasa sa pagsumpo sa mga serbisyo sa negosyo
+            short: Paghimo configuration file
+        dockerignore:
+            long: Paghimo og .dockerignore nga file para sa Docker image building aron dili ibaliwala ang pagdumala sa file
+            short: Paghimo og .dockerignore nga payl
+        editorconfig:
+            long: Paghimo og .editorconfig file para sa editor configuration
+            short: Paghimo og .editorconfig file
         flags:
             add-proto-files: Kung kinahanglan nimo nga i-import ang ubang mga .proto file/folder nga mga agianan nga wala sa parehas nga folder sa gitakda nga .proto file, kini nga operasyon magdugang (dili mag-overwrite) sa agianan nga gi-configure sa file sa pag-configure.
             go-module-prefix: Alang sa agianan sa go_package nga gi-configure sa .proto file ug ang aktuwal, mahimo nimong i-configure kini nga kapilian
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: I-enable ang default configuration generation para sa database-related nga mga field
             tables-enable_field_updated_at: Kung mahimo ba ang default nga kantidad sa updated_at field sa database
             tables-enable_gorm_tag_column: Kung mahimo ba ang paghimo sa gorm nga may kalabutan sa database
+        gitignote:
+            long: Paghimo og mga .gitignore nga mga file alang sa wala panumbalinga nga pagdumala sa file sa pagkontrol sa bersyon
+            short: Paghimo og .gitignore nga payl
+        golang-lint:
+            long: Paghimo og .golangci.yml file para sa code quality inspection
+            short: Paghimo og .golangci.yml file
+        goreleaser:
+            long: Paghimo og .goreleaser.yml file para sa pag-configure sa mga himan sa pagpagawas
+            short: Paghimo og .goreleaser.yml file
+        impl:
+            long: Paghimo mga file sa pagpatuman alang sa pagpatuman sa mga serbisyo sa negosyo
+            short: Paghimo mga file sa pagpatuman
         long: Code generator, nagsuporta sa daghang mga templates
+        makefile:
+            long: Paghimo og mga file sa Makefile alang sa paghimo og mga himan ug uban pang may kalabutan nga mga sugo
+            short: Paghimo Makefile
+        mod:
+            long: Paghimo og go.mod file alang sa pagdumala sa dependency
+            short: Paghimo go.mod file
+        pb:
+            long: Paghimo og .pb.go nga mga file para sa pagmugna og .proto nga mga file,
+            short: Paghimo og .pb.go file
         short: Generator sa code
+        state:
+            long: Paghimo sa tanan nga may kalabutan nga mga gimbuhaton sa estado alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
+            short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa pagmugna sa estado
+        table:
+            long: Ang tanan nga may kalabutan nga mga gimbuhaton sa paghimo sa mga lamesa alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
+            short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa paghimo og mga lamesa
     help:
         additional_commands: Dugang nga mga sugo
         aliases: command alias

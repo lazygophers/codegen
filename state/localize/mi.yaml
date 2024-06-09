@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Waihanga kōnae urunga mo nga ratonga pakihi
             short: Hangaia te konae urunga
+        conf:
+            long: Waihanga kōnae whirihoranga mo te panui whirihoranga o nga ratonga pakihi
+            short: Waihanga kōnae whirihoranga
+        dockerignore:
+            long: Hangaia he konae .dockerignore mo te hanga whakaahua a Docker kia kore ai e aro ki te whakahaerenga konae
+            short: Hangaia te kōnae .dockerignore
+        editorconfig:
+            long: Hangaia he kōnae .editorconfig mo te whirihoranga ētita
+            short: Hangaia te kōnae .editorconfig
         flags:
             add-proto-files: Mena ka hiahia koe ki te kawemai i etahi atu konae .proto/ ara kōpaki kaore i roto i te kōpaki rite ki te konae .proto kua tohua, ka taapiri tenei mahi (kaore e tuhirua) te ara i whirihorahia ki te konae whirihoranga.
             go-module-prefix: Mo te ara o te go_package kua whirihorahia ki te konae .proto me te mea pono, ka taea e koe te whirihora i tenei whiringa
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Whakahohehia te whakaputanga whirihoranga taunoa mo nga mara e pa ana ki te papaunga raraunga
             tables-enable_field_updated_at: Ki te whakahohe i te uara taunoa o te āpure updated_at i te pātengi raraunga
             tables-enable_gorm_tag_column: Mena ka whakahohehia te whakatipuranga gorm e pa ana ki te putunga raraunga
+        gitignote:
+            long: Waihangahia nga konae .gitignore mo te whakahaerenga o nga konae kaore i arohia ki te mana putanga
+            short: Hangaia te kōnae .giignore
+        golang-lint:
+            long: Waihangahia te konae .golangci.yml hei tirotiro i te kounga o te waehere
+            short: Hangaia te kōnae .golangci.yml
+        goreleaser:
+            long: Hangaia he konae .goreleaser.yml mo te whirihoranga o nga taputapu tuku
+            short: Hangaia te kōnae .goreleaser.yml
+        impl:
+            long: Waihangahia nga konae whakatinanatanga mo te whakatinanatanga o nga ratonga pakihi
+            short: Waihanga kōnae whakatinanatanga
         long: Kaihanga Waehere, e tautoko ana i nga tauira maha
+        makefile:
+            long: Waihangahia nga konae Makefile mo nga taputapu hanga me etahi atu whakahau e pa ana
+            short: Hanga Makefile
+        mod:
+            long: Hangaia te konae go.mod mo te whakahaere whakawhirinaki
+            short: Hangaia te kōnae go.mod
+        pb:
+            long: Waihangahia nga konae .pb.go hei whakaputa i nga konae .proto,
+            short: Hangaia te kōnae .pb.go
         short: Kaihanga Waehere
+        state:
+            long: Hangaia nga mahi katoa e pa ana ki te kawanatanga mo nga rauemi tuuturu, mo te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
+            short: Nga mahi whai take katoa mo te whakaputa i te ahua
+        table:
+            long: Ko nga mahi katoa e pa ana ki te whakaputa ripanga mo te rauemi tuuturu, te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
+            short: Nga mahi katoa e pa ana mo te whakaputa ripanga
     help:
         additional_commands: Nga whakahau taapiri
         aliases: tono ingoa ingoa

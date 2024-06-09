@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generirajte ulazne datoteke za poslovne usluge
             short: Generirajte ulaznu datoteku
+        conf:
+            long: Generirajte konfiguracijske datoteke za očitavanje konfiguracije poslovnih usluga
+            short: Generiraj konfiguracijsku datoteku
+        dockerignore:
+            long: Generirajte .dockerignore datoteku za izgradnju Docker slike da biste zanemarili upravljanje datotekama
+            short: Generirajte .dockerignore datoteku
+        editorconfig:
+            long: Generirajte .editorconfig datoteku za konfiguraciju uređivača
+            short: Generirajte .editorconfig datoteku
         flags:
             add-proto-files: Ako trebate uvesti druge staze .proto datoteka/mapa koje nisu u istoj mapi kao navedena .proto datoteka, ova će operacija dodati (ne prebrisati) stazu konfiguriranu u konfiguracijskoj datoteci.
             go-module-prefix: Za stazu go_package konfiguriranu u .proto datoteci i stvarnu, možete konfigurirati ovu opciju
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Omogući generiranje zadane konfiguracije za polja povezana s bazom podataka
             tables-enable_field_updated_at: Treba li omogućiti zadanu vrijednost polja updated_at u bazi podataka
             tables-enable_gorm_tag_column: Treba li omogućiti generiranje gormova vezanih uz bazu podataka
+        gitignote:
+            long: Generirajte .gitignore datoteke za upravljanje zanemarenim datotekama u kontroli verzija
+            short: Generirajte .gitignore datoteku
+        golang-lint:
+            long: Generirajte .golangci.yml datoteku za pregled kvalitete koda
+            short: Generirajte .golangci.yml datoteku
+        goreleaser:
+            long: Generirajte datoteku .goreleaser.yml za konfiguraciju alata za izdavanje
+            short: Generiraj datoteku .goreleaser.yml
+        impl:
+            long: Generirati implementacijske datoteke za implementaciju poslovnih usluga
+            short: Generirajte implementacijske datoteke
         long: Generator koda, podržava više predložaka
+        makefile:
+            long: Generirajte Makefile datoteke za alate za izgradnju i druge povezane naredbe
+            short: Generirajte Makefile
+        mod:
+            long: Generirajte go.mod datoteku za upravljanje ovisnostima
+            short: Generirajte datoteku go.mod
+        pb:
+            long: Generirajte .pb.go datoteke za generiranje .proto datoteka,
+            short: Generirajte .pb.go datoteku
         short: Generator koda
+        state:
+            long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
+            short: Sve relevantne funkcije za generiranje stanja
+        table:
+            long: Sve povezane funkcije generiranja tablica za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
+            short: Sve povezane funkcije za generiranje tablica
     help:
         additional_commands: Dodatne naredbe
         aliases: zapovjedni alias

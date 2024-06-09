@@ -23,7 +23,8 @@ var GenAllHooks = []GenHook{
 }
 
 var allCmd = &cobra.Command{
-	Use: "all",
+	Use:     "all",
+	Aliases: []string{"a", "all-actions"},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		for _, hook := range GenAllHooks {
 			err = hook(cmd, args)

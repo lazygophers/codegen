@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Gukora dosiye zinjira muri serivisi zubucuruzi
             short: Gukora dosiye yinjira
+        conf:
+            long: Gukora dosiye iboneza kugirango ibone gusoma serivisi zubucuruzi
+            short: Gukora dosiye iboneza
+        dockerignore:
+            long: Gukora .dockerignore dosiye yo kubaka amashusho ya Docker kugirango wirengagize gucunga dosiye
+            short: Gukora dosiye .dockerignore
+        editorconfig:
+            long: Gukora .editorconfig dosiye kugirango ibone iboneza
+            short: Gukora .editorconfig dosiye
         flags:
             add-proto-files: Niba ukeneye gutumiza izindi .proto dosiye / ububiko bwububiko butari mububiko bumwe na dosiye ya .proto, iki gikorwa kizongera (ntabwo cyanditse) inzira yagenwe muri dosiye iboneza.
             go-module-prefix: Kuburyo bwa go_package yagizwe muri dosiye ya .proto nimwe nyayo, urashobora gushiraho iyi option
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Gushoboza iboneza ryibanze kububiko bujyanye nimirima
             tables-enable_field_updated_at: Niba ushobora gukora agaciro gasanzwe kavuguruwe_kumwanya wububiko
             tables-enable_gorm_tag_column: Niba ushobora gukora data base ijyanye na gorm generation
+        gitignote:
+            long: Gukora dosiye .gitignore kugirango wirengagize gucunga dosiye mugucunga verisiyo
+            short: Gukora dosiye .gitignore
+        golang-lint:
+            long: Gukora dosiye .golangci.yml yo kugenzura ubuziranenge bwa code
+            short: Gukora dosiye .golangci.yml
+        goreleaser:
+            long: Kora .goreleaser.yml dosiye kugirango ibone ibikoresho byo kurekura
+            short: Kora .goreleaser.yml dosiye
+        impl:
+            long: Gukora amadosiye yo gushyira mubikorwa serivisi zubucuruzi
+            short: Gukora dosiye zo gushyira mubikorwa
         long: Kode itanga, ishyigikira inyandikorugero nyinshi
+        makefile:
+            long: Gukora dosiye ya Makefile kubikoresho byo kubaka nandi mategeko ajyanye nayo
+            short: Gukora Makefile
+        mod:
+            long: Gukora go.mod dosiye yo gucunga kwishingikiriza
+            short: Gukora go.mod dosiye
+        pb:
+            long: Gukora dosiye .pb.go yo kubyara dosiye .proto,
+            short: Gukora dosiye .pb.go
         short: Amashanyarazi
+        state:
+            long: Kubyara ibikorwa byose bifitanye isano na leta kubutunzi bwa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
+            short: Ibikorwa byose bijyanye no kubyara leta
+        table:
+            long: Ibikorwa byose bifitanye isano no gutanga imbonerahamwe yumutungo wa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
+            short: Imikorere yose ijyanye no kubyara imbonerahamwe
     help:
         additional_commands: Amabwiriza yinyongera
         aliases: itegeko alias

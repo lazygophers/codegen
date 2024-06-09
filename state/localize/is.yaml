@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Búðu til færsluskrár fyrir viðskiptaþjónustu
             short: Búðu til færsluskrá
+        conf:
+            long: Búðu til stillingarskrár fyrir stillingalestur á viðskiptaþjónustu
+            short: Búðu til stillingarskrá
+        dockerignore:
+            long: Búðu til .dockerignore skrá fyrir Docker myndbyggingu til að hunsa skráarstjórnun
+            short: Búðu til .dockerignore skrá
+        editorconfig:
+            long: Búðu til .editorconfig skrá fyrir uppsetningu ritstjóra
+            short: Búðu til .editorconfig skrá
         flags:
             add-proto-files: Ef þú þarft að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá mun þessi aðgerð bæta við (ekki skrifa yfir) slóðina sem er stillt í stillingarskránni.
             go-module-prefix: Fyrir slóð go_package sem er stillt í .proto skránni og hina raunverulegu, geturðu stillt þennan valkost
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Virkja sjálfgefna stillingargerð fyrir gagnagrunnstengda reiti
             tables-enable_field_updated_at: Hvort eigi að virkja sjálfgefið gildi updated_at reitsins í gagnagrunninum
             tables-enable_gorm_tag_column: Hvort á að virkja gagnagrunnstengda gorm kynslóð
+        gitignote:
+            long: Búðu til .gitignore skrár fyrir hunsaða skráastjórnun í útgáfustýringu
+            short: Búðu til .gitignore skrá
+        golang-lint:
+            long: Búðu til .golangci.yml skrá fyrir gæðaskoðun kóða
+            short: Búðu til .golangci.yml skrá
+        goreleaser:
+            long: Búðu til .goreleaser.yml skrá til að stilla útgáfutól
+            short: Búðu til .goreleaser.yml skrá
+        impl:
+            long: Búa til innleiðingarskrár fyrir innleiðingu viðskiptaþjónustu
+            short: Búðu til útfærsluskrár
         long: Kóða rafall, styður mörg sniðmát
+        makefile:
+            long: Búðu til Makefile skrár til að smíða verkfæri og aðrar tengdar skipanir
+            short: Búðu til Makefile
+        mod:
+            long: Búðu til go.mod skrá fyrir ávanastjórnun
+            short: Búðu til go.mod skrá
+        pb:
+            long: Búðu til .pb.go skrár til að búa til .proto skrár,
+            short: Búðu til .pb.go skrá
         short: Kóða rafall
+        state:
+            long: Búðu til allar tengdar aðgerðir ríkisins fyrir staðbundna auðlinda- eða kyrrstöðustjórnun á viðskiptaþjónustu
+            short: Allar viðeigandi aðgerðir til að búa til ástand
+        table:
+            long: Allar tengdar aðgerðir við að búa til töflur fyrir staðbundna auðlinda- eða kyrrstöðustjórnun á viðskiptaþjónustu
+            short: Allar tengdar aðgerðir til að búa til töflur
     help:
         additional_commands: Viðbótarskipanir
         aliases: skipunarnefni

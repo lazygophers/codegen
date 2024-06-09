@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Tạo tập tin đầu vào cho các dịch vụ kinh doanh
             short: Tạo tập tin đầu vào
+        conf:
+            long: Tạo tệp cấu hình để đọc cấu hình dịch vụ kinh doanh
+            short: Tạo tập tin cấu hình
+        dockerignore:
+            long: Tạo tệp .dockerignore để xây dựng hình ảnh Docker để bỏ qua việc quản lý tệp
+            short: Tạo tệp .dockerignore
+        editorconfig:
+            long: Tạo tệp .editorconfig cho cấu hình trình chỉnh sửa
+            short: Tạo tệp .editorconfig
         flags:
             add-proto-files: Nếu bạn cần nhập các tệp .proto/đường dẫn thư mục khác không nằm trong cùng thư mục với tệp .proto đã chỉ định, thao tác này sẽ nối thêm (không ghi đè) đường dẫn được định cấu hình trong tệp cấu hình.
             go-module-prefix: Đối với đường dẫn của go_package được định cấu hình trong tệp .proto và tệp thực tế, bạn có thể định cấu hình tùy chọn này
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Cho phép tạo cấu hình mặc định cho các trường liên quan đến cơ sở dữ liệu
             tables-enable_field_updated_at: Có bật giá trị mặc định của trường update_at trong cơ sở dữ liệu hay không
             tables-enable_gorm_tag_column: Có bật tính năng tạo gorm liên quan đến cơ sở dữ liệu hay không
+        gitignote:
+            long: Tạo tệp .gitignore để quản lý tệp bị bỏ qua trong kiểm soát phiên bản
+            short: Tạo tệp .gitignore
+        golang-lint:
+            long: Tạo tệp .golangci.yml để kiểm tra chất lượng mã
+            short: Tạo tệp .golangci.yml
+        goreleaser:
+            long: Tạo tệp .goreleaser.yml để cấu hình các công cụ phát hành
+            short: Tạo tệp .goreleaser.yml
+        impl:
+            long: Tạo các tệp triển khai để triển khai các dịch vụ kinh doanh
+            short: Tạo tập tin triển khai
         long: Trình tạo mã, hỗ trợ nhiều mẫu
+        makefile:
+            long: Tạo tệp Makefile cho các công cụ xây dựng và các lệnh liên quan khác
+            short: Tạo tệp Makefile
+        mod:
+            long: Tạo tệp go.mod để quản lý phụ thuộc
+            short: Tạo tập tin go.mod
+        pb:
+            long: Tạo tệp .pb.go để tạo tệp .proto,
+            short: Tạo tệp .pb.go
         short: Trình tạo mã
+        state:
+            long: Tạo ra tất cả các chức năng liên quan của trạng thái để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
+            short: Tất cả các chức năng liên quan để tạo trạng thái
+        table:
+            long: Tất cả các chức năng liên quan đến việc tạo bảng để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
+            short: Tất cả các hàm liên quan để tạo bảng
     help:
         additional_commands: Các lệnh bổ sung
         aliases: bí danh lệnh

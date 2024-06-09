@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Okukola fayiro z'okuyingira ku mpeereza za bizinensi
             short: Okukola fayiro y'okuyingiza
+        conf:
+            long: Okukola fayiro z'okusengeka okusoma okusengeka kw'empeereza za bizinensi
+            short: Okukola fayiro y'okusengeka
+        dockerignore:
+            long: Tonda fayiro .dockerignore ey'okuzimba ekifaananyi kya Docker okubuusa amaaso enzirukanya ya fayiro
+            short: Okukola fayiro ya .dockerignore
+        editorconfig:
+            long: Tonda fayiro .editorconfig okusobola okusengeka omuwandiisi
+            short: Okukola fayiro ya .editorconfig
         flags:
             add-proto-files: Bw'oba weetaaga okuyingiza fayiro endala .proto/amakubo ga folda agatali mu folda y'emu ne fayiro .proto eragiddwa, omulimu guno gujja kwongera (so si kuwandiika) ekkubo eritegekeddwa mu fayiro y'okusengeka.
             go-module-prefix: Ku kkubo lya go_package eritegekeddwa mu fayiro .proto n'eyo yennyini, osobola okutegeka eky'okulonda kino
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Ssobozesa okukola okusengeka okusookerwako ku nnimiro ezikwatagana ne database
             tables-enable_field_updated_at: Oba okusobozesa omuwendo ogusookerwako ogw'ekifo updated_at mu database
             tables-enable_gorm_tag_column: Oba okusobozesa okukola gorm ezikwatagana ne database
+        gitignote:
+            long: Tonda fayiro za .gitignore ez'okuddukanya fayiro ezisiwuuka empisa mu kufuga enkyusa
+            short: Okukola fayiro ya .gitignore
+        golang-lint:
+            long: Tonda fayiro .golangci.yml okukebera omutindo gwa koodi
+            short: Okukola fayiro .golangci.yml
+        goreleaser:
+            long: Tonda fayiro .goreleaser.yml okusengeka ebikozesebwa mu kufulumya
+            short: Okukola fayiro .goreleaser.yml
+        impl:
+            long: Okukola fayiro z’okussa mu nkola okussa mu nkola empeereza za bizinensi
+            short: Okukola fayiro z'okussa mu nkola
         long: Code generator, ewagira templates eziwera
+        makefile:
+            long: Tonda fayiro za Makefile ez'okuzimba ebikozesebwa n'ebiragiro ebirala ebikwatagana
+            short: Okukola Makefile
+        mod:
+            long: Okukola fayiro ya go.mod okuddukanya okwesigama
+            short: Okukola fayiro ya go.mod
+        pb:
+            long: Okukola fayiro za .pb.go okukola fayiro za .proto, .
+            short: Okukola fayiro ya .pb.go
         short: Jenereta ya koodi
+        state:
+            long: Okukola emirimu gyonna egyekuusa ku gavumenti ku stateful resource oba static resource management of business services
+            short: Emirimu gyonna egyekuusa ku kukola embeera
+        table:
+            long: Emirimu gyonna egyekuusa ku kukola emmeeza ez’okuddukanya eby’obugagga eby’embeera oba eby’obugagga ebitali bikyuka eby’empeereza za bizinensi
+            short: Emirimu gyonna egyekuusa ku kukola emmeeza
     help:
         additional_commands: Ebiragiro ebirala
         aliases: ekiragiro erinnya

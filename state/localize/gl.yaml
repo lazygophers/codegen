@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Xerar ficheiros de entrada para servizos empresariais
             short: Xerar ficheiro de entrada
+        conf:
+            long: Xerar ficheiros de configuración para a lectura de configuración dos servizos empresariais
+            short: Xerar ficheiro de configuración
+        dockerignore:
+            long: Xera un ficheiro .dockerignore para a creación de imaxes de Docker para ignorar a xestión de ficheiros
+            short: Xerar ficheiro .dockerignore
+        editorconfig:
+            long: Xera o ficheiro .editorconfig para a configuración do editor
+            short: Xerar ficheiro .editorconfig
         flags:
             add-proto-files: Se precisa importar outros ficheiros .proto/rutas de cartafol que non estean no mesmo cartafol que o ficheiro .proto especificado, esta operación engadirá (non sobrescribirá) a ruta configurada no ficheiro de configuración.
             go-module-prefix: Para a ruta de go_package configurada no ficheiro .proto e a real, pode configurar esta opción
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Activa a xeración de configuración predeterminada para campos relacionados coa base de datos
             tables-enable_field_updated_at: Indica se se activa o valor predeterminado do campo updated_at na base de datos
             tables-enable_gorm_tag_column: Indica se se activa a xeración de gorm relacionada coa base de datos
+        gitignote:
+            long: Xera ficheiros .gitignore para a xestión de ficheiros ignorados no control de versións
+            short: Xerar ficheiro .gitignore
+        golang-lint:
+            long: Xera un ficheiro .golangci.yml para a inspección da calidade do código
+            short: Xera o ficheiro .golangci.yml
+        goreleaser:
+            long: Xera o ficheiro .goreleaser.yml para a configuración das ferramentas de lanzamento
+            short: Xerar ficheiro .goreleaser.yml
+        impl:
+            long: Xerar ficheiros de implantación para a implantación de servizos empresariais
+            short: Xerar ficheiros de implementación
         long: Xerador de código, admite varios modelos
+        makefile:
+            long: Xera ficheiros Makefile para crear ferramentas e outros comandos relacionados
+            short: Xerar Makefile
+        mod:
+            long: Xera o ficheiro go.mod para a xestión de dependencias
+            short: Xerar ficheiro go.mod
+        pb:
+            long: Xera ficheiros .pb.go para xerar ficheiros .proto,
+            short: Xerar ficheiro .pb.go
         short: Xerador de código
+        state:
+            long: Xera todas as funcións relacionadas do estado para a xestión de recursos con estado ou de recursos estáticos dos servizos empresariais
+            short: Todas as funcións relevantes para xerar estado
+        table:
+            long: Todas as funcións relacionadas de xeración de táboas para recursos con estado ou xestión de recursos estáticos de servizos empresariais
+            short: Todas as funcións relacionadas para xerar táboas
     help:
         additional_commands: Comandos adicionais
         aliases: alias de comando

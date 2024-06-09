@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Khiqiza amafayela okufaka ezinsiza zebhizinisi
             short: Khiqiza ifayela lokungena
+        conf:
+            long: Khiqiza amafayela okucushwa okufundwa kokucushwa kwezinsizakalo zebhizinisi
+            short: Khiqiza ifayela lokumisa
+        dockerignore:
+            long: Khiqiza ifayela le-.dockerignore lesakhiwo sesithombe se-Docker ukuze uzibe ukuphathwa kwefayela
+            short: Khiqiza ifayela le-.dockerignore
+        editorconfig:
+            long: Khiqiza ifayela le-.editorconfig ukuze licushwe umhleli
+            short: Khiqiza ifayela le-.editorconfig
         flags:
             add-proto-files: Uma udinga ukungenisa amanye amafayela .proto/izindlela zefolda ezingekho kufolda efanayo nefayela elithi .proto elishiwo, lo msebenzi uzokwengeza (hhayi ukuwubhala ngaphezulu) indlela emisiwe kufayela lokumisa.
             go-module-prefix: Ukuze uthole indlela ye-go_package elungiselelwe kufayela elithi .proto kanye nelona langempela, ungakwazi ukumisa le nketho
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Nika amandla ukwakhiwa kokucushwa okuzenzakalelayo kwezinkambu ezihlobene nesizindalwazi
             tables-enable_field_updated_at: Ukuthi kunikwe amandla inani elimisiwe lenkambu ebuyekeziwe_ekusizindalwazi
             tables-enable_gorm_tag_column: Ukuthi unike amandla ukukhiqizwa kwe-gorm ehlobene nesizindalwazi
+        gitignote:
+            long: Khiqiza amafayela we-.gitignore wokuphatha ifayela elizitshiwe ekulawuleni inguqulo
+            short: Khiqiza ifayela le-.gitignore
+        golang-lint:
+            long: Khiqiza ifayela le-.golangci.yml ukuze lihlolwe ikhwalithi yekhodi
+            short: Khiqiza ifayela le-.golangci.yml
+        goreleaser:
+            long: Khiqiza ifayela le-.goreleaser.yml ukuze ulungiselele amathuluzi okukhipha
+            short: Khiqiza ifayela le-.goreleaser.yml
+        impl:
+            long: Khiqiza amafayela okusebenzisa ukuze kusetshenziswe izinsiza zebhizinisi
+            short: Khiqiza amafayela wokuqalisa
         long: Ikhodi generator, isekela izifanekiso eziningi
+        makefile:
+            long: Khiqiza amafayela e-Makefile wamathuluzi wokwakha neminye imiyalo ehlobene
+            short: Khiqiza i-Makefile
+        mod:
+            long: Khiqiza ifayela le-go.mod lokuphatha ukuncika
+            short: Khiqiza ifayela le-go.mod
+        pb:
+            long: Khiqiza amafayela e-.pb.go ukuze ukhiqize amafayela we-.proto,
+            short: Khiqiza ifayela le-.pb.go
         short: Ikhodi generator
+        state:
+            long: Khiqiza yonke imisebenzi ehlobene yombuso ukuze uthole izinsiza ezisezingeni eliphezulu noma ukuphathwa kwezinsiza zebhizinisi ezimile
+            short: Yonke imisebenzi efanele yokukhiqiza izwe
+        table:
+            long: Yonke imisebenzi ehlobene yokukhiqiza amathebula wezisetshenziswa ezisezingeni eliphezulu noma ukuphathwa kwensiza engashintshi yezinsizakalo zebhizinisi
+            short: Yonke imisebenzi ehlobene yokukhiqiza amathebula
     help:
         additional_commands: Imiyalo eyengeziwe
         aliases: umyalo alias

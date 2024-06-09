@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Gjeneroni skedarë hyrje për shërbimet e biznesit
             short: Gjeneroni skedarin e hyrjes
+        conf:
+            long: Gjeneroni skedarë konfigurimi për leximin e konfigurimit të shërbimeve të biznesit
+            short: Gjeneroni skedarin e konfigurimit
+        dockerignore:
+            long: Gjeneroni skedar .dockerignore për ndërtimin e imazhit Docker për të injoruar menaxhimin e skedarëve
+            short: Gjeneroni skedarin .dockerignore
+        editorconfig:
+            long: Gjeneroni skedarin .editorconfig për konfigurimin e redaktorit
+            short: Gjeneroni skedarin .editorconfig
         flags:
             add-proto-files: Nëse keni nevojë të importoni skedarë/shtigje të tjera .proto që nuk janë në të njëjtën dosje me skedarin .proto të specifikuar, ky operacion do të shtojë (jo do të mbishkruajë) shtegun e konfiguruar në skedarin e konfigurimit.
             go-module-prefix: Për shtegun e go_package të konfiguruar në skedarin .proto dhe atë aktual, mund të konfiguroni këtë opsion
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktivizo gjenerimin e konfigurimit të paracaktuar për fushat që lidhen me bazën e të dhënave
             tables-enable_field_updated_at: Nëse do të aktivizohet vlera e paracaktuar e fushës updated_at në bazën e të dhënave
             tables-enable_gorm_tag_column: Nëse do të mundësohet gjenerimi i gorm i lidhur me bazën e të dhënave
+        gitignote:
+            long: Gjeneroni skedarë .gitignore për menaxhimin e skedarëve të injoruar në kontrollin e versionit
+            short: Gjeneroni skedarin .gitignore
+        golang-lint:
+            long: Gjeneroni skedarin .golangci.yml për inspektimin e cilësisë së kodit
+            short: Gjeneroni skedarin .golangci.yml
+        goreleaser:
+            long: Gjeneroni skedarin .goreleaser.yml për konfigurimin e veglave të lëshimit
+            short: Gjeneroni skedarin .goreleaser.yml
+        impl:
+            long: Gjenerimi i skedarëve të zbatimit për zbatimin e shërbimeve të biznesit
+            short: Gjeneroni skedarë zbatimi
         long: Gjenerator kodi, mbështet modele të shumta
+        makefile:
+            long: Gjeneroni skedarë Makefile për ndërtimin e mjeteve dhe komandave të tjera të lidhura
+            short: Krijo Makefile
+        mod:
+            long: Gjeneroni skedarin go.mod për menaxhimin e varësisë
+            short: Gjeneroni skedarin go.mod
+        pb:
+            long: Gjeneroni skedarë .pb.go për gjenerimin e skedarëve .proto,
+            short: Gjeneroni skedarin .pb.go
         short: Gjenerator kodesh
+        state:
+            long: Gjeneroni të gjitha funksionet përkatëse të shtetit për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
+            short: Të gjitha funksionet përkatëse për gjendjen gjeneruese
+        table:
+            long: Të gjitha funksionet e ndërlidhura të gjenerimit të tabelave për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
+            short: Të gjitha funksionet përkatëse për gjenerimin e tabelave
     help:
         additional_commands: Komandat shtesë
         aliases: pseudonimi i komandës

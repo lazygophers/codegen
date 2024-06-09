@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Gadzira mafaera ekupinda emabhizinesi masevhisi
             short: Gadzira faira rekupinda
+        conf:
+            long: Gadzira mafaera ekugadzirisa ekugadzirisa kuverenga kwebhizinesi masevhisi
+            short: Gadzira faira yekumisikidza
+        dockerignore:
+            long: Gadzira .dockerignore faira yeDocker image building kuti usatarise faira management
+            short: Gadzira .dockerignore file
+        editorconfig:
+            long: Gadzira .editorconfig faira rekugadziridza mupepeti
+            short: Gadzira .editorconfig file
         flags:
             add-proto-files: Kana uchida kuunza dzimwe .proto mafaira/mafolder nzira dzisiri mufolder yakafanana neyakatsanangurwa .proto file, oparesheni iyi ichawedzera (kwete kunyora pamusoro) nzira yakarongwa mufaira rekugadzirisa.
             go-module-prefix: Panzira yego_package yakagadziridzwa mu.proto faira uye iyo chaiyo, unogona kugadzirisa iyi sarudzo.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Gonesa dhizaini yekumisikidza kugadzirwa kwenzvimbo dzine chekuita nedatabase
             tables-enable_field_updated_at: Kunyangwe kugonesa kukosha kweiyo yakagadziridzwa_pamunda mudura redatabase
             tables-enable_gorm_tag_column: Kunyangwe kugonesa dhatabhesi-inoenderana nekugadzira gorm
+        gitignote:
+            long: Gadzira .gitignore mafaira ekutarisira mafaera akaregeredzwa mukutonga kweshanduro
+            short: Gadzira .gitignore file
+        golang-lint:
+            long: Gadzira .golangci.yml faira rekuongorora kunaka kwekodhi
+            short: Gadzira .golangci.yml faira
+        goreleaser:
+            long: Gadzira .goreleaser.yml faira rekugadzirisa maturusi ekuburitsa
+            short: Gadzira .goreleaser.yml faira
+        impl:
+            long: Gadzira mafaera ekushandisa ekushandisa masevhisi ebhizinesi
+            short: Gadzira mafaira ekushandisa
         long: Code jenareta, inotsigira akawanda matemplate
+        makefile:
+            long: Gadzira Makefile mafaera ezvishandiso zvekuvaka uye mimwe mirairo ine hukama
+            short: Gadzira Makefile
+        mod:
+            long: Gadzira go.mod faira yekutsamira manejimendi
+            short: Gadzira go.mod faira
+        pb:
+            long: Gadzira .pb.go mafaera ekugadzira .proto mafaera,
+            short: Gadzira .pb.go faira
         short: Code jenareta
+        state:
+            long: Gadzira mabasa ese ane hukama ehurumende kune stateful sosi kana static resource manejimendi ebhizinesi masevhisi
+            short: Mabasa ese akakodzera ekugadzira nyika
+        table:
+            long: Ese ane hukama mabasa ekugadzira matafura ezvakaita zviwanikwa kana static resource manejimendi ebhizinesi masevhisi
+            short: Mabasa ese ane chekuita nekugadzira matafura
     help:
         additional_commands: Mimwe mirairo
         aliases: command alias

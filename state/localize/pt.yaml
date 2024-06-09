@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Gere arquivos de entrada para serviços empresariais
             short: Gerar arquivo de entrada
+        conf:
+            long: Gere arquivos de configuração para leitura de configuração de serviços de negócios
+            short: Gerar arquivo de configuração
+        dockerignore:
+            long: Gere o arquivo .dockerignore para construção de imagem Docker para ignorar o gerenciamento de arquivos
+            short: Gerar arquivo .dockerignore
+        editorconfig:
+            long: Gere arquivo .editorconfig para configuração do editor
+            short: Gerar arquivo .editorconfig
         flags:
             add-proto-files: Se você precisar importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta do arquivo .proto especificado, esta operação anexará (não substituirá) o caminho configurado no arquivo de configuração.
             go-module-prefix: Para o caminho do go_package configurado no arquivo .proto e o real, você pode configurar esta opção
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Habilitar geração de configuração padrão para campos relacionados ao banco de dados
             tables-enable_field_updated_at: Se o valor padrão do campo atualizado_at deve ser habilitado no banco de dados
             tables-enable_gorm_tag_column: Se deve ser habilitada a geração de gorms relacionados ao banco de dados
+        gitignote:
+            long: Gere arquivos .gitignore para gerenciamento de arquivos ignorados no controle de versão
+            short: Gerar arquivo .gitignore
+        golang-lint:
+            long: Gere o arquivo .golangci.yml para inspeção de qualidade do código
+            short: Gerar arquivo .golangci.yml
+        goreleaser:
+            long: Gere o arquivo .goreleaser.yml para configuração das ferramentas de lançamento
+            short: Gerar arquivo .goreleaser.yml
+        impl:
+            long: Gerar arquivos de implementação para implementação de serviços de negócios
+            short: Gerar arquivos de implementação
         long: Gerador de código, suporta vários modelos
+        makefile:
+            long: Gere arquivos Makefile para ferramentas de construção e outros comandos relacionados
+            short: Gerar Makefile
+        mod:
+            long: Gere o arquivo go.mod para gerenciamento de dependências
+            short: Gerar arquivo go.mod
+        pb:
+            long: Gere arquivos .pb.go para gerar arquivos .proto,
+            short: Gerar arquivo .pb.go
         short: Gerador de código
+        state:
+            long: Gere todas as funções de estado relacionadas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
+            short: Todas as funções relevantes para gerar estado
+        table:
+            long: Todas as funções relacionadas à geração de tabelas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
+            short: Todas as funções relacionadas para geração de tabelas
     help:
         additional_commands: Comandos adicionais
         aliases: apelido de comando

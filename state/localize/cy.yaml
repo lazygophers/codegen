@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Cynhyrchu ffeiliau mynediad ar gyfer gwasanaethau busnes
             short: Cynhyrchu ffeil mynediad
+        conf:
+            long: Cynhyrchu ffeiliau ffurfweddu ar gyfer darllen ffurfweddiad gwasanaethau busnes
+            short: Cynhyrchu ffeil ffurfweddu
+        dockerignore:
+            long: Cynhyrchu ffeil .dockerignore ar gyfer adeiladu delwedd Docker i anwybyddu rheoli ffeiliau
+            short: Cynhyrchu ffeil .dockerignore
+        editorconfig:
+            long: Cynhyrchu ffeil .editorconfig ar gyfer cyfluniad golygydd
+            short: Cynhyrchu ffeil .editorconfig
         flags:
             add-proto-files: Os oes angen i chi fewnforio ffeiliau .proto/llwybrau ffolder eraill nad ydynt yn yr un ffolder â'r ffeil .proto penodedig, bydd y gweithrediad hwn yn atodi (nid trosysgrifo) y llwybr a ffurfweddwyd yn y ffeil ffurfweddu.
             go-module-prefix: Ar gyfer y llwybr go_package wedi'i ffurfweddu yn y ffeil .proto a'r un go iawn, gallwch chi ffurfweddu'r opsiwn hwn
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Galluogi cynhyrchu cyfluniad rhagosodedig ar gyfer meysydd cysylltiedig â chronfa ddata
             tables-enable_field_updated_at: A ddylid galluogi gwerth rhagosodedig y maes updated_at yn y gronfa ddata
             tables-enable_gorm_tag_column: A ddylid galluogi cynhyrchu gorm sy'n gysylltiedig â chronfa ddata
+        gitignote:
+            long: Cynhyrchu ffeiliau .gitnore ar gyfer rheoli ffeiliau wedi'u hanwybyddu wrth reoli fersiynau
+            short: Cynhyrchu ffeil .gitnore
+        golang-lint:
+            long: Cynhyrchu ffeil .golangci.yml ar gyfer arolygu ansawdd cod
+            short: Cynhyrchu ffeil .golangci.yml
+        goreleaser:
+            long: Cynhyrchu ffeil .goreleaser.yml ar gyfer ffurfweddu offer rhyddhau
+            short: Cynhyrchu ffeil .goreleaser.yml
+        impl:
+            long: Cynhyrchu ffeiliau gweithredu ar gyfer gweithredu gwasanaethau busnes
+            short: Cynhyrchu ffeiliau gweithredu
         long: Generadur cod, yn cefnogi templedi lluosog
+        makefile:
+            long: Cynhyrchu ffeiliau Makefile ar gyfer adeiladu offer a gorchmynion cysylltiedig eraill
+            short: Cynhyrchu Makefile
+        mod:
+            long: Cynhyrchu ffeil go.mod ar gyfer rheoli dibyniaeth
+            short: Cynhyrchu ffeil go.mod
+        pb:
+            long: Cynhyrchu ffeiliau .pb.go ar gyfer cynhyrchu ffeiliau .proto,
+            short: Cynhyrchu ffeil .pb.go
         short: Generadur cod
+        state:
+            long: Cynhyrchu holl swyddogaethau cysylltiedig y wladwriaeth ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
+            short: Pob swyddogaeth berthnasol ar gyfer cynhyrchu cyflwr
+        table:
+            long: Holl swyddogaethau cysylltiedig tablau cynhyrchu ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
+            short: Pob swyddogaeth gysylltiedig ar gyfer cynhyrchu tablau
     help:
         additional_commands: Gorchmynion ychwanegol
         aliases: alias gorchymyn

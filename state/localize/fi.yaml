@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Luo merkintätiedostoja yrityspalveluille
             short: Luo syöttötiedosto
+        conf:
+            long: Luo määritystiedostoja yrityspalveluiden asetusten lukemista varten
+            short: Luo asetustiedosto
+        dockerignore:
+            long: Luo .dockerignore-tiedosto Docker-kuvanrakennusta varten ohittaaksesi tiedostonhallinnan
+            short: Luo .dockerignore-tiedosto
+        editorconfig:
+            long: Luo .editorconfig-tiedosto editorin määritystä varten
+            short: Luo .editorconfig-tiedosto
         flags:
             add-proto-files: Jos sinun on tuotava muita .proto-tiedostoja/kansiopolkuja, jotka eivät ole samassa kansiossa määritetyn .proto-tiedoston kanssa, tämä toiminto lisää (ei korvaa) määritystiedostossa määritetyn polun.
             go-module-prefix: Voit määrittää tämän vaihtoehdon go_package-polulle, joka on määritetty .proto-tiedostossa ja varsinaiselle polulle.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Ota oletusasetusten luominen käyttöön tietokantoihin liittyvissä kentissä
             tables-enable_field_updated_at: Otetaanko updated_at-kentän oletusarvo käyttöön tietokannassa
             tables-enable_gorm_tag_column: Otetaanko tietokantaan liittyvä gormien luominen käyttöön
+        gitignote:
+            long: Luo .gitignore-tiedostoja ohitettujen tiedostojen hallintaa varten versionhallinnassa
+            short: Luo .gitignore-tiedosto
+        golang-lint:
+            long: Luo .golangci.yml-tiedosto koodin laadun tarkistamista varten
+            short: Luo .golangci.yml-tiedosto
+        goreleaser:
+            long: Luo .goreleaser.yml-tiedosto julkaisutyökalujen määritystä varten
+            short: Luo .goreleaser.yml-tiedosto
+        impl:
+            long: Luo toteutustiedostoja yrityspalveluiden toteuttamista varten
+            short: Luo toteutustiedostoja
         long: Koodigeneraattori, tukee useita malleja
+        makefile:
+            long: Luo Makefile-tiedostoja rakennustyökaluja ja muita vastaavia komentoja varten
+            short: Luo Makefile
+        mod:
+            long: Luo go.mod-tiedosto riippuvuuden hallintaa varten
+            short: Luo go.mod-tiedosto
+        pb:
+            long: Luo .pb.go-tiedostoja .proto-tiedostojen luomista varten,
+            short: Luo .pb.go-tiedosto
         short: Koodigeneraattori
+        state:
+            long: Luo kaikki asiaan liittyvät tilan toiminnot yrityspalveluiden tilatietoisten tai staattisten resurssien hallintaan
+            short: Kaikki tilan luomiseen liittyvät toiminnot
+        table:
+            long: Kaikki siihen liittyvät toiminnot taulukoiden luomiseen yrityspalveluiden tilatietoisten resurssien tai staattisten resurssien hallintaan
+            short: Kaikki liittyvät funktiot taulukoiden luomiseen
     help:
         additional_commands: Lisäkomennot
         aliases: komentoalias

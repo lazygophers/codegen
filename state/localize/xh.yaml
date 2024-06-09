@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Yenza iifayile zokungena kwiinkonzo zoshishino
             short: Yenza ifayile yokungena
+        conf:
+            long: Yenza iifayile zoqwalaselo kuqwalaselo lokufunda lweenkonzo zoshishino
+            short: Yenza ifayile yoqwalaselo
+        dockerignore:
+            long: Yenza ifayile ye-dockerignore yesakhiwo somfanekiso we-Docker ukungahoyi ulawulo lwefayile
+            short: Yenza ifayile ye.dockerignore
+        editorconfig:
+            long: Yenza ifayile ye-.editorconfig kuqwalaselo lomhleli
+            short: Yenza ifayile ye.editorconfig
         flags:
             add-proto-files: Ukuba ufuna ukungenisa ezinye iifayile zeproto/iindlela zefolda ezingekho kwisiqulathi seefayili esifana nesefayile echaziweyo .proto, lo msebenzi uza kudibanisa (awuyi kubhala ngaphezulu) indlela eqwalaselweyo kwifayile yoqwalaselo.
             go-module-prefix: Kumendo we go_package eqwalaselweyo kwifayile ye .proto kunye neyona eyiyo, ungaluqwalasela olu khetho.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Yenza ulungelelwaniso oluhlala lukhona kwimihlaba enxulumene nedatabase
             tables-enable_field_updated_at: Nokuba ngaba ukwenza ixabiso elimiselweyo lendawo ehlaziyiweyo_kwindawo egciniweyo
             tables-enable_gorm_tag_column: Nokuba kwenzelwa ukuveliswa kwegorm enxulumene nedathabheyisi
+        gitignote:
+            long: Yenza iifayile ze.gitignore zolawulo lwefayile olungahoywanga kulawulo loguqulelo
+            short: Yenza ifayile ye.gitignore
+        golang-lint:
+            long: Yenza ifayile ye.golangci.yml yokuhlola umgangatho wekhowudi
+            short: Yenza ifayile ye.golangci.yml
+        goreleaser:
+            long: Yenza ifayile ye.goreleaser.yml yoqwalaselo lwezixhobo zokukhulula
+            short: Yenza ifayile ye.goreleaser.yml
+        impl:
+            long: Ukuvelisa iifayile zokuphumeza ukuphunyezwa kweenkonzo zoshishino
+            short: Yenza iifayile zokuphunyezwa
         long: Ikhowudi generator, ixhasa iitemplates ezininzi
+        makefile:
+            long: Yenza iifayile zeMakefile zezixhobo zokwakha kunye neminye imiyalelo ehambelanayo
+            short: Yenza iMakefile
+        mod:
+            long: Yenza ifayile ye-go.mod yolawulo lokuxhomekeka
+            short: Yenza ifayile ye-go.mod
+        pb:
+            long: Yenza iifayile ze.pb.go zokuvelisa iifayile zeproto,
+            short: Yenza ifayile ye.pb.go
         short: Ikhowudi generator
+        state:
+            long: Ukuvelisa yonke imisebenzi enxulumeneyo karhulumente ukulungiselela izixhobo ezisemthethweni okanye ulawulo lwemithombo engatshintshiyo yeenkonzo zoshishino
+            short: Yonke imisebenzi efanelekileyo yokuvelisa urhulumente
+        table:
+            long: Yonke imisebenzi enxulumeneyo yokuvelisa iitheyibhile zezibonelelo ezisemgangathweni okanye ulawulo lwemithombo engatshintshiyo yeenkonzo zoshishino
+            short: Yonke imisebenzi enxulumeneyo yokuvelisa iitafile
     help:
         additional_commands: Imiyalelo eyongezelelweyo
         aliases: umyalelo alias

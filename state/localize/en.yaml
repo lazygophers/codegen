@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generate entry files for business services
             short: Generate entry file
+        conf:
+            long: Generate configuration files for configuration reading of business services
+            short: Generate configuration file
+        dockerignore:
+            long: Generate .dockerignore file for Docker image building to ignore file management
+            short: Generate .dockerignore file
+        editorconfig:
+            long: Generate .editorconfig file for editor configuration
+            short: Generate .editorconfig file
         flags:
             add-proto-files: If you need to import other .proto files/folder paths that are not in the same folder as the specified .proto file, this operation will append (not overwrite) the path configured in the configuration file.
             go-module-prefix: For the path of go_package configured in the .proto file and the actual one, you can configure this option
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Enable default configuration generation for database-related fields
             tables-enable_field_updated_at: Whether to enable the default value of the updated_at field in the database
             tables-enable_gorm_tag_column: Whether to enable database-related gorm generation
+        gitignote:
+            long: Generate .gitignore files for ignored file management in version control
+            short: Generate .gitignore file
+        golang-lint:
+            long: Generate .golangci.yml file for code quality inspection
+            short: Generate .golangci.yml file
+        goreleaser:
+            long: Generate .goreleaser.yml file for configuration of release tools
+            short: Generate .goreleaser.yml file
+        impl:
+            long: Generate implementation files for the implementation of business services
+            short: Generate implementation files
         long: Code generator, supports multiple templates
+        makefile:
+            long: Generate Makefile files for building tools and other related commands
+            short: Generate Makefile
+        mod:
+            long: Generate go.mod file for dependency management
+            short: Generate go.mod file
+        pb:
+            long: Generate .pb.go files for generating .proto files,
+            short: Generate .pb.go file
         short: Code generator
+        state:
+            long: Generate all related functions of state for stateful resource or static resource management of business services
+            short: All relevant functions for generating state
+        table:
+            long: All related functions of generating tables for stateful resource or static resource management of business services
+            short: All related functions for generating tables
     help:
         additional_commands: Additional commands
         aliases: command alias

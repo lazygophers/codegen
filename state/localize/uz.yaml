@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Biznes xizmatlari uchun kirish fayllarini yarating
             short: Kirish faylini yarating
+        conf:
+            long: Biznes xizmatlarining konfiguratsiyasini o'qish uchun konfiguratsiya fayllarini yarating
+            short: Konfiguratsiya faylini yarating
+        dockerignore:
+            long: Fayl boshqaruvini e'tiborsiz qoldirish uchun Docker tasvirini yaratish uchun .dockerignore faylini yarating
+            short: .dockerignore faylini yarating
+        editorconfig:
+            long: Muharrir konfiguratsiyasi uchun .editorconfig faylini yarating
+            short: .editorconfig faylini yarating
         flags:
             add-proto-files: Belgilangan .proto fayli bilan bir xil papkada bo'lmagan boshqa .proto fayllar/papka yo'llarini import qilishingiz kerak bo'lsa, bu operatsiya konfiguratsiya faylida sozlangan yo'lni qo'shadi (ustiga yozmaydi).
             go-module-prefix: .proto faylida sozlangan go_package yo'li va haqiqiy uchun ushbu parametrni sozlashingiz mumkin
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Ma'lumotlar bazasi bilan bog'liq maydonlar uchun standart konfiguratsiyani yaratishni yoqing
             tables-enable_field_updated_at: Ma'lumotlar bazasida updated_at maydonining standart qiymatini yoqish kerakmi
             tables-enable_gorm_tag_column: Ma'lumotlar bazasi bilan bog'liq gorm ishlab chiqarishni yoqish kerakmi
+        gitignote:
+            long: Versiya boshqaruvida e'tibor berilmagan fayllarni boshqarish uchun .gitignore fayllarini yarating
+            short: .gitignore faylini yarating
+        golang-lint:
+            long: Kod sifatini tekshirish uchun .golangci.yml faylini yarating
+            short: .golangci.yml faylini yarating
+        goreleaser:
+            long: Chiqarish vositalarini sozlash uchun .goreleaser.yml faylini yarating
+            short: .goreleaser.yml faylini yarating
+        impl:
+            long: Biznes xizmatlarini amalga oshirish uchun dastur fayllarini yaratish
+            short: Amalga oshirish fayllarini yaratish
         long: Kod generatori, bir nechta shablonlarni qo'llab-quvvatlaydi
+        makefile:
+            long: Qurilish vositalari va boshqa tegishli buyruqlar uchun Makefile fayllarini yarating
+            short: Makefile yarating
+        mod:
+            long: Tobelikni boshqarish uchun go.mod faylini yarating
+            short: go.mod faylini yarating
+        pb:
+            long: .proto fayllarni yaratish uchun .pb.go fayllarini yaratish,
+            short: .pb.go faylini yarating
         short: Kod generatori
+        state:
+            long: Biznes xizmatlarining statistik manbalari yoki statik resurslarini boshqarish uchun davlatning barcha tegishli funktsiyalarini yarating
+            short: Davlatni yaratish uchun barcha tegishli funktsiyalar
+        table:
+            long: Biznes xizmatlarining statistik manbalari yoki statik resurslarini boshqarish uchun jadvallarni yaratishning barcha tegishli funktsiyalari
+            short: Jadvallarni yaratish uchun barcha tegishli funktsiyalar
     help:
         additional_commands: Qo'shimcha buyruqlar
         aliases: buyruq taxallus

@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Genereer inskrywingslêers vir besigheidsdienste
             short: Genereer inskrywingslêer
+        conf:
+            long: Genereer konfigurasielêers vir konfigurasielees van besigheidsdienste
+            short: Genereer konfigurasielêer
+        dockerignore:
+            long: Genereer .dockerignore-lêer vir Docker-beeldbou om lêerbestuur te ignoreer
+            short: Genereer .dockerignore-lêer
+        editorconfig:
+            long: Genereer .editorconfig-lêer vir redakteurkonfigurasie
+            short: Genereer .editorconfig-lêer
         flags:
             add-proto-files: As jy ander .proto-lêers/vouerpaaie moet invoer wat nie in dieselfde vouer as die gespesifiseerde .proto-lêer is nie, sal hierdie bewerking die pad wat in die konfigurasielêer gekonfigureer is, byvoeg (nie oorskryf nie).
             go-module-prefix: Vir die pad van go_package wat in die .proto-lêer gekonfigureer is en die werklike een, kan jy hierdie opsie instel
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktiveer verstekkonfigurasiegenerering vir databasisverwante velde
             tables-enable_field_updated_at: Of die verstekwaarde van die updated_at-veld in die databasis geaktiveer moet word
             tables-enable_gorm_tag_column: Of databasisverwante gorm-generering moontlik gemaak moet word
+        gitignote:
+            long: Genereer .gitignore-lêers vir geïgnoreer lêerbestuur in weergawebeheer
+            short: Genereer .gitignore-lêer
+        golang-lint:
+            long: Genereer .golangci.yml lêer vir kode kwaliteit inspeksie
+            short: Genereer .golangci.yml lêer
+        goreleaser:
+            long: Genereer .goreleaser.yml lêer vir konfigurasie van vrystelling gereedskap
+            short: Genereer .goreleaser.yml-lêer
+        impl:
+            long: Genereer implementeringslêers vir die implementering van besigheidsdienste
+            short: Genereer implementeringslêers
         long: Kodegenerator, ondersteun verskeie sjablone
+        makefile:
+            long: Genereer Makefile-lêers vir die bou van gereedskap en ander verwante opdragte
+            short: Genereer Makefile
+        mod:
+            long: Genereer go.mod-lêer vir afhanklikheidsbestuur
+            short: Genereer go.mod lêer
+        pb:
+            long: Genereer .pb.go-lêers vir die generering van .proto-lêers,
+            short: Genereer .pb.go-lêer
         short: Kode kragopwekker
+        state:
+            long: Genereer alle verwante funksies van die staat vir staatkundige hulpbron- of statiese hulpbronbestuur van besigheidsdienste
+            short: Alle relevante funksies vir die generering van staat
+        table:
+            long: Alle verwante funksies van die generering van tabelle vir statiese hulpbron- of statiese hulpbronbestuur van besigheidsdienste
+            short: Alle verwante funksies vir die generering van tabelle
     help:
         additional_commands: Bykomende opdragte
         aliases: bevel alias

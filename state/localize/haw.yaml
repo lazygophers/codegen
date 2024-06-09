@@ -20,6 +20,15 @@ cli:
         cmd:
             long: E hana i nā faila komo no nā lawelawe ʻoihana
             short: E hana i ka waihona komo
+        conf:
+            long: E hana i nā faila hoʻonohonoho no ka heluhelu hoʻonohonoho ʻana i nā lawelawe ʻoihana
+            short: E hana i ka waihona hoʻonohonoho
+        dockerignore:
+            long: E hoʻokumu i ka faila .dockerignore no ka hale kiʻi Docker e haʻalele i ka hoʻokele waihona
+            short: E hana i ka faila .dockerignore
+        editorconfig:
+            long: E hana i ka faila .editorconfig no ka hoʻoponopono hoʻoponopono
+            short: E hana i ka faila .editorconfig
         flags:
             add-proto-files: Inā pono ʻoe e hoʻokomo i nā faila .proto/ala ala ʻē aʻe ʻaʻole i loko o ka waihona like me ka faila .proto i ʻōlelo ʻia, e hoʻopili kēia hana (ʻaʻole e kākau hou) i ke ala i hoʻonohonoho ʻia i ka faila hoʻonohonoho.
             go-module-prefix: No ke ala o ka go_package i hoʻonohonoho ʻia i ka faila .proto a me ka mea maoli, hiki iā ʻoe ke hoʻonohonoho i kēia koho.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: E ho'ā i ka hana hoʻonohonoho paʻamau no nā kahua pili i ka waihona
             tables-enable_field_updated_at: Inā hiki ke hoʻohana i ka waiwai paʻamau o ka updated_at kahua i loko o ka waihona
             tables-enable_gorm_tag_column: Inā paha e hiki ai ke hoʻokumu ʻia gorm pili i ka waihona
+        gitignote:
+            long: E hana i nā faila .gitignore no ka mālama ʻana i ka faila ma ka mana mana
+            short: E hana i ka faila .giignore
+        golang-lint:
+            long: E hana i ka waihona .golangci.yml no ka nānā ʻana i ka maikaʻi o nā code
+            short: E hana i ka waihona .golangci.yml
+        goreleaser:
+            long: E hana i ka faila .goreleaser.yml no ka hoʻonohonoho ʻana i nā mea hana hoʻokuʻu
+            short: E hana i ka waihona .goreleaser.yml
+        impl:
+            long: E hana i nā faila hoʻokō no ka hoʻokō ʻana i nā lawelawe ʻoihana
+            short: E hana i nā faila hoʻokō
         long: Kākoʻo ʻia nā ʻōkuhi he nui
+        makefile:
+            long: E hana i nā faila Makefile no ke kūkulu ʻana i nā mea hana a me nā kauoha e pili ana
+            short: Hana i Makefile
+        mod:
+            long: Hoʻokumu i ka faila go.mod no ka hoʻokele hilinaʻi
+            short: E hana i ka faila go.mod
+        pb:
+            long: E hana i nā faila .pb.go no ka hana ʻana i nā faila .proto,
+            short: E hana i ka waihona .pb.go
         short: Mea hana code
+        state:
+            long: E hana i nā hana pili a pau o ka moku'āina no ka waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
+            short: ʻO nā hana kūpono a pau no ka hana ʻana i ka mokuʻāina
+        table:
+            long: ʻO nā hana pili āpau o ka hoʻokumu ʻana i nā papa no nā kumu waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
+            short: ʻO nā hana pili āpau no ka hana ʻana i nā papa
     help:
         additional_commands: Nā kauoha hou aku
         aliases: kauoha inoa

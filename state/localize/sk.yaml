@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generujte vstupné súbory pre obchodné služby
             short: Vytvorte vstupný súbor
+        conf:
+            long: Generujte konfiguračné súbory na čítanie konfigurácie podnikových služieb
+            short: Vygenerujte konfiguračný súbor
+        dockerignore:
+            long: Ak chcete ignorovať správu súborov, vygenerujte súbor .dockerignore na vytváranie obrazu Docker
+            short: Vygenerujte súbor .dockerignore
+        editorconfig:
+            long: Vygenerujte súbor .editorconfig pre konfiguráciu editora
+            short: Vygenerujte súbor .editorconfig
         flags:
             add-proto-files: Ak potrebujete importovať iné súbory .proto/cesty k priečinkom, ktoré nie sú v rovnakom priečinku ako zadaný súbor .proto, táto operácia pripojí (nie prepíše) cestu nakonfigurovanú v konfiguračnom súbore.
             go-module-prefix: Pre cestu go_package nakonfigurovanú v súbore .proto a aktuálnu cestu môžete nakonfigurovať túto možnosť
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Povoliť generovanie predvolenej konfigurácie pre polia súvisiace s databázou
             tables-enable_field_updated_at: Či sa má povoliť predvolená hodnota poľa updated_at v databáze
             tables-enable_gorm_tag_column: Či povoliť generovanie gormov súvisiacich s databázou
+        gitignote:
+            long: Generujte súbory .gitignore pre správu ignorovaných súborov v správe verzií
+            short: Vygenerujte súbor .gitignore
+        golang-lint:
+            long: Vygenerujte súbor .golangci.yml na kontrolu kvality kódu
+            short: Vygenerujte súbor .golangci.yml
+        goreleaser:
+            long: Vygenerujte súbor .goreleaser.yml na konfiguráciu nástrojov na uvoľnenie
+            short: Vygenerujte súbor .goreleaser.yml
+        impl:
+            long: Generovanie implementačných súborov pre implementáciu obchodných služieb
+            short: Vytvorte implementačné súbory
         long: Generátor kódu, podporuje viacero šablón
+        makefile:
+            long: Generujte súbory Makefile pre stavebné nástroje a ďalšie súvisiace príkazy
+            short: Generovať Makefile
+        mod:
+            long: Vygenerujte súbor go.mod pre správu závislostí
+            short: Vygenerujte súbor go.mod
+        pb:
+            long: Generovať súbory .pb.go na generovanie súborov .proto,
+            short: Vygenerujte súbor .pb.go
         short: Generátor kódu
+        state:
+            long: Generujte všetky súvisiace funkcie stavu pre stavové zdroje alebo statickú správu zdrojov podnikových služieb
+            short: Všetky relevantné funkcie na generovanie stavu
+        table:
+            long: Všetky súvisiace funkcie generovania tabuliek pre stavové zdroje alebo statickú správu zdrojov obchodných služieb
+            short: Všetky súvisiace funkcie na generovanie tabuliek
     help:
         additional_commands: Ďalšie príkazy
         aliases: alias príkazu

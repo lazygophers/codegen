@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Hlahisa lifaele tsa ho kena bakeng sa lits'ebeletso tsa khoebo
             short: Hlahisa faele ea ho kena
+        conf:
+            long: Hlahisa lifaele tsa tlhophiso bakeng sa ho bala lits'ebeletso tsa khoebo
+            short: Hlahisa faele ea tlhophiso
+        dockerignore:
+            long: Hlahisa faele ea .dockerignore bakeng sa mohaho oa setšoantšo sa Docker ho hlokomoloha tsamaiso ea lifaele
+            short: Hlahisa faele ea .dockerignore
+        editorconfig:
+            long: Hlahisa faele ea .editorconfig bakeng sa tlhophiso ea mohlophisi
+            short: Hlahisa faele ea .editorconfig
         flags:
             add-proto-files: Haeba o hloka ho kenya tse ling tsa .proto lifaele/litsela tsa lifoldara tse seng ka har'a foldara e tšoanang le faele e boletsoeng ea .proto, ts'ebetso ena e tla hlomathisa (eseng ho hlakola) tsela e hlophisitsoeng faeleng ea tlhophiso.
             go-module-prefix: Bakeng sa tsela ea go_package e hlophisitsoeng faeleng ea .proto le ea 'nete, o ka hlophisa khetho ena.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Numella tlhahiso ea tlhophiso ea kamehla bakeng sa likarolo tse amanang le database
             tables-enable_field_updated_at: Hore na ho ka bulela boleng ba kamehla ba karolo e nchafalitsoeng_e bobolokelong
             tables-enable_gorm_tag_column: Hore na ho ka nolofalletsa tlhahiso ea gorm e amanang le database
+        gitignote:
+            long: Hlahisa lifaele tsa .gitignore bakeng sa taolo ea faele e hlokomolohuoang ho taolo ea mofuta
+            short: Hlahisa faele ea .gitignore
+        golang-lint:
+            long: Hlahisa faele ea .golangci.yml bakeng sa tlhahlobo ea boleng ba khoutu
+            short: Hlahisa faele ea .golangci.yml
+        goreleaser:
+            long: Hlahisa faele ea .goreleaser.yml bakeng sa ho hlophisa lisebelisoa tsa tokollo
+            short: Hlahisa faele ea .goreleaser.yml
+        impl:
+            long: Hlahisa lifaele tsa ts'ebetsong bakeng sa ts'ebetsong ea litšebeletso tsa khoebo
+            short: Hlahisa lifaele tsa ts'ebetsong
         long: Jenereithara ea khoutu, e tšehetsa litempele tse ngata
+        makefile:
+            long: Hlahisa lifaele tsa Makefile bakeng sa lisebelisoa tsa kaho le litaelo tse ling tse amanang le tsona
+            short: Hlahisa Makefile
+        mod:
+            long: Hlahisa faele ea go.mod bakeng sa taolo ea ho itšetleha
+            short: Hlahisa faele ea go.mod
+        pb:
+            long: Hlahisa lifaele tsa .pb.go bakeng sa ho hlahisa lifaele tsa .proto,
+            short: Hlahisa faele ea .pb.go
         short: Jenereithara ea khoutu
+        state:
+            long: Hlahisa mesebetsi eohle e amanang le mmuso bakeng sa taolo e phahameng ea lisebelisoa kapa lisebelisoa tse tsitsitseng tsa lits'ebeletso tsa khoebo
+            short: Mesebetsi eohle e amehang bakeng sa ho hlahisa naha
+        table:
+            long: Mesebetsi eohle e amanang le ho hlahisa litafole bakeng sa lisebelisoa tsa boemo bo holimo kapa tsamaiso e tsitsitseng ea litšebeletso tsa khoebo
+            short: Mesebetsi eohle e amanang le ho hlahisa litafole
     help:
         additional_commands: Litaelo tse ling
         aliases: laela alias

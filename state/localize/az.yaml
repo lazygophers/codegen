@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Biznes xidmətləri üçün giriş faylları yaradın
             short: Giriş faylı yaradın
+        conf:
+            long: Biznes xidmətlərinin konfiqurasiya oxunması üçün konfiqurasiya faylları yaradın
+            short: Konfiqurasiya faylı yaradın
+        dockerignore:
+            long: Fayl idarəçiliyinə məhəl qoymamaq üçün Docker təsvirinin qurulması üçün .dockerignore faylı yaradın
+            short: .dockerignore faylı yaradın
+        editorconfig:
+            long: Redaktor konfiqurasiyası üçün .editorconfig faylı yaradın
+            short: .editorconfig faylı yaradın
         flags:
             add-proto-files: Göstərilən .proto faylı ilə eyni qovluqda olmayan digər .proto faylları/qovluq yollarını idxal etmək lazımdırsa, bu əməliyyat konfiqurasiya faylında konfiqurasiya edilmiş yolu əlavə edəcək (üzerinə yazmayacaq).
             go-module-prefix: .proto faylında konfiqurasiya edilmiş go_package yolu və faktiki üçün bu seçimi konfiqurasiya edə bilərsiniz.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Verilənlər bazası ilə əlaqəli sahələr üçün standart konfiqurasiya yaradılmasını aktivləşdirin
             tables-enable_field_updated_at: Verilənlər bazasında updated_at sahəsinin standart dəyərinin aktiv edilib-edilməməsi
             tables-enable_gorm_tag_column: Verilənlər bazası ilə əlaqəli gorm generasiyasının aktiv edilib-edilməməsi
+        gitignote:
+            long: Versiya nəzarətində nəzərə alınmayan fayl idarəçiliyi üçün .gitignore faylları yaradın
+            short: .gitignore faylı yaradın
+        golang-lint:
+            long: Kod keyfiyyətinin yoxlanılması üçün .golangci.yml faylı yaradın
+            short: .golangci.yml faylı yaradın
+        goreleaser:
+            long: Buraxılış alətlərinin konfiqurasiyası üçün .goreleaser.yml faylı yaradın
+            short: .goreleaser.yml faylı yaradın
+        impl:
+            long: Biznes xidmətlərinin həyata keçirilməsi üçün icra faylları yaradın
+            short: İcra faylları yaradın
         long: Kod generatoru, birdən çox şablonu dəstəkləyir
+        makefile:
+            long: Quraşdırma alətləri və digər əlaqəli əmrlər üçün Makefile faylları yaradın
+            short: Makefile yaradın
+        mod:
+            long: Asılılığın idarə edilməsi üçün go.mod faylı yaradın
+            short: go.mod faylını yaradın
+        pb:
+            long: .proto faylları yaratmaq üçün .pb.go faylları yaradın,
+            short: .pb.go faylı yaradın
         short: Kod generatoru
+        state:
+            long: Biznes xidmətlərinin dövlət resurs və ya statik resurs idarə edilməsi üçün dövlətin bütün əlaqəli funksiyalarını yaradın
+            short: Dövlət yaratmaq üçün bütün müvafiq funksiyalar
+        table:
+            long: Dövlət resursu və ya biznes xidmətlərinin statik resurslarının idarə edilməsi üçün cədvəllərin yaradılması ilə əlaqəli bütün funksiyalar
+            short: Cədvəl yaratmaq üçün bütün əlaqəli funksiyalar
     help:
         additional_commands: Əlavə əmrlər
         aliases: əmr ləqəbi

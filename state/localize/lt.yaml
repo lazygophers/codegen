@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generuokite verslo paslaugų įvesties failus
             short: Sugeneruoti įvesties failą
+        conf:
+            long: Generuokite konfigūracijos failus verslo paslaugų konfigūracijos skaitymui
+            short: Sukurti konfigūracijos failą
+        dockerignore:
+            long: Sugeneruokite .dockerignore failą, skirtą „Docker“ vaizdų kūrimui, kad nepaisytumėte failų valdymo
+            short: Sugeneruokite .dockerignore failą
+        editorconfig:
+            long: Sugeneruokite .editorconfig failą redaktoriaus konfigūracijai
+            short: Sugeneruokite .editorconfig failą
         flags:
             add-proto-files: Jei reikia importuoti kitus .proto failus/aplanko kelius, kurie nėra tame pačiame aplanke kaip nurodytas .proto failas, ši operacija pridės (ne perrašys) konfigūracijos faile sukonfigūruotą kelią.
             go-module-prefix: Šią parinktį galite sukonfigūruoti go_package kelio, sukonfigūruoto .proto faile, ir tikrojo kelio
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Įgalinti numatytąjį su duomenų baze susijusių laukų konfigūracijos generavimą
             tables-enable_field_updated_at: Ar duomenų bazėje įgalinti numatytąją lauko updated_at reikšmę
             tables-enable_gorm_tag_column: Ar įgalinti duomenų bazių generavimą
+        gitignote:
+            long: Generuokite .gitignore failus, kad galėtumėte tvarkyti nepaisytus failus versijų valdyme
+            short: Sugeneruokite .gitignore failą
+        golang-lint:
+            long: Sugeneruokite .golangci.yml failą, kad patikrintumėte kodo kokybę
+            short: Sugeneruokite .golangci.yml failą
+        goreleaser:
+            long: Sugeneruokite .goreleaser.yml failą leidimo įrankių konfigūravimui
+            short: Sugeneruokite .goreleaser.yml failą
+        impl:
+            long: Generuoti diegimo failus verslo paslaugoms įgyvendinti
+            short: Generuokite diegimo failus
         long: Kodo generatorius, palaiko kelis šablonus
+        makefile:
+            long: Generuokite Makefile failus kūrimo įrankiams ir kitoms susijusioms komandoms
+            short: Sukurkite Makefile
+        mod:
+            long: Sugeneruokite failą go.mod, kad galėtumėte valdyti priklausomybę
+            short: Sugeneruokite failą go.mod
+        pb:
+            long: Generuoti .pb.go failus .proto failams generuoti,
+            short: Sugeneruokite .pb.go failą
         short: Kodų generatorius
+        state:
+            long: Generuoti visas susijusias valstybės funkcijas, skirtas verslo paslaugų būsenai arba statiniam išteklių valdymui
+            short: Visos reikalingos būsenos generavimo funkcijos
+        table:
+            long: Visos susijusios lentelių generavimo funkcijos, skirtos verslo paslaugų būsenai arba statiniam išteklių valdymui
+            short: Visos susijusios lentelės generavimo funkcijos
     help:
         additional_commands: Papildomos komandos
         aliases: komandos slapyvardis

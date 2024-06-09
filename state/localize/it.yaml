@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Genera file di ingresso per i servizi aziendali
             short: Genera file di ingresso
+        conf:
+            long: Genera file di configurazione per la lettura della configurazione dei servizi aziendali
+            short: Genera file di configurazione
+        dockerignore:
+            long: Genera il file .dockerignore per la creazione di immagini Docker per ignorare la gestione dei file
+            short: Genera il file .dockerignore
+        editorconfig:
+            long: Genera il file .editorconfig per la configurazione dell'editor
+            short: Genera il file .editorconfig
         flags:
             add-proto-files: Se è necessario importare altri file .proto/percorsi di cartelle che non si trovano nella stessa cartella del file .proto specificato, questa operazione aggiungerà (non sovrascriverà) il percorso configurato nel file di configurazione.
             go-module-prefix: Per il percorso di go_package configurato nel file .proto e quello attuale, puoi configurare questa opzione
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Abilita la generazione della configurazione predefinita per i campi relativi al database
             tables-enable_field_updated_at: Se abilitare il valore predefinito del campo aggiornato_at nel database
             tables-enable_gorm_tag_column: Se abilitare la generazione di gorm relativi al database
+        gitignote:
+            long: Genera file .gitignore per la gestione dei file ignorati nel controllo della versione
+            short: Genera il file .gitignore
+        golang-lint:
+            long: Genera il file .golangci.yml per il controllo della qualità del codice
+            short: Genera il file .golangci.yml
+        goreleaser:
+            long: Genera il file .goreleaser.yml per la configurazione degli strumenti di rilascio
+            short: Genera il file .goreleaser.yml
+        impl:
+            long: Generare file di implementazione per l'implementazione dei servizi aziendali
+            short: Generare file di implementazione
         long: Generatore di codice, supporta più modelli
+        makefile:
+            long: Genera file Makefile per la creazione di strumenti e altri comandi correlati
+            short: Genera makefile
+        mod:
+            long: Genera il file go.mod per la gestione delle dipendenze
+            short: Genera il file go.mod
+        pb:
+            long: Genera file .pb.go per generare file .proto,
+            short: Genera il file .pb.go
         short: Generatore di codici
+        state:
+            long: Genera tutte le funzioni di stato correlate per la gestione delle risorse con stato o delle risorse statiche dei servizi aziendali
+            short: Tutte le funzioni rilevanti per la generazione dello stato
+        table:
+            long: Tutte le funzioni correlate di generazione di tabelle per la gestione delle risorse con stato o delle risorse statiche dei servizi aziendali
+            short: Tutte le funzioni correlate per la generazione di tabelle
     help:
         additional_commands: Comandi aggiuntivi
         aliases: alias del comando

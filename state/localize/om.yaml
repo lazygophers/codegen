@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Tajaajila daldalaaf faayiloota galtee uumuu
             short: Faayilii galtee uumi
+        conf:
+            long: Faayilota qindeessaa dubbisa qindeessaa tajaajiloota daldalaa uumuu
+            short: Faayilii qindeessaa uumuu
+        dockerignore:
+            long: Bulchiinsa faayilii tuffachuudhaaf ijaarsa fakkii Docker faayilii .dockerignore uumi
+            short: Faayilii .dockerignore uumi
+        editorconfig:
+            long: Qindaa'ina gulaalaatiif faayilii .editorconfig uumi
+            short: Faayilii .editorconfig uumi
         flags:
             add-proto-files: Yoo faayilii/daandiiwwan galmee .proto biroo kanneen galmee walfakkaataa faayilii .proto ifteessame keessa hin jirre galchuu barbaadde, hojiin kun daandii faayilii qindeessaa keessatti qindaa'e ni dabala (irra hin barreessa).
             go-module-prefix: Daandii go_package faayilii .proto keessatti qindaa'ee fi isa dhugaatiif, filannoo kana qindeessuu dandeessa
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Dhaloota qindeessaa durtii man'eewwan kuusdeetaa wajjin walqabataniif dandeessisi
             tables-enable_field_updated_at: Gatii durtii dirree updated_at kuusdeetaa keessatti dandeessisuun fi dhiisuu isaa
             tables-enable_gorm_tag_column: Dhaloota gorm kuusdeetaa wajjin walqabatu dandeessisuun fi dhiisuu isaa
+        gitignote:
+            long: To'annoo gosa keessatti bulchiinsa faayilii tuffatameef faayilii .gitignore uumi
+            short: Faayilii .gitignore uumi
+        golang-lint:
+            long: Sakatta'iinsa qulqullina koodiitiif faayilii .golangci.yml uumi
+            short: Faayilii .golangci.yml uumi
+        goreleaser:
+            long: Meeshaalee gadhiifamuu qindeessuuf faayilii .goreleaser.yml uumi
+            short: Faayilii .goreleaser.yml uumi
+        impl:
+            long: Faayilota hojiirra oolmaa hojiirra oolmaa tajaajila daldalaa maddisiisuu
+            short: Faayilota hojiirra oolmaa uumuu
         long: Jenereetarii koodii, unkaalee hedduu deeggara
+        makefile:
+            long: Faayilota Makefile meeshaalee ijaarsaa fi ajajoota biroo walqabatan uumi
+            short: Makefile uumuu
+        mod:
+            long: Bulchiinsa hirkattummaaf faayilii go.mod uumi
+            short: Faayilii go.mod uumuu
+        pb:
+            long: Faayilota .pb.go faayilii .proto uumuuf uumuu, .
+            short: Faayilii .pb.go uumi
         short: Jenereetarii koodii
+        state:
+            long: Qabeenya haalaan ykn bulchiinsa qabeenya dhaabbataa tajaajila daldalaaf dalagaalee mootummaa walqabatan hunda ni maddisiisa
+            short: Faankishiniiwwan barbaachisoo ta'an hunda haala maddisiisuudhaaf
+        table:
+            long: Faankishiniiwwan walqabatan hunda kan gabatee maddisiisuu qabeenya haalaa ykn bulchiinsa qabeenya istaatiksii tajaajila daldalaa
+            short: Faankishiniiwwan walqabatan hunda gabatee uumuuf
     help:
         additional_commands: Ajajoota dabalataa
         aliases: maqaa biraa ajaja

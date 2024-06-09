@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Fausia faila ulufale mo auaunaga pisinisi
             short: Fausia faila faila
+        conf:
+            long: Fausia faila fa'atulagaina mo le faitau fa'atulagaina o auaunaga tau pisinisi
+            short: Fausia faila fa'atulagaina
+        dockerignore:
+            long: Fausia faila .dockerignore mo le fausiaina o ata Docker e le amanaʻia ai le puleaina o faila
+            short: Fausia faila .dockerignore
+        editorconfig:
+            long: Fausia .editorconfig faila mo le fa'atonu fa'atonu
+            short: Fausia .editorconfig faila
         flags:
             add-proto-files: Afai e te manaʻomia le faʻaulufaleina mai o isi .proto faila / ala faila e le o iai i totonu o le faila e tasi e pei o le faila .proto faʻamaonia, o lenei gaioiga o le a faʻapipiʻi (e le toe faʻaulu) le ala ua faʻatulagaina i le faila faʻatulagaina.
             go-module-prefix: Mo le ala o le go_package configured i le .proto faila ma le mea moni, e mafai ona e configure lenei filifiliga
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Fa'aagaaga le fa'atupuina o fa'atonuga mo fa'amaumauga e feso'ota'i ma fa'amaumauga
             tables-enable_field_updated_at: Pe fa'ataga le tau fa'aletonu o le updated_at field i totonu o fa'amaumauga
             tables-enable_gorm_tag_column: Pe fa'aagaaga le fa'atupuina o gorm e feso'ota'i i fa'amaumauga
+        gitignote:
+            long: Fausia faila .gitignore mo le pulea o faila e le amana'ia ile fa'atonuga
+            short: Fausia faila .giignore
+        golang-lint:
+            long: Fausia le faila .golangci.yml mo le siakiina o uiga lelei
+            short: Fausia le faila .golangci.yml
+        goreleaser:
+            long: Fausia faila .goreleaser.yml mo le faʻatulagaina o meafaigaluega faʻamalolo
+            short: Fausia le faila .goreleaser.yml
+        impl:
+            long: Fausia faila faʻatinoga mo le faʻatinoina o auaunaga tau pisinisi
+            short: Fausia faila fa'atinoga
         long: Code generator, lagolagoina le tele o mamanu
+        makefile:
+            long: Fausia faila Makefile mo meafaigaluega faufale ma isi tulafono fa'atatau
+            short: Fausia Makefile
+        mod:
+            long: Fausia le faila go.mod mo le pulega faʻalagolago
+            short: Fausia le faila go.mod
+        pb:
+            long: Fausia faila .pb.go mo le fausiaina o faila .proto,
+            short: Fausia le faila .pb.go
         short: Code generator
+        state:
+            long: Fausia galuega fa'afeso'ota'i uma a le setete mo punaoa fa'atulafonoina po'o le fa'atonuina o punaoa fa'apitoa o auaunaga tau pisinisi
+            short: O galuega talafeagai uma mo le fausiaina o le setete
+        table:
+            long: O galuega fa'afeso'ota'i uma o le fa'atupuina o laulau mo puna'oa fa'apitoa po'o le fa'atonuina o puna'oa fa'apitoa o auaunaga tau pisinisi
+            short: O galuega fa'atatau uma mo le fa'atupuina o laulau
     help:
         additional_commands: Poloaiga faaopoopo
         aliases: fa'atonu igoa

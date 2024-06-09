@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Générer des fichiers de saisie pour les services métiers
             short: Générer un fichier d'entrée
+        conf:
+            long: Générer des fichiers de configuration pour la lecture de la configuration des services métiers
+            short: Générer le fichier de configuration
+        dockerignore:
+            long: Générez un fichier .dockerignore pour la création d'images Docker afin d'ignorer la gestion des fichiers
+            short: Générer le fichier .dockerignore
+        editorconfig:
+            long: Générer un fichier .editorconfig pour la configuration de l'éditeur
+            short: Générer le fichier .editorconfig
         flags:
             add-proto-files: Si vous devez importer d'autres chemins de fichiers/dossiers .proto qui ne se trouvent pas dans le même dossier que le fichier .proto spécifié, cette opération ajoutera (et non écrasera) le chemin configuré dans le fichier de configuration.
             go-module-prefix: Pour le chemin de go_package configuré dans le fichier .proto et celui actuel, vous pouvez configurer cette option
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Activer la génération de configuration par défaut pour les champs liés à la base de données
             tables-enable_field_updated_at: S'il faut activer la valeur par défaut du champ update_at dans la base de données
             tables-enable_gorm_tag_column: S'il faut activer la génération de gorm liée à la base de données
+        gitignote:
+            long: Générez des fichiers .gitignore pour la gestion des fichiers ignorés dans le contrôle de version
+            short: Générer un fichier .gitignore
+        golang-lint:
+            long: Générer un fichier .golangci.yml pour l'inspection de la qualité du code
+            short: Générer le fichier .golangci.yml
+        goreleaser:
+            long: Générer le fichier .goreleaser.yml pour la configuration des outils de publication
+            short: Générer le fichier .goreleaser.yml
+        impl:
+            long: Générer des fichiers d'implémentation pour la mise en œuvre des services métiers
+            short: Générer des fichiers d'implémentation
         long: Générateur de code, prend en charge plusieurs modèles
+        makefile:
+            long: Générer des fichiers Makefile pour créer des outils et d'autres commandes associées
+            short: Générer un fichier Make
+        mod:
+            long: Générer un fichier go.mod pour la gestion des dépendances
+            short: Générer le fichier go.mod
+        pb:
+            long: Générez des fichiers .pb.go pour générer des fichiers .proto,
+            short: Générer un fichier .pb.go
         short: Générateur de code
+        state:
+            long: Générer toutes les fonctions d'état associées pour la gestion des ressources avec état ou des ressources statiques des services métiers
+            short: Toutes les fonctions pertinentes pour générer l'état
+        table:
+            long: Toutes les fonctions associées à la génération de tables pour la gestion des ressources avec état ou des ressources statiques des services métiers
+            short: Toutes les fonctions associées à la génération de tables
     help:
         additional_commands: Commandes supplémentaires
         aliases: alias de commande

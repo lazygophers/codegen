@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Mangpataud kadagiti file ti iseserrek para kadagiti serbisio ti negosio
             short: Mangpataud ti entry file
+        conf:
+            long: Mangpataud kadagiti file ti panagisaad para iti panagbasa ti panagisaad dagiti serbisio ti negosio
+            short: Mangpataud ti file ti konfigurasion
+        dockerignore:
+            long: Mangpataud ti .dockerignore a papeles para iti panagbangon ti ladawan ti Docker tapno di ikankano ti panagmanehar ti papeles
+            short: Mangpataud ti .dockerignore a papeles
+        editorconfig:
+            long: Mangpataud ti .editorconfig a papeles para iti panagisaad ti editor
+            short: Mangpataud ti .editorconfig a papeles
         flags:
             add-proto-files: No kasapulam ti mangisangpet kadagiti sabali a .proto a papeles/dalan ti folder nga awan iti isu met laeng a folder a kas ti naikeddeng a .proto a papeles, daytoy nga operasion ket manginayon (saan a mangsukog) ti dalan a naikonfigura iti papeles ti panagisaad.
             go-module-prefix: Para iti dalan ti go_package a naikonfigura iti .proto a papeles ken ti aktual, mabalinmo nga ikonfigura daytoy a pagpilian
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Pagbalinen ti default a panagpataud ti panagisaad para kadagiti tay-ak a mainaig iti database
             tables-enable_field_updated_at: No mapalubosan ti default a pateg ti tay-ak ti updated_at iti database
             tables-enable_gorm_tag_column: No mapalubosan ti database-related gorm generation
+        gitignote:
+            long: Mangpataud kadagiti .gitignore a papeles para iti saan a naikankano a panagmanehar ti papeles iti kontrol ti bersion
+            short: Mangpataud ti .gitignore a papeles
+        golang-lint:
+            long: Mangpataud ti .golangci.yml a papeles para iti panagsukimat ti kalidad ti kodigo
+            short: Mangpataud ti .golangci.yml a papeles
+        goreleaser:
+            long: Mangpataud ti .goreleaser.yml a papeles para iti panagisaad kadagiti ramit ti pannakairuar
+            short: Mangpataud ti .goreleaser.yml a papeles
+        impl:
+            long: Mangpataud kadagiti file ti pannakaipatungpal para iti pannakaipatungpal dagiti serbisio ti negosio
+            short: Mangpataud kadagiti file ti pannakaipatungpal
         long: Kodigo a mangpataud, mangsuporta kadagiti adu a plantilia
+        makefile:
+            long: Mangpataud kadagiti file ti Makefile para kadagiti ramit ti panagbangon ken dagiti dadduma pay a mainaig a bilin
+            short: Mangpataud iti Makefile
+        mod:
+            long: Mangpataud ti go.mod a file para iti panagmanehar ti panagpannuray
+            short: Mangpataud ti go.mod a file
+        pb:
+            long: Mangpataud kadagiti .pb.go a papeles para iti panagpataud kadagiti .proto a papeles, .
+            short: Mangpataud ti .pb.go a file
         short: Kodigo nga generator
+        state:
+            long: Mangpataud kadagiti amin a mainaig a panagandar ti estado para iti stateful a rekurso wenno estatiko a panagmanehar ti rekurso dagiti serbisio ti negosio
+            short: Amin a mainaig a panagandar para iti panagpataud ti estado
+        table:
+            long: Amin a mainaig a panagandar ti panagpataud kadagiti lamisaan para iti stateful a rekurso wenno estatiko a panagmanehar ti rekurso dagiti serbisio ti negosio
+            short: Amin a mainaig a panagandar para iti panagpataud kadagiti lamisaan
     help:
         additional_commands: Kanayonan a bilin
         aliases: alias ti bilin

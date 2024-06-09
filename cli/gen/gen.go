@@ -128,6 +128,17 @@ func Load(rootCmd *cobra.Command) {
 	initAll()
 	initCache()
 	initCmd()
+	initConf()
+	initEditorconfig()
+	initGolangLint()
+	initGoreleaser()
+	initIgnote()
+	initImpl()
+	initMakefile()
+	initMod()
+	initPb()
+	initState()
+	initTable()
 
 	rootCmd.AddCommand(genCmd)
 }

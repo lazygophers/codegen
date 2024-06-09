@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Pangani mafayilo olowera ntchito zamabizinesi
             short: Pangani fayilo yolowera
+        conf:
+            long: Pangani mafayilo osinthira kuti muwerenge zosintha zamabizinesi
+            short: Pangani fayilo yosinthira
+        dockerignore:
+            long: Pangani fayilo ya .dockerignore yomanga zithunzi za Docker kuti musanyalanyaze kasamalidwe ka fayilo
+            short: Pangani fayilo ya .dockerignore
+        editorconfig:
+            long: Pangani fayilo ya .editorconfig kuti musinthe
+            short: Pangani fayilo ya .editorconfig
         flags:
             add-proto-files: Ngati mukufunikira kuitanitsa mafayilo ena a .proto / zikwatu zomwe sizili mufoda yomwe ili ndi fayilo ya .proto yotchulidwa, ntchitoyi idzawonjezera (osalemba) njira yokonzedwa mu fayilo yokonzekera.
             go-module-prefix: Panjira ya go_package yokhazikitsidwa mu fayilo ya .proto ndi yeniyeni, mutha kukonza izi.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Yambitsani kusinthika kosasinthika kwa magawo okhudzana ndi database
             tables-enable_field_updated_at: Kaya mutsegule mtengo wokhazikika wa gawo la updated_at munkhokwe
             tables-enable_gorm_tag_column: Kuti muthe kuyambitsa kupanga ma gorm okhudzana ndi database
+        gitignote:
+            long: Pangani mafayilo a .gitignore owongolera mafayilo omwe mwanyalanyazidwa powongolera mtundu
+            short: Pangani fayilo ya .gitignore
+        golang-lint:
+            long: Pangani fayilo ya .golangci.yml kuti iwunikenso mtundu wa code
+            short: Pangani fayilo ya .golangci.yml
+        goreleaser:
+            long: Pangani fayilo ya .goreleaser.yml kuti mukhazikitse zida zotulutsa
+            short: Pangani fayilo ya .goreleaser.yml
+        impl:
+            long: Pangani mafayilo okhazikitsa kuti mukwaniritse ntchito zamabizinesi
+            short: Pangani mafayilo okhazikitsa
         long: Code jenereta, imathandizira ma template angapo
+        makefile:
+            long: Pangani mafayilo a Makefile a zida zomangira ndi malamulo ena okhudzana nawo
+            short: Pangani Makefile
+        mod:
+            long: Pangani fayilo ya go.mod yoyang'anira kudalira
+            short: Pangani fayilo ya go.mod
+        pb:
+            long: Pangani mafayilo a .pb.go kuti mupange mafayilo a .proto,
+            short: Pangani fayilo ya .pb.go
         short: Kodi jenereta
+        state:
+            long: Pangani ntchito zonse zokhudzana ndi boma kuti muzitha kuyang'anira zinthu zodziwika bwino kapena zosasunthika zamabizinesi
+            short: Ntchito zonse zofunika kupanga dziko
+        table:
+            long: Ntchito zonse zokhudzana ndi kupanga matebulo azinthu zodziwika bwino kapena kasamalidwe kazinthu zamabizinesi
+            short: Ntchito zonse zokhudzana ndi kupanga matebulo
     help:
         additional_commands: Malamulo owonjezera
         aliases: command alias

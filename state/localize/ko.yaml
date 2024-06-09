@@ -20,6 +20,15 @@ cli:
         cmd:
             long: 비즈니스 서비스에 대한 항목 파일 생성
             short: 항목 파일 생성
+        conf:
+            long: 비즈니스 서비스의 구성 읽기를 위한 구성 파일 생성
+            short: 구성 파일 생성
+        dockerignore:
+            long: 파일 관리를 무시하기 위해 Docker 이미지 구축을 위한 .dockerignore 파일 생성
+            short: .dockerignore 파일 생성
+        editorconfig:
+            long: 편집기 구성을 위한 .editorconfig 파일 생성
+            short: .editorconfig 파일 생성
         flags:
             add-proto-files: 지정된 .proto 파일과 동일한 폴더에 없는 다른 .proto 파일/폴더 경로를 가져와야 하는 경우 이 작업은 구성 파일에 구성된 경로를 추가(덮어쓰지 않음)합니다.
             go-module-prefix: .proto 파일에 구성된 go_package 경로와 실제 경로에 대해 이 옵션을 구성할 수 있습니다.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: 데이터베이스 관련 필드에 대한 기본 구성 생성 활성화
             tables-enable_field_updated_at: 데이터베이스에서 update_at 필드의 기본값을 활성화할지 여부
             tables-enable_gorm_tag_column: 데이터베이스 관련 곰 생성 활성화 여부
+        gitignote:
+            long: 버전 제어에서 무시된 파일 관리를 위해 .gitignore 파일 생성
+            short: .gitignore 파일 생성
+        golang-lint:
+            long: 코드 품질 검사를 위한 .golangci.yml 파일 생성
+            short: .golangci.yml 파일 생성
+        goreleaser:
+            long: 릴리스 도구 구성을 위한 .goreleaser.yml 파일 생성
+            short: .goreleaser.yml 파일 생성
+        impl:
+            long: 비즈니스 서비스 구현을 위한 구현 파일 생성
+            short: 구현 파일 생성
         long: 코드 생성기, 여러 템플릿 지원
+        makefile:
+            long: 빌드 도구 및 기타 관련 명령을 위한 Makefile 파일 생성
+            short: 메이크파일 생성
+        mod:
+            long: 종속성 관리를 위한 go.mod 파일 생성
+            short: go.mod 파일 생성
+        pb:
+            long: .proto 파일 생성을 위해 .pb.go 파일을 생성합니다.
+            short: .pb.go 파일 생성
         short: 코드 생성기
+        state:
+            long: 상태 저장 리소스 또는 비즈니스 서비스의 정적 리소스 관리를 위해 상태와 관련된 모든 기능을 생성합니다.
+            short: 상태 생성을 위한 모든 관련 함수
+        table:
+            long: 상태 저장 자원 또는 비즈니스 서비스의 정적 자원 관리를 위한 테이블 생성과 관련된 모든 기능
+            short: 테이블 생성과 관련된 모든 기능
     help:
         additional_commands: 추가 명령
         aliases: 명령 별명

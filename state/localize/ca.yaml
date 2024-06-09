@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Genera fitxers d'entrada per a serveis empresarials
             short: Generar fitxer d'entrada
+        conf:
+            long: Generar fitxers de configuració per a la lectura de configuració dels serveis empresarials
+            short: Genera un fitxer de configuració
+        dockerignore:
+            long: Genereu un fitxer .dockerignore per a la creació d'imatges de Docker per ignorar la gestió de fitxers
+            short: Genera un fitxer .dockerignore
+        editorconfig:
+            long: Genereu un fitxer .editorconfig per a la configuració de l'editor
+            short: Genera un fitxer .editorconfig
         flags:
             add-proto-files: Si necessiteu importar altres fitxers .proto/camins de carpetes que no es troben a la mateixa carpeta que el fitxer .proto especificat, aquesta operació afegirà (no sobreescriurà) la ruta configurada al fitxer de configuració.
             go-module-prefix: Per a la ruta de go_package configurada al fitxer .proto i la real, podeu configurar aquesta opció
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Habiliteu la generació de configuració predeterminada per als camps relacionats amb la base de dades
             tables-enable_field_updated_at: Si s'ha d'activar el valor predeterminat del camp updated_at a la base de dades
             tables-enable_gorm_tag_column: Si s'habilita la generació de gorm relacionada amb la base de dades
+        gitignote:
+            long: Genereu fitxers .gitignore per a la gestió de fitxers ignorats en el control de versions
+            short: Genera un fitxer .gitignore
+        golang-lint:
+            long: Genereu un fitxer .golangci.yml per a la inspecció de la qualitat del codi
+            short: Genera un fitxer .golangci.yml
+        goreleaser:
+            long: Genereu el fitxer .goreleaser.yml per a la configuració de les eines de llançament
+            short: Genereu el fitxer .goreleaser.yml
+        impl:
+            long: Generar fitxers d'implementació per a la implantació de serveis empresarials
+            short: Generar fitxers d'implementació
         long: Generador de codi, admet múltiples plantilles
+        makefile:
+            long: Genereu fitxers Makefile per crear eines i altres ordres relacionades
+            short: Genera Makefile
+        mod:
+            long: Genereu el fitxer go.mod per a la gestió de dependències
+            short: Genera el fitxer go.mod
+        pb:
+            long: Genereu fitxers .pb.go per generar fitxers .proto,
+            short: Genera un fitxer .pb.go
         short: Generador de codi
+        state:
+            long: Genereu totes les funcions d'estat relacionades per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
+            short: Totes les funcions rellevants per generar l'estat
+        table:
+            long: Totes les funcions relacionades de generació de taules per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
+            short: Totes les funcions relacionades per generar taules
     help:
         additional_commands: Ordres addicionals
         aliases: àlies de comanda

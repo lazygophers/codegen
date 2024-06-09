@@ -20,6 +20,15 @@ cli:
         cmd:
             long: ለንግድ አገልግሎቶች የመግቢያ ፋይሎችን ይፍጠሩ
             short: የመግቢያ ፋይል ይፍጠሩ
+        conf:
+            long: የንግድ አገልግሎቶችን ለማዋቀር የማዋቀሪያ ፋይሎችን ይፍጠሩ
+            short: የማዋቀሪያ ፋይል ይፍጠሩ
+        dockerignore:
+            long: የፋይል አስተዳደርን ችላ ለማለት ለዶከር ምስል ግንባታ .dockerignore ፋይል ይፍጠሩ
+            short: .dockerignore ፋይል ይፍጠሩ
+        editorconfig:
+            long: ለአርታዒ ውቅረት .editorconfig ፋይል ይፍጠሩ
+            short: .editorconfig ፋይል ይፍጠሩ
         flags:
             add-proto-files: ከተጠቀሰው የፕሮቶ ፋይል ጋር ተመሳሳይ በሆነ አቃፊ ውስጥ ያልሆኑ ሌሎች የፕሮቶ ፋይሎችን/አቃፊ መንገዶችን ማስመጣት ከፈለጉ ይህ ክዋኔ በማዋቀሪያው ፋይል ውስጥ የተዋቀረውን መንገድ ይጨመራል (አይገለበጥም)።
             go-module-prefix: በፕሮቶ ፋይሉ ውስጥ ለተዋቀረው የgo_package መንገድ እና ትክክለኛው ይህንን አማራጭ ማዋቀር ይችላሉ።
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: ከዳታቤዝ ጋር ለተያያዙ መስኮች ነባሪ የውቅር ማመንጨትን አንቃ
             tables-enable_field_updated_at: በመረጃ ቋቱ ውስጥ ያለውን የዘመነ_አት መስክ ነባሪ ዋጋ ማንቃት እንደሆነ
             tables-enable_gorm_tag_column: ከዳታቤዝ ጋር የተገናኘ ጎረም ማመንጨትን ማንቃት እንደሆነ
+        gitignote:
+            long: በስሪት ቁጥጥር ውስጥ ችላ ለተባሉ የፋይል አስተዳደር .gitignore ፋይሎችን ይፍጠሩ
+            short: .gitignore ፋይል ይፍጠሩ
+        golang-lint:
+            long: ለኮድ ጥራት ፍተሻ .golangci.yml ፋይል ይፍጠሩ
+            short: .golangci.yml ፋይል ይፍጠሩ
+        goreleaser:
+            long: የመልቀቂያ መሳሪያዎችን ለማዋቀር .goreleaser.yml ፋይል ይፍጠሩ
+            short: .goreleaser.yml ፋይል ይፍጠሩ
+        impl:
+            long: ለንግድ አገልግሎቶች ትግበራ የትግበራ ፋይሎችን ይፍጠሩ
+            short: የማስፈጸሚያ ፋይሎችን ይፍጠሩ
         long: ኮድ ጄኔሬተር፣ በርካታ አብነቶችን ይደግፋል
+        makefile:
+            long: መሳሪያዎችን እና ሌሎች ተዛማጅ ትዕዛዞችን ለመስራት Makefile ፋይሎችን ይፍጠሩ
+            short: Makefile ፍጠር
+        mod:
+            long: ለጥገኝነት አስተዳደር go.mod ፋይል ይፍጠሩ
+            short: go.mod ፋይል ይፍጠሩ
+        pb:
+            long: .pb.go ፋይሎችን .የፕሮቶ ፋይሎችን ለመፍጠር፣
+            short: .pb.go ፋይል ይፍጠሩ
         short: ኮድ ጄኔሬተር
+        state:
+            long: ሁሉንም ተዛማጅ የመንግስት ተግባራት ለግዛታዊ ሃብት ወይም ለንግድ አገልግሎቶች የማይንቀሳቀስ ሃብት አስተዳደር ያመንጩ
+            short: ሁኔታን ለመፍጠር ሁሉም ተዛማጅ ተግባራት
+        table:
+            long: ለስቴት ሀብት ወይም ለንግድ አገልግሎቶች የማይንቀሳቀስ ሀብት አስተዳደር ሰንጠረዦችን የማፍለቅ ሁሉም ተዛማጅ ተግባራት
+            short: ሠንጠረዦችን ለማምረት ሁሉም ተዛማጅ ተግባራት
     help:
         additional_commands: ተጨማሪ ትዕዛዞች
         aliases: ትዕዛዝ ተለዋጭ ስም

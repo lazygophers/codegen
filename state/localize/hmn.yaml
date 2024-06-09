@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Tsim cov ntaub ntawv nkag rau kev pabcuam kev lag luam
             short: Tsim cov ntaub ntawv nkag
+        conf:
+            long: Tsim cov ntaub ntawv configuration rau configuration nyeem cov kev pabcuam kev lag luam
+            short: Tsim cov ntaub ntawv configuration
+        dockerignore:
+            long: Tsim cov ntaub ntawv .dockerignore rau Docker duab lub tsev kom tsis quav ntsej kev tswj cov ntaub ntawv
+            short: Tsim cov ntaub ntawv .dockerignore
+        editorconfig:
+            long: Tsim cov ntaub ntawv .editorconfig rau kev teeb tsa editor
+            short: Tsim cov ntaub ntawv .editorconfig
         flags:
             add-proto-files: Yog tias koj xav tau import lwm .proto cov ntaub ntawv/folder txoj hauv kev uas tsis nyob hauv tib lub nplaub tshev raws li cov ntaub ntawv .proto tau teev tseg, qhov haujlwm no yuav ntxiv (tsis sau dhau) txoj hauv kev teeb tsa hauv cov ntaub ntawv teeb tsa.
             go-module-prefix: Rau txoj kev ntawm go_package teeb tsa hauv .proto cov ntaub ntawv thiab qhov tseeb, koj tuaj yeem teeb tsa qhov kev xaiv no
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Pab kom lub neej ntawd configuration tiam rau database-related teb
             tables-enable_field_updated_at: Seb puas yuav pab kom tus nqi pib ntawm qhov kho tshiab_at teb hauv cov ntaub ntawv
             tables-enable_gorm_tag_column: Seb puas yuav pab tau database-related gorm tiam
+        gitignote:
+            long: Tsim cov ntaub ntawv .gitignore rau ignored cov ntaub ntawv tswj hauv version tswj
+            short: Tsim cov ntaub ntawv .gitignore
+        golang-lint:
+            long: Tsim cov ntaub ntawv .golangci.yml rau kev soj ntsuam zoo
+            short: Tsim cov ntaub ntawv .golangci.yml
+        goreleaser:
+            long: Tsim cov ntaub ntawv .goreleaser.yml rau kev teeb tsa ntawm cov cuab yeej tso tawm
+            short: Tsim cov ntaub ntawv .goreleaser.yml
+        impl:
+            long: Tsim cov ntaub ntawv siv rau kev siv cov kev pabcuam kev lag luam
+            short: Tsim cov ntaub ntawv siv
         long: Code generator, txhawb ntau tus qauv
+        makefile:
+            long: Tsim cov ntaub ntawv Makefile rau cov cuab yeej tsim thiab lwm cov lus txib
+            short: Tsim Makefile
+        mod:
+            long: Tsim cov ntaub ntawv go.mod rau kev tswj hwm kev vam meej
+            short: Tsim cov ntaub ntawv go.mod
+        pb:
+            long: Tsim .pb.go cov ntaub ntawv rau tsim cov ntaub ntawv .proto,
+            short: Tsim .pb.go cov ntaub ntawv
         short: Code generator
+        state:
+            long: Tsim tag nrho cov haujlwm muaj feem xyuam ntawm lub xeev rau cov peev txheej hauv xeev lossis kev tswj hwm kev lag luam zoo li qub
+            short: Txhua yam muaj feem xyuam rau kev tsim lub xeev
+        table:
+            long: Tag nrho cov haujlwm muaj feem cuam tshuam ntawm kev tsim cov rooj rau cov peev txheej hauv xeev lossis kev tswj hwm kev lag luam zoo li qub
+            short: Txhua yam muaj feem xyuam rau kev tsim cov rooj
     help:
         additional_commands: Cov lus txib ntxiv
         aliases: txib alias

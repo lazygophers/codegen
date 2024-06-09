@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Servicios empresariales ukanakatakix mantañ archivonaka luraña
             short: Mantaña qillqata luraña
+        conf:
+            long: Servicios empresariales ukanakan configuración uñakipañatakix configuración archivonaka luraña
+            short: Configuración qillqata luraña
+        dockerignore:
+            long: Docker uñacht’äw lurañataki .dockerignore qillqat luraña, qillqat apnaqañ jan yäqañataki
+            short: .dockerignore qillqat luraña
+        editorconfig:
+            long: .editorconfig qillqat luraña editor wakicht’añataki
+            short: .editorconfig qillqat luraña
         flags:
             add-proto-files: Yaqha .proto qillqatanaka/carpeta thakhinaka apsuña wakisispa ukaxa janiwa pachpa carpeta ukankiti kunjamatixa .proto qillqata uñacht’ayata, aka lurawixa yapxatañapawa (janiwa qillqantayañakiti) thakhi wakicht’ata wakichawi qillqatanxa.
             go-module-prefix: go_package thakhi .proto qillqatan wakicht’ata ukat chiqpach thakhitakix, aka amtawix wakicht’atawa
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Base de datos ukamp chikt’at yapunakatakix configuración de configuración predeterminada ukar ch’amanchaña
             tables-enable_field_updated_at: Ukax updated_at ukanx default valor ukarux ch’amanchañapawa
             tables-enable_gorm_tag_column: Ukax base de datos ukamp chikt’at gorm generación ukar ch’amanchañataki
+        gitignote:
+            long: .gitignore qillqatanaka luraña, versión control ukan jan yäqat qillqat apnaqañataki
+            short: .gitignore qillqat uñstayaña
+        golang-lint:
+            long: .golangci.yml qillqat lurañaw código calidad uñakipañataki
+            short: .golangci.yml qillqat uñstayaña
+        goreleaser:
+            long: .goreleaser.yml qillqat luraña, mistuwi yänaka wakicht’añataki
+            short: .goreleaser.yml qillqat luraña
+        impl:
+            long: Servicios empresariales ukanaka phuqhañataki phuqhawi archivonaka luraña
+            short: Phuqt’awi qillqatanaka luraña
         long: Código generador, walja plantillas ukanakaruw yanapt’i
+        makefile:
+            long: Makefile qillqatanaka luraña yänaka lurañataki ukhamaraki yaqha uñt’ata kamachinaka
+            short: Makefile ukar uñstayaña
+        mod:
+            long: Go.mod qillqat luraña dependencia apnaqañataki
+            short: go.mod qillqat uñstayaña
+        pb:
+            long: .pb.go qillqatanaka luraña .proto qillqatanaka lurañataki, .
+            short: .pb.go qillqat uñstayaña
         short: Código generador ukaxa
+        state:
+            long: Taqi funciones relacionadas del estado ukanaka luraña recurso estatal jan ukaxa gestión de recursos estáticos ukanaka servicios empresariales ukanakataki
+            short: Taqi wakiskir lurawinakawa estado uñstayañataki
+        table:
+            long: Taqi ukanakampi chikt ata lurawinakaxa tablas ukanaka lurañataki recurso estatal jan ukaxa recurso estático gestión de servicios empresariales ukanakataki
+            short: Taqi uñt’ata lurawinakawa tablas ukanaka lurañataki
     help:
         additional_commands: Yaqha kamachinaka
         aliases: kamachi alias ukampi

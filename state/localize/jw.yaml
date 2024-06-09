@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Nggawe file entri kanggo layanan bisnis
             short: Nggawe file entri
+        conf:
+            long: Gawe file konfigurasi kanggo maca konfigurasi layanan bisnis
+            short: Nggawe file konfigurasi
+        dockerignore:
+            long: Generate file .dockerignore kanggo bangunan gambar Docker kanggo nglirwakake Manajemen file
+            short: Generate file .dockerignore
+        editorconfig:
+            long: Generate file .editorconfig kanggo konfigurasi editor
+            short: Nggawe file .editorconfig
         flags:
             add-proto-files: Yen sampeyan kudu ngimpor file .proto liyane / path folder sing ora ing folder padha karo file .proto kasebut, operasi iki bakal nambah (ora nimpa) path diatur ing file konfigurasi.
             go-module-prefix: Kanggo path go_package sing dikonfigurasi ing file .proto lan sing nyata, sampeyan bisa ngatur pilihan iki
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktifake generasi konfigurasi standar kanggo lapangan sing gegandhengan karo database
             tables-enable_field_updated_at: Apa ngaktifake nilai standar saka kolom updated_at ing basis data
             tables-enable_gorm_tag_column: Apa ngaktifake generasi gorm sing gegandhengan karo database
+        gitignote:
+            long: Generate file .gitignore kanggo Manajemen file digatèkaké ing kontrol versi
+            short: Generate file .gitignore
+        golang-lint:
+            long: Generate file .golangci.yml kanggo mriksa kualitas kode
+            short: Generate file .golangci.yml
+        goreleaser:
+            long: Generate file .goreleaser.yml kanggo konfigurasi alat release
+            short: Gawe file .goreleaser.yml
+        impl:
+            long: Nggawe file implementasine kanggo implementasine layanan bisnis
+            short: Nggawe file implementasine
         long: Generator kode, ndhukung macem-macem template
+        makefile:
+            long: Gawe file Makefile kanggo alat bangunan lan perintah liyane sing gegandhengan
+            short: Nggawe Makefile
+        mod:
+            long: Gawe file go.mod kanggo manajemen dependensi
+            short: Gawe file go.mod
+        pb:
+            long: Gawe file .pb.go kanggo ngasilake file .proto,
+            short: Gawe file .pb.go
         short: Kode generator
+        state:
+            long: Nggawe kabeh fungsi negara sing gegandhengan kanggo sumber daya stateful utawa manajemen sumber daya statis layanan bisnis
+            short: Kabeh fungsi sing cocog kanggo ngasilake negara
+        table:
+            long: Kabeh fungsi sing gegandhengan kanggo ngasilake tabel kanggo sumber daya stateful utawa manajemen sumber daya statis layanan bisnis
+            short: Kabeh fungsi sing gegandhengan kanggo ngasilake tabel
     help:
         additional_commands: printah tambahan
         aliases: dhawuh alias

@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Iġġenera fajls tad-dħul għas-servizzi tan-negozju
             short: Iġġenera fajl tad-dħul
+        conf:
+            long: Iġġenera fajls tal-konfigurazzjoni għall-qari tal-konfigurazzjoni tas-servizzi tan-negozju
+            short: Iġġenera fajl tal-konfigurazzjoni
+        dockerignore:
+            long: Iġġenera fajl .dockerignore għall-bini tal-immaġni Docker biex tinjora l-ġestjoni tal-fajls
+            short: Iġġenera fajl .dockerignore
+        editorconfig:
+            long: Iġġenera fajl .editorconfig għall-konfigurazzjoni tal-editur
+            short: Iġġenera fajl .editorconfig
         flags:
             add-proto-files: Jekk għandek bżonn timporta fajls .proto/mogħdijiet ta' folders oħra li mhumiex fl-istess folder bħall-fajl .proto speċifikat, din l-operazzjoni se tehmeż (mhux tissostitwixxi) il-mogħdija kkonfigurata fil-fajl tal-konfigurazzjoni.
             go-module-prefix: Għall-mogħdija ta 'go_package kkonfigurat fil-fajl .proto u dak attwali, tista' tikkonfigura din l-għażla
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Ippermetti l-ġenerazzjoni tal-konfigurazzjoni default għal oqsma relatati mad-database
             tables-enable_field_updated_at: Jekk għandhiex tippermetti l-valur default tal-qasam updated_at fid-database
             tables-enable_gorm_tag_column: Jekk tippermettix il-ġenerazzjoni tal-gorm relatata mad-database
+        gitignote:
+            long: Iġġenera fajls .gitignore għall-ġestjoni tal-fajls injorati fil-kontroll tal-verżjoni
+            short: Iġġenera fajl .gitignore
+        golang-lint:
+            long: Iġġenera fajl .golangci.yml għall-ispezzjoni tal-kwalità tal-kodiċi
+            short: Iġġenera fajl .golangci.yml
+        goreleaser:
+            long: Iġġenera fajl .gorelaser.yml għall-konfigurazzjoni ta 'għodod ta' rilaxx
+            short: Iġġenera fajl .gorelaser.yml
+        impl:
+            long: Iġġenera fajls ta 'implimentazzjoni għall-implimentazzjoni ta' servizzi tan-negozju
+            short: Iġġenera fajls ta' implimentazzjoni
         long: Ġeneratur tal-kodiċi, jappoġġja mudelli multipli
+        makefile:
+            long: Iġġenera fajls Makefile għall-għodod tal-bini u kmandi oħra relatati
+            short: Iġġenera Makefile
+        mod:
+            long: Iġġenera fajl go.mod għall-ġestjoni tad-dipendenza
+            short: Iġġenera fajl go.mod
+        pb:
+            long: Iġġenera fajls .pb.go biex tiġġenera fajls .proto,
+            short: Iġġenera fajl .pb.go
         short: Ġeneratur tal-kodiċi
+        state:
+            long: Iġġenera l-funzjonijiet kollha relatati tal-istat għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
+            short: Il-funzjonijiet kollha rilevanti għall-ġenerazzjoni tal-istat
+        table:
+            long: Il-funzjonijiet kollha relatati ta 'ġenerazzjoni ta' tabelli għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
+            short: Il-funzjonijiet kollha relatati għall-ġenerazzjoni ta' tabelli
     help:
         additional_commands: Kmandi addizzjonali
         aliases: alias tal-kmand

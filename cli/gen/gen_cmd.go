@@ -8,9 +8,9 @@ import (
 )
 
 var cmdCmd = &cobra.Command{
-	Use:   "cmd",
-	Short: "Generates cmd folder",
-	RunE:  runGenCmd,
+	Use:     "cmd",
+	Aliases: []string{"main"},
+	RunE:    runGenCmd,
 }
 
 func runGenCmd(cmd *cobra.Command, args []string) (err error) {

@@ -2,18 +2,13 @@ package gen
 
 import (
 	"github.com/lazygophers/codegen/codegen"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/spf13/cobra"
 )
 
 var modCmd = &cobra.Command{
-	Use:   "mod",
-	Short: "Generate go.mod",
-	Long: `Generate go.mod file from proto file.
-If go.mod file already exists,skip generate.
-Go version will be set with the version in the current environment by go version.
-Go module will be set with the go_package in the proto file.
-Will run go mod tidy fater generate go.mod file.`,
+	Use:  "mod",
 	RunE: runGenMod,
 }
 
@@ -27,6 +22,9 @@ func runGenMod(cmd *cobra.Command, args []string) (err error) {
 	return nil
 }
 
-func init() {
+func initMod() {
+	modCmd.Short = state.Localize(state.I18nTagCliGenModShort)
+	modCmd.Long = state.Localize(state.I18nTagCliGenModLong)
+
 	genCmd.AddCommand(modCmd)
 }

@@ -20,6 +20,15 @@ cli:
         cmd:
             long: 產生入口文件，用於業務服務的
             short: 產生入口文件
+        conf:
+            long: 產生配置文件，用於業務服務的配置讀取
+            short: 產生設定檔
+        dockerignore:
+            long: 生成.dockerignore 文件，用於 Docker 映像建置忽略文件管理
+            short: 生成.dockerignore 文件
+        editorconfig:
+            long: 產生.editorconfig 文件，用於編輯器的配置
+            short: 產生.editorconfig 文件
         flags:
             add-proto-files: 需要引入的其它和指定的 .proto 檔案不在同一個資料夾內的其它 .proto 檔案/資料夾路徑，本操作會對 設定檔中已配置的路徑進行追加（非覆蓋）
             go-module-prefix: 對於 .proto 檔案 中配置的 go_package 的路徑與實際的，可以配置該選項
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: 開啟資料庫相關欄位的預設配置生成
             tables-enable_field_updated_at: 是否開啟資料庫 updated_at 欄位的默認
             tables-enable_gorm_tag_column: 是否開啟資料庫相關的 gorm 生成
+        gitignote:
+            long: 產生.gitignore 文件，用於版本控制的忽略文件管理
+            short: 生成.gitignore 文件
+        golang-lint:
+            long: 產生.golangci.yml 文件，用於程式碼品質檢測
+            short: 生成.golangci.yml 文件
+        goreleaser:
+            long: 產生.goreleaser.yml 文件，用於發布工具的配置
+            short: 產生.goreleaser.yml 文件
+        impl:
+            long: 產生實作文件，用於業務服務的實現
+            short: 產生實作文件
         long: 程式碼產生器，支援多種模板
+        makefile:
+            long: 產生 Makefile 文件，用於建置工具等相關命令
+            short: 產生 Makefile 文件
+        mod:
+            long: 產生 go.mod 文件，用於依賴管理
+            short: 生成 go.mod 文件
+        pb:
+            long: 生成.pb.go 文件，用於 .proto 文件的生成，
+            short: 生成.pb.go 文件
         short: 程式碼產生器
+        state:
+            long: 產生 state 的所有相關功能，用於業務服務的有狀態的資源或靜態資源管理
+            short: 產生 state 的所有相關功能
+        table:
+            long: 產生 table 的所有相關功能，用於業務服務的有狀態的資源或靜態資源管理
+            short: 產生 table 的所有相關功能
     help:
         additional_commands: 附加命令
         aliases: 命令別名

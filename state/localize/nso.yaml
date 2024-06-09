@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Hlagiša difaele tša go tsena tša ditirelo tša kgwebo
             short: Hlagiša faele ya go tsena
+        conf:
+            long: Hlagiša difaele tša peakanyo bakeng sa go bala peakanyo ya ditirelo tša kgwebo
+            short: Hlahisa faele ya peakanyo
+        dockerignore:
+            long: Hlagiša faele ya .dockerignore bakeng sa go aga seswantšho sa Docker go hlokomologa taolo ya faele
+            short: Hlagiša faele ya .dockerignore
+        editorconfig:
+            long: Hlagiša faele ya .editorconfig bakeng sa peakanyo ya morulaganyi
+            short: Hlahisa faele ya .editorconfig
         flags:
             add-proto-files: Ge e le gore o swanetše go tsenya difaele tše dingwe tša .proto/ditsela tša foltara tšeo di sego ka gare ga foltara ye e swanago le faele ya .proto ye e laeditšwego, tshepedišo ye e tla tlaleletša (e sego go ngwala godimo) tsela yeo e beakantšwego ka faeleng ya peakanyo.
             go-module-prefix: Bakeng sa tsela ya go_package yeo e beakantšwego ka gare ga faele ya .proto le ya nnete, o ka beakanya kgetho ye
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Kgontšha moloko wa peakanyo ya go se fetoge bakeng sa mafelo ao a amanago le polokelo ya tshedimošo
             tables-enable_field_updated_at: Gore o tla kgontšha boleng bja go se fetoge bja tšhemo ya updated_at ka polokelongtshedimošo
             tables-enable_gorm_tag_column: Gore na go kgontšha moloko wa gorm wo o amanago le polokelo ya tshedimošo
+        gitignote:
+            long: Hlagiša difaele tša .gitignore bakeng sa taolo ya faele yeo e hlokomologilwego ka taolo ya phetolelo
+            short: Hlahisa faele ya .gitignore
+        golang-lint:
+            long: Hlagiša faele ya .golangci.yml bakeng sa tlhahlobo ya boleng bja khoutu
+            short: Hlahisa faele ya .golangci.yml
+        goreleaser:
+            long: Hlagiša faele ya .goreleaser.yml bakeng sa peakanyo ya didirišwa tša go lokolla
+            short: Hlahisa faele ya .goreleaser.yml
+        impl:
+            long: Hlagiša difaele tša phethagatšo bakeng sa phethagatšo ya ditirelo tša kgwebo
+            short: Hlagiša difaele tša phethagatšo
         long: Khoutu jenereithara, tšehetsa dithempleite multiple
+        makefile:
+            long: Hlagiša difaele tša Makefile tša go aga didirišwa le ditaelo tše dingwe tše di amanago
+            short: Hlagiša Makefile
+        mod:
+            long: Hlahisa faele ya go.mod bakeng sa taolo ya ho itšetleha
+            short: Hlahisa faele ya go.mod
+        pb:
+            long: Hlagiša difaele tša .pb.go bakeng sa go tšweletša difaele tša .proto, .
+            short: Hlahisa faele ya .pb.go
         short: Khoutu ya jenereithara
+        state:
+            long: Hlagiša mešomo ka moka ye e amanago ya mmušo bakeng sa mohlodi wa mmušo goba taolo ya methopo ye e sa fetogego ya ditirelo tša kgwebo
+            short: Mešomo ka moka ya maleba ya go tšweletša mmušo
+        table:
+            long: Mešomo ka moka ye e amanago ya go tšweletša ditafola tša mohlodi wa mmušo goba taolo ya methopo ye e sa fetogego ya ditirelo tša kgwebo
+            short: Mešomo ka moka ye e amanago ya go tšweletša ditafola
     help:
         additional_commands: Ditaelo tša tlaleletšo
         aliases: leina le lengwe la taelo

@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Erstellen Sie Eintragsdateien für Unternehmensdienstleistungen
             short: Eintragsdatei erstellen
+        conf:
+            long: Generieren Sie Konfigurationsdateien zum Lesen der Konfiguration von Geschäftsdiensten
+            short: Konfigurationsdatei generieren
+        dockerignore:
+            long: Generieren Sie eine .dockerignore-Datei für die Docker-Image-Erstellung, um die Dateiverwaltung zu ignorieren
+            short: Generieren Sie eine .dockerignore-Datei
+        editorconfig:
+            long: Generieren Sie eine .editorconfig-Datei für die Editorkonfiguration
+            short: Generieren Sie eine .editorconfig-Datei
         flags:
             add-proto-files: Wenn Sie andere .proto-Dateien/Ordnerpfade importieren müssen, die sich nicht im selben Ordner wie die angegebene .proto-Datei befinden, wird durch diesen Vorgang der in der Konfigurationsdatei konfigurierte Pfad angehängt (nicht überschrieben).
             go-module-prefix: Für den in der .proto-Datei konfigurierten und den tatsächlichen Pfad von go_package können Sie diese Option konfigurieren
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktivieren Sie die Standardkonfigurationsgenerierung für datenbankbezogene Felder
             tables-enable_field_updated_at: Ob der Standardwert des Feldes „update_at“ in der Datenbank aktiviert werden soll
             tables-enable_gorm_tag_column: Ob die datenbankbezogene Gorm-Generierung aktiviert werden soll
+        gitignote:
+            long: Generieren Sie .gitignore-Dateien für die Verwaltung ignorierter Dateien in der Versionskontrolle
+            short: Generieren Sie eine .gitignore-Datei
+        golang-lint:
+            long: Generieren Sie die Datei .golangci.yml zur Überprüfung der Codequalität
+            short: Generieren Sie die Datei .golangci.yml
+        goreleaser:
+            long: Generieren Sie die Datei .goreleaser.yml zur Konfiguration der Release-Tools
+            short: Generieren Sie die Datei .goreleaser.yml
+        impl:
+            long: Generieren Sie Implementierungsdateien für die Implementierung von Business Services
+            short: Generieren Sie Implementierungsdateien
         long: Codegenerator, unterstützt mehrere Vorlagen
+        makefile:
+            long: Generieren Sie Makefile-Dateien zum Erstellen von Tools und anderen zugehörigen Befehlen
+            short: Makefile generieren
+        mod:
+            long: Generieren Sie die Datei go.mod für die Abhängigkeitsverwaltung
+            short: Generieren Sie die Datei go.mod
+        pb:
+            long: Generieren Sie .pb.go-Dateien zum Generieren von .proto-Dateien.
+            short: Generieren Sie eine .pb.go-Datei
         short: Code Generator
+        state:
+            long: Generieren Sie alle zugehörigen Statusfunktionen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
+            short: Alle relevanten Funktionen zur Zustandsgenerierung
+        table:
+            long: Alle zugehörigen Funktionen zur Generierung von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
+            short: Alle zugehörigen Funktionen zur Tabellenerstellung
     help:
         additional_commands: Zusätzliche Befehle
         aliases: Befehlsalias

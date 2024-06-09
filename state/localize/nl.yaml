@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Genereer boekingsbestanden voor de zakelijke dienstverlening
             short: Invoerbestand genereren
+        conf:
+            long: Genereer configuratiebestanden voor het configuratielezen van zakelijke services
+            short: Configuratiebestand genereren
+        dockerignore:
+            long: Genereer een .dockerignore-bestand voor het maken van Docker-images om bestandsbeheer te negeren
+            short: Genereer een .dockerignore-bestand
+        editorconfig:
+            long: Genereer een .editorconfig-bestand voor editorconfiguratie
+            short: Genereer een .editorconfig-bestand
         flags:
             add-proto-files: Als u andere .proto-bestanden/mappaden moet importeren die zich niet in dezelfde map bevinden als het opgegeven .proto-bestand, zal deze bewerking het pad dat in het configuratiebestand is geconfigureerd toevoegen (niet overschrijven).
             go-module-prefix: Voor het pad van go_package dat is geconfigureerd in het .proto-bestand en het daadwerkelijke pad, kunt u deze optie configureren
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Schakel het genereren van standaardconfiguraties in voor databasegerelateerde velden
             tables-enable_field_updated_at: Of de standaardwaarde van het veld Updated_at in de database moet worden ingeschakeld
             tables-enable_gorm_tag_column: Of databasegerelateerde gorm-generatie moet worden ingeschakeld
+        gitignote:
+            long: Genereer .gitignore-bestanden voor genegeerd bestandsbeheer in versiebeheer
+            short: Genereer een .gitignore-bestand
+        golang-lint:
+            long: Genereer een .golangci.yml-bestand voor inspectie van de codekwaliteit
+            short: Genereer het .golangci.yml-bestand
+        goreleaser:
+            long: Genereer het .goreleaser.yml-bestand voor de configuratie van releasetools
+            short: Genereer het .goreleaser.yml-bestand
+        impl:
+            long: Implementatiebestanden genereren voor de implementatie van zakelijke dienstverlening
+            short: Implementatiebestanden genereren
         long: Codegenerator, ondersteunt meerdere sjablonen
+        makefile:
+            long: Genereer Makefile-bestanden voor het bouwen van tools en andere gerelateerde opdrachten
+            short: Makefile genereren
+        mod:
+            long: Genereer het go.mod-bestand voor afhankelijkheidsbeheer
+            short: Genereer het go.mod-bestand
+        pb:
+            long: Genereer .pb.go-bestanden voor het genereren van .proto-bestanden,
+            short: Genereer een .pb.go-bestand
         short: Codegenerator
+        state:
+            long: Genereer alle gerelateerde statusfuncties voor stateful resource- of statisch resourcebeheer van zakelijke services
+            short: Alle relevante functies voor het genereren van status
+        table:
+            long: Alle gerelateerde functies voor het genereren van tabellen voor stateful resource- of statisch resourcebeheer van zakelijke services
+            short: Alle gerelateerde functies voor het genereren van tabellen
     help:
         additional_commands: Extra opdrachten
         aliases: opdrachtalias

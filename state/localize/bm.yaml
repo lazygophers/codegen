@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Jagokɛyɔrɔw ka dondaw dosiyew labɛn
             short: A ye donna dosiye dilan
+        conf:
+            long: Labɛnni dosiyew labɛn jagokɛlaw ka baarakɛminɛnw labɛncogo kalanni kama
+            short: A ye configuration file (labɛnni filen) dilan
+        dockerignore:
+            long: .dockerignore file dilan Docker ja jɔli kama walasa ka filen ɲɛnabɔli jateminɛn
+            short: .dockerignore filen dilan
+        editorconfig:
+            long: .editorconfig file dilan walasa ka editor labɛn
+            short: .editorconfig filen dilan
         flags:
             add-proto-files: N’i ​​mago bɛ .proto file/folder sira wɛrɛw la minnu tɛ foli kelen kɔnɔ ni .proto file kofɔlen ye, o baara in bɛna sira min labɛnna configuration file kɔnɔ, o fara (a tɛna sɛbɛn a kan).
             go-module-prefix: Go_package sira min labɛnna .proto file kɔnɔ ani tiɲɛ yɛrɛ la, i bɛ se ka nin sugandi in labɛn
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aw ye se ka labɛncogo daminɛcogo daminɛ kunnafonidilanw ni ɲɔgɔn cɛ forow la
             tables-enable_field_updated_at: Yala ka updated_at foro nafa dafalen daminɛ database kɔnɔ
             tables-enable_gorm_tag_column: Yala ka se ka database-related gorm generation (gorm generation) kɛ
+        gitignote:
+            long: .gitignore filew labɛn ka ɲɛsin filew ɲɛnabɔli ma min ma jate version control kɔnɔ
+            short: .gitignore filen dilan
+        golang-lint:
+            long: .golangci.yml file dilan walasa ka kode jogo sɛgɛsɛgɛ
+            short: .golangci.yml filen dilan
+        goreleaser:
+            long: .goreleaser.yml file dilan walasa ka bɔli baarakɛminɛnw labɛn
+            short: .goreleaser.yml filen dilan
+        impl:
+            long: Ka waleyali dosiyew labɛn jagokɛlaw ka baarakɛminɛnw waleyali kama
+            short: Baarakɛcogo dosiyew labɛn
         long: Kode generateur, bɛ dɛmɛ don template caman ma
+        makefile:
+            long: Makefile filew labɛn baarakɛminɛnw jɔli kama ani cikan wɛrɛw minnu bɛ tali kɛ o la
+            short: Makefile (Makefile) labɛnni
+        mod:
+            long: Go.mod file (go.mod file) dabɔ walasa ka dannayakow ɲɛnabɔ
+            short: Go.mod file (go.mod file) labɛn
+        pb:
+            long: .pb.go filew dilan walasa ka .proto filew dilan, .
+            short: .pb.go filen dilan
         short: Kode jɛnɛrato
+        state:
+            long: Jamana ka baara minnu bɛ tali kɛ o la, olu bɛɛ labɛn ka ɲɛsin jamana ka nafolo maracogo ma walima nafolo jɔlen marali ma jagokɛlaw ka baarakɛminɛnw na
+            short: Baarakɛcogo minnu bɛ tali kɛ o bɛɛ la walasa ka jamana lawuli
+        table:
+            long: Baara bɛɛ minnu bɛ tali kɛ o la, n’o ye ka tabali dilan ka ɲɛsin nafolo maracogo ma walima nafolo maracogo jɔlen ma jagokɛlaw ka baarakɛminɛnw na
+            short: Baara minnu bɛ tali kɛ ɲɔgɔn na, olu bɛɛ ye tabali dilancogo ye
     help:
         additional_commands: Cikan wɛrɛw
         aliases: cikan tɔgɔ wɛrɛ

@@ -20,6 +20,15 @@ cli:
         cmd:
             long: ビジネス サービスのエントリ ファイルを生成する
             short: エントリーファイルの生成
+        conf:
+            long: ビジネス サービスの構成を読み取るための構成ファイルを生成する
+            short: 設定ファイルを生成する
+        dockerignore:
+            long: Docker イメージ構築用の .dockerignore ファイルを生成してファイル管理を無視する
+            short: .dockerignore ファイルを生成する
+        editorconfig:
+            long: エディタ設定用の .editorconfig ファイルを生成する
+            short: .editorconfig ファイルを生成する
         flags:
             add-proto-files: 指定した .proto ファイルと同じフォルダー内にない他の .proto ファイル/フォルダー パスをインポートする必要がある場合、この操作により、構成ファイルで構成されたパスが追加されます (上書きされません)。
             go-module-prefix: .proto ファイルに設定されている go_package のパスと実際のパスについては、このオプションを設定できます。
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: データベース関連フィールドのデフォルト構成の生成を有効にする
             tables-enable_field_updated_at: データベースの updated_at フィールドのデフォルト値を有効にするかどうか
             tables-enable_gorm_tag_column: データベース関連の gorm 生成を有効にするかどうか
+        gitignote:
+            long: バージョン管理で無視されるファイル管理用に .gitignore ファイルを生成する
+            short: .gitignore ファイルを生成する
+        golang-lint:
+            long: コード品質検査用の .golangci.yml ファイルを生成する
+            short: .golangci.yml ファイルを生成する
+        goreleaser:
+            long: リリースツールを構成するための .goreleaser.yml ファイルを生成する
+            short: .goreleaser.yml ファイルを生成する
+        impl:
+            long: ビジネス サービスを実装するための実装ファイルを生成する
+            short: 実装ファイルを生成する
         long: コードジェネレーター、複数のテンプレートをサポート
+        makefile:
+            long: ツールやその他の関連コマンドを構築するための Makefile ファイルを生成する
+            short: メイクファイルの生成
+        mod:
+            long: 依存関係管理用の go.mod ファイルを生成する
+            short: go.modファイルを生成する
+        pb:
+            long: .proto ファイルを生成するための .pb.go ファイルを生成します。
+            short: .pb.go ファイルを生成する
         short: コードジェネレーター
+        state:
+            long: ビジネス サービスのステートフル リソースまたは静的リソース管理のための状態の関連関数をすべて生成します。
+            short: 状態を生成するためのすべての関連関数
+        table:
+            long: ビジネス サービスのステートフル リソースまたは静的リソース管理のためのテーブルを生成するすべての関連機能
+            short: テーブルを生成するためのすべての関連関数
     help:
         additional_commands: 追加のコマンド
         aliases: コマンドエイリアス

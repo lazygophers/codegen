@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Mepụta faịlụ ntinye maka ọrụ azụmahịa
             short: Mepụta faịlụ ntinye
+        conf:
+            long: Mepụta faịlụ nhazi maka ọgụgụ nhazi nke ọrụ azụmahịa
+            short: Mepụta faịlụ nhazi
+        dockerignore:
+            long: Mepụta faịlụ .dockerignore maka ụlọ ihe onyonyo Docker ileghara njikwa faịlụ anya
+            short: Mepụta faịlụ .dockerignore
+        editorconfig:
+            long: Mepụta faịlụ .editorconfig maka nhazi nhazi
+            short: Mepụta faịlụ .editorconfig
         flags:
             add-proto-files: Ọ bụrụ na ịchọrọ ibubata faịlụ .proto ndị ọzọ / ụzọ nchekwa na-adịghị na otu nchekwa ahụ dị ka faịlụ .proto akọwapụtara, ọrụ a ga-agbakwunye (agaghị edegharị) ụzọ ahaziri na faịlụ nhazi.
             go-module-prefix: Maka ụzọ go_package ahaziri na faịlụ .proto na nke ahụ, ị ​​nwere ike hazie nhọrọ a.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Kwado ọgbọ nhazi ndabara maka mpaghara metụtara nchekwa data
             tables-enable_field_updated_at: Ma ọ ga-eme ka uru ndabara nke ubi updated_at dị na nchekwa data
             tables-enable_gorm_tag_column: Ma iji mee ka ọgbọ gorm metụtara nchekwa data
+        gitignote:
+            long: Mepụta faịlụ .gitignore maka njikwa faịlụ eleghara anya na njikwa ụdị
+            short: Mepụta faịlụ .gitignore
+        golang-lint:
+            long: Mepụta faịlụ .golangci.yml maka nyocha ogo koodu
+            short: Mepụta faịlụ .golangci.yml
+        goreleaser:
+            long: Mepụta faịlụ .goreleaser.yml maka nhazi ngwaọrụ ntọhapụ
+            short: Mepụta faịlụ .goreleaser.yml
+        impl:
+            long: Mepụta faịlụ mmejuputa maka mmejuputa ọrụ azụmahịa
+            short: Mepụta faịlụ mmejuputa
         long: Ọkpụkpọ koodu, na-akwado ọtụtụ ndebiri
+        makefile:
+            long: Mepụta faịlụ Makefile maka ngwa ụlọ yana iwu ndị ọzọ metụtara ya
+            short: Mepụta Makefile
+        mod:
+            long: Mepụta faịlụ go.mod maka njikwa ndabere
+            short: Mepụta faịlụ go.mod
+        pb:
+            long: Mepụta faịlụ .pb.go maka ịmepụta faịlụ .proto,
+            short: Mepụta faịlụ .pb.go
         short: Koodu generator
+        state:
+            long: Mepụta ọrụ niile metụtara steeti maka akụrụngwa steeti ma ọ bụ njikwa akụrụngwa kwụ ọtọ nke ọrụ azụmaahịa
+            short: Ọrụ niile dị mkpa maka ịmepụta steeti
+        table:
+            long: Ọrụ niile metụtara nke iwepụta tebụl maka akụrụngwa steeti ma ọ bụ njikwa akụrụngwa kwụ ọtọ nke ọrụ azụmaahịa
+            short: Ọrụ niile metụtara ya maka ịmepụta tebụl
     help:
         additional_commands: Iwu ndị ọzọ
         aliases: iwu utu aha

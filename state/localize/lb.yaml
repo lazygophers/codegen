@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Generéiere Entréesdateien fir Geschäftsservicer
             short: Entry Datei generéieren
+        conf:
+            long: Generéiere Konfiguratiounsdateien fir Konfiguratiounsliesen vu Geschäftsservicer
+            short: Konfiguratiounsdatei generéieren
+        dockerignore:
+            long: Generéiere .dockerignore-Datei fir Docker-Bildgebai fir Dateieverwaltung ze ignoréieren
+            short: Generéiere .dockerignore Fichier
+        editorconfig:
+            long: Generéiere .editorconfig Fichier fir Redakter Configuratioun
+            short: Generéiere .editorconfig Datei
         flags:
             add-proto-files: Wann Dir aner .proto-Dateien / Dossierweeër importéiere musst, déi net am selwechten Dossier wéi déi spezifizéiert .proto-Datei sinn, wäert dës Operatioun de Wee, deen an der Konfiguratiounsdatei konfiguréiert ass, addéieren (net iwwerschreiwe).
             go-module-prefix: Fir de Wee vun go_package konfiguréiert an der .proto Datei an déi aktuell, Dir kënnt dës Optioun konfiguréieren
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Aktivéiert Standardkonfiguratiounsgeneratioun fir Datebankbezunnen Felder
             tables-enable_field_updated_at: Ob de Standardwäert vum Updated_at Feld an der Datebank aktivéiert gëtt
             tables-enable_gorm_tag_column: Ob Datebank-Zesummenhang Gorm Generatioun aktivéiert
+        gitignote:
+            long: Generéiere .gitignore Fichieren fir ignoréiert Fichier Gestioun an Versioun Kontroll
+            short: Generéiere .gitignore Fichier
+        golang-lint:
+            long: Generéiere .golangci.yml Fichier fir Code Qualitéit Inspektioun
+            short: Generéiere .golangci.yml Fichier
+        goreleaser:
+            long: Generéiere .goreleaser.yml Fichier fir Configuratioun vun Fräisetzung Handwierksgeschir
+            short: Generéiere .goreleaser.yml Fichier
+        impl:
+            long: Generéiere Implementatiounsdateien fir d'Ëmsetzung vu Geschäftsservicer
+            short: Generéiere Implementatiounsdateien
         long: Code Generator, ënnerstëtzt verschidde Templates
+        makefile:
+            long: Generéiere Makefile Dateien fir Tools ze bauen an aner verbonne Kommandoen
+            short: Generéiere Makefile
+        mod:
+            long: Generéiere go.mod Fichier fir Ofhängegkeet Gestioun
+            short: Generéiere go.mod Datei
+        pb:
+            long: Generéiere .pb.go Dateien fir .proto Dateien ze generéieren,
+            short: Generéiere .pb.go Fichier
         short: Code Generator
+        state:
+            long: Generéiere all Zesummenhang Funktiounen vum Staat fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
+            short: All relevant Funktiounen fir Generéiere Staat
+        table:
+            long: All Zesummenhang Funktiounen vun Generéiere Dëscher fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
+            short: All Zesummenhang Funktiounen fir Generéiere Dëscher
     help:
         additional_commands: Zousätzlech Kommandoen
         aliases: Kommando alias

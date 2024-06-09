@@ -20,6 +20,15 @@ cli:
         cmd:
             long: Ģenerējiet biznesa pakalpojumu ievades failus
             short: Ģenerējiet ievades failu
+        conf:
+            long: Ģenerējiet konfigurācijas failus biznesa pakalpojumu konfigurācijas lasīšanai
+            short: Ģenerējiet konfigurācijas failu
+        dockerignore:
+            long: Ģenerējiet .dockerignore failu Docker attēlu veidošanai, lai ignorētu failu pārvaldību
+            short: Ģenerējiet .dockerignore failu
+        editorconfig:
+            long: Ģenerējiet .editorconfig failu redaktora konfigurācijai
+            short: Ģenerējiet .editorconfig failu
         flags:
             add-proto-files: Ja jums ir jāimportē citi .proto faili/mapes ceļi, kas neatrodas tajā pašā mapē ar norādīto .proto failu, šī darbība pievienos (nepārrakstīs) konfigurācijas failā konfigurēto ceļu.
             go-module-prefix: Varat konfigurēt šo opciju go_package ceļam, kas konfigurēts .proto failā un faktiskajam.
@@ -34,8 +43,35 @@ cli:
             tables-enable_field_id: Iespējot noklusējuma konfigurācijas ģenerēšanu ar datu bāzi saistītiem laukiem
             tables-enable_field_updated_at: Vai datu bāzē iespējot lauka updated_at noklusējuma vērtību
             tables-enable_gorm_tag_column: Vai iespējot ar datu bāzi saistītu grupu ģenerēšanu
+        gitignote:
+            long: Ģenerējiet .gitignore failus ignorēto failu pārvaldībai versiju kontrolē
+            short: Ģenerējiet .gitignore failu
+        golang-lint:
+            long: Ģenerējiet .golangci.yml failu koda kvalitātes pārbaudei
+            short: Ģenerējiet .golangci.yml failu
+        goreleaser:
+            long: Ģenerējiet .goreleaser.yml failu izlaišanas rīku konfigurēšanai
+            short: Ģenerējiet .goreleaser.yml failu
+        impl:
+            long: Ģenerēt ieviešanas failus biznesa pakalpojumu ieviešanai
+            short: Ģenerējiet ieviešanas failus
         long: Kodu ģenerators, atbalsta vairākas veidnes
+        makefile:
+            long: Ģenerējiet Makefile failus, lai izveidotu rīkus un citas saistītas komandas
+            short: Ģenerēt Makefile
+        mod:
+            long: Ģenerējiet failu go.mod atkarības pārvaldībai
+            short: Ģenerējiet failu go.mod
+        pb:
+            long: Ģenerēt .pb.go failus .proto failu ģenerēšanai,
+            short: Ģenerējiet .pb.go failu
         short: Kodu ģenerators
+        state:
+            long: Ģenerējiet visas saistītās valsts funkcijas uzņēmējdarbības pakalpojumu statusa resursu vai statisku resursu pārvaldībai
+            short: Visas attiecīgās funkcijas stāvokļa ģenerēšanai
+        table:
+            long: Visas saistītās tabulu ģenerēšanas funkcijas statusa resursu vai statisko resursu pārvaldībai biznesa pakalpojumiem
+            short: Visas saistītās funkcijas tabulu ģenerēšanai
     help:
         additional_commands: Papildu komandas
         aliases: komandas aizstājvārds
