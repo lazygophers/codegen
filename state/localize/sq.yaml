@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Gjeneroni skedarin .goreleaser.yml për konfigurimin e veglave të lëshimit
             short: Gjeneroni skedarin .goreleaser.yml
+        i18n:
+            long: Gjeneroni skedarë i18n për inicializimin e mjeteve të lidhura me ndërkombëtarizimin shumë-gjuhësh dhe funksione të tjera
+            short: Gjeneroni skedarin i18n
         impl:
             long: Gjenerimi i skedarëve të zbatimit për zbatimin e shërbimeve të biznesit
             short: Gjeneroni skedarë zbatimi
@@ -67,8 +70,17 @@ cli:
             short: Gjeneroni skedarin .pb.go
         short: Gjenerator kodesh
         state:
+            flags:
+                cache: Nëse do të aktivizohet gjenerimi i lidhur me cache
+                config: Nëse do të gjenerohet kodi i lidhur me konfigurimin
+                db: Nëse do të mundësohet gjenerimi i bazës së të dhënave të lidhura me bazën e të dhënave
+                i18n: Nëse do të aktivizohet gjenerimi i lidhur me shumë gjuhë (gjenerimi përfshin vetëm inicializimin e gjendjes dhe përmbajtje të tjera, dhe nuk përfshin përkthim automatik të shumë gjuhëve. Nëse keni nevojë për përkthim automatik, përdorni {{.Command}} për të parë detajet)
+                table: Nëse do të mundësohet gjenerimi i bazës së të dhënave të lidhura me bazën e të dhënave
             long: Gjeneroni të gjitha funksionet përkatëse të shtetit për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
             short: Të gjitha funksionet përkatëse për gjendjen gjeneruese
+            table:
+                long: Gjeneroni kodin e lidhur me status.tabela, që përdoret për lidhjen e bazës së të dhënave dhe inicializimin e tabelës kur shërbimi niset.
+                short: Gjeneroni kodin e lidhur me gjendjen.tabela
         table:
             long: Të gjitha funksionet e ndërlidhura të gjenerimit të tabelave për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
             short: Të gjitha funksionet përkatëse për gjenerimin e tabelave

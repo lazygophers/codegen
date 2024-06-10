@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: E hana i ka faila .goreleaser.yml no ka hoʻonohonoho ʻana i nā mea hana hoʻokuʻu
             short: E hana i ka waihona .goreleaser.yml
+        i18n:
+            long: Hoʻokumu i nā faila i18n no ka hoʻomaka ʻana o nā pahu hana e pili ana i ka internationalization a me nā hana ʻē aʻe
+            short: E hana i ka faila i18n
         impl:
             long: E hana i nā faila hoʻokō no ka hoʻokō ʻana i nā lawelawe ʻoihana
             short: E hana i nā faila hoʻokō
@@ -67,8 +70,17 @@ cli:
             short: E hana i ka waihona .pb.go
         short: Mea hana code
         state:
+            flags:
+                cache: Inā paha e hiki ai ke hana i ka hana pili i ka cache
+                config: Inā paha e hana i ka code pili i ka hoʻonohonoho
+                db: Inā paha e hiki ai ke hana i ka ʻikepili pili i ka waihona
+                i18n: Inā paha e hiki ke hoʻohana i ka hanauna pili ʻōlelo he nui (ʻo ka hanauna wale nō ka hoʻomaka ʻana o ka mokuʻāina a me nā mea ʻē aʻe, a ʻaʻole hoʻokomo i ka unuhi ʻakomi o nā ʻōlelo he nui.
+                table: Inā paha e hiki ai ke hana i ka ʻikepili pili i ka waihona
             long: E hana i nā hana pili a pau o ka moku'āina no ka waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
             short: ʻO nā hana kūpono a pau no ka hana ʻana i ka mokuʻāina
+            table:
+                long: E hana i state.table pili code, hoʻohana ʻia no ka hoʻopili ʻikepili a me ka hoʻomaka ʻana o ka papaʻaina i ka wā e hoʻomaka ai ka lawelawe.
+                short: E hana i state.table pili code
         table:
             long: ʻO nā hana pili āpau o ka hoʻokumu ʻana i nā papa no nā kumu waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
             short: ʻO nā hana pili āpau no ka hana ʻana i nā papa

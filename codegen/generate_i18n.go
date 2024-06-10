@@ -1,7 +1,9 @@
 package codegen
 
 import (
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
+	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
 	"io/fs"
 	"os"
@@ -11,7 +13,7 @@ import (
 	"strings"
 )
 
-func GenerateI18n(dstLocalize map[string]any, path string) (err error) {
+func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 	pterm.Info.Printfln("try gen i18n const to %s", path)
 
 	localize := map[string]string{}
@@ -91,6 +93,54 @@ func GenerateI18n(dstLocalize map[string]any, path string) (err error) {
 		"DirName":      filepath.Base(filepath.Dir(path)),
 		"Localize":     localize,
 		"DeepLocalize": dstLocalize,
+	})
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
+
+func GenerateI18n(pb *PbPackage) (err error) {
+	pterm.Info.Printfln("try generate state.i18nL")
+
+	if !state.Config.State.I18n {
+		pterm.Warning.Printfln("state.i18nL is disable generation, skipping generation")
+		return nil
+	}
+
+	err = initStateDirectory(pb)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	if osx.IsFile(GetPath(PathTypeStateI18n, pb)) {
+		if !state.Config.Overwrite {
+			pterm.Warning.Printfln("state.i18n ialready exists, skip generate %s", GetPath(PathTypeStateI18n, pb))
+			return nil
+		}
+
+		pterm.Warning.Printfln("state.i18n ialready exists, overwrite %s", GetPath(PathTypeStateI18n, pb))
+	}
+
+	tpl, err := GetTemplate(TemplateTypeStateI18n)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	file, err := os.OpenFile(GetPath(PathTypeStateI18n, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	defer file.Close()
+
+	// TODO: 对于多语言的打包的支持？
+	err = tpl.Execute(file, map[string]interface{}{
+		"PB": pb,
 	})
 	if err != nil {
 		log.Errorf("err:%v", err)

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generate u schedariu .gorelaser.yml per a cunfigurazione di l'arnesi di liberazione
             short: Generate u schedariu .goreleaser.yml
+        i18n:
+            long: Generate fugliali i18n per l'inizializazione di toolkits multi-lingua cunnessi à l'internazionalizazione è altre funzioni
+            short: Generate u schedariu i18n
         impl:
             long: Generate fugliali di implementazione per l'implementazione di servizii cummerciale
             short: Generate schedarii di implementazione
@@ -67,8 +70,17 @@ cli:
             short: Generate u schedariu .pb.go
         short: Generatore di codice
         state:
+            flags:
+                cache: Sia per attivà a generazione di cache
+                config: Sia generà codice di cunfigurazione
+                db: Sia per attivà a generazione di basa di dati di basa di dati
+                i18n: Sia per attivà a generazione in parechje lingue (a generazione include solu l'inizializazione statali è altri cuntenutu, è ùn include micca a traduzzione automatica di parechje lingue. Sè avete bisognu di traduzzione automatica, per piacè utilizate {{.Command}} per vede i dettagli)
+                table: Sia per attivà a generazione di basa di dati di basa di dati
             long: Genera tutte e funzioni di u statu ligate per a risorsa statale o a gestione di risorse statiche di i servizii cummerciale
             short: Tutte e funzioni pertinenti per a generazione di u statu
+            table:
+                long: Generate codice relative state.table, utilizatu per a cunnessione di a basa di dati è l'inizializazione di a tavola quandu u serviziu hè iniziatu.
+                short: Genera codice state.table rilativi
         table:
             long: Tutte e funzioni cunnesse di generazione di tabelle per a gestione di risorse stateful o di risorse statiche di servizii di cummerciale
             short: Tutte e funzioni relative per a generazione di tavule

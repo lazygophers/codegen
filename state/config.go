@@ -151,6 +151,7 @@ type CfgTemplate struct {
 	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
 	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
 	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
+	I18n  string `json:"i18n,omitempty" yaml:"i18n,omitempty" toml:"i18n,omitempty"`
 
 	Goreleaser   string `json:"goreleaser,omitempty" yaml:"goreleaser,omitempty" toml:"goreleaser,omitempty"`
 	Makefile     string `json:"makefile,omitempty" yaml:"makefile,omitempty" toml:"makefile,omitempty"`
@@ -220,6 +221,13 @@ func (p *CfgI18n) apply() {
 	}
 }
 
+type CfgState struct {
+	Config bool `json:"config,omitempty" yaml:"config,omitempty" toml:"config,omitempty"`
+	Table  bool `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
+	Cache  bool `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
+	I18n   bool `json:"i18n,omitempty" yaml:"i18n,omitempty" toml:"i18n,omitempty"`
+}
+
 type Cfg struct {
 	ProtocPath     string `json:"protoc_path,omitempty" yaml:"protoc_path,omitempty" toml:"protoc_path,omitempty"`
 	ProtoGenGoPath string `json:"protogen_go_path,omitempty" yaml:"protogen_go_path,omitempty" toml:"protogen_go_path,omitempty"`
@@ -245,6 +253,8 @@ type Cfg struct {
 	DefaultTag map[string]map[string]string `json:"default_tag,omitempty" yaml:"default_tag,omitempty" toml:"default_tag,omitempty"`
 
 	Tables *CfgTables `json:"tables,omitempty" yaml:"tables,omitempty" toml:"tables,omitempty"`
+
+	State *CfgState `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 
 	Overwrite bool `json:"-" yaml:"-" toml:"-"`
 }
@@ -303,6 +313,14 @@ func (p *Cfg) apply() (err error) {
 		p.I18n = new(CfgI18n)
 	}
 	p.I18n.apply()
+
+	if p.State == nil {
+		p.State = &CfgState{
+			Config: true,
+			Table:  true,
+			Cache:  true,
+		}
+	}
 
 	// NOTE: struct 标签
 	{

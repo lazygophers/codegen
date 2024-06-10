@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generu .goreleaser.yml dosieron por agordo de eldonaj iloj
             short: Generu .goreleaser.yml dosieron
+        i18n:
+            long: Generu i18n-dosierojn por pravalorigo de multlingvaj internaciigo-rilataj ilaro kaj aliaj funkcioj
+            short: Generu i18n-dosieron
         impl:
             long: Generu realigajn dosierojn por efektivigo de komercaj servoj
             short: Generu realigajn dosierojn
@@ -67,8 +70,17 @@ cli:
             short: Generu .pb.go dosieron
         short: Kodgeneratoro
         state:
+            flags:
+                cache: Ĉu ebligi kaŝmemor-rilatan generacion
+                config: Ĉu generi agordan kodon
+                db: Ĉu ebligi datumbaz-rilatan datumbazgeneradon
+                i18n: Ĉu ebligi plurlingvan rilatan generacion (la generacio inkluzivas nur ŝtatan inicialigon kaj alian enhavon, kaj ne inkluzivas aŭtomatan tradukon de pluraj lingvoj. Se vi bezonas aŭtomatan tradukon, bonvolu uzi {{.Command}} por vidi detalojn)
+                table: Ĉu ebligi datumbaz-rilatan datumbazgeneradon
             long: Generu ĉiujn rilatajn funkciojn de ŝtato por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generado de stato
+            table:
+                long: Generu state.table rilatan kodon, uzatan por datumbaza konekto kaj tabelkomenciĝo kiam la servo komenciĝas.
+                short: Generu state.table rilatan kodon
         table:
             long: Ĉiuj rilataj funkcioj de generado de tabeloj por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generi tabelojn

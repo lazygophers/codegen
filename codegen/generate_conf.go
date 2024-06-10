@@ -10,6 +10,13 @@ import (
 )
 
 func GenerateConf(pb *PbPackage) (err error) {
+	pterm.Info.Printfln("try generate state.config")
+
+	if !state.Config.State.Config {
+		pterm.Warning.Printfln("state.config is disable generation, skipping generation")
+		return nil
+	}
+
 	err = initStateDirectory(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -28,13 +35,8 @@ func GenerateConf(pb *PbPackage) (err error) {
 
 	// table 文件为覆盖生成
 	args := map[string]interface{}{
-		"PB": pb,
-		"GoImports": []string{
-			pb.GoPackage(),
-			"github.com/lazygophers/log",
-			"github.com/lazygophers/utils/common",
-			"github.com/lazygophers/utils/db",
-		},
+		"PB":     pb,
+		"Config": state.Config.State,
 	}
 
 	tpl, err := GetTemplate(TemplateTypeStateConf)

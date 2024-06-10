@@ -41,6 +41,7 @@ const (
 	TemplateTypeStateConf
 	TemplateTypeStateCache
 	TemplateTypeStateState
+	TemplateTypeStateI18n
 
 	TemplateTypeImpl
 	TemplateTypeImplAction
@@ -121,6 +122,10 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeStateState:
 		systemPath = state.Config.Template.State
 		embedPath = "template/state/state.gtpl"
+
+	case TemplateTypeStateI18n:
+		systemPath = state.Config.Template.I18n
+		embedPath = "template/state/i18n.gtpl"
 
 	case TemplateTypeImpl:
 		systemPath = state.Config.Template.Impl.Impl

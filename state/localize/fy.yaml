@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generearje .goreleaser.yml triem foar konfiguraasje fan release ark
             short: Generearje .goreleaser.yml triem
+        i18n:
+            long: Generearje i18n-bestannen foar inisjalisaasje fan meartalige ynternasjonalisearring relatearre toolkits en oare funksjes
+            short: Generearje i18n triem
         impl:
             long: Generearje ymplemintaasjebestannen foar de ymplemintaasje fan saaklike tsjinsten
             short: Generearje ymplemintaasjebestannen
@@ -67,8 +70,17 @@ cli:
             short: Generearje .pb.go triem
         short: Koade generator
         state:
+            flags:
+                cache: Oft cache-relatearre generaasje ynskeakelje moat
+                config: Oft te generearjen konfiguraasje-relatearre koade
+                db: Of it ynskeakeljen fan database-relatearre databankgeneraasje
+                i18n: Oft meartalige generaasje ynskeakelje moat (de generaasje omfettet allinich steatsinisjalisaasje en oare ynhâld, en omfettet gjin automatyske oersetting fan meardere talen. As jo ​​​​automatyske oersetting nedich binne, brûk dan {{.Command}} om details te besjen)
+                table: Of it ynskeakeljen fan database-relatearre databankgeneraasje
             long: Generearje alle besibbe funksjes fan steat foar stateful boarne of statyske boarne behear fan saaklike tsjinsten
             short: Alle relevante funksjes foar it generearjen fan steat
+            table:
+                long: Generearje state.table-relatearre koade, brûkt foar databankferbining en tafelinitialisaasje as de tsjinst is begon.
+                short: Generearje state.table relatearre koade
         table:
             long: Alle besibbe funksjes fan it generearjen fan tabellen foar stateful boarne of statyske boarne behear fan saaklike tsjinsten
             short: Alle relatearre funksjes foar it generearjen fan tabellen

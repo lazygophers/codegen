@@ -245,7 +245,7 @@ var tranCmd = &cobra.Command{
 				return err
 			}
 
-			err = codegen.GenerateI18n(
+			err = codegen.GenerateI18nConst(
 				dstLocalize,
 				filepath.Join(
 					filepath.Dir(filepath.Dir(c.SrcFile)),

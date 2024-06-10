@@ -29,15 +29,17 @@ var genCmd = &cobra.Command{
 			return err
 		}
 
-		protoFile := filepath.Join(runtime.Pwd(), utils.GetString("input", cmd))
+		protoFile, err := getPbFile(cmd)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+
 		pterm.Info.Println("proto file:", protoFile)
 
 		// NOTE: 检查proto文件是否存在
 		{
 			if !osx.IsFile(protoFile) {
-				log.Errorf("file not found:%s", protoFile)
-				pterm.Error.Printfln("proto file not found:%s", protoFile)
-				return errors.New("proto file not found")
 			}
 		}
 
@@ -49,6 +51,46 @@ var genCmd = &cobra.Command{
 
 		return nil
 	},
+}
+
+func getPbFile(cmd *cobra.Command) (string, error) {
+	if cmd.Flag("input").Changed {
+		protoFile := filepath.Join(runtime.Pwd(), utils.GetString("input", cmd))
+		if !osx.IsFile(protoFile) {
+			log.Errorf("file not found:%s", protoFile)
+			pterm.Error.Printfln("proto file not found:%s", protoFile)
+			return "", errors.New("proto file not found")
+		}
+
+		return protoFile, nil
+	}
+
+	// 尝试自动获取
+	protoFile := runtime.Pwd()
+	name := filepath.Base(protoFile)
+
+	// 允许几种常见的分仓库的行为
+	if strings.HasSuffix(name, "service") {
+		name = strings.TrimSuffix(name, "service")
+	} else if strings.Contains(name, "server") {
+		name = strings.TrimSuffix(name, "server")
+	}
+
+	name = strings.TrimSuffix(name, "_")
+	name = strings.TrimSuffix(name, "-")
+
+	for ; protoFile != filepath.Dir(protoFile); protoFile = filepath.Dir(protoFile) {
+		if osx.IsFile(filepath.Join(protoFile, name+".proto")) {
+			return filepath.Join(protoFile, name+".proto"), nil
+		}
+
+		if osx.IsFile(filepath.Join(protoFile, "proto", name+".proto")) {
+			return filepath.Join(protoFile, "proto", name+".proto"), nil
+		}
+	}
+
+	pterm.Error.Printfln("proto file not found,try use -i argument")
+	return "", errors.New("proto file not found")
 }
 
 func mergeGenCmdFlags(cmd *cobra.Command) {
@@ -139,6 +181,7 @@ func Load(rootCmd *cobra.Command) {
 	initPb()
 	initState()
 	initTable()
+	initI18n()
 
 	rootCmd.AddCommand(genCmd)
 }

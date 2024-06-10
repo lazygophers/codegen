@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Hangaia he konae .goreleaser.yml mo te whirihoranga o nga taputapu tuku
             short: Hangaia te kōnae .goreleaser.yml
+        i18n:
+            long: Waihangahia nga konae i18n mo te arawhitinga o nga kete taputapu e pa ana ki te ao maha me etahi atu mahi
+            short: Hangaia te konae i18n
         impl:
             long: Waihangahia nga konae whakatinanatanga mo te whakatinanatanga o nga ratonga pakihi
             short: Waihanga kōnae whakatinanatanga
@@ -67,8 +70,17 @@ cli:
             short: Hangaia te kōnae .pb.go
         short: Kaihanga Waehere
         state:
+            flags:
+                cache: Ki te whakahohe i te reanga e pa ana ki te keteroki
+                config: Ki te whakaputa waehere e pa ana ki te whirihoranga
+                db: Mena ka whakahohehia te hanga patengi raraunga e pa ana
+                i18n: Ki te whakaahei i te reanga reo-maha (ko te reanga anake kei roto ko te arataki kawanatanga me etahi atu korero, kaore he whakamaoritanga aunoa o nga reo maha. Ki te hiahia koe ki te whakamaoritanga aunoa, whakamahia te {{.Command}} hei tiro taipitopito)
+                table: Mena ka whakahohehia te hanga patengi raraunga e pa ana
             long: Hangaia nga mahi katoa e pa ana ki te kawanatanga mo nga rauemi tuuturu, mo te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
             short: Nga mahi whai take katoa mo te whakaputa i te ahua
+            table:
+                long: Hangaia he waehere e pa ana ki te state.table, ka whakamahia mo te hononga raraunga me te arawhiti ripanga ina timata te ratonga.
+                short: Hanga he waehere e pa ana ki te state.table
         table:
             long: Ko nga mahi katoa e pa ana ki te whakaputa ripanga mo te rauemi tuuturu, te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
             short: Nga mahi katoa e pa ana mo te whakaputa ripanga

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Xera o ficheiro .goreleaser.yml para a configuración das ferramentas de lanzamento
             short: Xerar ficheiro .goreleaser.yml
+        i18n:
+            long: Xera ficheiros i18n para a inicialización de conxuntos de ferramentas relacionados coa internacionalización multilingüe e outras funcións
+            short: Xerar ficheiro i18n
         impl:
             long: Xerar ficheiros de implantación para a implantación de servizos empresariais
             short: Xerar ficheiros de implementación
@@ -67,8 +70,17 @@ cli:
             short: Xerar ficheiro .pb.go
         short: Xerador de código
         state:
+            flags:
+                cache: Indica se se activa a xeración relacionada coa caché
+                config: Indica se hai que xerar código relacionado coa configuración
+                db: Indica se se activa a xeración de bases de datos relacionadas coa base de datos
+                i18n: Indica se se activa a xeración relacionada en varios idiomas (a xeración só inclúe a inicialización do estado e outro contido, e non inclúe a tradución automática de varios idiomas. Se precisas unha tradución automática, utiliza {{.Command}} para ver os detalles)
+                table: Indica se se activa a xeración de bases de datos relacionadas coa base de datos
             long: Xera todas as funcións relacionadas do estado para a xestión de recursos con estado ou de recursos estáticos dos servizos empresariais
             short: Todas as funcións relevantes para xerar estado
+            table:
+                long: Xera código relacionado state.table, usado para a conexión de base de datos e a inicialización da táboa cando se inicia o servizo.
+                short: Xerar código relacionado state.table
         table:
             long: Todas as funcións relacionadas de xeración de táboas para recursos con estado ou xestión de recursos estáticos de servizos empresariais
             short: Todas as funcións relacionadas para xerar táboas

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Pangani fayilo ya .goreleaser.yml kuti mukhazikitse zida zotulutsa
             short: Pangani fayilo ya .goreleaser.yml
+        i18n:
+            long: Pangani mafayilo a i18n kuti akhazikitse zida zolumikizirana ndi zinenero zosiyanasiyana ndi ntchito zina
+            short: Pangani fayilo ya i18n
         impl:
             long: Pangani mafayilo okhazikitsa kuti mukwaniritse ntchito zamabizinesi
             short: Pangani mafayilo okhazikitsa
@@ -67,8 +70,17 @@ cli:
             short: Pangani fayilo ya .pb.go
         short: Kodi jenereta
         state:
+            flags:
+                cache: Kuti mutsegule zokhudzana ndi cache
+                config: Kuti mupange khodi yokhudzana ndi kasinthidwe
+                db: Kuti muyambitse kupanga database yokhudzana ndi database
+                i18n: Kuti muthe kumasulira zilankhulo zambiri (m'badwowu umangowonjezera kukhazikitsidwa kwa boma ndi zina, ndipo sikuphatikiza zomasulira zokha zinenero zingapo. Ngati mukufuna kumasulira basi, chonde gwiritsani ntchito {{.Command}} kuti muwone zambiri)
+                table: Kuti muyambitse kupanga database yokhudzana ndi database
             long: Pangani ntchito zonse zokhudzana ndi boma kuti muzitha kuyang'anira zinthu zodziwika bwino kapena zosasunthika zamabizinesi
             short: Ntchito zonse zofunika kupanga dziko
+            table:
+                long: Pangani code yokhudzana ndi state.table, yomwe imagwiritsidwa ntchito polumikizana ndi database ndikuyambitsa tebulo ntchito ikayamba.
+                short: Pangani code yokhudzana ndi state.table
         table:
             long: Ntchito zonse zokhudzana ndi kupanga matebulo azinthu zodziwika bwino kapena kasamalidwe kazinthu zamabizinesi
             short: Ntchito zonse zokhudzana ndi kupanga matebulo

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Tonda fayiro .goreleaser.yml okusengeka ebikozesebwa mu kufulumya
             short: Okukola fayiro .goreleaser.yml
+        i18n:
+            long: Okukola fayiro za i18n okutandikawo ebikozesebwa ebikwatagana n’okuyingiza ensi yonna mu nnimi nnyingi n’emirimu emirala
+            short: Okukola fayiro ya i18n
         impl:
             long: Okukola fayiro z’okussa mu nkola okussa mu nkola empeereza za bizinensi
             short: Okukola fayiro z'okussa mu nkola
@@ -67,8 +70,17 @@ cli:
             short: Okukola fayiro ya .pb.go
         short: Jenereta ya koodi
         state:
+            flags:
+                cache: Oba okusobozesa okuzaala okwekuusa ku cache
+                config: Oba okukola koodi eyekuusa ku nsengeka
+                db: Oba okusobozesa okukola database ezikwatagana ne database
+                i18n: Oba okusobozesa omulembe ogukwatagana n'ennimi nnyingi (omulembe gulimu okutandikawo kw'embeera n'ebintu ebirala byokka, era temuli kuvvuunula kwa otomatiki okw'ennimi eziwera. Bw'oba weetaaga okuvvuunula okw'otoma, nsaba kozesa {{.Command}} okulaba ebisingawo)
+                table: Oba okusobozesa okukola database ezikwatagana ne database
             long: Okukola emirimu gyonna egyekuusa ku gavumenti ku stateful resource oba static resource management of business services
             short: Emirimu gyonna egyekuusa ku kukola embeera
+            table:
+                long: Okukola koodi ekwatagana ne state.table, ekozesebwa okuyunga database n'okutandikawo emmeeza nga empeereza etandikiddwa.
+                short: Okukola koodi ekwatagana ne state.table
         table:
             long: Emirimu gyonna egyekuusa ku kukola emmeeza ez’okuddukanya eby’obugagga eby’embeera oba eby’obugagga ebitali bikyuka eby’empeereza za bizinensi
             short: Emirimu gyonna egyekuusa ku kukola emmeeza

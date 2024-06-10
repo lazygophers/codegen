@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Wɔ .goreleaser.yml faɛl hena ɖoɖowɔwɔ ɖe asiɖeɖe le dɔwɔnuwo ŋu
             short: Wɔ .goreleaser.yml faɛl
+        i18n:
+            long: Wɔ i18n faɛlwo hena gbegbɔgblɔ geɖe ƒe dukɔwo dome kadodo si ku ɖe dɔwɔnuwo kple dɔ bubuwo wɔwɔ ƒe gɔmedzedze
+            short: Wɔ i18n faɛl
         impl:
             long: Wɔ dɔwɔwɔ ƒe faɛlwo hena asitsatsa ƒe dɔwɔnawo ƒe dɔwɔwɔ
             short: Wɔ dɔwɔwɔ ƒe faɛlwo
@@ -67,8 +70,17 @@ cli:
             short: Wɔ .pb.go faɛl
         short: Kɔdamɔnu ƒe mɔ̃
         state:
+            flags:
+                cache: Nenye be woawɔ dzidzi si do ƒome kple cache ŋudɔ
+                config: Nenye be woawɔ kɔpi si ku ɖe ɖoɖowɔwɔ ŋu
+                db: Nenye be woawɔ nyatakakadzraɖoƒe si ku ɖe nyatakakadzraɖoƒe ŋu ƒe dzidzi
+                i18n: Nenye be woawɔ dzidzi si do ƒome kple gbegbɔgblɔ geɖe ŋudɔ (dzidzimea lɔ nɔnɔme ƒe gɔmedzedze kple nyatakaka bubuwo ɖe eme, eye metsɔ gbegbɔgblɔ geɖewo gɔmeɖeɖe le wo ɖokui si o. Ne èhiã gbegɔmeɖeɖe le ɖokuiwò si la, taflatse zã {{.Command}} nàtsɔ akpɔ nyatakakawo)
+                table: Nenye be woawɔ nyatakakadzraɖoƒe si ku ɖe nyatakakadzraɖoƒe ŋu ƒe dzidzi
             long: Dzra dziɖuɖu ƒe dɔwɔwɔ siwo katã do ƒome kplii na stateful resource alo static resource management of business services
             short: Dɔwɔwɔ siwo katã sɔ na dzidzi ƒe nɔnɔme
+            table:
+                long: Wɔ state.table si do ƒome kple code, si wozãna na nyatakakadzraɖoƒe ƒe kadodo kple kplɔ̃ ƒe gɔmedzedze ne wodze subɔsubɔdɔa gɔme.
+                short: Wɔ state.table si do ƒome kple kɔda
         table:
             long: Dɔ siwo katã do ƒome kplii le kplɔ̃wo wɔwɔ na stateful resource alo static resource management of business services
             short: Dɔwɔwɔ siwo katã do ƒome kplii hena kplɔ̃wo wɔwɔ

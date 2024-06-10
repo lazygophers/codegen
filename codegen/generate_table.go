@@ -1,6 +1,7 @@
 package codegen
 
 import (
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
@@ -8,7 +9,14 @@ import (
 	"os"
 )
 
-func GenerateTable(pb *PbPackage) (err error) {
+func GenerateStateTable(pb *PbPackage) (err error) {
+	pterm.Info.Printfln("try generate table.cache")
+
+	if !state.Config.State.Table {
+		pterm.Warning.Printfln("state.table is disable generation, skipping generation")
+		return nil
+	}
+
 	err = initStateDirectory(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -51,12 +59,6 @@ func GenerateTable(pb *PbPackage) (err error) {
 		return err
 	}
 	defer file.Close()
-
-	_, err = file.Write(getFileHeader(pb))
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
-	}
 
 	err = tpl.Execute(file, args)
 	if err != nil {

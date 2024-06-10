@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Meeshaalee gadhiifamuu qindeessuuf faayilii .goreleaser.yml uumi
             short: Faayilii .goreleaser.yml uumi
+        i18n:
+            long: Faayilota i18n jalqabsiisuuf meeshaalee idil-addunyaa afaanota hedduu fi dalagaalee biroo uumuu
+            short: Faayilii i18n uumuu
         impl:
             long: Faayilota hojiirra oolmaa hojiirra oolmaa tajaajila daldalaa maddisiisuu
             short: Faayilota hojiirra oolmaa uumuu
@@ -67,8 +70,17 @@ cli:
             short: Faayilii .pb.go uumi
         short: Jenereetarii koodii
         state:
+            flags:
+                cache: Dhaloota kaachota waliin walqabatu dandeessisuu fi dhiisuu
+                config: Koodii qindeessaa wajjin walqabatu uumuu fi dhiisuu
+                db: Dhaloota kuusdeetaa kuusdeetaa wajjin walqabatu dandeessisuun fi dhiisuu isaa
+                i18n: Dhaloota afaanota hedduu wajjin walqabatu dandeessisuu fi dhiisuu (dhaloonni jalqaba haalaa fi qabiyyee biroo qofa of keessatti qabata, akkasumas hiikkaa ofumaan afaanota hedduu hin dabalatu. Yoo hiikkaa ofumaan barbaadde, maaloo bal'ina ilaaluuf {{.Ajaja}} fayyadami)
+                table: Dhaloota kuusdeetaa kuusdeetaa wajjin walqabatu dandeessisuun fi dhiisuu isaa
             long: Qabeenya haalaan ykn bulchiinsa qabeenya dhaabbataa tajaajila daldalaaf dalagaalee mootummaa walqabatan hunda ni maddisiisa
             short: Faankishiniiwwan barbaachisoo ta'an hunda haala maddisiisuudhaaf
+            table:
+                long: Koodii state.table walqabatee uuma, walqabsiisa kuusdeetaa fi jalqabbii gabatee yeroo tajaajilli jalqabamu fayyadama.
+                short: Koodii state.table wajjin walqabatu uumuu
         table:
             long: Faankishiniiwwan walqabatan hunda kan gabatee maddisiisuu qabeenya haalaa ykn bulchiinsa qabeenya istaatiksii tajaajila daldalaa
             short: Faankishiniiwwan walqabatan hunda gabatee uumuuf

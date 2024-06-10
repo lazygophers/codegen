@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Ƙirƙirar fayil ɗin .goreleaser.yml don daidaita kayan aikin saki
             short: Ƙirƙirar fayil ɗin .goreleaser.yml
+        i18n:
+            long: Ƙirƙirar fayilolin i18n don farawa na kayan aiki masu alaƙa da ƙasashen duniya da yawa da sauran ayyuka
+            short: Ƙirƙiri i18n fayil
         impl:
             long: Ƙirƙirar fayilolin aiwatarwa don aiwatar da ayyukan kasuwanci
             short: Ƙirƙirar fayilolin aiwatarwa
@@ -67,8 +70,17 @@ cli:
             short: Ƙirƙirar fayil ɗin .pb.go
         short: Code janareta
         state:
+            flags:
+                cache: Ko don kunna tsarar da ke da alaƙa da cache
+                config: Ko don samar da lambar da ke da alaƙa
+                db: Ko don ba da damar samar da bayanai masu alaƙa da bayanai
+                i18n: Ko don kunna tsarar da ke da alaƙa da harsuna da yawa (ƙararriyar ta haɗa da ƙaddamarwar jiha kawai da sauran abun ciki, kuma baya haɗa da fassarar atomatik na harsuna da yawa. Idan kuna buƙatar fassarar atomatik, da fatan za a yi amfani da {{.Command}} don duba cikakkun bayanai)
+                table: Ko don ba da damar samar da bayanai masu alaƙa da bayanai
             long: Ƙirƙirar duk ayyukan da ke da alaƙa na jihar don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
             short: Duk ayyuka masu dacewa don haifar da yanayi
+            table:
+                long: Ƙirƙirar lambar da ke da alaƙa ta state.table, da ake amfani da ita don haɗin bayanai da ƙaddamar da tebur lokacin da aka fara sabis.
+                short: Ƙirƙirar lambar da ke da alaƙa da jiha
         table:
             long: Duk ayyukan da ke da alaƙa na samar da teburi don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
             short: Duk ayyuka masu alaƙa don samar da tebur

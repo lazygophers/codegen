@@ -19,6 +19,7 @@ var GenAllHooks = []GenHook{
 	runGolangci,
 	runGenCmd,
 	runGenState,
+	runGenTable,
 	runGenImpl,
 }
 
@@ -41,6 +42,8 @@ var allCmd = &cobra.Command{
 func initAll() {
 	allCmd.Short = state.Localize(state.I18nTagCliGenAllShort)
 	allCmd.Long = state.Localize(state.I18nTagCliGenAllLong)
+
+	initStateFlags(allCmd)
 
 	genCmd.AddCommand(allCmd)
 }

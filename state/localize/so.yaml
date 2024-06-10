@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Samee faylka .goreleaser.yml ee habaynta qalabka sii daynta
             short: Samee faylka .goreleaser.yml
+        i18n:
+            long: Samee faylalka i18n si loogu bilaabo qalabaynta la xidhiidha caalamiyaynta luuqadaha badan iyo hawlo kale
+            short: Samee faylka i18n
         impl:
             long: Samee faylalka fulinta ee hirgelinta adeegyada ganacsiga
             short: Abuur faylasha fulinta
@@ -67,8 +70,17 @@ cli:
             short: Samee faylka .pb.go
         short: Koronto dhaliyaha
         state:
+            flags:
+                cache: Haddii la awoodo jiilka la xidhiidha kaydinta
+                config: Haddii la curiyo kood isku xidhka la xidhiidha
+                db: Inaad awood u yeelato abuurista xog-ururinta la xidhiidha database-ka
+                i18n: Haddi la awoodo jiilka la xidhiidha luuqadaha badan (jiilka waxa ku jira oo kaliya bilawga gobolka iyo macluumaad kale, oo kuma jiraan turjumaada tooska ah ee luuqado badan. Haddii aad u baahan tahay turjumaad toos ah, fadlan isticmaal {{.Command}} si aad u aragto faahfaahinta)
+                table: Inaad awood u yeelato abuurista xog-ururinta la xidhiidha database-ka
             long: U samee dhammaan hawlaha la xidhiidha gobolka ee kheyraadka gobolka ama maamulka kheyraadka taagan ee adeegyada ganacsiga
             short: Dhammaan hawlaha khuseeya soo saarista gobolka
+            table:
+                long: Samee koodka laxiriira state.table, oo loo isticmaalo isku xirka xogta iyo bilowga miiska marka adeega la bilaabo.
+                short: Samee state.miiska koodka laxiriira
         table:
             long: Dhammaan shaqooyinka la xidhiidha soo saarista miisaska kheyraadka gobolka ama maamulka kheyraadka taagan ee adeegyada ganacsiga
             short: Dhammaan hawlaha la xidhiidha abuurista miisaska

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Khiqiza ifayela le-.goreleaser.yml ukuze ulungiselele amathuluzi okukhipha
             short: Khiqiza ifayela le-.goreleaser.yml
+        i18n:
+            long: Khiqiza amafayela e-i18n ukuze kuqaliswe amathuluzi ahlobene nezilimi eziningi ahlobene nokuya kwamanye amazwe neminye imisebenzi
+            short: Khiqiza ifayela le-i18n
         impl:
             long: Khiqiza amafayela okusebenzisa ukuze kusetshenziswe izinsiza zebhizinisi
             short: Khiqiza amafayela wokuqalisa
@@ -67,8 +70,17 @@ cli:
             short: Khiqiza ifayela le-.pb.go
         short: Ikhodi generator
         state:
+            flags:
+                cache: Ukuthi kunikwe amandla ukukhiqiza okuhlobene nenqolobane
+                config: Ukuthi ukhiqize ikhodi ehlobene nokucushwa
+                db: Ukuthi unike amandla ukukhiqizwa kwesizindalwazi esihlobene nesizindalwazi
+                i18n: Ukuthi unike amandla isizukulwane esihlobene nezilimi eziningi (isizukulwane sihlanganisa kuphela ukuqaliswa kwesifunda nokunye okuqukethwe, futhi asifaki ukuhumusha okuzenzakalelayo kwezilimi eziningi. Uma udinga ukuhumusha okuzenzakalelayo, sicela usebenzise {{.Command}} ukuze ubuke imininingwane)
+                table: Ukuthi unike amandla ukukhiqizwa kwesizindalwazi esihlobene nesizindalwazi
             long: Khiqiza yonke imisebenzi ehlobene yombuso ukuze uthole izinsiza ezisezingeni eliphezulu noma ukuphathwa kwezinsiza zebhizinisi ezimile
             short: Yonke imisebenzi efanele yokukhiqiza izwe
+            table:
+                long: Khiqiza ikhodi ehlobene ne-state.table, esetshenziselwa uxhumano lwesizindalwazi kanye nokuqaliswa kwethebula lapho isevisi iqaliswa.
+                short: Khiqiza ikhodi ehlobene ne-state.table
         table:
             long: Yonke imisebenzi ehlobene yokukhiqiza amathebula wezisetshenziswa ezisezingeni eliphezulu noma ukuphathwa kwensiza engashintshi yezinsizakalo zebhizinisi
             short: Yonke imisebenzi ehlobene yokukhiqiza amathebula

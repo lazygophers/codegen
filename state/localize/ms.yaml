@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Hasilkan fail .goreleaser.yml untuk konfigurasi alat keluaran
             short: Hasilkan fail .goreleaser.yml
+        i18n:
+            long: Hasilkan fail i18n untuk pemulaan kit alat berkaitan pengantarabangsaan berbilang bahasa dan fungsi lain
+            short: Hasilkan fail i18n
         impl:
             long: Hasilkan fail pelaksanaan untuk pelaksanaan perkhidmatan perniagaan
             short: Hasilkan fail pelaksanaan
@@ -67,8 +70,17 @@ cli:
             short: Hasilkan fail .pb.go
         short: Penjana kod
         state:
+            flags:
+                cache: Sama ada untuk mendayakan penjanaan berkaitan cache
+                config: Sama ada untuk menjana kod berkaitan konfigurasi
+                db: Sama ada untuk mendayakan penjanaan pangkalan data berkaitan pangkalan data
+                i18n: Sama ada untuk mendayakan penjanaan berkaitan berbilang bahasa (penjanaan hanya termasuk pengamulaan keadaan dan kandungan lain, dan tidak termasuk terjemahan automatik berbilang bahasa. Jika anda memerlukan terjemahan automatik, sila gunakan {{.Command}} untuk melihat butiran)
+                table: Sama ada untuk mendayakan penjanaan pangkalan data berkaitan pangkalan data
             long: Hasilkan semua fungsi negara yang berkaitan untuk sumber stateful atau pengurusan sumber statik perkhidmatan perniagaan
             short: Semua fungsi yang berkaitan untuk menjana keadaan
+            table:
+                long: Hasilkan kod berkaitan state.table, digunakan untuk sambungan pangkalan data dan permulaan jadual apabila perkhidmatan dimulakan.
+                short: Hasilkan kod berkaitan state.table
         table:
             long: Semua fungsi berkaitan penjanaan jadual untuk sumber stateful atau pengurusan sumber statik perkhidmatan perniagaan
             short: Semua fungsi berkaitan untuk menjana jadual

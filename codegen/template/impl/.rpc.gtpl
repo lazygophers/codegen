@@ -1,5 +1,5 @@
-func {{ RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ ReqType }}) (*{{ .PB.GoPackageName }}.{{ .RespType }}, error) {
-	var resp {{ .PB.GoPackageName }}.{{ .RespType }}
+func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ .RequestType }}) (*{{ .PB.GoPackageName }}.{{ .ResponseType }}, error) {
+	var rsp {{ .PB.GoPackageName }}.{{ .ResponseType }}
 
-	return &resp, nil
+	return &rsp, nil
 }

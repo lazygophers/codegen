@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: 產生.goreleaser.yml 文件，用於發布工具的配置
             short: 產生.goreleaser.yml 文件
+        i18n:
+            long: 產生 i18n 文件，用於多語言國際化相關工具包的初始化等功能
+            short: 產生 i18n 文件
         impl:
             long: 產生實作文件，用於業務服務的實現
             short: 產生實作文件
@@ -67,8 +70,17 @@ cli:
             short: 生成.pb.go 文件
         short: 程式碼產生器
         state:
+            flags:
+                cache: 是否開啟快取相關生成
+                config: 是否產生配置相關的程式碼
+                db: 是否開啟資料庫相關的資料庫生成
+                i18n: 是否開啟多語言相關聯生成（產生僅包含state 初始化等內容，不包含多語言的自動翻譯，如需自動翻譯請使用 {{.Command}}查看詳情）
+                table: 是否開啟資料庫相關的資料庫生成
             long: 產生 state 的所有相關功能，用於業務服務的有狀態的資源或靜態資源管理
             short: 產生 state 的所有相關功能
+            table:
+                long: 產生 state.table 相關的程式碼，用於服務啟動時對資料庫的連線、表格的初始化
+                short: 產生 state.table 相關的程式碼
         table:
             long: 產生 table 的所有相關功能，用於業務服務的有狀態的資源或靜態資源管理
             short: 產生 table 的所有相關功能

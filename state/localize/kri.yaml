@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Jɛnɛret .goreleaser.yml fayl fɔ kɔnfigyushɔn fɔ rilis tul dɛn
             short: Jɛnɛret .goreleaser.yml fayl
+        i18n:
+            long: Jɛnɛret i18n fayl dɛn fɔ initializeshɔn fɔ mɔlti-langwej intanashɔnalayzeshɔn rilayt tulkit ɛn ɔda fɛnshɔn dɛn
+            short: Jɛnɛret i18n fayl
         impl:
             long: Jɛnɛret implimɛnt fayl dɛn fɔ di implimɛnt biznɛs savis
             short: Jɛnɛret implimɛnt fayl dɛn
@@ -67,8 +70,17 @@ cli:
             short: Jɛnɛret .pb.go fayl
         short: Kod jenɛratɔ
         state:
+            flags:
+                cache: If fɔ ɛnabul kesh-rilayt jɛnɛreshɔn
+                config: If fɔ jenarayz kɔd we gɛt fɔ du wit kɔnfigyushɔn
+                db: If fɔ ɛnabul database-rilayt database jenɛreshɔn
+                i18n: If fɔ ɛnabul jɛnɛreshɔn we gɛt fɔ du wit bɔku langwej dɛn (di jɛnɛreshɔn jɔs inklud stet initializayshɔn ɛn ɔda tin dɛn, ɛn nɔ inklud ɔtomatik transleshɔn fɔ bɔku langwej dɛn. If yu nid ɔtomɛtik transleshɔn, duya yuz {{.Kɔmand}} fɔ si di ditel dɛn)
+                table: If fɔ ɛnabul database-rilayt database jenɛreshɔn
             long: Jɛnɛret ɔl di rilayt fɛnshɔn dɛn fɔ stet fɔ stetful risɔs ɔ statik risɔs manejmɛnt fɔ biznɛs savis
             short: Ɔl di rilevɛns fɛnshɔn dɛn fɔ jenarayz stet
+            table:
+                long: Jɛnɛret state.table rilayt kɔd, we dɛn kin yuz fɔ database kɔnɛkshɔn ɛn tebul initializayshɔn we di savis stat.
+                short: Jɛnɛret stet.tebul rilayt kɔd
         table:
             long: Ɔl di rilayt fɛnshɔn dɛn fɔ jenarayz tebul fɔ stetful risɔs ɔ statik risɔs manejmɛnt fɔ biznɛs savis
             short: Ɔl di rilayt fɛnshɔn dɛn fɔ jenarayz tebul dɛn

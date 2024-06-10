@@ -8,8 +8,12 @@ import (
 )
 
 var confCmd = &cobra.Command{
-	Use:  "conf",
-	RunE: ranGenConf,
+	Use: "conf",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		// 如果是指定了的情况，不管配置是什么，都强制写需要生成
+		state.Config.State.Config = true
+		return ranGenConf(cmd, args)
+	},
 }
 
 func ranGenConf(c *cobra.Command, args []string) (err error) {

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generéiere .goreleaser.yml Fichier fir Configuratioun vun Fräisetzung Handwierksgeschir
             short: Generéiere .goreleaser.yml Fichier
+        i18n:
+            long: Generéiere i18n Dateien fir d'Initialiséierung vu Multi-Sprooch Internationaliséierung verbonnen Toolkits an aner Funktiounen
+            short: Generéiere i18n Datei
         impl:
             long: Generéiere Implementatiounsdateien fir d'Ëmsetzung vu Geschäftsservicer
             short: Generéiere Implementatiounsdateien
@@ -67,8 +70,17 @@ cli:
             short: Generéiere .pb.go Fichier
         short: Code Generator
         state:
+            flags:
+                cache: Ob Cache-verbonne Generatioun z'aktivéieren
+                config: Ob Configuratioun-Zesummenhang Code ze generéieren
+                db: Ob Datebank-Zesummenhang Datebank Generatioun aktivéiert
+                i18n: Ob Multi-Language Zesummenhang Generatioun z'aktivéieren (d'Generatioun enthält nëmmen Staatsinitialiséierung an aner Inhalter, an enthält keng automatesch Iwwersetzung vu verschidde Sproochen. Wann Dir automatesch Iwwersetzung braucht, benotzt w.e.g. {{.Command}} fir Detailer ze gesinn)
+                table: Ob Datebank-Zesummenhang Datebank Generatioun aktivéiert
             long: Generéiere all Zesummenhang Funktiounen vum Staat fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
             short: All relevant Funktiounen fir Generéiere Staat
+            table:
+                long: Generéiere state.table Zesummenhang Code, fir Datebank Verbindung an Dësch initialization benotzt wann de Service ugefaangen ass.
+                short: Generéiere state.table Zesummenhang Code
         table:
             long: All Zesummenhang Funktiounen vun Generéiere Dëscher fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
             short: All Zesummenhang Funktiounen fir Generéiere Dëscher

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Emoheñói .goreleaser.yml vore tembipuru’i ñeguenohẽ ñembohekorã
             short: Emoheñói .goreleaser.yml rembiapokue
+        i18n:
+            long: Emoheñói i18n vore ñepyrũrã umi tembipuru’i internacionalización heta ñe’ẽ rehegua ha ambue tembiaporã
+            short: Ojejapo i18n rembiapokue
         impl:
             long: Omoheñói archivo implementación rehegua oñemboguata haguã servicio empresarial
             short: Omoheñói archivo implementación rehegua
@@ -67,8 +70,17 @@ cli:
             short: Emoheñói .pb.go rembiapokue
         short: Código generador rehegua
         state:
+            flags:
+                cache: Oñembohapétapa generación ojoajúva caché rehe
+                config: Ojejapopavaꞌerãpa kódigo ojoajúva configuración rehe
+                db: Ojehejápa ojejapo base de datos ojoajúva base de datos rehe
+                i18n: Taha’e ombohapéva generación ojoajúva heta ñe’ẽ rehe (generación oike estado ñepyrũrã ha ambue contenido añoite, ha ndoikéiva ñembohasa ijeheguiete heta ñe’ẽ rehegua. Reikotevẽramo ñembohasa ijehegui, eipuru {{.Command}} ehecha hag̃ua detalle)
+                table: Ojehejápa ojejapo base de datos ojoajúva base de datos rehe
             long: Omoheñói opaite función estado rehegua ojoajúva recurso estatal térã recurso estático gestión servicio empresarial rehegua
             short: Opaite tembiaporã iñimportánteva ojejapo hag̃ua estado
+            table:
+                long: Emoheñói kódigo ojoajúva state.table rehe, ojeporúva joajuha base de datos ha tabla ñepyrũrã oñepyrũvo servicio.
+                short: Omoheñói código ojoajúva estado.tabla rehe
         table:
             long: Opaite tembiapo ojoajúva omoheñóivo cuadro recurso estatal térã recurso estático gestión servicio empresarial-pe g̃uarã
             short: Opaite tembiaporã ojoajúva ojejapo hag̃ua tabla

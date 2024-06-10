@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Genere el archivo .goreleaser.yml para configurar las herramientas de lanzamiento
             short: Generar archivo .goreleaser.yml
+        i18n:
+            long: Genere archivos i18n para la inicialización de kits de herramientas relacionados con la internacionalización en varios idiomas y otras funciones.
+            short: Generar archivo i18n
         impl:
             long: Generar archivos de implementación para la implementación de servicios empresariales.
             short: Generar archivos de implementación
@@ -67,8 +70,17 @@ cli:
             short: Generar archivo .pb.go
         short: Generador de códigos
         state:
+            flags:
+                cache: Ya sea para habilitar la generación relacionada con el caché
+                config: Ya sea para generar código relacionado con la configuración
+                db: Si se debe habilitar la generación de bases de datos relacionadas con la base de datos
+                i18n: Si se debe habilitar la generación relacionada con varios idiomas (la generación solo incluye la inicialización de estado y otro contenido, y no incluye la traducción automática de varios idiomas. Si necesita traducción automática, utilice {{.Command}} para ver los detalles)
+                table: Si se debe habilitar la generación de bases de datos relacionadas con la base de datos
             long: Generar todas las funciones de estado relacionadas para recursos con estado o gestión de recursos estáticos de servicios empresariales.
             short: Todas las funciones relevantes para generar estado.
+            table:
+                long: Genere código relacionado con state.table, utilizado para la conexión de la base de datos y la inicialización de la tabla cuando se inicia el servicio.
+                short: Generar código relacionado con state.table
         table:
             long: Todas las funciones relacionadas de generación de tablas para recursos con estado o gestión de recursos estáticos de servicios empresariales.
             short: Todas las funciones relacionadas para generar tablas.

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Chiqarish vositalarini sozlash uchun .goreleaser.yml faylini yarating
             short: .goreleaser.yml faylini yarating
+        i18n:
+            long: Ko'p tilli xalqarolashtirish bilan bog'liq asboblar to'plami va boshqa funktsiyalarni ishga tushirish uchun i18n fayllarini yarating
+            short: i18n faylini yarating
         impl:
             long: Biznes xizmatlarini amalga oshirish uchun dastur fayllarini yaratish
             short: Amalga oshirish fayllarini yaratish
@@ -67,8 +70,17 @@ cli:
             short: .pb.go faylini yarating
         short: Kod generatori
         state:
+            flags:
+                cache: Kesh bilan bog'liq yaratishni yoqish kerakmi
+                config: Konfiguratsiya bilan bog'liq kodni yaratish kerakmi
+                db: Ma'lumotlar bazasi bilan bog'liq ma'lumotlar bazasini yaratishni yoqish kerakmi
+                i18n: Koʻp tilda bogʻliq avlodni yoqish kerakmi (nasl faqat holatni ishga tushirish va boshqa kontentni oʻz ichiga oladi va bir nechta tillarning avtomatik tarjimasini oʻz ichiga olmaydi. Agar sizga avtomatik tarjima kerak boʻlsa, tafsilotlarni koʻrish uchun {{.Command}} dan foydalaning)
+                table: Ma'lumotlar bazasi bilan bog'liq ma'lumotlar bazasini yaratishni yoqish kerakmi
             long: Biznes xizmatlarining statistik manbalari yoki statik resurslarini boshqarish uchun davlatning barcha tegishli funktsiyalarini yarating
             short: Davlatni yaratish uchun barcha tegishli funktsiyalar
+            table:
+                long: Xizmat ishga tushirilganda ma'lumotlar bazasiga ulanish va jadvalni ishga tushirish uchun ishlatiladigan state.table bilan bog'liq kodni yarating.
+                short: State.table bilan bog'liq kodni yarating
         table:
             long: Biznes xizmatlarining statistik manbalari yoki statik resurslarini boshqarish uchun jadvallarni yaratishning barcha tegishli funktsiyalari
             short: Jadvallarni yaratish uchun barcha tegishli funktsiyalar

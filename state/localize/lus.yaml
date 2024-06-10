@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Release tools configuration atan .goreleaser.yml file siam rawh
             short: .goreleaser.yml file siam rawh
+        i18n:
+            long: Multi-language internationalization nena inzawm toolkit leh function dangte initialization atan i18n file siam
+            short: i18n file siam rawh
         impl:
             long: Business services kalpui dan tur implementation file siam
             short: Implementation file siam chhuah
@@ -67,8 +70,17 @@ cli:
             short: .pb.go file siam rawh
         short: Code siamtu a ni
         state:
+            flags:
+                cache: Cache nena inzawm generation enable tur nge tih
+                config: Configuration nena inzawm code siam tur nge siam loh
+                db: Database nena inzawm database siam theihna tur leh hman theih tur
+                i18n: Multi-language related generation enable tur nge (generation hian state initialization leh content dang chauh a huam a, tawng tam tak automatic translation a huam lo. Automatic translation i mamawh chuan {{.Command}} hmangin details en rawh)
+                table: Database nena inzawm database siam theihna tur leh hman theih tur
             long: Business services-a stateful resource emaw static resource management emaw atan state-a function kaihhnawih zawng zawng siam chhuah
             short: State siamna atana function kaihhnawih zawng zawng
+            table:
+                long: State.table nena inzawm code siam, database connection leh service tan tirh a table initialization atana hman thin.
+                short: State.table nena inzawm code siam rawh
         table:
             long: Business services-a stateful resource emaw static resource management emaw atana table siamna hna inzawm zawng zawng
             short: Table siamna atana function inzawm zawng zawng

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Bumuo ng .goreleaser.yml file para sa pagsasaayos ng mga tool sa paglabas
             short: Bumuo ng .goreleaser.yml file
+        i18n:
+            long: Bumuo ng mga i18n file para sa pagsisimula ng multi-language na mga toolkit na nauugnay sa internationalization at iba pang mga function
+            short: Bumuo ng i18n file
         impl:
             long: Bumuo ng mga file ng pagpapatupad para sa pagpapatupad ng mga serbisyo ng negosyo
             short: Bumuo ng mga file ng pagpapatupad
@@ -67,8 +70,17 @@ cli:
             short: Bumuo ng .pb.go file
         short: Generator ng code
         state:
+            flags:
+                cache: Kung paganahin ang henerasyong nauugnay sa cache
+                config: Kung bubuo ng code na nauugnay sa pagsasaayos
+                db: Kung paganahin ang pagbuo ng database na nauugnay sa database
+                i18n: Kung papaganahin ang henerasyong may kaugnayan sa maraming wika (kasama lang ng henerasyon ang pagsisimula ng estado at iba pang nilalaman, at hindi kasama ang awtomatikong pagsasalin ng maraming wika. Kung kailangan mo ng awtomatikong pagsasalin, mangyaring gamitin ang {{.Command}} upang tingnan ang mga detalye)
+                table: Kung paganahin ang pagbuo ng database na nauugnay sa database
             long: Bumuo ng lahat ng nauugnay na function ng estado para sa stateful resource o static na resource management ng mga serbisyo sa negosyo
             short: Lahat ng nauugnay na function para sa pagbuo ng estado
+            table:
+                long: Bumuo ng state.table related code, na ginagamit para sa database connection at table initialization kapag sinimulan ang serbisyo.
+                short: Bumuo ng state.table related code
         table:
             long: Lahat ng kaugnay na function ng pagbuo ng mga talahanayan para sa stateful resource o static na resource management ng mga serbisyo sa negosyo
             short: Lahat ng mga kaugnay na function para sa pagbuo ng mga talahanayan

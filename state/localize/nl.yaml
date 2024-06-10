@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Genereer het .goreleaser.yml-bestand voor de configuratie van releasetools
             short: Genereer het .goreleaser.yml-bestand
+        i18n:
+            long: Genereer i18n-bestanden voor initialisatie van meertalige internationaliseringsgerelateerde toolkits en andere functies
+            short: Genereer een i18n-bestand
         impl:
             long: Implementatiebestanden genereren voor de implementatie van zakelijke dienstverlening
             short: Implementatiebestanden genereren
@@ -67,8 +70,17 @@ cli:
             short: Genereer een .pb.go-bestand
         short: Codegenerator
         state:
+            flags:
+                cache: Of cachegerelateerde generatie moet worden ingeschakeld
+                config: Of er configuratiegerelateerde code moet worden gegenereerd
+                db: Of databasegerelateerde databasegeneratie moet worden ingeschakeld
+                i18n: Of u meertalige gerelateerde generatie wilt inschakelen (de generatie omvat alleen staatsinitialisatie en andere inhoud, en omvat geen automatische vertaling van meerdere talen. Als u automatische vertaling nodig heeft, gebruik dan {{.Command}} om details te bekijken)
+                table: Of databasegerelateerde databasegeneratie moet worden ingeschakeld
             long: Genereer alle gerelateerde statusfuncties voor stateful resource- of statisch resourcebeheer van zakelijke services
             short: Alle relevante functies voor het genereren van status
+            table:
+                long: Genereer state.table-gerelateerde code, gebruikt voor databaseverbinding en tabelinitialisatie wanneer de service wordt gestart.
+                short: Genereer state.table-gerelateerde code
         table:
             long: Alle gerelateerde functies voor het genereren van tabellen voor stateful resource- of statisch resourcebeheer van zakelijke services
             short: Alle gerelateerde functies voor het genereren van tabellen

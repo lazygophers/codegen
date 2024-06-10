@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Cynhyrchu ffeil .goreleaser.yml ar gyfer ffurfweddu offer rhyddhau
             short: Cynhyrchu ffeil .goreleaser.yml
+        i18n:
+            long: Cynhyrchu ffeiliau i18n ar gyfer cychwyn pecynnau cymorth rhyngwladoli aml-iaith a swyddogaethau eraill
+            short: Cynhyrchu ffeil i18n
         impl:
             long: Cynhyrchu ffeiliau gweithredu ar gyfer gweithredu gwasanaethau busnes
             short: Cynhyrchu ffeiliau gweithredu
@@ -67,8 +70,17 @@ cli:
             short: Cynhyrchu ffeil .pb.go
         short: Generadur cod
         state:
+            flags:
+                cache: A ddylid galluogi cynhyrchu sy'n gysylltiedig â storfa
+                config: A ddylid cynhyrchu cod cysylltiedig â ffurfweddiad
+                db: A ddylid galluogi cynhyrchu cronfa ddata sy'n gysylltiedig â chronfa ddata
+                i18n: P'un ai i alluogi cynhyrchu aml-iaith cysylltiedig (mae'r genhedlaeth yn cynnwys ymgychwyn cyflwr a chynnwys arall yn unig, ac nid yw'n cynnwys cyfieithu awtomatig o ieithoedd lluosog. Os oes angen cyfieithu awtomatig arnoch, defnyddiwch {{.Command}} i weld y manylion)
+                table: A ddylid galluogi cynhyrchu cronfa ddata sy'n gysylltiedig â chronfa ddata
             long: Cynhyrchu holl swyddogaethau cysylltiedig y wladwriaeth ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
             short: Pob swyddogaeth berthnasol ar gyfer cynhyrchu cyflwr
+            table:
+                long: Cynhyrchu cod cysylltiedig â state.table, a ddefnyddir ar gyfer cysylltiad cronfa ddata a chychwyn tablau pan fydd y gwasanaeth yn dechrau.
+                short: Cynhyrchu cod cysylltiedig state.table
         table:
             long: Holl swyddogaethau cysylltiedig tablau cynhyrchu ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
             short: Pob swyddogaeth gysylltiedig ar gyfer cynhyrchu tablau

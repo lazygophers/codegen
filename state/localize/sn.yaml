@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Gadzira .goreleaser.yml faira rekugadzirisa maturusi ekuburitsa
             short: Gadzira .goreleaser.yml faira
+        i18n:
+            long: Gadzira i18n mafaera ekutanga emitauro yakawanda ine chekuita nekudyidzana nedzimwe nyika maturusi uye mamwe mabasa
+            short: Gadzira i18n faira
         impl:
             long: Gadzira mafaera ekushandisa ekushandisa masevhisi ebhizinesi
             short: Gadzira mafaira ekushandisa
@@ -67,8 +70,17 @@ cli:
             short: Gadzira .pb.go faira
         short: Code jenareta
         state:
+            flags:
+                cache: Kuti ugone kugonesa kugadzirwa zvine chekuita necache
+                config: Kuti ugadzire kodhi ine chekuita nekugadzirisa
+                db: Kana kugonesa kugadzirwa kwedatabase rine chekuita nedatabase
+                i18n: Ungave uchigonesa kugadzira mitauro inoenderana nemitauro yakawanda (chizvarwa chinongosanganisira kutanga kwenyika nezvimwe, uye haisanganisire kushandura mitauro yakawanda yega yega. Kana uchida shanduro yega yega, tapota shandisa {{.Command}} kuti uone zvakawanda)
+                table: Kana kugonesa kugadzirwa kwedatabase rine chekuita nedatabase
             long: Gadzira mabasa ese ane hukama ehurumende kune stateful sosi kana static resource manejimendi ebhizinesi masevhisi
             short: Mabasa ese akakodzera ekugadzira nyika
+            table:
+                long: Gadzira state.table inoenderana kodhi, inoshandiswa pakubatanidza database uye kutangisa tafura kana sevhisi yatangwa.
+                short: Gadzira state.table inoenderana kodhi
         table:
             long: Ese ane hukama mabasa ekugadzira matafura ezvakaita zviwanikwa kana static resource manejimendi ebhizinesi masevhisi
             short: Mabasa ese ane chekuita nekugadzira matafura

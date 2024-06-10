@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Goýberiş gurallarynyň konfigurasiýasy üçin .goreleaser.yml faýly dörediň
             short: .Goreleaser.yml faýly dörediň
+        i18n:
+            long: Köp dilli halkaralaşma bilen baglanyşykly gurallar we beýleki funksiýalary başlamak üçin i18n faýllaryny dörediň
+            short: I18n faýly dörediň
         impl:
             long: Iş hyzmatlaryny amala aşyrmak üçin ýerine ýetiriş faýllaryny dörediň
             short: Implementationerine ýetiriş faýllaryny dörediň
@@ -67,8 +70,17 @@ cli:
             short: .Pb.go faýly dörediň
         short: Kod generatory
         state:
+            flags:
+                cache: Keş bilen baglanyşykly nesli işletmelimi
+                config: Konfigurasiýa bilen baglanyşykly kod döredip bolarmy
+                db: Maglumat bazasy bilen baglanyşykly maglumat bazasyny döretmäge mümkinçilik bermelimi
+                i18n: Köp dilli baglanyşykly nesli işletmelimi (nesil diňe döwlet başlangyjyny we beýleki mazmuny öz içine alýar we köp dilleriň awtomatiki terjimesini öz içine almaýar. Awtomatiki terjime gerek bolsa, jikme-jiklikleri görmek üçin {{.Söwda}} ulanyň)
+                table: Maglumat bazasy bilen baglanyşykly maglumat bazasyny döretmäge mümkinçilik bermelimi
             long: Döwlet çeşmelerini ýa-da işewürlik hyzmatlaryny statiki dolandyrmak üçin döwletiň ähli degişli funksiýalaryny dörediň
             short: Döwlet döretmek üçin ähli degişli funksiýalar
+            table:
+                long: Hyzmat başlanda maglumat bazasyna birikmek we tablisa başlamak üçin ulanylýan state.table baglanyşykly kod dörediň.
+                short: State.table bilen baglanyşykly kod dörediň
         table:
             long: Döwlet çeşmesi ýa-da iş hyzmatlarynyň statiki çeşme dolandyryşy üçin tablisalary döretmek bilen baglanyşykly ähli funksiýalar
             short: Tablisa döretmek üçin ähli degişli funksiýalar

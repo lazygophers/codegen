@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Looge väljalasketööriistade konfigureerimiseks fail .goreleaser.yml
             short: Looge fail .goreleaser.yml
+        i18n:
+            long: Looge i18n-faile mitmekeelsete rahvusvahelistumisega seotud tööriistakomplektide ja muude funktsioonide lähtestamiseks
+            short: Looge fail i18n
         impl:
             long: Looge äriteenuste juurutamiseks rakendusfaile
             short: Loo rakendusfailid
@@ -67,8 +70,17 @@ cli:
             short: Looge fail .pb.go
         short: Koodigeneraator
         state:
+            flags:
+                cache: Kas lubada vahemäluga seotud genereerimine
+                config: Kas luua konfiguratsiooniga seotud kood
+                db: Kas lubada andmebaasiga seotud andmebaaside genereerimine
+                i18n: Kas lubada mitme keelega seotud genereerimine (genereerimine hõlmab ainult oleku initsialiseerimist ja muud sisu ning ei hõlma mitme keele automaatset tõlget. Kui vajate automaatset tõlget, kasutage üksikasjade vaatamiseks käsku {{.Command}})
+                table: Kas lubada andmebaasiga seotud andmebaaside genereerimine
             long: Looge kõik seotud olekufunktsioonid äriteenuste olekupõhiseks või staatiliseks ressursihalduseks
             short: Kõik oleku genereerimiseks vajalikud funktsioonid
+            table:
+                long: Genereeri state.table seotud kood, mida kasutatakse andmebaasi ühenduse loomiseks ja tabeli lähtestamiseks teenuse käivitamisel.
+                short: Genereeri olek.tabeliga seotud kood
         table:
             long: Kõik seotud funktsioonid tabelite genereerimiseks äriteenuste olekupõhiste ressursside või staatilise ressursside haldamiseks
             short: Kõik seotud funktsioonid tabelite genereerimiseks

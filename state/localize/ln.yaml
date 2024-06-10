@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Bosala fisyé .goreleaser.yml mpo na bobongisi ya bisaleli ya kobimisa
             short: Bosala fisyé .goreleaser.yml
+        i18n:
+            long: Kosala ba fichiers i18n pona initialisation ya ba boîtes d'outils oyo etali internationalisation multi-langue pe ba fonctions misusu
+            short: Bosala fichier i18n
         impl:
             long: Kosala ba fichiers ya mise en œuvre pona mise en œuvre ya ba services d’affaires
             short: Kosala ba fichiers ya mise en œuvre
@@ -67,8 +70,17 @@ cli:
             short: Bosala fisyé .pb.go
         short: Générateur ya code
         state:
+            flags:
+                cache: Soki ko activer génération oyo etali cache
+                config: Soki esengeli kobimisa code oyo etali configuration
+                db: Soki ko activer génération ya base de données oyo etali base de données
+                i18n: Soki ko activer génération oyo etali minoko ebele (génération ezali kaka na initialisation ya l'état na contenus misusu, pe esangisi te traduction automatique ya minoko ebele. Soki oza na besoin ya traduction automatique, salela {{.Command}} pona kotala ba détails)
+                table: Soki ko activer génération ya base de données oyo etali base de données
             long: Kosala misala nionso ya l’Etat oyo etali yango pona gestion ya ressource état to ya ressource statique ya ba services d’affaires
             short: Ba fonctions nionso oyo etali yango pona ko générer état
+            table:
+                long: Kosala code oyo etali state.table, oyo esalelamaka pona connexion ya base de données pe initialisation ya tableau tango service ebandi.
+                short: Generer code oyo etali state.table
         table:
             long: Misala nionso oyo etali yango ya kobimisa ba tableaux pona gestion ya ressource état to gestion ya ressource statique ya ba services d'affaires
             short: Ba fonctions nionso oyo etali yango pona ko générer ba tableaux

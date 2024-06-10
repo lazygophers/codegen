@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Fausia faila .goreleaser.yml mo le faʻatulagaina o meafaigaluega faʻamalolo
             short: Fausia le faila .goreleaser.yml
+        i18n:
+            long: Fausia faila i18n mo le fa'aulufaleina o mea faigaluega fa'ava-o-malo e tele gagana ma isi galuega
+            short: Fausia i18n faila
         impl:
             long: Fausia faila faʻatinoga mo le faʻatinoina o auaunaga tau pisinisi
             short: Fausia faila fa'atinoga
@@ -67,8 +70,17 @@ cli:
             short: Fausia le faila .pb.go
         short: Code generator
         state:
+            flags:
+                cache: Pe fa'aagaaga le fa'atupuina o le cache
+                config: Pe fa'atupuina le fa'ailoga e feso'ota'i ma le fa'atulagaina
+                db: Pe fa'aagaaga le fa'atupuina o fa'amaumauga e feso'ota'i fa'amaumauga
+                i18n: Pe fa'aagaaga le fa'atupuga e feso'ota'i gagana e tele (o le fa'atupulaga na'o le fa'aulufaleina o le setete ma isi anotusi, ma e le aofia ai le fa'aliliuga otometi o le tele o gagana. Afai e te mana'omia le fa'aliliuga otometi, fa'amolemole fa'aoga {{.Command}} e matamata ai fa'amatalaga)
+                table: Pe fa'aagaaga le fa'atupuina o fa'amaumauga e feso'ota'i fa'amaumauga
             long: Fausia galuega fa'afeso'ota'i uma a le setete mo punaoa fa'atulafonoina po'o le fa'atonuina o punaoa fa'apitoa o auaunaga tau pisinisi
             short: O galuega talafeagai uma mo le fausiaina o le setete
+            table:
+                long: Fausia le state.table code related, fa'aoga mo feso'ota'iga fa'amaumauga ma le amataga o le laulau pe a amata le tautua.
+                short: Fausia le state.table e feso'ota'i code
         table:
             long: O galuega fa'afeso'ota'i uma o le fa'atupuina o laulau mo puna'oa fa'apitoa po'o le fa'atonuina o puna'oa fa'apitoa o auaunaga tau pisinisi
             short: O galuega fa'atatau uma mo le fa'atupuina o laulau

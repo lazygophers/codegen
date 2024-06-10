@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generați fișierul .goreleaser.yml pentru configurarea instrumentelor de lansare
             short: Generați fișierul .goreleaser.yml
+        i18n:
+            long: Generați fișiere i18n pentru inițializarea truselor de instrumente legate de internaționalizare în mai multe limbi și a altor funcții
+            short: Generați fișierul i18n
         impl:
             long: Generați fișiere de implementare pentru implementarea serviciilor de afaceri
             short: Generați fișiere de implementare
@@ -67,8 +70,17 @@ cli:
             short: Generați fișierul .pb.go
         short: Generator de cod
         state:
+            flags:
+                cache: Dacă se activează generarea legată de cache
+                config: Dacă se generează cod legat de configurație
+                db: Dacă se activează generarea bazei de date legate de baze de date
+                i18n: Dacă se activează generarea legată de mai multe limbi (generarea include doar inițializarea stării și alt conținut și nu include traducerea automată a mai multor limbi. Dacă aveți nevoie de traducere automată, utilizați {{.Command}} pentru a vedea detalii)
+                table: Dacă se activează generarea bazei de date legate de baze de date
             long: Generați toate funcțiile conexe de stat pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
             short: Toate funcțiile relevante pentru generarea stării
+            table:
+                long: Generați cod asociat state.table, utilizat pentru conexiunea la baza de date și inițializarea tabelului atunci când serviciul este pornit.
+                short: Generați codul de stat.table
         table:
             long: Toate funcțiile conexe de generare a tabelelor pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
             short: Toate funcțiile conexe pentru generarea tabelelor

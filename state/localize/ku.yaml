@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Ji bo veavakirina amûrên berdanê pelê .goreleaser.yml biafirînin
             short: Pelê .goreleaser.yml çêbike
+        i18n:
+            long: Pelên i18n ji bo destpêkirina amûranên têkildar ên navneteweyîbûna pirzimanî û fonksiyonên din biafirînin
+            short: Pelê i18n çêbikin
         impl:
             long: Ji bo pêkanîna karûbarên karsaziyê pelên pêkanînê biafirînin
             short: Pelên pêkanînê biafirînin
@@ -67,8 +70,17 @@ cli:
             short: Pelê .pb.go çêbike
         short: jeneratorê kodê
         state:
+            flags:
+                cache: Ma dê nifşê-girêdayî cache çalak bike
+                config: Ma ji bo afirandina koda-girêdayî veavakirina
+                db: Ma dê hilberîna databasê ya girêdayî databasê çalak bike
+                i18n: Ma ji bo çalakkirina nifşa pêwendîdar bi pirzimanî (nifş tenê destpêkkirina dewletê û naverokên din dihewîne, û wergera otomatîkî ya pir zimanan nahewîne. Ger hewcedariya we bi wergera otomatîkî hebe, ji kerema xwe {{.Ferman}} bikar bînin da ku hûrguliyan bibînin)
+                table: Ma dê hilberîna databasê ya girêdayî databasê çalak bike
             long: Hemî fonksiyonên têkildar ên dewletê ji bo çavkaniya dewletparêz an rêveberiya çavkaniya statîk a karûbarên karsaziyê biafirînin
             short: Hemî fonksiyonên têkildar ji bo hilberîna dewletê
+            table:
+                long: Koda girêdayî state.table biafirîne, ji bo girêdana databasê û destpêkirina tabloyê dema ku karûbar dest pê dike tê bikar anîn.
+                short: Koda girêdayî state.table biafirîne
         table:
             long: Hemî fonksiyonên têkildar ên hilberîna tabloyan ji bo çavkaniya dewletparêz an rêveberiya çavkaniya statîk a karûbarên karsaziyê
             short: Hemî fonksiyonên têkildar ji bo hilberîna tabloyan

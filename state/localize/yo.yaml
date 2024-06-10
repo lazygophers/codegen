@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Ṣe ina .goreleaser.yml faili fun iṣeto ti awọn irinṣẹ idasilẹ
             short: Ṣe ina .goreleaser.yml faili
+        i18n:
+            long: Ṣe ina awọn faili i18n fun ipilẹṣẹ ti awọn ohun elo irinṣẹ ti o ni ibatan si ilu okeere ti ede pupọ ati awọn iṣẹ miiran
+            short: Ṣe ina i18n faili
         impl:
             long: Ṣẹda awọn faili imuse fun imuse awọn iṣẹ iṣowo
             short: Ṣe ina imuse awọn faili
@@ -67,8 +70,17 @@ cli:
             short: Ṣe ina .pb.go faili
         short: Code monomono
         state:
+            flags:
+                cache: Boya lati jeki kaṣe-jẹmọ iran
+                config: Boya lati se ina iṣeto ni-jẹmọ koodu
+                db: Boya lati jeki database-jẹmọ database iran
+                i18n: Boya lati mu iran ti o jọmọ ede pupọ ṣiṣẹ (iran naa pẹlu ipilẹṣẹ ipinlẹ nikan ati akoonu miiran, ko si pẹlu itumọ aladaaṣe ti awọn ede pupọ. Ti o ba nilo itumọ aladaaṣe, jọwọ lo {{.Aṣẹ}} lati wo awọn alaye)
+                table: Boya lati jeki database-jẹmọ database iran
             long: Ṣe ipilẹṣẹ gbogbo awọn iṣẹ ti o ni ibatan ti ipinlẹ fun awọn orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
             short: Gbogbo awọn iṣẹ ti o yẹ fun ipilẹṣẹ ipo
+            table:
+                long: Ṣe ipilẹṣẹ koodu ti o ni ibatan state.table, ti a lo fun asopọ data data ati ipilẹṣẹ tabili nigbati iṣẹ naa ba bẹrẹ.
+                short: Ṣe ina state.table koodu jẹmọ
         table:
             long: Gbogbo awọn iṣẹ ti o ni ibatan ti awọn tabili ipilẹṣẹ fun orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
             short: Gbogbo jẹmọ awọn iṣẹ fun ti o npese tabili

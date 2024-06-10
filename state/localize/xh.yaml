@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Yenza ifayile ye.goreleaser.yml yoqwalaselo lwezixhobo zokukhulula
             short: Yenza ifayile ye.goreleaser.yml
+        i18n:
+            long: Yenza iifayile ze-i18n ukuze kuqaliswe ukusetyenziswa kwezixhobo zezixhobo zeelwimi ezininzi ezinxulumeneyo kunye neminye imisebenzi
+            short: Yenza ifayile ye-i18n
         impl:
             long: Ukuvelisa iifayile zokuphumeza ukuphunyezwa kweenkonzo zoshishino
             short: Yenza iifayile zokuphunyezwa
@@ -67,8 +70,17 @@ cli:
             short: Yenza ifayile ye.pb.go
         short: Ikhowudi generator
         state:
+            flags:
+                cache: Nokuba ngaba kwenziwe ukuveliswa okunxulumene necache
+                config: Nokuba ngaba kwenziwe ikhowudi enxulumene noqwalaselo
+                db: Nokuba ngaba kwenziwe ukuveliswa kwedatha enxulumene nesiseko sedatha
+                i18n: Ingaba ukwenza isizukulwana esinxulumene kwiilwimi ezininzi (isizukulwana siquka kuphela ukuqaliswa korhulumente kunye nomnye umxholo, kwaye asibandakanyi uguqulelo oluzenzekelayo lweelwimi ezininzi. Ukuba ufuna uguqulelo oluzenzekelayo, nceda usebenzise {{.Command}} ukujonga iinkcukacha)
+                table: Nokuba ngaba kwenziwe ukuveliswa kwedatha enxulumene nesiseko sedatha
             long: Ukuvelisa yonke imisebenzi enxulumeneyo karhulumente ukulungiselela izixhobo ezisemthethweni okanye ulawulo lwemithombo engatshintshiyo yeenkonzo zoshishino
             short: Yonke imisebenzi efanelekileyo yokuvelisa urhulumente
+            table:
+                long: Veza ikhowudi ehambelana ne-state.table, esetyenziselwa uqhagamshelwano lwesiseko sedatha kunye nokuqaliswa kwetafile xa inkonzo iqaliswa.
+                short: Yenza ikhowudi ehambelana ne-state.table
         table:
             long: Yonke imisebenzi enxulumeneyo yokuvelisa iitheyibhile zezibonelelo ezisemgangathweni okanye ulawulo lwemithombo engatshintshiyo yeenkonzo zoshishino
             short: Yonke imisebenzi enxulumeneyo yokuvelisa iitafile

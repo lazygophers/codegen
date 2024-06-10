@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generare .goreleaser.yml lima pro configuratione emissionis instrumenta
             short: Generare .goreleaser.yml file
+        i18n:
+            long: Files generare i18n ad initializationem multi-linguae internationalisationum pertinentium instrumentorum communicationis socialis et aliorum functionum
+            short: Generare i18n file
         impl:
             long: Exsequendam files generare ad officia exsequendam negotiationem
             short: Generare files implementation
@@ -67,8 +70,17 @@ cli:
             short: Generare .pb.go file
         short: Code generans
         state:
+            flags:
+                cache: Utrum ad enable generationis relatas cache
+                config: Utrum configuratione actis codice generate
+                db: Utrum database relatas ad enable generation
+                i18n: Utrum multi-linguae generationis cognatae efficere possint (generatio solum statum initializationem et alia contenta includit, et translationem latae sententiae multarum linguarum non includit. Si translatione latae sententiae eges, quaeso utere {{.Command}} ad singula videnda)
+                table: Utrum database relatas ad enable generation
             long: Generare omnia munera publica pertinentia ad statum resource aut static subsidii administratione negotiorum officiorum
             short: Omnes munera ad statum generandi pertinet
+            table:
+                long: Generare statum.tabula cognata codicem, ad nexum datorum et ad mensam initializationem adhibita cum servitium incepit.
+                short: Generate state.table codice related
         table:
             long: Munera omnia cognata generandi mensas pro subsidio statorum vel subsidiorum administratione negotiorum officiorum
             short: Omnes munera cognata ad tabulas generandas

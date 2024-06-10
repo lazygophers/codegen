@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Kora .goreleaser.yml dosiye kugirango ibone ibikoresho byo kurekura
             short: Kora .goreleaser.yml dosiye
+        i18n:
+            long: Gukora dosiye ya i18n yo gutangiza indimi nyinshi mpuzamahanga mpuzamahanga zijyanye nibikoresho hamwe nibindi bikorwa
+            short: Gukora dosiye i18n
         impl:
             long: Gukora amadosiye yo gushyira mubikorwa serivisi zubucuruzi
             short: Gukora dosiye zo gushyira mubikorwa
@@ -67,8 +70,17 @@ cli:
             short: Gukora dosiye .pb.go
         short: Amashanyarazi
         state:
+            flags:
+                cache: Niba ushobora gukora cache ijyanye nigisekuru
+                config: Niba kubyara iboneza bijyanye na code
+                db: Niba ushobora gukora data base ijyanye nububiko
+                i18n: Niba ushobora gukora ururimi rwinshi rujyanye nigisekuru (igisekuru kirimo gusa gutangiza leta nibindi bikubiyemo, kandi ntabwo bikubiyemo guhinduranya mu buryo bwikora bwindimi nyinshi. Niba ukeneye ibisobanuro byikora, nyamuneka koresha {{.Ibicuruzwa}} kugirango urebe ibisobanuro)
+                table: Niba ushobora gukora data base ijyanye nububiko
             long: Kubyara ibikorwa byose bifitanye isano na leta kubutunzi bwa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
             short: Ibikorwa byose bijyanye no kubyara leta
+            table:
+                long: Kubyara leta.ibisobanuro bifitanye isano na code, ikoreshwa muguhuza data base no gutangiza imbonerahamwe mugihe serivisi itangiye.
+                short: Gukora leta.kode ifitanye isano
         table:
             long: Ibikorwa byose bifitanye isano no gutanga imbonerahamwe yumutungo wa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
             short: Imikorere yose ijyanye no kubyara imbonerahamwe

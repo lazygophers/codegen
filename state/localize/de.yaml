@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generieren Sie die Datei .goreleaser.yml zur Konfiguration der Release-Tools
             short: Generieren Sie die Datei .goreleaser.yml
+        i18n:
+            long: Generieren Sie i18n-Dateien für die Initialisierung mehrsprachiger Internationalisierungs-bezogener Toolkits und anderer Funktionen
+            short: Generieren Sie eine i18n-Datei
         impl:
             long: Generieren Sie Implementierungsdateien für die Implementierung von Business Services
             short: Generieren Sie Implementierungsdateien
@@ -67,8 +70,17 @@ cli:
             short: Generieren Sie eine .pb.go-Datei
         short: Code Generator
         state:
+            flags:
+                cache: Ob die Cache-bezogene Generierung aktiviert werden soll
+                config: Ob konfigurationsbezogener Code generiert werden soll
+                db: Ob die datenbankbezogene Datenbankgenerierung aktiviert werden soll
+                i18n: Ob die mehrsprachige Generierung aktiviert werden soll (die Generierung umfasst nur die Statusinitialisierung und andere Inhalte und keine automatische Übersetzung mehrerer Sprachen. Wenn Sie eine automatische Übersetzung benötigen, verwenden Sie bitte {{.Command}}, um Details anzuzeigen.)
+                table: Ob die datenbankbezogene Datenbankgenerierung aktiviert werden soll
             long: Generieren Sie alle zugehörigen Statusfunktionen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
             short: Alle relevanten Funktionen zur Zustandsgenerierung
+            table:
+                long: Generieren Sie state.table-bezogenen Code, der für die Datenbankverbindung und die Tabelleninitialisierung verwendet wird, wenn der Dienst gestartet wird.
+                short: Generieren Sie state.table-bezogenen Code
         table:
             long: Alle zugehörigen Funktionen zur Generierung von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
             short: Alle zugehörigen Funktionen zur Tabellenerstellung

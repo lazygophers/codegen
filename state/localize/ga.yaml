@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Gin comhad .goreleaser.yml chun uirlisí scaoilte a chumrú
             short: Gin comhad .goreleaser.yml
+        i18n:
+            long: Gin comhaid i18n chun uirlisí uirlisí iltheangacha a bhaineann le hidirnáisiúnú agus feidhmeanna eile a thionscnamh
+            short: Gin comhad i18n
         impl:
             long: Comhaid cur chun feidhme a ghiniúint chun seirbhísí gnó a chur i bhfeidhm
             short: Gin comhaid feidhmithe
@@ -67,8 +70,17 @@ cli:
             short: Gin comhad .pb.go
         short: Gineadóir cód
         state:
+            flags:
+                cache: Cibé an féidir giniúint a bhaineann le taisce a chumasú
+                config: Cibé an ndéanfar cód a bhaineann le cumraíocht a ghiniúint
+                db: Cibé an féidir giniúint bunachar sonraí a bhaineann le bunachar sonraí a chumasú
+                i18n: Cibé an féidir giniúint iltheanga a chumasú (ní áirítear leis an nglúin ach inisealú stáit agus inneachar eile, agus ní chuimsítear aistriúchán uathoibríoch ar iliomad teangacha. Má theastaíonn aistriúchán uathoibríoch uait, bain úsáid as {{.Command}} chun sonraí a fheiceáil)
+                table: Cibé an féidir giniúint bunachar sonraí a bhaineann le bunachar sonraí a chumasú
             long: Gach feidhm ghaolmhar stáit a ghiniúint le haghaidh acmhainní státseirbhíse nó acmhainní statacha a bhainistiú ar sheirbhísí gnó
             short: Na feidhmeanna ábhartha go léir maidir le stát giniúna
+            table:
+                long: Gin cód a bhaineann le state.table, a úsáidtear chun bunachar sonraí a nascadh agus tábla a thosú nuair a chuirtear tús leis an tseirbhís.
+                short: Gin cód gaolmhar state.table
         table:
             long: Na feidhmeanna gaolmhara go léir a bhaineann le táblaí giniúna do bhainistiú státseirbhíseach acmhainní nó acmhainní statacha seirbhísí gnó
             short: Na feidhmeanna go léir a bhaineann le táblaí a ghiniúint
