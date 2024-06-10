@@ -82,24 +82,6 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 
 	log.Infof("gen impl action %s", rpc.genOption.Action)
 
-	// TODO: 缓存
-	goFile, err := ParseGoFile(path)
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
-	}
-
-	for _, goFunc := range goFile.funcs {
-		if goFunc.RecvType != "" {
-			continue
-		}
-
-		if goFunc.Name == rpc.Name {
-			pterm.Warning.Printfln("%s is exist, skip generate", rpc.Name)
-			return nil
-		}
-	}
-
 	args := map[string]any{
 		"PB":           pb,
 		"RpcName":      rpc.Name,
@@ -301,7 +283,36 @@ func GenerateImpl(pb *PbPackage) (err error) {
 		return err
 	}
 
+	goPackage, err := ParseGoDir(GetPath(PathTypeImpl, pb))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	matchFunc := func(rpc *PbRPC) bool {
+		for _, goFuncNode := range goPackage["impl"].FuncMap {
+			goFunc := goFuncNode.goFunc
+
+			if goFunc.RecvType != "" {
+				continue
+			}
+
+			if goFunc.Name == rpc.Name {
+				pterm.Warning.Printfln("%s is exist, skip generate", rpc.Name)
+				return true
+			}
+		}
+
+		return false
+	}
+
 	for _, rpc := range pb.RPCs() {
+		//path := filepath.Join(GetPath(PathTypeImpl, pb), rpc.genOption.GenTo+".go")
+
+		if matchFunc(rpc) {
+			continue
+		}
+
 		err = generateImpl(pb, rpc)
 		if err != nil {
 			log.Errorf("err:%v", err)

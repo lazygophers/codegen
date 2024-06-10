@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Sürüm araçlarının yapılandırılması için .goreleaser.yml dosyası oluşturun
             short: .goreleaser.yml dosyasını oluşturun
+        i18n:
+            long: Çok dilli uluslararasılaştırmayla ilgili araç takımlarının ve diğer işlevlerin başlatılması için i18n dosyaları oluşturun
+            short: i18n dosyası oluştur
         impl:
             long: İş hizmetlerinin uygulanması için uygulama dosyaları oluşturun
             short: Uygulama dosyaları oluşturun
@@ -67,8 +70,17 @@ cli:
             short: .pb.go dosyasını oluştur
         short: Kod üreteci
         state:
+            flags:
+                cache: Önbellekle ilgili oluşturmanın etkinleştirilip etkinleştirilmeyeceği
+                config: Yapılandırmayla ilgili kodun oluşturulup oluşturulmayacağı
+                db: Veritabanıyla ilgili veritabanı oluşturmanın etkinleştirilip etkinleştirilmeyeceği
+                i18n: Çoklu dille ilgili oluşturmanın etkinleştirilip etkinleştirilmeyeceği (oluşturma yalnızca durum başlatmayı ve diğer içerikleri içerir ve birden fazla dilin otomatik çevirisini içermez. Otomatik çeviriye ihtiyacınız varsa, ayrıntıları görüntülemek için lütfen {{.Command}} kullanın)
+                table: Veritabanıyla ilgili veritabanı oluşturmanın etkinleştirilip etkinleştirilmeyeceği
             long: İş hizmetlerinin durum bilgisi olan kaynak veya statik kaynak yönetimi için tüm ilgili durum işlevlerini oluşturun
             short: Durum oluşturmaya yönelik tüm ilgili işlevler
+            table:
+                long: Hizmet başlatıldığında veritabanı bağlantısı ve tablonun başlatılması için kullanılan state.table ile ilgili kodu oluşturun.
+                short: state.table ile ilgili kod oluşturun
         table:
             long: İş hizmetlerinin durum bilgisi olan kaynak veya statik kaynak yönetimi için tablo oluşturmayla ilgili tüm işlevler
             short: Tablo oluşturmaya yönelik tüm ilgili işlevler

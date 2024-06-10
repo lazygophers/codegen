@@ -10,6 +10,13 @@ import (
 )
 
 func GenerateCache(pb *PbPackage) (err error) {
+	pterm.Info.Printfln("try generate state.cache")
+
+	if !state.Config.State.Cache {
+		pterm.Warning.Printfln("state.cache is disable generation, skipping generation")
+		return nil
+	}
+
 	err = initStateDirectory(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)

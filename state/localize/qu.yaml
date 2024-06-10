@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: .goreleaser.yml willañiqita paqarichiy, kacharinapaq yanapakuykunata wakichinapaq
             short: .goreleaser.yml willañiqita paqarichiy
+        i18n:
+            long: i18n willakuykunata ruway achka simi internacionalización kaqwan tupaq yanapakuykuna chaymanta wak ruwanakuna qallariypaq
+            short: i18n willañiqita paqarichiy
         impl:
             long: Negocio serviciokuna ruwanapaq implementacion archivokuna ruway
             short: Ruway qillqakunata paqarichiy
@@ -67,8 +70,17 @@ cli:
             short: .pb.go willañiqita paqarichiy
         short: Código generador nisqa
         state:
+            flags:
+                cache: Caché-wan tupaq miray atichinapaqchu icha manachu
+                config: Wakichiywan tupaq codigo paqarichinapaqchu icha manachu
+                db: Willayta waqaychanawan tupaq willay tantana mirachiyta atichinapaqchu icha manachu
+                i18n: Sichus achka simikunawan tupaq miray atichinapaq (mirayqa estado qallariylla huk contenidokunallatam churan, manataqmi achka simikuna kikillanmanta tikrayta churanchu. Kikinmanta tikrayta necesitanki chayqa, ama hina kaspa {{.Command}} llamk'achiy detallekunata qhawanaykipaq)
+                table: Willayta waqaychanawan tupaq willay tantana mirachiyta atichinapaqchu icha manachu
             long: Llapan tupaq ruwanakuna estado kaqmanta paqarichiy estadoyuq recursopaq utaq estático recurso kamachiypaq negocio yanapakuykunamanta
             short: Llapan tupaq ruwaykuna estado paqarichinanpaq
+            table:
+                long: state.table kaqwan tupaq codigo ruway, willaypa tiyapuynin tinkinapaq chaymanta tabla qallariypaq llamk'achisqa mayk'aq yanapakuy qallarisqa.
+                short: Estado.tablawan tupaq codigota paqarichiy
         table:
             long: Llapan tupaq ruwanakuna tablakuna ruwaymanta estadoyuq recursopaq utaq estático recurso kamachiypaq negocio yanapakuykunamanta
             short: Tukuy tupaq ruwanakuna tablakuna paqarichiypaq

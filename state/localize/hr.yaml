@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generirajte datoteku .goreleaser.yml za konfiguraciju alata za izdavanje
             short: Generiraj datoteku .goreleaser.yml
+        i18n:
+            long: Generirajte i18n datoteke za inicijalizaciju alata povezanih s višejezičnom internacionalizacijom i drugih funkcija
+            short: Generiraj i18n datoteku
         impl:
             long: Generirati implementacijske datoteke za implementaciju poslovnih usluga
             short: Generirajte implementacijske datoteke
@@ -67,8 +70,17 @@ cli:
             short: Generirajte .pb.go datoteku
         short: Generator koda
         state:
+            flags:
+                cache: Treba li omogućiti generiranje povezano s predmemorijom
+                config: Treba li generirati kod povezan s konfiguracijom
+                db: Treba li omogućiti generiranje baze podataka vezano uz bazu podataka
+                i18n: Treba li omogućiti višejezično generiranje (generiranje uključuje samo inicijalizaciju stanja i drugi sadržaj, a ne uključuje automatsko prevođenje više jezika. Ako vam je potreban automatski prijevod, upotrijebite {{.Command}} za pregled pojedinosti)
+                table: Treba li omogućiti generiranje baze podataka vezano uz bazu podataka
             long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
             short: Sve relevantne funkcije za generiranje stanja
+            table:
+                long: Generirajte kod koji se odnosi na state.table, koji se koristi za povezivanje baze podataka i inicijalizaciju tablice kada se usluga pokrene.
+                short: Generirajte kod koji se odnosi na stanje.tablice
         table:
             long: Sve povezane funkcije generiranja tablica za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
             short: Sve povezane funkcije za generiranje tablica

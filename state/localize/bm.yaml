@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: .goreleaser.yml file dilan walasa ka bɔli baarakɛminɛnw labɛn
             short: .goreleaser.yml filen dilan
+        i18n:
+            long: i18n filew labɛn walasa ka kan caman diɲɛnatigɛ-minɛnw daminɛ minnu bɛ tali kɛ baarakɛminɛnw na ani baara wɛrɛw
+            short: I18n file (file i18n) dilan
         impl:
             long: Ka waleyali dosiyew labɛn jagokɛlaw ka baarakɛminɛnw waleyali kama
             short: Baarakɛcogo dosiyew labɛn
@@ -67,8 +70,17 @@ cli:
             short: .pb.go filen dilan
         short: Kode jɛnɛrato
         state:
+            flags:
+                cache: Yala a bɛ se ka kɛ sababu ye ka cache-related generation (cache-related generation) kɛ
+                config: Yala ka kode min bɛ tali kɛ labɛncogo la, o labɛn
+                db: Yala ka se ka kunnafonidilanw ni kunnafonidilanw bɔli daminɛ
+                i18n: Yala ka kan caman ni ɲɔgɔn cɛ bɔnsɔn daminɛni (jyɛnnatigɛ bɛ jamana daminɛni dɔrɔn de la ani kɔnɔko wɛrɛw, wa a tɛ kan caman bamanankan baarakɛcogo otomatiki la. N’i mago bɛ otomatiki bamanankan na, i ka baara kɛ ni {{.Command}} ye walasa ka kunnafoni wɛrɛw lajɛ)
+                table: Yala ka se ka kunnafonidilanw ni kunnafonidilanw bɔli daminɛ
             long: Jamana ka baara minnu bɛ tali kɛ o la, olu bɛɛ labɛn ka ɲɛsin jamana ka nafolo maracogo ma walima nafolo jɔlen marali ma jagokɛlaw ka baarakɛminɛnw na
             short: Baarakɛcogo minnu bɛ tali kɛ o bɛɛ la walasa ka jamana lawuli
+            table:
+                long: Kode min bɛ tali kɛ state.table la, o labɛn, min bɛ kɛ ka kunnafonidilanw ni tabali daminɛni kɛ ni baara daminɛna.
+                short: Kode min bɛ tali kɛ state.table la, o lawuli
         table:
             long: Baara bɛɛ minnu bɛ tali kɛ o la, n’o ye ka tabali dilan ka ɲɛsin nafolo maracogo ma walima nafolo maracogo jɔlen ma jagokɛlaw ka baarakɛminɛnw na
             short: Baara minnu bɛ tali kɛ ɲɔgɔn na, olu bɛɛ ye tabali dilancogo ye

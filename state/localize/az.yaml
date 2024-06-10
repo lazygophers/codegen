@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Buraxılış alətlərinin konfiqurasiyası üçün .goreleaser.yml faylı yaradın
             short: .goreleaser.yml faylı yaradın
+        i18n:
+            long: Çoxdilli beynəlmiləlləşdirmə ilə bağlı alət dəstlərinin və digər funksiyaların işə salınması üçün i18n faylları yaradın
+            short: i18n faylını yaradın
         impl:
             long: Biznes xidmətlərinin həyata keçirilməsi üçün icra faylları yaradın
             short: İcra faylları yaradın
@@ -67,8 +70,17 @@ cli:
             short: .pb.go faylı yaradın
         short: Kod generatoru
         state:
+            flags:
+                cache: Keşlə əlaqəli generasiyanın aktiv edilib-edilməməsi
+                config: Konfiqurasiya ilə əlaqəli kodun yaradılıb-yaratılmaması
+                db: Verilənlər bazası ilə əlaqəli verilənlər bazası yaradılmasının aktiv edilib-edilməməsi
+                i18n: Çox dillə əlaqəli generasiyanın aktiv edilib-edilməməsi (nəsil yalnız dövlət başlanğıcını və digər məzmunu ehtiva edir və birdən çox dilin avtomatik tərcüməsini ehtiva etmir. Avtomatik tərcüməyə ehtiyacınız varsa, təfərrüatlara baxmaq üçün {{.Command}} istifadə edin)
+                table: Verilənlər bazası ilə əlaqəli verilənlər bazası yaradılmasının aktiv edilib-edilməməsi
             long: Biznes xidmətlərinin dövlət resurs və ya statik resurs idarə edilməsi üçün dövlətin bütün əlaqəli funksiyalarını yaradın
             short: Dövlət yaratmaq üçün bütün müvafiq funksiyalar
+            table:
+                long: Xidmət işə salındıqda verilənlər bazası bağlantısı və cədvəlin işə salınması üçün istifadə edilən state.table ilə əlaqəli kodu yaradın.
+                short: State.table əlaqəli kodu yaradın
         table:
             long: Dövlət resursu və ya biznes xidmətlərinin statik resurslarının idarə edilməsi üçün cədvəllərin yaradılması ilə əlaqəli bütün funksiyalar
             short: Cədvəl yaratmaq üçün bütün əlaqəli funksiyalar

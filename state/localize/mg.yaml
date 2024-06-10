@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Mamorona rakitra .goreleaser.yml ho an'ny fanamboarana fitaovana famoahana
             short: Mamorona rakitra .goreleaser.yml
+        i18n:
+            long: Mamorona rakitra i18n ho fanombohana ireo fitaovana mifandraika amin'ny iraisam-pirenena amin'ny fiteny maro sy asa hafa
+            short: Mamorona rakitra i18n
         impl:
             long: Mamorona rakitra fampiharana ho an'ny fampiharana ny serivisy fandraharahana
             short: Mamorona rakitra fampiharana
@@ -67,8 +70,17 @@ cli:
             short: Mamorona rakitra .pb.go
         short: Mpamorona kaody
         state:
+            flags:
+                cache: Na azo atao ny famokarana mifandraika amin'ny cache
+                config: Na hamorona kaody mifandraika amin'ny fanamafisana
+                db: Na azo atao ny mamorona angon-drakitra mifandraika amin'ny angona
+                i18n: Na azo atao ny mamorona taranaka mifandraika amin'ny fiteny maro (ny taranaka dia tsy misy afa-tsy fanombohana fanjakana sy votoaty hafa, ary tsy ahitana fandikana mandeha ho azy amin'ny fiteny maro. Raha mila fandikana mandeha ho azy ianao dia ampiasao ny {{.Command}} raha hijery ny antsipiriany)
+                table: Na azo atao ny mamorona angon-drakitra mifandraika amin'ny angona
             long: Mamorona asa rehetra mifandraika amin'ny fanjakana ho an'ny fitantanana loharanon-karena na static amin'ny serivisy fandraharahana
             short: Ny asa rehetra mifandraika amin'ny famoronana fanjakana
+            table:
+                long: Mamorona kaody mifandraika amin'ny state.table, ampiasaina amin'ny fampifandraisana angon-drakitra sy fanombohana latabatra rehefa manomboka ny serivisy.
+                short: Mamorona code mifandraika amin'ny state.table
         table:
             long: Ny asa rehetra mifandraika amin'ny famoronana latabatra ho an'ny loharanon-karena ara-panjakana na fitantanana loharanon-karena static amin'ny serivisy fandraharahana
             short: Ny fiasa rehetra mifandraika amin'ny famoronana latabatra

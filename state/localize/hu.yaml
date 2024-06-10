@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: A kiadási eszközök konfigurálásához hozzon létre .goreleaser.yml fájlt
             short: Hozzon létre .goreleaser.yml fájlt
+        i18n:
+            long: Hozzon létre i18n fájlokat a többnyelvű nemzetköziesítéssel kapcsolatos eszközkészletek és egyéb funkciók inicializálásához
+            short: i18n fájl létrehozása
         impl:
             long: Implementációs fájlok létrehozása az üzleti szolgáltatások megvalósításához
             short: Implementációs fájlok létrehozása
@@ -67,8 +70,17 @@ cli:
             short: Hozzon létre .pb.go fájlt
         short: Kódgenerátor
         state:
+            flags:
+                cache: A gyorsítótárral kapcsolatos generálás engedélyezése
+                config: A konfigurációhoz kapcsolódó kód létrehozása
+                db: Engedélyezze-e az adatbázishoz kapcsolódó adatbázis-generálást
+                i18n: Engedélyezze-e a többnyelvű generálást (a generálás csak állapot inicializálást és egyéb tartalmat tartalmaz, több nyelv automatikus fordítását nem tartalmazza. Ha automatikus fordításra van szüksége, kérjük, használja a {{.Command}} parancsot a részletek megtekintéséhez)
+                table: Engedélyezze-e az adatbázishoz kapcsolódó adatbázis-generálást
             long: Az állapot összes kapcsolódó funkciójának létrehozása az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez
             short: Az állapot generálásához szükséges összes funkció
+            table:
+                long: Állapot.táblázattal kapcsolatos kód generálása, amely adatbázis-kapcsolathoz és a tábla inicializálásához használatos a szolgáltatás indításakor.
+                short: Állapot.táblázattal kapcsolatos kód generálása
         table:
             long: Az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez szükséges táblák előállításához kapcsolódó összes funkció
             short: Minden kapcsolódó függvény táblázatok generálásához

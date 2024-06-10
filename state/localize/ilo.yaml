@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Mangpataud ti .goreleaser.yml a papeles para iti panagisaad kadagiti ramit ti pannakairuar
             short: Mangpataud ti .goreleaser.yml a papeles
+        i18n:
+            long: Mangpataud kadagiti i18n a papeles para iti panangrugi kadagiti adu a pagsasao nga internasionalisasion a mainaig a toolkit ken dagiti dadduma pay a panagandar
+            short: Mangpataud ti i18n a file
         impl:
             long: Mangpataud kadagiti file ti pannakaipatungpal para iti pannakaipatungpal dagiti serbisio ti negosio
             short: Mangpataud kadagiti file ti pannakaipatungpal
@@ -67,8 +70,17 @@ cli:
             short: Mangpataud ti .pb.go a file
         short: Kodigo nga generator
         state:
+            flags:
+                cache: No mapalubosan ti cache-related generation
+                config: No mangpataud ti kodigo a mainaig iti konfigurasion
+                db: No mapalubosan ti panagpataud ti database a mainaig iti database
+                i18n: No mapalubosan ti adu a pagsasao a mainaig a henerasion (ti henerasion ket mangiraman laeng ti panangrugi ti estado ken dagiti dadduma pay a linaon, ken saan a mangiraman ti automatiko a panagipatarus kadagiti adu a pagsasao. No kasapulam ti automatiko a panagipatarus, pangngaasim ta usarem ti {{.Command}} tapno makita dagiti detalye)
+                table: No mapalubosan ti panagpataud ti database a mainaig iti database
             long: Mangpataud kadagiti amin a mainaig a panagandar ti estado para iti stateful a rekurso wenno estatiko a panagmanehar ti rekurso dagiti serbisio ti negosio
             short: Amin a mainaig a panagandar para iti panagpataud ti estado
+            table:
+                long: Mangpataud ti kodigo a mainaig iti state.table, a maus-usar para iti koneksion ti database ken panangrugi ti lamisaan no ti serbisio ket nairugi.
+                short: Mangpataud ti kodigo a mainaig iti state.table
         table:
             long: Amin a mainaig a panagandar ti panagpataud kadagiti lamisaan para iti stateful a rekurso wenno estatiko a panagmanehar ti rekurso dagiti serbisio ti negosio
             short: Amin a mainaig a panagandar para iti panagpataud kadagiti lamisaan

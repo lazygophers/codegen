@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Sortu .goreleaser.yml fitxategia kaleratzeko tresnen konfiguraziorako
             short: Sortu .goreleaser.yml fitxategia
+        i18n:
+            long: Sortu i18n fitxategiak hizkuntza anitzeko nazioartekotzeari lotutako tresna-tresnak eta beste funtzio batzuk hasieratzeko
+            short: Sortu i18n fitxategia
         impl:
             long: Enpresa-zerbitzuak ezartzeko ezarpen-fitxategiak sortzea
             short: Sortu ezarpen-fitxategiak
@@ -67,8 +70,17 @@ cli:
             short: Sortu .pb.go fitxategia
         short: Kode sortzailea
         state:
+            flags:
+                cache: Cachearekin erlazionatutako sorrera gaitu ala ez
+                config: Konfigurazioarekin lotutako kodea sortu behar den ala ez
+                db: Datu-basearekin erlazionatutako datu-baseen sorrera gaitu ala ez
+                i18n: Hizkuntza anitzeko erlazionatutako sorkuntza gaitu ala ez (sorkuntzak egoeraren hasierako hasiera eta bestelako edukia bakarrik barne hartzen du, eta ez du hizkuntza anitzen itzulpen automatikoa sartzen. Itzulpen automatikoa behar baduzu, erabili {{.Command}} xehetasunak ikusteko)
+                table: Datu-basearekin erlazionatutako datu-baseen sorrera gaitu ala ez
             long: Sortu egoera erlazionatutako funtzio guztiak enpresa-zerbitzuen baliabideen egoera edo baliabide estatikoen kudeaketarako
             short: Egoera sortzeko funtzio garrantzitsu guztiak
+            table:
+                long: Sortu state.table erlazionatutako kodea, datu-basea konektatzeko eta taula hasieratzeko erabiltzen dena zerbitzua abiarazten denean.
+                short: Sortu egoera.taularekin erlazionatutako kodea
         table:
             long: Taulak sortzeko erlazionatutako funtzio guztiak enpresa-zerbitzuen baliabideen egoera edo baliabide estatikoen kudeaketarako
             short: Taulak sortzeko erlazionatutako funtzio guztiak

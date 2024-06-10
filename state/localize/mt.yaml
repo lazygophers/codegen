@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Iġġenera fajl .gorelaser.yml għall-konfigurazzjoni ta 'għodod ta' rilaxx
             short: Iġġenera fajl .gorelaser.yml
+        i18n:
+            long: Iġġenera fajls i18n għall-inizjalizzazzjoni ta' settijiet ta' għodod relatati mal-internazzjonalizzazzjoni b'ħafna lingwi u funzjonijiet oħra
+            short: Iġġenera fajl i18n
         impl:
             long: Iġġenera fajls ta 'implimentazzjoni għall-implimentazzjoni ta' servizzi tan-negozju
             short: Iġġenera fajls ta' implimentazzjoni
@@ -67,8 +70,17 @@ cli:
             short: Iġġenera fajl .pb.go
         short: Ġeneratur tal-kodiċi
         state:
+            flags:
+                cache: Jekk tippermettix il-ġenerazzjoni relatata mal-cache
+                config: Jekk tiġġenerax kodiċi relatat mal-konfigurazzjoni
+                db: Jekk tippermettix il-ġenerazzjoni tad-database relatata mad-database
+                i18n: Jekk tippermettix ġenerazzjoni relatata b'diversi lingwi (il-ġenerazzjoni tinkludi biss inizjalizzazzjoni tal-istat u kontenut ieħor, u ma tinkludix traduzzjoni awtomatika ta' lingwi multipli. Jekk għandek bżonn traduzzjoni awtomatika, jekk jogħġbok uża {{.Kmand}} biex tara d-dettalji)
+                table: Jekk tippermettix il-ġenerazzjoni tad-database relatata mad-database
             long: Iġġenera l-funzjonijiet kollha relatati tal-istat għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
             short: Il-funzjonijiet kollha rilevanti għall-ġenerazzjoni tal-istat
+            table:
+                long: Iġġenera kodiċi relatat ma 'state.table, użat għall-konnessjoni tad-database u l-inizjalizzazzjoni tat-tabella meta jinbeda s-servizz.
+                short: Iġġenera stat.table kodiċi relatat
         table:
             long: Il-funzjonijiet kollha relatati ta 'ġenerazzjoni ta' tabelli għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
             short: Il-funzjonijiet kollha relatati għall-ġenerazzjoni ta' tabelli

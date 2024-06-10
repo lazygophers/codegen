@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Gere o arquivo .goreleaser.yml para configuração das ferramentas de lançamento
             short: Gerar arquivo .goreleaser.yml
+        i18n:
+            long: Gere arquivos i18n para inicialização de kits de ferramentas relacionados à internacionalização multilíngue e outras funções
+            short: Gerar arquivo i18n
         impl:
             long: Gerar arquivos de implementação para implementação de serviços de negócios
             short: Gerar arquivos de implementação
@@ -67,8 +70,17 @@ cli:
             short: Gerar arquivo .pb.go
         short: Gerador de código
         state:
+            flags:
+                cache: Se deve ativar a geração relacionada ao cache
+                config: Se deve gerar código relacionado à configuração
+                db: Se deve ativar a geração de banco de dados relacionada ao banco de dados
+                i18n: Se deseja ativar a geração relacionada a vários idiomas (a geração inclui apenas inicialização de estado e outros conteúdos, e não inclui tradução automática de vários idiomas. Se você precisar de tradução automática, use {{.Command}} para visualizar detalhes)
+                table: Se deve ativar a geração de banco de dados relacionada ao banco de dados
             long: Gere todas as funções de estado relacionadas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
             short: Todas as funções relevantes para gerar estado
+            table:
+                long: Gere código relacionado a state.table, usado para conexão de banco de dados e inicialização de tabela quando o serviço é iniciado.
+                short: Gerar código relacionado a state.table
         table:
             long: Todas as funções relacionadas à geração de tabelas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
             short: Todas as funções relacionadas para geração de tabelas

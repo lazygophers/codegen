@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Ģenerējiet .goreleaser.yml failu izlaišanas rīku konfigurēšanai
             short: Ģenerējiet .goreleaser.yml failu
+        i18n:
+            long: Ģenerējiet i18n failus, lai inicializētu ar vairāku valodu internacionalizāciju saistītos rīku komplektus un citas funkcijas
+            short: Ģenerējiet i18n failu
         impl:
             long: Ģenerēt ieviešanas failus biznesa pakalpojumu ieviešanai
             short: Ģenerējiet ieviešanas failus
@@ -67,8 +70,17 @@ cli:
             short: Ģenerējiet .pb.go failu
         short: Kodu ģenerators
         state:
+            flags:
+                cache: Vai iespējot ar kešatmiņu saistītu ģenerēšanu
+                config: Vai ģenerēt ar konfigurāciju saistītu kodu
+                db: Vai iespējot ar datu bāzi saistītu datu bāzes ģenerēšanu
+                i18n: Vai iespējot ar vairākām valodām saistītu ģenerēšanu (ģenerēšana ietver tikai stāvokļa inicializāciju un citu saturu, un neietver automātisku tulkošanu vairākām valodām. Ja jums ir nepieciešams automātiskais tulkojums, lūdzu, izmantojiet {{.Command}}, lai skatītu detalizētu informāciju)
+                table: Vai iespējot ar datu bāzi saistītu datu bāzes ģenerēšanu
             long: Ģenerējiet visas saistītās valsts funkcijas uzņēmējdarbības pakalpojumu statusa resursu vai statisku resursu pārvaldībai
             short: Visas attiecīgās funkcijas stāvokļa ģenerēšanai
+            table:
+                long: Ģenerējiet ar status.table saistītu kodu, ko izmanto datu bāzes savienojumam un tabulas inicializācijai, kad pakalpojums tiek startēts.
+                short: Ģenerēt ar statusu.table saistīto kodu
         table:
             long: Visas saistītās tabulu ģenerēšanas funkcijas statusa resursu vai statisko resursu pārvaldībai biznesa pakalpojumiem
             short: Visas saistītās funkcijas tabulu ģenerēšanai

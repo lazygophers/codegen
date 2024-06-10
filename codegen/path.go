@@ -19,6 +19,7 @@ const (
 	PathTypeStateConf
 	PathTypeStateCache
 	PathTypeStateState
+	PathTypeStateI18n
 
 	PathTypeImpl
 	PathTypeImplPath
@@ -72,6 +73,9 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeStateState:
 		return filepath.Join(GetPath(PathTypeState, pb), "state.go")
+
+	case PathTypeStateI18n:
+		return filepath.Join(GetPath(PathTypeState, pb), "i18n.go")
 
 	case PathTypeImpl:
 		return filepath.Join(GetPath(PathTypeInternal, pb), "impl")

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Générer le fichier .goreleaser.yml pour la configuration des outils de publication
             short: Générer le fichier .goreleaser.yml
+        i18n:
+            long: Générez des fichiers i18n pour l'initialisation des boîtes à outils liées à l'internationalisation multilingue et d'autres fonctions
+            short: Générer un fichier i18n
         impl:
             long: Générer des fichiers d'implémentation pour la mise en œuvre des services métiers
             short: Générer des fichiers d'implémentation
@@ -67,8 +70,17 @@ cli:
             short: Générer un fichier .pb.go
         short: Générateur de code
         state:
+            flags:
+                cache: S'il faut activer la génération liée au cache
+                config: S'il faut générer du code lié à la configuration
+                db: S'il faut activer la génération de bases de données liées à la base de données
+                i18n: S'il faut activer la génération multilingue (la génération inclut uniquement l'initialisation de l'état et d'autres contenus, et n'inclut pas la traduction automatique de plusieurs langues. Si vous avez besoin d'une traduction automatique, veuillez utiliser {{.Command}} pour afficher les détails)
+                table: S'il faut activer la génération de bases de données liées à la base de données
             long: Générer toutes les fonctions d'état associées pour la gestion des ressources avec état ou des ressources statiques des services métiers
             short: Toutes les fonctions pertinentes pour générer l'état
+            table:
+                long: Générez le code associé à state.table, utilisé pour la connexion à la base de données et l'initialisation de la table au démarrage du service.
+                short: Générer le code associé à state.table
         table:
             long: Toutes les fonctions associées à la génération de tables pour la gestion des ressources avec état ou des ressources statiques des services métiers
             short: Toutes les fonctions associées à la génération de tables

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Tạo tệp .goreleaser.yml để cấu hình các công cụ phát hành
             short: Tạo tệp .goreleaser.yml
+        i18n:
+            long: Tạo tệp i18n để khởi tạo bộ công cụ liên quan đến quốc tế hóa đa ngôn ngữ và các chức năng khác
+            short: Tạo tập tin i18n
         impl:
             long: Tạo các tệp triển khai để triển khai các dịch vụ kinh doanh
             short: Tạo tập tin triển khai
@@ -67,8 +70,17 @@ cli:
             short: Tạo tệp .pb.go
         short: Trình tạo mã
         state:
+            flags:
+                cache: Có bật tính năng tạo liên quan đến bộ đệm hay không
+                config: Có tạo mã liên quan đến cấu hình hay không
+                db: Có bật tính năng tạo cơ sở dữ liệu liên quan đến cơ sở dữ liệu hay không
+                i18n: Có bật tính năng tạo liên quan đến đa ngôn ngữ hay không (thế hệ chỉ bao gồm khởi tạo trạng thái và nội dung khác và không bao gồm dịch tự động nhiều ngôn ngữ. Nếu bạn cần dịch tự động, vui lòng sử dụng {{.Command}} để xem chi tiết)
+                table: Có bật tính năng tạo cơ sở dữ liệu liên quan đến cơ sở dữ liệu hay không
             long: Tạo ra tất cả các chức năng liên quan của trạng thái để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
             short: Tất cả các chức năng liên quan để tạo trạng thái
+            table:
+                long: Tạo mã liên quan đến state.table, được sử dụng để kết nối cơ sở dữ liệu và khởi tạo bảng khi dịch vụ được khởi động.
+                short: Tạo mã liên quan đến state.table
         table:
             long: Tất cả các chức năng liên quan đến việc tạo bảng để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
             short: Tất cả các hàm liên quan để tạo bảng

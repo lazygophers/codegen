@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Sugeneruokite .goreleaser.yml failą leidimo įrankių konfigūravimui
             short: Sugeneruokite .goreleaser.yml failą
+        i18n:
+            long: Generuokite i18n failus, skirtus kelių kalbų internacionalizavimo įrankių rinkiniams ir kitoms funkcijoms inicijuoti
+            short: Sukurkite i18n failą
         impl:
             long: Generuoti diegimo failus verslo paslaugoms įgyvendinti
             short: Generuokite diegimo failus
@@ -67,8 +70,17 @@ cli:
             short: Sugeneruokite .pb.go failą
         short: Kodų generatorius
         state:
+            flags:
+                cache: Ar įgalinti generavimą, susijusį su talpykla
+                config: Ar generuoti su konfigūracija susijusį kodą
+                db: Ar įgalinti su duomenų baze susijusių duomenų bazių generavimą
+                i18n: Ar įgalinti su keliomis kalbomis susijusį generavimą (generavimas apima tik būsenos inicijavimą ir kitą turinį, neapima automatinio kelių kalbų vertimo. Jei reikia automatinio vertimo, naudokite {{.Command}}, kad peržiūrėtumėte išsamią informaciją)
+                table: Ar įgalinti su duomenų baze susijusių duomenų bazių generavimą
             long: Generuoti visas susijusias valstybės funkcijas, skirtas verslo paslaugų būsenai arba statiniam išteklių valdymui
             short: Visos reikalingos būsenos generavimo funkcijos
+            table:
+                long: Sugeneruoti su status.table susijusį kodą, naudojamą duomenų bazės prisijungimui ir lentelės inicijavimui, kai paslauga paleidžiama.
+                short: Sukurti būseną.lentelę susijusį kodą
         table:
             long: Visos susijusios lentelių generavimo funkcijos, skirtos verslo paslaugų būsenai arba statiniam išteklių valdymui
             short: Visos susijusios lentelės generavimo funkcijos

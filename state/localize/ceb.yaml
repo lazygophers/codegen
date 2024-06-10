@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Paghimo og .goreleaser.yml file para sa pag-configure sa mga himan sa pagpagawas
             short: Paghimo og .goreleaser.yml file
+        i18n:
+            long: Paghimo og i18n nga mga file para sa pagsugod sa multi-language nga internasyonalisasyon nga may kalabutan nga mga toolkit ug uban pang mga gimbuhaton
+            short: Paghimo i18n file
         impl:
             long: Paghimo mga file sa pagpatuman alang sa pagpatuman sa mga serbisyo sa negosyo
             short: Paghimo mga file sa pagpatuman
@@ -67,8 +70,17 @@ cli:
             short: Paghimo og .pb.go file
         short: Generator sa code
         state:
+            flags:
+                cache: Kung himuon ba ang henerasyon nga may kalabotan sa cache
+                config: Maghimo ba og kodigo nga may kalabutan sa configuration
+                db: Kung mahimo ba ang paghimo sa database nga may kalabutan sa database
+                i18n: Kung i-enable ang multi-language related generation (ang henerasyon naglakip lang sa state initialization ug uban pang content, ug wala maglakip sa automatic translation sa daghang lengguwahe. Kung kinahanglan nimo ang automatic translation, palihog gamita ang {{.Command}} para tan-awon ang mga detalye)
+                table: Kung mahimo ba ang paghimo sa database nga may kalabutan sa database
             long: Paghimo sa tanan nga may kalabutan nga mga gimbuhaton sa estado alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
             short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa pagmugna sa estado
+            table:
+                long: Paghimo state.table related code, nga gigamit alang sa database connection ug table initialization sa diha nga ang serbisyo gisugdan.
+                short: Paghimo state.table related code
         table:
             long: Ang tanan nga may kalabutan nga mga gimbuhaton sa paghimo sa mga lamesa alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
             short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa paghimo og mga lamesa

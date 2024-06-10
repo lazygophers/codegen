@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Genereer .goreleaser.yml lêer vir konfigurasie van vrystelling gereedskap
             short: Genereer .goreleaser.yml-lêer
+        i18n:
+            long: Genereer i18n-lêers vir die inisialisering van multi-taal internasionalisering verwante gereedskapstelle en ander funksies
+            short: Genereer i18n-lêer
         impl:
             long: Genereer implementeringslêers vir die implementering van besigheidsdienste
             short: Genereer implementeringslêers
@@ -67,8 +70,17 @@ cli:
             short: Genereer .pb.go-lêer
         short: Kode kragopwekker
         state:
+            flags:
+                cache: Of kasverwante generering moontlik gemaak moet word
+                config: Of konfigurasieverwante kode te genereer
+                db: Of databasisverwante databasisgenerering geaktiveer moet word
+                i18n: Of om meertalige verwante generering te aktiveer (die generasie sluit slegs staatsinisiasie en ander inhoud in, en sluit nie outomatiese vertaling van veelvuldige tale in nie. As jy outomatiese vertaling benodig, gebruik asseblief {{.Command}} om besonderhede te sien)
+                table: Of databasisverwante databasisgenerering geaktiveer moet word
             long: Genereer alle verwante funksies van die staat vir staatkundige hulpbron- of statiese hulpbronbestuur van besigheidsdienste
             short: Alle relevante funksies vir die generering van staat
+            table:
+                long: Genereer state.table-verwante kode, gebruik vir databasisverbinding en tabelinitialisering wanneer die diens begin word.
+                short: Genereer state.table-verwante kode
         table:
             long: Alle verwante funksies van die generering van tabelle vir statiese hulpbron- of statiese hulpbronbestuur van besigheidsdienste
             short: Alle verwante funksies vir die generering van tabelle

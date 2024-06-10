@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Endla fayili ya .goreleaser.yml ya ku lulamisa switirhisiwa swo humesa
             short: Endla fayili ya .goreleaser.yml
+        i18n:
+            long: Endla tifayela ta i18n ta ku sungula ka switirhisiwa leswi fambelanaka na ku hlanganisiwa ka matiko ya misava ka tindzimi to tala na mintirho yin’wana
+            short: Endla fayili ya i18n
         impl:
             long: Ku tumbuluxa tifayela ta ku tirhisiwa ta ku tirhisiwa ka vukorhokeri bya bindzu
             short: Endla tifayela ta ku tirhisiwa
@@ -67,8 +70,17 @@ cli:
             short: Endla fayili ya .pb.go
         short: Muendli wa khodi
         state:
+            flags:
+                cache: Loko ku ri ku pfumelela ku tumbuluxiwa loku fambelanaka na cache
+                config: Leswaku ku endliwa khodi leyi fambelanaka na vuhlanganisi
+                db: Leswaku ku endliwa leswaku ku tumbuluxiwa ka database leyi fambelanaka na database
+                i18n: Loko ku ri ku pfumelela ku tumbuluxiwa loku fambelanaka na tindzimi to tala (xitukulwana xi katsa ntsena ku sunguriwa ka mfumo na nhundzu yin’wana, naswona a xi katsi vuhundzuluxi bya otomatiki bya tindzimi to tala. Loko u lava vuhundzuluxi bya otomatiki, hi kombela u tirhisa {{.Xileriso}} ku vona vuxokoxoko)
+                table: Leswaku ku endliwa leswaku ku tumbuluxiwa ka database leyi fambelanaka na database
             long: Ku tumbuluxa mintirho hinkwayo leyi fambelanaka ya mfumo ya switirhisiwa swa xiyimo kumbe vufambisi bya switirhisiwa leswi nga cinciki swa vukorhokeri bya bindzu
             short: Mintirho hinkwayo leyi faneleke ya ku tumbuluxa xiyimo
+            table:
+                long: Endla khodi leyi fambelanaka na state.table, leyi tirhisiwaka eka vuhlanganisi bya database na ku sunguriwa ka tafula loko vukorhokeri byi sungurile.
+                short: Endla khodi leyi fambelanaka na state.table
         table:
             long: Mintirho hinkwayo leyi fambelanaka ya ku tumbuluxa matafula ya switirhisiwa swa xiyimo kumbe vulawuri bya switirhisiwa leswi nga cinciki swa vukorhokeri bya bindzu
             short: Mintirho hinkwayo leyi fambelanaka yo tumbuluxa matafula

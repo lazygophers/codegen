@@ -8,11 +8,14 @@ import (
 )
 
 var cacheCmd = &cobra.Command{
-	Use:  "cache",
-	RunE: ranGenCache,
+	Use: "cache",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		state.Config.State.Cache = true
+		return runGenCache(cmd, args)
+	},
 }
 
-func ranGenCache(c *cobra.Command, args []string) (err error) {
+func runGenCache(c *cobra.Command, args []string) (err error) {
 	err = codegen.GenerateCache(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)

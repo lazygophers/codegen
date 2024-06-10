@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Vygenerujte súbor .goreleaser.yml na konfiguráciu nástrojov na uvoľnenie
             short: Vygenerujte súbor .goreleaser.yml
+        i18n:
+            long: Generujte súbory i18n na inicializáciu súprav nástrojov a iných funkcií súvisiacich s viacjazyčnou internacionalizáciou
+            short: Vygenerujte súbor i18n
         impl:
             long: Generovanie implementačných súborov pre implementáciu obchodných služieb
             short: Vytvorte implementačné súbory
@@ -67,8 +70,17 @@ cli:
             short: Vygenerujte súbor .pb.go
         short: Generátor kódu
         state:
+            flags:
+                cache: Či povoliť generovanie súvisiace s vyrovnávacou pamäťou
+                config: Či sa má generovať kód súvisiaci s konfiguráciou
+                db: Či povoliť generovanie databázy súvisiacej s databázou
+                i18n: Či povoliť generovanie súvisiace s viacerými jazykmi (generovanie zahŕňa iba inicializáciu stavu a ďalší obsah a nezahŕňa automatický preklad viacerých jazykov. Ak potrebujete automatický preklad, na zobrazenie podrobností použite {{.Command}})
+                table: Či povoliť generovanie databázy súvisiacej s databázou
             long: Generujte všetky súvisiace funkcie stavu pre stavové zdroje alebo statickú správu zdrojov podnikových služieb
             short: Všetky relevantné funkcie na generovanie stavu
+            table:
+                long: Vygenerujte kód súvisiaci so state.table, ktorý sa používa na pripojenie k databáze a inicializáciu tabuľky pri spustení služby.
+                short: Vygenerujte kód súvisiaci so stavom tabuľky
         table:
             long: Všetky súvisiace funkcie generovania tabuliek pre stavové zdroje alebo statickú správu zdrojov obchodných služieb
             short: Všetky súvisiace funkcie na generovanie tabuliek

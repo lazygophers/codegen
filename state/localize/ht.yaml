@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Jenere fichye .goreleaser.yml pou konfigirasyon zouti lage yo
             short: Jenere fichye .goreleaser.yml
+        i18n:
+            long: Jenere fichye i18n pou inisyalizasyon twous zouti ki gen rapò ak entènasyonalizasyon milti-lang ak lòt fonksyon
+            short: Jenere fichye i18n
         impl:
             long: Jenere dosye aplikasyon pou aplikasyon sèvis biznis yo
             short: Jenere dosye aplikasyon yo
@@ -67,8 +70,17 @@ cli:
             short: Jenere fichye .pb.go
         short: Kòd dèlko
         state:
+            flags:
+                cache: Kit pou pèmèt jenerasyon ki gen rapò ak kachèt
+                config: Kit pou jenere kòd ki gen rapò ak konfigirasyon
+                db: Kit pou pèmèt jenerasyon baz done ki gen rapò ak baz done
+                i18n: Kit pou pèmèt jenerasyon ki gen rapò ak plizyè lang (jenerasyon an gen ladan sèlman inisyalizasyon eta a ak lòt kontni, epi li pa enkli tradiksyon otomatik plizyè lang. Si ou bezwen tradiksyon otomatik, tanpri itilize {{.Command}} pou wè detay)
+                table: Kit pou pèmèt jenerasyon baz done ki gen rapò ak baz done
             long: Jenere tout fonksyon ki gen rapò nan eta pou resous eta oswa jesyon resous estatik nan sèvis biznis
             short: Tout fonksyon ki enpòtan pou jenere eta
+            table:
+                long: Jenere state.table kòd ki gen rapò, yo itilize pou koneksyon baz done ak inisyalizasyon tab lè sèvis la kòmanse.
+                short: Jenere state.table kòd ki gen rapò
         table:
             long: Tout fonksyon ki gen rapò ak jenere tab pou resous etatik oswa jesyon resous estatik nan sèvis biznis
             short: Tout fonksyon ki gen rapò pou jenere tab

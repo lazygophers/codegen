@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Mepụta faịlụ .goreleaser.yml maka nhazi ngwaọrụ ntọhapụ
             short: Mepụta faịlụ .goreleaser.yml
+        i18n:
+            long: Mepụta faịlụ i18n maka mmalite nke ngwa ọrụ metụtara mba ụwa ọtụtụ asụsụ yana ọrụ ndị ọzọ
+            short: Mepụta i18n faịlụ
         impl:
             long: Mepụta faịlụ mmejuputa maka mmejuputa ọrụ azụmahịa
             short: Mepụta faịlụ mmejuputa
@@ -67,8 +70,17 @@ cli:
             short: Mepụta faịlụ .pb.go
         short: Koodu generator
         state:
+            flags:
+                cache: Ma ọ ga-enyere ọgbọ metụtara cache aka
+                config: Ma ọ ga-ewepụta koodu metụtara nhazi
+                db: Ma ọ ga-enyere ọgbọ nchekwa data metụtara nchekwa data aka
+                i18n: Ma ọ ga-enyere ọgbọ metụtara asụsụ ọtụtụ (ọgbọ a gụnyere naanị mmalite steeti yana ọdịnaya ndị ọzọ, na anaghị agụnye ntụgharị asụsụ akpaka nke ọtụtụ asụsụ. Ọ bụrụ na ịchọrọ ntụgharị asụsụ akpaka, biko jiri {{.Command}} iji lelee nkọwa)
+                table: Ma ọ ga-enyere ọgbọ nchekwa data metụtara nchekwa data aka
             long: Mepụta ọrụ niile metụtara steeti maka akụrụngwa steeti ma ọ bụ njikwa akụrụngwa kwụ ọtọ nke ọrụ azụmaahịa
             short: Ọrụ niile dị mkpa maka ịmepụta steeti
+            table:
+                long: Mepụta koodu metụtara steeti.table, ejiri maka njikọ nchekwa data yana mmalite tebụl mgbe ọrụ malitere.
+                short: Mepụta koodu metụtara steeti.table
         table:
             long: Ọrụ niile metụtara nke iwepụta tebụl maka akụrụngwa steeti ma ọ bụ njikwa akụrụngwa kwụ ọtọ nke ọrụ azụmaahịa
             short: Ọrụ niile metụtara ya maka ịmepụta tebụl

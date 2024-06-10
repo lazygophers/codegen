@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Yɛ .goreleaser.yml fael ma nhyehyeɛ a ɛfa nnwinnadeɛ a wɔayi no adi ho
             short: Yɛ .goreleaser.yml fael no
+        i18n:
+            long: Yɛ i18n fael ahorow ma kasa ahorow pii amanaman ntam nkitahodi ho nnwinnade ne dwumadi afoforo mfiase
+            short: Yɛ i18n fael no
         impl:
             long: Yɛ fael a wɔde bedi dwuma ama adwumayɛ ho nnwuma a wɔde bedi dwuma
             short: Yɛ fael ahorow a wɔde di dwuma
@@ -67,8 +70,17 @@ cli:
             short: Yɛ .pb.go fael no
         short: Kood generator a wɔde yɛ adwuma
         state:
+            flags:
+                cache: Sɛ́ ebia wɔbɛma awo ntoatoaso a ɛfa cache ho atumi ayɛ adwuma anaa
+                config: Sɛ́ ebia wobɛhyehyɛ nhyehyɛe-fam koodu
+                db: Sɛ́ ebia wɔbɛma database a ɛfa database awo ntoatoaso ho atumi ayɛ adwuma
+                i18n: Sɛ́ ebia wobɛma awo ntoatoaso a ɛfa kasa ahorow pii ho atumi ayɛ adwuma (awo ntoatoaso no de ɔman mfiase ne nneɛma afoforo nkutoo ka ho, na ɛnka kasa ahorow pii nkyerɛase a ɛyɛ adwuma ankasa ho. Sɛ wuhia nkyerɛase a ɛyɛ adwuma ankasa a, yɛsrɛ wo fa {{.Ahyɛde}} di dwuma na hwɛ nsɛm no mu nsɛm)
+                table: Sɛ́ ebia wɔbɛma database a ɛfa database awo ntoatoaso ho atumi ayɛ adwuma
             long: Yɛ ɔman no dwumadi ahorow a ɛfa ho nyinaa ma stateful resource anaa static resource management of business services
             short: Dwumadie a ɛfa ho nyinaa ma generating state
+            table:
+                long: Yɛ state.table related code, a wɔde di dwuma ma database nkitahodi ne table mfiase bere a wɔafi ɔsom no ase.
+                short: Generate state.table a ɛfa ho koodu
         table:
             long: Dwumadie a ɛfa ho nyinaa a ɛfa generating tables ma stateful resource anaa static resource management of business services
             short: Dwumadie a ɛfa ho nyinaa ma generating tables

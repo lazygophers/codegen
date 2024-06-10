@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Tengeneza faili ya .goreleaser.yml kwa usanidi wa zana za kutoa
             short: Tengeneza faili ya .goreleaser.yml
+        i18n:
+            long: Tengeneza faili za i18n kwa ajili ya kuanzishwa kwa zana zinazohusiana na utandawazishaji wa lugha nyingi na vipengele vingine
+            short: Tengeneza faili ya i18n
         impl:
             long: Tengeneza faili za utekelezaji kwa utekelezaji wa huduma za biashara
             short: Tengeneza faili za utekelezaji
@@ -67,8 +70,17 @@ cli:
             short: Tengeneza faili ya .pb.go
         short: Jenereta ya kanuni
         state:
+            flags:
+                cache: Iwapo itawasha uzalishaji unaohusiana na akiba
+                config: Iwapo itazalisha msimbo unaohusiana na usanidi
+                db: Ikiwa itawasha uundaji wa hifadhidata unaohusiana na hifadhidata
+                i18n: Iwapo itawasha kizazi kinachohusiana na lugha nyingi (kizazi hiki kinajumuisha tu uanzishaji wa hali na maudhui mengine, na haijumuishi utafsiri wa kiotomatiki wa lugha nyingi. Ikiwa unahitaji tafsiri ya kiotomatiki, tafadhali tumia {{.Command}} ili kuona maelezo)
+                table: Ikiwa itawasha uundaji wa hifadhidata unaohusiana na hifadhidata
             long: Tengeneza kazi zote zinazohusiana za serikali kwa rasilimali za hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
             short: Vipengele vyote muhimu vya kuunda serikali
+            table:
+                long: Tengeneza msimbo unaohusiana na state.table, unaotumika kwa uunganisho wa hifadhidata na uanzishaji wa jedwali wakati huduma inapoanzishwa.
+                short: Tengeneza msimbo unaohusiana na state.table
         table:
             long: Kazi zote zinazohusiana za kutengeneza majedwali kwa rasilimali ya hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
             short: Vipengele vyote vinavyohusiana vya kutengeneza jedwali

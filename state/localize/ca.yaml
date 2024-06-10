@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Genereu el fitxer .goreleaser.yml per a la configuració de les eines de llançament
             short: Genereu el fitxer .goreleaser.yml
+        i18n:
+            long: Genereu fitxers i18n per a la inicialització de conjunts d'eines relacionats amb la internacionalització en diversos idiomes i altres funcions
+            short: Genera un fitxer i18n
         impl:
             long: Generar fitxers d'implementació per a la implantació de serveis empresarials
             short: Generar fitxers d'implementació
@@ -67,8 +70,17 @@ cli:
             short: Genera un fitxer .pb.go
         short: Generador de codi
         state:
+            flags:
+                cache: Si s'ha d'activar la generació relacionada amb la memòria cau
+                config: Si s'ha de generar codi relacionat amb la configuració
+                db: Si s'ha d'activar la generació de bases de dades relacionades amb la base de dades
+                i18n: Si s'activa la generació relacionada amb diversos idiomes (la generació només inclou la inicialització de l'estat i altres continguts, i no inclou la traducció automàtica de diversos idiomes. Si necessiteu una traducció automàtica, utilitzeu {{.Command}} per veure'n els detalls)
+                table: Si s'ha d'activar la generació de bases de dades relacionades amb la base de dades
             long: Genereu totes les funcions d'estat relacionades per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
             short: Totes les funcions rellevants per generar l'estat
+            table:
+                long: Genereu codi relacionat amb state.table, utilitzat per a la connexió de la base de dades i la inicialització de la taula quan s'inicia el servei.
+                short: Genera codi relacionat state.table
         table:
             long: Totes les funcions relacionades de generació de taules per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
             short: Totes les funcions relacionades per generar taules

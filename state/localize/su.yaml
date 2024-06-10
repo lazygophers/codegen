@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Ngahasilkeun file .goreleaser.yml pikeun konfigurasi pakakas release
             short: Ngahasilkeun file .goreleaser.yml
+        i18n:
+            long: Ngahasilkeun file i18n pikeun initialization of multi-basa internationalization toolkit patali jeung fungsi séjén
+            short: Ngahasilkeun file i18n
         impl:
             long: Ngahasilkeun file palaksanaan pikeun palaksanaan jasa bisnis
             short: Ngahasilkeun file palaksanaan
@@ -67,8 +70,17 @@ cli:
             short: Ngahasilkeun file .pb.go
         short: Generator kode
         state:
+            flags:
+                cache: Naha ngaktipkeun generasi nu patali cache
+                config: Naha ngahasilkeun kode nu patali konfigurasi
+                db: Naha ngaktipkeun generasi database-patali database
+                i18n: Naha ngaktipkeun generasi nu patali multi-basa (generasi ngan ngawengku initialization kaayaan jeung eusi lianna, sarta teu kaasup tarjamah otomatis tina sababaraha basa. Lamun perlu tarjamah otomatis, mangga nganggo {{.Command}} pikeun nempo rinci)
+                table: Naha ngaktipkeun generasi database-patali database
             long: Ngahasilkeun sagala fungsi patali nagara pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
             short: Sadaya fungsi anu relevan pikeun ngahasilkeun kaayaan
+            table:
+                long: Ngahasilkeun kode state.table patali, dipaké pikeun sambungan database na tabel initialization nalika layanan ieu dimimitian.
+                short: Ngahasilkeun state.table kode patali
         table:
             long: Kabéh fungsi patali generating tabel pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
             short: Sadaya fungsi anu aya hubunganana pikeun ngahasilkeun tabel

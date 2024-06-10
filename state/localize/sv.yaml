@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generera .goreleaser.yml-fil för konfiguration av releaseverktyg
             short: Generera filen .goreleaser.yml
+        i18n:
+            long: Generera i18n-filer för initiering av flerspråkiga internationaliseringsrelaterade verktygssatser och andra funktioner
+            short: Generera i18n-fil
         impl:
             long: Generera implementeringsfiler för implementering av företagstjänster
             short: Generera implementeringsfiler
@@ -67,8 +70,17 @@ cli:
             short: Generera .pb.go-fil
         short: Kod generator
         state:
+            flags:
+                cache: Om cache-relaterad generering ska aktiveras
+                config: Om konfigurationsrelaterad kod ska genereras
+                db: Om databasrelaterad databasgenerering ska aktiveras
+                i18n: Om generering av flera språk ska aktiveras (genereringen inkluderar endast tillståndsinitiering och annat innehåll, och inkluderar inte automatisk översättning av flera språk. Om du behöver automatisk översättning, använd {{.Command}} för att se detaljer)
+                table: Om databasrelaterad databasgenerering ska aktiveras
             long: Generera alla relaterade funktioner i staten för statisk resurs- eller statisk resurshantering av företagstjänster
             short: Alla relevanta funktioner för att generera tillstånd
+            table:
+                long: Generera state.table-relaterad kod, som används för databasanslutning och tabellinitiering när tjänsten startas.
+                short: Generera state.table relaterad kod
         table:
             long: Alla relaterade funktioner för att generera tabeller för statisk resurs- eller statisk resurshantering av affärstjänster
             short: Alla relaterade funktioner för att generera tabeller

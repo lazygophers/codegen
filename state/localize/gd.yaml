@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Cruthaich faidhle .goreleaser.yml airson rèiteachadh innealan fuasglaidh
             short: Cruthaich faidhle .goreleaseer.yml
+        i18n:
+            long: Cruthaich faidhlichean i18n airson innealan innealan co-cheangailte ri eadar-nàiseantachd ioma-chànan agus gnìomhan eile a thòiseachadh
+            short: Cruthaich faidhle i18n
         impl:
             long: Cruthaich faidhlichean buileachaidh airson buileachadh seirbheisean gnìomhachais
             short: Cruthaich faidhlichean buileachaidh
@@ -67,8 +70,17 @@ cli:
             short: Cruthaich faidhle .pb.go
         short: Gineadair còd
         state:
+            flags:
+                cache: Co-dhiù an cuirear an comas gineadh co-cheangailte ri tasgadan
+                config: Co-dhiù an cruthaichear còd co-cheangailte ri rèiteachadh
+                db: Am bu chòir gineadh stòr-dàta co-cheangailte ri stòr-dàta a chomasachadh
+                i18n: Co-dhiù am bu chòir gineadh co-cheangailte ri ioma-chànan a chomasachadh (chan eil anns a’ ghinealach a’ gabhail a-steach ach tùsachadh stàite agus susbaint eile, agus chan eil e a’ toirt a-steach eadar-theangachadh ioma-chànanan gu fèin-obrachail. Ma tha feum agad air eadar-theangachadh fèin-ghluasadach, cleachd {{.Command}} airson mion-fhiosrachadh fhaicinn)
+                table: Am bu chòir gineadh stòr-dàta co-cheangailte ri stòr-dàta a chomasachadh
             long: Cruthaich a h-uile gnìomh stàite co-cheangailte airson goireasan stàiteil no riaghladh ghoireasan statach de sheirbheisean gnìomhachais
             short: A h-uile gnìomh buntainneach airson stàite gineadh
+            table:
+                long: Cruthaich còd co-cheangailte ri state.table, air a chleachdadh airson ceangal stòr-dàta agus tòiseachadh clàr nuair a thòisicheas an t-seirbheis.
+                short: Cruthaich còd co-cheangailte state.table
         table:
             long: A h-uile gnìomh co-cheangailte ri bhith a’ cruthachadh chlàran airson goireasan stàiteil no goireasan statach a riaghladh seirbheisean gnìomhachais
             short: A h-uile gnìomh co-cheangailte airson bùird a ghineadh

@@ -42,13 +42,8 @@ func GenerateState(pb *PbPackage) (err error) {
 
 	// table 文件为覆盖生成
 	args := map[string]interface{}{
-		"PB": pb,
-		"GoImports": []string{
-			pb.GoPackage(),
-			"github.com/lazygophers/log",
-			"github.com/lazygophers/utils/common",
-			"github.com/lazygophers/utils/db",
-		},
+		"PB":     pb,
+		"Config": state.Config.State,
 	}
 
 	tpl, err := GetTemplate(TemplateTypeStateState)

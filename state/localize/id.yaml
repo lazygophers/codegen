@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Hasilkan file .goreleaser.yml untuk konfigurasi alat rilis
             short: Hasilkan file .goreleaser.yml
+        i18n:
+            long: Hasilkan file i18n untuk inisialisasi toolkit terkait internasionalisasi multi-bahasa dan fungsi lainnya
+            short: Hasilkan file i18n
         impl:
             long: Hasilkan file implementasi untuk implementasi layanan bisnis
             short: Hasilkan file implementasi
@@ -67,8 +70,17 @@ cli:
             short: Hasilkan file .pb.go
         short: Generator kode
         state:
+            flags:
+                cache: Apakah akan mengaktifkan pembuatan terkait cache
+                config: Apakah akan menghasilkan kode terkait konfigurasi
+                db: Apakah akan mengaktifkan pembuatan database terkait database
+                i18n: Apakah akan mengaktifkan pembuatan terkait multi-bahasa (pembuatan hanya mencakup inisialisasi negara dan konten lainnya, dan tidak menyertakan terjemahan otomatis beberapa bahasa. Jika Anda memerlukan terjemahan otomatis, silakan gunakan {{.Command}} untuk melihat detailnya)
+                table: Apakah akan mengaktifkan pembuatan database terkait database
             long: Hasilkan semua fungsi negara terkait untuk sumber daya stateful atau manajemen sumber daya statis layanan bisnis
             short: Semua fungsi yang relevan untuk menghasilkan status
+            table:
+                long: Hasilkan kode terkait state.table, yang digunakan untuk koneksi database dan inisialisasi tabel saat layanan dimulai.
+                short: Hasilkan kode terkait state.table
         table:
             long: Semua fungsi terkait pembuatan tabel untuk sumber daya stateful atau manajemen sumber daya statis layanan bisnis
             short: Semua fungsi terkait untuk menghasilkan tabel

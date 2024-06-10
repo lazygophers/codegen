@@ -54,9 +54,9 @@ archives:
             - README.md
             - example.codegen.cfg.yaml
 
-#checksum:
-#    algorithm: sha512
-#    name_template: '{{ .ProjectName }}_{{ .Version }}.sha512'
+checksum:
+    algorithm: sha512
+    name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ with .Arm }}v{{ . }}{{ end }}{{ with .Mips }}_{{ . }}{{ end }}{{ if not (eq .Amd64 "v1") }}{{ .Amd64 }}{{ end }}.sha512'
 
 source:
     enabled: false

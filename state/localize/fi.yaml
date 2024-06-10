@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Luo .goreleaser.yml-tiedosto julkaisutyökalujen määritystä varten
             short: Luo .goreleaser.yml-tiedosto
+        i18n:
+            long: Luo i18n-tiedostoja monikielisten kansainvälistymiseen liittyvien työkalupakkien ja muiden toimintojen alustusta varten
+            short: Luo i18n-tiedosto
         impl:
             long: Luo toteutustiedostoja yrityspalveluiden toteuttamista varten
             short: Luo toteutustiedostoja
@@ -67,8 +70,17 @@ cli:
             short: Luo .pb.go-tiedosto
         short: Koodigeneraattori
         state:
+            flags:
+                cache: Otetaanko välimuistiin liittyvä luonti käyttöön
+                config: Luodaanko määritykseen liittyvä koodi
+                db: Otetaanko tietokantaan liittyvä tietokannan luominen käyttöön
+                i18n: Otetaanko useisiin kieliin liittyvä luonti käyttöön (sukupolvi sisältää vain tilan alustuksen ja muun sisällön, eikä sisällä useiden kielten automaattista käännöstä. Jos tarvitset automaattisen käännöksen, käytä {{.Command}} nähdäksesi tiedot)
+                table: Otetaanko tietokantaan liittyvä tietokannan luominen käyttöön
             long: Luo kaikki asiaan liittyvät tilan toiminnot yrityspalveluiden tilatietoisten tai staattisten resurssien hallintaan
             short: Kaikki tilan luomiseen liittyvät toiminnot
+            table:
+                long: Luo tila.taulukkoon liittyvä koodi, jota käytetään tietokantayhteyden muodostamiseen ja taulukon alustukseen, kun palvelu käynnistetään.
+                short: Luo tila.taulukkoon liittyvä koodi
         table:
             long: Kaikki siihen liittyvät toiminnot taulukoiden luomiseen yrityspalveluiden tilatietoisten resurssien tai staattisten resurssien hallintaan
             short: Kaikki liittyvät funktiot taulukoiden luomiseen

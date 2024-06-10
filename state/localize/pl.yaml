@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Wygeneruj plik .goreleaser.yml w celu konfiguracji narzędzi wydających
             short: Wygeneruj plik .goreleaser.yml
+        i18n:
+            long: Generuj pliki i18n do inicjalizacji wielojęzycznych zestawów narzędzi związanych z internacjonalizacją i innych funkcji
+            short: Wygeneruj plik i18n
         impl:
             long: Generowanie plików wdrożeniowych w celu wdrożenia usług biznesowych
             short: Wygeneruj pliki implementacyjne
@@ -67,8 +70,17 @@ cli:
             short: Wygeneruj plik .pb.go
         short: Generator kodów
         state:
+            flags:
+                cache: Określa, czy włączyć generowanie związane z pamięcią podręczną
+                config: Określa, czy generować kod związany z konfiguracją
+                db: Określa, czy włączyć generowanie bazy danych powiązanej z bazą danych
+                i18n: Czy włączyć generowanie związane z wieloma językami (generowanie obejmuje tylko inicjalizację stanu i inną treść i nie obejmuje automatycznego tłumaczenia wielu języków. Jeśli potrzebujesz automatycznego tłumaczenia, użyj {{.Command}}, aby wyświetlić szczegóły)
+                table: Określa, czy włączyć generowanie bazy danych powiązanej z bazą danych
             long: Generuj wszystkie powiązane funkcje stanu dla zarządzania zasobami stanowymi lub statycznymi usług biznesowych
             short: Wszystkie istotne funkcje generowania stanu
+            table:
+                long: Wygeneruj kod powiązany ze stanem.table, używany do połączenia z bazą danych i inicjowania tabeli po uruchomieniu usługi.
+                short: Wygeneruj kod powiązany ze stanem.table
         table:
             long: Wszystkie powiązane funkcje generowania tabel do zarządzania zasobami stanowymi lub statycznymi usług biznesowych
             short: Wszystkie powiązane funkcje generowania tabel

@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: .goreleaser.yml qillqat luraña, mistuwi yänaka wakicht’añataki
             short: .goreleaser.yml qillqat luraña
+        i18n:
+            long: i18n qillqatanaka luraña walja arut internacionalización ukamp chikt’at herramientas ukat yaqha lurawinakar qalltañataki
+            short: i18n qillqat uñstayaña
         impl:
             long: Servicios empresariales ukanaka phuqhañataki phuqhawi archivonaka luraña
             short: Phuqt’awi qillqatanaka luraña
@@ -67,8 +70,17 @@ cli:
             short: .pb.go qillqat uñstayaña
         short: Código generador ukaxa
         state:
+            flags:
+                cache: Caché ukamp chikt’at generación ukar ch’amanchañatakiti janicha
+                config: Configuración ukamp chikt’at código uñstayañatakiti janicha
+                db: Ukax mä base de datos ukamp chikt’at base de datos ukan generación ukar ch’amanchañataki
+                i18n: Walja arunakamp uñt’at generación ukar ch’amanchañax wakisispati janicha (generación ukax estado qalltawi ukat yaqha contenido ukanak uñt’ayañakiw wakisi, ukatx janiw walja arunakan automáticamente jaqukipañax utjkiti. Automático jaqukipañ munaschi ukhax {{.Command}} ukampiw juk’amp yatxatañatakix apnaqañama)
+                table: Ukax mä base de datos ukamp chikt’at base de datos ukan generación ukar ch’amanchañataki
             long: Taqi funciones relacionadas del estado ukanaka luraña recurso estatal jan ukaxa gestión de recursos estáticos ukanaka servicios empresariales ukanakataki
             short: Taqi wakiskir lurawinakawa estado uñstayañataki
+            table:
+                long: state.table ukampi chikt’ata código luraña, ukaxa apnaqatarakiwa base de datos ukaru mayachañataki ukhamaraki tabla qalltañataki kunapachatixa servicio ukaxa qalltaski ukhaxa.
+                short: Estado.tabla ukamp chikt’at código uñstayaña
         table:
             long: Taqi ukanakampi chikt ata lurawinakaxa tablas ukanaka lurañataki recurso estatal jan ukaxa recurso estático gestión de servicios empresariales ukanakataki
             short: Taqi uñt’ata lurawinakawa tablas ukanaka lurañataki

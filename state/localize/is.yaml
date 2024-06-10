@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Búðu til .goreleaser.yml skrá til að stilla útgáfutól
             short: Búðu til .goreleaser.yml skrá
+        i18n:
+            long: Búðu til i18n skrár til að frumstilla fjöltungumál alþjóðavæðingartengda verkfærasetta og aðrar aðgerðir
+            short: Búðu til i18n skrá
         impl:
             long: Búa til innleiðingarskrár fyrir innleiðingu viðskiptaþjónustu
             short: Búðu til útfærsluskrár
@@ -67,8 +70,17 @@ cli:
             short: Búðu til .pb.go skrá
         short: Kóða rafall
         state:
+            flags:
+                cache: Hvort á að virkja skyndiminni-tengda kynslóð
+                config: Hvort búa eigi til stillingartengdan kóða
+                db: Hvort á að virkja gagnagrunnstengda gagnagrunnsgerð
+                i18n: Hvort á að virkja fjöltungumálatengda kynslóð (kynslóðin felur aðeins í sér stöðuuppfærslu og annað efni, og inniheldur ekki sjálfvirka þýðingu á mörgum tungumálum. Ef þú þarft sjálfvirka þýðingu, vinsamlegast notaðu {{.Command}} til að skoða upplýsingar)
+                table: Hvort á að virkja gagnagrunnstengda gagnagrunnsgerð
             long: Búðu til allar tengdar aðgerðir ríkisins fyrir staðbundna auðlinda- eða kyrrstöðustjórnun á viðskiptaþjónustu
             short: Allar viðeigandi aðgerðir til að búa til ástand
+            table:
+                long: Búðu til state.table tengdan kóða, notaður fyrir gagnagrunnstengingu og töfluuppstillingu þegar þjónustan er ræst.
+                short: Búa til state.table tengdan kóða
         table:
             long: Allar tengdar aðgerðir við að búa til töflur fyrir staðbundna auðlinda- eða kyrrstöðustjórnun á viðskiptaþjónustu
             short: Allar tengdar aðgerðir til að búa til töflur

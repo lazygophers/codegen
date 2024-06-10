@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Tsim cov ntaub ntawv .goreleaser.yml rau kev teeb tsa ntawm cov cuab yeej tso tawm
             short: Tsim cov ntaub ntawv .goreleaser.yml
+        i18n:
+            long: Tsim cov ntaub ntawv i18n rau kev pib ntawm ntau hom lus thoob ntiaj teb hais txog cov cuab yeej thiab lwm yam haujlwm
+            short: Tsim cov ntaub ntawv i18n
         impl:
             long: Tsim cov ntaub ntawv siv rau kev siv cov kev pabcuam kev lag luam
             short: Tsim cov ntaub ntawv siv
@@ -67,8 +70,17 @@ cli:
             short: Tsim .pb.go cov ntaub ntawv
         short: Code generator
         state:
+            flags:
+                cache: Seb puas yuav pab kom cache ntsig txog tiam
+                config: Seb puas yuav tsim kom muaj teeb meem ntsig txog code
+                db: Seb puas yuav pab tau cov ntaub ntawv ntsig txog database tiam
+                i18n: Seb puas yuav pab tau ntau hom lus uas muaj feem xyuam rau tiam ( tiam tsuas yog suav nrog lub xeev pib thiab lwm cov ntsiab lus, thiab tsis suav nrog kev txhais lus tsis siv neeg ntau hom lus. Yog tias koj xav tau kev txhais lus tsis siv neeg, thov siv {{.Command}} saib cov ntsiab lus)
+                table: Seb puas yuav pab tau cov ntaub ntawv ntsig txog database tiam
             long: Tsim tag nrho cov haujlwm muaj feem xyuam ntawm lub xeev rau cov peev txheej hauv xeev lossis kev tswj hwm kev lag luam zoo li qub
             short: Txhua yam muaj feem xyuam rau kev tsim lub xeev
+            table:
+                long: Tsim state.table ntsig txog code, siv rau kev sib txuas ntawm database thiab lub rooj pib thaum qhov kev pabcuam pib.
+                short: Tsim state.table ntsig txog code
         table:
             long: Tag nrho cov haujlwm muaj feem cuam tshuam ntawm kev tsim cov rooj rau cov peev txheej hauv xeev lossis kev tswj hwm kev lag luam zoo li qub
             short: Txhua yam muaj feem xyuam rau kev tsim cov rooj

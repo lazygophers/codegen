@@ -682,6 +682,7 @@ func ParseGoDir(dir string) (map[string]*GoPackage, error) {
 		log.Errorf("parse dir %s err %v", dir, err)
 		return nil, err
 	}
+
 	var ctx GoContext
 	var pkgMap = map[string]*GoPackage{}
 	for k, v := range m {

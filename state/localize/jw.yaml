@@ -52,6 +52,9 @@ cli:
         goreleaser:
             long: Generate file .goreleaser.yml kanggo konfigurasi alat release
             short: Gawe file .goreleaser.yml
+        i18n:
+            long: Gawe file i18n kanggo wiwitan toolkit sing gegandhengan karo internasionalisasi multi-basa lan fungsi liyane
+            short: Gawe file i18n
         impl:
             long: Nggawe file implementasine kanggo implementasine layanan bisnis
             short: Nggawe file implementasine
@@ -67,8 +70,17 @@ cli:
             short: Gawe file .pb.go
         short: Kode generator
         state:
+            flags:
+                cache: Apa ngaktifake generasi sing gegandhengan karo cache
+                config: Apa bakal ngasilake kode sing gegandhengan karo konfigurasi
+                db: Apa kanggo ngaktifake database-related database generasi
+                i18n: Apa arep ngaktifake generasi sing gegandhengan karo multi-basa (generasi kasebut mung nyakup initialization negara lan konten liyane, lan ora kalebu terjemahan otomatis saka pirang-pirang basa. Yen sampeyan butuh terjemahan otomatis, gunakake {{.Command}} kanggo ndeleng rincian)
+                table: Apa kanggo ngaktifake database-related database generasi
             long: Nggawe kabeh fungsi negara sing gegandhengan kanggo sumber daya stateful utawa manajemen sumber daya statis layanan bisnis
             short: Kabeh fungsi sing cocog kanggo ngasilake negara
+            table:
+                long: Generate kode state.table related, digunakake kanggo sambungan database lan initialization Tabel nalika layanan diwiwiti.
+                short: Generate state.table kode related
         table:
             long: Kabeh fungsi sing gegandhengan kanggo ngasilake tabel kanggo sumber daya stateful utawa manajemen sumber daya statis layanan bisnis
             short: Kabeh fungsi sing gegandhengan kanggo ngasilake tabel
