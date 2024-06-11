@@ -1,2 +1,3 @@
 name: {{ .PB.GoPackageName }}
-port: 8080
+port: {{ .PB.Port }}
+host: {{ .PB.Host }}

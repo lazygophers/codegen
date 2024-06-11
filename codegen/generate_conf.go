@@ -79,7 +79,7 @@ func GenerateConf(pb *PbPackage) (err error) {
 		"PB": pb,
 	}
 
-	tpl, err := GetTemplate(TemplateTypeStateConf)
+	tpl, err := GetTemplate(TemplateTypeConf)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

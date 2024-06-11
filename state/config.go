@@ -147,8 +147,8 @@ type CfgTemplate struct {
 	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
 
 	Orm        string `json:"orm,omitempty" yaml:"orm,omitempty" toml:"orm,omitempty"`
-	TableName  string `json:"table_name,omitempty" yaml:"table_name,omitempty" toml:"table_name,omitempty"`
-	TableField string `json:"table_field,omitempty" yaml:"table_field,omitempty" toml:"table_field,omitempty"`
+	TableName  string `json:"table-name,omitempty" yaml:"table-name,omitempty" toml:"table-name,omitempty"`
+	TableField string `json:"table-field,omitempty" yaml:"table-field,omitempty" toml:"table-field,omitempty"`
 
 	Proto *CfgProto `json:"proto,omitempty" yaml:"proto,omitempty" toml:"proto,omitempty"`
 	Impl  *CfgImpl  `json:"impl,omitempty" yaml:"impl,omitempty" toml:"impl,omitempty"`
@@ -165,22 +165,22 @@ type CfgTemplate struct {
 	Gitignore    string `json:"gitignore,omitempty" yaml:"gitignore,omitempty" toml:"gitignore,omitempty"`
 	Dockerignore string `json:"dockerignore,omitempty" yaml:"dockerignore,omitempty" toml:"dockerignore,omitempty"`
 
-	I18nConst string `json:"i18n_const,omitempty" yaml:"i18n_const,omitempty" toml:"i18n_const,omitempty"`
+	I18nConst string `json:"i18n-const,omitempty" yaml:"i18n-const,omitempty" toml:"i18n-const,omitempty"`
 }
 
 type CfgTables struct {
 	Disable bool `json:"disable,omitempty" yaml:"disable,omitempty" toml:"disable,omitempty"`
 
 	// 是否禁用自动添加 id 字段相关的内容
-	DisableFieldId bool `json:"disable_field_id,omitempty" yaml:"disable_field_id,omitempty" tom:"disable_field_id,omitempty"`
-	// 是否禁用自动添加 created_at 字段相关的内容
-	DisableFieldCreatedAt bool `json:"disable_field_created_at,omitempty" yaml:"disable_field_created_at,omitempty" toml:"disable_field_created_at,omitempty"`
-	// 是否禁用自动添加 updated_at 字段相关的内容
-	DisableFieldUpdatedAt bool `json:"disable_field_updated_at,omitempty" yaml:"disable_field_updated_at,omitempty" toml:"disable_field_updated_at,omitempty"`
-	// 是否禁用自动添加 deleted_at 字段相关的内容
-	DisableFieldDeletedAt bool `json:"disable_field_deleted_at,omitempty" yaml:"disable_field_deleted_at,omitempty" toml:"disable_field_deleted_at,omitempty"`
+	DisableFieldId bool `json:"disable-field-id,omitempty" yaml:"disable-field-id,omitempty" tom:"disable-field-id,omitempty"`
+	// 是否禁用自动添加 created-at 字段相关的内容
+	DisableFieldCreatedAt bool `json:"disable-field-created-at,omitempty" yaml:"disable-field-created-at,omitempty" toml:"disable-field-created-at,omitempty"`
+	// 是否禁用自动添加 updated-at 字段相关的内容
+	DisableFieldUpdatedAt bool `json:"disable-field-updated-at,omitempty" yaml:"disable-field-updated-at,omitempty" toml:"disable-field-updated-at,omitempty"`
+	// 是否禁用自动添加 deleted-at 字段相关的内容
+	DisableFieldDeletedAt bool `json:"disable-field-deleted-at,omitempty" yaml:"disable-field-deleted-at,omitempty" toml:"disable-field-deleted-at,omitempty"`
 	// 是否禁用自动添加 gorm tag: column
-	DisableGormTagColumn bool `json:"disable_gorm_tag_column,omitempty" yaml:"disable_gorm_tag_column,omitempty" toml:"disable_gorm_tag_column,omitempty"`
+	DisableGormTagColumn bool `json:"disable-gorm-tag-column,omitempty" yaml:"disable-gorm-tag-column,omitempty" toml:"disable-gorm-tag-column,omitempty"`
 }
 
 func (p *CfgTables) apply() {
@@ -196,10 +196,10 @@ func (p *CfgTables) apply() {
 }
 
 type CfgI18n struct {
-	GenerateConst bool `json:"generate_const,omitempty" yaml:"generate_const,omitempty" toml:"generate_const,omitempty"`
+	GenerateConst bool `json:"generate-const,omitempty" yaml:"generate-const,omitempty" toml:"generate-const,omitempty"`
 
 	Languages    []string `json:"languages,omitempty" yaml:"languages,omitempty" toml:"languages,omitempty"`
-	AllLanguages bool     `json:"all_languages,omitempty" yaml:"all_languages,omitempty" toml:"all_languages,omitempty"`
+	AllLanguages bool     `json:"all-languages,omitempty" yaml:"all-languages,omitempty" toml:"all-languages,omitempty"`
 
 	Translater string `json:"translater,omitempty" yaml:"translater,omitempty" toml:"translater,omitempty"`
 }
@@ -227,6 +227,11 @@ func (p *CfgI18n) apply() {
 	}
 }
 
+type CfgGoMod struct {
+	Goproxy  string `json:"goproxy,omitempty" yaml:"goproxy,omitempty" toml:"goproxy,omitempty"`
+	Increase bool   `json:"increase,omitempty" yaml:"increase,omitempty" toml:"increase,omitempty"`
+}
+
 type CfgState struct {
 	Config bool `json:"config,omitempty" yaml:"config,omitempty" toml:"config,omitempty"`
 	Table  bool `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
@@ -235,14 +240,14 @@ type CfgState struct {
 }
 
 type Cfg struct {
-	ProtocPath     string `json:"protoc_path,omitempty" yaml:"protoc_path,omitempty" toml:"protoc_path,omitempty"`
-	ProtoGenGoPath string `json:"protogen_go_path,omitempty" yaml:"protogen_go_path,omitempty" toml:"protogen_go_path,omitempty"`
+	ProtocPath     string `json:"protoc-path,omitempty" yaml:"protoc-path,omitempty" toml:"protoc-path,omitempty"`
+	ProtoGenGoPath string `json:"protogen-go-path,omitempty" yaml:"protogen-go-path,omitempty" toml:"protogen-go-path,omitempty"`
 
-	ProtoFiles []string `json:"proto_files,omitempty" yaml:"proto_files,omitempty" toml:"proto_files,omitempty"`
+	ProtoFiles []string `json:"proto-files,omitempty" yaml:"proto-files,omitempty" toml:"proto-files,omitempty"`
 
-	GoModulePrefix string `json:"go_module_prefix,omitempty" yaml:"go_module_prefix,omitempty" toml:"go_module_prefix,omitempty"`
+	GoModulePrefix string `json:"go-module-prefix,omitempty" yaml:"go-module-prefix,omitempty" toml:"go-module-prefix,omitempty"`
 
-	OutputPath string `json:"output_path,omitempty" yaml:"output_path,omitempty" toml:"output_path,omitempty"`
+	OutputPath string `json:"output-path,omitempty" yaml:"output-path,omitempty" toml:"output-path,omitempty"`
 
 	Language string `json:"language,omitempty" yaml:"language,omitempty" toml:"language,omitempty"`
 
@@ -256,9 +261,11 @@ type Cfg struct {
 	// 例如: {"gorm": {"id": "column:id;primaryKey;autoIncrement;not null"}}
 	// 从初始化后整理为，key 为字段名，value.key 为 tag 名，value.value 为 tag 内容
 	// 例如: {"id": {"gorm": "column:id;primaryKey;autoIncrement;not null"}}
-	DefaultTag map[string]map[string]string `json:"default_tag,omitempty" yaml:"default_tag,omitempty" toml:"default_tag,omitempty"`
+	DefaultTag map[string]map[string]string `json:"default-tag,omitempty" yaml:"default-tag,omitempty" toml:"default-tag,omitempty"`
 
 	Tables *CfgTables `json:"tables,omitempty" yaml:"tables,omitempty" toml:"tables,omitempty"`
+
+	GoMod *CfgGoMod `json:"go-mod,omitempty" yaml:"go-mod,omitempty" toml:"go-mod,omitempty"`
 
 	State *CfgState `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 
@@ -380,6 +387,10 @@ func (p *Cfg) apply() (err error) {
 
 			p.DefaultTag = newTag
 		}
+	}
+
+	if p.GoMod == nil {
+		p.GoMod = new(CfgGoMod)
 	}
 
 	return nil

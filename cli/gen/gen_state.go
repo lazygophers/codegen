@@ -43,18 +43,26 @@ func runGenState(cmd *cobra.Command, args []string) (err error) {
 func mergeStateFlags(cmd *cobra.Command) {
 	if cmd.Flag("table").Changed {
 		state.Config.State.Table = utils.GetBool("db", cmd)
+	} else if state.LazyConfig.Gen.Table != nil {
+		state.Config.State.Table = *state.LazyConfig.Gen.Table
 	}
 
 	if cmd.Flag("cache").Changed {
 		state.Config.State.Cache = utils.GetBool("cache", cmd)
+	} else if state.LazyConfig.Gen.Cache != nil {
+		state.Config.State.Cache = *state.LazyConfig.Gen.Cache
 	}
 
 	if cmd.Flag("i18n").Changed {
 		state.Config.State.I18n = utils.GetBool("i18n", cmd)
+	} else if state.LazyConfig.Gen.I18n != nil {
+		state.Config.State.I18n = *state.LazyConfig.Gen.I18n
 	}
 
 	if cmd.Flag("config").Changed {
 		state.Config.State.Config = utils.GetBool("config", cmd)
+	} else if state.LazyConfig.Gen.Config != nil {
+		state.Config.State.Config = *state.LazyConfig.Gen.Config
 	}
 }
 

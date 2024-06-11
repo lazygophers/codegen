@@ -12,6 +12,7 @@ import (
 	"github.com/pterm/pterm"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -184,7 +185,7 @@ func (p *PbRPC) walk() {
 	}
 
 	// 优先解析 options 的
-	if v, ok := p.options["core.lazygen"]; ok {
+	if v, ok := p.options["lazygophers.lrpc.core.lazygen"]; ok {
 		var gen core.LazyGen
 		buffer, err := json.Marshal(v)
 		if err != nil {
@@ -203,7 +204,7 @@ func (p *PbRPC) walk() {
 		}
 	}
 
-	if v, ok := p.options["core.http"]; ok {
+	if v, ok := p.options["lazygophers.lrpc.core.http"]; ok {
 		var gen core.Http
 		buffer, err := json.Marshal(v)
 		if err != nil {
@@ -550,6 +551,10 @@ type PbPackage struct {
 	PackageName  string
 
 	ProtoBuffer string
+
+	// 自定义的一些字段
+	Port int64
+	Host string
 }
 
 func (p *PbPackage) ProtoFilePath() string {
@@ -714,6 +719,21 @@ func (p *PbPackage) Walk() {
 			p.RawGoPackage = p.RawGoPackage[:idx]
 		}
 	}
+
+	if o, ok := p.optionMap["(lazygophers.lrpc.core.port)"]; ok {
+		port, err := strconv.ParseInt(o.Value, 10, 64)
+		if err != nil {
+			log.Errorf("err:%v", err)
+		} else {
+			p.Port = port
+		}
+	}
+
+	if o, ok := p.optionMap["(lazygophers.lrpc.core.host)"]; ok && o.Value != "" {
+		p.Host = o.Value
+	} else {
+		p.Host = "*"
+	}
 }
 
 func NewPbPackage(protoFilePath string, p *proto.Proto) *PbPackage {
@@ -733,6 +753,7 @@ func NewPbPackage(protoFilePath string, p *proto.Proto) *PbPackage {
 		RawGoPackage:  "",
 		PackageName:   "",
 		ProtoBuffer:   "",
+		Port:          8080,
 	}
 }
 

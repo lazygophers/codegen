@@ -10,7 +10,6 @@ type GenHook func(cmd *cobra.Command, args []string) (err error)
 
 var GenAllHooks = []GenHook{
 	runGenPb,
-	runGenMod,
 	runEditorconfig,
 	runGoreleaser,
 	runMakefile,
@@ -22,6 +21,8 @@ var GenAllHooks = []GenHook{
 	runGenConfFile,
 	runGenTable,
 	runGenImpl,
+
+	runGenMod,
 }
 
 var allCmd = &cobra.Command{

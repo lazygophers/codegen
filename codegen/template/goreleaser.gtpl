@@ -11,7 +11,7 @@ gomod:
 builds:
     -   id: {{ .PB.GoPackageName }}
         binary: {{ .PB.GoPackageName }}
-		main: ./cmd/
+        main: ./cmd/
         tags:
             - release
         ldflags:
@@ -36,16 +36,15 @@ builds:
             - linux_amd64_v3
 
 dockers:
-	-   id: {{ .PB.GoPackageName }}
-		image_templates:
-			- "{{ .ProjectName }}:{{ .Tag }}"
-			- "{{ .ProjectName }}:latest"
-		skip_build: true
-		skip_push: true
-		push_flags:
-			- --tls-verify=false
-		extra_files:
-			- config.yaml
+    -   id: {{ .ProjectName }}
+        skip_build: true
+        skip_push: true
+        push_flags:
+            - --tls-verify=false
+        extra_files:
+            - config.yaml
+        image_templates:
+            - "{{ .ProjectName }}:latest"
 
 archives:
     -   format: tar.gz
