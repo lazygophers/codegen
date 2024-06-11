@@ -21,7 +21,7 @@ cli:
             long: Looge äriteenuste jaoks sisestusfailid
             short: Loo sisestusfail
         conf:
-            long: Looge konfiguratsioonifaile äriteenuste konfiguratsiooni lugemiseks
+            long: Loo konfiguratsioonifaili mall
             short: Loo konfiguratsioonifail
         dockerignore:
             long: Failihalduse ignoreerimiseks looge Dockeri pildiloome jaoks .dockerignore-fail
@@ -30,11 +30,11 @@ cli:
             long: Redaktori seadistamiseks genereerige .editorconfig-fail
             short: Looge editorconfig fail
         flags:
-            add-proto-files: Kui teil on vaja importida teisi protofaile/kaustateid, mis ei asu määratud protofailiga samas kaustas, lisab see toiming (mitte kirjuta üle) konfiguratsioonifailis konfigureeritud tee.
+            add-proto-files: Kui teil on vaja importida teisi protofaile/kaustateid, mis ei asu määratud protofailiga samas kaustas, lisab see toiming (mitte kirjutab üle) konfiguratsioonifailis konfigureeritud tee.
             go-module-prefix: Proto failis konfigureeritud go_package tee ja tegeliku tee jaoks saate seda suvandit seadistada
             input: Määrake genereeritav .proto lähtefail
             output-path: Seda suvandit saab konfigureerida, kui failis .proto konfigureeritud go_package tee on vastuolus tegelikult genereeritava teepõhjaga.
-            overwrite: Sisu puhul, mida uuesti ei genereerita, sunnige olemasolev sisu üle kirjutama
+            overwrite: Sisu puhul, mida uuesti ei genereerita, sunnige olemasoleva sisu üle kirjutama
             proto-files: Teiste protofailide/kaustateede importimiseks, mis ei asu määratud protofailiga samas kaustas, on see toiming konfiguratsioonifaili konfiguratsioonivälja alistamiseks.
             protoc: '"protokoll" kohandatav failitee'
             protoc-gen-go: '"protoc-gen-go" plugina tee'
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Looge väljalasketööriistade konfigureerimiseks fail .goreleaser.yml
             short: Looge fail .goreleaser.yml
-        i18n:
-            long: Looge i18n-faile mitmekeelsete rahvusvahelistumisega seotud tööriistakomplektide ja muude funktsioonide lähtestamiseks
-            short: Looge fail i18n
         impl:
             long: Looge äriteenuste juurutamiseks rakendusfaile
             short: Loo rakendusfailid
@@ -66,27 +63,32 @@ cli:
             long: Sõltuvuste haldamiseks genereerige fail go.mod
             short: Looge fail go.mod
         pb:
-            long: Pb.go-failide genereerimine protofailide loomiseks,
+            long: Looge .pb.go-failid, mida kasutatakse protofailide loomiseks. Asjakohased väljasildid x lisatakse automaatselt vastavalt konfiguratsioonile.
             short: Looge fail .pb.go
         short: Koodigeneraator
         state:
+            conf:
+                long: Looge äriteenuse konfiguratsiooni lugemiseks konfiguratsioonifaili lugemiskood
+                short: Loo konfiguratsioonifaili lugemiskood
             flags:
                 cache: Kas lubada vahemäluga seotud genereerimine
                 config: Kas luua konfiguratsiooniga seotud kood
-                db: Kas lubada andmebaasiga seotud andmebaaside genereerimine
                 i18n: Kas lubada mitme keelega seotud genereerimine (genereerimine hõlmab ainult oleku initsialiseerimist ja muud sisu ning ei hõlma mitme keele automaatset tõlget. Kui vajate automaatset tõlget, kasutage üksikasjade vaatamiseks käsku {{.Command}})
                 table: Kas lubada andmebaasiga seotud andmebaaside genereerimine
+            i18n:
+                long: Looge i18n-iga seotud kood mitmekeelsete rahvusvaheliste kõnede jaoks
+                short: Looge i18n-iga seotud kood
             long: Looge kõik seotud olekufunktsioonid äriteenuste olekupõhiseks või staatiliseks ressursihalduseks
             short: Kõik oleku genereerimiseks vajalikud funktsioonid
             table:
                 long: Genereeri state.table seotud kood, mida kasutatakse andmebaasi ühenduse loomiseks ja tabeli lähtestamiseks teenuse käivitamisel.
                 short: Genereeri olek.tabeliga seotud kood
         table:
-            long: Kõik seotud funktsioonid tabelite genereerimiseks äriteenuste olekupõhiste ressursside või staatilise ressursside haldamiseks
+            long: Kõik seotud funktsioonid tabelite genereerimiseks äriteenuste olekupõhiseks või staatiliseks ressursihalduseks
             short: Kõik seotud funktsioonid tabelite genereerimiseks
     help:
         additional_commands: Täiendavad käsud
-        aliases: käsu varjunimi
+        aliases: käsu alias
         available_commands: Toetatud käsud
         command: Telli
         flags: parameeter

@@ -10,7 +10,7 @@ cli:
                 list-option: Ny lisitra dia azo sivana ihany koa, tadiavo azafady ny antontan-taratasy momba ny fampiasana ho an'ny antsipiriany.
                 model: Lazao ny anaran'ny maodely, tohano ny fanalana ny tovana `modely`
             long: Mamorona fifandraisana amin'ny andiany ary ampio interface tsara ho an'ny modely sasany ao amin'ny rakitra .proto
-            short: Interface famokarana batch
+            short: Batch taranaka interface
         all:
             long: Mamorona kaody rehetra tohanan'ity fitaovana ity
             short: Mamorona kaody rehetra
@@ -21,7 +21,7 @@ cli:
             long: Mamorona rakitra fidirana ho an'ny serivisy fandraharahana
             short: Mamorona rakitra fidirana
         conf:
-            long: Mamorona rakitra fikirakirana ho an'ny famakiana fandrindrana ny serivisy fandraharahana
+            long: Mamorona môdely fichier configuration
             short: Mamorona rakitra fikirakirana
         dockerignore:
             long: Mamorona rakitra .dockerignore ho an'ny fananganana sary Docker mba tsy hiraharaha ny fitantanana rakitra
@@ -31,7 +31,7 @@ cli:
             short: Mamorona rakitra .editorconfig
         flags:
             add-proto-files: Raha mila manafatra rakitra .proto/folder hafa izay tsy ao anatin'ny lahatahiry mitovy amin'ilay rakitra .proto voatondro ianao, dia hampiana (tsy overwrite) ny lalana voafefy ao amin'ny fichier configuration ity asa ity.
-            go-module-prefix: Ho an'ny lalan'ny go_package namboarina ao amin'ny rakitra .proto sy ny tena izy dia azonao atao ny manitsy ity safidy ity
+            go-module-prefix: Ho an'ny lalan'ny go_package namboarina ao amin'ny rakitra .proto sy ny tena izy dia azonao atao ny manitsy ity safidy ity.
             input: Lazao ny rakitra loharano .proto hatsangana
             output-path: Ity safidy ity dia azo amboarina rehefa tsy mifanaraka amin'ny sisin-dalana ny lalan'ny go_package namboarina ao amin'ny rakitra .proto izay tena mila amboarina.
             overwrite: Ho an'ny atiny izay tsy havaozina, hanery ny fanoratana ny atiny efa misy
@@ -40,7 +40,7 @@ cli:
             protoc-gen-go: lalana plugin `protoc-gen-go`
             tables-enable_field_created_at: Na azo atao ny mamorona fandrindrana default amin'ny angon-drakitra created_at saha
             tables-enable_field_deleted_at: Na azo atao ny mametraka ny default amin'ny saha deleted_at ao amin'ny tahiry
-            tables-enable_field_id: Ampidiro ny famoronana fandrindrana default ho an'ny saha mifandraika amin'ny angona
+            tables-enable_field_id: Alefaso ny famoronana fanefena default ho an'ny saha mifandraika amin'ny angona
             tables-enable_field_updated_at: Raha azo atao ny sandan'ny default amin'ny saha updated_at ao amin'ny tahiry
             tables-enable_gorm_tag_column: Na azo atao ny mamorona gorm mifandraika amin'ny database
         gitignote:
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Mamorona rakitra .goreleaser.yml ho an'ny fanamboarana fitaovana famoahana
             short: Mamorona rakitra .goreleaser.yml
-        i18n:
-            long: Mamorona rakitra i18n ho fanombohana ireo fitaovana mifandraika amin'ny iraisam-pirenena amin'ny fiteny maro sy asa hafa
-            short: Mamorona rakitra i18n
         impl:
             long: Mamorona rakitra fampiharana ho an'ny fampiharana ny serivisy fandraharahana
             short: Mamorona rakitra fampiharana
@@ -66,18 +63,23 @@ cli:
             long: Mamorona rakitra go.mod ho an'ny fitantanana ny fiankinan-doha
             short: Mamorona rakitra go.mod
         pb:
-            long: Mamorona rakitra .pb.go mba hamoronana rakitra .proto,
+            long: Mamorona rakitra .pb.go, izay ampiasaina hamoronana rakitra .proto.
             short: Mamorona rakitra .pb.go
         short: Mpamorona kaody
         state:
+            conf:
+                long: Mamorona kaody famakiam-boky fisie ho an'ny famakiam-bokin'ny serivisy fandraharahana
+                short: Mamorona kaody famakiam-boky fisie
             flags:
                 cache: Na azo atao ny famokarana mifandraika amin'ny cache
                 config: Na hamorona kaody mifandraika amin'ny fanamafisana
-                db: Na azo atao ny mamorona angon-drakitra mifandraika amin'ny angona
                 i18n: Na azo atao ny mamorona taranaka mifandraika amin'ny fiteny maro (ny taranaka dia tsy misy afa-tsy fanombohana fanjakana sy votoaty hafa, ary tsy ahitana fandikana mandeha ho azy amin'ny fiteny maro. Raha mila fandikana mandeha ho azy ianao dia ampiasao ny {{.Command}} raha hijery ny antsipiriany)
                 table: Na azo atao ny mamorona angon-drakitra mifandraika amin'ny angona
+            i18n:
+                long: Mamorona kaody mifandraika amin'ny i18n ho an'ny antso iraisam-pirenena amin'ny fiteny maro
+                short: Mamorona kaody mifandraika amin'ny i18n
             long: Mamorona asa rehetra mifandraika amin'ny fanjakana ho an'ny fitantanana loharanon-karena na static amin'ny serivisy fandraharahana
-            short: Ny asa rehetra mifandraika amin'ny famoronana fanjakana
+            short: Ny asa rehetra mifandraika amin'ny famokarana fanjakana
             table:
                 long: Mamorona kaody mifandraika amin'ny state.table, ampiasaina amin'ny fampifandraisana angon-drakitra sy fanombohana latabatra rehefa manomboka ny serivisy.
                 short: Mamorona code mifandraika amin'ny state.table
@@ -110,5 +112,5 @@ cli:
                     usage: 'Fantsona fandikan-teny: Karazana fanohanana {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ny rakitra amin'ny fiteny maro avy amin'ny loharano iray dia avadika ho rakitra mitovy endrika amin'ny fiteny hafa.
             short: translate
-    long: Fitaovana napetraka ho an'ny kamo, ao anatin'izany ny rafitra backend mifototra amin'ny 'proto', môdely fampiasa matetika ary fandikana amin'ny fiteny maro.
+    long: Fitaovana ho an'ny kamo, ao anatin'izany ny rafitra backend mifototra amin'ny 'proto', môdely fampiasa matetika ary fandikana amin'ny fiteny maro.
     short: Fitaovana ho an'ny kamo

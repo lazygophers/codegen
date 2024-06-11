@@ -21,7 +21,7 @@ cli:
             long: Cynhyrchu ffeiliau mynediad ar gyfer gwasanaethau busnes
             short: Cynhyrchu ffeil mynediad
         conf:
-            long: Cynhyrchu ffeiliau ffurfweddu ar gyfer darllen ffurfweddiad gwasanaethau busnes
+            long: Cynhyrchu templed ffeil ffurfweddu
             short: Cynhyrchu ffeil ffurfweddu
         dockerignore:
             long: Cynhyrchu ffeil .dockerignore ar gyfer adeiladu delwedd Docker i anwybyddu rheoli ffeiliau
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Cynhyrchu ffeil .goreleaser.yml ar gyfer ffurfweddu offer rhyddhau
             short: Cynhyrchu ffeil .goreleaser.yml
-        i18n:
-            long: Cynhyrchu ffeiliau i18n ar gyfer cychwyn pecynnau cymorth rhyngwladoli aml-iaith a swyddogaethau eraill
-            short: Cynhyrchu ffeil i18n
         impl:
             long: Cynhyrchu ffeiliau gweithredu ar gyfer gweithredu gwasanaethau busnes
             short: Cynhyrchu ffeiliau gweithredu
@@ -66,16 +63,21 @@ cli:
             long: Cynhyrchu ffeil go.mod ar gyfer rheoli dibyniaeth
             short: Cynhyrchu ffeil go.mod
         pb:
-            long: Cynhyrchu ffeiliau .pb.go ar gyfer cynhyrchu ffeiliau .proto,
+            long: Cynhyrchu ffeiliau .pb.go, a ddefnyddir i gynhyrchu ffeiliau .proto Bydd labeli maes perthnasol x yn cael eu hychwanegu'n awtomatig yn ôl y ffurfwedd.
             short: Cynhyrchu ffeil .pb.go
         short: Generadur cod
         state:
+            conf:
+                long: Cynhyrchu cod darllen ffeil ffurfweddu ar gyfer darllen cyfluniad gwasanaeth busnes
+                short: Cynhyrchu cod darllen ffeil ffurfweddu
             flags:
                 cache: A ddylid galluogi cynhyrchu sy'n gysylltiedig â storfa
                 config: A ddylid cynhyrchu cod cysylltiedig â ffurfweddiad
-                db: A ddylid galluogi cynhyrchu cronfa ddata sy'n gysylltiedig â chronfa ddata
                 i18n: P'un ai i alluogi cynhyrchu aml-iaith cysylltiedig (mae'r genhedlaeth yn cynnwys ymgychwyn cyflwr a chynnwys arall yn unig, ac nid yw'n cynnwys cyfieithu awtomatig o ieithoedd lluosog. Os oes angen cyfieithu awtomatig arnoch, defnyddiwch {{.Command}} i weld y manylion)
                 table: A ddylid galluogi cynhyrchu cronfa ddata sy'n gysylltiedig â chronfa ddata
+            i18n:
+                long: Cynhyrchu cod cysylltiedig i18n ar gyfer galwadau rhyngwladol aml-iaith
+                short: Cynhyrchu cod cysylltiedig i18n
             long: Cynhyrchu holl swyddogaethau cysylltiedig y wladwriaeth ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
             short: Pob swyddogaeth berthnasol ar gyfer cynhyrchu cyflwr
             table:

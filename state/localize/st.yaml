@@ -7,8 +7,8 @@ cli:
                 action: Boitšoaro bo hlokang ho eketsoa ka lihlopha, ka kopo fumana litokomane tsa tšebeliso bakeng sa lintlha
                 default-role: Karolo ea kamehla ea sebopeho se hlahisoang ke sehlopha Ka kopo sheba litokomane tsa tšebeliso bakeng sa lintlha.
                 gen-to: Hlalosa sebaka sa tlhahiso ea lifaele tsa .go tse hlahisitsoeng
-                list-option: Lethathamo le ka hlophisoa hape, ka kopo fumana litokomane tsa tšebeliso bakeng sa lintlha.
-                model: Hlalosa lebitso la mohlala, ts'ehetso e siea sehlongoa sa `model`
+                list-option: Lethathamo le ka boela la hloekisoa, ka kopo fumana litokomane tsa tšebeliso bakeng sa lintlha.
+                model: Hlalosa lebitso la mohlala, ts'ehetso e siea sehlongoa sa `mohlala`
             long: Hlahisa likhokahano ka lihlopha 'me u kenye sebopeho sa mofuta o itseng faeleng ea .proto
             short: Sehokelo sa moloko oa batho
         all:
@@ -21,7 +21,7 @@ cli:
             long: Hlahisa lifaele tsa ho kena bakeng sa lits'ebeletso tsa khoebo
             short: Hlahisa faele ea ho kena
         conf:
-            long: Hlahisa lifaele tsa tlhophiso bakeng sa ho bala lits'ebeletso tsa khoebo
+            long: Hlahisa template ea faele ea tlhophiso
             short: Hlahisa faele ea tlhophiso
         dockerignore:
             long: Hlahisa faele ea .dockerignore bakeng sa mohaho oa setšoantšo sa Docker ho hlokomoloha tsamaiso ea lifaele
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Hlahisa faele ea .goreleaser.yml bakeng sa ho hlophisa lisebelisoa tsa tokollo
             short: Hlahisa faele ea .goreleaser.yml
-        i18n:
-            long: Hlahisa lifaele tsa i18n bakeng sa ho qala lisebelisoa tse amanang le lipuo tse ngata tsa machaba le mesebetsi e meng
-            short: Hlahisa faele ea i18n
         impl:
             long: Hlahisa lifaele tsa ts'ebetsong bakeng sa ts'ebetsong ea litšebeletso tsa khoebo
             short: Hlahisa lifaele tsa ts'ebetsong
@@ -66,16 +63,21 @@ cli:
             long: Hlahisa faele ea go.mod bakeng sa taolo ea ho itšetleha
             short: Hlahisa faele ea go.mod
         pb:
-            long: Hlahisa lifaele tsa .pb.go bakeng sa ho hlahisa lifaele tsa .proto,
+            long: Hlahisa lifaele tsa .pb.go, tse sebelisetsoang ho hlahisa lifaele tsa .proto tse sebetsang sebakeng sa x li tla eketsoa ka bo eona ho latela tlhophiso.
             short: Hlahisa faele ea .pb.go
         short: Jenereithara ea khoutu
         state:
+            conf:
+                long: Hlahisa khoutu ea ho bala faele bakeng sa ho bala tlhophiso ea litšebeletso tsa khoebo
+                short: Hlahisa khoutu ea ho bala faele ea tlhophiso
             flags:
                 cache: Hore na ho ka khoneha ho etsa tlhahiso e amanang le cache
                 config: Hore na o tla hlahisa khoutu e amanang le tlhophiso
-                db: Hore na ho ka khoneha ho etsa tlhahiso ea database e amanang le database
                 i18n: Hore na o ka thusa ho hlahisa lipuo tse ngata tse amanang le tsona (moloko ona o kenyelletsa feela ho qalisoa ha naha le litaba tse ling, 'me ha e kenyeletse phetolelo e ikemetseng ea lipuo tse ngata. Haeba u hloka phetolelo e ikemetseng, ka kopo sebelisa {{.Command}} ho sheba lintlha)
                 table: Hore na ho ka khoneha ho etsa tlhahiso ea database e amanang le database
+            i18n:
+                long: Hlahisa khoutu e amanang le i18n bakeng sa mehala ea machaba ea lipuo tse ngata
+                short: Hlahisa khoutu e amanang le i18n
             long: Hlahisa mesebetsi eohle e amanang le mmuso bakeng sa taolo e phahameng ea lisebelisoa kapa lisebelisoa tse tsitsitseng tsa lits'ebeletso tsa khoebo
             short: Mesebetsi eohle e amehang bakeng sa ho hlahisa naha
             table:

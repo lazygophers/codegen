@@ -21,7 +21,7 @@ cli:
             long: Xerar ficheiros de entrada para servizos empresariais
             short: Xerar ficheiro de entrada
         conf:
-            long: Xerar ficheiros de configuración para a lectura de configuración dos servizos empresariais
+            long: Xerar un modelo de ficheiro de configuración
             short: Xerar ficheiro de configuración
         dockerignore:
             long: Xera un ficheiro .dockerignore para a creación de imaxes de Docker para ignorar a xestión de ficheiros
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Xera o ficheiro .goreleaser.yml para a configuración das ferramentas de lanzamento
             short: Xerar ficheiro .goreleaser.yml
-        i18n:
-            long: Xera ficheiros i18n para a inicialización de conxuntos de ferramentas relacionados coa internacionalización multilingüe e outras funcións
-            short: Xerar ficheiro i18n
         impl:
             long: Xerar ficheiros de implantación para a implantación de servizos empresariais
             short: Xerar ficheiros de implementación
@@ -66,16 +63,21 @@ cli:
             long: Xera o ficheiro go.mod para a xestión de dependencias
             short: Xerar ficheiro go.mod
         pb:
-            long: Xera ficheiros .pb.go para xerar ficheiros .proto,
+            long: Xera ficheiros .pb.go, que se utilizan para xerar ficheiros .proto. As etiquetas de campos relevantes x engadiranse automaticamente segundo a configuración.
             short: Xerar ficheiro .pb.go
         short: Xerador de código
         state:
+            conf:
+                long: Xera o código de lectura do ficheiro de configuración para a lectura da configuración do servizo empresarial
+                short: Xerar código de lectura do ficheiro de configuración
             flags:
                 cache: Indica se se activa a xeración relacionada coa caché
                 config: Indica se hai que xerar código relacionado coa configuración
-                db: Indica se se activa a xeración de bases de datos relacionadas coa base de datos
                 i18n: Indica se se activa a xeración relacionada en varios idiomas (a xeración só inclúe a inicialización do estado e outro contido, e non inclúe a tradución automática de varios idiomas. Se precisas unha tradución automática, utiliza {{.Command}} para ver os detalles)
                 table: Indica se se activa a xeración de bases de datos relacionadas coa base de datos
+            i18n:
+                long: Xera código relacionado con i18n para chamadas internacionais en varios idiomas
+                short: Xerar código relacionado con i18n
             long: Xera todas as funcións relacionadas do estado para a xestión de recursos con estado ou de recursos estáticos dos servizos empresariais
             short: Todas as funcións relevantes para xerar estado
             table:

@@ -21,7 +21,7 @@ cli:
             long: Jenere dosye antre pou sèvis biznis
             short: Jenere dosye antre
         conf:
-            long: Jenere fichye konfigirasyon pou lekti konfigirasyon sèvis biznis yo
+            long: Jenere modèl fichye konfigirasyon
             short: Jenere fichye konfigirasyon
         dockerignore:
             long: Jenere fichye .dockerignore pou bilding imaj Docker pou inyore jesyon dosye
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Jenere fichye .goreleaser.yml pou konfigirasyon zouti lage yo
             short: Jenere fichye .goreleaser.yml
-        i18n:
-            long: Jenere fichye i18n pou inisyalizasyon twous zouti ki gen rapò ak entènasyonalizasyon milti-lang ak lòt fonksyon
-            short: Jenere fichye i18n
         impl:
             long: Jenere dosye aplikasyon pou aplikasyon sèvis biznis yo
             short: Jenere dosye aplikasyon yo
@@ -66,16 +63,21 @@ cli:
             long: Jenere dosye go.mod pou jesyon depandans
             short: Jenere dosye go.mod
         pb:
-            long: Jenere fichye .pb.go pou jenere fichye .proto,
+            long: Jenere fichye .pb.go, ki itilize pou jenere fichye .proto Yo pral ajoute otomatikman etikèt jaden ki enpòtan yo dapre konfigirasyon an.
             short: Jenere fichye .pb.go
         short: Kòd dèlko
         state:
+            conf:
+                long: Jenere kòd lekti dosye konfigirasyon pou lekti konfigirasyon sèvis biznis
+                short: Jenere kòd lekti dosye konfigirasyon
             flags:
                 cache: Kit pou pèmèt jenerasyon ki gen rapò ak kachèt
                 config: Kit pou jenere kòd ki gen rapò ak konfigirasyon
-                db: Kit pou pèmèt jenerasyon baz done ki gen rapò ak baz done
                 i18n: Kit pou pèmèt jenerasyon ki gen rapò ak plizyè lang (jenerasyon an gen ladan sèlman inisyalizasyon eta a ak lòt kontni, epi li pa enkli tradiksyon otomatik plizyè lang. Si ou bezwen tradiksyon otomatik, tanpri itilize {{.Command}} pou wè detay)
                 table: Kit pou pèmèt jenerasyon baz done ki gen rapò ak baz done
+            i18n:
+                long: Jenere i18n kòd ki gen rapò pou plizyè lang apèl entènasyonal yo
+                short: Jenere i18n kòd ki gen rapò
             long: Jenere tout fonksyon ki gen rapò nan eta pou resous eta oswa jesyon resous estatik nan sèvis biznis
             short: Tout fonksyon ki enpòtan pou jenere eta
             table:
@@ -104,7 +106,7 @@ cli:
                 generate-const: Jenere valè enimerasyon pou rele fasil
                 languages: Espesifye lang sib pou tradiksyon an
                 src-file: Fichye sous yo dwe tradui (obligatwa)
-                src-language: Lang nan dosye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)
+                src-language: Lang nan fichye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)
                 translater:
                     google-free: Google Web Translate
                     usage: 'Chanèl tradiksyon: Kalite sipò {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'

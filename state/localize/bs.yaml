@@ -4,7 +4,7 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Ponašanja koja se moraju dodati u serijama, potražite detalje u dokumentaciji o upotrebi
+                action: Ponašanja koja se moraju dodati u serijama, pronađite dokumentaciju o upotrebi za detalje
                 default-role: Zadana uloga paketno generiranog sučelja Molimo pogledajte dokumentaciju o korištenju za detalje.
                 gen-to: Odredite izlaznu lokaciju generiranih .go datoteka
                 list-option: Lista se također može filtrirati, za detalje pronađite dokumentaciju o upotrebi.
@@ -15,13 +15,13 @@ cli:
             long: Generirajte sav kod koji podržava ovaj alat
             short: Generirajte sav kod
         cache:
-            long: Generirajte keš datoteke za SDK-ove povezane s keširanjem poslovnih poziva
+            long: Generirajte keš datoteke za SDK povezane s keširanjem poslovnih poziva
             short: Generirajte cache fajl
         cmd:
             long: Generirajte ulazne datoteke za poslovne usluge
             short: Generirajte ulazni fajl
         conf:
-            long: Generirajte konfiguracijske datoteke za čitanje konfiguracije poslovnih usluga
+            long: Generirajte predložak konfiguracijske datoteke
             short: Generirajte konfiguracionu datoteku
         dockerignore:
             long: Generirajte .dockerignore datoteku za izgradnju Docker slike da zanemarite upravljanje datotekama
@@ -34,10 +34,10 @@ cli:
             go-module-prefix: Za putanju go_package konfigurisanu u .proto datoteci i stvarnu, možete konfigurirati ovu opciju
             input: Navedite izvornu datoteku .proto koja će se generirati
             output-path: Ova opcija se može konfigurisati kada putanja go_packagea konfigurisana u .proto datoteci nije u skladu sa cestom koja se zapravo treba generisati.
-            overwrite: Za sadržaj koji se neće ponovo generirati, prisilno prepisivanje postojećeg sadržaja
+            overwrite: Za sadržaj koji se neće regenerirati, prisilno prepisivanje postojećeg sadržaja
             proto-files: Da biste uvezli druge .proto datoteke/putanja mape koje nisu u istoj fascikli kao specificirana .proto datoteka, ova operacija je opcija za nadjačavanje konfiguracijskog polja u konfiguracijskoj datoteci.
             protoc: '`protoc` prilagodljiva putanja datoteke'
-            protoc-gen-go: Putanja dodatka `protoc-gen-go`
+            protoc-gen-go: '`protoc-gen-go` putanja dodatka'
             tables-enable_field_created_at: Treba li omogućiti generiranje zadane konfiguracije polja created_at baze podataka
             tables-enable_field_deleted_at: Treba li omogućiti zadanu postavku polja deleted_at u bazi podataka
             tables-enable_field_id: Omogućite generiranje zadane konfiguracije za polja koja se odnose na bazu podataka
@@ -52,31 +52,33 @@ cli:
         goreleaser:
             long: Generirajte .goreleaser.yml datoteku za konfiguraciju alata za izdavanje
             short: Generirajte .goreleaser.yml datoteku
-        i18n:
-            long: Generirajte i18n datoteke za inicijalizaciju višejezičnih kompleta alata i drugih funkcija povezanih s internacionalizacijom
-            short: Generirajte i18n datoteku
         impl:
             long: Generirajte implementacijske datoteke za implementaciju poslovnih usluga
             short: Generirajte implementacijske datoteke
         long: Generator koda, podržava više šablona
         makefile:
-            long: Generirajte Makefile datoteke za alate za izgradnju i druge povezane komande
+            long: Generirajte Makefile datoteke za alate za izgradnju i druge povezane naredbe
             short: Generiraj Makefile
         mod:
             long: Generirajte go.mod datoteku za upravljanje ovisnostima
             short: Generirajte go.mod fajl
         pb:
-            long: Generirajte .pb.go fajlove za generisanje .proto fajlova,
+            long: Generirajte .pb.go datoteke, koje se koriste za generiranje .proto datoteka. Relevantne oznake polja x će se automatski dodati u skladu sa konfiguracijom.
             short: Generirajte .pb.go fajl
         short: Generator koda
         state:
+            conf:
+                long: Generirajte kod za čitanje konfiguracijske datoteke za čitanje konfiguracije poslovnih usluga
+                short: Generirajte kod za čitanje konfiguracijske datoteke
             flags:
                 cache: Treba li omogućiti generiranje vezano za keš memoriju
                 config: Treba li generirati kod povezan s konfiguracijom
-                db: Treba li omogućiti generiranje baze podataka vezano za bazu podataka
                 i18n: Da li omogućiti višejezično generiranje (generacija uključuje samo inicijalizaciju stanja i drugi sadržaj, i ne uključuje automatski prijevod više jezika. Ako vam je potreban automatski prijevod, koristite {{.Command}} da vidite detalje)
                 table: Treba li omogućiti generiranje baze podataka vezano za bazu podataka
-            long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
+            i18n:
+                long: Generirajte i18n povezan kod za višejezične međunarodne pozive
+                short: Generirajte i18n povezan kod
+            long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičko upravljanje resursima poslovnih usluga
             short: Sve relevantne funkcije za generiranje stanja
             table:
                 long: Generirajte kod povezan sa state.table, koji se koristi za povezivanje baze podataka i inicijalizaciju tablice kada se servis pokrene.
@@ -85,7 +87,7 @@ cli:
             long: Sve povezane funkcije generiranja tabela za upravljanje resursima sa stanjem ili statičko upravljanje resursima poslovnih usluga
             short: Sve povezane funkcije za generiranje tablica
     help:
-        additional_commands: Dodatne naredbe
+        additional_commands: Dodatne komande
         aliases: komandni pseudonim
         available_commands: Podržane komande
         command: Red
@@ -107,7 +109,7 @@ cli:
                 src-language: Jezik izvorne datoteke (ako nije naveden, alat će automatski odrediti izvorni fajl)
                 translater:
                     google-free: Google web prevodilac
-                    usage: 'Kanal prijevoda: Vrsta podrške {{opseg $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+                    usage: 'Kanal prevoda: Tip podrške {{opseg $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Višejezične datoteke iz određenog izvora se pretvaraju u datoteke u istom formatu na drugim jezicima.
             short: prevoditi
     long: Skup alata za lijene ljude, uključujući pozadinski okvir zasnovan na 'proto', najčešće korištene šablone i višejezični prijevod

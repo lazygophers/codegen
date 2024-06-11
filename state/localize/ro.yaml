@@ -21,7 +21,7 @@ cli:
             long: Generați fișiere de intrare pentru serviciile de afaceri
             short: Generați fișierul de intrare
         conf:
-            long: Generați fișiere de configurare pentru citirea configurației serviciilor de afaceri
+            long: Generați șablon de fișier de configurare
             short: Generați fișierul de configurare
         dockerignore:
             long: Generați fișierul .dockerignore pentru construirea imaginii Docker pentru a ignora gestionarea fișierelor
@@ -36,7 +36,7 @@ cli:
             output-path: Această opțiune poate fi configurată atunci când calea go_package configurată în fișierul .proto este incompatibilă cu platforma care trebuie generată de fapt.
             overwrite: Pentru conținutul care nu va fi regenerat, forțați suprascrierea conținutului existent
             proto-files: Pentru a importa alte fișiere .proto/căi de foldere care nu se află în același folder cu fișierul .proto specificat, această operație este o opțiune pentru a suprascrie câmpul de configurare din fișierul de configurare.
-            protoc: calea fișierului personalizabilă `protoc`
+            protoc: Calea fișierului personalizabilă `protoc`
             protoc-gen-go: Calea pluginului `protoc-gen-go`
             tables-enable_field_created_at: Dacă se activează generarea configurației implicite a câmpului bazei de date create_at
             tables-enable_field_deleted_at: Dacă se activează setarea implicită a câmpului deleted_at din baza de date
@@ -52,31 +52,33 @@ cli:
         goreleaser:
             long: Generați fișierul .goreleaser.yml pentru configurarea instrumentelor de lansare
             short: Generați fișierul .goreleaser.yml
-        i18n:
-            long: Generați fișiere i18n pentru inițializarea truselor de instrumente legate de internaționalizare în mai multe limbi și a altor funcții
-            short: Generați fișierul i18n
         impl:
             long: Generați fișiere de implementare pentru implementarea serviciilor de afaceri
             short: Generați fișiere de implementare
         long: Generator de cod, acceptă mai multe șabloane
         makefile:
-            long: Generați fișiere Makefile pentru instrumente de construcție și alte comenzi asociate
+            long: Generați fișiere Makefile pentru instrumente de construcție și alte comenzi aferente
             short: Generați Makefile
         mod:
             long: Generați fișierul go.mod pentru gestionarea dependenței
             short: Generați fișierul go.mod
         pb:
-            long: Generați fișiere .pb.go pentru a genera fișiere .proto,
+            long: Generați fișiere .pb.go, care sunt utilizate pentru a genera fișiere .proto. Etichetele de câmp relevante x vor fi adăugate automat în funcție de configurație.
             short: Generați fișierul .pb.go
         short: Generator de cod
         state:
+            conf:
+                long: Generați codul de citire a fișierului de configurare pentru citirea configurației serviciului de afaceri
+                short: Generați codul de citire a fișierului de configurare
             flags:
                 cache: Dacă se activează generarea legată de cache
                 config: Dacă se generează cod legat de configurație
-                db: Dacă se activează generarea bazei de date legate de baze de date
                 i18n: Dacă se activează generarea legată de mai multe limbi (generarea include doar inițializarea stării și alt conținut și nu include traducerea automată a mai multor limbi. Dacă aveți nevoie de traducere automată, utilizați {{.Command}} pentru a vedea detalii)
                 table: Dacă se activează generarea bazei de date legate de baze de date
-            long: Generați toate funcțiile conexe de stat pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
+            i18n:
+                long: Generați codul i18n pentru apelurile internaționale în mai multe limbi
+                short: Generați codul asociat i18n
+            long: Generați toate funcțiile de stat aferente pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
             short: Toate funcțiile relevante pentru generarea stării
             table:
                 long: Generați cod asociat state.table, utilizat pentru conexiunea la baza de date și inițializarea tabelului atunci când serviciul este pornit.
@@ -99,7 +101,7 @@ cli:
         tran:
             flags:
                 all-language: Traduceți toate limbile acceptate (dacă este adevărat, indicatorul de limbi este dezactivat)
-                force: Suprascrieți traducerile existente
+                force: Suprascrie traducerile existente
                 force-key-prefix: cheile care trebuie forțate să fie suprascrise
                 generate-const: Generați valori de enumerare pentru apeluri ușoare
                 languages: Specificați limba țintă pentru traducere

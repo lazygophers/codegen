@@ -21,7 +21,7 @@ cli:
             long: Iş hyzmatlary üçin giriş faýllaryny dörediň
             short: Giriş faýly dörediň
         conf:
-            long: Iş hyzmatlaryny konfigurasiýa okamak üçin konfigurasiýa faýllaryny dörediň
+            long: Konfigurasiýa faýl şablonyny dörediň
             short: Sazlama faýly dörediň
         dockerignore:
             long: Faýl dolandyryşyny äsgermezlik etmek üçin Docker şekil binasy üçin .dockerignore faýly dörediň
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Goýberiş gurallarynyň konfigurasiýasy üçin .goreleaser.yml faýly dörediň
             short: .Goreleaser.yml faýly dörediň
-        i18n:
-            long: Köp dilli halkaralaşma bilen baglanyşykly gurallar we beýleki funksiýalary başlamak üçin i18n faýllaryny dörediň
-            short: I18n faýly dörediň
         impl:
             long: Iş hyzmatlaryny amala aşyrmak üçin ýerine ýetiriş faýllaryny dörediň
             short: Implementationerine ýetiriş faýllaryny dörediň
@@ -66,16 +63,21 @@ cli:
             long: Garaşlylygy dolandyrmak üçin go.mod faýly dörediň
             short: Go.mod faýly dörediň
         pb:
-            long: .Prot faýllaryny döretmek üçin .pb.go faýllaryny dörediň,
+            long: .Proto faýllaryny döretmek üçin ulanylýan .pb.go faýllaryny dörediň, degişli meýdan bellikleri konfigurasiýa laýyklykda awtomatiki usulda goşular.
             short: .Pb.go faýly dörediň
         short: Kod generatory
         state:
+            conf:
+                long: Iş hyzmaty konfigurasiýasyny okamak üçin konfigurasiýa faýly okamak koduny dörediň
+                short: Konfigurasiýa faýly okamak kody dörediň
             flags:
                 cache: Keş bilen baglanyşykly nesli işletmelimi
                 config: Konfigurasiýa bilen baglanyşykly kod döredip bolarmy
-                db: Maglumat bazasy bilen baglanyşykly maglumat bazasyny döretmäge mümkinçilik bermelimi
                 i18n: Köp dilli baglanyşykly nesli işletmelimi (nesil diňe döwlet başlangyjyny we beýleki mazmuny öz içine alýar we köp dilleriň awtomatiki terjimesini öz içine almaýar. Awtomatiki terjime gerek bolsa, jikme-jiklikleri görmek üçin {{.Söwda}} ulanyň)
                 table: Maglumat bazasy bilen baglanyşykly maglumat bazasyny döretmäge mümkinçilik bermelimi
+            i18n:
+                long: Köp dilli halkara jaňlar üçin i18n bilen baglanyşykly kod dörediň
+                short: I18n bilen baglanyşykly kod dörediň
             long: Döwlet çeşmelerini ýa-da işewürlik hyzmatlaryny statiki dolandyrmak üçin döwletiň ähli degişli funksiýalaryny dörediň
             short: Döwlet döretmek üçin ähli degişli funksiýalar
             table:
@@ -101,7 +103,7 @@ cli:
                 all-language: Goldanýan dilleriň hemmesini terjime ediň (eger hakykat bolsa dilleriň baýdagy ýapyk)
                 force: Bar bolan terjimeleriň üstünden ýazyň
                 force-key-prefix: gaýtadan ýazylmaga mejbur edilmeli düwmeler
-                generate-const: Easyeňil jaň etmek üçin sanama bahalaryny dörediň
+                generate-const: Aňsat jaň etmek üçin sanama bahalaryny dörediň
                 languages: Terjime etmek üçin maksat dilini görkeziň
                 src-file: Terjime edilmeli çeşme faýly (zerur)
                 src-language: Çeşme faýlynyň dili (görkezilmedik bolsa, gural deslapky faýly awtomatiki kesgitlär)

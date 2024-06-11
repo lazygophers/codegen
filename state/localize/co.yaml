@@ -21,8 +21,8 @@ cli:
             long: Generate schedarii di ingressu per i servizii di l'affari
             short: Generate un schedariu di entrata
         conf:
-            long: Generate fugliali di cunfigurazione per a lettura di cunfigurazione di servizii cummerciale
-            short: Generate u schedariu di cunfigurazione
+            long: Genera un mudellu di schedariu di cunfigurazione
+            short: Generate un schedariu di cunfigurazione
         dockerignore:
             long: Generate .dockerignore file per a creazione di l'imaghjini Docker per ignurà a gestione di u schedariu
             short: Generate u schedariu .dockerignore
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generate u schedariu .gorelaser.yml per a cunfigurazione di l'arnesi di liberazione
             short: Generate u schedariu .goreleaser.yml
-        i18n:
-            long: Generate fugliali i18n per l'inizializazione di toolkits multi-lingua cunnessi à l'internazionalizazione è altre funzioni
-            short: Generate u schedariu i18n
         impl:
             long: Generate fugliali di implementazione per l'implementazione di servizii cummerciale
             short: Generate schedarii di implementazione
@@ -66,16 +63,21 @@ cli:
             long: Generate u schedariu go.mod per a gestione di a dependenza
             short: Generate u schedariu go.mod
         pb:
-            long: Generate schedarii .pb.go per generà schedarii .proto,
+            long: Generate schedarii .pb.go, chì sò usati per generà schedarii .proto L'etichetti di u campu pertinenti x seranu aghjuntu automaticamente secondu a cunfigurazione.
             short: Generate u schedariu .pb.go
         short: Generatore di codice
         state:
+            conf:
+                long: Genera codice di lettura di file di cunfigurazione per a lettura di cunfigurazione di serviziu cummerciale
+                short: Genera codice di lettura di u schedariu di cunfigurazione
             flags:
                 cache: Sia per attivà a generazione di cache
                 config: Sia generà codice di cunfigurazione
-                db: Sia per attivà a generazione di basa di dati di basa di dati
                 i18n: Sia per attivà a generazione in parechje lingue (a generazione include solu l'inizializazione statali è altri cuntenutu, è ùn include micca a traduzzione automatica di parechje lingue. Sè avete bisognu di traduzzione automatica, per piacè utilizate {{.Command}} per vede i dettagli)
                 table: Sia per attivà a generazione di basa di dati di basa di dati
+            i18n:
+                long: Genera codice i18n in relazione per e chjama internaziunali multilingue
+                short: Genera codice i18n in relazione
             long: Genera tutte e funzioni di u statu ligate per a risorsa statale o a gestione di risorse statiche di i servizii cummerciale
             short: Tutte e funzioni pertinenti per a generazione di u statu
             table:

@@ -135,6 +135,14 @@ type CfgImpl struct {
 	Route string `json:"route,omitempty" yaml:"route,omitempty" toml:"route,omitempty"`
 }
 
+type CfgTemplateState struct {
+	Table string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
+	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
+	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
+	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
+	I18n  string `json:"i18n,omitempty" yaml:"i18n,omitempty" toml:"i18n,omitempty"`
+}
+
 type CfgTemplate struct {
 	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
 
@@ -147,11 +155,9 @@ type CfgTemplate struct {
 
 	Main string `json:"main,omitempty" yaml:"main,omitempty" toml:"main,omitempty"`
 
-	Table string `json:"table,omitempty" yaml:"table,omitempty" toml:"table,omitempty"`
-	Conf  string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
-	Cache string `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`
-	State string `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
-	I18n  string `json:"i18n,omitempty" yaml:"i18n,omitempty" toml:"i18n,omitempty"`
+	Conf string `json:"conf,omitempty" yaml:"conf,omitempty" toml:"conf,omitempty"`
+
+	State *CfgTemplateState `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 
 	Goreleaser   string `json:"goreleaser,omitempty" yaml:"goreleaser,omitempty" toml:"goreleaser,omitempty"`
 	Makefile     string `json:"makefile,omitempty" yaml:"makefile,omitempty" toml:"makefile,omitempty"`
@@ -294,6 +300,9 @@ func (p *Cfg) apply() (err error) {
 	}
 	if len(p.Template.Impl.Action) == 0 {
 		p.Template.Impl.Action = make(map[string]string)
+	}
+	if p.Template.State == nil {
+		p.Template.State = new(CfgTemplateState)
 	}
 
 	if p.Tables == nil {

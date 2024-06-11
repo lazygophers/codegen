@@ -21,7 +21,7 @@ cli:
             long: Generar archivos de entrada para servicios empresariales.
             short: Generar archivo de entrada
         conf:
-            long: Generar archivos de configuración para lectura de configuración de servicios empresariales.
+            long: Generar plantilla de archivo de configuración
             short: Generar archivo de configuración
         dockerignore:
             long: Genere el archivo .dockerignore para que la creación de imágenes de Docker ignore la administración de archivos
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Genere el archivo .goreleaser.yml para configurar las herramientas de lanzamiento
             short: Generar archivo .goreleaser.yml
-        i18n:
-            long: Genere archivos i18n para la inicialización de kits de herramientas relacionados con la internacionalización en varios idiomas y otras funciones.
-            short: Generar archivo i18n
         impl:
             long: Generar archivos de implementación para la implementación de servicios empresariales.
             short: Generar archivos de implementación
@@ -66,16 +63,21 @@ cli:
             long: Genere el archivo go.mod para la gestión de dependencias
             short: Generar archivo go.mod
         pb:
-            long: Genere archivos .pb.go para generar archivos .proto,
+            long: Genere archivos .pb.go, que se utilizan para generar archivos .proto. Las etiquetas de campo relevantes x se agregarán automáticamente de acuerdo con la configuración.
             short: Generar archivo .pb.go
         short: Generador de códigos
         state:
+            conf:
+                long: Generar código de lectura del archivo de configuración para la lectura de la configuración del servicio empresarial
+                short: Generar código de lectura del archivo de configuración
             flags:
                 cache: Ya sea para habilitar la generación relacionada con el caché
                 config: Ya sea para generar código relacionado con la configuración
-                db: Si se debe habilitar la generación de bases de datos relacionadas con la base de datos
                 i18n: Si se debe habilitar la generación relacionada con varios idiomas (la generación solo incluye la inicialización de estado y otro contenido, y no incluye la traducción automática de varios idiomas. Si necesita traducción automática, utilice {{.Command}} para ver los detalles)
                 table: Si se debe habilitar la generación de bases de datos relacionadas con la base de datos
+            i18n:
+                long: Genere código relacionado con i18n para llamadas internacionales en varios idiomas
+                short: Generar código relacionado con i18n
             long: Generar todas las funciones de estado relacionadas para recursos con estado o gestión de recursos estáticos de servicios empresariales.
             short: Todas las funciones relevantes para generar estado.
             table:
@@ -110,5 +112,5 @@ cli:
                     usage: 'Canal de traducción: tipo de soporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Los archivos multilingües de una determinada fuente se convierten en archivos del mismo formato en otros idiomas.
             short: traducir
-    long: Un conjunto de herramientas para personas perezosas, que incluye un marco backend basado en "proto", plantillas de uso común y traducción a varios idiomas.
+    long: Un conjunto de herramientas para personas perezosas, que incluye un marco de backend basado en "proto", plantillas de uso común y traducción a varios idiomas.
     short: Un conjunto de herramientas para gente perezosa

@@ -21,7 +21,7 @@ cli:
             long: Endla tifayela to nghena ta vukorhokeri bya bindzu
             short: Endla fayili yo nghena
         conf:
-            long: Endla tifayela ta vukorhokeri bya ku hlaya ka vuhlanganisi bya vukorhokeri bya bindzu
+            long: Endla xifaniso xa fayili ya vuhlanganisi
             short: Endla fayili ya vuhlanganisi
         dockerignore:
             long: Endla fayili ya .dockerignore ya ku aka swifaniso swa Docker ku honisa vulawuri bya fayili
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Endla fayili ya .goreleaser.yml ya ku lulamisa switirhisiwa swo humesa
             short: Endla fayili ya .goreleaser.yml
-        i18n:
-            long: Endla tifayela ta i18n ta ku sungula ka switirhisiwa leswi fambelanaka na ku hlanganisiwa ka matiko ya misava ka tindzimi to tala na mintirho yin’wana
-            short: Endla fayili ya i18n
         impl:
-            long: Ku tumbuluxa tifayela ta ku tirhisiwa ta ku tirhisiwa ka vukorhokeri bya bindzu
+            long: Ku tumbuluxa tifayela ta ku tirhisiwa ka ku tirhisiwa ka vukorhokeri bya bindzu
             short: Endla tifayela ta ku tirhisiwa
         long: Khodi generator, yi seketela tithempleyiti to tala
         makefile:
@@ -66,16 +63,21 @@ cli:
             long: Endla fayili ya go.mod ya vulawuri bya ku titshega
             short: Endla fayili ya go.mod
         pb:
-            long: Endla tifayela ta .pb.go to tumbuluxa tifayela ta .proto, .
+            long: Endla tifayela ta .pb.go, leti tirhisiwaka ku tumbuluxa tifayela ta .proto Tilebhele ta nsimu leti faneleke x ti ta engeteriwa hi ku tisungulela ku ya hi vukorhokeri.
             short: Endla fayili ya .pb.go
         short: Muendli wa khodi
         state:
+            conf:
+                long: Endla khodi yo hlaya ya fayili ya vukorhokeri bya ku hlaya ka vukorhokeri bya vukorhokeri bya bindzu
+                short: Endla khodi yo hlaya ya fayili ya vuhlanganisi
             flags:
                 cache: Loko ku ri ku pfumelela ku tumbuluxiwa loku fambelanaka na cache
                 config: Leswaku ku endliwa khodi leyi fambelanaka na vuhlanganisi
-                db: Leswaku ku endliwa leswaku ku tumbuluxiwa ka database leyi fambelanaka na database
                 i18n: Loko ku ri ku pfumelela ku tumbuluxiwa loku fambelanaka na tindzimi to tala (xitukulwana xi katsa ntsena ku sunguriwa ka mfumo na nhundzu yin’wana, naswona a xi katsi vuhundzuluxi bya otomatiki bya tindzimi to tala. Loko u lava vuhundzuluxi bya otomatiki, hi kombela u tirhisa {{.Xileriso}} ku vona vuxokoxoko)
                 table: Leswaku ku endliwa leswaku ku tumbuluxiwa ka database leyi fambelanaka na database
+            i18n:
+                long: Endla khodi leyi fambelanaka na i18n ya tifoyini ta matiko ya misava ta tindzimi to tala
+                short: Endla khodi leyi fambelanaka na i18n
             long: Ku tumbuluxa mintirho hinkwayo leyi fambelanaka ya mfumo ya switirhisiwa swa xiyimo kumbe vufambisi bya switirhisiwa leswi nga cinciki swa vukorhokeri bya bindzu
             short: Mintirho hinkwayo leyi faneleke ya ku tumbuluxa xiyimo
             table:

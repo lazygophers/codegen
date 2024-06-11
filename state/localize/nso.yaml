@@ -21,7 +21,7 @@ cli:
             long: Hlagiša difaele tša go tsena tša ditirelo tša kgwebo
             short: Hlagiša faele ya go tsena
         conf:
-            long: Hlagiša difaele tša peakanyo bakeng sa go bala peakanyo ya ditirelo tša kgwebo
+            long: Hlagiša thempleite ya faele ya peakanyo
             short: Hlahisa faele ya peakanyo
         dockerignore:
             long: Hlagiša faele ya .dockerignore bakeng sa go aga seswantšho sa Docker go hlokomologa taolo ya faele
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Hlagiša faele ya .goreleaser.yml bakeng sa peakanyo ya didirišwa tša go lokolla
             short: Hlahisa faele ya .goreleaser.yml
-        i18n:
-            long: Hlagiša difaele tša i18n tša go thoma ga didirišwa tša go amana le boditšhabatšhaba tša maleme a mantši le mešomo ye mengwe
-            short: Hlahisa faele ya i18n
         impl:
-            long: Hlagiša difaele tša phethagatšo bakeng sa phethagatšo ya ditirelo tša kgwebo
+            long: Hlagiša difaele tša phethagatšo ya phethagatšo ya ditirelo tša kgwebo
             short: Hlagiša difaele tša phethagatšo
         long: Khoutu jenereithara, tšehetsa dithempleite multiple
         makefile:
@@ -66,16 +63,21 @@ cli:
             long: Hlahisa faele ya go.mod bakeng sa taolo ya ho itšetleha
             short: Hlahisa faele ya go.mod
         pb:
-            long: Hlagiša difaele tša .pb.go bakeng sa go tšweletša difaele tša .proto, .
+            long: Hlagiša difaele tša .pb.go, tšeo di šomišwago go tšweletša difaele tša .proto Dileibole tša tšhemo tša maleba x di tla okeletšwa ka go iketla go ya ka peakanyo.
             short: Hlahisa faele ya .pb.go
         short: Khoutu ya jenereithara
         state:
+            conf:
+                long: Hlagiša khoutu ya go bala faele ya peakanyo bakeng sa go bala peakanyo ya tirelo ya kgwebo
+                short: Hlagiša khoutu ya go bala faele ya peakanyo
             flags:
                 cache: Gore na go kgontšha moloko wo o amanago le cache
                 config: Gore na go tšweletša khoutu ye e amanago le peakanyo
-                db: Gore o tla kgontšha moloko wa polokelo ya tshedimošo wo o amanago le polokelo ya tshedimošo
                 i18n: Gore o tla kgontšha moloko wo o amanago le maleme a mantši (moloko o akaretša fela go thoma ga mmušo le diteng tše dingwe, gomme ga o akaretše phetolelo ya go itiriša ya maleme a mantši. Ge o nyaka phetolelo ya go itiriša, hle šomiša {{.Command}} go lebelela dintlha)
                 table: Gore o tla kgontšha moloko wa polokelo ya tshedimošo wo o amanago le polokelo ya tshedimošo
+            i18n:
+                long: Hlagiša khoutu ye e amanago le i18n ya megala ya boditšhabatšhaba ya maleme a mantši
+                short: Hlahisa khoutu e amanang le i18n
             long: Hlagiša mešomo ka moka ye e amanago ya mmušo bakeng sa mohlodi wa mmušo goba taolo ya methopo ye e sa fetogego ya ditirelo tša kgwebo
             short: Mešomo ka moka ya maleba ya go tšweletša mmušo
             table:
@@ -86,7 +88,7 @@ cli:
             short: Mešomo ka moka ye e amanago ya go tšweletša ditafola
     help:
         additional_commands: Ditaelo tša tlaleletšo
-        aliases: leina le lengwe la taelo
+        aliases: taelo ya leina le lengwe
         available_commands: Ditaelo tše di thekgwago
         command: Tatelano
         flags: paramethara ya
@@ -110,5 +112,5 @@ cli:
                     usage: 'Mokero wa phetolelo: Mohuta wa thekgo {{range $ key,$ value := .Type}}{{$key}}:{{$ value}}{{end}}'
             long: Difaele tša maleme a mantši go tšwa mothopong wo o itšego di fetolelwa go difaele ka sebopego se se swanago ka maleme a mangwe.
             short: fetolela
-    long: Seteišene sa sedirišwa sa batho ba go tšwafa, go akaretšwa tlhako ya morago ye e theilwego godimo ga ‘proto’, dithempleite tšeo di šomišwago ka tlwaelo, le phetolelo ya maleme a mantši
+    long: Seteišene sa sedirišwa sa batho ba go tšwafa, go akaretšwa tlhako ya morago ye e theilwego godimo ga ‘proto’, dithempleite tše di šomišwago ka tlwaelo, le phetolelo ya maleme a mantši
     short: Sedirišwa se se beilwego bakeng sa batho ba botswa

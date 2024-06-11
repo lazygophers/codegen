@@ -21,7 +21,7 @@ cli:
             long: Tsim cov ntaub ntawv nkag rau kev pabcuam kev lag luam
             short: Tsim cov ntaub ntawv nkag
         conf:
-            long: Tsim cov ntaub ntawv configuration rau configuration nyeem cov kev pabcuam kev lag luam
+            long: Tsim cov ntaub ntawv configuration template
             short: Tsim cov ntaub ntawv configuration
         dockerignore:
             long: Tsim cov ntaub ntawv .dockerignore rau Docker duab lub tsev kom tsis quav ntsej kev tswj cov ntaub ntawv
@@ -35,11 +35,11 @@ cli:
             input: Qhia meej cov ntaub ntawv .proto qhov yuav tsum tau tsim
             output-path: Qhov kev xaiv no tuaj yeem teeb tsa thaum txoj hauv kev ntawm go_package teeb tsa hauv .proto cov ntaub ntawv tsis sib haum nrog cov roadbed uas yuav tsum tau tsim.
             overwrite: Rau cov ntsiab lus uas yuav tsis rov tsim dua tshiab, yuam overwriting ntawm cov ntsiab lus uas twb muaj lawm
-            proto-files: Txhawm rau import lwm cov ntaub ntawv .proto/folder txoj hauv kev uas tsis nyob hauv tib lub nplaub tshev raws li cov ntaub ntawv .proto tau teev tseg, qhov kev ua haujlwm no yog ib qho kev xaiv rau override lub configuration teb nyob rau hauv cov ntaub ntawv configuration.
+            proto-files: Txhawm rau import lwm cov ntaub ntawv .proto/folder txoj hauv kev uas tsis nyob hauv tib lub nplaub tshev raws li cov ntaub ntawv .proto tau teev tseg, qhov haujlwm no yog ib qho kev xaiv rau override lub configuration teb nyob rau hauv cov ntaub ntawv configuration.
             protoc: '''protoc'' customizable file path'
             protoc-gen-go: '''protoc-gen-go'' plugin path'
             tables-enable_field_created_at: Seb puas yuav pab kom lub neej ntawd configuration tiam ntawm database generate_at teb
-            tables-enable_field_deleted_at: Seb puas yuav pab kom lub neej ntawd teeb tsa ntawm qhov chaw deleted_at hauv cov ntaub ntawv
+            tables-enable_field_deleted_at: Seb puas yuav pab kom lub neej ntawd teeb tsa ntawm qhov deleted_at teb hauv database
             tables-enable_field_id: Pab kom lub neej ntawd configuration tiam rau database-related teb
             tables-enable_field_updated_at: Seb puas yuav pab kom tus nqi pib ntawm qhov kho tshiab_at teb hauv cov ntaub ntawv
             tables-enable_gorm_tag_column: Seb puas yuav pab tau database-related gorm tiam
@@ -52,30 +52,32 @@ cli:
         goreleaser:
             long: Tsim cov ntaub ntawv .goreleaser.yml rau kev teeb tsa ntawm cov cuab yeej tso tawm
             short: Tsim cov ntaub ntawv .goreleaser.yml
-        i18n:
-            long: Tsim cov ntaub ntawv i18n rau kev pib ntawm ntau hom lus thoob ntiaj teb hais txog cov cuab yeej thiab lwm yam haujlwm
-            short: Tsim cov ntaub ntawv i18n
         impl:
             long: Tsim cov ntaub ntawv siv rau kev siv cov kev pabcuam kev lag luam
             short: Tsim cov ntaub ntawv siv
         long: Code generator, txhawb ntau tus qauv
         makefile:
-            long: Tsim cov ntaub ntawv Makefile rau cov cuab yeej tsim thiab lwm cov lus txib
+            long: Tsim cov ntaub ntawv Makefile rau lub tsev cov cuab yeej thiab lwm yam hais kom ua
             short: Tsim Makefile
         mod:
             long: Tsim cov ntaub ntawv go.mod rau kev tswj hwm kev vam meej
             short: Tsim cov ntaub ntawv go.mod
         pb:
-            long: Tsim .pb.go cov ntaub ntawv rau tsim cov ntaub ntawv .proto,
+            long: Tsim .pb.go cov ntaub ntawv, uas yog siv los tsim .proto cov ntaub ntawv ntsig txog cov ntawv sau x yuav raug txiav ntxiv raws li kev teeb tsa.
             short: Tsim .pb.go cov ntaub ntawv
         short: Code generator
         state:
+            conf:
+                long: Tsim cov ntaub ntawv configuration nyeem code rau kev lag luam kev pabcuam kev nyeem ntawv
+                short: Tsim cov ntaub ntawv configuration nyeem code
             flags:
                 cache: Seb puas yuav pab kom cache ntsig txog tiam
                 config: Seb puas yuav tsim kom muaj teeb meem ntsig txog code
-                db: Seb puas yuav pab tau cov ntaub ntawv ntsig txog database tiam
                 i18n: Seb puas yuav pab tau ntau hom lus uas muaj feem xyuam rau tiam ( tiam tsuas yog suav nrog lub xeev pib thiab lwm cov ntsiab lus, thiab tsis suav nrog kev txhais lus tsis siv neeg ntau hom lus. Yog tias koj xav tau kev txhais lus tsis siv neeg, thov siv {{.Command}} saib cov ntsiab lus)
                 table: Seb puas yuav pab tau cov ntaub ntawv ntsig txog database tiam
+            i18n:
+                long: Tsim i18n ntsig txog code rau ntau hom lus thoob ntiaj teb hu
+                short: Tsim i18n ntsig txog code
             long: Tsim tag nrho cov haujlwm muaj feem xyuam ntawm lub xeev rau cov peev txheej hauv xeev lossis kev tswj hwm kev lag luam zoo li qub
             short: Txhua yam muaj feem xyuam rau kev tsim lub xeev
             table:

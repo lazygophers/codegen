@@ -8,7 +8,7 @@ cli:
                 default-role: Ipa aiyipada ti wiwo-ipilẹṣẹ Jọwọ tọka si iwe lilo fun awọn alaye.
                 gen-to: Pato ipo iṣelọpọ ti awọn faili .go ti ipilẹṣẹ
                 list-option: Awọn akojọ le tun ti wa ni filtered, jọwọ wa awọn lilo iwe fun awọn alaye.
-                model: Pato orukọ awoṣe naa, ṣe atilẹyin yiyọkuro ìpele 'awoṣe'
+                model: Pato orukọ awoṣe, ṣe atilẹyin yiyọkuro ìpele 'awoṣe'
             long: Ṣe awọn atọkun ni awọn ipele ki o ṣafikun wiwo fun awoṣe kan ninu faili .proto
             short: Ipele iran ni wiwo
         all:
@@ -21,7 +21,7 @@ cli:
             long: Ṣẹda awọn faili titẹsi fun awọn iṣẹ iṣowo
             short: Ṣe ina iwọle faili
         conf:
-            long: Ṣe ina awọn faili iṣeto ni fun kika iṣeto ni ti awọn iṣẹ iṣowo
+            long: Ṣe ina iṣeto ni awoṣe faili
             short: Ṣe ina iṣeto ni faili
         dockerignore:
             long: Ṣe ipilẹṣẹ faili .dockerignore fun ile aworan Docker lati foju kọ iṣakoso faili
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Ṣe ina .goreleaser.yml faili fun iṣeto ti awọn irinṣẹ idasilẹ
             short: Ṣe ina .goreleaser.yml faili
-        i18n:
-            long: Ṣe ina awọn faili i18n fun ipilẹṣẹ ti awọn ohun elo irinṣẹ ti o ni ibatan si ilu okeere ti ede pupọ ati awọn iṣẹ miiran
-            short: Ṣe ina i18n faili
         impl:
             long: Ṣẹda awọn faili imuse fun imuse awọn iṣẹ iṣowo
             short: Ṣe ina imuse awọn faili
@@ -66,16 +63,21 @@ cli:
             long: Ṣe ina go.mod faili fun iṣakoso igbẹkẹle
             short: Ṣe ina go.mod faili
         pb:
-            long: Ṣe ipilẹṣẹ awọn faili .pb.go fun ṣiṣẹda awọn faili .proto,
+            long: Ṣe ina awọn faili .pb.go, eyiti a lo lati ṣe ipilẹṣẹ awọn faili .proto ti o wulo x yoo ṣafikun laifọwọyi ni ibamu si iṣeto.
             short: Ṣe ina .pb.go faili
         short: Code monomono
         state:
+            conf:
+                long: Ṣe koodu kika faili atunto fun kika iṣeto ni iṣẹ iṣowo
+                short: Ṣẹda koodu kika faili iṣeto ni
             flags:
                 cache: Boya lati jeki kaṣe-jẹmọ iran
                 config: Boya lati se ina iṣeto ni-jẹmọ koodu
-                db: Boya lati jeki database-jẹmọ database iran
                 i18n: Boya lati mu iran ti o jọmọ ede pupọ ṣiṣẹ (iran naa pẹlu ipilẹṣẹ ipinlẹ nikan ati akoonu miiran, ko si pẹlu itumọ aladaaṣe ti awọn ede pupọ. Ti o ba nilo itumọ aladaaṣe, jọwọ lo {{.Aṣẹ}} lati wo awọn alaye)
                 table: Boya lati jeki database-jẹmọ database iran
+            i18n:
+                long: Ṣe ina koodu ti o ni ibatan i18n fun awọn ipe ilu okeere ti ede pupọ
+                short: Ṣẹda koodu ti o ni ibatan i18n
             long: Ṣe ipilẹṣẹ gbogbo awọn iṣẹ ti o ni ibatan ti ipinlẹ fun awọn orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
             short: Gbogbo awọn iṣẹ ti o yẹ fun ipilẹṣẹ ipo
             table:

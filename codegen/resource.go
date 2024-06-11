@@ -54,6 +54,7 @@ const (
 	TemplateTypeGolangci
 	TemplateTypeGitignore
 	TemplateTypeDockerignore
+	TemplateTypeConf
 )
 
 func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
@@ -108,23 +109,23 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 		embedPath = fmt.Sprintf("template/proto/%s.resp.rpc.gtpl", args[0])
 
 	case TemplateTypeStateTable:
-		systemPath = state.Config.Template.Table
+		systemPath = state.Config.Template.State.Table
 		embedPath = "template/state/table.gtpl"
 
 	case TemplateTypeStateConf:
-		systemPath = state.Config.Template.Conf
+		systemPath = state.Config.Template.State.Conf
 		embedPath = "template/state/config.gtpl"
 
 	case TemplateTypeStateCache:
-		systemPath = state.Config.Template.Cache
+		systemPath = state.Config.Template.State.Cache
 		embedPath = "template/state/cache.gtpl"
 
 	case TemplateTypeStateState:
-		systemPath = state.Config.Template.State
+		systemPath = state.Config.Template.State.State
 		embedPath = "template/state/state.gtpl"
 
 	case TemplateTypeStateI18n:
-		systemPath = state.Config.Template.I18n
+		systemPath = state.Config.Template.State.I18n
 		embedPath = "template/state/i18n.gtpl"
 
 	case TemplateTypeImpl:
@@ -177,6 +178,10 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeI18nConst:
 		systemPath = state.Config.Template.I18nConst
 		embedPath = "template/i18n_const.gtpl"
+
+	case TemplateTypeConf:
+		systemPath = state.Config.Template.Conf
+		embedPath = "template/conf.gtpl"
 
 	default:
 		panic("unsupported template type")

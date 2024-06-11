@@ -5,7 +5,7 @@ cli:
         add-rpc:
             flags:
                 action: Loteka gehitu behar diren portaerak, bilatu erabilera-dokumentazioa xehetasunetarako
-                default-role: Batch sortutako interfazearen funtzio lehenetsia. Ikus ezazu erabilera-dokumentazioa xehetasunetarako.
+                default-role: Batch-en sortutako interfazearen funtzio lehenetsia. Ikus ezazu erabilera-dokumentazioa xehetasunetarako.
                 gen-to: Zehaztu sortutako .go fitxategien irteerako kokapena
                 list-option: Zerrenda ere iragazi daiteke, mesedez aurkitu erabilera-dokumentazioa xehetasunetarako.
                 model: Zehaztu ereduaren izena, onartzen `model` aurrizkia ezabatzea
@@ -21,7 +21,7 @@ cli:
             long: Sortu enpresa-zerbitzuetarako sarrera fitxategiak
             short: Sortu sarrera fitxategia
         conf:
-            long: Sortu konfigurazio-fitxategiak negozio-zerbitzuen konfigurazioa irakurtzeko
+            long: Sortu konfigurazio fitxategi txantiloia
             short: Sortu konfigurazio fitxategia
         dockerignore:
             long: Sortu .dockerignore fitxategia Docker irudia eraikitzeko, fitxategien kudeaketa alde batera uzteko
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Sortu .goreleaser.yml fitxategia kaleratzeko tresnen konfiguraziorako
             short: Sortu .goreleaser.yml fitxategia
-        i18n:
-            long: Sortu i18n fitxategiak hizkuntza anitzeko nazioartekotzeari lotutako tresna-tresnak eta beste funtzio batzuk hasieratzeko
-            short: Sortu i18n fitxategia
         impl:
             long: Enpresa-zerbitzuak ezartzeko ezarpen-fitxategiak sortzea
             short: Sortu ezarpen-fitxategiak
@@ -66,16 +63,21 @@ cli:
             long: Sortu go.mod fitxategia dependentzia kudeatzeko
             short: Sortu go.mod fitxategia
         pb:
-            long: Sortu .pb.go fitxategiak .proto fitxategiak sortzeko,
+            long: Sortu .pb.go fitxategiak, .proto fitxategiak sortzeko erabiltzen diren eremuen etiketak x automatikoki gehituko dira konfigurazioaren arabera.
             short: Sortu .pb.go fitxategia
         short: Kode sortzailea
         state:
+            conf:
+                long: Sortu konfigurazio-fitxategia irakurtzeko kodea negozio-zerbitzuen konfigurazioa irakurtzeko
+                short: Sortu konfigurazio-fitxategia irakurtzeko kodea
             flags:
                 cache: Cachearekin erlazionatutako sorrera gaitu ala ez
                 config: Konfigurazioarekin lotutako kodea sortu behar den ala ez
-                db: Datu-basearekin erlazionatutako datu-baseen sorrera gaitu ala ez
                 i18n: Hizkuntza anitzeko erlazionatutako sorkuntza gaitu ala ez (sorkuntzak egoeraren hasierako hasiera eta bestelako edukia bakarrik barne hartzen du, eta ez du hizkuntza anitzen itzulpen automatikoa sartzen. Itzulpen automatikoa behar baduzu, erabili {{.Command}} xehetasunak ikusteko)
                 table: Datu-basearekin erlazionatutako datu-baseen sorrera gaitu ala ez
+            i18n:
+                long: Sortu i18n erlazionatutako kodea hizkuntza anitzeko nazioarteko deietarako
+                short: Sortu i18n erlazionatutako kodea
             long: Sortu egoera erlazionatutako funtzio guztiak enpresa-zerbitzuen baliabideen egoera edo baliabide estatikoen kudeaketarako
             short: Egoera sortzeko funtzio garrantzitsu guztiak
             table:

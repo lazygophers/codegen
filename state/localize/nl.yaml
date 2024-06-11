@@ -21,7 +21,7 @@ cli:
             long: Genereer boekingsbestanden voor de zakelijke dienstverlening
             short: Invoerbestand genereren
         conf:
-            long: Genereer configuratiebestanden voor het configuratielezen van zakelijke services
+            long: Configuratiebestandsjabloon genereren
             short: Configuratiebestand genereren
         dockerignore:
             long: Genereer een .dockerignore-bestand voor het maken van Docker-images om bestandsbeheer te negeren
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Genereer het .goreleaser.yml-bestand voor de configuratie van releasetools
             short: Genereer het .goreleaser.yml-bestand
-        i18n:
-            long: Genereer i18n-bestanden voor initialisatie van meertalige internationaliseringsgerelateerde toolkits en andere functies
-            short: Genereer een i18n-bestand
         impl:
             long: Implementatiebestanden genereren voor de implementatie van zakelijke dienstverlening
             short: Implementatiebestanden genereren
@@ -66,16 +63,21 @@ cli:
             long: Genereer het go.mod-bestand voor afhankelijkheidsbeheer
             short: Genereer het go.mod-bestand
         pb:
-            long: Genereer .pb.go-bestanden voor het genereren van .proto-bestanden,
+            long: Genereer .pb.go-bestanden, die worden gebruikt om .proto-bestanden te genereren. Relevante veldlabels x worden automatisch toegevoegd volgens de configuratie.
             short: Genereer een .pb.go-bestand
         short: Codegenerator
         state:
+            conf:
+                long: Genereer leescode voor configuratiebestanden voor het lezen van de configuratie van zakelijke services
+                short: Genereer de leescode van het configuratiebestand
             flags:
                 cache: Of cachegerelateerde generatie moet worden ingeschakeld
                 config: Of er configuratiegerelateerde code moet worden gegenereerd
-                db: Of databasegerelateerde databasegeneratie moet worden ingeschakeld
                 i18n: Of u meertalige gerelateerde generatie wilt inschakelen (de generatie omvat alleen staatsinitialisatie en andere inhoud, en omvat geen automatische vertaling van meerdere talen. Als u automatische vertaling nodig heeft, gebruik dan {{.Command}} om details te bekijken)
                 table: Of databasegerelateerde databasegeneratie moet worden ingeschakeld
+            i18n:
+                long: Genereer i18n-gerelateerde code voor meertalige internationale gesprekken
+                short: Genereer i18n-gerelateerde code
             long: Genereer alle gerelateerde statusfuncties voor stateful resource- of statisch resourcebeheer van zakelijke services
             short: Alle relevante functies voor het genereren van status
             table:

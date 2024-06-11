@@ -8,7 +8,7 @@ cli:
                 default-role: A kötegelt interfész alapértelmezett szerepe A részletekért tekintse meg a használati dokumentációt.
                 gen-to: Adja meg a generált .go fájlok kimeneti helyét
                 list-option: A lista szűrhető is, a részleteket a használati dokumentációban találja.
-                model: Adja meg a modell nevét, és hagyja ki a "model" előtagot
+                model: Adja meg a modell nevét, és hagyja ki a "modell" előtagot
             long: Hozzon létre kötegelt felületeket, és adjon hozzá egy interfészt egy bizonyos modellhez a .proto fájlban
             short: Batch generálás interfész
         all:
@@ -21,7 +21,7 @@ cli:
             long: Bejegyzési fájlokat generál az üzleti szolgáltatásokhoz
             short: Belépési fájl létrehozása
         conf:
-            long: Konfigurációs fájlokat generál az üzleti szolgáltatások konfigurációs olvasásához
+            long: Konfigurációs fájl sablon létrehozása
             short: Konfigurációs fájl létrehozása
         dockerignore:
             long: A fájlkezelés figyelmen kívül hagyásához hozzon létre .dockerignore fájlt a Docker lemezképkészítéshez
@@ -31,7 +31,7 @@ cli:
             short: Hozzon létre .editorconfig fájlt
         flags:
             add-proto-files: Ha más .proto fájlokat/mappa elérési útvonalakat kell importálnia, amelyek nem ugyanabban a mappában vannak, mint a megadott .proto fájl, akkor ez a művelet hozzáfűzi (nem írja felül) a konfigurációs fájlban konfigurált elérési utat.
-            go-module-prefix: A .proto fájlban konfigurált go_package elérési útjához és a ténylegeshez konfigurálhatja ezt az opciót
+            go-module-prefix: A .proto fájlban konfigurált go_package elérési útjához és a ténylegeshez beállíthatja ezt a beállítást
             input: Adja meg a létrehozandó .proto forrásfájlt
             output-path: Ez a beállítás akkor konfigurálható, ha a .proto fájlban konfigurált go_package elérési útja nincs összhangban azzal az útalappal, amelyet ténylegesen elő kell állítani.
             overwrite: Olyan tartalom esetén, amelyet nem generálunk újra, kényszerítse a meglévő tartalom felülírását
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: A kiadási eszközök konfigurálásához hozzon létre .goreleaser.yml fájlt
             short: Hozzon létre .goreleaser.yml fájlt
-        i18n:
-            long: Hozzon létre i18n fájlokat a többnyelvű nemzetköziesítéssel kapcsolatos eszközkészletek és egyéb funkciók inicializálásához
-            short: i18n fájl létrehozása
         impl:
             long: Implementációs fájlok létrehozása az üzleti szolgáltatások megvalósításához
             short: Implementációs fájlok létrehozása
@@ -66,17 +63,22 @@ cli:
             long: Hozzon létre go.mod fájlt a függőségek kezeléséhez
             short: Hozzon létre go.mod fájlt
         pb:
-            long: .pb.go fájlok generálása .proto fájlok létrehozásához,
+            long: .pb.go fájlok létrehozása, amelyek a .proto fájlok generálására szolgálnak. A megfelelő x mezőcímkéket a rendszer a konfigurációnak megfelelően automatikusan hozzáadja.
             short: Hozzon létre .pb.go fájlt
         short: Kódgenerátor
         state:
+            conf:
+                long: Konfigurációs fájl olvasási kód létrehozása az üzleti szolgáltatás konfigurációjának olvasásához
+                short: Konfigurációs fájl olvasási kód generálása
             flags:
                 cache: A gyorsítótárral kapcsolatos generálás engedélyezése
                 config: A konfigurációhoz kapcsolódó kód létrehozása
-                db: Engedélyezze-e az adatbázishoz kapcsolódó adatbázis-generálást
                 i18n: Engedélyezze-e a többnyelvű generálást (a generálás csak állapot inicializálást és egyéb tartalmat tartalmaz, több nyelv automatikus fordítását nem tartalmazza. Ha automatikus fordításra van szüksége, kérjük, használja a {{.Command}} parancsot a részletek megtekintéséhez)
                 table: Engedélyezze-e az adatbázishoz kapcsolódó adatbázis-generálást
-            long: Az állapot összes kapcsolódó funkciójának létrehozása az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez
+            i18n:
+                long: Az i18n-hez kapcsolódó kód létrehozása többnyelvű nemzetközi hívásokhoz
+                short: i18n-hez kapcsolódó kód generálása
+            long: Az állam összes kapcsolódó funkciójának létrehozása az üzleti szolgáltatások állapotalapú erőforrás- vagy statikus erőforrás-kezeléséhez
             short: Az állapot generálásához szükséges összes funkció
             table:
                 long: Állapot.táblázattal kapcsolatos kód generálása, amely adatbázis-kapcsolathoz és a tábla inicializálásához használatos a szolgáltatás indításakor.

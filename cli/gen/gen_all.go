@@ -19,6 +19,7 @@ var GenAllHooks = []GenHook{
 	runGolangci,
 	runGenCmd,
 	runGenState,
+	runGenConfFile,
 	runGenTable,
 	runGenImpl,
 }

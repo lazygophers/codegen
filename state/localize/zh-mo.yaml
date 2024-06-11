@@ -21,7 +21,7 @@ cli:
             long: 產生入口文件，用於業務服務的
             short: 產生入口文件
         conf:
-            long: 產生配置文件，用於業務服務的配置讀取
+            long: 生成設定檔模板
             short: 產生設定檔
         dockerignore:
             long: 生成.dockerignore 文件，用於 Docker 映像建置忽略文件管理
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: 產生.goreleaser.yml 文件，用於發布工具的配置
             short: 產生.goreleaser.yml 文件
-        i18n:
-            long: 產生 i18n 文件，用於多語言國際化相關工具包的初始化等功能
-            short: 產生 i18n 文件
         impl:
             long: 產生實作文件，用於業務服務的實現
             short: 產生實作文件
@@ -66,16 +63,21 @@ cli:
             long: 產生 go.mod 文件，用於依賴管理
             short: 生成 go.mod 文件
         pb:
-            long: 生成.pb.go 文件，用於 .proto 文件的生成，
+            long: 生成.pb.go 文件，用於 .proto 文件的生成，會根據配置自動添加相關的字段標籤x
             short: 生成.pb.go 文件
         short: 程式碼產生器
         state:
+            conf:
+                long: 產生設定檔讀取程式碼，用於業務服務的設定讀取
+                short: 產生設定檔讀取程式碼
             flags:
                 cache: 是否開啟快取相關生成
                 config: 是否產生配置相關的程式碼
-                db: 是否開啟資料庫相關的資料庫生成
                 i18n: 是否開啟多語言相關聯生成（產生僅包含state 初始化等內容，不包含多語言的自動翻譯，如需自動翻譯請使用 {{.Command}}查看詳情）
                 table: 是否開啟資料庫相關的資料庫生成
+            i18n:
+                long: 產生 i18n 相關的程式碼，用於多語言國際化的調用
+                short: 產生 i18n 相關的程式碼
             long: 產生 state 的所有相關功能，用於業務服務的有狀態的資源或靜態資源管理
             short: 產生 state 的所有相關功能
             table:

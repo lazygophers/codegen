@@ -21,7 +21,7 @@ cli:
             long: Generuokite verslo paslaugų įvesties failus
             short: Sugeneruoti įvesties failą
         conf:
-            long: Generuokite konfigūracijos failus verslo paslaugų konfigūracijos skaitymui
+            long: Sukurkite konfigūracijos failo šabloną
             short: Sukurti konfigūracijos failą
         dockerignore:
             long: Sugeneruokite .dockerignore failą, skirtą „Docker“ vaizdų kūrimui, kad nepaisytumėte failų valdymo
@@ -34,7 +34,7 @@ cli:
             go-module-prefix: Šią parinktį galite sukonfigūruoti go_package kelio, sukonfigūruoto .proto faile, ir tikrojo kelio
             input: Nurodykite generuojamą .proto šaltinio failą
             output-path: Šią parinktį galima sukonfigūruoti, kai .proto faile sukonfigūruotas go_package kelias nesutampa su kelio sankasa, kurią iš tikrųjų reikia sugeneruoti.
-            overwrite: Jei turinys nebus atkurtas, priverstinai perrašykite esamą turinį
+            overwrite: Jei turinys nebus atkurtas, priverskite perrašyti esamą turinį
             proto-files: Norėdami importuoti kitus .proto failus / aplanko kelius, kurie nėra tame pačiame aplanke kaip nurodytas .proto failas, ši operacija yra parinktis, leidžianti nepaisyti konfigūracijos lauko konfigūracijos faile.
             protoc: „protoko“ tinkinamas failo kelias
             protoc-gen-go: „protoc-gen-go“ papildinio kelias
@@ -48,13 +48,10 @@ cli:
             short: Sugeneruokite .gitignore failą
         golang-lint:
             long: Sugeneruokite .golangci.yml failą, kad patikrintumėte kodo kokybę
-            short: Sugeneruokite .golangci.yml failą
+            short: Sukurkite .golangci.yml failą
         goreleaser:
             long: Sugeneruokite .goreleaser.yml failą leidimo įrankių konfigūravimui
             short: Sugeneruokite .goreleaser.yml failą
-        i18n:
-            long: Generuokite i18n failus, skirtus kelių kalbų internacionalizavimo įrankių rinkiniams ir kitoms funkcijoms inicijuoti
-            short: Sukurkite i18n failą
         impl:
             long: Generuoti diegimo failus verslo paslaugoms įgyvendinti
             short: Generuokite diegimo failus
@@ -66,16 +63,21 @@ cli:
             long: Sugeneruokite failą go.mod, kad galėtumėte valdyti priklausomybę
             short: Sugeneruokite failą go.mod
         pb:
-            long: Generuoti .pb.go failus .proto failams generuoti,
+            long: Generuokite .pb.go failus, kurie naudojami .proto failams generuoti. Atitinkamos lauko etiketės x bus automatiškai įtrauktos pagal konfigūraciją.
             short: Sugeneruokite .pb.go failą
         short: Kodų generatorius
         state:
+            conf:
+                long: Generuokite konfigūracijos failo skaitymo kodą verslo paslaugų konfigūracijos skaitymui
+                short: Sugeneruokite konfigūracijos failo skaitymo kodą
             flags:
                 cache: Ar įgalinti generavimą, susijusį su talpykla
                 config: Ar generuoti su konfigūracija susijusį kodą
-                db: Ar įgalinti su duomenų baze susijusių duomenų bazių generavimą
                 i18n: Ar įgalinti su keliomis kalbomis susijusį generavimą (generavimas apima tik būsenos inicijavimą ir kitą turinį, neapima automatinio kelių kalbų vertimo. Jei reikia automatinio vertimo, naudokite {{.Command}}, kad peržiūrėtumėte išsamią informaciją)
                 table: Ar įgalinti su duomenų baze susijusių duomenų bazių generavimą
+            i18n:
+                long: Sukurkite su i18n susijusį kodą, skirtą kelių kalbų tarptautiniams skambučiams
+                short: Sukurkite su i18n susijusį kodą
             long: Generuoti visas susijusias valstybės funkcijas, skirtas verslo paslaugų būsenai arba statiniam išteklių valdymui
             short: Visos reikalingos būsenos generavimo funkcijos
             table:

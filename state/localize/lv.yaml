@@ -21,7 +21,7 @@ cli:
             long: Ģenerējiet biznesa pakalpojumu ievades failus
             short: Ģenerējiet ievades failu
         conf:
-            long: Ģenerējiet konfigurācijas failus biznesa pakalpojumu konfigurācijas lasīšanai
+            long: Ģenerēt konfigurācijas faila veidni
             short: Ģenerējiet konfigurācijas failu
         dockerignore:
             long: Ģenerējiet .dockerignore failu Docker attēlu veidošanai, lai ignorētu failu pārvaldību
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Ģenerējiet .goreleaser.yml failu izlaišanas rīku konfigurēšanai
             short: Ģenerējiet .goreleaser.yml failu
-        i18n:
-            long: Ģenerējiet i18n failus, lai inicializētu ar vairāku valodu internacionalizāciju saistītos rīku komplektus un citas funkcijas
-            short: Ģenerējiet i18n failu
         impl:
             long: Ģenerēt ieviešanas failus biznesa pakalpojumu ieviešanai
             short: Ģenerējiet ieviešanas failus
@@ -66,16 +63,21 @@ cli:
             long: Ģenerējiet failu go.mod atkarības pārvaldībai
             short: Ģenerējiet failu go.mod
         pb:
-            long: Ģenerēt .pb.go failus .proto failu ģenerēšanai,
+            long: Ģenerējiet .pb.go failus, kas tiek izmantoti .proto failu ģenerēšanai. Atbilstošās lauku etiķetes x tiks pievienotas automātiski atbilstoši konfigurācijai.
             short: Ģenerējiet .pb.go failu
         short: Kodu ģenerators
         state:
+            conf:
+                long: Ģenerējiet konfigurācijas faila lasīšanas kodu biznesa pakalpojumu konfigurācijas lasīšanai
+                short: Ģenerējiet konfigurācijas faila lasīšanas kodu
             flags:
                 cache: Vai iespējot ar kešatmiņu saistītu ģenerēšanu
                 config: Vai ģenerēt ar konfigurāciju saistītu kodu
-                db: Vai iespējot ar datu bāzi saistītu datu bāzes ģenerēšanu
                 i18n: Vai iespējot ar vairākām valodām saistītu ģenerēšanu (ģenerēšana ietver tikai stāvokļa inicializāciju un citu saturu, un neietver automātisku tulkošanu vairākām valodām. Ja jums ir nepieciešams automātiskais tulkojums, lūdzu, izmantojiet {{.Command}}, lai skatītu detalizētu informāciju)
                 table: Vai iespējot ar datu bāzi saistītu datu bāzes ģenerēšanu
+            i18n:
+                long: Ģenerējiet ar i18n saistītu kodu daudzvalodu starptautiskajiem zvaniem
+                short: Ģenerējiet ar i18n saistīto kodu
             long: Ģenerējiet visas saistītās valsts funkcijas uzņēmējdarbības pakalpojumu statusa resursu vai statisku resursu pārvaldībai
             short: Visas attiecīgās funkcijas stāvokļa ģenerēšanai
             table:

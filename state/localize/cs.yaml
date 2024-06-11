@@ -8,7 +8,7 @@ cli:
                 default-role: Výchozí role dávkově generovaného rozhraní Podrobnosti naleznete v dokumentaci k použití.
                 gen-to: Zadejte výstupní umístění vygenerovaných souborů .go
                 list-option: Seznam lze také filtrovat, podrobnosti naleznete v dokumentaci k použití.
-                model: Zadejte název modelu, podporuje vynechání předpony `model`
+                model: Zadejte název modelu, podporujte vynechání předpony `model`
             long: Generujte rozhraní v dávkách a přidejte rozhraní pro určitý model do souboru .proto
             short: Rozhraní pro dávkové generování
         all:
@@ -21,7 +21,7 @@ cli:
             long: Generujte vstupní soubory pro obchodní služby
             short: Vygenerujte vstupní soubor
         conf:
-            long: Generujte konfigurační soubory pro čtení konfigurace obchodních služeb
+            long: Vygenerujte šablonu konfiguračního souboru
             short: Vygenerujte konfigurační soubor
         dockerignore:
             long: Vygenerujte soubor .dockerignore pro vytváření bitové kopie Dockeru, abyste ignorovali správu souborů
@@ -50,11 +50,8 @@ cli:
             long: Vygenerujte soubor .golangci.yml pro kontrolu kvality kódu
             short: Vygenerujte soubor .golangci.yml
         goreleaser:
-            long: Vygenerujte soubor .goreleaser.yml pro konfiguraci nástrojů pro vydání
+            long: Vygenerujte soubor .goreleaser.yml pro konfiguraci nástrojů pro uvolnění
             short: Vygenerujte soubor .goreleaser.yml
-        i18n:
-            long: Generujte soubory i18n pro inicializaci vícejazyčných sad nástrojů souvisejících s internacionalizací a dalších funkcí
-            short: Vygenerujte soubor i18n
         impl:
             long: Generování implementačních souborů pro implementaci podnikových služeb
             short: Vygenerujte implementační soubory
@@ -66,16 +63,21 @@ cli:
             long: Vygenerujte soubor go.mod pro správu závislostí
             short: Vygenerujte soubor go.mod
         pb:
-            long: Generovat soubory .pb.go pro generování souborů .proto,
+            long: Generovat soubory .pb.go, které se používají ke generování souborů .proto Příslušné popisky polí x budou automaticky přidány podle konfigurace.
             short: Vygenerujte soubor .pb.go
         short: Generátor kódů
         state:
+            conf:
+                long: Vygenerujte čtecí kód konfiguračního souboru pro čtení konfigurace podnikových služeb
+                short: Vygenerujte kód pro čtení konfiguračního souboru
             flags:
                 cache: Zda povolit generování související s mezipamětí
                 config: Zda se má generovat kód související s konfigurací
-                db: Zda povolit generování databáze související s databází
                 i18n: Zda povolit generování související s více jazyky (generování zahrnuje pouze inicializaci stavu a další obsah a nezahrnuje automatický překlad více jazyků. Pokud potřebujete automatický překlad, použijte k zobrazení podrobností {{.Command}})
                 table: Zda povolit generování databáze související s databází
+            i18n:
+                long: Generujte kód související s i18n pro vícejazyčné mezinárodní hovory
+                short: Vygenerujte kód související s i18n
             long: Generujte všechny související funkce stavu pro stavové zdroje nebo statickou správu zdrojů obchodních služeb
             short: Všechny relevantní funkce pro generování stavu
             table:

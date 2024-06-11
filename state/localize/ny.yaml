@@ -21,7 +21,7 @@ cli:
             long: Pangani mafayilo olowera ntchito zamabizinesi
             short: Pangani fayilo yolowera
         conf:
-            long: Pangani mafayilo osinthira kuti muwerenge zosintha zamabizinesi
+            long: Pangani template yosinthira fayilo
             short: Pangani fayilo yosinthira
         dockerignore:
             long: Pangani fayilo ya .dockerignore yomanga zithunzi za Docker kuti musanyalanyaze kasamalidwe ka fayilo
@@ -42,7 +42,7 @@ cli:
             tables-enable_field_deleted_at: Kaya mutsegule zoikamo za deleted_at field munkhokwe
             tables-enable_field_id: Yambitsani kusinthika kosasinthika kwa magawo okhudzana ndi database
             tables-enable_field_updated_at: Kaya mutsegule mtengo wokhazikika wa gawo la updated_at munkhokwe
-            tables-enable_gorm_tag_column: Kuti muthe kuyambitsa kupanga ma gorm okhudzana ndi database
+            tables-enable_gorm_tag_column: Kuti muyambitse kupanga ma gorm okhudzana ndi database
         gitignote:
             long: Pangani mafayilo a .gitignore owongolera mafayilo omwe mwanyalanyazidwa powongolera mtundu
             short: Pangani fayilo ya .gitignore
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Pangani fayilo ya .goreleaser.yml kuti mukhazikitse zida zotulutsa
             short: Pangani fayilo ya .goreleaser.yml
-        i18n:
-            long: Pangani mafayilo a i18n kuti akhazikitse zida zolumikizirana ndi zinenero zosiyanasiyana ndi ntchito zina
-            short: Pangani fayilo ya i18n
         impl:
             long: Pangani mafayilo okhazikitsa kuti mukwaniritse ntchito zamabizinesi
             short: Pangani mafayilo okhazikitsa
@@ -66,16 +63,21 @@ cli:
             long: Pangani fayilo ya go.mod yoyang'anira kudalira
             short: Pangani fayilo ya go.mod
         pb:
-            long: Pangani mafayilo a .pb.go kuti mupange mafayilo a .proto,
+            long: Pangani mafayilo a .pb.go, omwe amagwiritsidwa ntchito popanga mafayilo a .proto oyenera kumunda x adzawonjezedwa molingana ndi kasinthidwe.
             short: Pangani fayilo ya .pb.go
         short: Kodi jenereta
         state:
+            conf:
+                long: Pangani kachidindo kowerengera mafayilo kuti muwerenge kasinthidwe ka ntchito zabizinesi
+                short: Pangani code yowerengera mafayilo
             flags:
                 cache: Kuti mutsegule zokhudzana ndi cache
                 config: Kuti mupange khodi yokhudzana ndi kasinthidwe
-                db: Kuti muyambitse kupanga database yokhudzana ndi database
                 i18n: Kuti muthe kumasulira zilankhulo zambiri (m'badwowu umangowonjezera kukhazikitsidwa kwa boma ndi zina, ndipo sikuphatikiza zomasulira zokha zinenero zingapo. Ngati mukufuna kumasulira basi, chonde gwiritsani ntchito {{.Command}} kuti muwone zambiri)
                 table: Kuti muyambitse kupanga database yokhudzana ndi database
+            i18n:
+                long: Pangani ma code okhudzana ndi i18n pamayimbidwe amitundu yambiri
+                short: Pangani code yogwirizana ndi i18n
             long: Pangani ntchito zonse zokhudzana ndi boma kuti muzitha kuyang'anira zinthu zodziwika bwino kapena zosasunthika zamabizinesi
             short: Ntchito zonse zofunika kupanga dziko
             table:

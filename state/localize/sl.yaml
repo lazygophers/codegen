@@ -21,7 +21,7 @@ cli:
             long: Ustvarite vnosne datoteke za poslovne storitve
             short: Ustvari vnosno datoteko
         conf:
-            long: Ustvarite konfiguracijske datoteke za branje konfiguracije poslovnih storitev
+            long: Ustvari predlogo konfiguracijske datoteke
             short: Ustvari konfiguracijsko datoteko
         dockerignore:
             long: Ustvarite datoteko .dockerignore za gradnjo slike Docker, da prezrete upravljanje datotek
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Ustvari datoteko .goreleaser.yml za konfiguracijo orodij za izdajo
             short: Ustvari datoteko .goreleaser.yml
-        i18n:
-            long: Ustvari datoteke i18n za inicializacijo kompletov orodij in drugih funkcij, povezanih z večjezično internacionalizacijo
-            short: Ustvari datoteko i18n
         impl:
             long: Generirajte implementacijske datoteke za implementacijo poslovnih storitev
             short: Ustvari izvedbene datoteke
@@ -66,16 +63,21 @@ cli:
             long: Ustvari datoteko go.mod za upravljanje odvisnosti
             short: Ustvari datoteko go.mod
         pb:
-            long: Ustvari datoteke .pb.go za ustvarjanje datotek .proto,
+            long: Ustvari datoteke .pb.go, ki se uporabljajo za ustvarjanje datotek .proto. Ustrezne oznake polj x bodo samodejno dodane glede na konfiguracijo.
             short: Ustvari datoteko .pb.go
         short: Generator kode
         state:
+            conf:
+                long: Ustvari kodo za branje konfiguracijske datoteke za branje konfiguracije poslovne storitve
+                short: Ustvari kodo za branje konfiguracijske datoteke
             flags:
                 cache: Ali naj se omogoči ustvarjanje, povezano s predpomnilnikom
                 config: Ali naj se ustvari koda, povezana s konfiguracijo
-                db: Ali naj se omogoči ustvarjanje baze podatkov, povezane z bazo podatkov
                 i18n: Ali omogočiti generiranje, povezano z več jeziki (generiranje vključuje samo inicializacijo stanja in drugo vsebino ter ne vključuje samodejnega prevajanja več jezikov. Če potrebujete samodejno prevajanje, uporabite {{.Command}} za ogled podrobnosti)
                 table: Ali naj se omogoči ustvarjanje baze podatkov, povezane z bazo podatkov
+            i18n:
+                long: Ustvari kodo, povezano z i18n, za večjezične mednarodne klice
+                short: Ustvari kodo, povezano z i18n
             long: Ustvarite vse povezane funkcije stanja za upravljanje virov s stanjem ali statično upravljanje poslovnih storitev
             short: Vse ustrezne funkcije za generiranje stanja
             table:
@@ -88,9 +90,9 @@ cli:
         additional_commands: Dodatni ukazi
         aliases: vzdevek ukaza
         available_commands: Podprti ukazi
-        command: naročilo
+        command: Naročilo
         flags: parameter
-        get_info: da dobite podrobnejše informacije
+        get_info: da bi dobili podrobnejše informacije
         global_flags: globalni parametri
         use: uporaba
     i18n:

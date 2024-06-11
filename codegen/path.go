@@ -5,8 +5,10 @@ import "path/filepath"
 type PathType uint8
 
 const (
-	PathTypePbGo PathType = iota + 1
+	PathTypeRoot PathType = iota + 1
+	PathTypePbGo
 	PathTypeGoMod
+	PathTypeConf
 
 	PathTypeOrm
 	PathTypeTableName
@@ -38,11 +40,17 @@ const (
 
 func GetPath(t PathType, pb *PbPackage) string {
 	switch t {
+	case PathTypeRoot:
+		return pb.ProjectRoot()
+
 	case PathTypePbGo:
 		return filepath.Join(pb.ProjectRoot(), pb.PackageName+".pb.go")
 
 	case PathTypeGoMod:
 		return filepath.Join(pb.ProjectRoot(), "go.mod")
+
+	case PathTypeConf:
+		return filepath.Join(pb.ProjectRoot(), "example.config.yaml")
 
 	case PathTypeEditorconfig:
 		return filepath.Join(pb.ProjectRoot(), ".editorconfig")

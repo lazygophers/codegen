@@ -8,7 +8,7 @@ cli:
                 default-role: Standardrollen for den batch-genererede grænseflade Se brugsdokumentationen for detaljer.
                 gen-to: Angiv outputplaceringen for de genererede .go-filer
                 list-option: Listen kan også filtreres, se brugsdokumentationen for detaljer.
-                model: Angiv modelnavnet, støtte udeladelse af 'model'-præfikset
+                model: Angiv modelnavnet, støtte udeladelse af `model`-præfikset
             long: Generer grænseflader i batches og tilføj en grænseflade for en bestemt model i .proto-filen
             short: Batchgenereringsgrænseflade
         all:
@@ -21,7 +21,7 @@ cli:
             long: Generer indgangsfiler til forretningstjenester
             short: Generer indtastningsfil
         conf:
-            long: Generer konfigurationsfiler til konfigurationslæsning af forretningstjenester
+            long: Generer skabelon til konfigurationsfil
             short: Generer konfigurationsfil
         dockerignore:
             long: Generer .dockerignore-fil til Docker-billedbygning for at ignorere filhåndtering
@@ -37,7 +37,7 @@ cli:
             overwrite: For indhold, der ikke vil blive regenereret, skal du tvinge overskrivning af eksisterende indhold
             proto-files: For at importere andre .proto-filer/mappestier, der ikke er i samme mappe som den angivne .proto-fil, er denne handling en mulighed for at tilsidesætte konfigurationsfeltet i konfigurationsfilen.
             protoc: '"protoc" tilpasselig filsti'
-            protoc-gen-go: '`protoc-gen-go` plugin-sti'
+            protoc-gen-go: '"protoc-gen-go" plugin-sti'
             tables-enable_field_created_at: Om standardkonfigurationsgenereringen af ​​feltet oprettet_at skal aktiveres
             tables-enable_field_deleted_at: Om standardindstillingen for deleted_at-feltet i databasen skal aktiveres
             tables-enable_field_id: Aktiver generering af standardkonfiguration for databaserelaterede felter
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generer .goreleaser.yml-fil til konfiguration af udgivelsesværktøjer
             short: Generer .goreleaser.yml-fil
-        i18n:
-            long: Generer i18n-filer til initialisering af flersprogede internationaliseringsrelaterede værktøjssæt og andre funktioner
-            short: Generer i18n-fil
         impl:
             long: Generer implementeringsfiler til implementering af forretningstjenester
             short: Generer implementeringsfiler
@@ -66,16 +63,21 @@ cli:
             long: Generer go.mod-fil til afhængighedsstyring
             short: Generer go.mod fil
         pb:
-            long: Generer .pb.go-filer til generering af .proto-filer,
+            long: Generer .pb.go-filer, som bruges til at generere .proto-filer. Relevante feltetiketter x vil automatisk blive tilføjet i henhold til konfigurationen.
             short: Generer .pb.go-fil
         short: Kode generator
         state:
+            conf:
+                long: Generer læsekode for konfigurationsfil til læsning af forretningsservicekonfiguration
+                short: Generer konfigurationsfil læsekode
             flags:
                 cache: Om cache-relateret generering skal aktiveres
                 config: Om der skal genereres konfigurationsrelateret kode
-                db: Om databaserelateret databasegenerering skal aktiveres
                 i18n: Om der skal aktiveres flersprogsrelateret generering (genereringen inkluderer kun tilstandsinitialisering og andet indhold og inkluderer ikke automatisk oversættelse af flere sprog. Hvis du har brug for automatisk oversættelse, skal du bruge {{.Command}} for at se detaljer)
                 table: Om databaserelateret databasegenerering skal aktiveres
+            i18n:
+                long: Generer i18n-relateret kode til internationale opkald på flere sprog
+                short: Generer i18n relateret kode
             long: Generer alle relaterede funktioner i staten til stateful ressource- eller statisk ressourcestyring af forretningstjenester
             short: Alle relevante funktioner til generering af tilstand
             table:
@@ -102,7 +104,7 @@ cli:
                 force: Overskriv eksisterende oversættelser
                 force-key-prefix: nøgler, der skal tvinges til at blive overskrevet
                 generate-const: Generer opregningsværdier for nemt at ringe
-                languages: Angiv målsproget for oversættelsen
+                languages: Angiv målsproget for oversættelse
                 src-file: Kildefil, der skal oversættes (påkrævet)
                 src-language: Sproget for kildefilen (hvis ikke angivet, vil værktøjet automatisk bestemme kildefilen)
                 translater:

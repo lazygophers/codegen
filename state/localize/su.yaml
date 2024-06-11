@@ -4,7 +4,7 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Paripolah anu kudu ditambahkeun dina bets, mangga manggihan dokuméntasi pamakéan pikeun detil
+                action: Paripolah nu kudu ditambahkeun dina bets, mangga manggihan dokuméntasi pamakéan pikeun detil
                 default-role: Peran standar antarmuka anu dibangkitkeun bets Mangga tingal dokuméntasi pamakean pikeun detil.
                 gen-to: Sebutkeun lokasi kaluaran tina file .go nu dihasilkeun
                 list-option: Daptar ogé bisa disaring, mangga manggihan dokuméntasi pamakéan pikeun detil.
@@ -21,16 +21,16 @@ cli:
             long: Ngahasilkeun file éntri pikeun jasa bisnis
             short: Ngahasilkeun file éntri
         conf:
-            long: Ngahasilkeun file konfigurasi pikeun maca konfigurasi jasa bisnis
+            long: Ngahasilkeun template file konfigurasi
             short: Ngahasilkeun file konfigurasi
         dockerignore:
-            long: Ngahasilkeun file .dockerignore pikeun wangunan gambar Docker malire manajemén file
+            long: Ngahasilkeun file .dockerignore pikeun wangunan gambar Docker pikeun malire manajemén file
             short: Ngahasilkeun file .dockerignore
         editorconfig:
             long: Ngahasilkeun file .editorconfig pikeun konfigurasi redaktur
             short: Ngahasilkeun file .editorconfig
         flags:
-            add-proto-files: Lamun perlu ngimpor file .proto séjén / jalur folder nu teu di folder sarua salaku file .proto dieusian, operasi ieu bakal append (teu nimpa) jalur ngonpigurasi dina file konfigurasi.
+            add-proto-files: Upami anjeun kedah ngimpor file .proto / jalur folder anu sanés dina folder anu sami sareng file .proto anu ditangtukeun, operasi ieu bakal nambihkeun (henteu nimpa) jalur anu dikonpigurasi dina file konfigurasi.
             go-module-prefix: Pikeun jalur go_package anu dikonpigurasi dina file .proto sareng anu saleresna, anjeun tiasa ngonpigurasikeun pilihan ieu.
             input: Sebutkeun file sumber .proto bakal dihasilkeun
             output-path: pilihan ieu bisa ngonpigurasi nalika jalur go_package ngonpigurasi dina file .proto nyaeta inconsistent jeung roadbed nu sabenerna kudu dihasilkeun.
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Ngahasilkeun file .goreleaser.yml pikeun konfigurasi pakakas release
             short: Ngahasilkeun file .goreleaser.yml
-        i18n:
-            long: Ngahasilkeun file i18n pikeun initialization of multi-basa internationalization toolkit patali jeung fungsi séjén
-            short: Ngahasilkeun file i18n
         impl:
             long: Ngahasilkeun file palaksanaan pikeun palaksanaan jasa bisnis
             short: Ngahasilkeun file palaksanaan
@@ -66,16 +63,21 @@ cli:
             long: Ngahasilkeun file go.mod pikeun manajemén kagumantungan
             short: Ngahasilkeun file go.mod
         pb:
-            long: Jieun file .pb.go pikeun ngahasilkeun file .proto,
+            long: Ngahasilkeun file .pb.go, nu dipaké pikeun ngahasilkeun .proto file labél widang x bakal otomatis ditambahkeun nurutkeun konfigurasi.
             short: Ngahasilkeun file .pb.go
         short: Generator kode
         state:
+            conf:
+                long: Ngahasilkeun kode bacaan file konfigurasi pikeun maca konfigurasi jasa bisnis
+                short: Ngahasilkeun kodeu maca file konfigurasi
             flags:
                 cache: Naha ngaktipkeun generasi nu patali cache
                 config: Naha ngahasilkeun kode nu patali konfigurasi
-                db: Naha ngaktipkeun generasi database-patali database
                 i18n: Naha ngaktipkeun generasi nu patali multi-basa (generasi ngan ngawengku initialization kaayaan jeung eusi lianna, sarta teu kaasup tarjamah otomatis tina sababaraha basa. Lamun perlu tarjamah otomatis, mangga nganggo {{.Command}} pikeun nempo rinci)
                 table: Naha ngaktipkeun generasi database-patali database
+            i18n:
+                long: Ngahasilkeun kode patali i18n pikeun telepon internasional multi-basa
+                short: Ngahasilkeun kode patali i18n
             long: Ngahasilkeun sagala fungsi patali nagara pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
             short: Sadaya fungsi anu relevan pikeun ngahasilkeun kaayaan
             table:
@@ -99,7 +101,7 @@ cli:
         tran:
             flags:
                 all-language: Tarjamahkeun sadaya basa anu dirojong (upami leres bendera basa dinonaktipkeun)
-                force: Nimpa tarjamahan anu aya
+                force: Nimpa tarjamahan nu aya
                 force-key-prefix: kenop nu kudu dipaksa pikeun overwritten
                 generate-const: Ngahasilkeun nilai enumerasi pikeun gampang nelepon
                 languages: Sebutkeun basa sasaran pikeun tarjamahan
