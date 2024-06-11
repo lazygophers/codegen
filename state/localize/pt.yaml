@@ -21,7 +21,7 @@ cli:
             long: Gere arquivos de entrada para serviços empresariais
             short: Gerar arquivo de entrada
         conf:
-            long: Gere arquivos de configuração para leitura de configuração de serviços de negócios
+            long: Gerar modelo de arquivo de configuração
             short: Gerar arquivo de configuração
         dockerignore:
             long: Gere o arquivo .dockerignore para construção de imagem Docker para ignorar o gerenciamento de arquivos
@@ -30,7 +30,7 @@ cli:
             long: Gere arquivo .editorconfig para configuração do editor
             short: Gerar arquivo .editorconfig
         flags:
-            add-proto-files: Se você precisar importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta do arquivo .proto especificado, esta operação anexará (não substituirá) o caminho configurado no arquivo de configuração.
+            add-proto-files: Se você precisar importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta que o arquivo .proto especificado, esta operação anexará (não substituirá) o caminho configurado no arquivo de configuração.
             go-module-prefix: Para o caminho do go_package configurado no arquivo .proto e o real, você pode configurar esta opção
             input: Especifique o arquivo de origem .proto a ser gerado
             output-path: Esta opção pode ser configurada quando o caminho do go_package configurado no arquivo .proto é inconsistente com o roadbed que realmente precisa ser gerado.
@@ -38,10 +38,10 @@ cli:
             proto-files: Para importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta do arquivo .proto especificado, esta operação é uma opção para substituir o campo de configuração no arquivo de configuração.
             protoc: caminho de arquivo personalizável `protoc`
             protoc-gen-go: Caminho do plugin `protoc-gen-go`
-            tables-enable_field_created_at: Se deve ativar a geração de configuração padrão do campo de banco de dadoscreated_at
+            tables-enable_field_created_at: Se deve ser habilitada a geração de configuração padrão do banco de dados criado_at campo
             tables-enable_field_deleted_at: Se a configuração padrão do campo deletado_at deve ser habilitada no banco de dados
             tables-enable_field_id: Habilitar geração de configuração padrão para campos relacionados ao banco de dados
-            tables-enable_field_updated_at: Se o valor padrão do campo atualizado_at deve ser habilitado no banco de dados
+            tables-enable_field_updated_at: Se deve ativar o valor padrão do campo atualizado_at no banco de dados
             tables-enable_gorm_tag_column: Se deve ser habilitada a geração de gorms relacionados ao banco de dados
         gitignote:
             long: Gere arquivos .gitignore para gerenciamento de arquivos ignorados no controle de versão
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Gere o arquivo .goreleaser.yml para configuração das ferramentas de lançamento
             short: Gerar arquivo .goreleaser.yml
-        i18n:
-            long: Gere arquivos i18n para inicialização de kits de ferramentas relacionados à internacionalização multilíngue e outras funções
-            short: Gerar arquivo i18n
         impl:
-            long: Gerar arquivos de implementação para implementação de serviços de negócios
+            long: Gerar arquivos de implementação para a implementação de serviços de negócios
             short: Gerar arquivos de implementação
         long: Gerador de código, suporta vários modelos
         makefile:
@@ -66,16 +63,21 @@ cli:
             long: Gere o arquivo go.mod para gerenciamento de dependências
             short: Gerar arquivo go.mod
         pb:
-            long: Gere arquivos .pb.go para gerar arquivos .proto,
+            long: Gere arquivos .pb.go, que são usados ​​para gerar arquivos .proto. Os rótulos de campo relevantes x serão adicionados automaticamente de acordo com a configuração.
             short: Gerar arquivo .pb.go
         short: Gerador de código
         state:
+            conf:
+                long: Gerar código de leitura de arquivo de configuração para leitura de configuração de serviço de negócios
+                short: Gerar código de leitura do arquivo de configuração
             flags:
                 cache: Se deve ativar a geração relacionada ao cache
                 config: Se deve gerar código relacionado à configuração
-                db: Se deve ativar a geração de banco de dados relacionada ao banco de dados
                 i18n: Se deseja ativar a geração relacionada a vários idiomas (a geração inclui apenas inicialização de estado e outros conteúdos, e não inclui tradução automática de vários idiomas. Se você precisar de tradução automática, use {{.Command}} para visualizar detalhes)
                 table: Se deve ativar a geração de banco de dados relacionada ao banco de dados
+            i18n:
+                long: Gere código relacionado ao i18n para chamadas internacionais em vários idiomas
+                short: Gerar código relacionado ao i18n
             long: Gere todas as funções de estado relacionadas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
             short: Todas as funções relevantes para gerar estado
             table:

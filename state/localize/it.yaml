@@ -8,7 +8,7 @@ cli:
                 default-role: Il ruolo predefinito dell'interfaccia generata in batch. Per i dettagli, fare riferimento alla documentazione sull'utilizzo.
                 gen-to: Specificare il percorso di output dei file .go generati
                 list-option: L'elenco può anche essere filtrato, per i dettagli consultare la documentazione sull'utilizzo.
-                model: Specificare il nome del modello, supportare l'omissione del prefisso "modello".
+                model: Specificare il nome del modello, supportare l'omissione del prefisso `model`
             long: Genera interfacce in batch e aggiungi un'interfaccia per un determinato modello nel file .proto
             short: Interfaccia di generazione batch
         all:
@@ -21,7 +21,7 @@ cli:
             long: Genera file di ingresso per i servizi aziendali
             short: Genera file di ingresso
         conf:
-            long: Genera file di configurazione per la lettura della configurazione dei servizi aziendali
+            long: Genera modello di file di configurazione
             short: Genera file di configurazione
         dockerignore:
             long: Genera il file .dockerignore per la creazione di immagini Docker per ignorare la gestione dei file
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Genera il file .goreleaser.yml per la configurazione degli strumenti di rilascio
             short: Genera il file .goreleaser.yml
-        i18n:
-            long: Genera file i18n per l'inizializzazione di toolkit relativi all'internazionalizzazione multilingue e altre funzioni
-            short: Genera il file i18n
         impl:
             long: Generare file di implementazione per l'implementazione dei servizi aziendali
             short: Generare file di implementazione
@@ -66,16 +63,21 @@ cli:
             long: Genera il file go.mod per la gestione delle dipendenze
             short: Genera il file go.mod
         pb:
-            long: Genera file .pb.go per generare file .proto,
+            long: Genera file .pb.go, che vengono utilizzati per generare file .proto Le etichette dei campi pertinenti x verranno aggiunte automaticamente in base alla configurazione.
             short: Genera il file .pb.go
         short: Generatore di codici
         state:
+            conf:
+                long: Genera il codice di lettura del file di configurazione per la lettura della configurazione dei servizi aziendali
+                short: Genera il codice di lettura del file di configurazione
             flags:
                 cache: Indica se abilitare la generazione correlata alla cache
                 config: Indica se generare codice relativo alla configurazione
-                db: Indica se abilitare la generazione di database relativa al database
                 i18n: Se abilitare la generazione correlata a più lingue (la generazione include solo l'inizializzazione dello stato e altri contenuti e non include la traduzione automatica di più lingue. Se hai bisogno della traduzione automatica, utilizza {{.Command}} per visualizzare i dettagli)
                 table: Indica se abilitare la generazione di database relativa al database
+            i18n:
+                long: Genera codice relativo a i18n per chiamate internazionali multilingue
+                short: Genera codice relativo a i18n
             long: Genera tutte le funzioni di stato correlate per la gestione delle risorse con stato o delle risorse statiche dei servizi aziendali
             short: Tutte le funzioni rilevanti per la generazione dello stato
             table:

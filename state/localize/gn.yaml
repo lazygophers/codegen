@@ -21,7 +21,7 @@ cli:
             long: Emoheñói archivo jeikerã umi servicio empresarial-pe g̃uarã
             short: Omoheñói archivo jeikerã
         conf:
-            long: Emoheñói archivo configuración rehegua moñeꞌerã configuración rehegua umi servicio empresarial rehegua
+            long: Emoheñói plantilla archivo configuración rehegua
             short: Emoheñói vore ñembohekorã
         dockerignore:
             long: Emoheñói .dockerignore vore Docker ta’ãngamýi ñemopu’ãrã emboyke hag̃ua vore jesareko
@@ -34,11 +34,11 @@ cli:
             go-module-prefix: Go_package rape oñembohekopyréva .proto vore ha añeteguápe g̃uarã, ikatu emohenda ko jeporavopyre
             input: Emombe’u .proto vore ypykue ojejapova’erã
             output-path: Ko jeporavopyre ikatu oñemboheko go_package rape oñembohekopyréva vore .proto-pe ndojoajúi jave tape ryru ndive añetehápe oikotevẽva oñemboheko.
-            overwrite: Contenido ndojejapomo’ãivape g̃uarã, eforsa ojehai jey hag̃ua contenido oĩmava
+            overwrite: Contenido ndojejapomo’ãivape g̃uarã, emboliga ojehai jey hag̃ua contenido oĩmava
             proto-files: Ojegueru hag̃ua ambue .proto vore/karpeha rape ndoikóiva peteĩ kundahárape .proto vore ojeꞌevaꞌekue ndive, ko tembiaporã haꞌehína peteĩ jeporavorã oñemboyke hag̃ua mohendaha tenda vore ñembohekorãme.
             protoc: '`protoc` vore rape ojehechakuaáva'
             protoc-gen-go: '`protoc-gen-go` mboajepyréva rape'
-            tables-enable_field_created_at: Oñembohapétapa pe generación configuración por defecto base de datos creado_at tenda rehegua
+            tables-enable_field_created_at: Oñembohapétapa pe ñembohekorã ñemoheñói ñepyrũrã ñanduti renda created_at rendaguépe
             tables-enable_field_deleted_at: Oñembohapétapa pe ñemboheko tenondegua pe deleted_at tenda’i ñanduti rendápe
             tables-enable_field_id: Emboguata ñemboheko ñepyrũrã ñemoheñói umi tenda ojoajúva ñanduti renda rehe
             tables-enable_field_updated_at: Oñembohapétapa pe valor por defecto pe tenda updated_at rehegua ñanduti rendápe
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Emoheñói .goreleaser.yml vore tembipuru’i ñeguenohẽ ñembohekorã
             short: Emoheñói .goreleaser.yml rembiapokue
-        i18n:
-            long: Emoheñói i18n vore ñepyrũrã umi tembipuru’i internacionalización heta ñe’ẽ rehegua ha ambue tembiaporã
-            short: Ojejapo i18n rembiapokue
         impl:
             long: Omoheñói archivo implementación rehegua oñemboguata haguã servicio empresarial
             short: Omoheñói archivo implementación rehegua
@@ -66,17 +63,22 @@ cli:
             long: Emoheñói vore go.mod jesarekorã dependencia rehegua
             short: Emoheñói vore go.mod rehegua
         pb:
-            long: Emoheñói .pb.go vore emoheñói hag̃ua .proto vore, .
+            long: Emoheñói .pb.go vore, ojeporúva ojejapo hag̃ua .proto vore Etiqueta campo relevante x oñembojoapýta ijeheguiete configuración heꞌiháicha.
             short: Emoheñói .pb.go rembiapokue
         short: Código generador rehegua
         state:
+            conf:
+                long: Emoheñói código moñe’ẽrã vore configuración rehegua moñe’ẽrã ñemboheko servicio empresarial rehegua
+                short: Emoheñói vore configuración rehegua código moñe’ẽrã
             flags:
                 cache: Oñembohapétapa generación ojoajúva caché rehe
                 config: Ojejapopavaꞌerãpa kódigo ojoajúva configuración rehe
-                db: Ojehejápa ojejapo base de datos ojoajúva base de datos rehe
                 i18n: Taha’e ombohapéva generación ojoajúva heta ñe’ẽ rehe (generación oike estado ñepyrũrã ha ambue contenido añoite, ha ndoikéiva ñembohasa ijeheguiete heta ñe’ẽ rehegua. Reikotevẽramo ñembohasa ijehegui, eipuru {{.Command}} ehecha hag̃ua detalle)
                 table: Ojehejápa ojejapo base de datos ojoajúva base de datos rehe
-            long: Omoheñói opaite función estado rehegua ojoajúva recurso estatal térã recurso estático gestión servicio empresarial rehegua
+            i18n:
+                long: Emoheñói código ojoajúva i18n rehe umi ñehenói internacional heta ñe’ẽme g̃uarã
+                short: Omoheñói código ojoajúva i18n rehe
+            long: Omoheñói opaite función estado rehegua ojoajúva recurso estatal térã recurso estático gestión servicio empresarial-pe g̃uarã
             short: Opaite tembiaporã iñimportánteva ojejapo hag̃ua estado
             table:
                 long: Emoheñói kódigo ojoajúva state.table rehe, ojeporúva joajuha base de datos ha tabla ñepyrũrã oñepyrũvo servicio.

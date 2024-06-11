@@ -6,10 +6,10 @@ cli:
             flags:
                 action: Sarnaqäwinakax lotes ukan yapxatatäñapawa, juk’amp yatxatañatakix apnaqañ qillqatanakap jikxatañamawa
                 default-role: Uka lurawixa lote-generada interfaz ukankiwa.
-                gen-to: Uñacht’ayaña kawkhantixa mistuski uka .go qillqatanaka
+                gen-to: Uñstayata .go qillqatanakan mistuñ chiqawj uñt’ayaña
                 list-option: Ukhamaraki lista ukaxa filtratarakispawa, ukatxa juk’ampi yatxatañatakixa apnaqañ qillqatanaka thaqhañamawa.
                 model: Modelo suti uñt’ayaña, yanapt’aña `modelo` nayrïr aru chhaqtayaña
-            long: Interfaces ukanakax lotes ukan luraña ukat mä interfaz mä modelo ukar .proto qillqatan yapxataña
+            long: Interfaces ukanakax lotes ukan luraña ukat mä interfaz mä modelo ukar yapxataña .proto qillqatan
             short: Interfaz de generación de lotes ukax mä juk’a pachanakanwa
         all:
             long: Taqi kunatix aka herramienta ukamp yanapt’atäki ukanak luraña
@@ -21,7 +21,7 @@ cli:
             long: Servicios empresariales ukanakatakix mantañ archivonaka luraña
             short: Mantaña qillqata luraña
         conf:
-            long: Servicios empresariales ukanakan configuración uñakipañatakix configuración archivonaka luraña
+            long: Plantilla de archivo de configuración luraña
             short: Configuración qillqata luraña
         dockerignore:
             long: Docker uñacht’äw lurañataki .dockerignore qillqat luraña, qillqat apnaqañ jan yäqañataki
@@ -39,7 +39,7 @@ cli:
             protoc: '`protoc` ukax mä jamuqaw thakhi'
             protoc-gen-go: '`protoc-gen-go` ukax mä plugin thakhiwa'
             tables-enable_field_created_at: Ukax created_at ukanx base de datos ukan configuración generación predeterminada ukar ch’amanchañati janicha
-            tables-enable_field_deleted_at: Ukax deleted_at ukan default ukan utt’ayatawa, ukax base de datos ukankiwa
+            tables-enable_field_deleted_at: Ukax deleted_at ukan chimpunakapax uñt’ayatawa
             tables-enable_field_id: Base de datos ukamp chikt’at yapunakatakix configuración de configuración predeterminada ukar ch’amanchaña
             tables-enable_field_updated_at: Ukax updated_at ukanx default valor ukarux ch’amanchañapawa
             tables-enable_gorm_tag_column: Ukax base de datos ukamp chikt’at gorm generación ukar ch’amanchañataki
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: .goreleaser.yml qillqat luraña, mistuwi yänaka wakicht’añataki
             short: .goreleaser.yml qillqat luraña
-        i18n:
-            long: i18n qillqatanaka luraña walja arut internacionalización ukamp chikt’at herramientas ukat yaqha lurawinakar qalltañataki
-            short: i18n qillqat uñstayaña
         impl:
             long: Servicios empresariales ukanaka phuqhañataki phuqhawi archivonaka luraña
             short: Phuqt’awi qillqatanaka luraña
@@ -66,16 +63,21 @@ cli:
             long: Go.mod qillqat luraña dependencia apnaqañataki
             short: go.mod qillqat uñstayaña
         pb:
-            long: .pb.go qillqatanaka luraña .proto qillqatanaka lurañataki, .
+            long: .pb.go qillqatanaka luraña, ukaxa .proto qillqatanaka lurañataki apnaqatawa.
             short: .pb.go qillqat uñstayaña
         short: Código generador ukaxa
         state:
+            conf:
+                long: Configuración archivo uñakipaña código luraña servicio empresarial uñakipaña uñakipaña
+                short: Configuración archivo uñakipaña codigo luraña
             flags:
                 cache: Caché ukamp chikt’at generación ukar ch’amanchañatakiti janicha
                 config: Configuración ukamp chikt’at código uñstayañatakiti janicha
-                db: Ukax mä base de datos ukamp chikt’at base de datos ukan generación ukar ch’amanchañataki
                 i18n: Walja arunakamp uñt’at generación ukar ch’amanchañax wakisispati janicha (generación ukax estado qalltawi ukat yaqha contenido ukanak uñt’ayañakiw wakisi, ukatx janiw walja arunakan automáticamente jaqukipañax utjkiti. Automático jaqukipañ munaschi ukhax {{.Command}} ukampiw juk’amp yatxatañatakix apnaqañama)
                 table: Ukax mä base de datos ukamp chikt’at base de datos ukan generación ukar ch’amanchañataki
+            i18n:
+                long: i18n ukamp chikt’at código uñstayañax walja arut internacional jawsañataki
+                short: i18n ukamp chikt’at código uñstayaña
             long: Taqi funciones relacionadas del estado ukanaka luraña recurso estatal jan ukaxa gestión de recursos estáticos ukanaka servicios empresariales ukanakataki
             short: Taqi wakiskir lurawinakawa estado uñstayañataki
             table:

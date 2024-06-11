@@ -9,7 +9,7 @@ cli:
                 gen-to: Geben Sie den Ausgabespeicherort der generierten .go-Dateien an
                 list-option: Die Liste kann auch gefiltert werden. Weitere Informationen finden Sie in der Nutzungsdokumentation.
                 model: Geben Sie den Modellnamen an und unterstützen Sie das Weglassen des Präfixes „Modell“.
-            long: Generieren Sie Schnittstellen stapelweise und fügen Sie eine Schnittstelle für ein bestimmtes Modell in der .proto-Datei hinzu
+            long: Generieren Sie Schnittstellen in Stapeln und fügen Sie eine Schnittstelle für ein bestimmtes Modell in der .proto-Datei hinzu
             short: Schnittstelle zur Batch-Generierung
         all:
             long: Generieren Sie den gesamten von diesem Tool unterstützten Code
@@ -21,7 +21,7 @@ cli:
             long: Erstellen Sie Eintragsdateien für Unternehmensdienstleistungen
             short: Eintragsdatei erstellen
         conf:
-            long: Generieren Sie Konfigurationsdateien zum Lesen der Konfiguration von Geschäftsdiensten
+            long: Generieren Sie eine Konfigurationsdateivorlage
             short: Konfigurationsdatei generieren
         dockerignore:
             long: Generieren Sie eine .dockerignore-Datei für die Docker-Image-Erstellung, um die Dateiverwaltung zu ignorieren
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generieren Sie die Datei .goreleaser.yml zur Konfiguration der Release-Tools
             short: Generieren Sie die Datei .goreleaser.yml
-        i18n:
-            long: Generieren Sie i18n-Dateien für die Initialisierung mehrsprachiger Internationalisierungs-bezogener Toolkits und anderer Funktionen
-            short: Generieren Sie eine i18n-Datei
         impl:
             long: Generieren Sie Implementierungsdateien für die Implementierung von Business Services
             short: Generieren Sie Implementierungsdateien
@@ -63,26 +60,31 @@ cli:
             long: Generieren Sie Makefile-Dateien zum Erstellen von Tools und anderen zugehörigen Befehlen
             short: Makefile generieren
         mod:
-            long: Generieren Sie die Datei go.mod für die Abhängigkeitsverwaltung
+            long: Generieren Sie eine go.mod-Datei für die Abhängigkeitsverwaltung
             short: Generieren Sie die Datei go.mod
         pb:
-            long: Generieren Sie .pb.go-Dateien zum Generieren von .proto-Dateien.
-            short: Generieren Sie eine .pb.go-Datei
+            long: Generieren Sie .pb.go-Dateien, die zum Generieren von .proto-Dateien verwendet werden. Entsprechend der Konfiguration werden automatisch relevante Feldbezeichnungen x hinzugefügt.
+            short: Generieren Sie die Datei .pb.go
         short: Code Generator
         state:
+            conf:
+                long: Generieren Sie einen Lesecode für die Konfigurationsdatei zum Lesen der Geschäftsdienstkonfiguration
+                short: Generieren Sie den Lesecode für die Konfigurationsdatei
             flags:
                 cache: Ob die Cache-bezogene Generierung aktiviert werden soll
                 config: Ob konfigurationsbezogener Code generiert werden soll
-                db: Ob die datenbankbezogene Datenbankgenerierung aktiviert werden soll
                 i18n: Ob die mehrsprachige Generierung aktiviert werden soll (die Generierung umfasst nur die Statusinitialisierung und andere Inhalte und keine automatische Übersetzung mehrerer Sprachen. Wenn Sie eine automatische Übersetzung benötigen, verwenden Sie bitte {{.Command}}, um Details anzuzeigen.)
                 table: Ob die datenbankbezogene Datenbankgenerierung aktiviert werden soll
+            i18n:
+                long: Generieren Sie i18n-bezogenen Code für mehrsprachige internationale Anrufe
+                short: Generieren Sie i18n-bezogenen Code
             long: Generieren Sie alle zugehörigen Statusfunktionen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
             short: Alle relevanten Funktionen zur Zustandsgenerierung
             table:
                 long: Generieren Sie state.table-bezogenen Code, der für die Datenbankverbindung und die Tabelleninitialisierung verwendet wird, wenn der Dienst gestartet wird.
                 short: Generieren Sie state.table-bezogenen Code
         table:
-            long: Alle zugehörigen Funktionen zur Generierung von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
+            long: Alle zugehörigen Funktionen zum Generieren von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
             short: Alle zugehörigen Funktionen zur Tabellenerstellung
     help:
         additional_commands: Zusätzliche Befehle

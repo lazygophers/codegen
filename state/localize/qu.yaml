@@ -18,10 +18,10 @@ cli:
             long: Negocio waqyay waqaychasqawan tupaq SDKs kaqpaq waqaychasqa willañiqikuna ruway
             short: Caché nisqa willañiqita paqarichiy
         cmd:
-            long: Negocio yanapakuykunapaq yaykuna willañiqikunata ruway
+            long: Negocio yanapakuykunapaq yaykuy willañiqikunata ruway
             short: Yaykuna willañiqita paqarichiy
         conf:
-            long: Negocio yanapakuykunamanta wakichiy ñawiriypaq ruwanakuna willañiqikuna ruway
+            long: Plantilla de archivo de configuración nisqa paqarichiy
             short: Wakichiy willañiqita paqarichiy
         dockerignore:
             long: Docker siq'i wasipaq .dockerignore willañiqita paqarichiy, willañiqi kamachiyta mana qhawanapaq
@@ -40,7 +40,7 @@ cli:
             protoc-gen-go: '`protoc-gen-go` yapasqa ñan'
             tables-enable_field_created_at: Sichus kamasqa_at pampap willaypa tiyapuyninpa ñawpaqmanta wakichiy mirachiyta atichinapaq
             tables-enable_field_deleted_at: Willayta waqaychanapi deleted_at pampap ñawpaqmanta churasqa kayninta atichinapaqchu icha manachu
-            tables-enable_field_id: Willaypa tiyapuyninwan tupaq pampakunapaq ñawpaqmanta ruwasqa wakichiy mirachiyta atichiy
+            tables-enable_field_id: Willayta waqaychanawan tupaq pampakunapaq ñawpaqmanta ruwasqa wakichiy mirachiyta atichiy
             tables-enable_field_updated_at: Willayta waqaychanapi updated_at pampap ñawpaqmanta chaninninta atichinapaqchu icha manachu
             tables-enable_gorm_tag_column: Willayta waqaychanawan tupaq gorm mirachiyta atichinapaqchu icha manachu
         gitignote:
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: .goreleaser.yml willañiqita paqarichiy, kacharinapaq yanapakuykunata wakichinapaq
             short: .goreleaser.yml willañiqita paqarichiy
-        i18n:
-            long: i18n willakuykunata ruway achka simi internacionalización kaqwan tupaq yanapakuykuna chaymanta wak ruwanakuna qallariypaq
-            short: i18n willañiqita paqarichiy
         impl:
             long: Negocio serviciokuna ruwanapaq implementacion archivokuna ruway
             short: Ruway qillqakunata paqarichiy
@@ -66,16 +63,21 @@ cli:
             long: go.mod willañiqita paqarichiy, hapipakuy kamachiypaq
             short: go.mod willañiqita paqarichiy
         pb:
-            long: .pb.go willañiqikunata paqarichiy .proto willañiqikunata paqarichinanpaq,
+            long: .pb.go willañiqikunata paqarichiy, chaykunaqa .proto willañiqikunata paqarichinanpaqmi llamk'achisqa.
             short: .pb.go willañiqita paqarichiy
-        short: Código generador nisqa
+        short: Código paqarichiq
         state:
+            conf:
+                long: Wakichiy willañiqi ñawiriy codigo ruway llamkana yanapakuy wakichiy ñawiriypaq
+                short: Wakichiy willañiqi ñawirinapaq chiqapchayta paqarichiy
             flags:
                 cache: Caché-wan tupaq miray atichinapaqchu icha manachu
                 config: Wakichiywan tupaq codigo paqarichinapaqchu icha manachu
-                db: Willayta waqaychanawan tupaq willay tantana mirachiyta atichinapaqchu icha manachu
                 i18n: Sichus achka simikunawan tupaq miray atichinapaq (mirayqa estado qallariylla huk contenidokunallatam churan, manataqmi achka simikuna kikillanmanta tikrayta churanchu. Kikinmanta tikrayta necesitanki chayqa, ama hina kaspa {{.Command}} llamk'achiy detallekunata qhawanaykipaq)
                 table: Willayta waqaychanawan tupaq willay tantana mirachiyta atichinapaqchu icha manachu
+            i18n:
+                long: i18nwan tupaq codigo ruway achka simiyuq internacional waqyakuykunapaq
+                short: i18nwan tupaq codigota paqarichiy
             long: Llapan tupaq ruwanakuna estado kaqmanta paqarichiy estadoyuq recursopaq utaq estático recurso kamachiypaq negocio yanapakuykunamanta
             short: Llapan tupaq ruwaykuna estado paqarichinanpaq
             table:

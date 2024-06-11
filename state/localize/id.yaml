@@ -21,7 +21,7 @@ cli:
             long: Hasilkan file entri untuk layanan bisnis
             short: Hasilkan file entri
         conf:
-            long: Hasilkan file konfigurasi untuk pembacaan konfigurasi layanan bisnis
+            long: Hasilkan templat file konfigurasi
             short: Hasilkan file konfigurasi
         dockerignore:
             long: Hasilkan file .dockerignore untuk pembuatan image Docker untuk mengabaikan manajemen file
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Hasilkan file .goreleaser.yml untuk konfigurasi alat rilis
             short: Hasilkan file .goreleaser.yml
-        i18n:
-            long: Hasilkan file i18n untuk inisialisasi toolkit terkait internasionalisasi multi-bahasa dan fungsi lainnya
-            short: Hasilkan file i18n
         impl:
             long: Hasilkan file implementasi untuk implementasi layanan bisnis
             short: Hasilkan file implementasi
@@ -66,16 +63,21 @@ cli:
             long: Hasilkan file go.mod untuk manajemen ketergantungan
             short: Hasilkan file go.mod
         pb:
-            long: Hasilkan file .pb.go untuk menghasilkan file .proto,
+            long: Hasilkan file .pb.go, yang digunakan untuk menghasilkan file .proto. Label bidang yang relevan x akan ditambahkan secara otomatis sesuai dengan konfigurasi.
             short: Hasilkan file .pb.go
         short: Generator kode
         state:
+            conf:
+                long: Hasilkan kode pembacaan file konfigurasi untuk pembacaan konfigurasi layanan bisnis
+                short: Hasilkan kode pembacaan file konfigurasi
             flags:
                 cache: Apakah akan mengaktifkan pembuatan terkait cache
                 config: Apakah akan menghasilkan kode terkait konfigurasi
-                db: Apakah akan mengaktifkan pembuatan database terkait database
                 i18n: Apakah akan mengaktifkan pembuatan terkait multi-bahasa (pembuatan hanya mencakup inisialisasi negara dan konten lainnya, dan tidak menyertakan terjemahan otomatis beberapa bahasa. Jika Anda memerlukan terjemahan otomatis, silakan gunakan {{.Command}} untuk melihat detailnya)
                 table: Apakah akan mengaktifkan pembuatan database terkait database
+            i18n:
+                long: Hasilkan kode terkait i18n untuk panggilan internasional multi-bahasa
+                short: Hasilkan kode terkait i18n
             long: Hasilkan semua fungsi negara terkait untuk sumber daya stateful atau manajemen sumber daya statis layanan bisnis
             short: Semua fungsi yang relevan untuk menghasilkan status
             table:
@@ -110,5 +112,5 @@ cli:
                     usage: 'Saluran terjemahan: Jenis dukungan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: File multibahasa dari sumber tertentu diubah menjadi file dalam format yang sama dalam bahasa lain.
             short: menerjemahkan
-    long: Seperangkat alat untuk orang malas, termasuk kerangka backend berbasis 'proto', templat yang umum digunakan, dan terjemahan multi-bahasa
+    long: Seperangkat alat untuk orang yang malas, termasuk kerangka backend berbasis 'proto', templat yang umum digunakan, dan terjemahan multi-bahasa
     short: Satu set alat untuk orang malas

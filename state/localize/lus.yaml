@@ -9,7 +9,7 @@ cli:
                 gen-to: .go file siam chhuah tawhte output location kha tarlang rawh
                 list-option: List pawh hi filter theih a ni a, a chipchiar zawka hriat duh chuan usage documentation zawng rawh.
                 model: Model hming kha tarlang la, `model` prefix tih loh chu support rawh
-            long: Batch hrang hranga interface siam la, .proto file ah model pakhat tana interface add rawh
+            long: Batch hrang hranga interface siam la, .proto file ah model pakhat tan interface add rawh
             short: Batch siam chhuahna interface a ni
         all:
             long: He tool hian a support code zawng zawng siam vek rawh
@@ -21,7 +21,7 @@ cli:
             long: Business services atana entry file siam chhuah
             short: Entry file siam rawh
         conf:
-            long: Business services-a configuration chhiarna tur configuration file siam
+            long: Configuration file template siam rawh
             short: Configuration file siam rawh
         dockerignore:
             long: File management ngaihthah nan Docker image building atan .dockerignore file siam rawh
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Release tools configuration atan .goreleaser.yml file siam rawh
             short: .goreleaser.yml file siam rawh
-        i18n:
-            long: Multi-language internationalization nena inzawm toolkit leh function dangte initialization atan i18n file siam
-            short: i18n file siam rawh
         impl:
             long: Business services kalpui dan tur implementation file siam
             short: Implementation file siam chhuah
@@ -66,16 +63,21 @@ cli:
             long: Dependance management atan go.mod file siam rawh
             short: go.mod file siam rawh
         pb:
-            long: .proto file siam nan .pb.go file siam la, .
+            long: .pb.go file siam la, chu chu .proto file siam nan hman a ni Relevant field label x chu configuration angin automatic in a added ang.
             short: .pb.go file siam rawh
         short: Code siamtu a ni
         state:
+            conf:
+                long: Business service configuration chhiarna tur configuration file chhiarna code siam
+                short: Configuration file chhiarna code siam rawh
             flags:
                 cache: Cache nena inzawm generation enable tur nge tih
                 config: Configuration nena inzawm code siam tur nge siam loh
-                db: Database nena inzawm database siam theihna tur leh hman theih tur
                 i18n: Multi-language related generation enable tur nge (generation hian state initialization leh content dang chauh a huam a, tawng tam tak automatic translation a huam lo. Automatic translation i mamawh chuan {{.Command}} hmangin details en rawh)
                 table: Database nena inzawm database siam theihna tur leh hman theih tur
+            i18n:
+                long: Multi-language international call atan i18n nena inzawm code siam
+                short: i18n nena inzawm code siam rawh
             long: Business services-a stateful resource emaw static resource management emaw atan state-a function kaihhnawih zawng zawng siam chhuah
             short: State siamna atana function kaihhnawih zawng zawng
             table:

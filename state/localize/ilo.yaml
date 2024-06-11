@@ -21,7 +21,7 @@ cli:
             long: Mangpataud kadagiti file ti iseserrek para kadagiti serbisio ti negosio
             short: Mangpataud ti entry file
         conf:
-            long: Mangpataud kadagiti file ti panagisaad para iti panagbasa ti panagisaad dagiti serbisio ti negosio
+            long: Mangpataud ti plantilia ti file ti panagisaad
             short: Mangpataud ti file ti konfigurasion
         dockerignore:
             long: Mangpataud ti .dockerignore a papeles para iti panagbangon ti ladawan ti Docker tapno di ikankano ti panagmanehar ti papeles
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Mangpataud ti .goreleaser.yml a papeles para iti panagisaad kadagiti ramit ti pannakairuar
             short: Mangpataud ti .goreleaser.yml a papeles
-        i18n:
-            long: Mangpataud kadagiti i18n a papeles para iti panangrugi kadagiti adu a pagsasao nga internasionalisasion a mainaig a toolkit ken dagiti dadduma pay a panagandar
-            short: Mangpataud ti i18n a file
         impl:
             long: Mangpataud kadagiti file ti pannakaipatungpal para iti pannakaipatungpal dagiti serbisio ti negosio
             short: Mangpataud kadagiti file ti pannakaipatungpal
@@ -66,16 +63,21 @@ cli:
             long: Mangpataud ti go.mod a file para iti panagmanehar ti panagpannuray
             short: Mangpataud ti go.mod a file
         pb:
-            long: Mangpataud kadagiti .pb.go a papeles para iti panagpataud kadagiti .proto a papeles, .
+            long: Mangpataud kadagiti .pb.go a papeles, a maus-usar a mangpataud kadagiti .proto a papeles Dagiti mainaig nga etiketa ti tay-ak x ket automatiko a mainayon segun ti panagisaad.
             short: Mangpataud ti .pb.go a file
-        short: Kodigo nga generator
+        short: Generador ti kodigo
         state:
+            conf:
+                long: Mangpataud ti kodigo ti panagbasa ti file ti panagisaad para iti panagbasa ti panagisaad ti serbisio ti negosio
+                short: Mangpataud ti kodigo ti panagbasa ti file ti konfigurasion
             flags:
                 cache: No mapalubosan ti cache-related generation
                 config: No mangpataud ti kodigo a mainaig iti konfigurasion
-                db: No mapalubosan ti panagpataud ti database a mainaig iti database
                 i18n: No mapalubosan ti adu a pagsasao a mainaig a henerasion (ti henerasion ket mangiraman laeng ti panangrugi ti estado ken dagiti dadduma pay a linaon, ken saan a mangiraman ti automatiko a panagipatarus kadagiti adu a pagsasao. No kasapulam ti automatiko a panagipatarus, pangngaasim ta usarem ti {{.Command}} tapno makita dagiti detalye)
                 table: No mapalubosan ti panagpataud ti database a mainaig iti database
+            i18n:
+                long: Mangpataud ti i18n a mainaig a kodigo para kadagiti adu a pagsasao nga internasional nga awag
+                short: Mangpataud ti i18n a mainaig a kodigo
             long: Mangpataud kadagiti amin a mainaig a panagandar ti estado para iti stateful a rekurso wenno estatiko a panagmanehar ti rekurso dagiti serbisio ti negosio
             short: Amin a mainaig a panagandar para iti panagpataud ti estado
             table:

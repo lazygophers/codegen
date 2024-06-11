@@ -4,7 +4,7 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Behuelen déi a Chargen bäigefüügt musse ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer
+                action: Verhalen déi a Chargen bäigefüügt musse ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer
                 default-role: D'Standardroll vum Batch-generéierten Interface kuckt w.e.g. op d'Benotzungsdokumentatioun fir Detailer.
                 gen-to: Gitt d'Ausgangsplaz vun den generéierten .go Dateien un
                 list-option: D'Lëscht kann och gefiltert ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer.
@@ -21,7 +21,7 @@ cli:
             long: Generéiere Entréesdateien fir Geschäftsservicer
             short: Entry Datei generéieren
         conf:
-            long: Generéiere Konfiguratiounsdateien fir Konfiguratiounsliesen vu Geschäftsservicer
+            long: Generéiere Konfiguratiounsdatei Schabloun
             short: Konfiguratiounsdatei generéieren
         dockerignore:
             long: Generéiere .dockerignore-Datei fir Docker-Bildgebai fir Dateieverwaltung ze ignoréieren
@@ -31,7 +31,7 @@ cli:
             short: Generéiere .editorconfig Datei
         flags:
             add-proto-files: Wann Dir aner .proto-Dateien / Dossierweeër importéiere musst, déi net am selwechten Dossier wéi déi spezifizéiert .proto-Datei sinn, wäert dës Operatioun de Wee, deen an der Konfiguratiounsdatei konfiguréiert ass, addéieren (net iwwerschreiwe).
-            go-module-prefix: Fir de Wee vun go_package konfiguréiert an der .proto Datei an déi aktuell, Dir kënnt dës Optioun konfiguréieren
+            go-module-prefix: Fir de Wee vun go_package konfiguréiert an der .proto Datei an déi aktuell, kënnt Dir dës Optioun konfiguréieren
             input: Gitt d'.proto Quelldatei un, déi generéiert gëtt
             output-path: Dës Optioun kann konfiguréiert ginn, wann de Wee vum go_package, deen an der .proto-Datei konfiguréiert ass, net konsequent mat der Stroossebedéngung ass, déi tatsächlech generéiert muss ginn.
             overwrite: Fir Inhalt deen net regeneréiert gëtt, zwéngt d'Iwwerschreiwe vum existente Inhalt
@@ -40,11 +40,11 @@ cli:
             protoc-gen-go: '`protoc-gen-go` Plugin Wee'
             tables-enable_field_created_at: Ob d'Standardkonfiguratioun Generatioun vun der Datebank create_at Feld aktivéiert
             tables-enable_field_deleted_at: Ob d'Standardastellung vum deleted_at Feld an der Datebank aktivéiert gëtt
-            tables-enable_field_id: Aktivéiert Standardkonfiguratiounsgeneratioun fir Datebankbezunnen Felder
+            tables-enable_field_id: Aktivéiert Standardkonfiguratioun Generatioun fir Datebank-Zesummenhang Felder
             tables-enable_field_updated_at: Ob de Standardwäert vum Updated_at Feld an der Datebank aktivéiert gëtt
-            tables-enable_gorm_tag_column: Ob Datebank-Zesummenhang Gorm Generatioun aktivéiert
+            tables-enable_gorm_tag_column: Ob Datebank-Zesummenhang Gorm Generatioun z'aktivéieren
         gitignote:
-            long: Generéiere .gitignore Fichieren fir ignoréiert Fichier Gestioun an Versioun Kontroll
+            long: Generéiere .gitignore Dateien fir ignoréiert Dateiverwaltung an der Versiounskontroll
             short: Generéiere .gitignore Fichier
         golang-lint:
             long: Generéiere .golangci.yml Fichier fir Code Qualitéit Inspektioun
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generéiere .goreleaser.yml Fichier fir Configuratioun vun Fräisetzung Handwierksgeschir
             short: Generéiere .goreleaser.yml Fichier
-        i18n:
-            long: Generéiere i18n Dateien fir d'Initialiséierung vu Multi-Sprooch Internationaliséierung verbonnen Toolkits an aner Funktiounen
-            short: Generéiere i18n Datei
         impl:
             long: Generéiere Implementatiounsdateien fir d'Ëmsetzung vu Geschäftsservicer
             short: Generéiere Implementatiounsdateien
@@ -66,16 +63,21 @@ cli:
             long: Generéiere go.mod Fichier fir Ofhängegkeet Gestioun
             short: Generéiere go.mod Datei
         pb:
-            long: Generéiere .pb.go Dateien fir .proto Dateien ze generéieren,
+            long: Generéiere .pb.go Dateien, déi benotzt gi fir .proto Dateien ze generéieren.
             short: Generéiere .pb.go Fichier
         short: Code Generator
         state:
+            conf:
+                long: Generéiere Configuratiounsdatei liesen Code fir Affär Service Configuratioun liesen
+                short: Generéiere Configuratiounsdatei liesen Code
             flags:
                 cache: Ob Cache-verbonne Generatioun z'aktivéieren
                 config: Ob Configuratioun-Zesummenhang Code ze generéieren
-                db: Ob Datebank-Zesummenhang Datebank Generatioun aktivéiert
                 i18n: Ob Multi-Language Zesummenhang Generatioun z'aktivéieren (d'Generatioun enthält nëmmen Staatsinitialiséierung an aner Inhalter, an enthält keng automatesch Iwwersetzung vu verschidde Sproochen. Wann Dir automatesch Iwwersetzung braucht, benotzt w.e.g. {{.Command}} fir Detailer ze gesinn)
                 table: Ob Datebank-Zesummenhang Datebank Generatioun aktivéiert
+            i18n:
+                long: Generéiere i18n Zesummenhang Code fir Multi-Sprooch international Appellen
+                short: Generéiere i18n Zesummenhang Code
             long: Generéiere all Zesummenhang Funktiounen vum Staat fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
             short: All relevant Funktiounen fir Generéiere Staat
             table:

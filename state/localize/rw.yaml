@@ -7,7 +7,7 @@ cli:
                 action: Imyitwarire ikeneye kongerwaho mubice, nyamuneka shakisha imikoreshereze yinyandiko irambuye
                 default-role: Uruhare rwibanze rwimikorere-yakozwe.
                 gen-to: Kugaragaza ibisohoka aho dosiye zakozwe .go
-                list-option: Urutonde narwo rushobora gushungura, nyamuneka shakisha imikoreshereze yinyandiko kubisobanuro birambuye.
+                list-option: Urutonde narwo rushobora gushungura, nyamuneka shakisha imikoreshereze yinyandiko irambuye.
                 model: Kugaragaza izina ryicyitegererezo, shyigikira usibye `moderi` prefix
             long: Kora intera mubice hanyuma ongeraho intera ya moderi runaka muri dosiye .proto
             short: Imigaragarire yimbere
@@ -21,7 +21,7 @@ cli:
             long: Gukora dosiye zinjira muri serivisi zubucuruzi
             short: Gukora dosiye yinjira
         conf:
-            long: Gukora dosiye iboneza kugirango ibone gusoma serivisi zubucuruzi
+            long: Gukora iboneza rya dosiye
             short: Gukora dosiye iboneza
         dockerignore:
             long: Gukora .dockerignore dosiye yo kubaka amashusho ya Docker kugirango wirengagize gucunga dosiye
@@ -41,7 +41,7 @@ cli:
             tables-enable_field_created_at: Niba ushobora gukora igenamigambi ryibanze rya data base yaremye_umurima
             tables-enable_field_deleted_at: Niba ushobora gukora igenamiterere ryibanze ryasibwe_umurima muri base de base
             tables-enable_field_id: Gushoboza iboneza ryibanze kububiko bujyanye nimirima
-            tables-enable_field_updated_at: Niba ushobora gukora agaciro gasanzwe kavuguruwe_kumwanya wububiko
+            tables-enable_field_updated_at: Niba ushobora gukora agaciro gasanzwe kavuguruwe_umurima muri base de base
             tables-enable_gorm_tag_column: Niba ushobora gukora data base ijyanye na gorm generation
         gitignote:
             long: Gukora dosiye .gitignore kugirango wirengagize gucunga dosiye mugucunga verisiyo
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Kora .goreleaser.yml dosiye kugirango ibone ibikoresho byo kurekura
             short: Kora .goreleaser.yml dosiye
-        i18n:
-            long: Gukora dosiye ya i18n yo gutangiza indimi nyinshi mpuzamahanga mpuzamahanga zijyanye nibikoresho hamwe nibindi bikorwa
-            short: Gukora dosiye i18n
         impl:
-            long: Gukora amadosiye yo gushyira mubikorwa serivisi zubucuruzi
+            long: Gukora dosiye zo gushyira mubikorwa ishyirwa mubikorwa rya serivisi zubucuruzi
             short: Gukora dosiye zo gushyira mubikorwa
         long: Kode itanga, ishyigikira inyandikorugero nyinshi
         makefile:
@@ -66,23 +63,28 @@ cli:
             long: Gukora go.mod dosiye yo gucunga kwishingikiriza
             short: Gukora go.mod dosiye
         pb:
-            long: Gukora dosiye .pb.go yo kubyara dosiye .proto,
+            long: Gukora dosiye .pb.go, zikoreshwa mukubyara amadosiye .proto yumurima bijyanye x izahita yongerwaho ukurikije iboneza.
             short: Gukora dosiye .pb.go
         short: Amashanyarazi
         state:
+            conf:
+                long: Gukora iboneza rya dosiye yo gusoma kode ya serivise yubucuruzi
+                short: Gukora iboneza rya dosiye yo gusoma
             flags:
                 cache: Niba ushobora gukora cache ijyanye nigisekuru
                 config: Niba kubyara iboneza bijyanye na code
-                db: Niba ushobora gukora data base ijyanye nububiko
                 i18n: Niba ushobora gukora ururimi rwinshi rujyanye nigisekuru (igisekuru kirimo gusa gutangiza leta nibindi bikubiyemo, kandi ntabwo bikubiyemo guhinduranya mu buryo bwikora bwindimi nyinshi. Niba ukeneye ibisobanuro byikora, nyamuneka koresha {{.Ibicuruzwa}} kugirango urebe ibisobanuro)
                 table: Niba ushobora gukora data base ijyanye nububiko
+            i18n:
+                long: Kora i18n code ifitanye isano nindimi nyinshi zihamagara mpuzamahanga
+                short: Kora kode i18n
             long: Kubyara ibikorwa byose bifitanye isano na leta kubutunzi bwa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
             short: Ibikorwa byose bijyanye no kubyara leta
             table:
                 long: Kubyara leta.ibisobanuro bifitanye isano na code, ikoreshwa muguhuza data base no gutangiza imbonerahamwe mugihe serivisi itangiye.
                 short: Gukora leta.kode ifitanye isano
         table:
-            long: Ibikorwa byose bifitanye isano no gutanga imbonerahamwe yumutungo wa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
+            long: Imirimo yose ijyanye no kubyara imbonerahamwe yumutungo wa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
             short: Imikorere yose ijyanye no kubyara imbonerahamwe
     help:
         additional_commands: Amabwiriza yinyongera

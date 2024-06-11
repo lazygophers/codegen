@@ -21,7 +21,7 @@ cli:
             long: Genereer inskrywingslêers vir besigheidsdienste
             short: Genereer inskrywingslêer
         conf:
-            long: Genereer konfigurasielêers vir konfigurasielees van besigheidsdienste
+            long: Genereer konfigurasie lêer sjabloon
             short: Genereer konfigurasielêer
         dockerignore:
             long: Genereer .dockerignore-lêer vir Docker-beeldbou om lêerbestuur te ignoreer
@@ -34,7 +34,7 @@ cli:
             go-module-prefix: Vir die pad van go_package wat in die .proto-lêer gekonfigureer is en die werklike een, kan jy hierdie opsie instel
             input: Spesifiseer die .proto-bronlêer wat gegenereer moet word
             output-path: Hierdie opsie kan gekonfigureer word wanneer die pad van go_package wat in die .proto-lêer gekonfigureer is, nie ooreenstem met die padbed wat eintlik gegenereer moet word nie.
-            overwrite: Vir inhoud wat nie geregenereer sal word nie, dwing die oorskrywing van bestaande inhoud af
+            overwrite: Vir inhoud wat nie herskep sal word nie, dwing die oorskrywing van bestaande inhoud af
             proto-files: Om ander .proto-lêers/vouerpaaie in te voer wat nie in dieselfde vouer as die gespesifiseerde .proto-lêer is nie, is hierdie bewerking 'n opsie om die konfigurasieveld in die konfigurasielêer te ignoreer.
             protoc: '`protoc` aanpasbare lêerpad'
             protoc-gen-go: '`protoc-gen-go`-inproppad'
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Genereer .goreleaser.yml lêer vir konfigurasie van vrystelling gereedskap
             short: Genereer .goreleaser.yml-lêer
-        i18n:
-            long: Genereer i18n-lêers vir die inisialisering van multi-taal internasionalisering verwante gereedskapstelle en ander funksies
-            short: Genereer i18n-lêer
         impl:
             long: Genereer implementeringslêers vir die implementering van besigheidsdienste
             short: Genereer implementeringslêers
@@ -66,16 +63,21 @@ cli:
             long: Genereer go.mod-lêer vir afhanklikheidsbestuur
             short: Genereer go.mod lêer
         pb:
-            long: Genereer .pb.go-lêers vir die generering van .proto-lêers,
+            long: Genereer .pb.go-lêers, wat gebruik word om .proto-lêers te genereer. Relevante veldetikette x sal outomaties bygevoeg word volgens die konfigurasie.
             short: Genereer .pb.go-lêer
         short: Kode kragopwekker
         state:
+            conf:
+                long: Genereer konfigurasielêerleeskode vir besigheidsdienskonfigurasielees
+                short: Genereer konfigurasielêer leeskode
             flags:
                 cache: Of kasverwante generering moontlik gemaak moet word
                 config: Of konfigurasieverwante kode te genereer
-                db: Of databasisverwante databasisgenerering geaktiveer moet word
                 i18n: Of om meertalige verwante generering te aktiveer (die generasie sluit slegs staatsinisiasie en ander inhoud in, en sluit nie outomatiese vertaling van veelvuldige tale in nie. As jy outomatiese vertaling benodig, gebruik asseblief {{.Command}} om besonderhede te sien)
                 table: Of databasisverwante databasisgenerering geaktiveer moet word
+            i18n:
+                long: Genereer i18n-verwante kode vir multi-taal internasionale oproepe
+                short: Genereer i18n-verwante kode
             long: Genereer alle verwante funksies van die staat vir staatkundige hulpbron- of statiese hulpbronbestuur van besigheidsdienste
             short: Alle relevante funksies vir die generering van staat
             table:

@@ -20,8 +20,13 @@ var genCmd = &cobra.Command{
 	Use:     "gen",
 	Aliases: []string{"g", "generate"},
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) (err error) {
-		// NOTE: 合并输入参数与配置文件
-		mergeGenCmdFlags(cmd)
+		if cmd.Flag("protoc").Changed {
+			state.Config.ProtocPath = utils.GetString("protoc", cmd)
+		}
+
+		if cmd.Flag("protoc-gen-go").Changed {
+			state.Config.ProtoGenGoPath = utils.GetString("protoc-gen-go", cmd)
+		}
 
 		err = codegen.CheckEnvironments()
 		if err != nil {
@@ -36,18 +41,27 @@ var genCmd = &cobra.Command{
 		}
 
 		pterm.Info.Println("proto file:", protoFile)
-
-		// NOTE: 检查proto文件是否存在
-		{
-			if !osx.IsFile(protoFile) {
-			}
-		}
-
 		pb, err = codegen.ParseProto(protoFile)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
 		}
+
+		// 尝试加载 lazy 配置
+		if osx.IsFile(filepath.Join(pb.ProjectRoot(), ".lazygophers")) {
+			err = state.LoadLazeConfig(filepath.Join(pb.ProjectRoot(), ".lazygophers"))
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
+		} else {
+			log.Warnf("not found %s", filepath.Join(pb.ProjectRoot(), ".lazygophers"))
+			pterm.Warning.Printfln("not found .lazygophers in product package, use defulat")
+			state.LazyConfig.Apply()
+		}
+
+		// NOTE: 合并输入参数与配置文件
+		mergeGenCmdFlags(cmd)
 
 		return nil
 	},
@@ -94,14 +108,6 @@ func getPbFile(cmd *cobra.Command) (string, error) {
 }
 
 func mergeGenCmdFlags(cmd *cobra.Command) {
-	if cmd.Flag("protoc").Changed {
-		state.Config.ProtocPath = utils.GetString("protoc", cmd)
-	}
-
-	if cmd.Flag("protoc-gen-go").Changed {
-		state.Config.ProtoGenGoPath = utils.GetString("protoc-gen-go", cmd)
-	}
-
 	if cmd.Flag("go-module-prefix").Changed {
 		state.Config.GoModulePrefix = strings.TrimSuffix(utils.GetString("go-module-prefix", cmd), "/")
 	}

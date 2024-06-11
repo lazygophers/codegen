@@ -6,7 +6,7 @@ cli:
             flags:
                 action: Kondutoj kiuj devas esti aldonitaj en aroj, bonvolu trovi la uzadodokumentaron por detaloj
                 default-role: La defaŭlta rolo de la grup-generita interfaco Bonvolu konsulti la uzdokumentadon por detaloj.
-                gen-to: Specifu la eliglokon de la generitaj .go dosieroj
+                gen-to: Indiku la eligan lokon de la generitaj .go dosieroj
                 list-option: La listo ankaŭ povas esti filtrita, bonvolu trovi la uzan dokumentaron por detaloj.
                 model: Specifu la modelnomon, subtenu preterlasi la prefikson `modelo`
             long: Generu interfacojn en aroj kaj aldonu interfacon por certa modelo en la .proto-dosiero
@@ -21,11 +21,11 @@ cli:
             long: Generu enirajn dosierojn por komercaj servoj
             short: Generu enirdosieron
         conf:
-            long: Generu agordajn dosierojn por agorda legado de komercaj servoj
+            long: Generu ŝablonon de agorda dosiero
             short: Generu agordan dosieron
         dockerignore:
             long: Generu .dockerignore dosieron por Docker-bildkonstruado por ignori dosieradministradon
-            short: Generu dosieron .dockerignore
+            short: Generu .dockerignore dosieron
         editorconfig:
             long: Generu .editorconfig dosieron por redaktila agordo
             short: Generu .editorconfig dosieron
@@ -35,7 +35,7 @@ cli:
             input: Specifu la .proto fontdosieron esti generita
             output-path: Ĉi tiu opcio povas esti agordita kiam la vojo de go_package agordita en la .proto-dosiero estas malkonsekvenca kun la vojo, kiu efektive devas esti generita.
             overwrite: Por enhavo, kiu ne estos regenerita, devigu anstataŭigon de ekzistanta enhavo
-            proto-files: Por importi aliajn .proto-dosierujojn/dosierujojn kiuj ne estas en la sama dosierujo kiel la specifita .proto-dosiero, ĉi tiu operacio estas opcio por anstataŭi la agordan kampon en la agorda dosiero.
+            proto-files: Por importi aliajn .proto-dosierojn/dosierujojn, kiuj ne estas en la sama dosierujo kiel la specifita .proto-dosiero, ĉi tiu operacio estas eblo por anstataŭi la agordan kampon en la agorda dosiero.
             protoc: '`protoc` agordebla dosiervojo'
             protoc-gen-go: '`protoc-gen-go` kromvojo'
             tables-enable_field_created_at: Ĉu ebligi la defaŭltan agordan generacion de la datumbazo created_at-kampo
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generu .goreleaser.yml dosieron por agordo de eldonaj iloj
             short: Generu .goreleaser.yml dosieron
-        i18n:
-            long: Generu i18n-dosierojn por pravalorigo de multlingvaj internaciigo-rilataj ilaro kaj aliaj funkcioj
-            short: Generu i18n-dosieron
         impl:
             long: Generu realigajn dosierojn por efektivigo de komercaj servoj
             short: Generu realigajn dosierojn
@@ -66,16 +63,21 @@ cli:
             long: Generu go.mod dosieron por dependeca administrado
             short: Generu go.mod dosieron
         pb:
-            long: Generu .pb.go dosierojn por generi .proto dosierojn,
+            long: Generu .pb.go-dosierojn, kiuj estas uzataj por generi .proto-dosierojn, koncernaj kampo-etikedoj x estos aŭtomate aldonitaj laŭ la agordo.
             short: Generu .pb.go dosieron
         short: Kodgeneratoro
         state:
+            conf:
+                long: Generu agordan legokodon por agorda legado de komerca servo
+                short: Generu agordan dosieron legante kodon
             flags:
                 cache: Ĉu ebligi kaŝmemor-rilatan generacion
                 config: Ĉu generi agordan kodon
-                db: Ĉu ebligi datumbaz-rilatan datumbazgeneradon
                 i18n: Ĉu ebligi plurlingvan rilatan generacion (la generacio inkluzivas nur ŝtatan inicialigon kaj alian enhavon, kaj ne inkluzivas aŭtomatan tradukon de pluraj lingvoj. Se vi bezonas aŭtomatan tradukon, bonvolu uzi {{.Command}} por vidi detalojn)
                 table: Ĉu ebligi datumbaz-rilatan datumbazgeneradon
+            i18n:
+                long: Generu i18n rilatan kodon por plurlingvaj internaciaj vokoj
+                short: Generu i18n rilatan kodon
             long: Generu ĉiujn rilatajn funkciojn de ŝtato por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generado de stato
             table:

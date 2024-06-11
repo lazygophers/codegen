@@ -21,7 +21,7 @@ cli:
             long: Generearje yngongbestannen foar saaklike tsjinsten
             short: Generearje yngongtriem
         conf:
-            long: Generearje konfiguraasjebestannen foar konfiguraasjelêzing fan saaklike tsjinsten
+            long: Generearje konfiguraasjetriem sjabloan
             short: Generearje konfiguraasjetriem
         dockerignore:
             long: Generearje .dockerignore-bestân foar Docker-ôfbyldingsbou om triembehear te negearjen
@@ -35,10 +35,10 @@ cli:
             input: Spesifisearje it .proto-boarnebestân dat oanmakke wurde moat
             output-path: Dizze opsje kin konfigurearre wurde as it paad fan go_package konfigurearre yn 'e .proto-bestân ynkonsistint is mei it roadbed dat eins oanmakke wurde moat.
             overwrite: Foar ynhâld dy't net wurde regenerearre, twingt oerskriuwen fan besteande ynhâld
-            proto-files: Om oare .proto-bestannen/mappaden te ymportearjen dy't net yn deselde map steane as de oantsjutte .proto-bestân, is dizze operaasje in opsje om it konfiguraasjefjild yn it konfiguraasjetriem te oerskriuwen.
-            protoc: '`protoc` oanpasbere triempaad'
+            proto-files: Om oare .proto-bestannen/mappaden te ymportearjen dy't net yn deselde map binne as de oantsjutte .proto-bestân, is dizze operaasje in opsje om it konfiguraasjefjild yn it konfiguraasjetriem te oerskriuwen.
+            protoc: '`protoc` oanpasber bestânspaad'
             protoc-gen-go: '`protoc-gen-go` plugin paad'
-            tables-enable_field_created_at: Oft de standertkonfiguraasjegeneraasje fan it fjild oanmakke_at-database ynskeakelje moat
+            tables-enable_field_created_at: Of de standertkonfiguraasjegeneraasje fan it fjild oanmakke_at-database ynskeakelje moat
             tables-enable_field_deleted_at: Of de standertynstelling fan it fjild deleted_at yn 'e databank ynskeakelje moat
             tables-enable_field_id: Ynskeakelje standert konfiguraasje generaasje foar database-relatearre fjilden
             tables-enable_field_updated_at: Of de standertwearde fan it updated_at-fjild yn 'e databank ynskeakelje moat
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generearje .goreleaser.yml triem foar konfiguraasje fan release ark
             short: Generearje .goreleaser.yml triem
-        i18n:
-            long: Generearje i18n-bestannen foar inisjalisaasje fan meartalige ynternasjonalisearring relatearre toolkits en oare funksjes
-            short: Generearje i18n triem
         impl:
             long: Generearje ymplemintaasjebestannen foar de ymplemintaasje fan saaklike tsjinsten
             short: Generearje ymplemintaasjebestannen
@@ -66,16 +63,21 @@ cli:
             long: Generearje go.mod-bestân foar ôfhinklikensbehear
             short: Generearje go.mod triem
         pb:
-            long: Generearje .pb.go-bestannen foar it generearjen fan .proto-bestannen,
+            long: Generearje .pb.go-bestannen, dy't brûkt wurde om .proto-bestannen te generearjen Relevante fjildlabels x wurde automatysk tafoege neffens de konfiguraasje.
             short: Generearje .pb.go triem
         short: Koade generator
         state:
+            conf:
+                long: Generearje konfiguraasjetriemlêskoade foar lêzing fan konfiguraasje foar saaklike tsjinst
+                short: Generearje konfiguraasjetriem lêskoade
             flags:
                 cache: Oft cache-relatearre generaasje ynskeakelje moat
                 config: Oft te generearjen konfiguraasje-relatearre koade
-                db: Of it ynskeakeljen fan database-relatearre databankgeneraasje
                 i18n: Oft meartalige generaasje ynskeakelje moat (de generaasje omfettet allinich steatsinisjalisaasje en oare ynhâld, en omfettet gjin automatyske oersetting fan meardere talen. As jo ​​​​automatyske oersetting nedich binne, brûk dan {{.Command}} om details te besjen)
                 table: Of it ynskeakeljen fan database-relatearre databankgeneraasje
+            i18n:
+                long: Generearje i18n-relatearre koade foar meartalige ynternasjonale petearen
+                short: Generearje i18n relatearre koade
             long: Generearje alle besibbe funksjes fan steat foar stateful boarne of statyske boarne behear fan saaklike tsjinsten
             short: Alle relevante funksjes foar it generearjen fan steat
             table:

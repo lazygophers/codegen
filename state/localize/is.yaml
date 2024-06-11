@@ -21,7 +21,7 @@ cli:
             long: Búðu til færsluskrár fyrir viðskiptaþjónustu
             short: Búðu til færsluskrá
         conf:
-            long: Búðu til stillingarskrár fyrir stillingalestur á viðskiptaþjónustu
+            long: Búðu til sniðmát fyrir stillingarskrá
             short: Búðu til stillingarskrá
         dockerignore:
             long: Búðu til .dockerignore skrá fyrir Docker myndbyggingu til að hunsa skráarstjórnun
@@ -34,12 +34,12 @@ cli:
             go-module-prefix: Fyrir slóð go_package sem er stillt í .proto skránni og hina raunverulegu, geturðu stillt þennan valkost
             input: Tilgreindu .proto frumskrána sem á að búa til
             output-path: Hægt er að stilla þennan valmöguleika þegar slóð go_package sem er stillt í .proto skránni er í ósamræmi við vegfarveginn sem raunverulega þarf að búa til.
-            overwrite: Fyrir efni sem verður ekki endurnýjað, þvingaðu yfir yfirskrift á núverandi efni
+            overwrite: Fyrir efni sem verður ekki endurskapað skaltu þvinga yfir yfirskrift á núverandi efni
             proto-files: Til að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá er þessi aðgerð valkostur til að hnekkja stillingarreitnum í stillingarskránni.
             protoc: '''Protoc'' sérhannaðar skráarslóð'
             protoc-gen-go: „protoc-gen-go“ viðbótaleið
             tables-enable_field_created_at: Hvort á að virkja sjálfgefna stillingargerð gagnagrunnsins create_at reitnum
-            tables-enable_field_deleted_at: Hvort eigi að virkja sjálfgefna stillingu á deleted_at reitnum í gagnagrunninum
+            tables-enable_field_deleted_at: Hvort á að virkja sjálfgefna stillingu á deleted_at reitnum í gagnagrunninum
             tables-enable_field_id: Virkja sjálfgefna stillingargerð fyrir gagnagrunnstengda reiti
             tables-enable_field_updated_at: Hvort eigi að virkja sjálfgefið gildi updated_at reitsins í gagnagrunninum
             tables-enable_gorm_tag_column: Hvort á að virkja gagnagrunnstengda gorm kynslóð
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Búðu til .goreleaser.yml skrá til að stilla útgáfutól
             short: Búðu til .goreleaser.yml skrá
-        i18n:
-            long: Búðu til i18n skrár til að frumstilla fjöltungumál alþjóðavæðingartengda verkfærasetta og aðrar aðgerðir
-            short: Búðu til i18n skrá
         impl:
             long: Búa til innleiðingarskrár fyrir innleiðingu viðskiptaþjónustu
             short: Búðu til útfærsluskrár
@@ -66,16 +63,21 @@ cli:
             long: Búðu til go.mod skrá fyrir ávanastjórnun
             short: Búðu til go.mod skrá
         pb:
-            long: Búðu til .pb.go skrár til að búa til .proto skrár,
+            long: Búðu til .pb.go skrár, sem eru notaðar til að búa til .proto skrár. Viðeigandi svæðismerki x verða sjálfkrafa bætt við í samræmi við uppsetninguna.
             short: Búðu til .pb.go skrá
         short: Kóða rafall
         state:
+            conf:
+                long: Búðu til lestrarkóða fyrir stillingarskrá fyrir lestur stillingar fyrirtækjaþjónustu
+                short: Búðu til leskóða fyrir stillingarskrá
             flags:
                 cache: Hvort á að virkja skyndiminni-tengda kynslóð
                 config: Hvort búa eigi til stillingartengdan kóða
-                db: Hvort á að virkja gagnagrunnstengda gagnagrunnsgerð
                 i18n: Hvort á að virkja fjöltungumálatengda kynslóð (kynslóðin felur aðeins í sér stöðuuppfærslu og annað efni, og inniheldur ekki sjálfvirka þýðingu á mörgum tungumálum. Ef þú þarft sjálfvirka þýðingu, vinsamlegast notaðu {{.Command}} til að skoða upplýsingar)
                 table: Hvort á að virkja gagnagrunnstengda gagnagrunnsgerð
+            i18n:
+                long: Búðu til i18n tengdan kóða fyrir alþjóðleg símtöl á mörgum tungumálum
+                short: Búðu til i18n tengdan kóða
             long: Búðu til allar tengdar aðgerðir ríkisins fyrir staðbundna auðlinda- eða kyrrstöðustjórnun á viðskiptaþjónustu
             short: Allar viðeigandi aðgerðir til að búa til ástand
             table:

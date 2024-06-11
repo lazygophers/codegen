@@ -8,7 +8,7 @@ cli:
                 default-role: Toplu olarak oluşturulan arayüzün varsayılan rolü Ayrıntılar için lütfen kullanım belgelerine bakın.
                 gen-to: Oluşturulan .go dosyalarının çıktı konumunu belirtin
                 list-option: Liste ayrıca filtrelenebilir; ayrıntılar için lütfen kullanım belgelerine bakın.
-                model: Model adını belirtin, 'model' önekinin atlanmasını destekleyin
+                model: Model adını belirtin, "model" önekinin çıkarılmasını destekleyin
             long: Toplu olarak arayüzler oluşturun ve .proto dosyasına belirli bir model için arayüz ekleyin
             short: Toplu oluşturma arayüzü
         all:
@@ -21,7 +21,7 @@ cli:
             long: İş hizmetleri için giriş dosyaları oluşturun
             short: Giriş dosyası oluştur
         conf:
-            long: İş hizmetlerinin konfigürasyon okuması için konfigürasyon dosyaları oluşturun
+            long: Yapılandırma dosyası şablonu oluştur
             short: Yapılandırma dosyası oluştur
         dockerignore:
             long: Dosya yönetimini yoksaymak amacıyla Docker görüntüsü oluşturma için .dockerignore dosyası oluşturun
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Sürüm araçlarının yapılandırılması için .goreleaser.yml dosyası oluşturun
             short: .goreleaser.yml dosyasını oluşturun
-        i18n:
-            long: Çok dilli uluslararasılaştırmayla ilgili araç takımlarının ve diğer işlevlerin başlatılması için i18n dosyaları oluşturun
-            short: i18n dosyası oluştur
         impl:
             long: İş hizmetlerinin uygulanması için uygulama dosyaları oluşturun
             short: Uygulama dosyaları oluşturun
@@ -66,16 +63,21 @@ cli:
             long: Bağımlılık yönetimi için go.mod dosyası oluşturun
             short: go.mod dosyası oluştur
         pb:
-            long: .proto dosyaları oluşturmak için .pb.go dosyaları oluşturun,
+            long: .proto dosyalarını oluşturmak için kullanılan .pb.go dosyalarını oluşturun İlgili alan etiketleri x, yapılandırmaya göre otomatik olarak eklenecektir.
             short: .pb.go dosyasını oluştur
         short: Kod üreteci
         state:
+            conf:
+                long: İş hizmeti yapılandırma okuması için yapılandırma dosyası okuma kodu oluşturun
+                short: Yapılandırma dosyası okuma kodunu oluştur
             flags:
                 cache: Önbellekle ilgili oluşturmanın etkinleştirilip etkinleştirilmeyeceği
                 config: Yapılandırmayla ilgili kodun oluşturulup oluşturulmayacağı
-                db: Veritabanıyla ilgili veritabanı oluşturmanın etkinleştirilip etkinleştirilmeyeceği
                 i18n: Çoklu dille ilgili oluşturmanın etkinleştirilip etkinleştirilmeyeceği (oluşturma yalnızca durum başlatmayı ve diğer içerikleri içerir ve birden fazla dilin otomatik çevirisini içermez. Otomatik çeviriye ihtiyacınız varsa, ayrıntıları görüntülemek için lütfen {{.Command}} kullanın)
                 table: Veritabanıyla ilgili veritabanı oluşturmanın etkinleştirilip etkinleştirilmeyeceği
+            i18n:
+                long: Çok dilli uluslararası aramalar için i18n ile ilgili kod oluşturun
+                short: i18n ile ilgili kod oluşturun
             long: İş hizmetlerinin durum bilgisi olan kaynak veya statik kaynak yönetimi için tüm ilgili durum işlevlerini oluşturun
             short: Durum oluşturmaya yönelik tüm ilgili işlevler
             table:

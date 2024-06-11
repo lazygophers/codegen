@@ -10,7 +10,7 @@ cli:
                 list-option: Lisiti fana bɛ se ka filɛ, aw bɛ baarakɛcogo sɛbɛnw ɲini walasa ka kunnafoni wɛrɛw sɔrɔ.
                 model: Modeli tɔgɔ fɔ, dɛmɛ ka `model` daminɛ bila
             long: Ka 'interface (dakunw) Dabɔ batch (dakunw) la ani ka interface (dakun) dɔ Fàra modeli dɔ kan .proto file kɔnɔ
-            short: Batch generation interface (baarakɛminɛnw sɛnɛcogo).
+            short: Batch generation interface (Batch generation) ka ɲɛfɔli
         all:
             long: Kode bɛɛ lajɛlen minnu bɛ dɛmɛ ni nin baarakɛminɛn in ye
             short: Kode bɛɛ labɛn
@@ -21,7 +21,7 @@ cli:
             long: Jagokɛyɔrɔw ka dondaw dosiyew labɛn
             short: A ye donna dosiye dilan
         conf:
-            long: Labɛnni dosiyew labɛn jagokɛlaw ka baarakɛminɛnw labɛncogo kalanni kama
+            long: A ye configuration file template dilan
             short: A ye configuration file (labɛnni filen) dilan
         dockerignore:
             long: .dockerignore file dilan Docker ja jɔli kama walasa ka filen ɲɛnabɔli jateminɛn
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: .goreleaser.yml file dilan walasa ka bɔli baarakɛminɛnw labɛn
             short: .goreleaser.yml filen dilan
-        i18n:
-            long: i18n filew labɛn walasa ka kan caman diɲɛnatigɛ-minɛnw daminɛ minnu bɛ tali kɛ baarakɛminɛnw na ani baara wɛrɛw
-            short: I18n file (file i18n) dilan
         impl:
             long: Ka waleyali dosiyew labɛn jagokɛlaw ka baarakɛminɛnw waleyali kama
             short: Baarakɛcogo dosiyew labɛn
@@ -66,16 +63,21 @@ cli:
             long: Go.mod file (go.mod file) dabɔ walasa ka dannayakow ɲɛnabɔ
             short: Go.mod file (go.mod file) labɛn
         pb:
-            long: .pb.go filew dilan walasa ka .proto filew dilan, .
+            long: .pb.go filew dilan, minnu bɛ kɛ ka .proto filew dilan Foro labeli minnu bɛ tali kɛ o la x bɛna fara a kan u yɛrɛma ka kɛɲɛ ni a labɛncogo ye.
             short: .pb.go filen dilan
         short: Kode jɛnɛrato
         state:
+            conf:
+                long: Labɛnni dosiye kalanni kode labɛn jago baarakɛyɔrɔ labɛnni kalanni kama
+                short: Labɛnni filen kalanni kode
             flags:
                 cache: Yala a bɛ se ka kɛ sababu ye ka cache-related generation (cache-related generation) kɛ
                 config: Yala ka kode min bɛ tali kɛ labɛncogo la, o labɛn
-                db: Yala ka se ka kunnafonidilanw ni kunnafonidilanw bɔli daminɛ
                 i18n: Yala ka kan caman ni ɲɔgɔn cɛ bɔnsɔn daminɛni (jyɛnnatigɛ bɛ jamana daminɛni dɔrɔn de la ani kɔnɔko wɛrɛw, wa a tɛ kan caman bamanankan baarakɛcogo otomatiki la. N’i mago bɛ otomatiki bamanankan na, i ka baara kɛ ni {{.Command}} ye walasa ka kunnafoni wɛrɛw lajɛ)
                 table: Yala ka se ka kunnafonidilanw ni kunnafonidilanw bɔli daminɛ
+            i18n:
+                long: Kode min bɛ tali kɛ i18n na, o labɛn kan caman na diɲɛ weleli kama
+                short: Kode min bɛ tali kɛ i18n la, o labɛn
             long: Jamana ka baara minnu bɛ tali kɛ o la, olu bɛɛ labɛn ka ɲɛsin jamana ka nafolo maracogo ma walima nafolo jɔlen marali ma jagokɛlaw ka baarakɛminɛnw na
             short: Baarakɛcogo minnu bɛ tali kɛ o bɛɛ la walasa ka jamana lawuli
             table:
@@ -102,13 +104,13 @@ cli:
                 force: Bamanankan bayɛlɛmani minnu bɛ yen, olu sɛbɛn u kan
                 force-key-prefix: kilisi minnu ka kan ka wajibiya ka sɛbɛn u kan
                 generate-const: Jatebla nafaw labɔ walasa weleli ka nɔgɔn
-                languages: Bamanankan baarakɛcogo bɛ kan min laɲini, o fɔ
+                languages: Bamanankan baarakɛcogo kan min bɛna kɛ, o fɔ
                 src-file: Source file min ka kan ka baara (a wajibiyalen don) .
-                src-language: Soso filen kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .
+                src-language: Soso file kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .
                 translater:
                     google-free: Google Web Bamanankan baarakɛcogo
                     usage: 'Bamanankan baarakɛcogo: Dɛmɛ suguya {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Kan caman ka dosiye minnu bɛ Bɔ yɔrɔ dɔ la, olu bɛ Yɛlɛma ka Kɛ dosiyew ye cogo kelen na kan wɛrɛw la.
             short: ka bayɛlɛma
     long: Baarakɛminɛn min sigilen don mɔgɔ lafiyabaliw ye, i n’a fɔ ‘proto’-based backend framework, template minnu bɛ kɛ ka caya, ani kan caman bamanankan na
-    short: Baarakɛminɛn min sigilen don mɔgɔ sɛgɛnbaliw ye
+    short: Baarakɛminɛn dɔ sigilen don sɛgɛnbagatɔw ye

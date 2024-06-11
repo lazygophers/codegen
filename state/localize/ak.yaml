@@ -6,7 +6,7 @@ cli:
             flags:
                 action: Suban a ɛsɛ sɛ wɔde ka ho wɔ batch mu, yɛsrɛ wo hwehwɛ dwumadie ho nkrataa no ma nsɛm no mu nsɛm
                 default-role: Dwumadie a ɛwɔ batch-generated interface no mu Yɛsrɛ wo hwɛ dwumadie ho nkrataa no mu ma nsɛm no mu nsɛm.
-                gen-to: Kyerɛ beae a .go fael ahorow a wɔayɛ no bɛpue
+                gen-to: Kyerɛ beae a .go fael a wɔayɛ no bɛpue
                 list-option: Wobetumi nso ayɛ list no filtered, yɛsrɛ wo hwehwɛ dwumadie ho nkrataa no ma nsɛm no mu nsɛm.
                 model: Kyerɛ model din, boa omitting `model` prefix no
             long: Yɛ interfaces wɔ batches mu na fa interface bi ka ho ma model pɔtee bi wɔ .proto fael no mu
@@ -21,7 +21,7 @@ cli:
             long: Yɛ entry fael ahorow ma adwumayɛ nnwuma
             short: Yɛ fael a wɔde hyɛ mu
         conf:
-            long: Yɛ nhyehyeɛ fael ma nhyehyeɛ akenkan a ɛfa adwumayɛ dwumadie ho
+            long: Yɛ nhyehyeɛ fael nsusuiɛ
             short: Yɛ nhyehyɛe fael
         dockerignore:
             long: Yɛ .dockerignore fael ma Docker mfonini dan de bu w’ani gu fael sohwɛ so
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Yɛ .goreleaser.yml fael ma nhyehyeɛ a ɛfa nnwinnadeɛ a wɔayi no adi ho
             short: Yɛ .goreleaser.yml fael no
-        i18n:
-            long: Yɛ i18n fael ahorow ma kasa ahorow pii amanaman ntam nkitahodi ho nnwinnade ne dwumadi afoforo mfiase
-            short: Yɛ i18n fael no
         impl:
             long: Yɛ fael a wɔde bedi dwuma ama adwumayɛ ho nnwuma a wɔde bedi dwuma
             short: Yɛ fael ahorow a wɔde di dwuma
@@ -66,16 +63,21 @@ cli:
             long: Yɛ go.mod fael ma dependency management
             short: Yɛ go.mod fael no
         pb:
-            long: Yɛ .pb.go fael ahorow ma .proto fael ahorow, .
+            long: Yɛ .pb.go fael, a wɔde yɛ .proto fael a ɛfa ho no, wɔde bɛka ho ara kwa sɛnea nhyehyɛe no te.
             short: Yɛ .pb.go fael no
         short: Kood generator a wɔde yɛ adwuma
         state:
+            conf:
+                long: Yɛ nhyehyeɛ fael akenkan koodu ma adwumayɛ som nhyehyeɛ akenkan
+                short: Yɛ nhyehyɛe fael akenkan koodu
             flags:
                 cache: Sɛ́ ebia wɔbɛma awo ntoatoaso a ɛfa cache ho atumi ayɛ adwuma anaa
                 config: Sɛ́ ebia wobɛhyehyɛ nhyehyɛe-fam koodu
-                db: Sɛ́ ebia wɔbɛma database a ɛfa database awo ntoatoaso ho atumi ayɛ adwuma
                 i18n: Sɛ́ ebia wobɛma awo ntoatoaso a ɛfa kasa ahorow pii ho atumi ayɛ adwuma (awo ntoatoaso no de ɔman mfiase ne nneɛma afoforo nkutoo ka ho, na ɛnka kasa ahorow pii nkyerɛase a ɛyɛ adwuma ankasa ho. Sɛ wuhia nkyerɛase a ɛyɛ adwuma ankasa a, yɛsrɛ wo fa {{.Ahyɛde}} di dwuma na hwɛ nsɛm no mu nsɛm)
                 table: Sɛ́ ebia wɔbɛma database a ɛfa database awo ntoatoaso ho atumi ayɛ adwuma
+            i18n:
+                long: Generate i18n related code ma kasa ahorow pii amanaman ntam frɛ
+                short: Generate i18n a ɛfa ho koodu
             long: Yɛ ɔman no dwumadi ahorow a ɛfa ho nyinaa ma stateful resource anaa static resource management of business services
             short: Dwumadie a ɛfa ho nyinaa ma generating state
             table:
@@ -110,5 +112,5 @@ cli:
                     usage: 'Nkyerɛaseɛ kwan: Mmoa su {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Wɔdan fael ahorow a ɛka kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.
             short: kyerɛ aseɛ
-    long: Adwinnade a wɔahyehyɛ ama anihafo, a ‘proto’-based backend framework, templates a wɔtaa de di dwuma, ne kasa horow pii nkyerɛase ka ho
+    long: Adwinnadeɛ a wɔahyehyɛ ama anihafoɔ, a ‘proto’-based backend framework, templates a wɔtaa de di dwuma, ne kasa ahodoɔ nkyerɛaseɛ ka ho
     short: Adwinnade a wɔde asi hɔ ama anihafo

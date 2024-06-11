@@ -21,7 +21,7 @@ cli:
             long: Mepụta faịlụ ntinye maka ọrụ azụmahịa
             short: Mepụta faịlụ ntinye
         conf:
-            long: Mepụta faịlụ nhazi maka ọgụgụ nhazi nke ọrụ azụmahịa
+            long: Mepụta template nhazi faịlụ
             short: Mepụta faịlụ nhazi
         dockerignore:
             long: Mepụta faịlụ .dockerignore maka ụlọ ihe onyonyo Docker ileghara njikwa faịlụ anya
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Mepụta faịlụ .goreleaser.yml maka nhazi ngwaọrụ ntọhapụ
             short: Mepụta faịlụ .goreleaser.yml
-        i18n:
-            long: Mepụta faịlụ i18n maka mmalite nke ngwa ọrụ metụtara mba ụwa ọtụtụ asụsụ yana ọrụ ndị ọzọ
-            short: Mepụta i18n faịlụ
         impl:
             long: Mepụta faịlụ mmejuputa maka mmejuputa ọrụ azụmahịa
             short: Mepụta faịlụ mmejuputa
@@ -66,16 +63,21 @@ cli:
             long: Mepụta faịlụ go.mod maka njikwa ndabere
             short: Mepụta faịlụ go.mod
         pb:
-            long: Mepụta faịlụ .pb.go maka ịmepụta faịlụ .proto,
+            long: Mepụta faịlụ .pb.go, nke a na-eji ewepụta faịlụ .proto dị mkpa x ga-agbakwunye na-akpaghị aka dịka nhazi ahụ.
             short: Mepụta faịlụ .pb.go
         short: Koodu generator
         state:
+            conf:
+                long: Mepụta koodu ọgụgụ faịlụ nhazi maka ọgụgụ nhazi ọrụ azụmahịa
+                short: Mepụta koodu ọgụgụ faịlụ nhazi
             flags:
                 cache: Ma ọ ga-enyere ọgbọ metụtara cache aka
                 config: Ma ọ ga-ewepụta koodu metụtara nhazi
-                db: Ma ọ ga-enyere ọgbọ nchekwa data metụtara nchekwa data aka
                 i18n: Ma ọ ga-enyere ọgbọ metụtara asụsụ ọtụtụ (ọgbọ a gụnyere naanị mmalite steeti yana ọdịnaya ndị ọzọ, na anaghị agụnye ntụgharị asụsụ akpaka nke ọtụtụ asụsụ. Ọ bụrụ na ịchọrọ ntụgharị asụsụ akpaka, biko jiri {{.Command}} iji lelee nkọwa)
                 table: Ma ọ ga-enyere ọgbọ nchekwa data metụtara nchekwa data aka
+            i18n:
+                long: Mepụta koodu metụtara i18n maka oku mba ofesi ọtụtụ asụsụ
+                short: Mepụta koodu metụtara i18n
             long: Mepụta ọrụ niile metụtara steeti maka akụrụngwa steeti ma ọ bụ njikwa akụrụngwa kwụ ọtọ nke ọrụ azụmaahịa
             short: Ọrụ niile dị mkpa maka ịmepụta steeti
             table:

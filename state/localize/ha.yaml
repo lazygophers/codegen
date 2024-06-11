@@ -21,7 +21,7 @@ cli:
             long: Ƙirƙirar fayilolin shigarwa don ayyukan kasuwanci
             short: Ƙirƙirar fayil ɗin shigarwa
         conf:
-            long: Ƙirƙirar fayilolin daidaitawa don daidaita karatun ayyukan kasuwanci
+            long: Ƙirƙirar samfurin fayil ɗin sanyi
             short: Ƙirƙirar fayil ɗin sanyi
         dockerignore:
             long: Ƙirƙirar fayil ɗin .dockerignore don ginin hoton Docker don yin watsi da sarrafa fayil
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Ƙirƙirar fayil ɗin .goreleaser.yml don daidaita kayan aikin saki
             short: Ƙirƙirar fayil ɗin .goreleaser.yml
-        i18n:
-            long: Ƙirƙirar fayilolin i18n don farawa na kayan aiki masu alaƙa da ƙasashen duniya da yawa da sauran ayyuka
-            short: Ƙirƙiri i18n fayil
         impl:
             long: Ƙirƙirar fayilolin aiwatarwa don aiwatar da ayyukan kasuwanci
             short: Ƙirƙirar fayilolin aiwatarwa
@@ -66,16 +63,21 @@ cli:
             long: Ƙirƙirar fayil ɗin go.mod don sarrafa abin dogaro
             short: Ƙirƙirar fayil ɗin go.mod
         pb:
-            long: Ƙirƙirar fayilolin .pb.go don ƙirƙirar fayilolin .proto,
+            long: Ƙirƙirar fayilolin .pb.go, waɗanda ake amfani da su don ƙirƙirar fayilolin proto masu dacewa x za a ƙara ta atomatik bisa ga tsarin.
             short: Ƙirƙirar fayil ɗin .pb.go
         short: Code janareta
         state:
+            conf:
+                long: Ƙirƙirar lambar karanta fayil ɗin sanyi don karanta saitin sabis na kasuwanci
+                short: Ƙirƙirar lambar karanta fayil ɗin sanyi
             flags:
                 cache: Ko don kunna tsarar da ke da alaƙa da cache
                 config: Ko don samar da lambar da ke da alaƙa
-                db: Ko don ba da damar samar da bayanai masu alaƙa da bayanai
                 i18n: Ko don kunna tsarar da ke da alaƙa da harsuna da yawa (ƙararriyar ta haɗa da ƙaddamarwar jiha kawai da sauran abun ciki, kuma baya haɗa da fassarar atomatik na harsuna da yawa. Idan kuna buƙatar fassarar atomatik, da fatan za a yi amfani da {{.Command}} don duba cikakkun bayanai)
                 table: Ko don ba da damar samar da bayanai masu alaƙa da bayanai
+            i18n:
+                long: Ƙirƙirar lamba mai alaƙa da i18n don kiran ƙasashen waje na harsuna da yawa
+                short: Ƙirƙirar lambar da ke da alaƙa i18n
             long: Ƙirƙirar duk ayyukan da ke da alaƙa na jihar don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
             short: Duk ayyuka masu dacewa don haifar da yanayi
             table:
@@ -87,7 +89,7 @@ cli:
     help:
         additional_commands: Ƙarin umarni
         aliases: umarni mai lakabi
-        available_commands: Umurnai masu goyan baya
+        available_commands: Dokokin tallafi
         command: Oda
         flags: siga
         get_info: domin samun cikakken bayani

@@ -21,7 +21,7 @@ cli:
             long: Genera fitxers d'entrada per a serveis empresarials
             short: Generar fitxer d'entrada
         conf:
-            long: Generar fitxers de configuració per a la lectura de configuració dels serveis empresarials
+            long: Genera una plantilla de fitxer de configuració
             short: Genera un fitxer de configuració
         dockerignore:
             long: Genereu un fitxer .dockerignore per a la creació d'imatges de Docker per ignorar la gestió de fitxers
@@ -37,7 +37,7 @@ cli:
             overwrite: Per al contingut que no es regenerarà, força la sobreescritura del contingut existent
             proto-files: Per importar altres fitxers .proto/camins de carpetes que no es troben a la mateixa carpeta que el fitxer .proto especificat, aquesta operació és una opció per anul·lar el camp de configuració del fitxer de configuració.
             protoc: Ruta del fitxer personalitzable `protoc`
-            protoc-gen-go: Camí del connector `protoc-gen-go`
+            protoc-gen-go: Ruta del connector `protoc-gen-go`
             tables-enable_field_created_at: Si s'ha d'activar la generació de configuració predeterminada del camp created_at de la base de dades
             tables-enable_field_deleted_at: Si s'ha d'activar la configuració predeterminada del camp deleted_at a la base de dades
             tables-enable_field_id: Habiliteu la generació de configuració predeterminada per als camps relacionats amb la base de dades
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Genereu el fitxer .goreleaser.yml per a la configuració de les eines de llançament
             short: Genereu el fitxer .goreleaser.yml
-        i18n:
-            long: Genereu fitxers i18n per a la inicialització de conjunts d'eines relacionats amb la internacionalització en diversos idiomes i altres funcions
-            short: Genera un fitxer i18n
         impl:
             long: Generar fitxers d'implementació per a la implantació de serveis empresarials
             short: Generar fitxers d'implementació
@@ -66,16 +63,21 @@ cli:
             long: Genereu el fitxer go.mod per a la gestió de dependències
             short: Genera el fitxer go.mod
         pb:
-            long: Genereu fitxers .pb.go per generar fitxers .proto,
+            long: Genereu fitxers .pb.go, que s'utilitzen per generar fitxers .proto. Les etiquetes de camp rellevants x s'afegiran automàticament segons la configuració.
             short: Genera un fitxer .pb.go
         short: Generador de codi
         state:
+            conf:
+                long: Genereu el codi de lectura del fitxer de configuració per a la lectura de la configuració del servei empresarial
+                short: Genereu el codi de lectura del fitxer de configuració
             flags:
                 cache: Si s'ha d'activar la generació relacionada amb la memòria cau
                 config: Si s'ha de generar codi relacionat amb la configuració
-                db: Si s'ha d'activar la generació de bases de dades relacionades amb la base de dades
                 i18n: Si s'activa la generació relacionada amb diversos idiomes (la generació només inclou la inicialització de l'estat i altres continguts, i no inclou la traducció automàtica de diversos idiomes. Si necessiteu una traducció automàtica, utilitzeu {{.Command}} per veure'n els detalls)
                 table: Si s'ha d'activar la generació de bases de dades relacionades amb la base de dades
+            i18n:
+                long: Genereu codi relacionat amb i18n per a trucades internacionals en diversos idiomes
+                short: Genereu codi relacionat amb i18n
             long: Genereu totes les funcions d'estat relacionades per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
             short: Totes les funcions rellevants per generar l'estat
             table:
@@ -94,8 +96,8 @@ cli:
         global_flags: paràmetres globals
         use: utilitzar
     i18n:
-        long: Kit d'eines multilingüe relacionat amb la internacionalització
-        short: Kit d'eines multilingüe relacionat amb la internacionalització
+        long: Kit d'eines multilingües relacionades amb la internacionalització
+        short: Kit d'eines multilingües relacionades amb la internacionalització
         tran:
             flags:
                 all-language: Tradueix tots els idiomes admesos (si és cert, el senyalador d'idiomes està desactivat)

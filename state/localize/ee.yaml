@@ -21,7 +21,7 @@ cli:
             long: Wɔ nyatakakadzraɖoƒea ƒe faɛlwo na asitsadɔwo
             short: Wɔ nya siwo woŋlɔ ɖe eme ƒe faɛl
         conf:
-            long: Wɔ ɖoɖowɔɖi ƒe faɛlwo na ɖoɖowɔɖi xexlẽ le asitsadɔwo me
+            long: Wɔ ɖoɖowɔɖi ƒe faɛl ƒe nɔnɔmetata
             short: Wɔ ɖoɖowɔɖi ƒe faɛl
         dockerignore:
             long: Wɔ .dockerignore faɛl na Docker nɔnɔmetata tutu be nàŋe aɖaba aƒu faɛl dzikpɔkpɔ dzi
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Wɔ .goreleaser.yml faɛl hena ɖoɖowɔwɔ ɖe asiɖeɖe le dɔwɔnuwo ŋu
             short: Wɔ .goreleaser.yml faɛl
-        i18n:
-            long: Wɔ i18n faɛlwo hena gbegbɔgblɔ geɖe ƒe dukɔwo dome kadodo si ku ɖe dɔwɔnuwo kple dɔ bubuwo wɔwɔ ƒe gɔmedzedze
-            short: Wɔ i18n faɛl
         impl:
             long: Wɔ dɔwɔwɔ ƒe faɛlwo hena asitsatsa ƒe dɔwɔnawo ƒe dɔwɔwɔ
             short: Wɔ dɔwɔwɔ ƒe faɛlwo
@@ -66,16 +63,21 @@ cli:
             long: Wɔ go.mod faɛl na nusiwo dzi woanɔ te ɖo dzikpɔkpɔ
             short: Wɔ go.mod faɛl
         pb:
-            long: Wɔ .pb.go faɛlwo hena .proto faɛlwo wɔwɔ, .
+            long: Wɔ .pb.go faɛlwo, siwo wozãna tsɔ wɔa .proto faɛlwo Woatsɔ agbledeŋkɔ siwo sɔ x akpe ɖe eŋu le eɖokui si le ɖoɖoa nu.
             short: Wɔ .pb.go faɛl
         short: Kɔdamɔnu ƒe mɔ̃
         state:
+            conf:
+                long: Wɔ ɖoɖowɔɖi ƒe faɛl xexlẽ ƒe kɔda na asitsadɔwo ƒe ɖoɖowɔɖi xexlẽ
+                short: Wɔ ɖoɖowɔɖi ƒe faɛl xexlẽ ƒe kɔpi
             flags:
                 cache: Nenye be woawɔ dzidzi si do ƒome kple cache ŋudɔ
                 config: Nenye be woawɔ kɔpi si ku ɖe ɖoɖowɔwɔ ŋu
-                db: Nenye be woawɔ nyatakakadzraɖoƒe si ku ɖe nyatakakadzraɖoƒe ŋu ƒe dzidzi
                 i18n: Nenye be woawɔ dzidzi si do ƒome kple gbegbɔgblɔ geɖe ŋudɔ (dzidzimea lɔ nɔnɔme ƒe gɔmedzedze kple nyatakaka bubuwo ɖe eme, eye metsɔ gbegbɔgblɔ geɖewo gɔmeɖeɖe le wo ɖokui si o. Ne èhiã gbegɔmeɖeɖe le ɖokuiwò si la, taflatse zã {{.Command}} nàtsɔ akpɔ nyatakakawo)
                 table: Nenye be woawɔ nyatakakadzraɖoƒe si ku ɖe nyatakakadzraɖoƒe ŋu ƒe dzidzi
+            i18n:
+                long: Wɔ i18n ƒe kɔda si do ƒome kplii na gbegbɔgblɔ geɖe me dukɔwo dome kaƒoƒo
+                short: Wɔ i18n ƒe kɔda si do ƒome kplii
             long: Dzra dziɖuɖu ƒe dɔwɔwɔ siwo katã do ƒome kplii na stateful resource alo static resource management of business services
             short: Dɔwɔwɔ siwo katã sɔ na dzidzi ƒe nɔnɔme
             table:
@@ -102,9 +104,9 @@ cli:
                 force: Ŋlɔ gɔmeɖeɖe siwo li xoxo la ɖe edzi
                 force-key-prefix: safui siwo wòle be woazi dzi be woaŋlɔ ɖe wo dzi
                 generate-const: Wɔ xexlẽdzesiwo ƒe asixɔxɔwo hena yɔyɔ bɔbɔe
-                languages: Gblɔ gbe si me nàɖe gbegɔmeɖeɖe le
+                languages: Tsɔ gbe si gɔme nèdi be yeaɖe gɔme
                 src-file: Dzɔtsoƒe faɛl si gɔme woaɖe (ehiã) .
-                src-language: Gbe si me faɛl tsoƒe la le (ne womegblɔe o la, dɔwɔnua atso nya me le eɖokui si)
+                src-language: Gbe si me faɛl si tso dzɔtsoƒe le (ne womegblɔe o la, dɔwɔnua atso nya me le eɖokui si)
                 translater:
                     google-free: Google Nyatakakadzraɖoƒe Gbegɔmeɖeɖe
                     usage: 'Gbegɔmeɖeɖe mɔnu: Kpekpeɖeŋu ƒomevi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'

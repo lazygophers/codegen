@@ -4,11 +4,11 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Dabeecadaha u baahan in lagu daro dufcad, fadlan u hel dukumentiga isticmaalka wixii faahfaahin ah
+                action: Dabeecadaha u baahan in lagu daro dufcadaha, fadlan u hel dukumentiga isticmaalka wixii faahfaahin ah
                 default-role: Doorka caadiga ah ee interface-ka Dufcaddii la soo saaray Fadlan tixraac dukumentiga isticmaalka.
                 gen-to: Sheeg goobta wax soo saarka ee faylasha .go ee la sameeyay
                 list-option: Liiska sidoo kale waa la shaandheyn karaa, fadlan u hel dukumeentiga isticmaalka wixii faahfaahin ah.
-                model: Sheeg magaca moodeelka, taageer ka saarida horgalayaasha 'model'
+                model: Sheeg magaca modelka, taageer ka saarida horgalayaasha 'model'
             long: Samee isdhexgalyada dufcadaha oo ku dar interface qaab nooc gaar ah faylka .protoka
             short: Interface jiilka Dufcaddii
         all:
@@ -21,7 +21,7 @@ cli:
             long: U samee galalka gelitaanka adeegyada ganacsiga
             short: Samee faylka gelitaanka
         conf:
-            long: Samee faylasha habaynta ee akhrinta habaynta adeegyada ganacsiga
+            long: Samee qaabeynta faylka qaabeynta
             short: Samee faylka qaabeynta
         dockerignore:
             long: U samee faylka .dockerignore ee dhismaha sawirka Docker si aad isaga indho tirto maamulka faylka
@@ -38,7 +38,7 @@ cli:
             proto-files: Si aad u soo dejiso .proto-gale/dariiqyada galka ee aan ku jirin galka la midka ah ee faylka .proto ee la cayimay, hawlgalkani waa ikhtiyaar lagu baabi'inayo goobta qaabeynta ee faylka qaabeynta.
             protoc: Jidka faylalka 'protoc' la beddeli karo
             protoc-gen-go: Waddada 'protoc-gen-go' plugin
-            tables-enable_field_created_at: Haddi la awoodo jiilka qaabaynta caadiga ah ee kaydka created_at
+            tables-enable_field_created_at: Haddi la awoodo jiilka qaabaynta caadiga ah ee kaydka created_at field
             tables-enable_field_deleted_at: Haddii la awoodo dejinta default_at garoonka ku jira kaydka xogta
             tables-enable_field_id: U sahle jiilka qaabeynta caadiga ah ee meelaha xogta la xiriira
             tables-enable_field_updated_at: Haddii la awoodo qiimaha caadiga ah ee goobta updated_at ee kaydka xogta
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Samee faylka .goreleaser.yml ee habaynta qalabka sii daynta
             short: Samee faylka .goreleaser.yml
-        i18n:
-            long: Samee faylalka i18n si loogu bilaabo qalabaynta la xidhiidha caalamiyaynta luuqadaha badan iyo hawlo kale
-            short: Samee faylka i18n
         impl:
-            long: Samee faylalka fulinta ee hirgelinta adeegyada ganacsiga
+            long: Samee galalka fulinta fulinta adeegyada ganacsiga
             short: Abuur faylasha fulinta
         long: Soo-saare kood, waxa uu taageeraa qaabab badan
         makefile:
@@ -66,16 +63,21 @@ cli:
             long: Samee faylka go.mod ee maaraynta ku tiirsanaanta
             short: Samee faylka go.mod
         pb:
-            long: Samee faylasha .pb.go si loo soo saaro faylasha .proto,
+            long: Samee .pb.go faylalka, kuwaas oo loo isticmaalo in lagu soo saaro .faylalka proto-yada ee la xidhiidha x ayaa si toos ah loogu dari doonaa habaynta
             short: Samee faylka .pb.go
         short: Koronto dhaliyaha
         state:
+            conf:
+                long: Samee koodka akhrinta faylka qaabaynta ee akhrinta qaabaynta adeegga ganacsiga
+                short: Samee koodhka akhrinta faylka qaabeynta
             flags:
                 cache: Haddii la awoodo jiilka la xidhiidha kaydinta
                 config: Haddii la curiyo kood isku xidhka la xidhiidha
-                db: Inaad awood u yeelato abuurista xog-ururinta la xidhiidha database-ka
                 i18n: Haddi la awoodo jiilka la xidhiidha luuqadaha badan (jiilka waxa ku jira oo kaliya bilawga gobolka iyo macluumaad kale, oo kuma jiraan turjumaada tooska ah ee luuqado badan. Haddii aad u baahan tahay turjumaad toos ah, fadlan isticmaal {{.Command}} si aad u aragto faahfaahinta)
                 table: Inaad awood u yeelato abuurista xog-ururinta la xidhiidha database-ka
+            i18n:
+                long: Samee koodka la xidhiidha i18n ee wicitaanada caalamiga ah ee luuqadaha badan
+                short: Samee koodka laxiriira i18n
             long: U samee dhammaan hawlaha la xidhiidha gobolka ee kheyraadka gobolka ama maamulka kheyraadka taagan ee adeegyada ganacsiga
             short: Dhammaan hawlaha khuseeya soo saarista gobolka
             table:
@@ -110,5 +112,5 @@ cli:
                     usage: 'Kanaalka turjumaada: Nooca taageerada {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{dhammaadka}}'
             long: Faylasha ku hadla luqadaha badan ee meel gaar ah waxaa loo rogaa faylal isku qaab ah oo luuqado kale ah.
             short: turjun
-    long: Qalab loo dejiyay dadka caajiska ah, oo ay ku jiraan qaab-dhismeedka dambe ee ku salaysan 'proto', qaab-dhismeedka caadiga ah ee la isticmaalo, iyo tarjumaada luqadaha badan
+    long: Qalab loo dejiyay dadka caajiska ah, oo ay ku jiraan qaab-dhismeedka 'proto'-ku-salaysan dhabarka dambe, jaantusyada caadiga ah ee la isticmaalo, iyo tarjumaada luqadaha badan
     short: Qalab loogu talagalay dadka caajiska ah

@@ -21,7 +21,7 @@ cli:
             long: Biznes xidmətləri üçün giriş faylları yaradın
             short: Giriş faylı yaradın
         conf:
-            long: Biznes xidmətlərinin konfiqurasiya oxunması üçün konfiqurasiya faylları yaradın
+            long: Konfiqurasiya faylı şablonunu yaradın
             short: Konfiqurasiya faylı yaradın
         dockerignore:
             long: Fayl idarəçiliyinə məhəl qoymamaq üçün Docker təsvirinin qurulması üçün .dockerignore faylı yaradın
@@ -52,13 +52,10 @@ cli:
         goreleaser:
             long: Buraxılış alətlərinin konfiqurasiyası üçün .goreleaser.yml faylı yaradın
             short: .goreleaser.yml faylı yaradın
-        i18n:
-            long: Çoxdilli beynəlmiləlləşdirmə ilə bağlı alət dəstlərinin və digər funksiyaların işə salınması üçün i18n faylları yaradın
-            short: i18n faylını yaradın
         impl:
             long: Biznes xidmətlərinin həyata keçirilməsi üçün icra faylları yaradın
             short: İcra faylları yaradın
-        long: Kod generatoru, birdən çox şablonu dəstəkləyir
+        long: Kod generatoru, çoxsaylı şablonları dəstəkləyir
         makefile:
             long: Quraşdırma alətləri və digər əlaqəli əmrlər üçün Makefile faylları yaradın
             short: Makefile yaradın
@@ -66,23 +63,28 @@ cli:
             long: Asılılığın idarə edilməsi üçün go.mod faylı yaradın
             short: go.mod faylını yaradın
         pb:
-            long: .proto faylları yaratmaq üçün .pb.go faylları yaradın,
+            long: .proto faylları yaratmaq üçün istifadə edilən .pb.go faylları yaradın. Müvafiq sahə etiketləri x konfiqurasiyaya uyğun olaraq avtomatik əlavə olunacaq.
             short: .pb.go faylı yaradın
         short: Kod generatoru
         state:
+            conf:
+                long: Biznes xidməti konfiqurasiyasını oxumaq üçün konfiqurasiya faylı oxu kodu yaradın
+                short: Konfiqurasiya faylının oxu kodunu yaradın
             flags:
                 cache: Keşlə əlaqəli generasiyanın aktiv edilib-edilməməsi
                 config: Konfiqurasiya ilə əlaqəli kodun yaradılıb-yaratılmaması
-                db: Verilənlər bazası ilə əlaqəli verilənlər bazası yaradılmasının aktiv edilib-edilməməsi
                 i18n: Çox dillə əlaqəli generasiyanın aktiv edilib-edilməməsi (nəsil yalnız dövlət başlanğıcını və digər məzmunu ehtiva edir və birdən çox dilin avtomatik tərcüməsini ehtiva etmir. Avtomatik tərcüməyə ehtiyacınız varsa, təfərrüatlara baxmaq üçün {{.Command}} istifadə edin)
                 table: Verilənlər bazası ilə əlaqəli verilənlər bazası yaradılmasının aktiv edilib-edilməməsi
-            long: Biznes xidmətlərinin dövlət resurs və ya statik resurs idarə edilməsi üçün dövlətin bütün əlaqəli funksiyalarını yaradın
+            i18n:
+                long: Çoxdilli beynəlxalq zənglər üçün i18n ilə əlaqəli kod yaradın
+                short: i18n ilə əlaqəli kodu yaradın
+            long: Biznes xidmətlərinin dövlət resursu və ya statik resurs idarə edilməsi üçün dövlətin bütün əlaqəli funksiyalarını yaradın
             short: Dövlət yaratmaq üçün bütün müvafiq funksiyalar
             table:
                 long: Xidmət işə salındıqda verilənlər bazası bağlantısı və cədvəlin işə salınması üçün istifadə edilən state.table ilə əlaqəli kodu yaradın.
                 short: State.table əlaqəli kodu yaradın
         table:
-            long: Dövlət resursu və ya biznes xidmətlərinin statik resurslarının idarə edilməsi üçün cədvəllərin yaradılması ilə əlaqəli bütün funksiyalar
+            long: Biznes xidmətlərinin dövlət resursu və ya statik resurslarının idarə edilməsi üçün cədvəllərin yaradılmasının bütün əlaqəli funksiyaları
             short: Cədvəl yaratmaq üçün bütün əlaqəli funksiyalar
     help:
         additional_commands: Əlavə əmrlər

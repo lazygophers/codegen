@@ -21,7 +21,7 @@ cli:
             long: Generuj pliki wpisów dla usług biznesowych
             short: Wygeneruj plik wejściowy
         conf:
-            long: Generuj pliki konfiguracyjne do odczytu konfiguracji usług biznesowych
+            long: Wygeneruj szablon pliku konfiguracyjnego
             short: Wygeneruj plik konfiguracyjny
         dockerignore:
             long: Wygeneruj plik .dockerignore do tworzenia obrazu Dockera, aby zignorować zarządzanie plikami
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Wygeneruj plik .goreleaser.yml w celu konfiguracji narzędzi wydających
             short: Wygeneruj plik .goreleaser.yml
-        i18n:
-            long: Generuj pliki i18n do inicjalizacji wielojęzycznych zestawów narzędzi związanych z internacjonalizacją i innych funkcji
-            short: Wygeneruj plik i18n
         impl:
             long: Generowanie plików wdrożeniowych w celu wdrożenia usług biznesowych
             short: Wygeneruj pliki implementacyjne
@@ -66,16 +63,21 @@ cli:
             long: Wygeneruj plik go.mod do zarządzania zależnościami
             short: Wygeneruj plik go.mod
         pb:
-            long: Generowanie plików .pb.go w celu generowania plików .proto,
+            long: Generuj pliki .pb.go, które służą do generowania plików .proto. Odpowiednie etykiety pól x zostaną automatycznie dodane zgodnie z konfiguracją.
             short: Wygeneruj plik .pb.go
         short: Generator kodów
         state:
+            conf:
+                long: Wygeneruj kod odczytu pliku konfiguracyjnego do odczytu konfiguracji usług biznesowych
+                short: Wygeneruj kod odczytu pliku konfiguracyjnego
             flags:
                 cache: Określa, czy włączyć generowanie związane z pamięcią podręczną
                 config: Określa, czy generować kod związany z konfiguracją
-                db: Określa, czy włączyć generowanie bazy danych powiązanej z bazą danych
                 i18n: Czy włączyć generowanie związane z wieloma językami (generowanie obejmuje tylko inicjalizację stanu i inną treść i nie obejmuje automatycznego tłumaczenia wielu języków. Jeśli potrzebujesz automatycznego tłumaczenia, użyj {{.Command}}, aby wyświetlić szczegóły)
                 table: Określa, czy włączyć generowanie bazy danych powiązanej z bazą danych
+            i18n:
+                long: Wygeneruj kod powiązany z i18n dla wielojęzycznych połączeń międzynarodowych
+                short: Wygeneruj kod związany z i18n
             long: Generuj wszystkie powiązane funkcje stanu dla zarządzania zasobami stanowymi lub statycznymi usług biznesowych
             short: Wszystkie istotne funkcje generowania stanu
             table:
@@ -100,7 +102,7 @@ cli:
             flags:
                 all-language: Przetłumacz wszystkie obsługiwane języki (jeśli to prawda, flaga języków jest wyłączona)
                 force: Zastąp istniejące tłumaczenia
-                force-key-prefix: klucze, które należy wymusić nadpisanie
+                force-key-prefix: klucze, które należy wymusić, aby zostały nadpisane
                 generate-const: Generuj wartości wyliczeniowe dla łatwego dzwonienia
                 languages: Określ język docelowy tłumaczenia
                 src-file: Plik źródłowy do przetłumaczenia (wymagane)

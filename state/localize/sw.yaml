@@ -21,7 +21,7 @@ cli:
             long: Tengeneza faili za kuingia kwa huduma za biashara
             short: Tengeneza faili ya kuingia
         conf:
-            long: Tengeneza faili za usanidi kwa usomaji wa usanidi wa huduma za biashara
+            long: Tengeneza kiolezo cha faili ya usanidi
             short: Tengeneza faili ya usanidi
         dockerignore:
             long: Tengeneza faili ya .dockerignore ya ujenzi wa picha ya Docker ili kupuuza usimamizi wa faili
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Tengeneza faili ya .goreleaser.yml kwa usanidi wa zana za kutoa
             short: Tengeneza faili ya .goreleaser.yml
-        i18n:
-            long: Tengeneza faili za i18n kwa ajili ya kuanzishwa kwa zana zinazohusiana na utandawazishaji wa lugha nyingi na vipengele vingine
-            short: Tengeneza faili ya i18n
         impl:
             long: Tengeneza faili za utekelezaji kwa utekelezaji wa huduma za biashara
             short: Tengeneza faili za utekelezaji
@@ -66,16 +63,21 @@ cli:
             long: Tengeneza faili ya go.mod kwa udhibiti wa utegemezi
             short: Tengeneza faili ya go.mod
         pb:
-            long: Tengeneza faili za .pb.go za kutengeneza faili za .proto,
+            long: Tengeneza faili za .pb.go, ambazo hutumika kutengeneza faili za .proto, lebo za sehemu husika x zitaongezwa kiotomatiki kulingana na usanidi.
             short: Tengeneza faili ya .pb.go
         short: Jenereta ya kanuni
         state:
+            conf:
+                long: Tengeneza msimbo wa kusoma faili wa usanidi kwa usomaji wa usanidi wa huduma ya biashara
+                short: Tengeneza msimbo wa kusoma faili ya usanidi
             flags:
                 cache: Iwapo itawasha uzalishaji unaohusiana na akiba
                 config: Iwapo itazalisha msimbo unaohusiana na usanidi
-                db: Ikiwa itawasha uundaji wa hifadhidata unaohusiana na hifadhidata
                 i18n: Iwapo itawasha kizazi kinachohusiana na lugha nyingi (kizazi hiki kinajumuisha tu uanzishaji wa hali na maudhui mengine, na haijumuishi utafsiri wa kiotomatiki wa lugha nyingi. Ikiwa unahitaji tafsiri ya kiotomatiki, tafadhali tumia {{.Command}} ili kuona maelezo)
                 table: Ikiwa itawasha uundaji wa hifadhidata unaohusiana na hifadhidata
+            i18n:
+                long: Tengeneza msimbo unaohusiana na i18n kwa simu za kimataifa za lugha nyingi
+                short: Tengeneza msimbo unaohusiana wa i18n
             long: Tengeneza kazi zote zinazohusiana za serikali kwa rasilimali za hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
             short: Vipengele vyote muhimu vya kuunda serikali
             table:
@@ -83,7 +85,7 @@ cli:
                 short: Tengeneza msimbo unaohusiana na state.table
         table:
             long: Kazi zote zinazohusiana za kutengeneza majedwali kwa rasilimali ya hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
-            short: Vipengele vyote vinavyohusiana vya kutengeneza jedwali
+            short: Vitendaji vyote vinavyohusiana vya kutengeneza jedwali
     help:
         additional_commands: Amri za ziada
         aliases: amri jina lak

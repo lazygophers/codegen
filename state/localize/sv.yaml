@@ -1,6 +1,6 @@
 cli:
     flags:
-        debug: Utdata detaljerad logg
+        debug: Skriv ut detaljerad logg
     gen:
         add-rpc:
             flags:
@@ -19,9 +19,9 @@ cli:
             short: Generera cache-fil
         cmd:
             long: Generera inmatningsfiler för företagstjänster
-            short: Skapa inmatningsfil
+            short: Generera inmatningsfil
         conf:
-            long: Generera konfigurationsfiler för konfigurationsläsning av företagstjänster
+            long: Skapa mall för konfigurationsfil
             short: Generera konfigurationsfil
         dockerignore:
             long: Generera .dockerignore-fil för Docker-bildbyggnad för att ignorera filhantering
@@ -48,13 +48,10 @@ cli:
             short: Generera .gitignore-fil
         golang-lint:
             long: Generera .golangci.yml-fil för kontroll av kodkvalitet
-            short: Generera .golangci.yml-fil
+            short: Generera filen .golangci.yml
         goreleaser:
             long: Generera .goreleaser.yml-fil för konfiguration av releaseverktyg
             short: Generera filen .goreleaser.yml
-        i18n:
-            long: Generera i18n-filer för initiering av flerspråkiga internationaliseringsrelaterade verktygssatser och andra funktioner
-            short: Generera i18n-fil
         impl:
             long: Generera implementeringsfiler för implementering av företagstjänster
             short: Generera implementeringsfiler
@@ -66,16 +63,21 @@ cli:
             long: Generera go.mod-fil för beroendehantering
             short: Generera go.mod-fil
         pb:
-            long: Generera .pb.go-filer för att generera .proto-filer,
+            long: Generera .pb.go-filer, som används för att generera .proto-filer. Relevanta fältetiketter x kommer att läggas till automatiskt enligt konfigurationen.
             short: Generera .pb.go-fil
         short: Kod generator
         state:
+            conf:
+                long: Generera konfigurationsfilläsningskod för konfigurationsläsning av företagstjänster
+                short: Generera konfigurationsfilens läskod
             flags:
                 cache: Om cache-relaterad generering ska aktiveras
                 config: Om konfigurationsrelaterad kod ska genereras
-                db: Om databasrelaterad databasgenerering ska aktiveras
                 i18n: Om generering av flera språk ska aktiveras (genereringen inkluderar endast tillståndsinitiering och annat innehåll, och inkluderar inte automatisk översättning av flera språk. Om du behöver automatisk översättning, använd {{.Command}} för att se detaljer)
                 table: Om databasrelaterad databasgenerering ska aktiveras
+            i18n:
+                long: Generera i18n-relaterad kod för internationella samtal på flera språk
+                short: Generera i18n-relaterad kod
             long: Generera alla relaterade funktioner i staten för statisk resurs- eller statisk resurshantering av företagstjänster
             short: Alla relevanta funktioner för att generera tillstånd
             table:

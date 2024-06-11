@@ -21,7 +21,7 @@ cli:
             long: Generujte vstupné súbory pre obchodné služby
             short: Vytvorte vstupný súbor
         conf:
-            long: Generujte konfiguračné súbory na čítanie konfigurácie podnikových služieb
+            long: Vytvorte šablónu konfiguračného súboru
             short: Vygenerujte konfiguračný súbor
         dockerignore:
             long: Ak chcete ignorovať správu súborov, vygenerujte súbor .dockerignore na vytváranie obrazu Docker
@@ -30,7 +30,7 @@ cli:
             long: Vygenerujte súbor .editorconfig pre konfiguráciu editora
             short: Vygenerujte súbor .editorconfig
         flags:
-            add-proto-files: Ak potrebujete importovať iné súbory .proto/cesty k priečinkom, ktoré nie sú v rovnakom priečinku ako zadaný súbor .proto, táto operácia pripojí (nie prepíše) cestu nakonfigurovanú v konfiguračnom súbore.
+            add-proto-files: Ak potrebujete importovať iné súbory .proto/cesty priečinkov, ktoré nie sú v rovnakom priečinku ako zadaný súbor .proto, táto operácia pripojí (nie prepíše) cestu nakonfigurovanú v konfiguračnom súbore.
             go-module-prefix: Pre cestu go_package nakonfigurovanú v súbore .proto a aktuálnu cestu môžete nakonfigurovať túto možnosť
             input: Zadajte zdrojový súbor .proto, ktorý sa má vygenerovať
             output-path: Túto možnosť je možné nakonfigurovať, keď cesta k go_package nakonfigurovaná v súbore .proto nie je konzistentná s cestným podkladom, ktorý je v skutočnosti potrebné vygenerovať.
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Vygenerujte súbor .goreleaser.yml na konfiguráciu nástrojov na uvoľnenie
             short: Vygenerujte súbor .goreleaser.yml
-        i18n:
-            long: Generujte súbory i18n na inicializáciu súprav nástrojov a iných funkcií súvisiacich s viacjazyčnou internacionalizáciou
-            short: Vygenerujte súbor i18n
         impl:
             long: Generovanie implementačných súborov pre implementáciu obchodných služieb
             short: Vytvorte implementačné súbory
@@ -66,16 +63,21 @@ cli:
             long: Vygenerujte súbor go.mod pre správu závislostí
             short: Vygenerujte súbor go.mod
         pb:
-            long: Generovať súbory .pb.go na generovanie súborov .proto,
+            long: Generovať súbory .pb.go, ktoré sa používajú na generovanie súborov .proto Príslušné označenia polí x sa pridajú automaticky podľa konfigurácie.
             short: Vygenerujte súbor .pb.go
         short: Generátor kódu
         state:
+            conf:
+                long: Vygenerujte čítací kód konfiguračného súboru na čítanie konfigurácie podnikových služieb
+                short: Vygenerujte čítací kód konfiguračného súboru
             flags:
                 cache: Či povoliť generovanie súvisiace s vyrovnávacou pamäťou
                 config: Či sa má generovať kód súvisiaci s konfiguráciou
-                db: Či povoliť generovanie databázy súvisiacej s databázou
                 i18n: Či povoliť generovanie súvisiace s viacerými jazykmi (generovanie zahŕňa iba inicializáciu stavu a ďalší obsah a nezahŕňa automatický preklad viacerých jazykov. Ak potrebujete automatický preklad, na zobrazenie podrobností použite {{.Command}})
                 table: Či povoliť generovanie databázy súvisiacej s databázou
+            i18n:
+                long: Generujte kód súvisiaci s i18n pre viacjazyčné medzinárodné hovory
+                short: Vygenerujte kód súvisiaci s i18n
             long: Generujte všetky súvisiace funkcie stavu pre stavové zdroje alebo statickú správu zdrojov podnikových služieb
             short: Všetky relevantné funkcie na generovanie stavu
             table:

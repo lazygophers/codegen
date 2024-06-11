@@ -21,7 +21,7 @@ cli:
             long: Okukola fayiro z'okuyingira ku mpeereza za bizinensi
             short: Okukola fayiro y'okuyingiza
         conf:
-            long: Okukola fayiro z'okusengeka okusoma okusengeka kw'empeereza za bizinensi
+            long: Okukola ekifaananyi kya fayiro y'okusengeka
             short: Okukola fayiro y'okusengeka
         dockerignore:
             long: Tonda fayiro .dockerignore ey'okuzimba ekifaananyi kya Docker okubuusa amaaso enzirukanya ya fayiro
@@ -35,7 +35,7 @@ cli:
             input: Laga fayiro y'ensibuko ya .proto egenda okukolebwa
             output-path: Enkola eno esobola okutegekebwa nga ekkubo lya go_package eritegekeddwa mu fayiro .proto terikwatagana na roadbed mu butuufu eyeetaaga okukolebwa.
             overwrite: Ku birimu ebitajja kuddamu kutondebwawo, kikaka okuwandiika ku birimu ebiriwo
-            proto-files: Okuyingiza fayiro endala .proto/amakubo ga folda agatali mu folda y'emu ne fayiro .proto eragiddwa, omulimu guno nkola ya kukyusa ekifo ky'okusengeka mu fayiro y'okusengeka.
+            proto-files: Okuyingiza fayiro endala .proto/amakubo ga folda agatali mu folda emu ne fayiro .proto eragiddwa, omulimu guno nkola ya kukyusa ekifo ky'okusengeka mu fayiro y'okusengeka.
             protoc: '`protoc` ekkubo lya fayiro eriyinza okulongoosebwa'
             protoc-gen-go: '`protoc-gen-go` ekkubo lya plugin'
             tables-enable_field_created_at: Oba okusobozesa okutondebwa kw'okusengeka okusookerwako okwa database created_at field
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Tonda fayiro .goreleaser.yml okusengeka ebikozesebwa mu kufulumya
             short: Okukola fayiro .goreleaser.yml
-        i18n:
-            long: Okukola fayiro za i18n okutandikawo ebikozesebwa ebikwatagana n’okuyingiza ensi yonna mu nnimi nnyingi n’emirimu emirala
-            short: Okukola fayiro ya i18n
         impl:
             long: Okukola fayiro z’okussa mu nkola okussa mu nkola empeereza za bizinensi
             short: Okukola fayiro z'okussa mu nkola
@@ -66,16 +63,21 @@ cli:
             long: Okukola fayiro ya go.mod okuddukanya okwesigama
             short: Okukola fayiro ya go.mod
         pb:
-            long: Okukola fayiro za .pb.go okukola fayiro za .proto, .
+            long: Okukola fayiro za .pb.go, ezikozesebwa okukola fayiro za .proto Ebiwandiiko by'ennimiro ebikwatagana x bijja kwongerwako mu ngeri ey'otoma okusinziira ku nsengeka.
             short: Okukola fayiro ya .pb.go
         short: Jenereta ya koodi
         state:
+            conf:
+                long: Okukola koodi y'okusoma fayiro y'okusengeka okusoma ensengeka y'empeereza ya bizinensi
+                short: Okukola koodi y'okusoma fayiro y'okusengeka
             flags:
                 cache: Oba okusobozesa okuzaala okwekuusa ku cache
                 config: Oba okukola koodi eyekuusa ku nsengeka
-                db: Oba okusobozesa okukola database ezikwatagana ne database
                 i18n: Oba okusobozesa omulembe ogukwatagana n'ennimi nnyingi (omulembe gulimu okutandikawo kw'embeera n'ebintu ebirala byokka, era temuli kuvvuunula kwa otomatiki okw'ennimi eziwera. Bw'oba weetaaga okuvvuunula okw'otoma, nsaba kozesa {{.Command}} okulaba ebisingawo)
                 table: Oba okusobozesa okukola database ezikwatagana ne database
+            i18n:
+                long: Okukola koodi ekwatagana ne i18n ku ​​ssimu z’ensi yonna ez’ennimi nnyingi
+                short: Okukola koodi ekwatagana ne i18n
             long: Okukola emirimu gyonna egyekuusa ku gavumenti ku stateful resource oba static resource management of business services
             short: Emirimu gyonna egyekuusa ku kukola embeera
             table:
@@ -104,7 +106,7 @@ cli:
                 generate-const: Okukola emiwendo gy'okubala okusobola okwanguyirwa okuyita
                 languages: Laga olulimi lw’ogenderera okuvvuunula
                 src-file: Fayiro y'ensibuko egenda okuvvuunulwa (kyetaagisa) .
-                src-language: Olulimi lwa fayiro ensibuko (bwe kiba tekirambikiddwa, ekintu kijja kusalawo fayiro y'ensibuko mu ngeri ey'otoma)
+                src-language: Olulimi lwa fayiro ensibuko (bwe kiba tekirambikiddwa, ekintu ekikozesebwa kijja kusalawo fayiro ensibuko mu ngeri ey’otoma)
                 translater:
                     google-free: Google Web Okuvvuunula
                     usage: 'Omukutu gw''okuvvuunula: Ekika ky''obuwagizi {{range $key,$value := .Ekika}}{{$key}}:{{$value}}{{end}}'

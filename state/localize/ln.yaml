@@ -15,13 +15,13 @@ cli:
             long: Bosala ba code nionso oyo esungami na esaleli oyo
             short: Generer ba code nionso
         cache:
-            long: Bosala ba fichiers ya cache pona ba SDK oyo etali caching ya ba appels d'affaires
+            long: Kosala ba fichiers ya cache pona ba SDK oyo etali caching ya ba appels d'affaires
             short: Bosala fichier ya cache
         cmd:
             long: Kosala ba fichiers ya entrée pona ba services ya commerce
             short: Générer fichier ya entrée
         conf:
-            long: Kosala ba fichiers ya configuration pona botangi ya configuration ya ba services d'affaires
+            long: Generer modèle ya fichier ya configuration
             short: Bosala fichier ya configuration
         dockerignore:
             long: Bosala fisyé .dockerignore mpo na botongi ya bilili ya Docker mpo na koboya boyangeli fisyé
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Bosala fisyé .goreleaser.yml mpo na bobongisi ya bisaleli ya kobimisa
             short: Bosala fisyé .goreleaser.yml
-        i18n:
-            long: Kosala ba fichiers i18n pona initialisation ya ba boîtes d'outils oyo etali internationalisation multi-langue pe ba fonctions misusu
-            short: Bosala fichier i18n
         impl:
             long: Kosala ba fichiers ya mise en œuvre pona mise en œuvre ya ba services d’affaires
             short: Kosala ba fichiers ya mise en œuvre
@@ -66,16 +63,21 @@ cli:
             long: Générer fichier go.mod pona gestion ya dépendance
             short: Bosala fichier go.mod
         pb:
-            long: Kosala ba fichiers .pb.go pona kosala ba fichiers .proto, .
-            short: Bosala fisyé .pb.go
+            long: Kosala ba fichiers .pb.go, oyo esalelamaka pona kosala ba fichiers .proto Ba étiquettes ya champ pertinente x ekobakisama automatiquement selon configuration.
+            short: Bosala fichier .pb.go
         short: Générateur ya code
         state:
+            conf:
+                long: Bosala code ya botangi ya fichier ya configuration pona botangi ya configuration ya service ya entreprise
+                short: Bosala code ya botangi ya fichier ya configuration
             flags:
                 cache: Soki ko activer génération oyo etali cache
                 config: Soki esengeli kobimisa code oyo etali configuration
-                db: Soki ko activer génération ya base de données oyo etali base de données
                 i18n: Soki ko activer génération oyo etali minoko ebele (génération ezali kaka na initialisation ya l'état na contenus misusu, pe esangisi te traduction automatique ya minoko ebele. Soki oza na besoin ya traduction automatique, salela {{.Command}} pona kotala ba détails)
                 table: Soki ko activer génération ya base de données oyo etali base de données
+            i18n:
+                long: Generer code lié na i18n pona ba appels internationales ya minoko ebele
+                short: Generer code oyo etali i18n
             long: Kosala misala nionso ya l’Etat oyo etali yango pona gestion ya ressource état to ya ressource statique ya ba services d’affaires
             short: Ba fonctions nionso oyo etali yango pona ko générer état
             table:

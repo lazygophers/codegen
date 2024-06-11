@@ -4,7 +4,7 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Iompar ar gá iad a chur isteach i mbaisceanna, faigh na doiciméid úsáide le haghaidh sonraí
+                action: Iompar is gá a chur leis i mbaisceanna, faigh sonraí le do thoil ar an gcáipéisíocht úsáide
                 default-role: Ról réamhshocraithe an chomhéadain baisc-ghinte Féach ar na doiciméid úsáide le haghaidh sonraí.
                 gen-to: Sonraigh suíomh aschuir na gcomhad .go ginte
                 list-option: Is féidir an liosta a scagadh freisin, le do thoil teacht ar an doiciméadú úsáide le haghaidh sonraí.
@@ -21,7 +21,7 @@ cli:
             long: Gin comhaid iontrála le haghaidh seirbhísí gnó
             short: Gin comhad iontrála
         conf:
-            long: Gin comhaid chumraíochta le haghaidh léamh cumraíochta na seirbhísí gnó
+            long: Gin teimpléad comhad cumraíochta
             short: Gin comhad cumraíochta
         dockerignore:
             long: Gin comhad .dockerignore le haghaidh tógáil íomhá Docker chun neamhaird a dhéanamh ar bhainistiú comhad
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Gin comhad .goreleaser.yml chun uirlisí scaoilte a chumrú
             short: Gin comhad .goreleaser.yml
-        i18n:
-            long: Gin comhaid i18n chun uirlisí uirlisí iltheangacha a bhaineann le hidirnáisiúnú agus feidhmeanna eile a thionscnamh
-            short: Gin comhad i18n
         impl:
             long: Comhaid cur chun feidhme a ghiniúint chun seirbhísí gnó a chur i bhfeidhm
             short: Gin comhaid feidhmithe
@@ -66,23 +63,28 @@ cli:
             long: Gin comhad go.mod le haghaidh bainistíochta spleáchais
             short: Gin comhad go.mod
         pb:
-            long: Gin comhaid .pb.go chun comhaid .proto a ghiniúint,
+            long: Gin comhaid .pb.go, a úsáidtear chun comhaid .proto a ghiniúint. Cuirfear lipéid réimse ábhartha x leis go huathoibríoch de réir na cumraíochta.
             short: Gin comhad .pb.go
         short: Gineadóir cód
         state:
+            conf:
+                long: Gin cód léitheoireachta comhad cumraíochta le haghaidh léamh cumraíochta seirbhíse gnó
+                short: Gin cód léitheoireachta comhad cumraíochta
             flags:
                 cache: Cibé an féidir giniúint a bhaineann le taisce a chumasú
                 config: Cibé an ndéanfar cód a bhaineann le cumraíocht a ghiniúint
-                db: Cibé an féidir giniúint bunachar sonraí a bhaineann le bunachar sonraí a chumasú
                 i18n: Cibé an féidir giniúint iltheanga a chumasú (ní áirítear leis an nglúin ach inisealú stáit agus inneachar eile, agus ní chuimsítear aistriúchán uathoibríoch ar iliomad teangacha. Má theastaíonn aistriúchán uathoibríoch uait, bain úsáid as {{.Command}} chun sonraí a fheiceáil)
                 table: Cibé an féidir giniúint bunachar sonraí a bhaineann le bunachar sonraí a chumasú
+            i18n:
+                long: Gin cód gaolmhar i18n le haghaidh glaonna idirnáisiúnta iltheangacha
+                short: Gin cód gaolmhar i18n
             long: Gach feidhm ghaolmhar stáit a ghiniúint le haghaidh acmhainní státseirbhíse nó acmhainní statacha a bhainistiú ar sheirbhísí gnó
             short: Na feidhmeanna ábhartha go léir maidir le stát giniúna
             table:
                 long: Gin cód a bhaineann le state.table, a úsáidtear chun bunachar sonraí a nascadh agus tábla a thosú nuair a chuirtear tús leis an tseirbhís.
                 short: Gin cód gaolmhar state.table
         table:
-            long: Na feidhmeanna gaolmhara go léir a bhaineann le táblaí giniúna do bhainistiú státseirbhíseach acmhainní nó acmhainní statacha seirbhísí gnó
+            long: Gach feidhm ghaolmhar a bhaineann le táblaí giniúna do bhainistiú státseirbhíseach acmhainní nó acmhainní statacha seirbhísí gnó
             short: Na feidhmeanna go léir a bhaineann le táblaí a ghiniúint
     help:
         additional_commands: Orduithe breise

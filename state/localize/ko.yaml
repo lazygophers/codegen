@@ -21,7 +21,7 @@ cli:
             long: 비즈니스 서비스에 대한 항목 파일 생성
             short: 항목 파일 생성
         conf:
-            long: 비즈니스 서비스의 구성 읽기를 위한 구성 파일 생성
+            long: 구성 파일 템플릿 생성
             short: 구성 파일 생성
         dockerignore:
             long: 파일 관리를 무시하기 위해 Docker 이미지 구축을 위한 .dockerignore 파일 생성
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: 릴리스 도구 구성을 위한 .goreleaser.yml 파일 생성
             short: .goreleaser.yml 파일 생성
-        i18n:
-            long: 다국어 국제화 관련 툴킷 및 기타 기능 초기화를 위한 i18n 파일 생성
-            short: i18n 파일 생성
         impl:
             long: 비즈니스 서비스 구현을 위한 구현 파일 생성
             short: 구현 파일 생성
@@ -66,16 +63,21 @@ cli:
             long: 종속성 관리를 위한 go.mod 파일 생성
             short: go.mod 파일 생성
         pb:
-            long: .proto 파일 생성을 위해 .pb.go 파일을 생성합니다.
+            long: .proto 파일을 생성하는 데 사용되는 .pb.go 파일을 생성합니다. 관련 필드 레이블 x는 구성에 따라 자동으로 추가됩니다.
             short: .pb.go 파일 생성
         short: 코드 생성기
         state:
+            conf:
+                long: 비즈니스 서비스 구성 읽기를 위한 구성 파일 읽기 코드 생성
+                short: 구성 파일 읽기 코드 생성
             flags:
                 cache: 캐시 관련 생성 활성화 여부
                 config: 구성 관련 코드 생성 여부
-                db: 데이터베이스 관련 데이터베이스 생성 활성화 여부
                 i18n: 다국어 관련 생성 활성화 여부(생성에는 상태 초기화 및 기타 내용만 포함되며 다국어 자동 번역은 포함되지 않습니다. 자동 번역이 필요한 경우 자세한 내용을 보려면 {{.Command}}를 사용하세요)
                 table: 데이터베이스 관련 데이터베이스 생성 활성화 여부
+            i18n:
+                long: 다국어 국제전화용 i18n 관련 코드 생성
+                short: i18n 관련 코드 생성
             long: 상태 저장 리소스 또는 비즈니스 서비스의 정적 리소스 관리를 위해 상태와 관련된 모든 기능을 생성합니다.
             short: 상태 생성을 위한 모든 관련 함수
             table:

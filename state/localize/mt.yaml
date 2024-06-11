@@ -21,7 +21,7 @@ cli:
             long: Iġġenera fajls tad-dħul għas-servizzi tan-negozju
             short: Iġġenera fajl tad-dħul
         conf:
-            long: Iġġenera fajls tal-konfigurazzjoni għall-qari tal-konfigurazzjoni tas-servizzi tan-negozju
+            long: Iġġenera mudell tal-fajl tal-konfigurazzjoni
             short: Iġġenera fajl tal-konfigurazzjoni
         dockerignore:
             long: Iġġenera fajl .dockerignore għall-bini tal-immaġni Docker biex tinjora l-ġestjoni tal-fajls
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Iġġenera fajl .gorelaser.yml għall-konfigurazzjoni ta 'għodod ta' rilaxx
             short: Iġġenera fajl .gorelaser.yml
-        i18n:
-            long: Iġġenera fajls i18n għall-inizjalizzazzjoni ta' settijiet ta' għodod relatati mal-internazzjonalizzazzjoni b'ħafna lingwi u funzjonijiet oħra
-            short: Iġġenera fajl i18n
         impl:
             long: Iġġenera fajls ta 'implimentazzjoni għall-implimentazzjoni ta' servizzi tan-negozju
             short: Iġġenera fajls ta' implimentazzjoni
@@ -66,16 +63,21 @@ cli:
             long: Iġġenera fajl go.mod għall-ġestjoni tad-dipendenza
             short: Iġġenera fajl go.mod
         pb:
-            long: Iġġenera fajls .pb.go biex tiġġenera fajls .proto,
+            long: Iġġenera fajls .pb.go, li jintużaw biex jiġġeneraw fajls .proto. It-tikketti tal-qasam rilevanti x jiġu miżjuda awtomatikament skont il-konfigurazzjoni.
             short: Iġġenera fajl .pb.go
         short: Ġeneratur tal-kodiċi
         state:
+            conf:
+                long: Iġġenera kodiċi tal-qari tal-fajl tal-konfigurazzjoni għall-qari tal-konfigurazzjoni tas-servizz tan-negozju
+                short: Iġġenera l-kodiċi tal-qari tal-fajl tal-konfigurazzjoni
             flags:
                 cache: Jekk tippermettix il-ġenerazzjoni relatata mal-cache
                 config: Jekk tiġġenerax kodiċi relatat mal-konfigurazzjoni
-                db: Jekk tippermettix il-ġenerazzjoni tad-database relatata mad-database
                 i18n: Jekk tippermettix ġenerazzjoni relatata b'diversi lingwi (il-ġenerazzjoni tinkludi biss inizjalizzazzjoni tal-istat u kontenut ieħor, u ma tinkludix traduzzjoni awtomatika ta' lingwi multipli. Jekk għandek bżonn traduzzjoni awtomatika, jekk jogħġbok uża {{.Kmand}} biex tara d-dettalji)
                 table: Jekk tippermettix il-ġenerazzjoni tad-database relatata mad-database
+            i18n:
+                long: Iġġenera kodiċi relatat i18n għal sejħiet internazzjonali b'ħafna lingwi
+                short: Iġġenera kodiċi relatat i18n
             long: Iġġenera l-funzjonijiet kollha relatati tal-istat għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
             short: Il-funzjonijiet kollha rilevanti għall-ġenerazzjoni tal-istat
             table:

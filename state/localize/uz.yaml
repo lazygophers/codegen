@@ -21,7 +21,7 @@ cli:
             long: Biznes xizmatlari uchun kirish fayllarini yarating
             short: Kirish faylini yarating
         conf:
-            long: Biznes xizmatlarining konfiguratsiyasini o'qish uchun konfiguratsiya fayllarini yarating
+            long: Konfiguratsiya fayli shablonini yarating
             short: Konfiguratsiya faylini yarating
         dockerignore:
             long: Fayl boshqaruvini e'tiborsiz qoldirish uchun Docker tasvirini yaratish uchun .dockerignore faylini yarating
@@ -31,9 +31,9 @@ cli:
             short: .editorconfig faylini yarating
         flags:
             add-proto-files: Belgilangan .proto fayli bilan bir xil papkada bo'lmagan boshqa .proto fayllar/papka yo'llarini import qilishingiz kerak bo'lsa, bu operatsiya konfiguratsiya faylida sozlangan yo'lni qo'shadi (ustiga yozmaydi).
-            go-module-prefix: .proto faylida sozlangan go_package yo'li va haqiqiy uchun ushbu parametrni sozlashingiz mumkin
+            go-module-prefix: .proto faylida sozlangan go_package yo'li va haqiqiy uchun, siz ushbu parametrni sozlashingiz mumkin
             input: Yaratiladigan .proto manba faylini belgilang
-            output-path: Ushbu parametr .proto faylida sozlangan go_package yoʻli aslida yaratilishi kerak boʻlgan yoʻl toʻshagiga mos kelmasa, sozlanishi mumkin.
+            output-path: Ushbu parametr .proto faylida sozlangan go_package yo'li aslida yaratilishi kerak bo'lgan yo'l to'shagiga mos kelmasa, sozlanishi mumkin.
             overwrite: Qayta tiklanmaydigan kontent uchun mavjud kontentni qayta yozishga majbur qiling
             proto-files: Belgilangan .proto fayli bilan bir xil papkada boʻlmagan boshqa .proto fayllar/papka yoʻllarini import qilish uchun bu operatsiya konfiguratsiya faylidagi konfiguratsiya maydonini bekor qilish variantidir.
             protoc: '`protoc` sozlanishi mumkin bo''lgan fayl yo''li'
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Chiqarish vositalarini sozlash uchun .goreleaser.yml faylini yarating
             short: .goreleaser.yml faylini yarating
-        i18n:
-            long: Ko'p tilli xalqarolashtirish bilan bog'liq asboblar to'plami va boshqa funktsiyalarni ishga tushirish uchun i18n fayllarini yarating
-            short: i18n faylini yarating
         impl:
-            long: Biznes xizmatlarini amalga oshirish uchun dastur fayllarini yaratish
+            long: Biznes xizmatlarini amalga oshirish uchun amalga oshirish fayllarini yaratish
             short: Amalga oshirish fayllarini yaratish
         long: Kod generatori, bir nechta shablonlarni qo'llab-quvvatlaydi
         makefile:
@@ -66,17 +63,22 @@ cli:
             long: Tobelikni boshqarish uchun go.mod faylini yarating
             short: go.mod faylini yarating
         pb:
-            long: .proto fayllarni yaratish uchun .pb.go fayllarini yaratish,
+            long: .pb.go fayllarini yarating, ular .proto fayllarni yaratishda foydalaniladi, ular konfiguratsiyaga muvofiq avtomatik ravishda qo'shiladi.
             short: .pb.go faylini yarating
         short: Kod generatori
         state:
+            conf:
+                long: Biznes xizmati konfiguratsiyasini oʻqish uchun konfiguratsiya faylini oʻqish kodini yarating
+                short: Konfiguratsiya faylini o'qish kodini yarating
             flags:
                 cache: Kesh bilan bog'liq yaratishni yoqish kerakmi
                 config: Konfiguratsiya bilan bog'liq kodni yaratish kerakmi
-                db: Ma'lumotlar bazasi bilan bog'liq ma'lumotlar bazasini yaratishni yoqish kerakmi
                 i18n: Koʻp tilda bogʻliq avlodni yoqish kerakmi (nasl faqat holatni ishga tushirish va boshqa kontentni oʻz ichiga oladi va bir nechta tillarning avtomatik tarjimasini oʻz ichiga olmaydi. Agar sizga avtomatik tarjima kerak boʻlsa, tafsilotlarni koʻrish uchun {{.Command}} dan foydalaning)
                 table: Ma'lumotlar bazasi bilan bog'liq ma'lumotlar bazasini yaratishni yoqish kerakmi
-            long: Biznes xizmatlarining statistik manbalari yoki statik resurslarini boshqarish uchun davlatning barcha tegishli funktsiyalarini yarating
+            i18n:
+                long: Ko'p tilli xalqaro qo'ng'iroqlar uchun i18n bilan bog'liq kodni yarating
+                short: i18n bilan bog'liq kodni yarating
+            long: Davlat resurs yoki biznes xizmatlarining statik resurslarini boshqarish uchun barcha tegishli davlat funktsiyalarini yarating
             short: Davlatni yaratish uchun barcha tegishli funktsiyalar
             table:
                 long: Xizmat ishga tushirilganda ma'lumotlar bazasiga ulanish va jadvalni ishga tushirish uchun ishlatiladigan state.table bilan bog'liq kodni yarating.

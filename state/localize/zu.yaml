@@ -21,7 +21,7 @@ cli:
             long: Khiqiza amafayela okufaka ezinsiza zebhizinisi
             short: Khiqiza ifayela lokungena
         conf:
-            long: Khiqiza amafayela okucushwa okufundwa kokucushwa kwezinsizakalo zebhizinisi
+            long: Khiqiza isifanekiso sefayela lokumisa
             short: Khiqiza ifayela lokumisa
         dockerignore:
             long: Khiqiza ifayela le-.dockerignore lesakhiwo sesithombe se-Docker ukuze uzibe ukuphathwa kwefayela
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Khiqiza ifayela le-.goreleaser.yml ukuze ulungiselele amathuluzi okukhipha
             short: Khiqiza ifayela le-.goreleaser.yml
-        i18n:
-            long: Khiqiza amafayela e-i18n ukuze kuqaliswe amathuluzi ahlobene nezilimi eziningi ahlobene nokuya kwamanye amazwe neminye imisebenzi
-            short: Khiqiza ifayela le-i18n
         impl:
-            long: Khiqiza amafayela okusebenzisa ukuze kusetshenziswe izinsiza zebhizinisi
+            long: Khiqiza amafayela okuqalisa ukusetshenziswa kwezinsizakalo zebhizinisi
             short: Khiqiza amafayela wokuqalisa
         long: Ikhodi generator, isekela izifanekiso eziningi
         makefile:
@@ -66,16 +63,21 @@ cli:
             long: Khiqiza ifayela le-go.mod lokuphatha ukuncika
             short: Khiqiza ifayela le-go.mod
         pb:
-            long: Khiqiza amafayela e-.pb.go ukuze ukhiqize amafayela we-.proto,
+            long: Khiqiza amafayela we-.pb.go, asetshenziselwa ukukhiqiza amafayela e-.proto enkambini efanelekile x azokwengezwa ngokuzenzakalelayo ngokuya ngokucushwa.
             short: Khiqiza ifayela le-.pb.go
         short: Ikhodi generator
         state:
+            conf:
+                long: Khiqiza ikhodi yokufunda ifayela lokucushwa ukuze kufundwe ukucushwa kwensiza yebhizinisi
+                short: Khiqiza ikhodi yokufunda ifayela lokucushwa
             flags:
                 cache: Ukuthi kunikwe amandla ukukhiqiza okuhlobene nenqolobane
                 config: Ukuthi ukhiqize ikhodi ehlobene nokucushwa
-                db: Ukuthi unike amandla ukukhiqizwa kwesizindalwazi esihlobene nesizindalwazi
                 i18n: Ukuthi unike amandla isizukulwane esihlobene nezilimi eziningi (isizukulwane sihlanganisa kuphela ukuqaliswa kwesifunda nokunye okuqukethwe, futhi asifaki ukuhumusha okuzenzakalelayo kwezilimi eziningi. Uma udinga ukuhumusha okuzenzakalelayo, sicela usebenzise {{.Command}} ukuze ubuke imininingwane)
                 table: Ukuthi unike amandla ukukhiqizwa kwesizindalwazi esihlobene nesizindalwazi
+            i18n:
+                long: Khiqiza ikhodi ehlobene ne-i18n yezingcingo zomhlaba jikelele zezilimi eziningi
+                short: Khiqiza ikhodi ehlobene ye-i18n
             long: Khiqiza yonke imisebenzi ehlobene yombuso ukuze uthole izinsiza ezisezingeni eliphezulu noma ukuphathwa kwezinsiza zebhizinisi ezimile
             short: Yonke imisebenzi efanele yokukhiqiza izwe
             table:

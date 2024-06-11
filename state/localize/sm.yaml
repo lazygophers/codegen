@@ -5,26 +5,26 @@ cli:
         add-rpc:
             flags:
                 action: Amioga e mana'omia ona fa'aopoopo i vaega, fa'amolemole su'e pepa fa'aoga mo fa'amatalaga
-                default-role: Ole tulaga fa'aletonu ole atina'e fa'apipi'i Fa'amolemole va'ai ile pepa fa'aoga mo fa'amatalaga.
+                default-role: Ole tulaga fa'aletonu ole atina'e fa'atupu fa'aputu Fa'amolemole va'ai ile fa'amatalaga fa'aoga mo fa'amatalaga.
                 gen-to: Fa'ailoa le nofoaga o lo'o gaosia ai faila .go
                 list-option: E mafai fo'i ona fa'amama le lisi, fa'amolemole su'e pepa fa'aoga mo fa'amatalaga.
                 model: Fa'ailoa mai le igoa fa'ata'ita'iga, lagolago e aveese le 'fa'ata'ita'iga' prefix
             long: Fausia feso'ota'iga i fa'aputuga ma fa'aopoopo se atina'e mo se fa'ata'ita'iga fa'apitoa i le faila .proto
-            short: Fa'alapotopotoga fa'atupu fa'aputuga
+            short: Faiga fa'aputuga fa'atasi
         all:
             long: Fausia uma code e lagolagoina e lenei meafaigaluega
             short: Fausia uma code
         cache:
-            long: Fausia faila fa'aoga mo le fa'aogaina o le telefoni fa'apisinisi SDKs fa'atatau
+            long: Fa'atupu faila fa'aoga mo le fa'aogaina o le telefoni fa'apisinisi SDKs fa'atatau
             short: Fausia faila cache
         cmd:
             long: Fausia faila ulufale mo auaunaga pisinisi
             short: Fausia faila faila
         conf:
-            long: Fausia faila fa'atulagaina mo le faitau fa'atulagaina o auaunaga tau pisinisi
+            long: Fausia le fa'ata'ita'iga faila faila
             short: Fausia faila fa'atulagaina
         dockerignore:
-            long: Fausia faila .dockerignore mo le fausiaina o ata Docker e le amanaʻia ai le puleaina o faila
+            long: Fausia faila .dockerignore mo le fausiaina o ata Docker e le amanaia ai le puleaina o faila
             short: Fausia faila .dockerignore
         editorconfig:
             long: Fausia .editorconfig faila mo le fa'atonu fa'atonu
@@ -32,29 +32,26 @@ cli:
         flags:
             add-proto-files: Afai e te manaʻomia le faʻaulufaleina mai o isi .proto faila / ala faila e le o iai i totonu o le faila e tasi e pei o le faila .proto faʻamaonia, o lenei gaioiga o le a faʻapipiʻi (e le toe faʻaulu) le ala ua faʻatulagaina i le faila faʻatulagaina.
             go-module-prefix: Mo le ala o le go_package configured i le .proto faila ma le mea moni, e mafai ona e configure lenei filifiliga
-            input: Fa'ailoa le faila .proto puna e fa'atupu
-            output-path: O lenei filifiliga e mafai ona faʻatulagaina pe a faʻaogaina le ala o le go_package i le faila .proto e le ogatasi ma le auala e manaʻomia moni lava ona gaosia.
+            input: Fa'ailoa le .proto source file e fa'atupu
+            output-path: O lenei filifiliga e mafai ona configured pe a le ala o le go_package configured i le .proto faila e le ogatasi ma le auala e manaʻomia moni lava ona gaosia.
             overwrite: Mo mea o le a le toe fa'afouina, fa'amalosia le fa'asolo o mea o iai
             proto-files: Mo le faʻaulufaleina mai o isi .proto faila / faila ala e le o iai i totonu o le pusa tutusa e pei o le faila .proto faʻamaonia, o lenei gaioiga o se filifiliga e faʻamalo ai le faʻasologa o le fanua i le faila faʻatulagaina.
             protoc: '''protoc'' ala faila fa''apitoa'
-            protoc-gen-go: '''protoc-gen-go` ala plugin'
-            tables-enable_field_created_at: Pe fa'aagaaga le fa'atupuina o le fa'asologa o fa'amaumauga o fa'amaumauga created_at field
-            tables-enable_field_deleted_at: Pe mafai ona fa'aogaina le fa'aogaina o le deleted_at fanua i totonu o fa'amaumauga
-            tables-enable_field_id: Fa'aagaaga le fa'atupuina o fa'atonuga mo fa'amaumauga e feso'ota'i ma fa'amaumauga
-            tables-enable_field_updated_at: Pe fa'ataga le tau fa'aletonu o le updated_at field i totonu o fa'amaumauga
+            protoc-gen-go: '`protoc-gen-go` ala plugin'
+            tables-enable_field_created_at: Pe fa'aagaaga le fa'atupuina o fa'atonuga o le database created_at field
+            tables-enable_field_deleted_at: Pe mafai ona fa'aogaina le fa'aogaina o le deleted_at field i totonu o fa'amaumauga
+            tables-enable_field_id: Fa'aagaaga le fa'atupuina o fa'atonuga mo fa'amaumauga e feso'otai i fa'amaumauga
+            tables-enable_field_updated_at: Pe fa'ataga le tau le aoga o le updated_at fanua i totonu o fa'amaumauga
             tables-enable_gorm_tag_column: Pe fa'aagaaga le fa'atupuina o gorm e feso'ota'i i fa'amaumauga
         gitignote:
             long: Fausia faila .gitignore mo le pulea o faila e le amana'ia ile fa'atonuga
             short: Fausia faila .giignore
         golang-lint:
-            long: Fausia le faila .golangci.yml mo le siakiina o uiga lelei
+            long: Fausia faila .golangci.yml mo le su'esu'eina o uiga lelei
             short: Fausia le faila .golangci.yml
         goreleaser:
-            long: Fausia faila .goreleaser.yml mo le faʻatulagaina o meafaigaluega faʻamalolo
+            long: Fausia .goreleaser.yml faila mo le faʻatulagaina o meafaigaluega faʻamalolo
             short: Fausia le faila .goreleaser.yml
-        i18n:
-            long: Fausia faila i18n mo le fa'aulufaleina o mea faigaluega fa'ava-o-malo e tele gagana ma isi galuega
-            short: Fausia i18n faila
         impl:
             long: Fausia faila faʻatinoga mo le faʻatinoina o auaunaga tau pisinisi
             short: Fausia faila fa'atinoga
@@ -66,24 +63,29 @@ cli:
             long: Fausia le faila go.mod mo le pulega faʻalagolago
             short: Fausia le faila go.mod
         pb:
-            long: Fausia faila .pb.go mo le fausiaina o faila .proto,
+            long: Fausia faila .pb.go, lea e faʻaaogaina e faʻatupu ai faila .proto o le a otometi lava ona faʻapipiʻi igoa e tusa ai ma le faʻatulagaga.
             short: Fausia le faila .pb.go
         short: Code generator
         state:
+            conf:
+                long: Fausia le fa'asologa o faila faitau code mo le faitau fa'atulagaina o auaunaga pisinisi
+                short: Fausia le fa'asologa o faila faitau code
             flags:
                 cache: Pe fa'aagaaga le fa'atupuina o le cache
                 config: Pe fa'atupuina le fa'ailoga e feso'ota'i ma le fa'atulagaina
-                db: Pe fa'aagaaga le fa'atupuina o fa'amaumauga e feso'ota'i fa'amaumauga
                 i18n: Pe fa'aagaaga le fa'atupuga e feso'ota'i gagana e tele (o le fa'atupulaga na'o le fa'aulufaleina o le setete ma isi anotusi, ma e le aofia ai le fa'aliliuga otometi o le tele o gagana. Afai e te mana'omia le fa'aliliuga otometi, fa'amolemole fa'aoga {{.Command}} e matamata ai fa'amatalaga)
                 table: Pe fa'aagaaga le fa'atupuina o fa'amaumauga e feso'ota'i fa'amaumauga
-            long: Fausia galuega fa'afeso'ota'i uma a le setete mo punaoa fa'atulafonoina po'o le fa'atonuina o punaoa fa'apitoa o auaunaga tau pisinisi
+            i18n:
+                long: Fausia le i18n code e feso'ota'i mo telefoni fa'ava-o-malo e tele gagana
+                short: Fausia le i18n code e fesoʻotaʻi
+            long: Fausia galuega fa'afeso'ota'i uma a le setete mo puna'oa fa'apitoa po'o le fa'afoeina o puna'oa tumau o auaunaga tau pisinisi
             short: O galuega talafeagai uma mo le fausiaina o le setete
             table:
                 long: Fausia le state.table code related, fa'aoga mo feso'ota'iga fa'amaumauga ma le amataga o le laulau pe a amata le tautua.
                 short: Fausia le state.table e feso'ota'i code
         table:
-            long: O galuega fa'afeso'ota'i uma o le fa'atupuina o laulau mo puna'oa fa'apitoa po'o le fa'atonuina o puna'oa fa'apitoa o auaunaga tau pisinisi
-            short: O galuega fa'atatau uma mo le fa'atupuina o laulau
+            long: O galuega fa'afeso'ota'i uma o le fa'atupuina o laulau mo puna'oa fa'apitoa po'o le fa'afoeina o puna'oa tumau o auaunaga tau pisinisi
+            short: O galuega fa'atatau uma mo le gaosia o laulau
     help:
         additional_commands: Poloaiga faaopoopo
         aliases: fa'atonu igoa
@@ -101,14 +103,14 @@ cli:
                 all-language: Fa'aliliu gagana lagolago uma (pe a sa'o le fu'a gagana)
                 force: Sui fa'aliliuga o iai
                 force-key-prefix: ki e mana'omia ona fa'amalosia e fa'asolo
-                generate-const: Fausia fa'asologa fa'atatau mo le vala'au faigofie
+                generate-const: Fausia fa'amaumauga tau mo le faigofie vala'au
                 languages: Fa'ailoa le gagana fa'atatau mo le fa'aliliuga
                 src-file: Fa'aliliuga faila e fa'aliliu (mana'omia)
-                src-language: Le gagana o le faila fa'apogai (pe a le fa'amaonia, o le meafaigaluega e otometi lava ona iloa le faila fa'apogai)
+                src-language: Le gagana o le faila faila (pe a le faʻamaonia, o le meafaigaluega o le a otometi lava ona fuafua le faila faila)
                 translater:
                     google-free: Google Web Translate
                     usage: 'Fa''aliliuga ala: Ituaiga lagolago {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: O faila e tele gagana mai se puna patino e liua i faila i le faatulagaga tutusa i isi gagana.
             short: fa'aliliu
-    long: O se mea faigaluega seti mo tagata paie, e aofia ai 'proto' fa'avae pito i tua auivi, fa'ata'ita'iga masani ona fa'aoga, ma fa'aliliuga gagana e tele.
-    short: O se seti meafaigaluega mo tagata paie
+    long: O se mea faigaluega seti mo tagata paie, e aofia ai 'proto' fa'avae pito i tua fa'avae, fa'ata'ita'iga masani ona fa'aoga, ma fa'aliliuga gagana e tele.
+    short: Se mea faigaluega seti mo tagata paie

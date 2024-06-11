@@ -21,7 +21,7 @@ cli:
             long: Generate entry files for business services
             short: Generate entry file
         conf:
-            long: Generate configuration files for configuration reading of business services
+            long: Generate configuration file template
             short: Generate configuration file
         dockerignore:
             long: Generate .dockerignore file for Docker image building to ignore file management
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generate .goreleaser.yml file for configuration of release tools
             short: Generate .goreleaser.yml file
-        i18n:
-            long: Generate i18n files for initialization of multi-language internationalization related toolkits and other functions
-            short: Generate i18n file
         impl:
             long: Generate implementation files for the implementation of business services
             short: Generate implementation files
@@ -66,16 +63,21 @@ cli:
             long: Generate go.mod file for dependency management
             short: Generate go.mod file
         pb:
-            long: Generate .pb.go files for generating .proto files,
+            long: Generate .pb.go files, which are used to generate .proto files. Relevant field labels x will be automatically added according to the configuration.
             short: Generate .pb.go file
         short: Code generator
         state:
+            conf:
+                long: Generate configuration file reading code for business service configuration reading
+                short: Generate configuration file reading code
             flags:
                 cache: Whether to enable cache-related generation
                 config: Whether to generate configuration-related code
-                db: Whether to enable database-related database generation
                 i18n: Whether to enable multi-language related generation (the generation only includes state initialization and other content, and does not include automatic translation of multiple languages. If you need automatic translation, please use {{.Command}} to view details)
                 table: Whether to enable database-related database generation
+            i18n:
+                long: Generate i18n related code for multi-language international calls
+                short: Generate i18n related code
             long: Generate all related functions of state for stateful resource or static resource management of business services
             short: All relevant functions for generating state
             table:

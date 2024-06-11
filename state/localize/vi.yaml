@@ -21,7 +21,7 @@ cli:
             long: Tạo tập tin đầu vào cho các dịch vụ kinh doanh
             short: Tạo tập tin đầu vào
         conf:
-            long: Tạo tệp cấu hình để đọc cấu hình dịch vụ kinh doanh
+            long: Tạo mẫu tập tin cấu hình
             short: Tạo tập tin cấu hình
         dockerignore:
             long: Tạo tệp .dockerignore để xây dựng hình ảnh Docker để bỏ qua việc quản lý tệp
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Tạo tệp .goreleaser.yml để cấu hình các công cụ phát hành
             short: Tạo tệp .goreleaser.yml
-        i18n:
-            long: Tạo tệp i18n để khởi tạo bộ công cụ liên quan đến quốc tế hóa đa ngôn ngữ và các chức năng khác
-            short: Tạo tập tin i18n
         impl:
             long: Tạo các tệp triển khai để triển khai các dịch vụ kinh doanh
             short: Tạo tập tin triển khai
@@ -66,16 +63,21 @@ cli:
             long: Tạo tệp go.mod để quản lý phụ thuộc
             short: Tạo tập tin go.mod
         pb:
-            long: Tạo tệp .pb.go để tạo tệp .proto,
+            long: Tạo tệp .pb.go, được sử dụng để tạo tệp .proto. Nhãn trường có liên quan x sẽ được tự động thêm theo cấu hình.
             short: Tạo tệp .pb.go
         short: Trình tạo mã
         state:
+            conf:
+                long: Tạo mã đọc tệp cấu hình để đọc cấu hình dịch vụ doanh nghiệp
+                short: Tạo mã đọc tập tin cấu hình
             flags:
                 cache: Có bật tính năng tạo liên quan đến bộ đệm hay không
                 config: Có tạo mã liên quan đến cấu hình hay không
-                db: Có bật tính năng tạo cơ sở dữ liệu liên quan đến cơ sở dữ liệu hay không
                 i18n: Có bật tính năng tạo liên quan đến đa ngôn ngữ hay không (thế hệ chỉ bao gồm khởi tạo trạng thái và nội dung khác và không bao gồm dịch tự động nhiều ngôn ngữ. Nếu bạn cần dịch tự động, vui lòng sử dụng {{.Command}} để xem chi tiết)
                 table: Có bật tính năng tạo cơ sở dữ liệu liên quan đến cơ sở dữ liệu hay không
+            i18n:
+                long: Tạo mã liên quan đến i18n cho cuộc gọi quốc tế đa ngôn ngữ
+                short: Tạo mã liên quan đến i18n
             long: Tạo ra tất cả các chức năng liên quan của trạng thái để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
             short: Tất cả các chức năng liên quan để tạo trạng thái
             table:

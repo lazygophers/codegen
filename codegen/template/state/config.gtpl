@@ -11,8 +11,10 @@ type Config struct {
 	Name string `json:"name,omitempty" yaml:"name,omitempty" toml:"name,omitempty"`
 
 	Port int `json:"port,omitempty" yaml:"port,omitempty" toml:"port,omitempty"`
-{{ with .Config.Table }}	Db    *db.Config    `json:"db,omitempty" yaml:"db,omitempty" toml:"db,omitempty"`{{ end }}
-{{ with .Config.Cache }}	Cache *cache.Config `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`{{ end }}
+	Host string `json:"host,omitempty" yaml:"host,omitempty" toml:"host,omitempty"`
+{{ with .Config.Table }}
+	Db    *db.Config    `json:"db,omitempty" yaml:"db,omitempty" toml:"db,omitempty"`{{ end }}{{ with .Config.Cache }}
+	Cache *cache.Config `json:"cache,omitempty" yaml:"cache,omitempty" toml:"cache,omitempty"`{{ end }}
 
 	// NOTE: Please fill in the configuration below
 }

@@ -21,7 +21,7 @@ cli:
             long: Générer des fichiers de saisie pour les services métiers
             short: Générer un fichier d'entrée
         conf:
-            long: Générer des fichiers de configuration pour la lecture de la configuration des services métiers
+            long: Générer un modèle de fichier de configuration
             short: Générer le fichier de configuration
         dockerignore:
             long: Générez un fichier .dockerignore pour la création d'images Docker afin d'ignorer la gestion des fichiers
@@ -52,30 +52,32 @@ cli:
         goreleaser:
             long: Générer le fichier .goreleaser.yml pour la configuration des outils de publication
             short: Générer le fichier .goreleaser.yml
-        i18n:
-            long: Générez des fichiers i18n pour l'initialisation des boîtes à outils liées à l'internationalisation multilingue et d'autres fonctions
-            short: Générer un fichier i18n
         impl:
             long: Générer des fichiers d'implémentation pour la mise en œuvre des services métiers
             short: Générer des fichiers d'implémentation
         long: Générateur de code, prend en charge plusieurs modèles
         makefile:
-            long: Générer des fichiers Makefile pour créer des outils et d'autres commandes associées
+            long: Générez des fichiers Makefile pour créer des outils et d'autres commandes associées
             short: Générer un fichier Make
         mod:
             long: Générer un fichier go.mod pour la gestion des dépendances
             short: Générer le fichier go.mod
         pb:
-            long: Générez des fichiers .pb.go pour générer des fichiers .proto,
+            long: Générez des fichiers .pb.go, qui sont utilisés pour générer des fichiers .proto. Les étiquettes de champ pertinentes x seront automatiquement ajoutées en fonction de la configuration.
             short: Générer un fichier .pb.go
         short: Générateur de code
         state:
+            conf:
+                long: Générer le code de lecture du fichier de configuration pour la lecture de la configuration du service métier
+                short: Générer le code de lecture du fichier de configuration
             flags:
                 cache: S'il faut activer la génération liée au cache
                 config: S'il faut générer du code lié à la configuration
-                db: S'il faut activer la génération de bases de données liées à la base de données
                 i18n: S'il faut activer la génération multilingue (la génération inclut uniquement l'initialisation de l'état et d'autres contenus, et n'inclut pas la traduction automatique de plusieurs langues. Si vous avez besoin d'une traduction automatique, veuillez utiliser {{.Command}} pour afficher les détails)
                 table: S'il faut activer la génération de bases de données liées à la base de données
+            i18n:
+                long: Générez le code associé à i18n pour les appels internationaux multilingues
+                short: Générer le code associé à i18n
             long: Générer toutes les fonctions d'état associées pour la gestion des ressources avec état ou des ressources statiques des services métiers
             short: Toutes les fonctions pertinentes pour générer l'état
             table:

@@ -1,14 +1,14 @@
-protoc_path: "<protoc的绝对路径>"
-protogen_go_path: "<protoc-gen-go的绝对路径>"
+protoc-path: "<protoc的绝对路径>"
+protogen-go-path: "<protoc-gen-go的绝对路径>"
 
-# 生成的代码的目录，即 protoc 执行的路径，实际生成的代码将会放在 <output_path>/<go_package> 下
-# 如果不指定，默认规则为 <proto_file_path>/../<go_package>
-output_path: "<生成的代码的目录>"
-go_module_prefix: "<go module的前缀，在生成时会拼接proto中的 go_package 字段当做包名>"
+# 生成的代码的目录，即 protoc 执行的路径，实际生成的代码将会放在 <output-path>/<go-package> 下
+# 如果不指定，默认规则为 <proto-file-path>/../<go-package>
+output-path: "<生成的代码的目录>"
+go-module-prefix: "<go module的前缀，在生成时会拼接proto中的 go-package 字段当做包名>"
 
 # 不在 指定 proto 文件所在目录的其它被引用的包路径
-#	支持绝对路径、相对生成路径 (相对于 output_path)
-proto_files:
+#	支持绝对路径、相对生成路径 (相对于 output-path)
+proto-files:
     - "./lrpc/"
     - "~/proto/"
 
@@ -22,7 +22,7 @@ language: "en"
 # 国际化相关配置
 i18n:
     # 是否开启生成 枚举
-    generate_const: false
+    generate-const: false
 
     # 国际化语言，如果存在则使用此数据
     languages:
@@ -35,7 +35,7 @@ i18n:
         - it
         - ru
     # 是否翻译全部支持的语言，如果为 true 则 i18n.languages 字段失效
-    all_languages: true
+    all-languages: true
 
 style:
     # 命名风格，支持以下格式
@@ -50,7 +50,7 @@ state:
     # 是否生成配置相关的代码
     config: true
     # 是否开启数据库相关的数据库生成
-    db: true
+    table: true
     # 是否开启缓存相关生成
     cache: true
     # 是否开启多语言相关联生成（生成仅包含state 初始化等内容，不包含多语言的自动翻译，如需自动翻译请使用 codegen i t 查看详情）
@@ -63,11 +63,11 @@ template:
     # orm.go 模板文件路径，用于 gorm 的相关数据生成
     orm: "<orm.go> 模板文件路径，如果不存在则是使用默认"
 
-    # table_name.go 模板文件路径，用于 gorm 的相关表名
-    table_name: "<table_name.go> 模板文件路径，如果不存在则是使用默认"
+    # table-name.go 模板文件路径，用于 gorm 的相关表名
+    table-name: "<table-name.go> 模板文件路径，如果不存在则是使用默认"
 
-    # table_field.go 模板文件路径，用于 gorm 的相关字段名，用于数据库操作时字段填写
-    table_field: "<table_field.go> 模板文件路径，如果不存在则是使用默认"
+    # table-field.go 模板文件路径，用于 gorm 的相关字段名，用于数据库操作时字段填写
+    table-field: "<table-field.go> 模板文件路径，如果不存在则是使用默认"
 
     # .proto 文件相关的模板文件
     proto:
@@ -103,10 +103,10 @@ template:
         impl: "<impl.go> 的模板文件路径"
 
         # rpc请求路径模板文件路径
-        path: "<rpc_path.go> 的模板文件路径"
+        path: "<rpc-path.go> 的模板文件路径"
 
         # 路由相关的配置
-        route: "<rpc_route.go> 的模板文件路径"
+        route: "<rpc-route.go> 的模板文件路径"
 
         # rpc 相关的
         action:
@@ -148,15 +148,15 @@ template:
     dockerignore: "<.dockerignore> 模板文件路径"
 
     # i18n 枚举生成模板文件
-    i18n_const: "i18n 枚举生成模板文件路径"
+    i18n-const: "i18n 枚举生成模板文件路径"
 
 # 默认的标签，会追加到原始标签中，key 为标签名, value.key 为字段名, value.value 为标签值
-default_tag:
+default-tag:
     gorm:
         id: "column:id;primaryKey;autoIncrement;not null"
-        created_at: "column:created_at;<-:create;autoCreateTime;not null"
-        updated_at: "column:updated_at;<-;autoUpdateTime;not null"
-        deleted_at: "column:deleted_at;autoDeleteTime"
+        created-at: "column:created_at;<-:create;autoCreateTime;not null"
+        updated-at: "column:updated_at;<-;autoUpdateTime;not null"
+        deleted-at: "column:deleted_at;autoDeleteTime"
         name: "type:varchar(255);not null"
         username: "type:varchar(255);not null"
         email: "type:varchar(255);not null"
@@ -172,12 +172,19 @@ tables:
 
     # 是否关闭自动生成的 gorm tag，默认为 false
     # 关闭自动生成 id 相关的gorm tag，默认为 false
-    disable_field_id: false
-    # 关闭自动生成 created_at 的gorm tag，默认为 false
-    disable_field_created_at: false
-    # 关闭自动生成 updated_at 的gorm tag，默认为 false
-    disable_field_updated_at: false
-    # 关闭自动生成 deleted_at 的gorm tag，默认为 false
-    disable_field_deleted_at: false
+    disable-field-id: false
+    # 关闭自动生成 created-at 的gorm tag，默认为 false
+    disable-field-created-at: false
+    # 关闭自动生成 updated-at 的gorm tag，默认为 false
+    disable-field-updated-at: false
+    # 关闭自动生成 deleted-at 的gorm tag，默认为 false
+    disable-field-deleted-at: false
     # 关闭自动生成 column 的gorm tag，默认为 false
-    disable_gorm_tag_column: false
+    disable-gorm-tag-column: false
+
+# go.mod 相关配置
+go-mod:
+    # 对 go.mod 相关 api 请求时用的代理地址，如果不填则使用系统配置的第一个
+    goproxy: "https://proxy.golang.org"
+    # 增强模式，针对 go.mod 更新时，由于缓存导致 mod 强制版本更新并没有更新到最新版的问题
+    increase: true

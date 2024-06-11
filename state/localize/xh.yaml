@@ -21,7 +21,7 @@ cli:
             long: Yenza iifayile zokungena kwiinkonzo zoshishino
             short: Yenza ifayile yokungena
         conf:
-            long: Yenza iifayile zoqwalaselo kuqwalaselo lokufunda lweenkonzo zoshishino
+            long: Yenza itemplate yefayile yoqwalaselo
             short: Yenza ifayile yoqwalaselo
         dockerignore:
             long: Yenza ifayile ye-dockerignore yesakhiwo somfanekiso we-Docker ukungahoyi ulawulo lwefayile
@@ -35,7 +35,7 @@ cli:
             input: Chaza ifayile yemvelaphi yeproto ekufuneka yenziwe
             output-path: Olu khetho lunoqwalaselo xa umendo we-go_package uqwalaselwe kwifayile ye.proto ayihambelani nebhedi yendlela efuna ukwenziwa.
             overwrite: Ngomxholo ongazukuphinda uhlaziywe, nyanzela ukubhala ngaphezulu komxholo okhoyo
-            proto-files: Ukungenisa ezinye .iifayile zeproto/iindlela zefolda ezingekho kwisiqulathi seefayili esifana nesefayile echaziweyo .proto, lo msebenzi lukhetho lokubeka ngaphezulu umhlaba woqwalaselo kwifayile yoqwalaselo.
+            proto-files: Ukungenisa ezinye .iifayile zeproto/iindlela zefolda ezingekho kwisiqulathi seefayili esifana neso esixeliweyo .proto fayile, lo msebenzi uyindlela yokukhetha ukuwubhala ngaphezulu umhlaba woqwalaselo kwifayile yoqwalaselo.
             protoc: '`protoc` indlela yefayile enokwenziwa ngokwezifiso'
             protoc-gen-go: '`protoc-gen-go` indlela yokufaka iplagi'
             tables-enable_field_created_at: Nokuba ngaba kukuvumela ukuveliswa koqwalaselo olungagqibekanga lwedathabheyisi eyenziwe_ kwindawo
@@ -52,11 +52,8 @@ cli:
         goreleaser:
             long: Yenza ifayile ye.goreleaser.yml yoqwalaselo lwezixhobo zokukhulula
             short: Yenza ifayile ye.goreleaser.yml
-        i18n:
-            long: Yenza iifayile ze-i18n ukuze kuqaliswe ukusetyenziswa kwezixhobo zezixhobo zeelwimi ezininzi ezinxulumeneyo kunye neminye imisebenzi
-            short: Yenza ifayile ye-i18n
         impl:
-            long: Ukuvelisa iifayile zokuphumeza ukuphunyezwa kweenkonzo zoshishino
+            long: Ukuvelisa iifayile zokuphunyezwa kokuphunyezwa kweenkonzo zoshishino
             short: Yenza iifayile zokuphunyezwa
         long: Ikhowudi generator, ixhasa iitemplates ezininzi
         makefile:
@@ -66,16 +63,21 @@ cli:
             long: Yenza ifayile ye-go.mod yolawulo lokuxhomekeka
             short: Yenza ifayile ye-go.mod
         pb:
-            long: Yenza iifayile ze.pb.go zokuvelisa iifayile zeproto,
+            long: Yenza iifayile ze-.pb.go, ezisetyenziselwa ukuvelisa iifayile zeproto ezifanelekileyo.
             short: Yenza ifayile ye.pb.go
         short: Ikhowudi generator
         state:
+            conf:
+                long: Veza ikhowudi yokufunda yefayile yoqwalaselo kufundo lwenkonzo yoqwalaselo
+                short: Yenza ikhowudi yokufunda yefayile yoqwalaselo
             flags:
                 cache: Nokuba ngaba kwenziwe ukuveliswa okunxulumene necache
                 config: Nokuba ngaba kwenziwe ikhowudi enxulumene noqwalaselo
-                db: Nokuba ngaba kwenziwe ukuveliswa kwedatha enxulumene nesiseko sedatha
                 i18n: Ingaba ukwenza isizukulwana esinxulumene kwiilwimi ezininzi (isizukulwana siquka kuphela ukuqaliswa korhulumente kunye nomnye umxholo, kwaye asibandakanyi uguqulelo oluzenzekelayo lweelwimi ezininzi. Ukuba ufuna uguqulelo oluzenzekelayo, nceda usebenzise {{.Command}} ukujonga iinkcukacha)
                 table: Nokuba ngaba kwenziwe ukuveliswa kwedatha enxulumene nesiseko sedatha
+            i18n:
+                long: Yenza ikhowudi ehambelana ne-i18n kwiifowuni zamazwe ngamazwe ezilwimi ezininzi
+                short: Yenza ikhowudi enxulumene ne-i18n
             long: Ukuvelisa yonke imisebenzi enxulumeneyo karhulumente ukulungiselela izixhobo ezisemthethweni okanye ulawulo lwemithombo engatshintshiyo yeenkonzo zoshishino
             short: Yonke imisebenzi efanelekileyo yokuvelisa urhulumente
             table:
@@ -94,14 +96,14 @@ cli:
         global_flags: iiparamitha zehlabathi
         use: sebenzisa
     i18n:
-        long: Izixhobo ezihambelana nokudityaniswa kweelwimi zamazwe ngamazwe
-        short: Izixhobo ezihambelana nokudityaniswa kweelwimi zamazwe ngamazwe
+        long: Izixhobo ezinxulumene nokudityaniswa kweelwimi zamazwe ngamazwe
+        short: Izixhobo ezinxulumene nokudityaniswa kweelwimi zamazwe ngamazwe
         tran:
             flags:
                 all-language: Guqulela zonke iilwimi ezixhaswayo (ukuba yinyani iflegi yeelwimi ivaliwe)
                 force: Bhala phezu kweenguqulelo ezikhoyo
                 force-key-prefix: izitshixo ezifuna ukunyanzeliswa ukuba zibhalwe ngaphezulu
-                generate-const: Veza amaxabiso okubalwa ukufowuna lula
+                generate-const: Yenza amaxabiso okubalwayo ukuze ufowunelwe lula
                 languages: Chaza ulwimi ekujoliswe kulo ukuze uguqulelwe
                 src-file: Umthombo wefayile eza kuguqulelwa (kuyafuneka)
                 src-language: Ulwimi lwefayile yemvelaphi (ukuba ayichazwanga, isixhobo siya kumisela ngokuzenzekelayo ifayile yemvelaphi)

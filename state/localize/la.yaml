@@ -21,7 +21,7 @@ cli:
             long: Generare viscus files ad negotium muneris
             short: Generare ingressum file
         conf:
-            long: Configurationis generare lima pro configuratione lectionis negotii officia
+            long: Configuratione generare file template
             short: Configuratione file generate
         dockerignore:
             long: Generare .dockerignore lima pro Docker imaginem aedificii ignorare lima procuratio
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Generare .goreleaser.yml lima pro configuratione emissionis instrumenta
             short: Generare .goreleaser.yml file
-        i18n:
-            long: Files generare i18n ad initializationem multi-linguae internationalisationum pertinentium instrumentorum communicationis socialis et aliorum functionum
-            short: Generare i18n file
         impl:
             long: Exsequendam files generare ad officia exsequendam negotiationem
             short: Generare files implementation
@@ -66,17 +63,22 @@ cli:
             long: Generare go.mod lima pro dependentiae administratione
             short: Generare go.mod file
         pb:
-            long: Files generare .pb.go .proto files generandi;
+            long: Files .pb.go generare, quae .proto files generare adhibentur. Relevant pittacia campi x sponte addenda secundum configurationem.
             short: Generare .pb.go file
         short: Code generans
         state:
+            conf:
+                long: Generare configuration file legendi codicem pro negotio servitii configuration Lectio
+                short: Lectio codice file configuratione generate
             flags:
                 cache: Utrum ad enable generationis relatas cache
                 config: Utrum configuratione actis codice generate
-                db: Utrum database relatas ad enable generation
                 i18n: Utrum multi-linguae generationis cognatae efficere possint (generatio solum statum initializationem et alia contenta includit, et translationem latae sententiae multarum linguarum non includit. Si translatione latae sententiae eges, quaeso utere {{.Command}} ad singula videnda)
                 table: Utrum database relatas ad enable generation
-            long: Generare omnia munera publica pertinentia ad statum resource aut static subsidii administratione negotiorum officiorum
+            i18n:
+                long: Generare i18n codicem cognatum pro multi-language internationale vocat
+                short: Generate i18n codice related
+            long: Generare omnia munera publica pertinentia ad statum resource vel static subsidii administratione negotiorum officiorum
             short: Omnes munera ad statum generandi pertinet
             table:
                 long: Generare statum.tabula cognata codicem, ad nexum datorum et ad mensam initializationem adhibita cum servitium incepit.

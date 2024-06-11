@@ -21,7 +21,7 @@ cli:
             long: Luo merkintätiedostoja yrityspalveluille
             short: Luo syöttötiedosto
         conf:
-            long: Luo määritystiedostoja yrityspalveluiden asetusten lukemista varten
+            long: Luo määritystiedostomalli
             short: Luo asetustiedosto
         dockerignore:
             long: Luo .dockerignore-tiedosto Docker-kuvanrakennusta varten ohittaaksesi tiedostonhallinnan
@@ -38,7 +38,7 @@ cli:
             proto-files: Jos haluat tuoda muita .proto-tiedostoja/kansiopolkuja, jotka eivät ole samassa kansiossa määritetyn .proto-tiedoston kanssa, tällä toiminnolla voit ohittaa määritystiedoston määrityskentän.
             protoc: '"protoc" mukautettava tiedostopolku'
             protoc-gen-go: '`protoc-gen-go''-laajennuksen polku'
-            tables-enable_field_created_at: Otetaanko tietokannan luotu_at-kenttään oletuskokoonpanon luonti käyttöön
+            tables-enable_field_created_at: Otetaanko tietokannan luotu_at-kentän oletuskokoonpanon luonti käyttöön
             tables-enable_field_deleted_at: Otetaanko deleted_at-kentän oletusasetus käyttöön tietokannassa
             tables-enable_field_id: Ota oletusasetusten luominen käyttöön tietokantoihin liittyvissä kentissä
             tables-enable_field_updated_at: Otetaanko updated_at-kentän oletusarvo käyttöön tietokannassa
@@ -52,9 +52,6 @@ cli:
         goreleaser:
             long: Luo .goreleaser.yml-tiedosto julkaisutyökalujen määritystä varten
             short: Luo .goreleaser.yml-tiedosto
-        i18n:
-            long: Luo i18n-tiedostoja monikielisten kansainvälistymiseen liittyvien työkalupakkien ja muiden toimintojen alustusta varten
-            short: Luo i18n-tiedosto
         impl:
             long: Luo toteutustiedostoja yrityspalveluiden toteuttamista varten
             short: Luo toteutustiedostoja
@@ -66,23 +63,28 @@ cli:
             long: Luo go.mod-tiedosto riippuvuuden hallintaa varten
             short: Luo go.mod-tiedosto
         pb:
-            long: Luo .pb.go-tiedostoja .proto-tiedostojen luomista varten,
+            long: Luo .pb.go-tiedostoja, joita käytetään .proto-tiedostojen luomiseen. Asiaankuuluvat kenttätunnisteet x lisätään automaattisesti kokoonpanon mukaan.
             short: Luo .pb.go-tiedosto
         short: Koodigeneraattori
         state:
+            conf:
+                long: Luo määritystiedoston lukukoodi yrityspalveluiden määritysten lukemista varten
+                short: Luo määritystiedoston lukukoodi
             flags:
                 cache: Otetaanko välimuistiin liittyvä luonti käyttöön
                 config: Luodaanko määritykseen liittyvä koodi
-                db: Otetaanko tietokantaan liittyvä tietokannan luominen käyttöön
                 i18n: Otetaanko useisiin kieliin liittyvä luonti käyttöön (sukupolvi sisältää vain tilan alustuksen ja muun sisällön, eikä sisällä useiden kielten automaattista käännöstä. Jos tarvitset automaattisen käännöksen, käytä {{.Command}} nähdäksesi tiedot)
                 table: Otetaanko tietokantaan liittyvä tietokannan luominen käyttöön
+            i18n:
+                long: Luo i18n-koodia monikielisiä ulkomaanpuheluita varten
+                short: Luo i18n-koodia
             long: Luo kaikki asiaan liittyvät tilan toiminnot yrityspalveluiden tilatietoisten tai staattisten resurssien hallintaan
             short: Kaikki tilan luomiseen liittyvät toiminnot
             table:
                 long: Luo tila.taulukkoon liittyvä koodi, jota käytetään tietokantayhteyden muodostamiseen ja taulukon alustukseen, kun palvelu käynnistetään.
                 short: Luo tila.taulukkoon liittyvä koodi
         table:
-            long: Kaikki siihen liittyvät toiminnot taulukoiden luomiseen yrityspalveluiden tilatietoisten resurssien tai staattisten resurssien hallintaan
+            long: Kaikki siihen liittyvät toiminnot taulukoiden luomiseen yrityspalveluiden tilatietoisten tai staattisten resurssien hallintaan
             short: Kaikki liittyvät funktiot taulukoiden luomiseen
     help:
         additional_commands: Lisäkomennot
@@ -110,5 +112,5 @@ cli:
                     usage: 'Käännöskanava: Tukityyppi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Tietystä lähteestä peräisin olevat monikieliset tiedostot muunnetaan tiedostoiksi, jotka ovat samassa muodossa muilla kielillä.
             short: Kääntää
-    long: Työkalusarja laiskaille ihmisille, mukaan lukien "proto"-pohjainen taustakehys, yleisesti käytetyt mallit ja monikieliset käännökset
+    long: Työkalusarja laiskoille ihmisille, mukaan lukien "proto"-pohjainen taustakehys, yleisesti käytetyt mallit ja monikieliset käännökset
     short: Työkalusarja laiskoille
