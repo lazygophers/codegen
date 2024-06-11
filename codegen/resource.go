@@ -280,7 +280,7 @@ var DefaultTemplateFunc = template.FuncMap{
 	"PluckInt64":  anyx.PluckInt64,
 	"PluckUint64": anyx.PluckUint64,
 
-	"SliceEmpty": func(ss []string) bool {
+	"StringSliceEmpty": func(ss []string) bool {
 		return len(ss) == 0
 	},
 

@@ -1,8 +1,8 @@
 package main
 
-import (
+import ({{ if gt (len .RPCS) 0 }}
 	"github.com/lazygophers/{{ $.PB.GoPackageName }}"
-	"github.com/lazygophers/{{ $.PB.GoPackageName }}/internal/impl"
+	"github.com/lazygophers/{{ $.PB.GoPackageName }}/internal/impl" {{ end }}
 	"github.com/lazygophers/lrpc"
 )
 
