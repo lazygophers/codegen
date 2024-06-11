@@ -6,11 +6,13 @@ import (
 	"github.com/lazygophers/lrpc"
 )
 
+var app = lrpc.NewApp(&lrpc.Config{})
+
 var Routes = []*lrpc.Route{ {{ range $key, $value := .RPCS }}
 	{
 		Method:  "{{ $value.Method }}",
 		Path:    {{ $.PB.GoPackageName }}.RpcPath{{ $value.RpcName }},
-		Handler: impl.{{ $value.RpcName }},
+		Handler: app.ToHandlerFunc(impl.{{ $value.RpcName }}),
 		Extra: map[string]any{
 			"role": "{{ $value.Role }}",
 		},
