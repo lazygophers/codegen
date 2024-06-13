@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Išjungti užbaigimo instrukcijas
+        long: |
+            Sugeneruoja automatinio užbaigimo scenarijų, skirtą {{.RootName}} nurodytam apvalkalui.
+        short: Sugeneruokite nurodyto apvalkalo automatinio užbaigimo scenarijų
+        subcommand:
+            short: Sugeneruoti automatinio užbaigimo scenarijų, skirtą {{.Command}}
     flags:
         debug: Išvesti išsamų žurnalą
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Visos susijusios lentelių generavimo funkcijos, skirtos verslo paslaugų būsenai arba statiniam išteklių valdymui
             short: Visos susijusios lentelės generavimo funkcijos
+    group:
+        gen: kodo generavimas
     help:
         additional_commands: Papildomos komandos
         aliases: komandos slapyvardis
@@ -94,10 +104,18 @@ cli:
         flags: parametras
         get_info: norėdami gauti išsamesnės informacijos
         global_flags: pasauliniai parametrai
+        long: 'Pagalba teikia pagalbą bet kuriai programos komandai. '
+        short: Pagalba bet kokiai komandai
+        usage: '{{.Name}} naudojimo instrukcijos'
         use: naudoti
     i18n:
         long: Daugiakalbis internacionalizavimo priemonių rinkinys
         short: Daugiakalbis internacionalizavimo priemonių rinkinys
+        support:
+            flags:
+                language: Nurodykite kalbą, kurią norite rodyti, kitu atveju kalbai bus rodomas kalbos kodas
+            long: Išvardykite visas palaikomas kalbas
+            short: Palaikomų kalbų sąrašas
         tran:
             flags:
                 all-language: Išversti visas palaikomas kalbas (jei tiesa, kalbų žyma išjungta)
@@ -114,3 +132,156 @@ cli:
             short: išversti
     long: Įrankių rinkinys tingiems žmonėms, įskaitant „proto“ pagrindu sukurtą pagrindinę sistemą, dažniausiai naudojamus šablonus ir vertimą į kelias kalbas
     short: Priemonių rinkinys tinginiams
+    sync:
+        flags:
+            template-path: Šablono sinchronizavimo kelias
+        long: Sinchronizuokite konfigūraciją iš nuotolinio galo ir sujunkite ją su vietine konfigūracija Sinchronizavimo metu tuo pačiu metu palaikomas šablono failas (jei sukonfigūruotas).
+        short: Sinchronizuokite konfigūraciją nuotoliniu būdu
+    up-mod:
+        flags:
+            goproxy: Nurodykite goproxy adresą, jei ne, bus naudojamas pirmasis aplinkos kintamajame
+        long: Atnaujinkite failo go.mod priklausomybės versiją
+        short: Atnaujinkite failą go.mod
+lang:
+    af: afrikanų
+    ak: Dvi (Akan)
+    am: amharų
+    ar: arabiškas
+    as: asamiečių
+    ay: Aimara
+    az: Azerbaidžaniečių
+    be: baltarusių
+    bg: bulgarų
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalų
+    bs: bosnių
+    ca: katalonų
+    ceb: Cebuano
+    ckb: kurdų (sorani)
+    co: Korsikiečių
+    cs: čekų
+    cy: valų
+    da: danų
+    de: vokiškai
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: graikų
+    en: Anglų
+    eo: Esperanto
+    es: ispanų
+    et: Estų
+    eu: baskų
+    fa: persų
+    fi: suomių
+    fil: Filipinų (tagalogų)
+    fr: Prancūzų kalba
+    fy: fryzų
+    ga: airių
+    gd: Škotijos gėlų kalba
+    gl: Galisų
+    gn: Guaraní
+    gom: Gonggan kalba
+    gu: gudžarati
+    ha: Hausa
+    haw: Havajų
+    he: hebrajų
+    hi: hindi
+    hmn: hmong
+    hr: kroatų
+    ht: Haičio kreolų
+    hu: vengrų
+    hy: armėnų
+    id: Indoneziečių
+    ig: Igbo
+    ilo: Ilocano
+    is: islandų
+    it: italų
+    iw: hebrajų
+    ja: japonų
+    jv: javiečių
+    jw: javiečių
+    ka: gruzinų
+    kk: kazachų
+    km: Kambodžos
+    kn: kanada
+    ko: korėjiečių
+    kri: kreolų
+    ku: kurdų
+    ky: Kirgizų
+    la: lotynų kalba
+    lb: liuksemburgiečių
+    lg: Luganda
+    ln: Lingala
+    lo: Laosas
+    lt: lietuvių
+    lus: Mizo
+    lv: latvių
+    mai: Maithili
+    mg: malagasų
+    mi: maorių
+    mk: Makedonietis
+    ml: malajalių
+    mn: mongolų
+    mni-mtei: Meitei (Manipuri)
+    mr: marati
+    ms: malajiečių
+    mt: maltiečių
+    my: birmiečių
+    ne: Nepaliečių
+    nl: olandų
+    "no": norvegų
+    nso: Sepeti
+    ny: Nyanza (Čičeva)
+    om: Oromo
+    or: Orija (Odia)
+    pa: pandžabų
+    pl: lenkas
+    ps: puštūnų
+    pt: portugalų (Portugalija, Brazilija)
+    qu: kečujų
+    ro: rumunų
+    ru: rusų
+    rw: Kinijaruanda
+    sa: Sanskritas
+    sd: sindhi
+    si: sinhala
+    sk: slovakų
+    sl: slovėnų
+    sm: samoiečių
+    sn: Šona
+    so: Somalis
+    sq: albanų
+    sr: serbų
+    st: Sesotas
+    su: Sundanai
+    sv: Švedijos
+    sw: suahilių
+    ta: tamilas
+    te: telugų
+    tg: tadžikų
+    th: tajų
+    ti: Tignanas
+    tk: turkmėnų
+    tl: tagalogų (Filipinų)
+    tr: turkiškas
+    ts: Dzonga
+    tt: totorių
+    ug: Uigūras
+    uk: ukrainiečių
+    ur: urdu
+    uz: uzbekas
+    vi: vietnamiečių
+    xh: bantu kalba
+    yi: jidiš
+    yo: joruba
+    zh: kinų
+    zh-chs: kinų (supaprastinta)
+    zh-cht: kinų (supaprastinta)
+    zh-cn: kinų (supaprastinta)
+    zh-hk: kinų (Honkongas)
+    zh-mo: kinų (Makao)
+    zh-sg: kinų (Singapūras)
+    zh-tw: tradicinis kinietiškas)
+    zu: Zulu

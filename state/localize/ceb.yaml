@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: I-disable ang mga instruksyon sa pagkompleto
+        long: |
+            Naghimo ug autocomplete nga script para sa {{.RootName}} para sa gipiho nga kabhang.
+        short: Paghimo ug autocomplete nga script para sa gipiho nga kabhang
+        subcommand:
+            short: Paghimo og autocomplete nga script para sa {{.Command}}
     flags:
         debug: Output detalyado nga log
     gen:
@@ -12,10 +20,10 @@ cli:
             long: Paghimo mga interface sa mga batch ug pagdugang usa ka interface alang sa usa ka piho nga modelo sa .proto file
             short: Batch nga henerasyon nga interface
         all:
-            long: Paghimo sa tanan nga code nga gisuportahan sa kini nga himan
+            long: Paghimo sa tanan nga code nga gisuportahan niini nga himan
             short: Paghimo sa tanan nga code
         cache:
-            long: Paghimo mga file sa cache alang sa mga SDK nga may kalabutan sa pag-cache sa tawag sa negosyo
+            long: Paghimo mga file sa cache alang sa mga SDK nga may kalabotan sa pag-cache sa tawag sa negosyo
             short: Paghimo cache file
         cmd:
             long: Paghimo mga entry file alang sa mga serbisyo sa negosyo
@@ -30,8 +38,8 @@ cli:
             long: Paghimo og .editorconfig file para sa editor configuration
             short: Paghimo og .editorconfig file
         flags:
-            add-proto-files: Kung kinahanglan nimo nga mag-import ug uban pang mga .proto file/folder nga mga agianan nga wala sa parehas nga folder sa gitakda nga .proto file, kini nga operasyon magdugang (dili mag-overwrite) sa agianan nga gi-configure sa file sa pag-configure.
-            go-module-prefix: Alang sa agianan sa go_package nga gi-configure sa .proto file ug ang aktuwal nga usa, mahimo nimong i-configure kini nga kapilian
+            add-proto-files: Kung kinahanglan nimo nga i-import ang ubang mga .proto file/folder nga mga agianan nga wala sa parehas nga folder sa gitakda nga .proto file, kini nga operasyon magdugang (dili mag-overwrite) sa agianan nga gi-configure sa file sa pag-configure.
+            go-module-prefix: Alang sa agianan sa go_package nga gi-configure sa .proto file ug ang aktuwal, mahimo nimong i-configure kini nga kapilian
             input: Ipiho ang .proto source file nga himoon
             output-path: Kini nga opsyon mahimong ma-configure kung ang agianan sa go_package nga gi-configure sa .proto file dili uyon sa roadbed nga kinahanglan gayud nga mamugna.
             overwrite: Alang sa sulod nga dili mabag-o, pugsa ang pag-overwrite sa kasamtangan nga sulod
@@ -44,7 +52,7 @@ cli:
             tables-enable_field_updated_at: Kung mahimo ba ang default nga kantidad sa updated_at field sa database
             tables-enable_gorm_tag_column: Kung mahimo ba ang paghimo sa gorm nga may kalabutan sa database
         gitignote:
-            long: Paghimo og .gitignore nga mga file para sa wala panumbalinga nga pagdumala sa file sa pagkontrol sa bersyon
+            long: Paghimo og mga .gitignore nga mga file alang sa wala panumbalinga nga pagdumala sa file sa pagkontrol sa bersyon
             short: Paghimo og .gitignore nga payl
         golang-lint:
             long: Paghimo og .golangci.yml file para sa code quality inspection
@@ -57,7 +65,7 @@ cli:
             short: Paghimo mga file sa pagpatuman
         long: Code generator, nagsuporta sa daghang mga templates
         makefile:
-            long: Paghimo og mga file sa Makefile alang sa paghimo og mga himan ug uban pang may kalabutan nga mga sugo
+            long: Paghimo og mga file sa Makefile alang sa pagtukod og mga himan ug uban pang may kalabutan nga mga sugo
             short: Paghimo Makefile
         mod:
             long: Paghimo og go.mod file alang sa pagdumala sa dependency
@@ -73,11 +81,11 @@ cli:
             flags:
                 cache: Kung himuon ba ang henerasyon nga may kalabotan sa cache
                 config: Maghimo ba og kodigo nga may kalabutan sa configuration
-                i18n: Kung i-enable ang multi-language related generation (ang henerasyon naglakip lang sa state initialization ug uban pang content, ug wala maglakip sa automatic translation sa daghang lengguwahe. Kung kinahanglan nimo ang automatic translation, palihog gamita ang {{.Command}} para tan-awon ang mga detalye)
+                i18n: Kung i-enable ba ang multi-language related generation (ang henerasyon naglakip lang sa state initialization ug uban pang content, ug wala maglakip sa automatic translation sa daghang lengguwahe. Kung kinahanglan nimo ang automatic translation, palihog gamita ang {{.Command}} para tan-awon ang mga detalye)
                 table: Kung mahimo ba ang paghimo sa database nga may kalabutan sa database
             i18n:
                 long: Paghimo og i18n nga may kalabutan nga code alang sa multi-language nga internasyonal nga mga tawag
-                short: Paghimo i18n nga may kalabutan nga code
+                short: Paghimo og i18n related code
             long: Paghimo sa tanan nga may kalabutan nga mga gimbuhaton sa estado alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
             short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa pagmugna sa estado
             table:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Ang tanan nga may kalabutan nga mga gimbuhaton sa paghimo sa mga lamesa alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
             short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa paghimo og mga lamesa
+    group:
+        gen: paghimo sa code
     help:
         additional_commands: Dugang nga mga sugo
         aliases: command alias
@@ -94,10 +104,18 @@ cli:
         flags: parametro
         get_info: para makakuha ug mas detalyadong impormasyon
         global_flags: global nga mga parameter
+        long: 'Paghatag mga panudlo sa paggamit alang sa bisan unsang mando sa aplikasyon. '
+        short: Mga panudlo alang sa paggamit sa bisan unsang mando
+        usage: Mga panudlo sa paggamit sa {{.Name}}
         use: paggamit
     i18n:
         long: Multilingual nga internasyonalisasyon nga may kalabutan nga toolkit
         short: Multilingual nga internasyonalisasyon nga may kalabutan nga toolkit
+        support:
+            flags:
+                language: Ipiho ang lengguwahe nga ipakita, kung dili ang code sa lengguwahe ang gamiton aron ipakita ang lengguwahe
+            long: Ilista ang tanang gisuportahan nga mga pinulongan
+            short: Gisuportahan nga lista sa pinulongan
         tran:
             flags:
                 all-language: Paghubad sa tanan nga gisuportahan nga mga sinultian (kung tinuod ang bandila sa mga sinultian gi-disable)
@@ -112,5 +130,158 @@ cli:
                     usage: 'Hubad nga channel: Suporta nga matang {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ang multilingual nga mga file gikan sa usa ka piho nga tinubdan gi-convert ngadto sa mga file sa samang format sa ubang mga pinulongan.
             short: paghubad
-    long: Usa ka himan nga gitakda para sa mga tapolan, lakip ang 'proto' nga nakabase sa backend framework, kasagarang gigamit nga templates, ug multi-language nga paghubad
-    short: Usa ka set nga himan alang sa mga tapolan nga tawo
+    long: Usa ka himan nga gitakda para sa mga tapolan, lakip ang 'proto' nga nakabase sa backend framework, kasagarang gigamit nga mga templates, ug multi-language nga paghubad
+    short: Usa ka set nga himan alang sa mga tapolan
+    sync:
+        flags:
+            template-path: Dalan sa pag-synchronize sa template
+        long: I-synchronize ang configuration gikan sa hilit nga tumoy ug iusa kini ngadto sa lokal nga configuration Ang template file gisuportahan sa samang higayon atol sa pag-synchronize (kon gi-configure)
+        short: I-synchronize ang configuration gikan sa hilit
+    up-mod:
+        flags:
+            goproxy: Ipiho ang adres sa goproxy, kung dili, ang una sa variable sa palibot ang gamiton
+        long: I-update ang dependency nga bersyon sa go.mod file
+        short: I-update ang go.mod nga file
+lang:
+    af: Aprikaans
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Arabiko
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Belarusian
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnian
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsican
+    cs: Czech
+    cy: Welsh
+    da: danish
+    de: Aleman
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Griyego
+    en: English
+    eo: Esperanto
+    es: espanyol
+    et: Estonian
+    eu: basque
+    fa: Persianhon
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: Pransiya
+    fy: Frisian
+    ga: irish
+    gd: Scottish Gaelic
+    gl: Galician
+    gn: Guaraní
+    gom: pinulongang gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: Hebreohanon
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatiano
+    ht: Haitian Creole
+    hu: Hungarian
+    hy: Armenian
+    id: Indonesian
+    ig: Igbo
+    ilo: Ilokano
+    is: Icelandic
+    it: Italyano
+    iw: Hebreohanon
+    ja: Hapon
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: Kazakh
+    km: Cambodian
+    kn: Kannada
+    ko: Koreano
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuanian
+    lus: Mizo
+    lv: Latviano
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedonian
+    ml: Malayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: maltese
+    my: Burmese
+    ne: Nepali
+    nl: Dutch
+    "no": norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: kahamis
+    ps: Pashto
+    pt: Portuges (Portugal, Brazil)
+    qu: Quechua
+    ro: Romaniano
+    ru: Ruso
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slovak
+    sl: slovenian
+    sm: Samoano
+    sn: Shona
+    so: Somali
+    sq: Albaniano
+    sr: Serbiano
+    st: Sesotho
+    su: Sundanese
+    sv: Swedish
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: turkish
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrainiano
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamese
+    xh: tabang nga pinulongan
+    yi: Yiddish
+    yo: yoruba
+    zh: Intsik
+    zh-chs: Intsik (Gisimple)
+    zh-cht: Intsik (Gisimple)
+    zh-cn: Intsik (Gisimple)
+    zh-hk: Intsik (Hong Kong)
+    zh-mo: Intsik(Macau)
+    zh-sg: Intsik (Singapore)
+    zh-tw: tradisyonal nga Intsik)
+    zu: Zulu

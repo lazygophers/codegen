@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Onemogoči navodila za dokončanje
+        long: |
+            Ustvari skript za samodokončanje za {{.RootName}} za navedeno lupino.
+        short: Ustvari skript za samodokončanje za navedeno lupino
+        subcommand:
+            short: Ustvari skript za samodokončanje za {{.Command}}
     flags:
         debug: Izhod podroben dnevnik
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Vse povezane funkcije generiranja tabel za upravljanje virov s stanjem ali statično upravljanje poslovnih storitev
             short: Vse povezane funkcije za generiranje tabel
+    group:
+        gen: ustvarjanje kode
     help:
         additional_commands: Dodatni ukazi
         aliases: vzdevek ukaza
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: da bi dobili podrobnejše informacije
         global_flags: globalni parametri
+        long: 'Pomoč ponuja pomoč za kateri koli ukaz v aplikaciji. '
+        short: Pomoč pri katerem koli ukazu
+        usage: Navodila za uporabo {{.Name}}
         use: uporaba
     i18n:
         long: Zbirka orodij, povezana z večjezično internacionalizacijo
         short: Zbirka orodij, povezana z večjezično internacionalizacijo
+        support:
+            flags:
+                language: Določite jezik za prikaz, sicer bo za prikaz jezika uporabljena koda jezika
+            long: Seznam vseh podprtih jezikov
+            short: Seznam podprtih jezikov
         tran:
             flags:
                 all-language: Prevedi vse podprte jezike (če je res, je zastavica jezikov onemogočena)
@@ -114,3 +132,156 @@ cli:
             short: prevesti
     long: Nabor orodij za lene ljudi, vključno z ogrodjem zaledja, ki temelji na "proto", pogosto uporabljenimi predlogami in prevodom v več jezikov
     short: Set orodij za lenuhe
+    sync:
+        flags:
+            template-path: Pot sinhronizacije predloge
+        long: Sinhronizirajte konfiguracijo z oddaljenega konca in jo združite z lokalno konfiguracijo. Datoteka predloge je podprta hkrati med sinhronizacijo (če je konfigurirana).
+        short: Sinhronizirajte konfiguracijo na daljavo
+    up-mod:
+        flags:
+            goproxy: Določite naslov goproxy, če ne, bo uporabljen prvi v spremenljivki okolja
+        long: Posodobite različico odvisnosti datoteke go.mod
+        short: Posodobite datoteko go.mod
+lang:
+    af: afrikanščina
+    ak: twi (akan)
+    am: amharščina
+    ar: arabsko
+    as: asamski
+    ay: Ajmara
+    az: azerbajdžanski
+    be: beloruski
+    bg: bolgarščina
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalščina
+    bs: bosanski
+    ca: katalonski
+    ceb: Cebuano
+    ckb: kurdščina (sorani)
+    co: korziški
+    cs: češki
+    cy: valižanščina
+    da: danščina
+    de: nemški
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: grški
+    en: angleščina
+    eo: Esperanto
+    es: španski
+    et: estonski
+    eu: baskovščina
+    fa: perzijsko
+    fi: finščina
+    fil: filipinščina (tagalog)
+    fr: francosko
+    fy: frizijščina
+    ga: irski
+    gd: škotska gelščina
+    gl: galicijski
+    gn: Guaraní
+    gom: gonggan jezik
+    gu: gujarati
+    ha: Hausa
+    haw: havajski
+    he: hebrejščina
+    hi: Hindi
+    hmn: Hmong
+    hr: hrvaško
+    ht: haitska kreolščina
+    hu: madžarščina
+    hy: armenski
+    id: indonezijski
+    ig: Igbo
+    ilo: Ilocano
+    is: islandski
+    it: Italijanski
+    iw: hebrejščina
+    ja: japonska
+    jv: javanska
+    jw: javanska
+    ka: gruzijski
+    kk: Kazahstan
+    km: kamboški
+    kn: kanadščina
+    ko: korejščina
+    kri: kreolščina
+    ku: kurdski
+    ky: Kirgiz
+    la: latinščina
+    lb: luksemburški
+    lg: Luganda
+    ln: lingala
+    lo: Lao
+    lt: litovski
+    lus: Mizo
+    lv: latvijščina
+    mai: Maithili
+    mg: malgaški
+    mi: maorski
+    mk: makedonski
+    ml: malajalamščina
+    mn: mongolski
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: malajščina
+    mt: malteški
+    my: birmanski
+    ne: nepalsko
+    nl: nizozemščina
+    "no": norveščina
+    nso: Sepeti
+    ny: Nyanza (chichewa)
+    om: Oromo
+    or: orija (odija)
+    pa: pandžabi
+    pl: poljski
+    ps: paštu
+    pt: portugalščina (Portugalska, Brazilija)
+    qu: kečua
+    ro: romunščina
+    ru: ruski
+    rw: kinjaruandščina
+    sa: sanskrt
+    sd: sindhi
+    si: singalščina
+    sk: slovaški
+    sl: Slovenščina
+    sm: samoanska
+    sn: Shona
+    so: somalski
+    sq: albanski
+    sr: srbsko
+    st: sesoto
+    su: sundanski
+    sv: švedščina
+    sw: svahili
+    ta: tamilski
+    te: telugu
+    tg: tadžikistanski
+    th: tajska
+    ti: Tignan
+    tk: turkmenski
+    tl: tagaloščina (filipinščina)
+    tr: turško
+    ts: Dzonga
+    tt: tatarščina
+    ug: ujgurski
+    uk: ukrajinski
+    ur: urdu
+    uz: Uzbek
+    vi: vietnamski
+    xh: jezik bantu
+    yi: jidiš
+    yo: yoruba
+    zh: kitajski
+    zh-chs: kitajščina (poenostavljena)
+    zh-cht: kitajščina (poenostavljena)
+    zh-cn: kitajščina (poenostavljena)
+    zh-hk: kitajščina (Hong Kong)
+    zh-mo: kitajščina (Makao)
+    zh-sg: kitajščina (Singapur)
+    zh-tw: kitajščina (Tajvan)
+    zu: Zulu

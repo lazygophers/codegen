@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Huwag paganahin ang mga tagubilin sa pagkumpleto
+        long: |
+            Bumubuo ng autocomplete na script para sa {{.RootName}} para sa tinukoy na shell.
+        short: Bumuo ng isang autocomplete na script para sa tinukoy na shell
+        subcommand:
+            short: Bumuo ng autocomplete na script para sa {{.Command}}
     flags:
         debug: Output detalyadong log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Lahat ng kaugnay na function ng pagbuo ng mga talahanayan para sa stateful resource o static na resource management ng mga serbisyo sa negosyo
             short: Lahat ng mga kaugnay na function para sa pagbuo ng mga talahanayan
+    group:
+        gen: pagbuo ng code
     help:
         additional_commands: Mga karagdagang utos
         aliases: utos ng alyas
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: para makakuha ng mas detalyadong impormasyon
         global_flags: pandaigdigang mga parameter
+        long: 'Ang tulong ay nagbibigay ng tulong para sa anumang utos sa application. '
+        short: Tulong sa anumang utos
+        usage: Mga tagubilin sa paggamit ng {{.Name}}
         use: gamitin
     i18n:
         long: Toolkit na nauugnay sa multilingual na internasyonalisasyon
         short: Toolkit na nauugnay sa multilingual na internasyonalisasyon
+        support:
+            flags:
+                language: Tukuyin ang wikang ipapakita, kung hindi ay gagamitin ang code ng wika upang ipakita ang wika
+            long: Ilista ang lahat ng sinusuportahang wika
+            short: Listahan ng suportadong wika
         tran:
             flags:
                 all-language: Isalin ang lahat ng sinusuportahang wika (kung totoo ang flag ng mga wika ay hindi pinagana)
@@ -114,3 +132,156 @@ cli:
             short: Isalin
     long: Isang tool set para sa mga tamad na tao, kabilang ang 'proto'-based na backend framework, karaniwang ginagamit na mga template, at multi-language translation
     short: Isang tool set para sa mga tamad na tao
+    sync:
+        flags:
+            template-path: Path ng pag-synchronize ng template
+        long: I-synchronize ang configuration mula sa remote na dulo at pagsamahin ito sa lokal na configuration Ang file ng template ay sinusuportahan nang sabay-sabay sa panahon ng pag-synchronize (kung naka-configure)
+        short: I-synchronize ang configuration mula sa remote
+    up-mod:
+        flags:
+            goproxy: Tukuyin ang goproxy address, kung hindi, ang una sa environment variable ang gagamitin
+        long: I-update ang dependency na bersyon ng go.mod file
+        short: I-update ang go.mod file
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Arabic
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Belarusian
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnian
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsican
+    cs: Czech
+    cy: Welsh
+    da: danish
+    de: Aleman
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Griyego
+    en: Ingles
+    eo: Esperanto
+    es: espanyol
+    et: Estonian
+    eu: basque
+    fa: Persian
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: Pranses
+    fy: Frisian
+    ga: irish
+    gd: Scottish Gaelic
+    gl: Galician
+    gn: Guaraní
+    gom: wika ng gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: hebreo
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatian
+    ht: Haitian Creole
+    hu: Hungarian
+    hy: Armenian
+    id: Indonesian
+    ig: Igbo
+    ilo: Ilokano
+    is: Icelandic
+    it: Italyano
+    iw: hebreo
+    ja: Hapon
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: Kazakh
+    km: Cambodian
+    kn: Kannada
+    ko: Koreano
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuanian
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedonian
+    ml: Malayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: Maltese
+    my: Burmese
+    ne: Nepali
+    nl: Dutch
+    "no": norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polish
+    ps: Pashto
+    pt: Portuges (Portugal, Brazil)
+    qu: Quechua
+    ro: Romanian
+    ru: Ruso
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slovak
+    sl: slovenian
+    sm: Samoan
+    sn: Shona
+    so: Somali
+    sq: Albaniano
+    sr: Serbian
+    st: Sesotho
+    su: Sundanese
+    sv: Swedish
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: turkish
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrainian
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamese
+    xh: wikang bantu
+    yi: Yiddish
+    yo: yoruba
+    zh: Intsik
+    zh-chs: Chinese (Pinasimple)
+    zh-cht: Chinese (Pinasimple)
+    zh-cn: Chinese (Pinasimple)
+    zh-hk: Chinese (Hong Kong)
+    zh-mo: Chinese(Macau)
+    zh-sg: Chinese (Singapore)
+    zh-tw: Chinese (Taiwan)
+    zu: Zulu

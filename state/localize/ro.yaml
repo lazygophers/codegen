@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Dezactivați instrucțiunile de finalizare
+        long: |
+            Generează un script de autocompletare pentru {{.RootName}} pentru shell-ul specificat.
+        short: Generați un script de autocompletare pentru shell-ul specificat
+        subcommand:
+            short: Generați un script de completare automată pentru {{.Command}}
     flags:
         debug: Ieșire jurnal detaliat
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Toate funcțiile conexe de generare a tabelelor pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
             short: Toate funcțiile conexe pentru generarea tabelelor
+    group:
+        gen: generarea codului
     help:
         additional_commands: Comenzi suplimentare
         aliases: alias de comandă
@@ -94,10 +104,18 @@ cli:
         flags: parametru
         get_info: pentru a obține informații mai detaliate
         global_flags: parametri globali
+        long: 'Ajutor oferă ajutor pentru orice comandă din aplicație. '
+        short: Ajutor la orice comandă
+        usage: Instrucțiuni pentru utilizarea {{.Name}}
         use: utilizare
     i18n:
         long: Setul de instrumente pentru internaționalizare multilingvă
         short: Setul de instrumente pentru internaționalizare multilingvă
+        support:
+            flags:
+                language: Specificați limba de afișat, altfel codul de limbă va fi folosit pentru afișarea limbii
+            long: Listați toate limbile acceptate
+            short: Lista de limbi acceptate
         tran:
             flags:
                 all-language: Traduceți toate limbile acceptate (dacă este adevărat, indicatorul de limbi este dezactivat)
@@ -114,3 +132,156 @@ cli:
             short: Traduceți
     long: Un set de instrumente pentru oameni leneși, inclusiv un cadru backend bazat pe „proto”, șabloane utilizate în mod obișnuit și traducere în mai multe limbi
     short: Un set de instrumente pentru leneși
+    sync:
+        flags:
+            template-path: Calea de sincronizare a șablonului
+        long: Sincronizați configurația de la distanță și îmbinați-o în configurația locală Fișierul șablon este acceptat în același timp în timpul sincronizării (dacă este configurat).
+        short: Sincronizați configurația de la distanță
+    up-mod:
+        flags:
+            goproxy: Specificați adresa goproxy, dacă nu, va fi folosită prima din variabila de mediu
+        long: Actualizați versiunea de dependență a fișierului go.mod
+        short: Actualizați fișierul go.mod
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: amharică
+    ar: arabic
+    as: assameză
+    ay: Aymara
+    az: Azerbaidjan
+    be: Belarus
+    bg: bulgară
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengaleză
+    bs: Bosniac
+    ca: catalan
+    ceb: Cebuano
+    ckb: kurdă (sorani)
+    co: corsicană
+    cs: ceh
+    cy: galeză
+    da: danez
+    de: limba germana
+    doi: dogglai
+    dv: Dhivehi
+    ee: Oaie
+    el: greacă
+    en: Engleză
+    eo: esperanto
+    es: Spaniolă
+    et: estonă
+    eu: basca
+    fa: persană
+    fi: finlandeză
+    fil: filipineză (tagalog)
+    fr: limba franceza
+    fy: frizonă
+    ga: irlandez
+    gd: gaelic scoțian
+    gl: Galician
+    gn: Guaraní
+    gom: limba gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: ebraică
+    hi: hindi
+    hmn: Hmong
+    hr: croat
+    ht: creolul haitian
+    hu: maghiară
+    hy: armean
+    id: indoneziană
+    ig: Igbo
+    ilo: Ilocano
+    is: islandez
+    it: Italiană
+    iw: ebraică
+    ja: japonez
+    jv: javaneză
+    jw: javaneză
+    ka: georgian
+    kk: kazah
+    km: cambodgian
+    kn: Kannada
+    ko: coreeană
+    kri: creol
+    ku: kurdă
+    ky: Kârgâz
+    la: latin
+    lb: luxemburghez
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: lituanian
+    lus: Mizo
+    lv: letonă
+    mai: Maithili
+    mg: malgaș
+    mi: maori
+    mk: macedonean
+    ml: Malayalam
+    mn: mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malaeză
+    mt: malteză
+    my: birmanez
+    ne: nepaleză
+    nl: olandeză
+    "no": norvegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Lustrui
+    ps: Pashto
+    pt: portugheză (Portugalia, Brazilia)
+    qu: quechua
+    ro: Română
+    ru: Rusă
+    rw: kinyarwanda
+    sa: sanscrit
+    sd: sindhi
+    si: sinhala
+    sk: slovacă
+    sl: slovenă
+    sm: Samoan
+    sn: Shona
+    so: somalez
+    sq: albanez
+    sr: sârb
+    st: Sesotho
+    su: Sundaneza
+    sv: suedez
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tadjik
+    th: thailandeză
+    ti: Tignan
+    tk: turkmeni
+    tl: Tagalog (filipineză)
+    tr: turc
+    ts: Dzonga
+    tt: tătar
+    ug: Uighur
+    uk: ucrainean
+    ur: Urdu
+    uz: uzbec
+    vi: vietnamez
+    xh: limba bantu
+    yi: idiş
+    yo: yoruba
+    zh: chinez
+    zh-chs: Chineză simplificată)
+    zh-cht: Chineză simplificată)
+    zh-cn: Chineză simplificată)
+    zh-hk: Chineză (Hong Kong)
+    zh-mo: Chineză (Macao)
+    zh-sg: Chineză (Singapore)
+    zh-tw: chineză tradițională)
+    zu: Zulu

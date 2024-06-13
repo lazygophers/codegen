@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Utskeakelje foltôging ynstruksjes
+        long: |
+            Genereart in autofolje-skript foar {{.RootName}} foar de oantsjutte shell.
+        short: Generearje in autofolje-skript foar de opjûne shell
+        subcommand:
+            short: Generearje autofolje skript foar {{.Command}}
     flags:
         debug: Utfier detaillearre log
     gen:
@@ -35,13 +43,13 @@ cli:
             input: Spesifisearje it .proto-boarnebestân dat oanmakke wurde moat
             output-path: Dizze opsje kin konfigurearre wurde as it paad fan go_package konfigurearre yn 'e .proto-bestân ynkonsistint is mei it roadbed dat eins oanmakke wurde moat.
             overwrite: Foar ynhâld dy't net wurde regenerearre, twingt oerskriuwen fan besteande ynhâld
-            proto-files: Om oare .proto-bestannen/mappaden te ymportearjen dy't net yn deselde map binne as de oantsjutte .proto-bestân, is dizze operaasje in opsje om it konfiguraasjefjild yn it konfiguraasjetriem te oerskriuwen.
-            protoc: '`protoc` oanpasber bestânspaad'
+            proto-files: Om oare .proto-bestannen/mappaden te ymportearjen dy't net yn deselde map steane as de oantsjutte .proto-bestân, is dizze operaasje in opsje om it konfiguraasjefjild yn it konfiguraasjetriem te oerskriuwen.
+            protoc: '`protoc` oanpasbere triempaad'
             protoc-gen-go: '`protoc-gen-go` plugin paad'
             tables-enable_field_created_at: Of de standertkonfiguraasjegeneraasje fan it fjild oanmakke_at-database ynskeakelje moat
             tables-enable_field_deleted_at: Of de standertynstelling fan it fjild deleted_at yn 'e databank ynskeakelje moat
             tables-enable_field_id: Ynskeakelje standert konfiguraasje generaasje foar database-relatearre fjilden
-            tables-enable_field_updated_at: Of de standertwearde fan it updated_at-fjild yn 'e databank ynskeakelje moat
+            tables-enable_field_updated_at: Of de standertwearde fan it fjild updated_at yn 'e databank ynskeakelje moat
             tables-enable_gorm_tag_column: Oft te ynskeakeljen database-relatearre gorm generaasje
         gitignote:
             long: Generearje .gitignore-bestannen foar negearre triembehear yn ferzjekontrôle
@@ -58,7 +66,7 @@ cli:
         long: Koadegenerator, stipet meardere sjabloanen
         makefile:
             long: Generearje Makefile-bestannen foar it bouwen fan ark en oare relatearre kommando's
-            short: Generearje Makefile
+            short: Makefile generearje
         mod:
             long: Generearje go.mod-bestân foar ôfhinklikensbehear
             short: Generearje go.mod triem
@@ -68,7 +76,7 @@ cli:
         short: Koade generator
         state:
             conf:
-                long: Generearje konfiguraasjetriemlêskoade foar lêzing fan konfiguraasje foar saaklike tsjinst
+                long: Generearje konfiguraasjetriemlêskoade foar konfiguraasjelêzing foar saaklike tsjinst
                 short: Generearje konfiguraasjetriem lêskoade
             flags:
                 cache: Oft cache-relatearre generaasje ynskeakelje moat
@@ -86,6 +94,8 @@ cli:
         table:
             long: Alle besibbe funksjes fan it generearjen fan tabellen foar stateful boarne of statyske boarne behear fan saaklike tsjinsten
             short: Alle relatearre funksjes foar it generearjen fan tabellen
+    group:
+        gen: koade generaasje
     help:
         additional_commands: Oanfoljende kommando's
         aliases: kommando alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: om mear detaillearre ynformaasje te krijen
         global_flags: globale parameters
+        long: 'Jou gebrûksynstruksjes foar elk kommando yn ''e applikaasje. '
+        short: Ynstruksjes foar it brûken fan elk kommando
+        usage: Ynstruksjes foar it brûken fan {{.Name}}
         use: brûke
     i18n:
         long: Meartalige ynternasjonalisearring relatearre toolkit
         short: Meartalige ynternasjonalisearring relatearre toolkit
+        support:
+            flags:
+                language: Spesifisearje de taal dy't werjûn wurdt, oars sil de taalkoade brûkt wurde om de taal wer te jaan
+            long: List alle stipe talen
+            short: Stipe taallist
         tran:
             flags:
                 all-language: Oersette alle stipe talen (as wier is de talenflagge útskeakele)
@@ -114,3 +132,156 @@ cli:
             short: oersette
     long: In ark set foar luie minsken, ynklusyf 'proto'-basearre backend framework, gewoan brûkte sjabloanen, en meartalige oersetting
     short: In ark set foar luie minsken
+    sync:
+        flags:
+            template-path: Template syngronisaasje paad
+        long: Syngronisearje de konfiguraasje fanôf it ein fan 'e ôfstân en fusearje it yn' e lokale konfiguraasje.
+        short: Syngronisearje konfiguraasje fan ôfstân
+    up-mod:
+        flags:
+            goproxy: Spesifisearje it goproxy-adres, as net, sil de earste yn 'e omjouwingsfariabele wurde brûkt
+        long: Update de ôfhinklikensferzje fan it go.mod-bestân
+        short: Update go.mod triem
+lang:
+    af: Afrikaansk
+    ak: Twi (Akan)
+    am: Amhaarsk
+    ar: Arabysk
+    as: Assameesk
+    ay: Aymara
+    az: Azerbeidzjaansk
+    be: Wytrussysk
+    bg: Bulgaarsk
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengaalsk
+    bs: Bosnysk
+    ca: Katalaansk
+    ceb: Cebuano
+    ckb: Koerdysk (Sorani)
+    co: Korsikaansk
+    cs: Tsjechysk
+    cy: Welsh
+    da: Deensk
+    de: Dútsk
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Gryksk
+    en: Ingelsk
+    eo: Esperanto
+    es: Spaansk
+    et: Estysk
+    eu: Baskysk
+    fa: Perzysk
+    fi: Finsk
+    fil: Filipynsk (Tagalog)
+    fr: Frânsk
+    fy: Frysk
+    ga: Iersk
+    gd: Skotsk Gaelic
+    gl: Galyskysk
+    gn: Guaraní
+    gom: gonggan taal
+    gu: Gujaratysk
+    ha: Hausa
+    haw: Hawaïaansk
+    he: Hebrieuwsk
+    hi: Hindoestaansk
+    hmn: Hmong
+    hr: Kroatysk
+    ht: Haïtiaansk Kreaolsk
+    hu: Hongaarsk
+    hy: Armeensk
+    id: Yndonesysk
+    ig: Igbo
+    ilo: Ilocano
+    is: Yslânsk
+    it: Italiaansk
+    iw: Hebrieuwsk
+    ja: Japansk
+    jv: Javaansk
+    jw: Javaansk
+    ka: Georgysk
+    kk: Kazachsk
+    km: Kambodjaansk
+    kn: Kannada
+    ko: Koreaansk
+    kri: Kreoalsk
+    ku: Koerdysk
+    ky: Kirgizysk
+    la: Latyn
+    lb: Lúksemboarchsk
+    lg: Luganda
+    ln: Lingala
+    lo: Laotjaansk
+    lt: Litousk
+    lus: Mizo
+    lv: Letsk
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Masedoanysk
+    ml: Malayalam
+    mn: Mongoalsk
+    mni-mtei: Meitei (Manipuri)
+    mr: Maratysk
+    ms: Maleisk
+    mt: Malteesk
+    my: Birmaansk
+    ne: Nepaleesk
+    nl: Nederlânsk
+    "no": Noarsk
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Pûndjaabsk
+    pl: Poalsk
+    ps: Pashtu
+    pt: Portugeesk (Portugal, Brazylje)
+    qu: Quechua
+    ro: Roemeensk
+    ru: Russysk
+    rw: Kinyarwanda
+    sa: Sanskryt
+    sd: Sindysk
+    si: sinhala
+    sk: Slowaaksk
+    sl: Sloveensk
+    sm: Samoan
+    sn: Shona
+    so: Somalysk
+    sq: Albaneesk
+    sr: Servysk
+    st: Sesotho
+    su: Soendaneesk
+    sv: Sweedsk
+    sw: Swahily
+    ta: Tamyl
+    te: Telugu
+    tg: Tajik
+    th: Taisk
+    ti: Tignan
+    tk: Turkmeensk
+    tl: Tagalog (Filipynsk)
+    tr: turkish
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Oekraynsk
+    ur: Urdu
+    uz: Uzbek
+    vi: Fietnameesk
+    xh: bantu taal
+    yi: Jiddysk
+    yo: yoruba
+    zh: Sineesk
+    zh-chs: Sineesk (ferfâldige)
+    zh-cht: Sineesk (ferfâldige)
+    zh-cn: Sineesk (ferfâldige)
+    zh-hk: Sineesk (Hong Kong)
+    zh-mo: Sineesk (Macau)
+    zh-sg: Sineesk (Singapore)
+    zh-tw: tradisjoneel Sineesk)
+    zu: Zulu

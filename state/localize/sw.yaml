@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Zima maagizo ya kukamilisha
+        long: |
+            Huzalisha hati ya kukamilisha kiotomatiki ya {{.RootName}} kwa ganda lililobainishwa.
+        short: Tengeneza hati ya kukamilisha kiotomatiki kwa ganda lililobainishwa
+        subcommand:
+            short: Tengeneza hati ya kukamilisha kiotomatiki ya {{.Command}}
     flags:
         debug: Logi ya kina ya pato
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Kazi zote zinazohusiana za kutengeneza majedwali kwa rasilimali ya hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
             short: Vitendaji vyote vinavyohusiana vya kutengeneza jedwali
+    group:
+        gen: utengenezaji wa kanuni
     help:
         additional_commands: Amri za ziada
         aliases: amri jina lak
@@ -94,10 +104,18 @@ cli:
         flags: kigezo
         get_info: ili kupata taarifa za kina zaidi
         global_flags: vigezo vya kimataifa
+        long: 'Msaada hutoa msaada kwa amri yoyote katika programu. '
+        short: Msaada kwa amri yoyote
+        usage: Maagizo ya kutumia {{.Name}}
         use: kutumia
     i18n:
         long: Zana zinazohusiana na utandawazishaji wa lugha nyingi
         short: Zana zinazohusiana na utandawazishaji wa lugha nyingi
+        support:
+            flags:
+                language: Bainisha lugha ya kuonyesha, vinginevyo msimbo wa lugha utatumika kuonyesha lugha
+            long: Orodhesha lugha zote zinazotumika
+            short: Orodha ya lugha inayotumika
         tran:
             flags:
                 all-language: Tafsiri lugha zote zinazotumika (ikiwa ni kweli bendera ya lugha imezimwa)
@@ -114,3 +132,156 @@ cli:
             short: kutafsiri
     long: Zana iliyowekwa kwa ajili ya watu wavivu, ikiwa ni pamoja na 'proto'-msingi mfumo wa nyuma, violezo vinavyotumika sana, na tafsiri ya lugha nyingi.
     short: Chombo kilichowekwa kwa watu wavivu
+    sync:
+        flags:
+            template-path: Njia ya ulandanishi wa kiolezo
+        long: Sawazisha usanidi kutoka mwisho wa mbali na uunganishe kwenye usanidi wa ndani Faili ya kiolezo inaauniwa wakati huo huo wakati wa ulandanishi (ikiwa imesanidiwa).
+        short: Sawazisha usanidi kutoka kwa mbali
+    up-mod:
+        flags:
+            goproxy: Bainisha anwani ya goproksi, ikiwa sivyo, ya kwanza katika utofauti wa mazingira itatumika
+        long: Sasisha toleo la utegemezi la faili ya go.mod
+        short: Sasisha faili ya go.mod
+lang:
+    af: Kiafrikana
+    ak: Kitwi (Akan)
+    am: Kiamhari
+    ar: Kiarabu
+    as: Kiassamese
+    ay: Aymara
+    az: Kiazabajani
+    be: Kibelarusi
+    bg: Kibulgaria
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Kibengali
+    bs: Kibosnia
+    ca: Kikatalani
+    ceb: Cebuano
+    ckb: Kikurdi (Sorani)
+    co: Kikosikani
+    cs: Kicheki
+    cy: Kiwelisi
+    da: danish
+    de: Kijerumani
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Kigiriki
+    en: Kiingereza
+    eo: Kiesperanto
+    es: Kihispania
+    et: Kiestonia
+    eu: basque
+    fa: Kiajemi
+    fi: Kifini
+    fil: Kifilipino (Tagalog)
+    fr: Kifaransa
+    fy: Kifrisia
+    ga: irish
+    gd: Kigaeli cha Kiskoti
+    gl: Kigalisia
+    gn: Guarani
+    gom: lugha ya gonggan
+    gu: Kigujarati
+    ha: Kihausa
+    haw: Kihawai
+    he: Kiebrania
+    hi: Kihindi
+    hmn: Hmong
+    hr: Kikroeshia
+    ht: Krioli ya Haiti
+    hu: Kihungaria
+    hy: Kiarmenia
+    id: Kiindonesia
+    ig: Kiigbo
+    ilo: Ilocano
+    is: Kiaislandi
+    it: Kiitaliano
+    iw: Kiebrania
+    ja: Kijapani
+    jv: Kijava
+    jw: Kijava
+    ka: Kijojiajia
+    kk: Kazakh
+    km: Kikambodia
+    kn: Kikanada
+    ko: Kikorea
+    kri: Krioli
+    ku: Kikurdi
+    ky: Kirigizi
+    la: Kilatini
+    lb: Kilasembagi
+    lg: Luganda
+    ln: Kilingala
+    lo: Lao
+    lt: Kilithuania
+    lus: Mizo
+    lv: Kilatvia
+    mai: Maithili
+    mg: Kimalagasi
+    mi: Kimaori
+    mk: Kimasedonia
+    ml: Kimalayalam
+    mn: Kimongolia
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Kimalei
+    mt: Kimalta
+    my: Kiburma
+    ne: Kinepali
+    nl: Kiholanzi
+    "no": wa Norway
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Kipunjabi
+    pl: Kipolandi
+    ps: Kipashto
+    pt: Kireno (Ureno, Brazili)
+    qu: Kiquechua
+    ro: Kiromania
+    ru: Kirusi
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Kislovakia
+    sl: Kislovenia
+    sm: Kisamoa
+    sn: Kishona
+    so: Msomali
+    sq: Kialbeni
+    sr: Kiserbia
+    st: Kisotho
+    su: Kisunda
+    sv: Kiswidi
+    sw: kiswahili
+    ta: tamil
+    te: telugu
+    tg: Tajiki
+    th: Thai
+    ti: Tignan
+    tk: Waturukimeni
+    tl: Kitagalogi (Kifilipino)
+    tr: Kituruki
+    ts: Dzonga
+    tt: Kitatari
+    ug: Uighur
+    uk: Kiukreni
+    ur: Kiurdu
+    uz: Kiuzbeki
+    vi: Kivietinamu
+    xh: lugha ya kibantu
+    yi: Kiyidi
+    yo: yoruba
+    zh: Kichina
+    zh-chs: Kichina (Kilichorahisishwa)
+    zh-cht: Kichina (Kilichorahisishwa)
+    zh-cn: Kichina (Kilichorahisishwa)
+    zh-hk: Kichina (Hong Kong)
+    zh-mo: Kichina (Macau)
+    zh-sg: Kichina (Singapore)
+    zh-tw: Kichina (Taiwani)
+    zu: Kizulu

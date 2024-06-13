@@ -50,9 +50,11 @@ func Run() {
 
 	rootCmd.PersistentFlags().BoolP("debug", "d", false, state.Localize(state.I18nTagCliFlagsDebug))
 
-	initHelper()
 	gen.Load(rootCmd)
 	i18n.Load(rootCmd)
+	initSync()
+
+	initDefault()
 
 	err = rootCmd.Execute()
 	if err != nil {

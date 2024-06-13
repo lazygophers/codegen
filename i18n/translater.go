@@ -5,8 +5,11 @@ import (
 	"github.com/go-resty/resty/v2"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
+	"github.com/lazygophers/utils/fake"
+	"github.com/pterm/pterm"
 	"golang.org/x/text/language"
 	"io"
+	"net/http"
 	"os"
 	"strings"
 	"time"
@@ -119,6 +122,12 @@ func NewTransacterGoogleFree() *TransacterGoogleFree {
 			SetRetryCount(3).
 			SetHeaders(map[string]string{
 				"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
+				"Keep-Alive": "5",
+			}).
+			OnBeforeRequest(func(client *resty.Client, request *resty.Request) error {
+				request.SetCookie(&http.Cookie{})
+				request.SetHeader("User-Agent", fake.RandomUserAgent())
+				return nil
 			}).
 			SetProxy(os.Getenv("HTTPS_PROXY")).
 			SetQueryParams(map[string]string{
@@ -136,8 +145,10 @@ func NewTransacterGoogleFree() *TransacterGoogleFree {
 				case 200:
 					return false
 				case 429:
-					log.Warnf("google request too quick, wait 1m before retrying")
-					time.Sleep(time.Minute)
+					wait := time.Duration(response.Request.Attempt) * time.Second * 30
+					pterm.Warning.Printfln("google request too quick, wait %s before retrying", wait)
+					log.Warnf("google request too quick, wait %s before retrying", wait)
+					time.Sleep(wait)
 					return true
 
 				default:
@@ -317,6 +328,11 @@ func NewTransacterDeeplFree() *TransacterDeeplFree {
 				"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
 				"Origin":     "https://www.deepl.com/",
 				"Host":       "www2.deepl.com",
+			}).
+			OnBeforeRequest(func(client *resty.Client, request *resty.Request) error {
+				request.SetCookie(&http.Cookie{})
+				request.SetHeader("User-Agent", fake.RandomUserAgent())
+				return nil
 			}).
 			AddRetryCondition(func(response *resty.Response, err error) bool {
 				if err != nil {

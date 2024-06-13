@@ -14,6 +14,8 @@ import (
 	"strings"
 )
 
+const GroupGen = "gen"
+
 var pb *codegen.PbPackage
 
 var genCmd = &cobra.Command{
@@ -36,6 +38,7 @@ var genCmd = &cobra.Command{
 
 		protoFile, err := getPbFile(cmd)
 		if err != nil {
+			pterm.Error.Printfln("proto file not found,try use -i argument")
 			log.Errorf("err:%v", err)
 			return err
 		}
@@ -103,7 +106,6 @@ func getPbFile(cmd *cobra.Command) (string, error) {
 		}
 	}
 
-	pterm.Error.Printfln("proto file not found,try use -i argument")
 	return "", errors.New("proto file not found")
 }
 
@@ -150,9 +152,9 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 	}
 }
 
-func Load(rootCmd *cobra.Command) {
-	rootCmd.Short = state.Localize(state.I18nTagCliGenShort)
-	rootCmd.Long = state.Localize(state.I18nTagCliGenLong)
+func initGen() {
+	genCmd.Short = state.Localize(state.I18nTagCliGenShort)
+	genCmd.Long = state.Localize(state.I18nTagCliGenLong)
 
 	genCmd.PersistentFlags().String("protoc", state.Config.ProtocPath, state.Localize(state.I18nTagCliGenFlagsProtoc))
 	genCmd.PersistentFlags().String("protoc-gen-go", state.Config.ProtoGenGoPath, state.Localize(state.I18nTagCliGenFlagsProtocGenGo))
@@ -189,5 +191,12 @@ func Load(rootCmd *cobra.Command) {
 	initTable()
 	initI18n()
 
+}
+
+func Load(rootCmd *cobra.Command) {
+	initUpmod()
+	initGen()
+
+	rootCmd.AddCommand(upModCmd)
 	rootCmd.AddCommand(genCmd)
 }

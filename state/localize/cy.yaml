@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Analluogi cyfarwyddiadau cwblhau
+        long: |
+            Yn cynhyrchu sgript awtolenwi ar gyfer {{.RootName}} ar gyfer y plisgyn penodedig.
+        short: Cynhyrchu sgript awtolenwi ar gyfer y plisgyn penodedig
+        subcommand:
+            short: Cynhyrchu sgript awtolenwi ar gyfer {{.Command}}
     flags:
         debug: Log manwl allbwn
     gen:
@@ -78,7 +86,7 @@ cli:
             i18n:
                 long: Cynhyrchu cod cysylltiedig i18n ar gyfer galwadau rhyngwladol aml-iaith
                 short: Cynhyrchu cod cysylltiedig i18n
-            long: Cynhyrchu holl swyddogaethau cysylltiedig y wladwriaeth ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
+            long: Cynhyrchu holl swyddogaethau cysylltiedig y wladwriaeth ar gyfer rheoli adnoddau statig neu adnoddau statig gwasanaethau busnes
             short: Pob swyddogaeth berthnasol ar gyfer cynhyrchu cyflwr
             table:
                 long: Cynhyrchu cod cysylltiedig â state.table, a ddefnyddir ar gyfer cysylltiad cronfa ddata a chychwyn tablau pan fydd y gwasanaeth yn dechrau.
@@ -86,6 +94,8 @@ cli:
         table:
             long: Holl swyddogaethau cysylltiedig tablau cynhyrchu ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
             short: Pob swyddogaeth gysylltiedig ar gyfer cynhyrchu tablau
+    group:
+        gen: cynhyrchu cod
     help:
         additional_commands: Gorchmynion ychwanegol
         aliases: alias gorchymyn
@@ -94,10 +104,18 @@ cli:
         flags: paramedr
         get_info: i gael gwybodaeth fanylach
         global_flags: paramedrau byd-eang
+        long: 'Rhowch gyfarwyddiadau defnydd ar gyfer unrhyw orchymyn yn y cais. '
+        short: Cyfarwyddiadau ar gyfer defnyddio unrhyw orchymyn
+        usage: Cyfarwyddiadau ar gyfer defnyddio {{.Name}}
         use: defnydd
     i18n:
         long: Pecyn cymorth rhyngwladoli amlieithog
         short: Pecyn cymorth rhyngwladoli amlieithog
+        support:
+            flags:
+                language: Nodwch yr iaith i'w harddangos, fel arall bydd y cod iaith yn cael ei ddefnyddio i ddangos yr iaith
+            long: Rhestrwch yr holl ieithoedd a gefnogir
+            short: Rhestr iaith a gefnogir
         tran:
             flags:
                 all-language: Cyfieithwch yr holl ieithoedd a gefnogir (os yn wir mae baner yr ieithoedd wedi'i hanalluogi)
@@ -114,3 +132,156 @@ cli:
             short: cyfieithu
     long: Set offer ar gyfer pobl ddiog, gan gynnwys fframwaith ôl-wyneb seiliedig ar 'proto', templedi a ddefnyddir yn gyffredin, a chyfieithu aml-iaith
     short: Set offer ar gyfer pobl ddiog
+    sync:
+        flags:
+            template-path: Llwybr cydamseru templed
+        long: Cydamserwch y ffurfweddiad o'r pen pell a'i gyfuno â'r ffurfweddiad lleol. Cefnogir y ffeil templed ar yr un pryd yn ystod cydamseru (os yw wedi'i ffurfweddu)
+        short: Cydamseru cyfluniad o bell
+    up-mod:
+        flags:
+            goproxy: Nodwch y cyfeiriad goprocsi, os na, bydd yr un cyntaf yn y newidyn amgylchedd yn cael ei ddefnyddio
+        long: Diweddaru'r fersiwn dibyniaeth o'r ffeil go.mod
+        short: Diweddaru ffeil go.mod
+lang:
+    af: Affricaneg
+    ak: Twi (Acan)
+    am: Amhareg
+    ar: Arabeg
+    as: Asameg
+    ay: Aimara
+    az: Azerbaijani
+    be: Belarwseg
+    bg: Bwlgareg
+    bho: Bhojpuri
+    bm: Bambar
+    bn: Bengali
+    bs: Bosnieg
+    ca: Catalaneg
+    ceb: Cebuano
+    ckb: Cwrdeg (Sorani)
+    co: Corseg
+    cs: Tsiec
+    cy: Cymraeg
+    da: daneg
+    de: Almaeneg
+    doi: dogglai
+    dv: Difehi
+    ee: Ewe
+    el: Groeg
+    en: Saesneg
+    eo: Esperanto
+    es: Sbaeneg
+    et: Estoneg
+    eu: basged
+    fa: Perseg
+    fi: Ffinneg
+    fil: Ffilipinaidd (Tagalog)
+    fr: Ffrangeg
+    fy: Ffriseg
+    ga: gwyddelig
+    gd: Gaeleg yr Alban
+    gl: Galiseg
+    gn: Gwaraní
+    gom: iaith gonggan
+    gu: Gujarci
+    ha: Hawsa
+    haw: Hawäiaidd
+    he: hebraeg
+    hi: Hindi
+    hmn: Hmong
+    hr: Croateg
+    ht: Creol Haitaidd
+    hu: uda
+    hy: Armenaidd
+    id: Indoneseg
+    ig: Igbo
+    ilo: Ilocano
+    is: Islandeg
+    it: Eidaleg
+    iw: hebraeg
+    ja: Japaneaidd
+    jv: Jafaneg
+    jw: Jafaneg
+    ka: Sioraidd
+    kk: Kazakh
+    km: Cambodia
+    kn: Kannada
+    ko: Corëeg
+    kri: Creol
+    ku: Cwrdaidd
+    ky: Kyrgyz
+    la: Lladin
+    lb: Lwcsembwrgaidd
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithwaneg
+    lus: Mizo
+    lv: Latfieg
+    mai: Maithili
+    mg: Malagaseg
+    mi: Maori
+    mk: Macedonaidd
+    ml: Malayalam
+    mn: Mongoleg
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Maleieg
+    mt: plisteg
+    my: Byrmaneg
+    ne: Nepali
+    nl: Iseldireg
+    "no": Norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: pwnjabi
+    pl: Pwyleg
+    ps: Pashto
+    pt: Portiwgaleg (Portiwgal, Brasil)
+    qu: Cetshwa
+    ro: Rwmania
+    ru: Rwsieg
+    rw: Kinyarwanda
+    sa: Sansgrit
+    sd: sindhi
+    si: sinhala
+    sk: Slofaceg
+    sl: slofen
+    sm: Samoaidd
+    sn: Shona
+    so: Somalïaidd
+    sq: Albaneg
+    sr: Serbeg
+    st: Sesotho
+    su: Sundanaidd
+    sv: Swedeg
+    sw: Swahili
+    ta: tamil
+    te: teuleg
+    tg: Tajiceg
+    th: Thai
+    ti: Tignan
+    tk: Tyrcmeniaid
+    tl: Tagalog (Ffilipinaidd)
+    tr: Twrceg
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Wcrain
+    ur: Wrdw
+    uz: Wsbeceg
+    vi: Fietnameg
+    xh: iaith bantu
+    yi: Iddeweg
+    yo: iorwba
+    zh: Tseiniaidd
+    zh-chs: Tsieinëeg (Syml)
+    zh-cht: Tsieinëeg (Syml)
+    zh-cn: Tsieinëeg (Syml)
+    zh-hk: Tsieinëeg (Hong Kong)
+    zh-mo: Tsieinëeg (Macau)
+    zh-sg: Tsieinëeg (Singapôr)
+    zh-tw: Tsieineaidd traddodiadol)
+    zu: Zwlw

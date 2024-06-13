@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Disable completion instructions
+        long: |
+            Generates an autocomplete script for {{.RootName}} for the specified shell.
+        short: Generate an autocomplete script for the specified shell
+        subcommand:
+            short: Generate autocomplete script for {{.Command}}
     flags:
         debug: Output detailed log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: All related functions of generating tables for stateful resource or static resource management of business services
             short: All related functions for generating tables
+    group:
+        gen: code generation
     help:
         additional_commands: Additional commands
         aliases: command alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: to get more detailed information
         global_flags: global parameters
+        long: 'Provide usage instructions for any command in the application. '
+        short: Instructions for using any command
+        usage: Instructions for using {{.Name}}
         use: use
     i18n:
         long: Multilingual internationalization related toolkit
         short: Multilingual internationalization related toolkit
+        support:
+            flags:
+                language: Specify the language to display, otherwise the language code will be used to display the language
+            long: List all supported languages
+            short: Supported language list
         tran:
             flags:
                 all-language: Translate all supported languages ​​(if true the languages ​​flag is disabled)
@@ -114,3 +132,156 @@ cli:
             short: translate
     long: A tool set for lazy people, including 'proto'-based backend framework, commonly used templates, and multi-language translation
     short: A tool set for lazy people
+    sync:
+        flags:
+            template-path: Template synchronization path
+        long: Synchronize the configuration from the remote end and merge it into the local configuration. The template file is supported at the same time during synchronization (if configured)
+        short: Synchronize configuration from remote
+    up-mod:
+        flags:
+            goproxy: Specify the goproxy address, if not, the first one in the environment variable will be used
+        long: Update the dependency version of the go.mod file
+        short: Update go.mod file
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Arabic
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Belarusian
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnian
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsican
+    cs: Czech
+    cy: Welsh
+    da: danish
+    de: German
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Greek
+    en: English
+    eo: Esperanto
+    es: spanish
+    et: Estonian
+    eu: basque
+    fa: Persian
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: French
+    fy: Frisian
+    ga: irish
+    gd: Scottish Gaelic
+    gl: Galician
+    gn: Guaraní
+    gom: gonggan language
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: hebrew
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatian
+    ht: Haitian Creole
+    hu: hungarian
+    hy: Armenian
+    id: Indonesian
+    ig: Igbo
+    ilo: Ilocano
+    is: Icelandic
+    it: Italian
+    iw: hebrew
+    ja: Japanese
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: Kazakh
+    km: Cambodian
+    kn: Kannada
+    ko: Korean
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuanian
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedonian
+    ml: Malayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: maltese
+    my: Burmese
+    ne: Nepali
+    nl: Dutch
+    "no": norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polish
+    ps: Pashto
+    pt: Portuguese (Portugal, Brazil)
+    qu: Quechua
+    ro: Romanian
+    ru: Russian
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slovak
+    sl: slovenian
+    sm: Samoan
+    sn: Shona
+    so: Somali
+    sq: Albanian
+    sr: Serbian
+    st: Sesotho
+    su: Sundanese
+    sv: Swedish
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: turkish
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrainian
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamese
+    xh: bantu language
+    yi: Yiddish
+    yo: yoruba
+    zh: Chinese
+    zh-chs: Chinese (Simplified)
+    zh-cht: Chinese (Simplified)
+    zh-cn: Chinese (Simplified)
+    zh-hk: Chinese (Hong Kong)
+    zh-mo: Chinese(Macau)
+    zh-sg: Chinese (Singapore)
+    zh-tw: traditional Chinese)
+    zu: Zulu

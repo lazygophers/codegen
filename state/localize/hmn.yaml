@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Disable ua tiav cov lus qhia
+        long: |
+            Tsim ib tsab ntawv autocomplete rau {{.RootName}} rau lub plhaub tau teev tseg.
+        short: Tsim ib tsab ntawv autocomplete rau lub plhaub uas tau teev tseg
+        subcommand:
+            short: Tsim autocomplete tsab ntawv rau {{.Command}}
     flags:
         debug: Cov ntaub ntawv qhia ntxaws
     gen:
@@ -33,13 +41,13 @@ cli:
             add-proto-files: Yog tias koj xav tau import lwm .proto cov ntaub ntawv/folder txoj hauv kev uas tsis nyob hauv tib lub nplaub tshev raws li cov ntaub ntawv .proto tau teev tseg, qhov haujlwm no yuav ntxiv (tsis sau dhau) txoj hauv kev teeb tsa hauv cov ntaub ntawv teeb tsa.
             go-module-prefix: Rau txoj kev ntawm go_package teeb tsa hauv .proto cov ntaub ntawv thiab qhov tseeb, koj tuaj yeem teeb tsa qhov kev xaiv no
             input: Qhia meej cov ntaub ntawv .proto qhov yuav tsum tau tsim
-            output-path: Qhov kev xaiv no tuaj yeem teeb tsa thaum txoj hauv kev ntawm go_package teeb tsa hauv .proto cov ntaub ntawv tsis sib haum nrog cov roadbed uas yuav tsum tau tsim.
+            output-path: Qhov kev xaiv no tuaj yeem teeb tsa thaum txoj hauv kev ntawm go_package teeb tsa hauv .proto cov ntaub ntawv tsis sib haum nrog cov roadbed uas tiag tiag yuav tsum tau tsim.
             overwrite: Rau cov ntsiab lus uas yuav tsis rov tsim dua tshiab, yuam overwriting ntawm cov ntsiab lus uas twb muaj lawm
             proto-files: Txhawm rau import lwm cov ntaub ntawv .proto/folder txoj hauv kev uas tsis nyob hauv tib lub nplaub tshev raws li cov ntaub ntawv .proto tau teev tseg, qhov haujlwm no yog ib qho kev xaiv rau override lub configuration teb nyob rau hauv cov ntaub ntawv configuration.
             protoc: '''protoc'' customizable file path'
-            protoc-gen-go: '''protoc-gen-go'' plugin path'
-            tables-enable_field_created_at: Seb puas yuav pab kom lub neej ntawd configuration tiam ntawm database generate_at teb
-            tables-enable_field_deleted_at: Seb puas yuav pab kom lub neej ntawd teeb tsa ntawm qhov deleted_at teb hauv database
+            protoc-gen-go: '''protoc-gen-go'' plugin txoj kev'
+            tables-enable_field_created_at: Seb yuav pab kom lub neej ntawd configuration tiam ntawm lub database generate_at teb
+            tables-enable_field_deleted_at: Seb puas yuav pab kom lub neej ntawd teeb tsa ntawm qhov chaw deleted_at hauv cov ntaub ntawv
             tables-enable_field_id: Pab kom lub neej ntawd configuration tiam rau database-related teb
             tables-enable_field_updated_at: Seb puas yuav pab kom tus nqi pib ntawm qhov kho tshiab_at teb hauv cov ntaub ntawv
             tables-enable_gorm_tag_column: Seb puas yuav pab tau database-related gorm tiam
@@ -63,7 +71,7 @@ cli:
             long: Tsim cov ntaub ntawv go.mod rau kev tswj hwm kev vam meej
             short: Tsim cov ntaub ntawv go.mod
         pb:
-            long: Tsim .pb.go cov ntaub ntawv, uas yog siv los tsim .proto cov ntaub ntawv ntsig txog cov ntawv sau x yuav raug txiav ntxiv raws li kev teeb tsa.
+            long: Tsim .pb.go cov ntaub ntawv, uas yog siv los tsim .proto cov ntaub ntawv ntsig txog cov ntawv sau x yuav raug txiav ntxiv raws li qhov teeb tsa.
             short: Tsim .pb.go cov ntaub ntawv
         short: Code generator
         state:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Tag nrho cov haujlwm muaj feem cuam tshuam ntawm kev tsim cov rooj rau cov peev txheej hauv xeev lossis kev tswj hwm kev lag luam zoo li qub
             short: Txhua yam muaj feem xyuam rau kev tsim cov rooj
+    group:
+        gen: code tiam
     help:
         additional_commands: Cov lus txib ntxiv
         aliases: txib alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: kom tau txais cov lus qhia ntxaws ntxiv
         global_flags: ntiaj teb no parameters
+        long: 'Muab cov lus qhia siv rau ib qho lus txib hauv daim ntawv thov. '
+        short: Cov lus qhia rau kev siv tej lus txib
+        usage: Cov lus qhia siv {{.Name}}
         use: siv
     i18n:
         long: Multilingual internationalization related toolkit
         short: Multilingual internationalization related toolkit
+        support:
+            flags:
+                language: Qhia meej cov lus los tso saib, txwv tsis pub cov lus code yuav raug siv los tso saib cov lus
+            long: Sau tag nrho cov lus txhawb nqa
+            short: Txhawb hom lus
         tran:
             flags:
                 all-language: Txhais txhua yam lus txhawb (yog tias muaj tseeb cov lus chij yog neeg xiam)
@@ -112,5 +130,158 @@ cli:
                     usage: 'Kev txhais channel: Txhawb hom {{ntau $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Multilingual ntaub ntawv los ntawm ib tug tej qhov chaw yog hloov dua siab tshiab rau hauv cov ntaub ntawv nyob rau hauv tib hom ntawv nyob rau hauv lwm yam lus.
             short: txhais
-    long: Cov cuab yeej teeb tsa rau cov neeg tub nkeeg, suav nrog 'proto'-raws li cov txheej txheem backend, feem ntau siv cov qauv, thiab ntau hom lus txhais lus
+    long: Cov cuab yeej teeb tsa rau cov neeg tub nkeeg, suav nrog 'proto'-raws li cov txheej txheem rov qab, feem ntau siv cov qauv, thiab ntau hom lus txhais lus
     short: Cov cuab yeej teeb tsa rau cov neeg tub nkeeg
+    sync:
+        flags:
+            template-path: Template synchronization txoj kev
+        long: Synchronize lub configuration los ntawm tej thaj chaw deb kawg thiab muab tso rau hauv lub zos configuration Cov ntaub ntawv template yog txaus siab rau tib lub sij hawm thaum synchronization (yog tias configured).
+        short: Synchronize configuration los ntawm tej thaj chaw deb
+    up-mod:
+        flags:
+            goproxy: Qhia qhov chaw nyob goproxy, yog tias tsis yog, thawj tus nyob hauv ib puag ncig hloov pauv yuav raug siv
+        long: Hloov kho qhov kev vam khom ntawm cov ntaub ntawv go.mod
+        short: Hloov kho go.mod cov ntaub ntawv
+lang:
+    af: Afrikaans
+    ak: Thib (Akan)
+    am: Amharic
+    ar: Arabic
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Belarusian
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnian
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsican
+    cs: Czech
+    cy: Welsh
+    da: Danish
+    de: German
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Greek
+    en: Lus Askiv
+    eo: Esperanto
+    es: lus Spanish
+    et: Estonian
+    eu: basque
+    fa: Persian
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: Fabkis
+    fy: Frisian
+    ga: irish
+    gd: Scottish Gaelic
+    gl: Galician
+    gn: Guaraní
+    gom: lus gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: hebrew
+    hi: Hindi
+    hmn: Hmoob
+    hr: Croatian
+    ht: Haitian Creole
+    hu: neeg Hungarian
+    hy: Armenian
+    id: Indonesian
+    ig: Igbo
+    ilo: Ilocano
+    is: Icelandic
+    it: Italian
+    iw: hebrew
+    ja: Nyiv
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: Kazakh
+    km: Qhab Meem teb
+    kn: Kannada
+    ko: Kauslim
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Nplog
+    lt: Lithuanian
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedonian
+    ml: Malayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: Maltese
+    my: Burmese
+    ne: Nepali
+    nl: Dutch
+    "no": Norwegian
+    nso: Sepeti
+    ny: Nyanza (zeeg)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polish
+    ps: Pashto
+    pt: Portuguese (Portugal, Brazil)
+    qu: Quechua
+    ro: Romanian
+    ru: Lavxias
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sib
+    si: kev
+    sk: Slovak
+    sl: lus slovenian
+    sm: Samoan
+    sn: Shona
+    so: Somali
+    sq: Albanian
+    sr: Serbian
+    st: Sesotho
+    su: Sundanese
+    sv: Swedish
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thaib
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: qaib ntxhw
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrainian
+    ur: Urdu
+    uz: Uzbek
+    vi: Nyab Laj
+    xh: lus bantu
+    yi: Yiddish
+    yo: yoruba
+    zh: Suav
+    zh-chs: Suav (Simplified)
+    zh-cht: Suav (Simplified)
+    zh-cn: Suav (Simplified)
+    zh-hk: Suav (Hong Kong)
+    zh-mo: Suav (Macau)
+    zh-sg: Suav (Singapore)
+    zh-tw: tsoos suav)
+    zu: Zulu

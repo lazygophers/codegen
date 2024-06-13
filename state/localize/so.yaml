@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Dami tilmaamaha dhamaystirka
+        long: |
+            Wuxuu abuuraa qoraal toos ah {{.RootName}} qolof la cayimay.
+        short: U samee qoraal toos ah qolof la cayimay
+        subcommand:
+            short: U samee qoraal toos ah {{.Command}}
     flags:
         debug: Soosaar qoraal faahfaahsan
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Dhammaan shaqooyinka la xidhiidha soo saarista miisaska kheyraadka gobolka ama maamulka kheyraadka taagan ee adeegyada ganacsiga
             short: Dhammaan hawlaha la xidhiidha abuurista miisaska
+    group:
+        gen: jiil kood
     help:
         additional_commands: Amarro dheeri ah
         aliases: amar loo yaqaan
@@ -94,10 +104,18 @@ cli:
         flags: halbeegga
         get_info: si aad u hesho xog faahfaahsan
         global_flags: xuduudaha caalamiga ah
+        long: 'Caawinadu waxay caawimo ka siisaa amar kasta oo codsiga ku jira. '
+        short: Caawi amar kasta
+        usage: Tilmaamaha isticmaalka {{.Name}}
         use: isticmaal
     i18n:
         long: Xirmada caalamiga ah ee luuqadaha badan
         short: Xirmada caalamiga ah ee luuqadaha badan
+        support:
+            flags:
+                language: Sheeg luqadda aad muujinayso, haddii kale koodka luqadda ayaa loo isticmaali doonaa in lagu muujiyo luqadda
+            long: Liis garee dhammaan luqadaha la taageeray
+            short: Liiska luqadda la taageeray
         tran:
             flags:
                 all-language: Turjun dhammaan luqadaha la taageero (haddii ay run tahay calanka luqadaha waa naafo)
@@ -114,3 +132,156 @@ cli:
             short: turjun
     long: Qalab loo dejiyay dadka caajiska ah, oo ay ku jiraan qaab-dhismeedka 'proto'-ku-salaysan dhabarka dambe, jaantusyada caadiga ah ee la isticmaalo, iyo tarjumaada luqadaha badan
     short: Qalab loogu talagalay dadka caajiska ah
+    sync:
+        flags:
+            template-path: Jidka isku xidhka qaab-dhismeedka
+        long: Isku xidhka isku xidhka dhamaadka fog oo ku mil qaabaynta deegaanka
+        short: Isku xidh isku xidhka fog
+    up-mod:
+        flags:
+            goproxy: Sheeg ciwaanka goproxy-ka, haddii kale, kan ugu horreeya ee doorsoomaha deegaanka ayaa la isticmaali doonaa
+        long: Cusbooneysii nooca ku tiirsanaanta faylka go.mod
+        short: Cusbooneysii faylka go.mod
+lang:
+    af: Afrikaan
+    ak: Twi (Akan)
+    am: Amxaari
+    ar: Carabi
+    as: Assamese
+    ay: Aymara
+    az: Asarbayjaan
+    be: Belarusiyaanka
+    bg: Bulgaariya
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnia
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdi (Soraani)
+    co: Korsican
+    cs: Czech
+    cy: Welsh
+    da: deenishka
+    de: Jarmal
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Giriig
+    en: Ingiriis
+    eo: Esperanto
+    es: isbaanish
+    et: Istooniyaan
+    eu: basque
+    fa: Faaris
+    fi: Finnish
+    fil: Filibiin (Tagalog)
+    fr: Faransiis
+    fy: Frisian
+    ga: iriish
+    gd: Scottish Gaelic
+    gl: Galiciyan
+    gn: Guarani
+    gom: luqadda gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaawaan
+    he: cibraan
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatian
+    ht: Haitian Creole
+    hu: hunguriga
+    hy: Armeeniyaan
+    id: Indonesian
+    ig: Igbo
+    ilo: Ilocano
+    is: Iceland
+    it: Talyaani
+    iw: cibraan
+    ja: Jabbaan
+    jv: Javanese
+    jw: Javanese
+    ka: Joorjiyaan
+    kk: Kazakh
+    km: Kamboodiya
+    kn: Kannada
+    ko: Kuuriyaan
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Laatiinka
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuanian
+    lus: Mizo
+    lv: Latvia
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Masedooniyaan
+    ml: Malayalam
+    mn: Mongoliyaan
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malaay
+    mt: Malta
+    my: Burma
+    ne: Nepali
+    nl: Dutch
+    "no": norwiiji
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polish
+    ps: Pashto
+    pt: Boortaqiis (Portugal, Brazil)
+    qu: Quechua
+    ro: Romanian
+    ru: Ruush
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slovakia
+    sl: sloveniya
+    sm: Samoan
+    sn: Shona
+    so: Soomaali
+    sq: Albaaniyaan
+    sr: Seerbiyaan
+    st: Sesotho
+    su: Sundanese
+    sv: Iswidish
+    sw: Sawaaxili
+    ta: tamil
+    te: telugu
+    tg: Taajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: turkiga
+    ts: Dzonga
+    tt: Tataarka
+    ug: Uighur
+    uk: Yukreeniyaan
+    ur: Urduu
+    uz: Uzbekistan
+    vi: Vietnamese
+    xh: luqadda bantu
+    yi: Yidish
+    yo: yoruba
+    zh: Shiinees
+    zh-chs: Shiinees (La fududeeyay)
+    zh-cht: Shiinees (La fududeeyay)
+    zh-cn: Shiinees (La fududeeyay)
+    zh-hk: Shiine (Hong Kong)
+    zh-mo: Shiine (Macau)
+    zh-sg: Shiinees (Singapore)
+    zh-tw: Shiine (Taiwan)
+    zu: Zulu

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Desativar instruções de conclusão
+        long: |
+            Gera um script de preenchimento automático para {{.RootName}} para o shell especificado.
+        short: Gere um script de preenchimento automático para o shell especificado
+        subcommand:
+            short: Gerar script de preenchimento automático para {{.Command}}
     flags:
         debug: Log detalhado de saída
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Todas as funções relacionadas à geração de tabelas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
             short: Todas as funções relacionadas para geração de tabelas
+    group:
+        gen: geração de código
     help:
         additional_commands: Comandos adicionais
         aliases: apelido de comando
@@ -94,10 +104,18 @@ cli:
         flags: parâmetro
         get_info: para obter informações mais detalhadas
         global_flags: parâmetros globais
+        long: 'Help fornece ajuda para qualquer comando do aplicativo. '
+        short: Ajuda em qualquer comando
+        usage: Instruções para usar {{.Name}}
         use: usar
     i18n:
         long: Kit de ferramentas multilíngue relacionado à internacionalização
         short: Kit de ferramentas multilíngue relacionado à internacionalização
+        support:
+            flags:
+                language: Especifique o idioma a ser exibido, caso contrário, o código do idioma será usado para exibir o idioma
+            long: Listar todos os idiomas suportados
+            short: Lista de idiomas suportados
         tran:
             flags:
                 all-language: Traduza todos os idiomas suportados (se for verdade, a sinalização de idiomas está desativada)
@@ -114,3 +132,156 @@ cli:
             short: traduzir
     long: Um conjunto de ferramentas para pessoas preguiçosas, incluindo estrutura de back-end baseada em 'proto', modelos comumente usados ​​e tradução multilíngue
     short: Um conjunto de ferramentas para pessoas preguiçosas
+    sync:
+        flags:
+            template-path: Caminho de sincronização do modelo
+        long: Sincronize a configuração da extremidade remota e mescle-a na configuração local O arquivo de modelo é suportado ao mesmo tempo durante a sincronização (se configurado).
+        short: Sincronizar configuração remotamente
+    up-mod:
+        flags:
+            goproxy: Especifique o endereço goproxy, caso contrário, o primeiro na variável de ambiente será usado
+        long: Atualize a versão de dependência do arquivo go.mod
+        short: Atualizar arquivo go.mod
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: amárico
+    ar: árabe
+    as: Assamês
+    ay: aimará
+    az: Azerbaijano
+    be: Bielorrusso
+    bg: búlgaro
+    bho: Bhojpuri
+    bm: Bambará
+    bn: bengali
+    bs: Bósnio
+    ca: catalão
+    ceb: Cebuano
+    ckb: Curdo (Sorani)
+    co: Córsega
+    cs: Tcheco
+    cy: galês
+    da: dinamarquês
+    de: Alemão
+    doi: Dogglai
+    dv: Divehi
+    ee: Ovelha
+    el: grego
+    en: Inglês
+    eo: esperanto
+    es: espanhol
+    et: estoniano
+    eu: basco
+    fa: persa
+    fi: finlandês
+    fil: Filipino (tagalo)
+    fr: Francês
+    fy: Frísio
+    ga: irlandês
+    gd: gaélico escocês
+    gl: Galego
+    gn: guarani
+    gom: língua gonggan
+    gu: guzerate
+    ha: Hauçá
+    haw: havaiano
+    he: hebraico
+    hi: hindi
+    hmn: Hmong
+    hr: croata
+    ht: crioulo haitiano
+    hu: húngaro
+    hy: Armênio
+    id: indonésio
+    ig: Ibo
+    ilo: Ilocano
+    is: islandês
+    it: italiano
+    iw: hebraico
+    ja: japonês
+    jv: javanês
+    jw: javanês
+    ka: Georgiano
+    kk: Cazaque
+    km: Cambojano
+    kn: Kannada
+    ko: coreano
+    kri: crioulo
+    ku: curdo
+    ky: Quirguistão
+    la: Latim
+    lb: Luxemburguês
+    lg: Luganda
+    ln: Lingala
+    lo: Laos
+    lt: lituano
+    lus: Mizo
+    lv: letão
+    mai: Maithili
+    mg: malgaxe
+    mi: maori
+    mk: Macedônio
+    ml: malaiala
+    mn: mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marata
+    ms: malaio
+    mt: maltês
+    my: birmanês
+    ne: nepalês
+    nl: Holandês
+    "no": norueguês
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: polonês
+    ps: pashto
+    pt: Português (Portugal, Brasil)
+    qu: Quechua
+    ro: romena
+    ru: russo
+    rw: Kinyarwanda
+    sa: sânscrito
+    sd: sindi
+    si: cingalês
+    sk: Eslovaco
+    sl: esloveno
+    sm: samoano
+    sn: Shona
+    so: somali
+    sq: albanês
+    sr: sérvio
+    st: Sesoto
+    su: Sudanês
+    sv: sueco
+    sw: suaíli
+    ta: tâmil
+    te: télugo
+    tg: tadjique
+    th: tailandês
+    ti: Tignan
+    tk: turcomano
+    tl: Tagalo (filipino)
+    tr: turco
+    ts: Dzonga
+    tt: Tártaro
+    ug: Uigur
+    uk: ucraniano
+    ur: urdu
+    uz: Usbeque
+    vi: vietnamita
+    xh: língua bantu
+    yi: iídiche
+    yo: iorubá
+    zh: chinês
+    zh-chs: Chinês simplificado)
+    zh-cht: Chinês simplificado)
+    zh-cn: Chinês simplificado)
+    zh-hk: Chinês (Hong Kong)
+    zh-mo: Chinês (Macau)
+    zh-sg: Chinês (Singapura)
+    zh-tw: chinês tradicional)
+    zu: zulu

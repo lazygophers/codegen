@@ -19,10 +19,14 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 	localize := map[string]string{}
 	var deepKeys func(ps []string, m map[string]interface{})
 	deepKeys = func(ps []string, m map[string]interface{}) {
+
 		for k, v := range m {
+			key := strings.Join(append(slices.Clone(ps), k), ".")
+			localize[key] = ""
+
 			switch x := v.(type) {
 			case string:
-				localize[strings.Join(append(slices.Clone(ps), k), ".")] = x
+				localize[key] = x
 
 			case map[string]any:
 				deepKeys(append(slices.Clone(ps), k), x)

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Aw ye baara dafalen cikanw bali
+        long: |
+            A bɛ sɛbɛnnibolo dafalen dɔ Dabɔ {{.RootName}} ye ka ɲɛsin shell kofɔlen ma.
+        short: Aw bɛ script autocomplete dɔ labɛn shell kofɔlen in kama
+        subcommand:
+            short: Script autocomplete dilan {{.Command}} kama.
     flags:
         debug: Bɔli detayɛli log
     gen:
@@ -9,8 +17,8 @@ cli:
                 gen-to: .go file minnu dilannen don, olu bɔyɔrɔ jira
                 list-option: Lisiti fana bɛ se ka filɛ, aw bɛ baarakɛcogo sɛbɛnw ɲini walasa ka kunnafoni wɛrɛw sɔrɔ.
                 model: Modeli tɔgɔ fɔ, dɛmɛ ka `model` daminɛ bila
-            long: Ka 'interface (dakunw) Dabɔ batch (dakunw) la ani ka interface (dakun) dɔ Fàra modeli dɔ kan .proto file kɔnɔ
-            short: Batch generation interface (Batch generation) ka ɲɛfɔli
+            long: Ka 'interface (dakunw) Dabɔ 'kuluw la ani ka 'interface (dakun) dɔ Fàra modeli dɔ kan .proto file kɔnɔ
+            short: Batch generation interface (baarakɛminɛnw sɛnɛcogo).
         all:
             long: Kode bɛɛ lajɛlen minnu bɛ dɛmɛ ni nin baarakɛminɛn in ye
             short: Kode bɛɛ labɛn
@@ -68,8 +76,8 @@ cli:
         short: Kode jɛnɛrato
         state:
             conf:
-                long: Labɛnni dosiye kalanni kode labɛn jago baarakɛyɔrɔ labɛnni kalanni kama
-                short: Labɛnni filen kalanni kode
+                long: Labɛnni dosiye kalanni kode la jago baarakɛyɔrɔ labɛnni kalanni kama
+                short: A ye configuration file kalanni kode labɛn
             flags:
                 cache: Yala a bɛ se ka kɛ sababu ye ka cache-related generation (cache-related generation) kɛ
                 config: Yala ka kode min bɛ tali kɛ labɛncogo la, o labɛn
@@ -86,6 +94,8 @@ cli:
         table:
             long: Baara bɛɛ minnu bɛ tali kɛ o la, n’o ye ka tabali dilan ka ɲɛsin nafolo maracogo ma walima nafolo maracogo jɔlen ma jagokɛlaw ka baarakɛminɛnw na
             short: Baara minnu bɛ tali kɛ ɲɔgɔn na, olu bɛɛ ye tabali dilancogo ye
+    group:
+        gen: kode sɛnɛcogo
     help:
         additional_commands: Cikan wɛrɛw
         aliases: cikan tɔgɔ wɛrɛ
@@ -94,23 +104,184 @@ cli:
         flags: paramɛtiri
         get_info: walasa ka kunnafoni caman sɔrɔ
         global_flags: diɲɛ kɔnɔ paramɛtiriw
+        long: 'Baarakɛcogo cikanw di cikan o cikan ma min bɛ application kɔnɔ. '
+        short: Cikan minnu bɛ di baara kɛli ni cikan o cikan ye
+        usage: Ladilikanw baara kɛcogo kan {{.Tɔgɔ}} .
         use: k'a nafa bɔ a la
     i18n:
         long: Baarakɛminɛn minnu bɛ tali kɛ kan caman na diɲɛnatigɛ la
         short: Baarakɛminɛn minnu bɛ tali kɛ kan caman na diɲɛnatigɛ la
+        support:
+            flags:
+                language: Kan min bɛna jira, o fɔ, n’o tɛ, kan kode bɛna kɛ ka kan jira
+            long: Kan minnu bɛ dɛmɛ, olu bɛɛ sɛbɛn
+            short: Kan minnu bɛ dɛmɛ sɔrɔ, olu lisɛli
         tran:
             flags:
                 all-language: Kan dɛmɛnenw bɛɛ bamanankan na (ni tiɲɛ don kanw ka darapo bɛ baara kɛ)
                 force: Bamanankan bayɛlɛmani minnu bɛ yen, olu sɛbɛn u kan
                 force-key-prefix: kilisi minnu ka kan ka wajibiya ka sɛbɛn u kan
                 generate-const: Jatebla nafaw labɔ walasa weleli ka nɔgɔn
-                languages: Bamanankan baarakɛcogo kan min bɛna kɛ, o fɔ
+                languages: Bamanankan baarakɛcogo bɛ kan min laɲini, o fɔ
                 src-file: Source file min ka kan ka baara (a wajibiyalen don) .
-                src-language: Soso file kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .
+                src-language: Soso filen kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .
                 translater:
                     google-free: Google Web Bamanankan baarakɛcogo
                     usage: 'Bamanankan baarakɛcogo: Dɛmɛ suguya {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Kan caman ka dosiye minnu bɛ Bɔ yɔrɔ dɔ la, olu bɛ Yɛlɛma ka Kɛ dosiyew ye cogo kelen na kan wɛrɛw la.
             short: ka bayɛlɛma
     long: Baarakɛminɛn min sigilen don mɔgɔ lafiyabaliw ye, i n’a fɔ ‘proto’-based backend framework, template minnu bɛ kɛ ka caya, ani kan caman bamanankan na
-    short: Baarakɛminɛn dɔ sigilen don sɛgɛnbagatɔw ye
+    short: Baarakɛminɛn min sigilen don mɔgɔ sɛgɛnbaliw ye
+    sync:
+        flags:
+            template-path: Template synchronisation sira
+        long: Labɛnni bɛ ɲɔgɔn sɔrɔ ka bɔ yɔrɔjan laban na k’a fara ɲɔgɔn kan sigida labɛncogo la Jatebla filen bɛ dɛmɛ waati kelen na sinsinni waati (ni labɛnna).
+        short: Labɛncogo sinsinni ka bɔ yɔrɔjan na
+    up-mod:
+        flags:
+            goproxy: Goproxy ladɛrɛsi jira, n’o tɛ, fɔlɔ min bɛ sigida fɛn caman sɛgɛsɛgɛli la, o bɛna baara kɛ
+        long: Go.mod file ka dependency version kura ye
+        short: Go.mod file kura ye
+lang:
+    af: Afirikikan na
+    ak: Twi (Akan) .
+    am: Amharikikan na
+    ar: Arabukan na
+    as: Asamwa
+    ay: Ayimara
+    az: Azerbaïdjankan na
+    be: Belaruskaw ka kan
+    bg: Bulgarikan na
+    bho: Bojpuri
+    bm: Bamanankan
+    bn: Bengalikan
+    bs: Bosnikaw ka kan
+    ca: Katalankan na
+    ceb: Sebuano
+    ckb: Kurdekan (Sorani) .
+    co: Kɔrsikan
+    cs: Tchekikan na
+    cy: Waleskan na
+    da: dankan na
+    de: Alemaɲikan na
+    doi: dogglai ye
+    dv: Dwehi
+    ee: Ewe
+    el: Gɛrɛkikan na
+    en: Angilɛtɛri
+    eo: Esperantokan na
+    es: Ɛsipaɲɔli
+    et: Ɛsitonikan na
+    eu: bamanankan
+    fa: Pɛrɛsikan na
+    fi: Finlandekan na
+    fil: Filipinekan (Tagalog) .
+    fr: Faransikan na
+    fy: Frisikan na
+    ga: irlandikan na
+    gd: Ekɔsikan na, Gaelickan na
+    gl: Galisikan na
+    gn: Gwarani
+    gom: gonggan kan
+    gu: gujaratikan na
+    ha: Hausa
+    haw: Hawayikan na
+    he: heburukan na
+    hi: Hindikan na
+    hmn: Hmong
+    hr: Kurɔsikan na
+    ht: Haïtikan ka kreyol
+    hu: hɔngirikan na
+    hy: Armenikan na
+    id: Indonezikan na
+    ig: Igbokan na
+    ilo: Ilokano
+    is: Islandekan na
+    it: Italikan na
+    iw: heburukan na
+    ja: Zapɔnkan na
+    jv: Javakaw ka kan
+    jw: Javakaw ka kan
+    ka: Georgiekan na
+    kk: Kazakhstankan na
+    km: Kambodjakan na
+    kn: Kannadakan na
+    ko: Korekan na
+    kri: Kreyɔlikan na
+    ku: Kurdekan na
+    ky: Kirgistan jamana na
+    la: Latinkan na
+    lb: Luxembourgique jamana na
+    lg: Luganda
+    ln: Lingala
+    lo: Lao jamana na
+    lt: Litwaniekan na
+    lus: Mizo
+    lv: Letoni jamana na
+    mai: Maytili
+    mg: Malagasikan na
+    mi: Maoriw
+    mk: Masedwanɛkaw
+    ml: Malayalamkan na
+    mn: Mongolikan na
+    mni-mtei: Meitei (Manipuri) ye.
+    mr: marathi
+    ms: Malaykan na
+    mt: maltese ye
+    my: Burukina Fasokanw
+    ne: Nepalikan na
+    nl: Hollandekan na
+    "no": norwɛgikan na
+    nso: Sepeti ye
+    ny: Nyanza (Chichewa) .
+    om: Oromo
+    or: Oriya (Odia) jamana na.
+    pa: punjabikan
+    pl: Polisikan na
+    ps: Pashtokan na
+    pt: Pɔrtigɛkan (Portugal, Berezil)
+    qu: Kecuwa
+    ro: Rumanikan na
+    ru: Irisikan na
+    rw: Kinyarwandakan na
+    sa: Sanskrit
+    sd: sindhi ye
+    si: sinhala
+    sk: Slovakikan na
+    sl: slovenian ye
+    sm: Samoakaw ka
+    sn: Shona ye
+    so: Somalikan na
+    sq: Albanɛkan na
+    sr: Sɛrɛbikan na
+    st: Sesotokan na
+    su: Sundankan na
+    sv: Suwɛdikan na
+    sw: Swahilikan na
+    ta: tamil
+    te: telugukan na
+    tg: Tajikkan na
+    th: Tayilandikan na
+    ti: Tignan ye
+    tk: Turkimanw
+    tl: Tagalog (Filipino) .
+    tr: turkikan na
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur (Uighur) ka
+    uk: Ukrayinakan na
+    ur: Urdukan na
+    uz: Uzbekikan na
+    vi: Vietnamkaw ye
+    xh: bantu kan
+    yi: Yidikan na
+    yo: yorubakan na
+    zh: Sinuwaw ka
+    zh-chs: Sinuwakan (Nɔgɔyalen) .
+    zh-cht: Sinuwakan (Nɔgɔyalen) .
+    zh-cn: Sinuwakan (Nɔgɔyalen) .
+    zh-hk: Sinuwaw (Hong Kong) .
+    zh-mo: Sinuwa(Macau)
+    zh-sg: Sinuwaw (Singapore)
+    zh-tw: laadala sinuwaw) .
+    zu: Zulukan na

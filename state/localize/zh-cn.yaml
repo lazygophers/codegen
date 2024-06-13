@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: 禁用完成说明
+        long: |
+            为指定 shell 的 {{.RootName}} 生成自动完成脚本。
+        short: 为指定 shell 生成自动完成脚本
+        subcommand:
+            short: 为 {{.Command}} 生成自动完成脚本
     flags:
         debug: 输出详细日志
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: 生成 table 的所有相关功能，用于业务服务的有状态的资源或静态资源管理
             short: 生成 table 的所有相关功能
+    group:
+        gen: 代码生成
     help:
         additional_commands: 附加命令
         aliases: 命令别名
@@ -94,10 +104,18 @@ cli:
         flags: 参数
         get_info: 来获取更详细的信息
         global_flags: 全局参数
+        long: 帮助为应用程序中的任何命令提供帮助。
+        short: 有关任何命令的帮助
+        usage: '{{.Name}} 的使用说明'
         use: 使用
     i18n:
         long: 多语言国际化相关工具包
         short: 多语言国际化相关工具包
+        support:
+            flags:
+                language: 指定展示的语言，否则会使用语言代码展示语言
+            long: 列出所有支持的语言列表
+            short: 支持的语言清单
         tran:
             flags:
                 all-language: 翻译所有支持的语言（如果为 true 则 languages 标记失效）
@@ -114,3 +132,156 @@ cli:
             short: 翻译
     long: 一个适合懒人工具集，包含基于 'proto' 的后端框架、常用模板，以及多语言翻译
     short: 一个适合懒人工具集
+    sync:
+        flags:
+            template-path: 模板同步路径
+        long: 从远端同步配置，并且合并到本地配置中，同步时支持同时同步模板文件（如果配置了的话）
+        short: 从远端同步配置
+    up-mod:
+        flags:
+            goproxy: 指定 goproxy 地址，如果没有则会使用环境变量中的第一个
+        long: 更新 go.mod 文件种的依赖版本
+        short: 更新 go.mod 文件
+lang:
+    af: 南非荷兰语
+    ak: 契维语（阿坎语）
+    am: 阿姆哈拉语
+    ar: 阿拉伯语
+    as: 阿萨姆语
+    ay: 艾马拉语
+    az: 阿塞拜疆语
+    be: 白俄罗斯语
+    bg: 保加利亚语
+    bho: 博杰普尔语
+    bm: 班巴拉语
+    bn: 孟加拉文
+    bs: 波斯尼亚语
+    ca: 加泰罗尼亚语
+    ceb: 宿务语
+    ckb: 库尔德语（索拉尼）
+    co: 科西嘉语
+    cs: 捷克语
+    cy: 威尔士语
+    da: 丹麦语
+    de: 德语
+    doi: 多格来语
+    dv: 迪维希语
+    ee: 埃维语
+    el: 希腊文
+    en: 英语
+    eo: 世界语
+    es: 西班牙语
+    et: 爱沙尼亚语
+    eu: 巴斯克语
+    fa: 波斯语
+    fi: 芬兰语
+    fil: 菲律宾语（塔加拉语）
+    fr: 法语
+    fy: 弗里斯兰语
+    ga: 爱尔兰语
+    gd: 苏格兰盖尔语
+    gl: 加利西亚语
+    gn: 瓜拉尼人
+    gom: 贡根语
+    gu: 古吉拉特文
+    ha: 豪萨语
+    haw: 夏威夷语
+    he: 希伯来语
+    hi: 印地语
+    hmn: 苗语
+    hr: 克罗地亚语
+    ht: 海地克里奥尔语
+    hu: 匈牙利语
+    hy: 亚美尼亚文
+    id: 印度尼西亚语
+    ig: 伊博语
+    ilo: 伊洛卡诺语
+    is: 冰岛语
+    it: 意大利语
+    iw: 希伯来语
+    ja: 日语
+    jv: 爪哇语
+    jw: 爪哇语
+    ka: 格鲁吉亚语
+    kk: 哈萨克语
+    km: 高棉语
+    kn: 卡纳达文
+    ko: 韩语
+    kri: 克里奥尔语
+    ku: 库尔德语
+    ky: 吉尔吉斯语
+    la: 拉丁文
+    lb: 卢森堡语
+    lg: 卢干达语
+    ln: 林格拉语
+    lo: 老挝语
+    lt: 立陶宛语
+    lus: 米佐语
+    lv: 拉脱维亚语
+    mai: 迈蒂利语
+    mg: 马尔加什语
+    mi: 毛利语
+    mk: 马其顿语
+    ml: 马拉雅拉姆文
+    mn: 蒙古文
+    mni-mtei: 梅泰语（曼尼普尔语）
+    mr: 马拉地语
+    ms: 马来语
+    mt: 马耳他语
+    my: 缅甸语
+    ne: 尼泊尔语
+    nl: 荷兰语
+    "no": 挪威语
+    nso: 塞佩蒂语
+    ny: 尼杨扎语（齐切瓦语）
+    om: 奥罗莫语
+    or: 奥里亚语（奥里亚）
+    pa: 旁遮普语
+    pl: 波兰语
+    ps: 普什图语
+    pt: 葡萄牙语（葡萄牙、巴西）
+    qu: 克丘亚语
+    ro: 罗马尼亚语
+    ru: 俄语
+    rw: 卢旺达语
+    sa: 梵语
+    sd: 信德语
+    si: 僧伽罗语
+    sk: 斯洛伐克语
+    sl: 斯洛文尼亚语
+    sm: 萨摩亚语
+    sn: 修纳语
+    so: 索马里语
+    sq: 阿尔巴尼亚语
+    sr: 塞尔维亚语
+    st: 塞索托语
+    su: 巽他语
+    sv: 瑞典语
+    sw: 斯瓦希里语
+    ta: 泰米尔语
+    te: 泰卢固语
+    tg: 塔吉克语
+    th: 泰语
+    ti: 蒂格尼亚语
+    tk: 土库曼语
+    tl: 塔加路语（菲律宾语）
+    tr: 土耳其语
+    ts: 宗加语
+    tt: 鞑靼语
+    ug: 维吾尔语
+    uk: 乌克兰语
+    ur: 乌尔都语
+    uz: 乌兹别克语
+    vi: 越南语
+    xh: 班图语
+    yi: 意第绪语
+    yo: 约鲁巴语
+    zh: 中文
+    zh-chs: 中文（简体）
+    zh-cht: 中文（简体)
+    zh-cn: 中文（简体）
+    zh-hk: 中文（香港）
+    zh-mo: 中文(澳门)
+    zh-sg: 中文（新加坡）
+    zh-tw: 中文（台湾）
+    zu: 祖鲁语

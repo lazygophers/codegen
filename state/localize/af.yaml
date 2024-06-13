@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Deaktiveer voltooiingsinstruksies
+        long: |
+            Genereer 'n outovoltooi-skrip vir {{.RootName}} vir die gespesifiseerde dop.
+        short: Genereer 'n outovoltooi-skrip vir die gespesifiseerde dop
+        subcommand:
+            short: Genereer outovoltooi-skrip vir {{.Command}}
     flags:
         debug: Voer gedetailleerde log uit
     gen:
@@ -60,7 +68,7 @@ cli:
             long: Genereer Makefile-lêers vir die bou van gereedskap en ander verwante opdragte
             short: Genereer Makefile
         mod:
-            long: Genereer go.mod-lêer vir afhanklikheidsbestuur
+            long: Genereer go.mod-lêer vir afhanklikheidbestuur
             short: Genereer go.mod lêer
         pb:
             long: Genereer .pb.go-lêers, wat gebruik word om .proto-lêers te genereer. Relevante veldetikette x sal outomaties bygevoeg word volgens die konfigurasie.
@@ -74,7 +82,7 @@ cli:
                 cache: Of kasverwante generering moontlik gemaak moet word
                 config: Of konfigurasieverwante kode te genereer
                 i18n: Of om meertalige verwante generering te aktiveer (die generasie sluit slegs staatsinisiasie en ander inhoud in, en sluit nie outomatiese vertaling van veelvuldige tale in nie. As jy outomatiese vertaling benodig, gebruik asseblief {{.Command}} om besonderhede te sien)
-                table: Of databasisverwante databasisgenerering geaktiveer moet word
+                table: Of databasisverwante databasisgenerering moontlik gemaak moet word
             i18n:
                 long: Genereer i18n-verwante kode vir multi-taal internasionale oproepe
                 short: Genereer i18n-verwante kode
@@ -86,6 +94,8 @@ cli:
         table:
             long: Alle verwante funksies van die generering van tabelle vir statiese hulpbron- of statiese hulpbronbestuur van besigheidsdienste
             short: Alle verwante funksies vir die generering van tabelle
+    group:
+        gen: kode generering
     help:
         additional_commands: Bykomende opdragte
         aliases: bevel alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: om meer gedetailleerde inligting te kry
         global_flags: globale parameters
+        long: 'Verskaf gebruiksinstruksies vir enige opdrag in die toepassing. '
+        short: Instruksies vir die gebruik van enige opdrag
+        usage: Instruksies vir die gebruik van {{.Name}}
         use: gebruik
     i18n:
         long: Meertalige internasionaliseringsverwante gereedskapstel
         short: Meertalige internasionaliseringsverwante gereedskapstel
+        support:
+            flags:
+                language: Spesifiseer die taal om te vertoon, anders sal die taalkode gebruik word om die taal te vertoon
+            long: Lys alle ondersteunde tale
+            short: Ondersteunde taallys
         tran:
             flags:
                 all-language: Vertaal alle ondersteunde tale (indien waar is die talevlag gedeaktiveer)
@@ -114,3 +132,156 @@ cli:
             short: vertaal
     long: '''n Gereedskapstel vir lui mense, insluitend ''proto''-gebaseerde backend-raamwerk, algemeen gebruikte sjablone en multi-taal vertaling'
     short: '''n Gereedskapstel vir lui mense'
+    sync:
+        flags:
+            template-path: Sjabloon sinchronisasie pad
+        long: Sinkroniseer die konfigurasie vanaf die afgeleë kant en voeg dit saam met die plaaslike konfigurasie Die sjabloonlêer word terselfdertyd tydens sinchronisasie ondersteun (indien gekonfigureer).
+        short: Sinkroniseer konfigurasie vanaf afstandbeheer
+    up-mod:
+        flags:
+            goproxy: Spesifiseer die goproxy-adres, indien nie, sal die eerste een in die omgewingsveranderlike gebruik word
+        long: Dateer die afhanklikheidsweergawe van die go.mod-lêer op
+        short: Dateer go.mod-lêer op
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharies
+    ar: Arabies
+    as: Assamees
+    ay: Aymara
+    az: Azerbeidjans
+    be: Wit-Russies
+    bg: Bulgaars
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengaals
+    bs: Bosnies
+    ca: Katalaans
+    ceb: Cebuano
+    ckb: Koerdies (Sorani)
+    co: Korsikaans
+    cs: Tsjeggies
+    cy: Wallies
+    da: deens
+    de: Duits
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ooi
+    el: Grieks
+    en: Engels
+    eo: Esperanto
+    es: Spaans
+    et: Estnies
+    eu: baskies
+    fa: Persies
+    fi: Fins
+    fil: Filippyns (Tagalog)
+    fr: Frans
+    fy: Fries
+    ga: iers
+    gd: Skotse Gaelies
+    gl: Galisies
+    gn: Guaraní
+    gom: gonggan taal
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiiaans
+    he: Hebreeus
+    hi: Hindi
+    hmn: Hmong
+    hr: Kroaties
+    ht: Haïtiaans Kreools
+    hu: Hongaars
+    hy: Armeens
+    id: Indonesies
+    ig: Igbo
+    ilo: Ilocano
+    is: Yslands
+    it: Italiaans
+    iw: Hebreeus
+    ja: Japannese
+    jv: Javaans
+    jw: Javaans
+    ka: Georgies
+    kk: Kazakh
+    km: Kambodjaanse
+    kn: Kannada
+    ko: Koreaans
+    kri: Kreools
+    ku: Koerdies
+    ky: Kirgisies
+    la: Latyn
+    lb: Luxemburgs
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Litaus
+    lus: Mizo
+    lv: Letties
+    mai: Maithili
+    mg: Malgassies
+    mi: Maori
+    mk: Masedonies
+    ml: Malabaars
+    mn: Mongools
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Maleis
+    mt: maltees
+    my: Birmaanse
+    ne: Nepalees
+    nl: Nederlands
+    "no": Noors
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Pools
+    ps: Pasjto
+    pt: Portugees (Portugal, Brasilië)
+    qu: Quechua
+    ro: Roemeens
+    ru: Russies
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slowaaks
+    sl: Sloweens
+    sm: Samoaans
+    sn: Shona
+    so: Somalies
+    sq: Albanees
+    sr: Serwies
+    st: Sesotho
+    su: Soendanees
+    sv: Sweeds
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tadjieks
+    th: Thai
+    ti: Tignan
+    tk: Turkmeens
+    tl: Tagalog (Filipino)
+    tr: turks
+    ts: Dzonga
+    tt: Tataars
+    ug: Uighur
+    uk: Oekraïens
+    ur: Oerdoe
+    uz: Oezbeeks
+    vi: Viëtnamees
+    xh: bantoe taal
+    yi: Jiddisj
+    yo: yoruba
+    zh: Chinese
+    zh-chs: Chinees (vereenvoudig)
+    zh-cht: Chinees (vereenvoudig)
+    zh-cn: Chinees (vereenvoudig)
+    zh-hk: Sjinees (Hongkong)
+    zh-mo: Chinees (Macau)
+    zh-sg: Sjinees (Singapoer)
+    zh-tw: tradisionele Sjinees)
+    zu: Zoeloe

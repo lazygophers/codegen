@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Ibaldado dagiti instruksion iti pannakaileppas
+        long: |
+            Mangpataud ti autokompleto nga iskrip para iti {{.RootName}} para iti naikeddeng a shell.
+        short: Mangpataud ti autocomplete nga iskrip para iti naikeddeng a shell
+        subcommand:
+            short: Mangpataud ti autokompleto nga iskrip para iti {{.Command}} .
     flags:
         debug: Output detalyado a log
     gen:
@@ -71,7 +79,7 @@ cli:
                 long: Mangpataud ti kodigo ti panagbasa ti file ti panagisaad para iti panagbasa ti panagisaad ti serbisio ti negosio
                 short: Mangpataud ti kodigo ti panagbasa ti file ti konfigurasion
             flags:
-                cache: No mapalubosan ti cache-related generation
+                cache: No mapalubosan ti panagpataud a mainaig iti cache
                 config: No mangpataud ti kodigo a mainaig iti konfigurasion
                 i18n: No mapalubosan ti adu a pagsasao a mainaig a henerasion (ti henerasion ket mangiraman laeng ti panangrugi ti estado ken dagiti dadduma pay a linaon, ken saan a mangiraman ti automatiko a panagipatarus kadagiti adu a pagsasao. No kasapulam ti automatiko a panagipatarus, pangngaasim ta usarem ti {{.Command}} tapno makita dagiti detalye)
                 table: No mapalubosan ti panagpataud ti database a mainaig iti database
@@ -86,6 +94,8 @@ cli:
         table:
             long: Amin a mainaig a panagandar ti panagpataud kadagiti lamisaan para iti stateful a rekurso wenno estatiko a panagmanehar ti rekurso dagiti serbisio ti negosio
             short: Amin a mainaig a panagandar para iti panagpataud kadagiti lamisaan
+    group:
+        gen: kodigo ti panagpataud
     help:
         additional_commands: Kanayonan a bilin
         aliases: alias ti bilin
@@ -94,10 +104,18 @@ cli:
         flags: parametro
         get_info: tapno makagun-od iti ad-adu a detalyado nga impormasion
         global_flags: dagiti sangalubongan a parametro
+        long: 'Mangted kadagiti instruksion ti panagusar para iti ania man a bilin iti aplikasion. '
+        short: Instruksion iti panangusar iti aniaman a bilin
+        usage: Panangiwanwan iti panagusar ti {{.Name}} .
         use: usaren
     i18n:
         long: Multilingual nga internasionalisasion a mainaig a toolkit
         short: Multilingual nga internasionalisasion a mainaig a toolkit
+        support:
+            flags:
+                language: Ibaga ti pagsasao a maipakita, ta no saan, mausar ti kodigo ti pagsasao a mangiparang iti pagsasao
+            long: Ilista amin a nasuportaran a pagsasao
+            short: Listaan ​​ti pagsasao a nasuportaran
         tran:
             flags:
                 all-language: Ipatarus amin a nasuportaran a pagsasao (no pudno ti bandera dagiti pagsasao ket nabalbaliwan) .
@@ -114,3 +132,156 @@ cli:
             short: itarus
     long: Maysa nga alikamen a naikabil para kadagiti natamad a tattao, a mairaman ti 'proto'-a naibatay a balangkas ti backend, dagiti kadawyan a maus-usar a plantilia, ken ti panagipatarus ti adu a pagsasao
     short: Maysa nga alikamen a naikabil para kadagiti natamad a tattao
+    sync:
+        flags:
+            template-path: Dalan ti panagsinkronisar ti plantilia
+        long: Isinkronisar ti panagisaad manipud iti adayo a patingga ken pagtitiponen daytoy iti lokal a panagisaad Ti plantilia a papeles ket nasuportaran iti isu met laeng a panawen bayat ti panagsinkronisar (no naikonfigura).
+        short: I-synchronize ti konfigurasion manipud iti remote
+    up-mod:
+        flags:
+            goproxy: Ibaga ti adres ti goproxy, no saan, ti umuna iti variable ti aglawlaw ket mausar
+        long: Ipabaro ti bersion ti panagpanpanunot ti go.mod a papeles
+        short: I-update ti go.mod a file
+lang:
+    af: Afrikaans
+    ak: Twi (Akan) .
+    am: Amharic nga
+    ar: Arabiko nga
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijano nga
+    be: Taga-Belarus
+    bg: Bulgariano nga
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosniano nga
+    ca: Katalan
+    ceb: Cebuano
+    ckb: Kurdo (Sorani) .
+    co: Korsikano
+    cs: Tseko nga
+    cy: Wales nga
+    da: danes
+    de: Aleman nga Aleman
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Griego
+    en: Ingles
+    eo: Esperanto nga
+    es: Español
+    et: Estoniano
+    eu: basque
+    fa: Persiano nga
+    fi: Pinlandes
+    fil: Filipino (Tagalog) .
+    fr: Pranses nga
+    fy: Frisiano nga
+    ga: irish nga irish
+    gd: Eskoses nga Gaelic
+    gl: Galiciano
+    gn: Guarani
+    gom: lengguahe ti gongan
+    gu: gujarati nga
+    ha: Hausa
+    haw: Hawaiian
+    he: hebreo
+    hi: Hindi nga
+    hmn: Hmong
+    hr: Croatiano nga
+    ht: Haitiano nga Creole
+    hu: hungarian nga
+    hy: Armeniano nga
+    id: Indonesiano
+    ig: Igbo
+    ilo: Ilocano
+    is: Islandiko
+    it: Italiano nga
+    iw: hebreo
+    ja: Hapones
+    jv: Javanese
+    jw: Javanese
+    ka: Georgiano nga
+    kk: Kazakh
+    km: Taga-Cambodia
+    kn: Kannada nga
+    ko: Koreano
+    kri: Creole nga
+    ku: Kurdo
+    ky: Kyrgyz
+    la: Latin nga
+    lb: Luxembourgo nga
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lituano nga
+    lus: Mizo
+    lv: Latviano nga
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedoniano
+    ml: Malayalam nga
+    mn: Mongolian nga
+    mni-mtei: Meitei (Manipuri) nga .
+    mr: marathi
+    ms: Malayo
+    mt: Malta
+    my: Burmese nga
+    ne: Nepali
+    nl: Olandes nga Olandes
+    "no": norwego
+    nso: Sepeti
+    ny: Nyanza (Chichewa) .
+    om: Oromo
+    or: Oriya (Odia) .
+    pa: punjabi nga
+    pl: Polish nga
+    ps: Pashto
+    pt: Portuges (Portugal, Brasil) .
+    qu: Quechua
+    ro: Romanano nga
+    ru: Ruso nga Ruso
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala ti panagsao
+    sk: Eslovako nga
+    sl: slovenian nga
+    sm: Samoano
+    sn: Shona
+    so: Somali nga
+    sq: Albaniano nga
+    sr: Serbio nga
+    st: Sesotho
+    su: Sundanese nga
+    sv: Sueko nga
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik nga
+    th: Thai nga
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino) .
+    tr: turko nga
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur nga Uighur
+    uk: Ukranio nga Ukranio
+    ur: Urdu nga Urdu
+    uz: Uzbek
+    vi: Bietnam
+    xh: pagsasao bantu
+    yi: Yiddish ti pagsasao
+    yo: yoruba nga
+    zh: Intsik
+    zh-chs: Insik (Napasimple) .
+    zh-cht: Insik (Napasimple) .
+    zh-cn: Insik (Napasimple) .
+    zh-hk: Intsik (Hong Kong) .
+    zh-mo: Intsik(Macau) .
+    zh-sg: Intsik (Singapore) .
+    zh-tw: tradisional nga Insik) .
+    zu: Zulu

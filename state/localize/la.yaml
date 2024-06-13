@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Inactivare complementum instructiones
+        long: |
+            Scriptum autocompletum pro {{.RootName}} generat pro testa certa.
+        short: Generate scriptum est autocomplete ad certum testam
+        subcommand:
+            short: Generate scriptum autocompletum pro {{.Command}}
     flags:
         debug: Output detailed iniuriarum
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Munera omnia cognata generandi mensas pro subsidio statorum vel subsidiorum administratione negotiorum officiorum
             short: Omnes munera cognata ad tabulas generandas
+    group:
+        gen: codice generation
     help:
         additional_commands: Additional imperium
         aliases: imperium alias
@@ -94,10 +104,18 @@ cli:
         flags: modulus
         get_info: ut magis detailed notitia
         global_flags: global parametri
+        long: 'Auxilium praebet auxilium ad quodlibet mandatum in applicatione. '
+        short: Auxilium in aliquo imperio
+        usage: Instructiones ad utens {{.Name}}
         use: usus
     i18n:
         long: Multilingual internationalization related toolkit
         short: Multilingual internationalization related toolkit
+        support:
+            flags:
+                language: Specificare linguam ad ostentationem, alioquin codice sermone usus erit ad linguam propono
+            long: Enumerare omnes linguas suscepit
+            short: Supported linguarum album
         tran:
             flags:
                 all-language: Transferre omnes linguas suffultae (si verum linguarum vexillum debilitatum est)
@@ -114,3 +132,156 @@ cli:
             short: translate
     long: Instrumentum pro pigris hominibus appositum, inter 'proto'-substructio compago dorsi, usui communium usuum, ac multi-linguarum translationum.
     short: A instrumentum ad populum piger posuit
+    sync:
+        flags:
+            template-path: Formula synchronisation iter
+        long: Configurationem ex remoto fine conformare et eam in loci configurationem confundere. Formulae fasciculi eodem tempore in synchronisation (si figuratum est) sustentatur.
+        short: Synchronize configuratione a remotis
+    up-mod:
+        flags:
+            goproxy: Denota inscriptionis goproxy, nisi, prima in ambitu variabilis adhibebitur
+        long: Renova dependentiam versionem go.mod lima
+        short: Renova go.mod file
+lang:
+    af: Africanum
+    ak: Twi (Akan)
+    am: Aethiopica
+    ar: Arabice
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Belarusian
+    bg: Bulgarica
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengalica
+    bs: Bosnian
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsica
+    cs: Czech
+    cy: Cambrica
+    da: Danish
+    de: German
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ovem
+    el: Graeca
+    en: Anglicus
+    eo: Esperanto
+    es: spanish
+    et: Estonian
+    eu: basque
+    fa: Persae
+    fi: Finnicum
+    fil: Philippinica (Tagalog)
+    fr: Gallica
+    fy: Frisian
+    ga: hibernica
+    gd: Scotica Gaelic
+    gl: Gallician
+    gn: Guaraní
+    gom: gonggan lingua
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: hebraice
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatian
+    ht: Haitian Creole
+    hu: hungaricae
+    hy: Armenian
+    id: Indonesiaca
+    ig: Igbo
+    ilo: Ilocano
+    is: Islandic
+    it: Italian
+    iw: hebraice
+    ja: Iaponica
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: Kazakh
+    km: Cambodian
+    kn: Kannada
+    ko: Coreanica
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Latinus
+    lb: Luxemburgish
+    lg: Lugandia
+    ln: Lingala
+    lo: Laomedonteae
+    lt: Lithuanian
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: macedonicum
+    ml: Malayalam
+    mn: Mongolica
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: Melitensis
+    my: Burmese
+    ne: Nepalica
+    nl: Batavica
+    "no": norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polonica
+    ps: Pashto
+    pt: Portuguese ( Portugal , Brazil )
+    qu: Quechua
+    ro: Romanian
+    ru: Russian
+    rw: Kinyarwanda
+    sa: Sanscritica
+    sd: sindhi
+    si: sinhala
+    sk: Moravica
+    sl: slovenian
+    sm: Samoanice
+    sn: Shona
+    so: Somali
+    sq: Albanian
+    sr: Serbian
+    st: Sesotho
+    su: Sundanese
+    sv: Swedish
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turci
+    tl: Tagalog (Filipino)
+    tr: Turcorum
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ucraina
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamica
+    xh: bantu lingua
+    yi: Yiddish
+    yo: yoruba
+    zh: Seres
+    zh-chs: Seres (facilius)
+    zh-cht: Seres (facilius)
+    zh-cn: Seres (facilius)
+    zh-hk: Seres (Hongcongum)
+    zh-mo: Seres (Macau)
+    zh-sg: Seres (Singapore)
+    zh-tw: Traditional Chinese)
+    zu: Zulu

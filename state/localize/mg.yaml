@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Atsaharo ny toromarika famaranana
+        long: |
+            Mamorona script autocomplete ho an'ny {{.RootName}} ho an'ny akorandriaka voatondro.
+        short: Mamorona script autocomplete ho an'ny akorandriaka voatondro
+        subcommand:
+            short: Mamorona script autocomplete ho an'ny {{.Command}}
     flags:
         debug: Output log details
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Ny asa rehetra mifandraika amin'ny famoronana latabatra ho an'ny loharanon-karena ara-panjakana na fitantanana loharanon-karena static amin'ny serivisy fandraharahana
             short: Ny fiasa rehetra mifandraika amin'ny famoronana latabatra
+    group:
+        gen: famoronana kaody
     help:
         additional_commands: Didy fanampiny
         aliases: baiko alias
@@ -94,10 +104,18 @@ cli:
         flags: fikirana
         get_info: mba hahazoana fampahalalana amin'ny antsipiriany kokoa
         global_flags: masontsivana manerantany
+        long: 'Ny fanampiana dia manome fanampiana ho an''ny baiko rehetra ao amin''ny fampiharana. '
+        short: Fanampiana amin'ny baiko rehetra
+        usage: Torolàlana amin'ny fampiasana {{.Name}}
         use: Ampiasao
     i18n:
         long: Fitaovana mifandraika amin'ny iraisam-pirenena amin'ny fiteny maro
         short: Fitaovana mifandraika amin'ny iraisam-pirenena amin'ny fiteny maro
+        support:
+            flags:
+                language: Lazao ny fiteny haseho, raha tsy izany dia hampiasaina hanehoana ilay fiteny ny kaody fiteny
+            long: Tanisao ny fiteny tohana rehetra
+            short: Lisitry ny fiteny tohanana
         tran:
             flags:
                 all-language: Adikao ny fiteny tohanana rehetra (raha marina ny sainam-pirenena dia kilemaina)
@@ -114,3 +132,156 @@ cli:
             short: translate
     long: Fitaovana ho an'ny kamo, ao anatin'izany ny rafitra backend mifototra amin'ny 'proto', môdely fampiasa matetika ary fandikana amin'ny fiteny maro.
     short: Fitaovana ho an'ny kamo
+    sync:
+        flags:
+            template-path: Lalana fampifanarahana ny maodely
+        long: Ampifanaraho amin'ny faran'ny lavitr'ezaka ny fanefena ary ampifandraiso amin'ny fandrindrana eo an-toerana Ny rakitra môdely dia tohanana miaraka mandritra ny fampifanarahana (raha voarindra).
+        short: Ampifanaraho amin'ny lavitra
+    up-mod:
+        flags:
+            goproxy: Lazao ny adiresy goproxy, raha tsy izany, ny voalohany amin'ny fari-piainan'ny tontolo iainana no hampiasaina
+        long: Havaozy ny kinova miankina amin'ny rakitra go.mod
+        short: Fanavaozana ny rakitra go.mod
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Arabo
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Belarusian
+    bg: biolgara
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosniaka
+    ca: Katalana
+    ceb: Cebuano
+    ckb: Kiorda (Sorani)
+    co: Korsika
+    cs: TSEKY
+    cy: valesa
+    da: Danoà
+    de: Anarana
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: GRIKA
+    en: anglisy
+    eo: esperanto
+    es: ESPANIOLA
+    et: Estoniana
+    eu: Baska
+    fa: PERSANINA
+    fi: Anarana
+    fil: Filipino (Tagalog)
+    fr: FRANTSAY
+    fy: Frisian
+    ga: TENY IRLANDEY
+    gd: Gaelika Scottish
+    gl: galisiana
+    gn: Guaraní
+    gom: fiteny gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaii
+    he: Hebreo
+    hi: hindi
+    hmn: Hmong
+    hr: Kroaty
+    ht: Kreole Haitiana
+    hu: hongariana
+    hy: Armeniana
+    id: indonezianina
+    ig: Igbo
+    ilo: Ilokano
+    is: Anarana
+    it: ITALIANINA
+    iw: Hebreo
+    ja: Anarana
+    jv: Javaney
+    jw: Javaney
+    ka: Zeorziana
+    kk: Kazakh
+    km: Kambojiana
+    kn: Kannada
+    ko: Koreana
+    kri: kreôla
+    ku: Kiorda
+    ky: Kyrgyz
+    la: Latina
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: litoanianina
+    lus: Mizo
+    lv: Zavatra tsy
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Masedoniana
+    ml: Malayalam
+    mn: Mongoliana
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: Maltais
+    my: Birmana
+    ne: Nepali
+    nl: Anarana iombonana
+    "no": norvejiana
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: poloney
+    ps: Pashto
+    pt: Portiogey (Portugal, Brezila)
+    qu: Quechua
+    ro: Malagasy Romanian
+    ru: ROSIANINA
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: silaovaka
+    sl: Slovenianina
+    sm: samoanina
+    sn: Shona
+    so: Somali
+    sq: albaney
+    sr: serbianina
+    st: Sesotho
+    su: Sundanese
+    sv: Anarana
+    sw: swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipiana)
+    tr: Tiorka
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: OKRAINIANA
+    ur: Urdu
+    uz: Uzbek
+    vi: vietnamiana
+    xh: fiteny bantu
+    yi: Yiddish
+    yo: yoruba
+    zh: SINOA
+    zh-chs: Sinoa (tsotsotra)
+    zh-cht: Sinoa (tsotsotra)
+    zh-cn: Sinoa (tsotsotra)
+    zh-hk: Sinoa (Hong Kong)
+    zh-mo: Sinoa (Makau)
+    zh-sg: Sinoa (Singapore)
+    zh-tw: Sinoa nentim-paharazana)
+    zu: Zulu

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Atspējot pabeigšanas norādījumus
+        long: |
+            Ģenerē automātiskās pabeigšanas skriptu {{.RootName}} norādītajam apvalkam.
+        short: Ģenerējiet automātiskās pabeigšanas skriptu norādītajam apvalkam
+        subcommand:
+            short: Ģenerēt automātiskās pabeigšanas skriptu komandai {{.Command}}
     flags:
         debug: Izvadiet detalizētu žurnālu
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Visas saistītās tabulu ģenerēšanas funkcijas statusa resursu vai statisko resursu pārvaldībai biznesa pakalpojumiem
             short: Visas saistītās funkcijas tabulu ģenerēšanai
+    group:
+        gen: koda ģenerēšana
     help:
         additional_commands: Papildu komandas
         aliases: komandas aizstājvārds
@@ -94,10 +104,18 @@ cli:
         flags: parametrs
         get_info: lai iegūtu sīkāku informāciju
         global_flags: globālie parametri
+        long: 'Palīdzība sniedz palīdzību jebkurai lietojumprogrammas komandai. '
+        short: Palīdziet jebkurā komandā
+        usage: Norādījumi par {{.Name}} lietošanu
         use: izmantot
     i18n:
         long: Daudzvalodu internacionalizācijas rīku komplekts
         short: Daudzvalodu internacionalizācijas rīku komplekts
+        support:
+            flags:
+                language: Norādiet displeja valodu, pretējā gadījumā valodas attēlošanai tiks izmantots valodas kods
+            long: Norādiet visas atbalstītās valodas
+            short: Atbalstīto valodu saraksts
         tran:
             flags:
                 all-language: Tulkot visas atbalstītās valodas (ja tā ir patiesa, valodu karodziņš ir atspējots)
@@ -114,3 +132,156 @@ cli:
             short: tulkot
     long: Rīku komplekts slinkiem cilvēkiem, tostarp uz “proto” balstīta aizmugursistēmas sistēma, bieži lietotas veidnes un tulkošana vairākās valodās
     short: Instrumentu komplekts slinkiem cilvēkiem
+    sync:
+        flags:
+            template-path: Veidnes sinhronizācijas ceļš
+        long: Sinhronizējiet konfigurāciju no attālā gala un apvienojiet to vietējā konfigurācijā. Sinhronizācijas laikā tiek atbalstīts veidnes fails (ja tas ir konfigurēts).
+        short: Sinhronizējiet konfigurāciju no tālvadības pults
+    up-mod:
+        flags:
+            goproxy: Norādiet goproxy adresi, ja nē, tiks izmantota pirmā vides mainīgā
+        long: Atjauniniet faila go.mod atkarības versiju
+        short: Atjauniniet failu go.mod
+lang:
+    af: afrikāņi
+    ak: Tvi (Akan)
+    am: amharu
+    ar: arābu
+    as: asamiešu
+    ay: Aimara
+    az: Azerbaidžāņu
+    be: baltkrievu
+    bg: bulgāru
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengāļu
+    bs: bosniešu
+    ca: katalāņu
+    ceb: Cebuano
+    ckb: kurdu (sorani)
+    co: Korsikānis
+    cs: čehu
+    cy: velsiešu
+    da: dāņu
+    de: vācu
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: grieķu valoda
+    en: Angļu
+    eo: Esperanto
+    es: spāņu
+    et: igauņu
+    eu: basku
+    fa: persiešu
+    fi: somu
+    fil: filipīniešu (tagalogu)
+    fr: franču valoda
+    fy: frīzu valoda
+    ga: īru
+    gd: skotu gēlu valoda
+    gl: Galisiešu
+    gn: Guaraní
+    gom: gonga valoda
+    gu: gudžaratu
+    ha: Hausa
+    haw: Havajiešu
+    he: ebreju valoda
+    hi: hindi
+    hmn: Hmong
+    hr: horvātu
+    ht: Haiti kreols
+    hu: ungāru
+    hy: armēņu
+    id: Indonēziešu
+    ig: Igbo
+    ilo: Ilocano
+    is: islandiešu
+    it: itāļu valoda
+    iw: ebreju valoda
+    ja: japāņi
+    jv: javiešu
+    jw: javiešu
+    ka: gruzīnu
+    kk: kazahu
+    km: Kambodžas
+    kn: kannada
+    ko: korejiešu
+    kri: kreoliešu
+    ku: kurdu
+    ky: Kirgizstānas
+    la: latīņu valoda
+    lb: luksemburgiešu
+    lg: Luganda
+    ln: Lingala
+    lo: Laosa
+    lt: lietuviešu
+    lus: Mizo
+    lv: latviski
+    mai: Maithili
+    mg: malagasu
+    mi: maori
+    mk: maķedonietis
+    ml: malajalu
+    mn: mongoļu valoda
+    mni-mtei: Meitei (manipuri)
+    mr: marathi
+    ms: malajiešu
+    mt: maltiešu
+    my: birmietis
+    ne: Nepāliešu
+    nl: holandiešu valoda
+    "no": norvēģu
+    nso: Sepeti
+    ny: Njanza (Čičeva)
+    om: Oromo
+    or: Orija (Odia)
+    pa: pandžabi
+    pl: poļu
+    ps: puštu
+    pt: portugāļu (Portugāle, Brazīlija)
+    qu: kečua
+    ro: rumāņu
+    ru: krievu valoda
+    rw: Kinjaruanda
+    sa: sanskrits
+    sd: sindhi
+    si: sinhala
+    sk: slovāku
+    sl: slovēņu
+    sm: Samoa
+    sn: Šona
+    so: somāliešu
+    sq: albānis
+    sr: serbu
+    st: Sesoto
+    su: sundāņu
+    sv: zviedru
+    sw: svahili
+    ta: tamilu
+    te: telugu
+    tg: tadžiks
+    th: taju
+    ti: Tignan
+    tk: Turkmēņu
+    tl: tagalu (filipīniešu)
+    tr: Turku
+    ts: Dzonga
+    tt: tatārs
+    ug: Uiguru
+    uk: ukraiņu
+    ur: urdu
+    uz: uzbeku
+    vi: vjetnamietis
+    xh: bantu valoda
+    yi: jidiša
+    yo: joruba
+    zh: ķīniešu
+    zh-chs: ķīniešu (vienkāršotā)
+    zh-cht: ķīniešu (vienkāršotā)
+    zh-cn: ķīniešu (vienkāršotā)
+    zh-hk: ķīniešu (Honkonga)
+    zh-mo: ķīniešu (Makao)
+    zh-sg: ķīniešu (Singapūra)
+    zh-tw: tradicionālā ķīniešu)
+    zu: zulu

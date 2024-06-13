@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Deaktiver færdiggørelsesinstruktioner
+        long: |
+            Genererer et autofuldførelsesscript for {{.RootName}} for den angivne shell.
+        short: Generer et autofuldførelsesscript for den angivne shell
+        subcommand:
+            short: Generer autofuldførelsesscript for {{.Command}}
     flags:
         debug: Udfør detaljeret log
     gen:
@@ -8,7 +16,7 @@ cli:
                 default-role: Standardrollen for den batch-genererede grænseflade Se brugsdokumentationen for detaljer.
                 gen-to: Angiv outputplaceringen for de genererede .go-filer
                 list-option: Listen kan også filtreres, se brugsdokumentationen for detaljer.
-                model: Angiv modelnavnet, støtte udeladelse af `model`-præfikset
+                model: Angiv modelnavnet, støtte udeladelse af "model"-præfikset
             long: Generer grænseflader i batches og tilføj en grænseflade for en bestemt model i .proto-filen
             short: Batchgenereringsgrænseflade
         all:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Alle relaterede funktioner til generering af tabeller til stateful ressource- eller statisk ressourcestyring af forretningstjenester
             short: Alle relaterede funktioner til generering af tabeller
+    group:
+        gen: kodegenerering
     help:
         additional_commands: Yderligere kommandoer
         aliases: kommando alias
@@ -94,17 +104,25 @@ cli:
         flags: parameter
         get_info: for at få mere detaljerede oplysninger
         global_flags: globale parametre
+        long: 'Giv brugsinstruktioner for enhver kommando i applikationen. '
+        short: Instruktioner til brug af enhver kommando
+        usage: Instruktioner til brug af {{.Name}}
         use: brug
     i18n:
         long: Flersproget internationaliseringsrelateret værktøjskasse
         short: Flersproget internationaliseringsrelateret værktøjskasse
+        support:
+            flags:
+                language: Angiv det sprog, der skal vises, ellers vil sprogkoden blive brugt til at vise sproget
+            long: Liste over alle understøttede sprog
+            short: Liste over understøttede sprog
         tran:
             flags:
                 all-language: Oversæt alle understøttede sprog (hvis det er sandt, er sprogflaget deaktiveret)
                 force: Overskriv eksisterende oversættelser
                 force-key-prefix: nøgler, der skal tvinges til at blive overskrevet
                 generate-const: Generer opregningsværdier for nemt at ringe
-                languages: Angiv målsproget for oversættelse
+                languages: Angiv målsproget for oversættelsen
                 src-file: Kildefil, der skal oversættes (påkrævet)
                 src-language: Sproget for kildefilen (hvis ikke angivet, vil værktøjet automatisk bestemme kildefilen)
                 translater:
@@ -114,3 +132,156 @@ cli:
             short: Oversætte
     long: Et værktøjssæt til dovne mennesker, inklusive 'proto'-baseret backend-ramme, almindeligt anvendte skabeloner og flersproget oversættelse
     short: Et værktøjssæt til dovne mennesker
+    sync:
+        flags:
+            template-path: Skabelonsynkroniseringssti
+        long: Synkroniser konfigurationen fra den eksterne ende og flet den ind i den lokale konfiguration. Skabelonfilen understøttes samtidig under synkroniseringen (hvis den er konfigureret).
+        short: Synkroniser konfigurationen fra fjernbetjeningen
+    up-mod:
+        flags:
+            goproxy: Angiv goproxy-adressen, hvis ikke, vil den første i miljøvariablen blive brugt
+        long: Opdater afhængighedsversionen af ​​go.mod-filen
+        short: Opdater go.mod-fil
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: amharisk
+    ar: arabisk
+    as: assamisk
+    ay: Aymara
+    az: aserbajdsjansk
+    be: hviderussisk
+    bg: bulgarsk
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalsk
+    bs: bosnisk
+    ca: catalansk
+    ceb: Cebuano
+    ckb: kurdisk (sorani)
+    co: korsikansk
+    cs: tjekkisk
+    cy: walisisk
+    da: dansk
+    de: tysk
+    doi: dogglai
+    dv: Dhivehi
+    ee: Moderfår
+    el: græsk
+    en: engelsk
+    eo: Esperanto
+    es: spansk
+    et: estisk
+    eu: baskisk
+    fa: persisk
+    fi: finsk
+    fil: filippinsk (tagalog)
+    fr: fransk
+    fy: frisisk
+    ga: irsk
+    gd: skotsk gælisk
+    gl: galicisk
+    gn: Guaraní
+    gom: gonggan sprog
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiiansk
+    he: hebraisk
+    hi: hindi
+    hmn: Hmong
+    hr: kroatisk
+    ht: haitisk kreol
+    hu: ungarsk
+    hy: armensk
+    id: indonesisk
+    ig: Igbo
+    ilo: Ilocano
+    is: islandsk
+    it: italiensk
+    iw: hebraisk
+    ja: japansk
+    jv: javanesisk
+    jw: javanesisk
+    ka: georgisk
+    kk: kasakhisk
+    km: cambodjanske
+    kn: Kannada
+    ko: koreansk
+    kri: kreolsk
+    ku: kurdisk
+    ky: kirgisisk
+    la: latin
+    lb: luxembourgsk
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: litauisk
+    lus: Mizo
+    lv: lettisk
+    mai: Maithili
+    mg: madagaskisk
+    mi: Maori
+    mk: makedonsk
+    ml: Malayalam
+    mn: mongolsk
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: malaysisk
+    mt: maltesisk
+    my: burmesisk
+    ne: nepalesisk
+    nl: hollandsk
+    "no": Norsk
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polere
+    ps: Pashto
+    pt: Portugisisk (Portugal, Brasilien)
+    qu: Quechua
+    ro: rumænsk
+    ru: Russisk
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: singalesisk
+    sk: slovakisk
+    sl: slovensk
+    sm: samoansk
+    sn: Shona
+    so: Somali
+    sq: albansk
+    sr: serbisk
+    st: Sesotho
+    su: sundanesisk
+    sv: svensk
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: tadsjikisk
+    th: Thai
+    ti: Tignan
+    tk: turkmenske
+    tl: Tagalog (filippinsk)
+    tr: tyrkisk
+    ts: Dzonga
+    tt: tatarisk
+    ug: Uighur
+    uk: ukrainsk
+    ur: Urdu
+    uz: usbekisk
+    vi: vietnamesisk
+    xh: bantu sprog
+    yi: Jiddisch
+    yo: yoruba
+    zh: kinesisk
+    zh-chs: Kinesisk forenklet)
+    zh-cht: Kinesisk forenklet)
+    zh-cn: Kinesisk forenklet)
+    zh-hk: kinesisk (Hongkong)
+    zh-mo: kinesisk (Macau)
+    zh-sg: kinesisk (Singapore)
+    zh-tw: traditionelt kinesisk)
+    zu: Zulu

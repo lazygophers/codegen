@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Ausschalten Ofschlossinstruktiounen
+        long: |
+            Generéiert en Autocomplete-Skript fir {{.RootName}} fir déi spezifizéiert Shell.
+        short: Generéiere en Autocomplete Skript fir déi spezifizéiert Shell
+        subcommand:
+            short: Generéiere Autocomplete Skript fir {{.Command}}
     flags:
         debug: Output detailléierte Logbuch
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: All Zesummenhang Funktiounen vun Generéiere Dëscher fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
             short: All Zesummenhang Funktiounen fir Generéiere Dëscher
+    group:
+        gen: Code Generatioun
     help:
         additional_commands: Zousätzlech Kommandoen
         aliases: Kommando alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: fir méi detailléiert Informatiounen ze kréien
         global_flags: global Parameteren
+        long: 'Hëllef bitt Hëllef fir all Kommando an der Applikatioun. '
+        short: Hëllef op all Kommando
+        usage: Instruktioune fir {{.Name}} ze benotzen
         use: benotzen
     i18n:
         long: Multilingual Internationaliséierung-Zesummenhang Toolkit
         short: Multilingual Internationaliséierung-Zesummenhang Toolkit
+        support:
+            flags:
+                language: Spezifizéiert d'Sprooch fir ze weisen, soss gëtt de Sproochecode benotzt fir d'Sprooch ze weisen
+            long: Lëscht all ënnerstëtzt Sproochen
+            short: Ënnerstëtzt Sprooch Lëscht
         tran:
             flags:
                 all-language: Iwwersetze all ënnerstëtzt Sproochen (wann richteg ass de Sprooche Fändel behënnert)
@@ -114,3 +132,156 @@ cli:
             short: iwwersetzen
     long: En Toolset fir faul Leit, dorënner 'Proto'-baséiert Backend Framework, allgemeng benotzt Templates, a Multi-Sprooch Iwwersetzung
     short: En Toolset fir faul Leit
+    sync:
+        flags:
+            template-path: Schabloun Synchroniséierung Wee
+        long: Synchroniséiert d'Konfiguratioun vum Remote Enn a fusionéiert se an d'lokal Konfiguratioun D'Schabloundatei gëtt zur selwechter Zäit während der Synchroniséierung ënnerstëtzt (wann konfiguréiert).
+        short: Synchroniséiert d'Konfiguratioun vu Remote
+    up-mod:
+        flags:
+            goproxy: Gitt d'Goproxy Adress un, wann net, gëtt déi éischt an der Ëmfeldvariabel benotzt
+        long: Update d'Ofhängegkeet Versioun vun der go.mod Datei
+        short: Update go.mod Datei
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharesch
+    ar: Arabesch
+    as: Assamesch
+    ay: Aymara
+    az: Aserbaidschan
+    be: wäissrussesch
+    bg: Bulgarescg
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengalesch
+    bs: Bosnesch
+    ca: katalanesch
+    ceb: Cebuano
+    ckb: Kurdesch (Sorani)
+    co: korsesch
+    cs: Tschechesch
+    cy: Waliser
+    da: Dänesch
+    de: Däitsch
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Griichesch
+    en: Englesch
+    eo: esperanto
+    es: Spuenesch
+    et: Estonesch
+    eu: Baskesch
+    fa: Persesch
+    fi: Finnesch
+    fil: Filipino (Tagalog)
+    fr: Franséisch
+    fy: friesesch
+    ga: Iresch
+    gd: Schottesch Gaelesch
+    gl: Galizesch
+    gn: Guaraní
+    gom: gonggan Sprooch
+    gu: Gujarati
+    ha: Haussa
+    haw: Hawaianesch
+    he: Hebräesch
+    hi: Hindi
+    hmn: Hmong
+    hr: Kroatesch
+    ht: Haitescht Creole
+    hu: Ungaresch
+    hy: Armenesch
+    id: Indonesesch
+    ig: Igbo
+    ilo: Ilocano
+    is: Islännesch
+    it: Italienesch
+    iw: Hebräesch
+    ja: Japanesch
+    jv: Javanesesch
+    jw: Javanesesch
+    ka: Georgesch
+    kk: kasachesch
+    km: Kambodscha
+    kn: Kannada
+    ko: Koreanesch
+    kri: Kreol
+    ku: kurdesch
+    ky: kirgisesch
+    la: laténgesch
+    lb: lëtzebuergesch
+    lg: Luganda
+    ln: Lingala
+    lo: laotesch
+    lt: litauesch
+    lus: Mizo
+    lv: Lettesch
+    mai: Maithili
+    mg: Malagasy
+    mi: maoresch
+    mk: Mazedonesch
+    ml: Malajalam
+    mn: mongolesch
+    mni-mtei: Meitei (Manipuri)
+    mr: Marathi
+    ms: Malaiesch
+    mt: Maltesesch
+    my: Birmanesch
+    ne: Nepalesesch
+    nl: Hollänesch
+    "no": Norweegesch
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: pundschabi
+    pl: Polnesch
+    ps: pashtu
+    pt: Portugisesch (Portugal, Brasilien)
+    qu: Quechua
+    ro: Rumänesch
+    ru: Russesch
+    rw: Kinyarwanda
+    sa: sanskrit
+    sd: Sindhi
+    si: sinhala
+    sk: Slowakesch
+    sl: Slowenesch
+    sm: Samoanesch
+    sn: Shona
+    so: somalesch
+    sq: Albanesch
+    sr: serbesch
+    st: Sesotho
+    su: Sundanesesch
+    sv: Schweedesch
+    sw: Swahili
+    ta: Tamil
+    te: Telugu
+    tg: Tadschikesch
+    th: Thai
+    ti: Tignan
+    tk: turkmenesch
+    tl: Tagalog (Filippinesch)
+    tr: tierkesch
+    ts: Dzonga
+    tt: Tataresch
+    ug: Uighur
+    uk: Ukrainesch
+    ur: Urdu
+    uz: Usbekesch
+    vi: Vietnamesesch
+    xh: bantu Sprooch
+    yi: jiddesch
+    yo: yoruba
+    zh: Chineesesch
+    zh-chs: Chinesesch (vereinfacht)
+    zh-cht: Chinesesch (vereinfacht)
+    zh-cn: Chinesesch (vereinfacht)
+    zh-hk: Chinesesch (Hong Kong)
+    zh-mo: Chinesesch (Macau)
+    zh-sg: Chinesesch (Singapur)
+    zh-tw: traditionell Chinesesch)
+    zu: Zulu

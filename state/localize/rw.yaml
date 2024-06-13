@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Hagarika amabwiriza yo kurangiza
+        long: |
+            Gukora inyandiko-yuzuye ya {{.RotName}} kubigenewe byerekanwe.
+        short: Gukora inyandiko yuzuye ya shell kubisobanuro byihariye
+        subcommand:
+            short: Gukora inyandiko yuzuye ya {{.Icyemezo}}
     flags:
         debug: Ibisohoka birambuye
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Imirimo yose ijyanye no kubyara imbonerahamwe yumutungo wa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
             short: Imikorere yose ijyanye no kubyara imbonerahamwe
+    group:
+        gen: ibisekuruza
     help:
         additional_commands: Amabwiriza yinyongera
         aliases: itegeko alias
@@ -94,10 +104,18 @@ cli:
         flags: ibipimo
         get_info: kugirango ubone ibisobanuro birambuye
         global_flags: ibipimo byisi
+        long: 'Ubufasha butanga ubufasha kubuyobozi ubwo aribwo bwose. '
+        short: Fasha ku itegeko iryo ari ryo ryose
+        usage: Amabwiriza yo gukoresha {{.Izina}}
         use: Koresha
     i18n:
         long: Indimi nyinshi zijyanye no kumenyekanisha mpuzamahanga
         short: Indimi nyinshi zijyanye no kumenyekanisha mpuzamahanga
+        support:
+            flags:
+                language: Kugaragaza ururimi rwo kwerekana, bitabaye ibyo kode y'ururimi izakoreshwa mu kwerekana ururimi
+            long: Andika indimi zose zishyigikiwe
+            short: Urutonde rwindimi
         tran:
             flags:
                 all-language: Sobanura indimi zose zishyigikiwe (niba arukuri ibendera ibendera ryahagaritswe)
@@ -114,3 +132,156 @@ cli:
             short: guhindura
     long: Igikoresho cyashyizweho kubantu bafite ubunebwe, harimo 'proto'-ishingiye kumurongo winyuma, ibisanzwe bikoreshwa mubishusho, hamwe no guhindura indimi nyinshi
     short: Igikoresho cyashyizweho kubantu bafite ubunebwe
+    sync:
+        flags:
+            template-path: Inzira yo guhuza inzira
+        long: Guhuza iboneza uhereye kumpera ya kure hanyuma ukayihuza muburyo bwaho. Idosiye yinyandiko ishyigikirwa icyarimwe mugihe cyo guhuza (niba byashyizweho)
+        short: Guhuza iboneza kuva kure
+    up-mod:
+        flags:
+            goproxy: Kugaragaza aderesi ya goproxy, niba atariyo, iyambere mubidukikije bihinduka bizakoreshwa
+        long: Kuvugurura verisiyo yo kwisunga ya go.mod dosiye
+        short: Kuvugurura go.mod dosiye
+lang:
+    af: Abanyafurika
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Icyarabu
+    as: Assamese
+    ay: Aymara
+    az: Azaribayijan
+    be: Biyelorusiya
+    bg: Buligariya
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Ikibengali
+    bs: Bosiniya
+    ca: Igikatalani
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsican
+    cs: Ceki
+    cy: Welsh
+    da: danish
+    de: Ikidage
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Ikigereki
+    en: Icyongereza
+    eo: Esperanto
+    es: icyesipanyoli
+    et: Esitoniya
+    eu: basque
+    fa: Persian
+    fi: Igifinilande
+    fil: Abanyafilipine (Tagalog)
+    fr: Igifaransa
+    fy: Igifaransa
+    ga: irish
+    gd: Abanya-Gaelic
+    gl: Abagalatiya
+    gn: Guaraní
+    gom: ururimi rwa gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawayi
+    he: hebrew
+    hi: Hindi
+    hmn: Hmong
+    hr: Igikorowasiya
+    ht: Igikerewole
+    hu: inzara
+    hy: Ikinyarumeniya
+    id: Indoneziya
+    ig: Igbo
+    ilo: Ilocano
+    is: Isilande
+    it: Umutaliyani
+    iw: hebrew
+    ja: Ikiyapani
+    jv: Javanese
+    jw: Javanese
+    ka: Jeworujiya
+    kk: Kazak
+    km: Kamboje
+    kn: Kannada
+    ko: Igikoreya
+    kri: Igikerewole
+    ku: Kurdish
+    ky: Kirigizisitani
+    la: Ikilatini
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lituwaniya
+    lus: Mizo
+    lv: Ikilatini
+    mai: Maithili
+    mg: Malagasi
+    mi: Maori
+    mk: Abanyamakedoniya
+    ml: Malayalam
+    mn: Mongoliya
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malayika
+    mt: Maltese
+    my: Ikirundi
+    ne: Nepali
+    nl: Ikidage
+    "no": Norvege
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Igipolonye
+    ps: Pashto
+    pt: Igiporutugali (Porutugali, Burezili)
+    qu: Quechua
+    ro: Ikinyarumaniya
+    ru: Ikirusiya
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Igisilovakiya
+    sl: sloveniya
+    sm: Samoan
+    sn: Shona
+    so: Somaliya
+    sq: Ikinyalubaniya
+    sr: Igiseribiya
+    st: Sesotho
+    su: Sundanese
+    sv: Igisuwede
+    sw: Igiswahiri
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Tayilande
+    ti: Tignan
+    tk: Abanyaturukiya
+    tl: Tagalog (Abanyafilipine)
+    tr: turkish
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukraine
+    ur: Urdu
+    uz: Uzbek
+    vi: Abanya Vietnam
+    xh: ururimi rwabantu
+    yi: Yiddish
+    yo: yoruba
+    zh: Igishinwa
+    zh-chs: Igishinwa (Byoroheje)
+    zh-cht: Igishinwa (Byoroheje)
+    zh-cn: Igishinwa (Byoroheje)
+    zh-hk: Igishinwa (Hong Kong)
+    zh-mo: Igishinwa (Macau)
+    zh-sg: Igishinwa (Singapore)
+    zh-tw: Abashinwa gakondo)
+    zu: Zulu

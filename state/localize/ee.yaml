@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Trɔ asi le mɔfiame siwo ku ɖe nuwuwu ŋu
+        long: |
+            Wɔ ŋɔŋlɔdzesi si wu enu le eɖokui si na {{.RootName}} na shell si woɖo.
+        short: Wɔ autocomplete script na shell si woɖo la
+        subcommand:
+            short: Wɔ ŋɔŋlɔdzesi si wu enu le eɖokui si na {{.Command}}.
     flags:
         debug: Output tsitotsito log
     gen:
@@ -9,7 +17,7 @@ cli:
                 gen-to: Tsɔ teƒe si .go faɛl siwo wowɔ la ado le
                 list-option: Woateŋu akɔ xexlẽdzesiawo hã me, taflatse di zazã ŋuti nuŋlɔɖiwo hena numeɖeɖe tsitotsito.
                 model: Tsɔ kpɔɖeŋu ŋkɔ, do alɔ asiɖeɖe le `kpɔɖeŋu` ŋgɔdonya ŋu
-            long: Wɔ ŋgɔdonyawo le hatsotsowo me eye nàtsɔ ŋgɔdonya akpe ɖe kpɔɖeŋu aɖe koŋ ŋu le .proto faɛl la me
+            long: Wɔ ŋgɔdonyawo le hatsotsowo me eye nàtsɔ ŋgɔdonya akpe ɖe kpɔɖeŋu aɖe ŋu le .proto faɛl la me
             short: Batch dzidzime ƒe ŋgɔdonya
         all:
             long: Wɔ kɔpi siwo katã dɔwɔnu sia do alɔe
@@ -86,6 +94,8 @@ cli:
         table:
             long: Dɔ siwo katã do ƒome kplii le kplɔ̃wo wɔwɔ na stateful resource alo static resource management of business services
             short: Dɔwɔwɔ siwo katã do ƒome kplii hena kplɔ̃wo wɔwɔ
+    group:
+        gen: code dzidzi
     help:
         additional_commands: Sedede bubuwo
         aliases: sedede ƒe ŋkɔ bubu
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: be nàkpɔ nyatakaka siwo de to wu
         global_flags: xexeame katã ƒe nɔnɔmewo
+        long: 'Na sedede ɖesiaɖe si le dɔwɔnua me zazã ŋuti mɔfiamewo. '
+        short: Mɔfiame siwo ku ɖe sedede ɖesiaɖe zazã ŋu
+        usage: Mɔfiamewo le {{.Ŋkɔ}} zazã ŋu.
         use: zã
     i18n:
         long: Dɔwɔnu siwo ku ɖe gbegbɔgblɔ geɖe me dukɔwo dome ƒomedodo ŋu
         short: Dɔwɔnu siwo ku ɖe gbegbɔgblɔ geɖe me dukɔwo dome ƒomedodo ŋu
+        support:
+            flags:
+                language: Tsɔ gbe si nàɖe afia, ne menye nenema o la, woazã gbegbɔgblɔ ƒe kɔda atsɔ aɖe gbea afia
+            long: Ŋlɔ gbegbɔgblɔ siwo katã wodo alɔe
+            short: Gbegbɔgblɔ siwo wodo alɔe ƒe xexlẽdzesi
         tran:
             flags:
                 all-language: Gblɔ gbegbɔgblɔ siwo katã wodo alɔe (ne nyateƒee la, wotu gbegbɔgblɔwo ƒe aflaga)
@@ -114,3 +132,156 @@ cli:
             short: ɖe gbe gɔme
     long: Dɔwɔnu si woɖo na kuviatɔwo, siwo dometɔ aɖewoe nye ‘proto’-based backend framework, template siwo wozãna zi geɖe, kple gbegbɔgblɔ geɖe me gbegɔmeɖeɖe
     short: Dɔwɔnu si woɖo na kuviatɔwo
+    sync:
+        flags:
+            template-path: Template ƒe wɔwɔ ɖekae ƒe mɔ
+        long: Trɔ asi le ɖoɖowɔɖia ŋu tso didiƒe ƒe nuwuwu eye nàtsɔe aƒo ƒu ɖe teƒea ƒe ɖoɖowɔɖia me Wodoa alɔ template faɛl la le ɣeyiɣi ɖeka me le wɔwɔ ɖekae me (ne woɖoe).
+        short: Wɔ ɖoɖo ɖe ɖoɖowɔɖiwo ŋu tso didiƒe
+    up-mod:
+        flags:
+            goproxy: Tsɔ goproxy adrɛs, ne menye nenema o la, woazã gbãtɔ le nuto ƒe tɔtrɔ me
+        long: Trɔ asi le go.mod faɛl ƒe dependency version ŋu
+        short: Trɔ asi le go.mod faɛl ŋu
+lang:
+    af: Afrikagbe me nya
+    ak: Twi (Akan) .
+    am: Amharicgbe me
+    ar: Arabgbe me nyawo
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijangbe me tɔwo
+    be: Belarusgbe me tɔ
+    bg: Bulgariagbe me
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengaligbe me
+    bs: Bosniagbe me tɔ
+    ca: Catalangbe me
+    ceb: Cebuanogbe me tɔ
+    ckb: Kurdgbe (Sorangbe) .
+    co: Corsicagbe me tɔ
+    cs: Czechgbe me tɔ
+    cy: Welshgbe me tɔ
+    da: danishgbe me nya
+    de: Germanygbe me tɔ
+    doi: dogglai
+    dv: Dhivehi
+    ee: Eʋegbe
+    el: Helagbe me
+    en: iŋlisi
+    eo: Esperantogbe me tɔ
+    es: Spaniagbe
+    et: Estoniagbe me tɔ
+    eu: basquegbe me tɔ
+    fa: Persiagbe me
+    fi: Finlandgbe me tɔ
+    fil: Filipinogbe (Tagaloggbe) .
+    fr: Fransegbe me nya
+    fy: Frisiagbe me tɔ
+    ga: irishgbe me nya
+    gd: Scotlandtɔwo ƒe Gaelicgbe
+    gl: Galiciagbe me tɔ
+    gn: Guarani
+    gom: gongan gbegbɔgblɔ
+    gu: gujaratigbe me nyawo
+    ha: Hausagbe me tɔ
+    haw: Hawaiigbe me tɔ
+    he: hebrigbe me
+    hi: Hindigbe me
+    hmn: Hmonggbe me
+    hr: Croatiagbe me tɔ
+    ht: Haititɔwo ƒe Creolegbe
+    hu: hungarygbe me tɔ
+    hy: Armeniagbe me tɔ
+    id: Indonesiagbe me tɔ
+    ig: Igbogbe me tɔ
+    ilo: Ilocano
+    is: Icelandgbe me tɔ
+    it: Italygbe me tɔ
+    iw: hebrigbe me
+    ja: Japangbe me tɔ
+    jv: Javagbe me tɔ
+    jw: Javagbe me tɔ
+    ka: Georgiagbe me
+    kk: Kazakhgbetɔ
+    km: Cambodiagbe me tɔ
+    kn: Kannadagbe me
+    ko: Koreagbe me tɔ
+    kri: Creolegbe me nyawo
+    ku: Kurdishgbe me
+    ky: Kyrgyzgbe me tɔ
+    la: Latingbe me nya
+    lb: Luxembourggbe me tɔ
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuaniagbe
+    lus: Mizo
+    lv: Latviagbe me tɔ
+    mai: Maithili
+    mg: Malagasygbe me nyawo
+    mi: Maorigbe me tɔ
+    mk: Makedoniagbe me tɔ
+    ml: Malayalamgbe me
+    mn: Mongoliagbe me tɔ
+    mni-mtei: Meitei (Manipuri) .
+    mr: marathigbe me nya
+    ms: Malaygbe me tɔ
+    mt: maltesegbe me nya
+    my: Burmagbe me tɔ
+    ne: Nepalgbe me
+    nl: Hollandgbe me tɔ
+    "no": norwaygbe me tɔ
+    nso: Sepeti ƒe ŋkɔ
+    ny: Nyanza (Chichewagbe) .
+    om: Oromo
+    or: Oriya (Odiagbe) .
+    pa: punjabigbe me
+    pl: Polandgbe me tɔ
+    ps: Pashtogbe me tɔ
+    pt: Portugalgbe (Portugal, Brazil) .
+    qu: Quechua
+    ro: Romaniagbe me tɔ
+    ru: Russiagbe me
+    rw: Kinyarwandagbe me tɔ
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala ƒe nya
+    sk: Slovakiagbe
+    sl: sloveniagbe me tɔ
+    sm: Samoatɔ
+    sn: Shonagbe me tɔ
+    so: Somaliagbe me
+    sq: Albaniagbe me tɔ
+    sr: Serbiagbe me tɔ
+    st: Sesothogbe me tɔ
+    su: Sundangbe me tɔ
+    sv: Swedengbe me tɔ
+    sw: Swahiligbe
+    ta: tamilgbe me tɔ
+    te: telugugbe me nya
+    tg: Tajikgbe me
+    th: Thailandgbe
+    ti: Tignan ƒe ŋkɔ
+    tk: Turkmeniatɔwo
+    tl: Tagaloggbe (Filipinogbe) .
+    tr: turkishgbe me nyawo
+    ts: Dzonga
+    tt: Tatartɔwo ƒe nya
+    ug: Uighurgbe me tɔ
+    uk: Ukrainegbe me tɔ
+    ur: Urdugbe me
+    uz: Uzbekgbe me tɔ
+    vi: Vietnamgbe me tɔ
+    xh: bantu gbegbɔgblɔ
+    yi: Yiddishgbe me
+    yo: yorubagbe
+    zh: Chinatɔwo ƒe Chinatɔwo
+    zh-chs: Chinagbe (Wowɔe bɔbɔe) .
+    zh-cht: Chinagbe (Wowɔe bɔbɔe) .
+    zh-cn: Chinagbe (Wowɔe bɔbɔe) .
+    zh-hk: Chinatɔwo (Hong Kong) .
+    zh-mo: Chinatɔwo(Macau) .
+    zh-sg: Chinatɔwo (Singapore) .
+    zh-tw: Chinatɔwo ƒe dekɔnu) .
+    zu: Zulugbe me tɔ

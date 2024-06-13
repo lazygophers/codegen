@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tắt hướng dẫn hoàn thành
+        long: |
+            Tạo tập lệnh tự động hoàn thành cho {{.RootName}} cho shell được chỉ định.
+        short: Tạo tập lệnh tự động hoàn thành cho shell được chỉ định
+        subcommand:
+            short: Tạo tập lệnh tự động hoàn thành cho {{.Command}}
     flags:
         debug: Xuất nhật ký chi tiết
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Tất cả các chức năng liên quan đến việc tạo bảng để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
             short: Tất cả các hàm liên quan để tạo bảng
+    group:
+        gen: Tạo mã
     help:
         additional_commands: Các lệnh bổ sung
         aliases: bí danh lệnh
@@ -94,10 +104,18 @@ cli:
         flags: tham số
         get_info: để biết thêm thông tin chi tiết
         global_flags: thông số toàn cầu
+        long: 'Trợ giúp cung cấp trợ giúp cho bất kỳ lệnh nào trong ứng dụng. '
+        short: Trợ giúp về bất kỳ lệnh nào
+        usage: Hướng dẫn sử dụng {{.Name}}
         use: sử dụng
     i18n:
         long: Bộ công cụ liên quan đến quốc tế hóa đa ngôn ngữ
         short: Bộ công cụ liên quan đến quốc tế hóa đa ngôn ngữ
+        support:
+            flags:
+                language: Chỉ định ngôn ngữ hiển thị, nếu không mã ngôn ngữ sẽ được sử dụng để hiển thị ngôn ngữ
+            long: Liệt kê tất cả các ngôn ngữ được hỗ trợ
+            short: Danh sách ngôn ngữ được hỗ trợ
         tran:
             flags:
                 all-language: Dịch tất cả các ngôn ngữ được hỗ trợ (nếu đúng, cờ ngôn ngữ sẽ bị tắt)
@@ -114,3 +132,156 @@ cli:
             short: dịch
     long: Bộ công cụ dành cho người lười biếng, bao gồm khung phụ trợ dựa trên 'proto', các mẫu thường được sử dụng và dịch thuật đa ngôn ngữ
     short: Bộ công cụ dành cho người lười biếng
+    sync:
+        flags:
+            template-path: Đường dẫn đồng bộ hóa mẫu
+        long: Đồng bộ hóa cấu hình từ đầu xa và hợp nhất nó vào cấu hình cục bộ Tệp mẫu được hỗ trợ cùng lúc trong quá trình đồng bộ hóa (nếu được định cấu hình)
+        short: Đồng bộ cấu hình từ xa
+    up-mod:
+        flags:
+            goproxy: Chỉ định địa chỉ goproxy, nếu không, địa chỉ đầu tiên trong biến môi trường sẽ được sử dụng
+        long: Cập nhật phiên bản phụ thuộc của tệp go.mod
+        short: Cập nhật tập tin go.mod
+lang:
+    af: tiếng Afrikaans
+    ak: Twi (Akan)
+    am: tiếng Amharic
+    ar: tiếng Ả Rập
+    as: Tiếng Assam
+    ay: Aymara
+    az: Tiếng Azerbaijan
+    be: Người Belarus
+    bg: tiếng Bungari
+    bho: Bhojpuri
+    bm: Bambara
+    bn: tiếng Bengali
+    bs: tiếng Bosnia
+    ca: tiếng Catalan
+    ceb: Cebuano
+    ckb: Tiếng Kurd (Sorani)
+    co: tiếng Corse
+    cs: tiếng Séc
+    cy: người xứ Wales
+    da: người Đan Mạch
+    de: tiếng Đức
+    doi: chó lai
+    dv: Dhivehi
+    ee: Cừu cái
+    el: người Hy Lạp
+    en: Tiếng Anh
+    eo: Quốc tế ngữ
+    es: người Tây Ban Nha
+    et: tiếng Estonia
+    eu: xứ Basque
+    fa: tiếng Ba Tư
+    fi: tiếng Phần Lan
+    fil: Tiếng Philippin (Tagalog)
+    fr: người Pháp
+    fy: tiếng Frisia
+    ga: người Ailen
+    gd: Tiếng Gaelic của Scotland
+    gl: tiếng Galicia
+    gn: Guaraní
+    gom: ngôn ngữ gonggan
+    gu: gujarati
+    ha: Tiếng Hausa
+    haw: tiếng Hawaii
+    he: tiếng Do Thái
+    hi: Tiếng Hindi
+    hmn: người Mông
+    hr: tiếng Croatia
+    ht: Tiếng Creole Haiti
+    hu: người Hungary
+    hy: tiếng Armenia
+    id: tiếng Indonesia
+    ig: người Igbo
+    ilo: Ilocano
+    is: tiếng Iceland
+    it: người Ý
+    iw: tiếng Do Thái
+    ja: tiếng Nhật
+    jv: tiếng Java
+    jw: tiếng Java
+    ka: tiếng Gruzia
+    kk: Kazakhstan
+    km: người Campuchia
+    kn: tiếng Kannada
+    ko: Hàn Quốc
+    kri: Tiếng Creole
+    ku: người Kurd
+    ky: Tiếng Kyrgyzstan
+    la: Latin
+    lb: Tiếng Luxembourg
+    lg: Luganda
+    ln: lingala
+    lo: tiếng Lào
+    lt: tiếng Litva
+    lus: mizo
+    lv: tiếng Latvia
+    mai: Maithili
+    mg: Malagasy
+    mi: người Maori
+    mk: Tiếng Macedonia
+    ml: Mã Lai
+    mn: tiếng Mông Cổ
+    mni-mtei: Meitei (Manipuri)
+    mr: tiếng Marathi
+    ms: Mã Lai
+    mt: cây nho
+    my: Miến Điện
+    ne: tiếng Nepal
+    nl: tiếng Hà Lan
+    "no": người Na Uy
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: tiếng Punjab
+    pl: Đánh bóng
+    ps: Tiếng Pa-tô
+    pt: Tiếng Bồ Đào Nha (Bồ Đào Nha, Brazil)
+    qu: Quechua
+    ro: người Rumani
+    ru: tiếng Nga
+    rw: Tiếng Kinyarwanda
+    sa: tiếng Phạn
+    sd: tiếng sindhi
+    si: sinhala
+    sk: Tiếng Slovak
+    sl: tiếng Slovenia
+    sm: Tiếng Samoa
+    sn: Shona
+    so: tiếng Somali
+    sq: tiếng Albania
+    sr: tiếng Serbia
+    st: Sesotho
+    su: Tiếng Sundan
+    sv: tiếng Thụy Điển
+    sw: tiếng Swahili
+    ta: tamil
+    te: tiếng telugu
+    tg: Tiếng Tajik
+    th: tiếng Thái
+    ti: Tignan
+    tk: người Thổ Nhĩ Kỳ
+    tl: Tagalog (Philippines)
+    tr: tiếng Thổ Nhĩ Kỳ
+    ts: Dzonga
+    tt: Tatar
+    ug: người Duy Ngô Nhĩ
+    uk: tiếng Ukraina
+    ur: tiếng Urdu
+    uz: tiếng Uzbek
+    vi: Tiếng Việt
+    xh: ngôn ngữ bantu
+    yi: tiếng Yiddish
+    yo: tiếng yoruba
+    zh: người Trung Quốc
+    zh-chs: Tiếng Trung (Giản thể)
+    zh-cht: Tiếng Trung (Giản thể)
+    zh-cn: Tiếng Trung (Giản thể)
+    zh-hk: Tiếng Trung (Hồng Kông)
+    zh-mo: Tiếng Trung (Ma Cao)
+    zh-sg: Tiếng Trung (Singapo)
+    zh-tw: Tiếng Trung (Đài Loan)
+    zu: Tiếng Zulu

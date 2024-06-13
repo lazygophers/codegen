@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Inaktivera instruktioner för slutförande
+        long: |
+            Genererar ett autoslutförandeskript för {{.RootName}} för det angivna skalet.
+        short: Generera ett autoslutförandeskript för det angivna skalet
+        subcommand:
+            short: Generera autoslutförandeskript för {{.Command}}
     flags:
         debug: Skriv ut detaljerad logg
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Alla relaterade funktioner för att generera tabeller för statisk resurs- eller statisk resurshantering av affärstjänster
             short: Alla relaterade funktioner för att generera tabeller
+    group:
+        gen: kodgenerering
     help:
         additional_commands: Ytterligare kommandon
         aliases: kommandoalias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: för att få mer detaljerad information
         global_flags: globala parametrar
+        long: 'Hjälp ger hjälp för alla kommandon i programmet. '
+        short: Hjälp med vilket kommando som helst
+        usage: Instruktioner för att använda {{.Name}}
         use: använda sig av
     i18n:
         long: Flerspråkig internationaliseringsrelaterad verktygslåda
         short: Flerspråkig internationaliseringsrelaterad verktygslåda
+        support:
+            flags:
+                language: Ange vilket språk som ska visas, annars kommer språkkoden att användas för att visa språket
+            long: Lista alla språk som stöds
+            short: Lista över språk som stöds
         tran:
             flags:
                 all-language: Översätt alla språk som stöds (om det är sant är språkflaggan inaktiverad)
@@ -114,3 +132,156 @@ cli:
             short: Översätt
     long: En verktygsuppsättning för lata människor, inklusive 'proto'-baserat backend-ramverk, vanliga mallar och flerspråkig översättning
     short: Ett verktygsset för lata människor
+    sync:
+        flags:
+            template-path: Mallsynkroniseringsväg
+        long: Synkronisera konfigurationen från fjärränden och slå samman den i den lokala konfigurationen. Mallfilen stöds samtidigt under synkroniseringen (om den är konfigurerad).
+        short: Synkronisera konfigurationen från fjärrkontrollen
+    up-mod:
+        flags:
+            goproxy: Ange goproxy-adressen, om inte kommer den första i miljövariabeln att användas
+        long: Uppdatera beroendeversionen av go.mod-filen
+        short: Uppdatera filen go.mod
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: amhariska
+    ar: arabiska
+    as: assamiska
+    ay: Aymara
+    az: azerbajdzjanska
+    be: vitryska
+    bg: bulgariska
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengaliska
+    bs: bosniska
+    ca: katalanska
+    ceb: Cebuano
+    ckb: kurdiska (sorani)
+    co: korsikanska
+    cs: tjeckiska
+    cy: walesiska
+    da: danska
+    de: tysk
+    doi: dogglai
+    dv: Dhivehi
+    ee: Tacka
+    el: grekisk
+    en: engelsk
+    eo: esperanto
+    es: spanska
+    et: estniska
+    eu: baskiska
+    fa: persiska
+    fi: finska
+    fil: filippinska (tagalog)
+    fr: franska
+    fy: frisiska
+    ga: irländsk
+    gd: skotsk gaeliska
+    gl: galiciska
+    gn: Guaraní
+    gom: gonggan språk
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: hebreiska
+    hi: hindi
+    hmn: Hmong
+    hr: Kroatisk
+    ht: haitisk kreol
+    hu: ungerska
+    hy: armeniska
+    id: indonesiska
+    ig: Igbo
+    ilo: Ilocano
+    is: isländska
+    it: italienska
+    iw: hebreiska
+    ja: japanska
+    jv: javanesiska
+    jw: javanesiska
+    ka: georgiska
+    kk: Kazakiska
+    km: kambodjanska
+    kn: Kannada
+    ko: koreanska
+    kri: Kreol
+    ku: kurdiska
+    ky: kirgiziska
+    la: latin
+    lb: Luxemburgiska
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: litauiska
+    lus: Mizo
+    lv: lettiska
+    mai: Maithili
+    mg: Madagaskar
+    mi: Maori
+    mk: makedonska
+    ml: Malayalam
+    mn: mongoliska
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: malajiska
+    mt: maltesiska
+    my: burmesiska
+    ne: nepalesiska
+    nl: holländska
+    "no": norska
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: putsa
+    ps: Pashto
+    pt: Portugisiska (Portugal, Brasilien)
+    qu: Quechua
+    ro: rumänska
+    ru: ryska
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: slovakiska
+    sl: slovenska
+    sm: Samoan
+    sn: Shona
+    so: somaliska
+    sq: albanska
+    sr: serbiska
+    st: Sesotho
+    su: Sundanesiska
+    sv: svenska
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: tadzjikiska
+    th: Thai
+    ti: Tignan
+    tk: turkmeniska
+    tl: Tagalog (filippinska)
+    tr: turkiska
+    ts: Dzonga
+    tt: tatariska
+    ug: Uigur
+    uk: ukrainska
+    ur: Urdu
+    uz: uzbekiska
+    vi: vietnamesiska
+    xh: bantu språk
+    yi: jiddisch
+    yo: yoruba
+    zh: kinesiska
+    zh-chs: Förenklad kinesiska)
+    zh-cht: Förenklad kinesiska)
+    zh-cn: Förenklad kinesiska)
+    zh-hk: kinesiska (Hongkong)
+    zh-mo: kinesiska (Macau)
+    zh-sg: kinesiska (Singapore)
+    zh-tw: kinesiska (Taiwan)
+    zu: Zulu

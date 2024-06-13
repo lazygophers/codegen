@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Kashe umarnin kammalawa
+        long: |
+            Yana haifar da cikakken rubutun kansa don {{.RootName}} don ƙayyadadden harsashi.
+        short: Ƙirƙirar rubutun da ya cika ta atomatik don ƙayyadadden harsashi
+        subcommand:
+            short: Ƙirƙirar rubutun cikawa ta atomatik don {{.Command}}
     flags:
         debug: Fitar da cikakken log
     gen:
@@ -33,10 +41,10 @@ cli:
             add-proto-files: Idan kana buƙatar shigo da wasu fayilolin .proto/hanyoyin manyan fayiloli waɗanda basa cikin babban fayil ɗaya da ƙayyadadden fayil ɗin .proto, wannan aikin zai ƙara (ba a sake rubutawa) hanyar da aka saita a cikin fayil ɗin sanyi ba.
             go-module-prefix: Don hanyar go_package da aka saita a cikin fayil ɗin .proto da ainihin ɗaya, zaku iya saita wannan zaɓi.
             input: Ƙayyade fayil ɗin tushen proto da za a ƙirƙira
-            output-path: Ana iya saita wannan zaɓi lokacin da aka saita hanyar go_package a cikin fayil ɗin .proto bai dace da gadon titin ba wanda a zahiri yana buƙatar ƙirƙirar.
+            output-path: Ana iya saita wannan zaɓin lokacin da aka saita hanyar go_package a cikin fayil ɗin .proto bai dace da gadon titin ba wanda a zahiri yana buƙatar ƙirƙirar.
             overwrite: Don abun ciki wanda ba za a sabunta shi ba, tilasta sake rubuta abubuwan da ke akwai
             proto-files: Don shigo da wasu fayilolin .proto/hanyoyin babban fayil waɗanda basa cikin babban fayil ɗaya da ƙayyadadden fayil ɗin .proto, wannan aiki zaɓi ne don soke filin daidaitawa a cikin fayil ɗin sanyi.
-            protoc: '''protoc'' hanyar fayil ɗin da za a iya gyarawa'
+            protoc: Hanyar fayil ɗin 'protoc' da za a iya gyarawa
             protoc-gen-go: Hanyar plugin 'protoc-gen-go'
             tables-enable_field_created_at: Ko don kunna tsohowar tsara tsara bayanai na filin da aka halitta_at
             tables-enable_field_deleted_at: Ko don kunna saitunan tsoho na filin deleted_at a cikin bayanan
@@ -86,18 +94,28 @@ cli:
         table:
             long: Duk ayyukan da ke da alaƙa na samar da teburi don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
             short: Duk ayyuka masu alaƙa don samar da tebur
+    group:
+        gen: tsara code
     help:
         additional_commands: Ƙarin umarni
         aliases: umarni mai lakabi
-        available_commands: Dokokin tallafi
+        available_commands: Umurnai masu goyan baya
         command: Oda
         flags: siga
-        get_info: domin samun cikakken bayani
+        get_info: don samun cikakken bayani
         global_flags: sigogi na duniya
+        long: 'Bayar da umarnin amfani don kowane umarni a cikin aikace-aikacen. '
+        short: Umarni don amfani da kowane umarni
+        usage: Umarnin don amfani da {{.Name}}
         use: amfani
     i18n:
         long: Kunshin kayan aiki masu alaƙa da haɗakar harsuna da yawa
         short: Kunshin kayan aiki masu alaƙa da haɗakar harsuna da yawa
+        support:
+            flags:
+                language: Ƙayyade harshen da za a nuna, in ba haka ba za a yi amfani da lambar harshe don nuna harshen
+            long: Lissafa duk harsunan da aka goyan baya
+            short: Jerin harsuna masu goyan baya
         tran:
             flags:
                 all-language: Fassara duk harsunan da aka goyan baya (idan gaskiya an kashe tutar harsunan)
@@ -114,3 +132,156 @@ cli:
             short: fassara
     long: Saitin kayan aiki don malalaci, gami da tsarin baya na tushen 'proto', samfuran da aka saba amfani da su, da fassarar harsuna da yawa
     short: Kayan aiki da aka saita don mutane malalaci
+    sync:
+        flags:
+            template-path: Hanyar aiki tare da samfuri
+        long: Yi aiki tare da sanyi daga ƙarshen nesa kuma haɗa shi cikin tsarin gida Ana goyan bayan fayil ɗin samfuri a lokaci guda yayin aiki tare (idan an saita shi)
+        short: Aiki tare da daidaitawa daga nesa
+    up-mod:
+        flags:
+            goproxy: Ƙayyade adireshin goproxy, idan ba haka ba, za a yi amfani da na farko a cikin mahallin mahalli
+        long: Sabunta sigar dogaro na fayil ɗin go.mod
+        short: Sabunta fayil ɗin go.mod
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Larabci
+    as: Asami
+    ay: Aymara
+    az: Azabaijan
+    be: Belarushiyanci
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosniya
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsican
+    cs: Czech
+    cy: Welsh
+    da: Danish
+    de: Jamusanci
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Girkanci
+    en: Turanci
+    eo: Esperanto
+    es: Spanish
+    et: Estoniya
+    eu: basque
+    fa: Farisa
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: Faransanci
+    fy: Farisa
+    ga: Irish
+    gd: Scottish Gaelic
+    gl: Galiciyan
+    gn: Guarani
+    gom: gonggan harshe
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: yahudanci
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatian
+    ht: Haitian Creole
+    hu: Hungary
+    hy: Armenian
+    id: Indonesiya
+    ig: Igbo
+    ilo: Ilocano
+    is: Icelandic
+    it: Italiyanci
+    iw: yahudanci
+    ja: Jafananci
+    jv: Yawanci
+    jw: Yawanci
+    ka: Jojin
+    kk: Kazakh
+    km: Kambodiya
+    kn: Kannada
+    ko: Yaren Koriya
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyzstan
+    la: Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuaniyanci
+    lus: Mizo
+    lv: Latvia
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Makidoniya
+    ml: Malayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: Maltase
+    my: Burma
+    ne: Nepali
+    nl: Yaren mutanen Holland
+    "no": dan Norway
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Yaren mutanen Poland
+    ps: Pashto
+    pt: Fotigal (Portugal, Brazil)
+    qu: Quechua
+    ro: Romanian
+    ru: Rashanci
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slovak
+    sl: dan kasar Sloveniya
+    sm: Samoan
+    sn: Shona
+    so: Somaliya
+    sq: Albaniya
+    sr: Serbian
+    st: Sesotho
+    su: Sundanci
+    sv: Yaren mutanen Sweden
+    sw: Harshen Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: Turanci
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrainian
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamese
+    xh: harshen bantu
+    yi: Yadish
+    yo: Yoruba
+    zh: Sinanci
+    zh-chs: Sinanci (Sauƙaƙe)
+    zh-cht: Sinanci (Sauƙaƙe)
+    zh-cn: Sinanci (Sauƙaƙe)
+    zh-hk: Sinanci (Hong Kong)
+    zh-mo: Sinanci (Macau)
+    zh-sg: Sinanci (Singapore)
+    zh-tw: gargajiya na kasar Sin)
+    zu: Zulu

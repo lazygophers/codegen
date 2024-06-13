@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Deshabilitar instrucciones de finalización
+        long: |
+            Genera un script de autocompletar para {{.RootName}} para el shell especificado.
+        short: Generar un script de autocompletar para el shell especificado
+        subcommand:
+            short: Generar script de autocompletar para {{.Command}}
     flags:
         debug: Registro detallado de salida
     gen:
@@ -73,7 +81,7 @@ cli:
             flags:
                 cache: Ya sea para habilitar la generación relacionada con el caché
                 config: Ya sea para generar código relacionado con la configuración
-                i18n: Si se debe habilitar la generación relacionada con varios idiomas (la generación solo incluye la inicialización de estado y otro contenido, y no incluye la traducción automática de varios idiomas. Si necesita traducción automática, utilice {{.Command}} para ver los detalles)
+                i18n: Si se debe habilitar la generación relacionada en varios idiomas (la generación solo incluye la inicialización de estado y otro contenido, y no incluye la traducción automática de varios idiomas. Si necesita traducción automática, utilice {{.Command}} para ver los detalles)
                 table: Si se debe habilitar la generación de bases de datos relacionadas con la base de datos
             i18n:
                 long: Genere código relacionado con i18n para llamadas internacionales en varios idiomas
@@ -86,6 +94,8 @@ cli:
         table:
             long: Todas las funciones relacionadas de generación de tablas para recursos con estado o gestión de recursos estáticos de servicios empresariales.
             short: Todas las funciones relacionadas para generar tablas.
+    group:
+        gen: codigo de GENERACION
     help:
         additional_commands: Comandos adicionales
         aliases: alias de comando
@@ -94,10 +104,18 @@ cli:
         flags: parámetro
         get_info: para obtener información más detallada
         global_flags: parámetros globales
+        long: 'Proporcione instrucciones de uso para cualquier comando de la aplicación. '
+        short: Instrucciones para usar cualquier comando.
+        usage: Instrucciones para usar {{.Name}}
         use: usar
     i18n:
         long: Kit de herramientas multilingüe relacionado con la internacionalización
         short: Kit de herramientas multilingüe relacionado con la internacionalización
+        support:
+            flags:
+                language: Especifique el idioma que se mostrará; de lo contrario, se utilizará el código de idioma para mostrar el idioma.
+            long: Listar todos los idiomas admitidos
+            short: Lista de idiomas admitidos
         tran:
             flags:
                 all-language: Traducir todos los idiomas admitidos (si es verdadero, la bandera de idiomas está deshabilitada)
@@ -114,3 +132,156 @@ cli:
             short: traducir
     long: Un conjunto de herramientas para personas perezosas, que incluye un marco de backend basado en "proto", plantillas de uso común y traducción a varios idiomas.
     short: Un conjunto de herramientas para gente perezosa
+    sync:
+        flags:
+            template-path: Ruta de sincronización de plantillas
+        long: Sincronice la configuración desde el extremo remoto y combínela con la configuración local. El archivo de plantilla se admite al mismo tiempo durante la sincronización (si está configurado).
+        short: Sincronizar la configuración desde remoto
+    up-mod:
+        flags:
+            goproxy: Especifique la dirección de goproxy; de lo contrario, se utilizará la primera en la variable de entorno
+        long: Actualice la versión de dependencia del archivo go.mod
+        short: Actualizar el archivo go.mod
+lang:
+    af: africaans
+    ak: Twi (Akan)
+    am: amárico
+    ar: Arábica
+    as: Assamese
+    ay: Aymara
+    az: azerbaiyano
+    be: bielorruso
+    bg: búlgaro
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalí
+    bs: bosnio
+    ca: catalán
+    ceb: cebuano
+    ckb: Kurdo (sorani)
+    co: corso
+    cs: checo
+    cy: galés
+    da: danés
+    de: Alemán
+    doi: perroglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Griego
+    en: Inglés
+    eo: esperanto
+    es: español
+    et: estonio
+    eu: vasco
+    fa: persa
+    fi: finlandés
+    fil: Filipino (tagalo)
+    fr: Francés
+    fy: frisio
+    ga: irlandesa
+    gd: gaélico escocés
+    gl: gallego
+    gn: Guaraní
+    gom: idioma gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: hawaiano
+    he: hebreo
+    hi: hindi
+    hmn: hmong
+    hr: croata
+    ht: criollo haitiano
+    hu: húngaro
+    hy: armenio
+    id: indonesio
+    ig: igbo
+    ilo: Ilocano
+    is: islandés
+    it: italiano
+    iw: hebreo
+    ja: japonés
+    jv: javanés
+    jw: javanés
+    ka: georgiano
+    kk: kazajo
+    km: camboyano
+    kn: canarés
+    ko: coreano
+    kri: criollo
+    ku: kurdo
+    ky: Kirguistán
+    la: latín
+    lb: luxemburgués
+    lg: Luganda
+    ln: Lingala
+    lo: laosiano
+    lt: lituano
+    lus: Mizo
+    lv: letón
+    mai: Maithili
+    mg: madagascarí
+    mi: maorí
+    mk: macedónio
+    ml: malayalam
+    mn: mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: malayo
+    mt: maltés
+    my: birmano
+    ne: nepalí
+    nl: Holandés
+    "no": noruego
+    nso: Sepeti
+    ny: Nyanza (chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polaco
+    ps: pastún
+    pt: Portugués (Portugal, Brasil)
+    qu: quechua
+    ro: rumano
+    ru: ruso
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: cingalés
+    sk: eslovaco
+    sl: esloveno
+    sm: samoano
+    sn: Shona
+    so: somalí
+    sq: albanés
+    sr: serbio
+    st: sesoto
+    su: sundanés
+    sv: sueco
+    sw: swahili
+    ta: tamil
+    te: telugu
+    tg: tayiko
+    th: tailandés
+    ti: Tignan
+    tk: turcomano
+    tl: tagalo (filipino)
+    tr: turco
+    ts: dzonga
+    tt: tártaro
+    ug: uigur
+    uk: ucranio
+    ur: urdu
+    uz: uzbeko
+    vi: vietnamita
+    xh: idioma bantú
+    yi: yídish
+    yo: yoruba
+    zh: Chino
+    zh-chs: Chino simplificado)
+    zh-cht: Chino simplificado)
+    zh-cn: Chino simplificado)
+    zh-hk: Chino (Hong Kong)
+    zh-mo: Chino (Macao)
+    zh-sg: Chino (Singapur)
+    zh-tw: chino tradicional)
+    zu: zulú

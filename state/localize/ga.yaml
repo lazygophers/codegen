@@ -1,10 +1,18 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Díchumasaigh treoracha críochnaithe
+        long: |
+            Gintear script uathchríochnaithe le haghaidh {{.RootName}} don bhlaosc sonraithe.
+        short: Gin script uathchríochnaithe don bhlaosc sonraithe
+        subcommand:
+            short: Gin script uathchríochnaithe le haghaidh {{.Command}}
     flags:
         debug: Aschur logáil mionsonraithe
     gen:
         add-rpc:
             flags:
-                action: Iompar is gá a chur leis i mbaisceanna, faigh sonraí le do thoil ar an gcáipéisíocht úsáide
+                action: Iompar ar gá iad a chur isteach i mbaisceanna, faigh na doiciméid úsáide le haghaidh sonraí
                 default-role: Ról réamhshocraithe an chomhéadain baisc-ghinte Féach ar na doiciméid úsáide le haghaidh sonraí.
                 gen-to: Sonraigh suíomh aschuir na gcomhad .go ginte
                 list-option: Is féidir an liosta a scagadh freisin, le do thoil teacht ar an doiciméadú úsáide le haghaidh sonraí.
@@ -69,7 +77,7 @@ cli:
         state:
             conf:
                 long: Gin cód léitheoireachta comhad cumraíochta le haghaidh léamh cumraíochta seirbhíse gnó
-                short: Gin cód léitheoireachta comhad cumraíochta
+                short: Gin cód léitheoireachta comhaid cumraíochta
             flags:
                 cache: Cibé an féidir giniúint a bhaineann le taisce a chumasú
                 config: Cibé an ndéanfar cód a bhaineann le cumraíocht a ghiniúint
@@ -86,6 +94,8 @@ cli:
         table:
             long: Gach feidhm ghaolmhar a bhaineann le táblaí giniúna do bhainistiú státseirbhíseach acmhainní nó acmhainní statacha seirbhísí gnó
             short: Na feidhmeanna go léir a bhaineann le táblaí a ghiniúint
+    group:
+        gen: giniúint cód
     help:
         additional_commands: Orduithe breise
         aliases: ailias ordú
@@ -94,10 +104,18 @@ cli:
         flags: paraiméadar
         get_info: chun faisnéis níos mionsonraithe a fháil
         global_flags: paraiméadair dhomhanda
+        long: 'Tabhair treoracha úsáide d''aon ordú san fheidhmchlár. '
+        short: Treoracha le haghaidh úsáid aon ordú
+        usage: Treoracha chun {{.Name}} a úsáid
         use: úsáid
     i18n:
         long: Foireann uirlisí a bhaineann le hidirnáisiúnú ilteangach
         short: Foireann uirlisí a bhaineann le hidirnáisiúnú ilteangach
+        support:
+            flags:
+                language: Sonraigh an teanga atá le taispeáint, nó bainfear úsáid as an gcód teanga chun an teanga a thaispeáint
+            long: Liostaigh na teangacha go léir a dtacaítear leo
+            short: Liosta teangacha tacaithe
         tran:
             flags:
                 all-language: Aistrigh na teangacha go léir a dtacaítear leo (más fíor tá bratach na dteangacha díchumasaithe)
@@ -114,3 +132,156 @@ cli:
             short: aistrigh
     long: Tacar uirlisí do dhaoine leisciúla, lena n-áirítear creat inneall bunaithe ar 'phrótacal', teimpléid a úsáidtear go coitianta, agus aistriúchán iltheanga
     short: Sraith uirlisí do dhaoine leisciúil
+    sync:
+        flags:
+            template-path: Teimpléad conair sioncrónaithe
+        long: Sioncrónaigh an chumraíocht ón gcianchríoch agus cumasc isteach sa chumraíocht áitiúil é. Tacaítear leis an gcomhad teimpléad ag an am céanna le linn sioncrónaithe (má tá sé cumraithe)
+        short: Sioncrónaigh cumraíocht ó chian
+    up-mod:
+        flags:
+            goproxy: Sonraigh an seoladh goproxy, mura bhfuil, úsáidfear an chéad cheann san athróg timpeallachta
+        long: Nuashonraigh an leagan spleáchais den chomhad go.mod
+        short: Nuashonraigh comhad go.mod
+lang:
+    af: Afracach
+    ak: Twi (Acán)
+    am: Amáireach
+    ar: Araibis
+    as: Asaimis
+    ay: Aimara
+    az: Asarbaiseáinis
+    be: Bealarúisis
+    bg: Bulgáiris
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Beangáilis
+    bs: Boisnis
+    ca: Catalóinis
+    ceb: Cebuano
+    ckb: Coirdis (Sorani)
+    co: Corsaicis
+    cs: Seiceach
+    cy: Breatnais
+    da: dannais
+    de: Gearmáinis
+    doi: doglai
+    dv: Dhivehi
+    ee: caora
+    el: Gréigis
+    en: Béarla
+    eo: Esperanto
+    es: Spainnis
+    et: Eastóinis
+    eu: basc
+    fa: Peirsis
+    fi: Fionlainnis
+    fil: Tagálaigis (Tagálaigis)
+    fr: Fraincis
+    fy: Freaslainnis
+    ga: Gaeilge
+    gd: Gaeilge na hAlban
+    gl: Gailísis
+    gn: Guaraní
+    gom: teanga gonggan
+    gu: gualaíocha
+    ha: Háise
+    haw: Haváíais
+    he: eabhrais
+    hi: Hiondúis
+    hmn: Hmong
+    hr: Cróitis
+    ht: Criól Haiti
+    hu: Ungáiris
+    hy: Airméinis
+    id: Indinéisis
+    ig: Igbo
+    ilo: Ilocanó
+    is: Íoslainnis
+    it: Iodálach
+    iw: eabhrais
+    ja: Seapánach
+    jv: Iávais
+    jw: Iávais
+    ka: Seoirseach
+    kk: Kazakh
+    km: Cambóidis
+    kn: Cannadais
+    ko: Cóiréis
+    kri: Criól
+    ku: Coirdis
+    ky: Chirgeastáin
+    la: Laidin
+    lb: Lucsamburgach
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Liotuáinis
+    lus: Mízo
+    lv: Laitvis
+    mai: Maithili
+    mg: Malagásais
+    mi: Maorais
+    mk: Macadóinis
+    ml: Mailéalaimis
+    mn: Mongóilis
+    mni-mtei: Meití (Manipuri)
+    mr: marathi
+    ms: Malaeis
+    mt: Máltais
+    my: Burmais
+    ne: Neipealais
+    nl: Ollainnis
+    "no": Norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oroma
+    or: Oraise (Óidia)
+    pa: punjabi
+    pl: Polainnis
+    ps: Paistis
+    pt: Portaingéilis (an Phortaingéil, an Bhrasaíl)
+    qu: Ceatsuais
+    ro: Rómáinis
+    ru: Rúisis
+    rw: Kinyarwanda
+    sa: Sanscrait
+    sd: sindhi
+    si: sinhala
+    sk: Slóvaicis
+    sl: Slóivéinis
+    sm: Samóis
+    sn: Shona
+    so: Somáilis
+    sq: Albanach
+    sr: Seirbis
+    st: Sesotho
+    su: Sundais
+    sv: Sualainnis
+    sw: Svahaílis
+    ta: tamil
+    te: Teileagúis
+    tg: Táidsíc
+    th: Téalainnis
+    ti: Tignan
+    tk: Tuircméinis
+    tl: Tagálaigis (Filipino)
+    tr: Tuircis
+    ts: Dzonga
+    tt: Tatairis
+    ug: Uighur
+    uk: Úcráinis
+    ur: Urdais
+    uz: Úisbéicis
+    vi: Vítneaimis
+    xh: teanga bantu
+    yi: Giúdais
+    yo: iorúba
+    zh: Síneach
+    zh-chs: Sínis (Simplithe)
+    zh-cht: Sínis (Simplithe)
+    zh-cn: Sínis (Simplithe)
+    zh-hk: Sínis (Hong Kong)
+    zh-mo: Sínis (Macao)
+    zh-sg: Sínis (Singeapór)
+    zh-tw: Sínis traidisiúnta)
+    zu: Súlúis

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Onemogući upute za dovršetak
+        long: |
+            Generira skriptu za automatsko dovršavanje za {{.RootName}} za navedenu ljusku.
+        short: Generirajte skriptu za automatsko dovršavanje za navedenu ljusku
+        subcommand:
+            short: Generiraj skriptu za automatsko dovršavanje za {{.Command}}
     flags:
         debug: Ispis detaljnog dnevnika
     gen:
@@ -32,7 +40,7 @@ cli:
         flags:
             add-proto-files: Ako trebate uvesti druge staze .proto datoteka/mapa koje nisu u istoj mapi kao navedena .proto datoteka, ova će operacija dodati (ne prebrisati) stazu konfiguriranu u konfiguracijskoj datoteci.
             go-module-prefix: Za stazu go_package konfiguriranu u .proto datoteci i stvarnu, možete konfigurirati ovu opciju
-            input: Navedite .proto izvornu datoteku koja će se generirati
+            input: Navedite izvornu datoteku .proto koja će se generirati
             output-path: Ova se opcija može konfigurirati kada putanja go_package konfigurirana u .proto datoteci nije u skladu s temeljem puta koji zapravo treba generirati.
             overwrite: Za sadržaj koji se neće ponovno generirati, prisilno prebrišite postojeći sadržaj
             proto-files: Za uvoz drugih .proto datoteka/putanja mapa koje nisu u istoj mapi kao navedena .proto datoteka, ova operacija je opcija za nadjačavanje konfiguracijskog polja u konfiguracijskoj datoteci.
@@ -42,7 +50,7 @@ cli:
             tables-enable_field_deleted_at: Treba li omogućiti zadanu postavku polja deleted_at u bazi podataka
             tables-enable_field_id: Omogući generiranje zadane konfiguracije za polja povezana s bazom podataka
             tables-enable_field_updated_at: Treba li omogućiti zadanu vrijednost polja updated_at u bazi podataka
-            tables-enable_gorm_tag_column: Treba li omogućiti generiranje gormova povezanih s bazom podataka
+            tables-enable_gorm_tag_column: Treba li omogućiti generiranje gormova vezanih uz bazu podataka
         gitignote:
             long: Generirajte .gitignore datoteke za upravljanje zanemarenim datotekama u kontroli verzija
             short: Generirajte .gitignore datoteku
@@ -50,7 +58,7 @@ cli:
             long: Generirajte .golangci.yml datoteku za pregled kvalitete koda
             short: Generirajte .golangci.yml datoteku
         goreleaser:
-            long: Generirajte .goreleaser.yml datoteku za konfiguraciju alata za izdavanje
+            long: Generirajte datoteku .goreleaser.yml za konfiguraciju alata za izdavanje
             short: Generiraj datoteku .goreleaser.yml
         impl:
             long: Generirajte implementacijske datoteke za implementaciju poslovnih usluga
@@ -61,7 +69,7 @@ cli:
             short: Generirajte Makefile
         mod:
             long: Generirajte go.mod datoteku za upravljanje ovisnostima
-            short: Generirajte datoteku go.mod
+            short: Generiraj datoteku go.mod
         pb:
             long: Generiraj .pb.go datoteke, koje se koriste za generiranje .proto datoteka. Relevantne oznake polja x automatski će se dodati u skladu s konfiguracijom.
             short: Generirajte .pb.go datoteku
@@ -73,10 +81,10 @@ cli:
             flags:
                 cache: Treba li omogućiti generiranje povezano s predmemorijom
                 config: Treba li generirati kod povezan s konfiguracijom
-                i18n: Treba li omogućiti višejezično generiranje (generiranje uključuje samo inicijalizaciju stanja i drugi sadržaj, a ne uključuje automatsko prevođenje više jezika. Ako vam je potreban automatski prijevod, upotrijebite {{.Command}} za pregled pojedinosti)
+                i18n: Treba li omogućiti generiranje povezano s više jezika (generiranje uključuje samo inicijalizaciju stanja i drugi sadržaj, a ne uključuje automatsko prevođenje više jezika. Ako vam je potreban automatski prijevod, upotrijebite {{.Command}} za pregled pojedinosti)
                 table: Treba li omogućiti generiranje baze podataka vezano uz bazu podataka
             i18n:
-                long: Generirajte kod za i18n za međunarodne pozive na više jezika
+                long: Generirajte kod povezan s i18n za višejezične međunarodne pozive
                 short: Generirajte kod povezan s i18n
             long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
             short: Sve relevantne funkcije za generiranje stanja
@@ -84,8 +92,10 @@ cli:
                 long: Generirajte kod koji se odnosi na state.table, koji se koristi za povezivanje baze podataka i inicijalizaciju tablice kada se usluga pokrene.
                 short: Generirajte kod koji se odnosi na stanje.tablice
         table:
-            long: Sve povezane funkcije generiranja tablica za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
+            long: Sve povezane funkcije generiranja tablica za upravljanje resursima sa statusom ili statičkim resursima poslovnih usluga
             short: Sve povezane funkcije za generiranje tablica
+    group:
+        gen: generiranje koda
     help:
         additional_commands: Dodatne naredbe
         aliases: zapovjedni alias
@@ -94,13 +104,21 @@ cli:
         flags: parametar
         get_info: kako biste dobili detaljnije informacije
         global_flags: globalni parametri
+        long: 'Navedite upute za korištenje bilo koje naredbe u aplikaciji. '
+        short: Upute za korištenje bilo koje naredbe
+        usage: Upute za korištenje {{.Name}}
         use: koristiti
     i18n:
         long: Višejezični skup alata za internacionalizaciju
         short: Višejezični skup alata za internacionalizaciju
+        support:
+            flags:
+                language: Odredite jezik za prikaz, inače će se za prikaz jezika koristiti kod jezika
+            long: Navedite sve podržane jezike
+            short: Popis podržanih jezika
         tran:
             flags:
-                all-language: Prevedi sve podržane jezike (ako je istina, zastavica jezika je onemogućena)
+                all-language: Prevedite sve podržane jezike (ako je istina, zastavica jezika je onemogućena)
                 force: Prebrišite postojeće prijevode
                 force-key-prefix: ključeve koje treba prisilno prebrisati
                 generate-const: Generirajte vrijednosti nabrajanja za jednostavno pozivanje
@@ -114,3 +132,156 @@ cli:
             short: Prevedi
     long: Skup alata za lijene ljude, uključujući 'proto' temeljen pozadinski okvir, često korištene predloške i višejezični prijevod
     short: Set alata za lijene ljude
+    sync:
+        flags:
+            template-path: Put sinkronizacije predloška
+        long: Sinkronizirajte konfiguraciju s udaljenog kraja i spojite je u lokalnu konfiguraciju. Datoteka predloška podržana je u isto vrijeme tijekom sinkronizacije (ako je konfigurirana).
+        short: Sinkronizirajte konfiguraciju s daljinskog upravljača
+    up-mod:
+        flags:
+            goproxy: Navedite goproxy adresu, ako nije, koristit će se prva u varijabli okruženja
+        long: Ažurirajte verziju ovisnosti go.mod datoteke
+        short: Ažurirajte datoteku go.mod
+lang:
+    af: afrikaans
+    ak: twi (akan)
+    am: amharski
+    ar: arapski
+    as: asamski
+    ay: ajmara
+    az: azerbajdžanski
+    be: bjeloruski
+    bg: bugarski
+    bho: bhojpuri
+    bm: Bambara
+    bn: bengalski
+    bs: bosanski
+    ca: katalonski
+    ceb: Cebuano
+    ckb: kurdski (sorani)
+    co: Korzikanac
+    cs: češki
+    cy: velški
+    da: danski
+    de: njemački
+    doi: dogglai
+    dv: dhivehi
+    ee: Ovca
+    el: grčki
+    en: Engleski
+    eo: esperanto
+    es: španjolski
+    et: estonski
+    eu: baskijski
+    fa: perzijski
+    fi: finski
+    fil: filipinski (tagalog)
+    fr: francuski
+    fy: frizijski
+    ga: irski
+    gd: škotski galski
+    gl: galicijski
+    gn: Guaraní
+    gom: gonggan jezik
+    gu: gudžarati
+    ha: Hausa
+    haw: havajski
+    he: hebrejski
+    hi: hindski
+    hmn: Hmong
+    hr: Hrvatski
+    ht: haićanski kreolski
+    hu: mađarski
+    hy: Armenac
+    id: indonezijski
+    ig: Igbo
+    ilo: Ilocano
+    is: islandski
+    it: talijanski
+    iw: hebrejski
+    ja: japanski
+    jv: javanski
+    jw: javanski
+    ka: gruzijski
+    kk: kazahstanski
+    km: kambodžanski
+    kn: kannada
+    ko: korejski
+    kri: kreolski
+    ku: kurdski
+    ky: Kirgistan
+    la: latinski
+    lb: luksemburški
+    lg: Luganda
+    ln: lingala
+    lo: Lao
+    lt: litvanski
+    lus: Mizo
+    lv: latvijski
+    mai: Maithili
+    mg: malgaški
+    mi: maorski
+    mk: makedonski
+    ml: malajalamski
+    mn: mongolski
+    mni-mtei: Meitei (Manipuri)
+    mr: marathski
+    ms: malajski
+    mt: malteški
+    my: burmanski
+    ne: nepalski
+    nl: nizozemski
+    "no": norveški
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: oromo
+    or: orija (odija)
+    pa: pandžapski
+    pl: Polirati
+    ps: paštunski
+    pt: portugalski (Portugal, Brazil)
+    qu: kečua
+    ro: rumunjski
+    ru: ruski
+    rw: kinyarwanda
+    sa: sanskrt
+    sd: sindhi
+    si: sinhalski
+    sk: slovački
+    sl: slovenac
+    sm: Samoanac
+    sn: Shona
+    so: somalijski
+    sq: albanski
+    sr: srpski
+    st: sesoto
+    su: sundanski
+    sv: švedski
+    sw: svahili
+    ta: Tamil
+    te: telugu
+    tg: tadžički
+    th: tajlandski
+    ti: Tignan
+    tk: turkmenski
+    tl: tagaloški (filipinski)
+    tr: turski
+    ts: Dzonga
+    tt: tatarski
+    ug: ujgurski
+    uk: ukrajinski
+    ur: urdu
+    uz: uzbečki
+    vi: vijetnamski
+    xh: bantu jezik
+    yi: jidiš
+    yo: yoruba
+    zh: kineski
+    zh-chs: Pojednostavljeni kineski)
+    zh-cht: Pojednostavljeni kineski)
+    zh-cn: Pojednostavljeni kineski)
+    zh-hk: kineski (Hong Kong)
+    zh-mo: kineski (Makao)
+    zh-sg: kineski (Singapur)
+    zh-tw: tradicionalni kineski)
+    zu: zulu
