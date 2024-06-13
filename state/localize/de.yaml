@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Vervollständigungsanweisungen deaktivieren
+        long: |
+            Erzeugt ein Autovervollständigungsskript für {{.RootName}} für die angegebene Shell.
+        short: Generieren Sie ein Autovervollständigungsskript für die angegebene Shell
+        subcommand:
+            short: Generieren Sie ein Autovervollständigungsskript für {{.Command}}
     flags:
         debug: Detailliertes Protokoll ausgeben
     gen:
@@ -9,7 +17,7 @@ cli:
                 gen-to: Geben Sie den Ausgabespeicherort der generierten .go-Dateien an
                 list-option: Die Liste kann auch gefiltert werden. Weitere Informationen finden Sie in der Nutzungsdokumentation.
                 model: Geben Sie den Modellnamen an und unterstützen Sie das Weglassen des Präfixes „Modell“.
-            long: Generieren Sie Schnittstellen in Stapeln und fügen Sie eine Schnittstelle für ein bestimmtes Modell in der .proto-Datei hinzu
+            long: Generieren Sie Schnittstellen stapelweise und fügen Sie eine Schnittstelle für ein bestimmtes Modell in der .proto-Datei hinzu
             short: Schnittstelle zur Batch-Generierung
         all:
             long: Generieren Sie den gesamten von diesem Tool unterstützten Code
@@ -63,7 +71,7 @@ cli:
             long: Generieren Sie eine go.mod-Datei für die Abhängigkeitsverwaltung
             short: Generieren Sie die Datei go.mod
         pb:
-            long: Generieren Sie .pb.go-Dateien, die zum Generieren von .proto-Dateien verwendet werden. Entsprechend der Konfiguration werden automatisch relevante Feldbezeichnungen x hinzugefügt.
+            long: Generieren Sie .pb.go-Dateien, die zum Generieren von .proto-Dateien verwendet werden. Entsprechend der Konfiguration werden automatisch relevante Feldbezeichnungen hinzugefügt.
             short: Generieren Sie die Datei .pb.go
         short: Code Generator
         state:
@@ -84,8 +92,10 @@ cli:
                 long: Generieren Sie state.table-bezogenen Code, der für die Datenbankverbindung und die Tabelleninitialisierung verwendet wird, wenn der Dienst gestartet wird.
                 short: Generieren Sie state.table-bezogenen Code
         table:
-            long: Alle zugehörigen Funktionen zum Generieren von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
+            long: Alle zugehörigen Funktionen zur Generierung von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
             short: Alle zugehörigen Funktionen zur Tabellenerstellung
+    group:
+        gen: Codegenerierung
     help:
         additional_commands: Zusätzliche Befehle
         aliases: Befehlsalias
@@ -94,10 +104,18 @@ cli:
         flags: Parameter
         get_info: um detailliertere Informationen zu erhalten
         global_flags: globale Parameter
+        long: 'Geben Sie Gebrauchsanweisungen für jeden Befehl in der Anwendung an. '
+        short: Anweisungen zur Verwendung eines beliebigen Befehls
+        usage: Anweisungen zur Verwendung von {{.Name}}
         use: verwenden
     i18n:
         long: Mehrsprachiges Toolkit für die Internationalisierung
         short: Mehrsprachiges Toolkit für die Internationalisierung
+        support:
+            flags:
+                language: Geben Sie die anzuzeigende Sprache an, andernfalls wird der Sprachcode zur Anzeige der Sprache verwendet
+            long: Listen Sie alle unterstützten Sprachen auf
+            short: Liste der unterstützten Sprachen
         tran:
             flags:
                 all-language: Alle unterstützten Sprachen übersetzen (falls wahr, ist das Sprachen-Flag deaktiviert)
@@ -114,3 +132,156 @@ cli:
             short: übersetzen
     long: Ein Toolset für Faule, einschließlich „Proto“-basiertem Backend-Framework, häufig verwendeten Vorlagen und mehrsprachiger Übersetzung
     short: Ein Werkzeugset für Faule
+    sync:
+        flags:
+            template-path: Pfad zur Vorlagensynchronisierung
+        long: Synchronisieren Sie die Konfiguration vom entfernten Ende und führen Sie sie in die lokale Konfiguration ein. Die Vorlagendatei wird gleichzeitig während der Synchronisierung unterstützt (falls konfiguriert).
+        short: Synchronisieren Sie die Konfiguration aus der Ferne
+    up-mod:
+        flags:
+            goproxy: Geben Sie die Goproxy-Adresse an. Wenn nicht, wird die erste in der Umgebungsvariablen verwendet
+        long: Aktualisieren Sie die Abhängigkeitsversion der Datei go.mod
+        short: Aktualisieren Sie die go.mod-Datei
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharisch
+    ar: Arabisch
+    as: Assamesisch
+    ay: Aymara
+    az: Aserbaidschanisch
+    be: Belarussisch
+    bg: bulgarisch
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: bosnisch
+    ca: katalanisch
+    ceb: Cebuano
+    ckb: Kurdisch (Sorani)
+    co: Korsisch
+    cs: Tschechisch
+    cy: Walisisch
+    da: dänisch
+    de: Deutsch
+    doi: dogglai
+    dv: Dhivehi
+    ee: Mutterschaf
+    el: griechisch
+    en: Englisch
+    eo: Esperanto
+    es: Spanisch
+    et: estnisch
+    eu: baskisch
+    fa: persisch
+    fi: finnisch
+    fil: Philippinisch (Tagalog)
+    fr: Französisch
+    fy: Friesisch
+    ga: irisch
+    gd: schottisch Gälisch
+    gl: galizisch
+    gn: Guaraní
+    gom: Gonggan-Sprache
+    gu: Gujarati
+    ha: Hausa
+    haw: hawaiisch
+    he: hebräisch
+    hi: Hindi
+    hmn: Hmong
+    hr: kroatisch
+    ht: Haitianisches Kreol
+    hu: ungarisch
+    hy: Armenisch
+    id: Indonesisch
+    ig: Igbo
+    ilo: Ilocano
+    is: isländisch
+    it: Italienisch
+    iw: hebräisch
+    ja: japanisch
+    jv: Javanisch
+    jw: Javanisch
+    ka: georgisch
+    kk: Kasachisch
+    km: Kambodschanisch
+    kn: Kannada
+    ko: Koreanisch
+    kri: Kreolisch
+    ku: kurdisch
+    ky: Kirgisisch
+    la: Latein
+    lb: Luxemburgisch
+    lg: Luganda
+    ln: Lingala
+    lo: Laotisch
+    lt: litauisch
+    lus: Mizo
+    lv: lettisch
+    mai: Maithili
+    mg: Madagassisch
+    mi: Maori
+    mk: mazedonisch
+    ml: Malayalam
+    mn: mongolisch
+    mni-mtei: Meitei (Manipuri)
+    mr: Marathi
+    ms: malaiisch
+    mt: maltesisch
+    my: birmanisch
+    ne: Nepali
+    nl: Niederländisch
+    "no": norwegisch
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Punjabi
+    pl: Polieren
+    ps: Paschtu
+    pt: Portugiesisch (Portugal, Brasilien)
+    qu: Quechua
+    ro: rumänisch
+    ru: Russisch
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: Singhalesisch
+    sk: slowakisch
+    sl: Slowenisch
+    sm: Samoaner
+    sn: Shona
+    so: somali
+    sq: albanisch
+    sr: serbisch
+    st: Sesotho
+    su: Sundanesisch
+    sv: Schwedisch
+    sw: Suaheli
+    ta: Tamil
+    te: Telugu
+    tg: Tadschikisch
+    th: Thailändisch
+    ti: Tignan
+    tk: Turkmenisch
+    tl: Tagalog (philippinisch)
+    tr: Türkisch
+    ts: Dzonga
+    tt: Tatarisch
+    ug: Uigur
+    uk: ukrainisch
+    ur: Urdu
+    uz: Usbekisch
+    vi: Vietnamesisch
+    xh: Bantusprache
+    yi: Jiddisch
+    yo: Yoruba
+    zh: Chinesisch
+    zh-chs: Vereinfachtes Chinesisch)
+    zh-cht: Vereinfachtes Chinesisch)
+    zh-cn: Vereinfachtes Chinesisch)
+    zh-hk: Chinesisch (Hongkong)
+    zh-mo: Chinesisch (Macao)
+    zh-sg: Chinesisch (Singapur)
+    zh-tw: traditionelles Chinesisch)
+    zu: Zulu

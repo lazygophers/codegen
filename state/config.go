@@ -17,6 +17,11 @@ import (
 	"strings"
 )
 
+type CfgSync struct {
+	Remote            string `json:"remote,omitempty" yaml:"remote,omitempty" toml:"remote,omitempty"`
+	CacheTemplatePath string `json:"cache-template-path,omitempty" yaml:"cache-template-path,omitempty" toml:"cache-template-path,omitempty"`
+}
+
 type CfgStyleName string
 
 const (
@@ -240,6 +245,8 @@ type CfgState struct {
 }
 
 type Cfg struct {
+	Sync *CfgSync `json:"sync,omitempty" yaml:"sync,omitempty" toml:"sync,omitempty"`
+
 	ProtocPath     string `json:"protoc-path,omitempty" yaml:"protoc-path,omitempty" toml:"protoc-path,omitempty"`
 	ProtoGenGoPath string `json:"protogen-go-path,omitempty" yaml:"protogen-go-path,omitempty" toml:"protogen-go-path,omitempty"`
 
@@ -273,6 +280,10 @@ type Cfg struct {
 }
 
 func (p *Cfg) apply() (err error) {
+	if p.Sync == nil {
+		p.Sync = new(CfgSync)
+	}
+
 	if p.ProtocPath == "" {
 		if runtime.IsWindows() {
 			p.ProtocPath = "protoc.exe"

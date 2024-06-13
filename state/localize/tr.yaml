@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tamamlama talimatlarını devre dışı bırak
+        long: |
+            Belirtilen kabuk için {{.RootName}} için bir otomatik tamamlama komut dosyası oluşturur.
+        short: Belirtilen kabuk için otomatik tamamlama komut dosyası oluştur
+        subcommand:
+            short: '{{.Command}} için otomatik tamamlama komut dosyası oluştur'
     flags:
         debug: Ayrıntılı günlüğün çıktısını alın
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: İş hizmetlerinin durum bilgisi olan kaynak veya statik kaynak yönetimi için tablo oluşturmayla ilgili tüm işlevler
             short: Tablo oluşturmaya yönelik tüm ilgili işlevler
+    group:
+        gen: kod üretimi
     help:
         additional_commands: Ek komutlar
         aliases: komut takma adı
@@ -94,10 +104,18 @@ cli:
         flags: parametre
         get_info: daha detaylı bilgi almak için
         global_flags: küresel parametreler
+        long: 'Yardım, uygulamadaki herhangi bir komut için yardım sağlar. '
+        short: Herhangi bir komutla ilgili yardım
+        usage: '{{.Name}} kullanımına ilişkin talimatlar'
         use: kullanmak
     i18n:
         long: Çok dilli uluslararasılaştırmayla ilgili araç seti
         short: Çok dilli uluslararasılaştırmayla ilgili araç seti
+        support:
+            flags:
+                language: Görüntülenecek dili belirtin, aksi takdirde dili görüntülemek için dil kodu kullanılacaktır
+            long: Desteklenen tüm dilleri listele
+            short: Desteklenen dil listesi
         tran:
             flags:
                 all-language: Desteklenen tüm dilleri çevirin (doğruysa dil bayrağı devre dışı bırakılır)
@@ -114,3 +132,156 @@ cli:
             short: Çevirmek
     long: '''Proto'' tabanlı arka uç çerçevesi, yaygın olarak kullanılan şablonlar ve çok dilli çeviri dahil, tembel insanlar için bir araç seti'
     short: Tembel insanlar için bir araç seti
+    sync:
+        flags:
+            template-path: Şablon senkronizasyon yolu
+        long: Yapılandırmayı uzak uçtan senkronize edin ve yerel konfigürasyonla birleştirin. Şablon dosyası, senkronizasyon sırasında aynı anda desteklenir (yapılandırılmışsa).
+        short: Yapılandırmayı uzaktan senkronize edin
+    up-mod:
+        flags:
+            goproxy: Goproxy adresini belirtin, değilse ortam değişkenindeki ilk adres kullanılacaktır
+        long: go.mod dosyasının bağımlılık sürümünü güncelleyin
+        short: go.mod dosyasını güncelleyin
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharca
+    ar: Arapça
+    as: Assam dili
+    ay: Aymara
+    az: Azerice
+    be: Belarusça
+    bg: Bulgarca
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengalce
+    bs: Boşnakça
+    ca: Katalanca
+    ceb: Cebuano
+    ckb: Kürtçe (Sorani)
+    co: Korsikalı
+    cs: Çek
+    cy: Galce
+    da: Danimarkalı
+    de: Almanca
+    doi: dogglai
+    dv: Dhivehi
+    ee: Koyun
+    el: Yunan
+    en: İngilizce
+    eo: Esperanto
+    es: İspanyol
+    et: Estonyalı
+    eu: Bask
+    fa: Farsça
+    fi: Fince
+    fil: Filipince (Tagalogca)
+    fr: Fransızca
+    fy: Frizce
+    ga: İrlandalı
+    gd: İskoç Galcesi
+    gl: Galiçyaca
+    gn: Guaraní
+    gom: gonggan dili
+    gu: gujarati dili
+    ha: Hausa
+    haw: Hawaii dili
+    he: İbranice
+    hi: Hintçe
+    hmn: Hmong
+    hr: Hırvat
+    ht: Haiti Kreyolu
+    hu: Macarca
+    hy: Ermeni
+    id: Endonezya dili
+    ig: İbo
+    ilo: Ilocano
+    is: İzlandaca
+    it: İtalyan
+    iw: İbranice
+    ja: Japonca
+    jv: Cava
+    jw: Cava
+    ka: Gürcü
+    kk: Kazak
+    km: Kamboçyalı
+    kn: Kannadaca
+    ko: Koreli
+    kri: Kreol
+    ku: Kürt
+    ky: Kırgız
+    la: Latince
+    lb: Lüksemburgca
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Litvanyalı
+    lus: Mizo
+    lv: Letonca
+    mai: Maithili
+    mg: Madagaskarca
+    mi: Maori dili
+    mk: Makedonca
+    ml: Malayalamca
+    mn: Moğolca
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi dili
+    ms: Malayca
+    mt: Malta dili
+    my: Birmanya
+    ne: Nepalce
+    nl: Flemenkçe
+    "no": Norveççe
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Ortaya (Odia)
+    pa: Pencap
+    pl: Lehçe
+    ps: Peştuca
+    pt: Portekizce (Portekiz, Brezilya)
+    qu: Keçuva
+    ro: Romen
+    ru: Rusça
+    rw: Kinyarwanda
+    sa: Sanskritçe
+    sd: Sindhi
+    si: Sinhala
+    sk: Slovak
+    sl: Sloven
+    sm: Samoalı
+    sn: Şona
+    so: Somalili
+    sq: Arnavut
+    sr: Sırpça
+    st: Sesotho
+    su: Sundan dili
+    sv: İsveççe
+    sw: Svahili
+    ta: tamilce
+    te: telugu dili
+    tg: Tacikçe
+    th: Tay dili
+    ti: Tignan
+    tk: Türkmence
+    tl: Tagalogca (Filipinli)
+    tr: Türkçe
+    ts: Dzonga
+    tt: Tatar
+    ug: Uygur
+    uk: Ukrayna
+    ur: Urduca
+    uz: Özbekçe
+    vi: Vietnam
+    xh: bantu dili
+    yi: Yidiş
+    yo: yoruba
+    zh: Çince
+    zh-chs: Basitleştirilmiş Çince)
+    zh-cht: Basitleştirilmiş Çince)
+    zh-cn: Basitleştirilmiş Çince)
+    zh-hk: Çince (Hong Kong)
+    zh-mo: Çince(Makao)
+    zh-sg: Çince (Singapur)
+    zh-tw: Çince (Tayvan)
+    zu: Zuluca

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Khubaza ukugqiba imiyalelo
+        long: |
+            Yenza umbhalo opheleleyo we {{.RootName}} weqokobhe elikhankanyiweyo.
+        short: Yenza umbhalo opheleleyo weqokobhe elikhankanyiweyo
+        subcommand:
+            short: Velisa iscript esizigqibezelelayo se-{{.Command}}
     flags:
         debug: Imveliso yelog eneenkcukacha
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Yonke imisebenzi enxulumeneyo yokuvelisa iitheyibhile zezibonelelo ezisemgangathweni okanye ulawulo lwemithombo engatshintshiyo yeenkonzo zoshishino
             short: Yonke imisebenzi enxulumeneyo yokuvelisa iitafile
+    group:
+        gen: ukwenziwa kwekhowudi
     help:
         additional_commands: Imiyalelo eyongezelelweyo
         aliases: umyalelo alias
@@ -94,10 +104,18 @@ cli:
         flags: ipharamitha
         get_info: ukufumana ulwazi oluthe vetshe
         global_flags: iiparamitha zehlabathi
+        long: 'Uncedo lubonelela ngoncedo kuwo nawuphi na umyalelo kwisicelo. '
+        short: Uncedo kuwo nawuphi na umyalelo
+        usage: Imiyalelo yokusebenzisa {{.Name}}
         use: sebenzisa
     i18n:
         long: Izixhobo ezinxulumene nokudityaniswa kweelwimi zamazwe ngamazwe
         short: Izixhobo ezinxulumene nokudityaniswa kweelwimi zamazwe ngamazwe
+        support:
+            flags:
+                language: Cacisa ulwimi oluza kuboniswa, kungenjalo ikhowudi yolwimi iya kusetyenziswa ukubonisa ulwimi
+            long: Dwelisa zonke iilwimi ezixhaswayo
+            short: Uluhlu lolwimi oluxhaswayo
         tran:
             flags:
                 all-language: Guqulela zonke iilwimi ezixhaswayo (ukuba yinyani iflegi yeelwimi ivaliwe)
@@ -114,3 +132,156 @@ cli:
             short: guqulela
     long: Isixhobo esisetelwe abantu abasonqenayo, kuquka 'iproto'-based backend framework, itemplates ezisetyenziswa ngokuqhelekileyo, kunye noguqulelo lweelwimi ezininzi.
     short: Isixhobo esilungiselelwe amavila
+    sync:
+        flags:
+            template-path: Indlela yongqamaniso yetemplate
+        long: Ngqamanisa ubumbeko ukusuka kwisiphelo esikude kwaye udibanise kuqwalaselo lobulali Ifayile yetemplate ixhaswa ngexesha elinye ngexesha longqamaniso (ukuba iqwalaselwe)
+        short: Ngqamanisa ubumbeko ukusuka kude
+    up-mod:
+        flags:
+            goproxy: Cacisa idilesi ye-goproxy, ukuba akunjalo, eyokuqala kuguqulo lwemeko-bume iya kusetyenziswa
+        long: Hlaziya inguqulelo yokuxhomekeka kwifayile ye go.mod
+        short: Hlaziya ifayile ye-go.mod
+lang:
+    af: Isibhulu
+    ak: IsiTwi (Akan)
+    am: Amharic
+    ar: IsiArabhu
+    as: IsiAssamese
+    ay: Aymara
+    az: IsiAzerbaijani
+    be: IsiBhelarushiyen
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnian
+    ca: 'isiKhathalan '
+    ceb: Cebuano
+    ckb: IsiKurdish (Sorani)
+    co: isiKhorsikhen
+    cs: Czech
+    cy: IsiWelsh
+    da: Danish
+    de: IsiJamani
+    doi: i-doglai
+    dv: Dhivehi
+    ee: Ewe
+    el: IsiGrike
+    en: IsiNgesi
+    eo: isiEsperanto
+    es: Spanish
+    et: Estonian
+    eu: Basque
+    fa: Persian
+    fi: Finnish
+    fil: IsiFilipino (Tagalog)
+    fr: IsiFrentshi
+    fy: IsiFrisian
+    ga: Irish
+    gd: IsiGaelic saseScottish
+    gl: Galician
+    gn: IsiGuaraní
+    gom: ulwimi lwegonggan
+    gu: Gujarati
+    ha: Hausa
+    haw: isiHawayi
+    he: IsiHebhere
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatian
+    ht: isiKriyoli saseHayiti
+    hu: Hungarian
+    hy: Armenian
+    id: Indonesian
+    ig: Isi-Igbo
+    ilo: Ilocano
+    is: Iceland
+    it: IsiTaliyani
+    iw: IsiHebhere
+    ja: IsiJaphani
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: isiKazakh
+    km: isiKhambodiya
+    kn: Kannada
+    ko: Korean
+    kri: IsiCreole
+    ku: 'isiKhudish '
+    ky: isiKyrgyz
+    la: isiLatini
+    lb: isiLuksembogu
+    lg: IsiLuganda
+    ln: IsiLingala
+    lo: isiLawo
+    lt: isiLithuwaniya
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: IsiMalagasy
+    mi: isiMawori
+    mk: Mecedonian
+    ml: Malayalam
+    mn: isiMongoliya
+    mni-mtei: I-Meitei (Manipuri)
+    mr: Marathi
+    ms: Malay
+    mt: Maltese
+    my: Burmese
+    ne: Nepali
+    nl: IsiDatshi
+    "no": Norwegian
+    nso: Sepeti
+    ny: IsiNyanza (Chichewa)
+    om: IsiOromo
+    or: IsiOriya (Odia)
+    pa: isiPhunjabi
+    pl: Polish
+    ps: isiPhashto
+    pt: IsiPhuthukezi (ePortugal, eBrazil)
+    qu: IsiQuechua
+    ro: Romanian
+    ru: IsiRashiya
+    rw: IsiKinyarwanda
+    sa: isiSanskrit
+    sd: Sindhi
+    si: sinhala
+    sk: Slovak
+    sl: Slovenian
+    sm: isiSamoa
+    sn: IsiShona
+    so: 'isiSomali '
+    sq: Albanian
+    sr: isiSebhiya
+    st: IsiSuthu
+    su: IsiSundanese
+    sv: Swedish
+    sw: Swahili
+    ta: Tamil
+    te: Telugu
+    tg: IsiTajik
+    th: IsiThai
+    ti: Tignan
+    tk: isiTurkmen
+    tl: IsiTagalog (kwiiPhilippines)
+    tr: iTurkey
+    ts: Dzonga
+    tt: IsiTatar
+    ug: Uighur
+    uk: Isi-Ukraine
+    ur: IsiUrdu
+    uz: IsiUzbek
+    vi: IsiVietnamese
+    xh: ulwimi lwabantu
+    yi: Yiddish
+    yo: isiyoruba
+    zh: IsiTshayina
+    zh-chs: IsiTshayina (Esenziwe lula)
+    zh-cht: IsiTshayina (Esenziwe lula)
+    zh-cn: IsiTshayina (Esenziwe lula)
+    zh-hk: IsiTshayina (eHong Kong)
+    zh-mo: IsiTshayina(Macau)
+    zh-sg: IsiTshayina (eSingapore)
+    zh-tw: IsiTshayina (eTaiwan)
+    zu: IsiZulu

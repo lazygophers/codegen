@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Embogue umi instrucción oñembotývo
+        long: |
+            Omoheñói peteĩ script oñembotývo ijehegui {{.RootName}}-pe g̃uarã pe shell ojeꞌevaꞌekuépe g̃uarã.
+        short: Emoheñói peteĩ script autocomplete pe shell ojeꞌevaꞌekuépe g̃uarã
+        subcommand:
+            short: Emoheñói script autocompleta {{.Command}}-pe g̃uarã.
     flags:
         debug: Salida registro detallado rehegua
     gen:
@@ -34,11 +42,11 @@ cli:
             go-module-prefix: Go_package rape oñembohekopyréva .proto vore ha añeteguápe g̃uarã, ikatu emohenda ko jeporavopyre
             input: Emombe’u .proto vore ypykue ojejapova’erã
             output-path: Ko jeporavopyre ikatu oñemboheko go_package rape oñembohekopyréva vore .proto-pe ndojoajúi jave tape ryru ndive añetehápe oikotevẽva oñemboheko.
-            overwrite: Contenido ndojejapomo’ãivape g̃uarã, emboliga ojehai jey hag̃ua contenido oĩmava
+            overwrite: Contenido ndojejapomo’ãivape g̃uarã, eforsa ojehai jey hag̃ua contenido oĩmava
             proto-files: Ojegueru hag̃ua ambue .proto vore/karpeha rape ndoikóiva peteĩ kundahárape .proto vore ojeꞌevaꞌekue ndive, ko tembiaporã haꞌehína peteĩ jeporavorã oñemboyke hag̃ua mohendaha tenda vore ñembohekorãme.
             protoc: '`protoc` vore rape ojehechakuaáva'
             protoc-gen-go: '`protoc-gen-go` mboajepyréva rape'
-            tables-enable_field_created_at: Oñembohapétapa pe ñembohekorã ñemoheñói ñepyrũrã ñanduti renda created_at rendaguépe
+            tables-enable_field_created_at: Oñembohapétapa pe generación configuración por defecto base de datos creado_at tenda rehegua
             tables-enable_field_deleted_at: Oñembohapétapa pe ñemboheko tenondegua pe deleted_at tenda’i ñanduti rendápe
             tables-enable_field_id: Emboguata ñemboheko ñepyrũrã ñemoheñói umi tenda ojoajúva ñanduti renda rehe
             tables-enable_field_updated_at: Oñembohapétapa pe valor por defecto pe tenda updated_at rehegua ñanduti rendápe
@@ -64,7 +72,7 @@ cli:
             short: Emoheñói vore go.mod rehegua
         pb:
             long: Emoheñói .pb.go vore, ojeporúva ojejapo hag̃ua .proto vore Etiqueta campo relevante x oñembojoapýta ijeheguiete configuración heꞌiháicha.
-            short: Emoheñói .pb.go rembiapokue
+            short: Emoheñói vore .pb.go
         short: Código generador rehegua
         state:
             conf:
@@ -78,7 +86,7 @@ cli:
             i18n:
                 long: Emoheñói código ojoajúva i18n rehe umi ñehenói internacional heta ñe’ẽme g̃uarã
                 short: Omoheñói código ojoajúva i18n rehe
-            long: Omoheñói opaite función estado rehegua ojoajúva recurso estatal térã recurso estático gestión servicio empresarial-pe g̃uarã
+            long: Omoheñói opaite función estado rehegua ojoajúva recurso estatal térã recurso estático gestión servicio empresarial rehegua
             short: Opaite tembiaporã iñimportánteva ojejapo hag̃ua estado
             table:
                 long: Emoheñói kódigo ojoajúva state.table rehe, ojeporúva joajuha base de datos ha tabla ñepyrũrã oñepyrũvo servicio.
@@ -86,6 +94,8 @@ cli:
         table:
             long: Opaite tembiapo ojoajúva omoheñóivo cuadro recurso estatal térã recurso estático gestión servicio empresarial-pe g̃uarã
             short: Opaite tembiaporã ojoajúva ojejapo hag̃ua tabla
+    group:
+        gen: código ñemoheñói
     help:
         additional_commands: Umi tembiapoukapy ambuéva
         aliases: tembiapoukapy alias
@@ -94,10 +104,18 @@ cli:
         flags: parámetro rehegua
         get_info: ohupyty haguã marandu detalladove
         global_flags: umi parámetro global rehegua
+        long: 'Eme’ẽ jepururã ñe’ẽmondo oimeraẽ tembiapoukapy oĩva purupyrãme. '
+        short: Ñe’ẽmondo ojepuru hag̃ua oimeraẽ tembiapoukapy
+        usage: Ñe’ẽmondo ojepuru hag̃ua {{.Name}}.
         use: poru
     i18n:
         long: Tembipuru’i internacionalización heta ñe’ẽ rehegua
         short: Tembipuru’i internacionalización heta ñe’ẽ rehegua
+        support:
+            flags:
+                language: Emombe’u ñe’ẽ ojehechaukava’erã, ndaupéichairamo ojeporúta ñe’ẽ kódigo ojehechauka hag̃ua ñe’ẽ
+            long: Emoĩ opaite ñe’ẽ oipytyvõva
+            short: Ñe’ẽnguéra lista oipytyvõva
         tran:
             flags:
                 all-language: Embohasa opaite ñe’ẽ oipytyvõva (añete ramo oñembogue umi ñe’ẽ poyvi)
@@ -114,3 +132,156 @@ cli:
             short: ñe'ẽmbohasa
     long: Peteĩ tembipuru’i oñembohekopyréva tapichakuéra ipy’aju’ỹvape g̃uarã, umíva apytépe ‘proto’-pegua marco backend, plantilla ojeporúva jepi ha ñembohasa heta ñe’ẽme
     short: Peteĩ tembipuru’i oñemoĩva tapichakuéra ipererĩvape g̃uarã
+    sync:
+        flags:
+            template-path: Plantilla ñembojoaju rape
+        long: Embojoaju ñemboheko mombyry guive ha embojoaju ñemboheko tendápegua Pe vore plantilla rehegua oipytyvõ peteĩ jave ñembojoaju aja (oñemboheko ramo).
+        short: Embojoaju configuración mombyry guive
+    up-mod:
+        flags:
+            goproxy: Emombeꞌu goproxy dirección, ndahaꞌeiramo, ojeporúta peteĩha oĩva variable entorno-pe
+        long: Embopyahu versión dependencia rehegua vore go.mod rehegua
+        short: Embopyahu go.mod rembiapokue
+lang:
+    af: Afrikaans-pe
+    ak: Twi (Akan) .
+    am: Amharico ñe’ẽme
+    ar: Árabe ñe’ẽ
+    as: asamés
+    ay: aimara
+    az: Azerbaiyán ñe’ẽme
+    be: Bielorruso-ygua
+    bg: Búlgaro ñe’ẽ
+    bho: Bhojpuri
+    bm: Bámbara
+    bn: Bengali
+    bs: Bosnio-ygua
+    ca: Catalán ñe’ẽme
+    ceb: Cebuano
+    ckb: Kurdo (Soraní) .
+    co: Córsico ñe’ẽ
+    cs: Checo
+    cy: Galés ñe’ẽ
+    da: danés
+    de: Alemán ñe’ẽ
+    doi: dogglai rehegua
+    dv: Dhivehi
+    ee: Ewe
+    el: Griego ñe’ẽme
+    en: inglés
+    eo: Esperanto ñe’ẽ
+    es: karaiñe'ẽ
+    et: Estonia-ygua
+    eu: vasco
+    fa: Persa ñe’ẽ
+    fi: Finlandés
+    fil: Filipino (Tagalo) .
+    fr: Francés ñe’ẽ
+    fy: Frisiano rehegua
+    ga: irlandés
+    gd: Gaélico escocés rehegua
+    gl: Galicia ñe’ẽ
+    gn: Guarani
+    gom: gongan ñe’ẽ
+    gu: gujarati guarani
+    ha: Hausa
+    haw: Hawaiano rehegua
+    he: hebreo ñe’ẽme
+    hi: Hindi ñe’ẽ
+    hmn: Hmong
+    hr: Croata ñe’ẽ
+    ht: Criollo haitiano
+    hu: húngaro
+    hy: Armenio rehegua
+    id: Indonesio ñe’ẽ
+    ig: Igbo
+    ilo: ilocano
+    is: Islandés ñe’ẽ
+    it: Italiano ñe’ẽ
+    iw: hebreo ñe’ẽme
+    ja: Japonés ñe’ẽ
+    jv: Javanés ñe’ẽ
+    jw: Javanés ñe’ẽ
+    ka: Georgiano ñe’ẽ
+    kk: Kazajo-pegua
+    km: Camboyano-ygua
+    kn: Kannada ñe’ẽme
+    ko: Coreano ñe’ẽ
+    kri: Criollo rehegua
+    ku: Kurdo
+    ky: Kirguis
+    la: Latino-pe
+    lb: Luxemburgo-pegua
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lituano ñe’ẽ
+    lus: Mizo
+    lv: Letono-ygua
+    mai: Maithili
+    mg: Malgasy ñe’ẽ
+    mi: Maorí
+    mk: Macedonia-ygua
+    ml: Malayalam ñe’ẽme
+    mn: Mongol pegua
+    mni-mtei: Meitei (Manipuri) rehegua .
+    mr: marathi rehegua
+    ms: Malayo
+    mt: Malta ñe’ẽ
+    my: Birmania-pegua
+    ne: Nepalí ñe’ẽ
+    nl: Holandés ñe’ẽ
+    "no": noruego-pegua
+    nso: Sepeti
+    ny: Nyanza (Chichewa) Ñe’ẽpoty ha ñe’ẽpoty .
+    om: Oromo
+    or: Oriya (Odia) .
+    pa: punjabi ñe’ẽme
+    pl: Polaco ñe’ẽ
+    ps: Pashto ñe’ẽ
+    pt: Poytugañe'ẽ (Portugal, Brasil) .
+    qu: quechua
+    ro: Rumania-pe
+    ru: Ruso ñe’ẽ
+    rw: Kinyarwanda ñe’ẽme
+    sa: Sánscrito
+    sd: sindhi rehegua
+    si: sinhala ñe’ẽ
+    sk: Eslovaco
+    sl: esloveno rehegua
+    sm: Samoano
+    sn: Shona rehegua
+    so: Somalí ñe’ẽ
+    sq: Albanés rehegua
+    sr: Serbio ñe’ẽ
+    st: Sesoto ñe’ẽ
+    su: Sundanés ñe’ẽ
+    sv: Sueco ñe’ẽ
+    sw: Suajili ñe’ẽme
+    ta: tamil
+    te: telugu
+    tg: Tayik ñe’ẽme
+    th: Tailandés
+    ti: Tignan rehegua
+    tk: Turkmen-kuéra
+    tl: Tagalo (Filipino) .
+    tr: turco ñe’ẽ
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur rehegua
+    uk: Ucrania-ygua
+    ur: Urdu ñe’ẽ
+    uz: Uzbek
+    vi: Vietnam-ygua
+    xh: bantu ñe’ẽ
+    yi: Yiddish ñe’ẽme
+    yo: yoruba ñe’ẽ
+    zh: Chino
+    zh-chs: Chino (Simplificado) .
+    zh-cht: Chino (Simplificado) .
+    zh-cn: Chino (Simplificado) .
+    zh-hk: Chino (Hong Kong) .
+    zh-mo: Chino(Macau) .
+    zh-sg: Chino (Singapur) .
+    zh-tw: chino tradicional) .
+    zu: Zulu

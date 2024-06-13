@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tamamlamak görkezmelerini öçüriň
+        long: |
+            Görkezilen gabyk üçin {{.RootName} for üçin awtomatiki doly skript döredýär.
+        short: Görkezilen gabyk üçin awtomatiki doly skript dörediň
+        subcommand:
+            short: '{{.Söwda}} üçin awtomatiki doly skript dörediň'
     flags:
         debug: Jikme-jik gündeligi
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Döwlet çeşmesi ýa-da iş hyzmatlarynyň statiki çeşme dolandyryşy üçin tablisalary döretmek bilen baglanyşykly ähli funksiýalar
             short: Tablisa döretmek üçin ähli degişli funksiýalar
+    group:
+        gen: kod döretmek
     help:
         additional_commands: Goşmaça buýruklar
         aliases: lakam
@@ -94,10 +104,18 @@ cli:
         flags: parametri
         get_info: has giňişleýin maglumat almak üçin
         global_flags: global parametrler
+        long: 'Kömek programmadaky islendik buýruk üçin kömek berýär. '
+        short: Islendik buýrukda kömek ediň
+        usage: '{{.Name} use ulanmak boýunça görkezmeler'
         use: ulanmak
     i18n:
         long: Köp dilli halkaralaşma bilen baglanyşykly gurallar toplumy
         short: Köp dilli halkaralaşma bilen baglanyşykly gurallar toplumy
+        support:
+            flags:
+                language: Görkeziljek dili görkeziň, ýogsam dili görkezmek üçin dil kody ulanylar
+            long: Goldanýan ähli dilleri sanaň
+            short: Goldanýan dil sanawy
         tran:
             flags:
                 all-language: Goldanýan dilleriň hemmesini terjime ediň (eger hakykat bolsa dilleriň baýdagy ýapyk)
@@ -114,3 +132,156 @@ cli:
             short: terjime et
     long: Yalta adamlar üçin gural, şol sanda 'proto' esasly arka çarçuwasy, köplenç ulanylýan şablonlar we köp dilli terjime
     short: Yalta adamlar üçin gural
+    sync:
+        flags:
+            template-path: Şablon sinhronizasiýa ýoly
+        long: Sazlamany uzakdan sinhronlaň we ýerli konfigurasiýa birleşdiriň Şablon faýly sinhronizasiýa wagtynda şol bir wagtda goldanýar (düzülen bolsa).
+        short: Konfigurasiýany uzakdan sinhronlaň
+    up-mod:
+        flags:
+            goproxy: Goproksi salgysyny görkeziň, ýok bolsa, daşky gurşaw üýtgeýjisinde birinjisi ulanylar
+        long: Go.mod faýlynyň garaşlylyk wersiýasyny täzeläň
+        short: Go.mod faýly täzeläň
+lang:
+    af: Afrika
+    ak: Twi (Akan)
+    am: Amhar
+    ar: Arapça
+    as: Assamese
+    ay: Aýmara
+    az: Azerbaýjan
+    be: Belarus
+    bg: Bolgar
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosniýa
+    ca: Katalan
+    ceb: Sebuano
+    ckb: Kürt (Sorani)
+    co: Korsikan
+    cs: Çeh
+    cy: Uels
+    da: danish
+    de: Nemes
+    doi: Dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Grek
+    en: Iňlis
+    eo: Esperanto
+    es: Ispan
+    et: Eston
+    eu: bask
+    fa: Pars
+    fi: Fin
+    fil: Filippinler (Tagalog)
+    fr: Fransuz
+    fy: Frizian
+    ga: irish
+    gd: Şotlandiýaly Gael
+    gl: Galisiýa
+    gn: Guaraní
+    gom: gonggan dili
+    gu: gujarati
+    ha: Hausa
+    haw: Gawaýi
+    he: hebrew
+    hi: Hindi
+    hmn: Hmong
+    hr: Horwatiýa
+    ht: Gaiti kreoly
+    hu: aç
+    hy: Ermeni
+    id: Indoneziýaly
+    ig: Igbo
+    ilo: Ilokano
+    is: Islandiýa
+    it: Italýan
+    iw: hebrew
+    ja: Japaneseaponlar
+    jv: Javaneseawan
+    jw: Javaneseawan
+    ka: Gürji
+    kk: Gazak
+    km: Kamboja
+    kn: Kannada
+    ko: Koreýçe
+    kri: Kreol
+    ku: Kürt
+    ky: Gyrgyzystan
+    la: Latyn
+    lb: Lýuksemburg
+    lg: Luganda
+    ln: Lingala
+    lo: Laos
+    lt: Litwa
+    lus: Mizo
+    lv: Latwiýa
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Makedoniýa
+    ml: Malaýalam
+    mn: Mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malaý
+    mt: Malta
+    my: Birma
+    ne: Nepali
+    nl: Gollandiýaly
+    "no": norweg
+    nso: Sepeti
+    ny: Nyanza (Çiçewa)
+    om: Oromo
+    or: Oriýa (Odiýa)
+    pa: punjabi
+    pl: Polýak
+    ps: Puştun
+    pt: Portugaliýa (Portugaliýa, Braziliýa)
+    qu: Keçua
+    ro: Rumyn
+    ru: Rus
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slowakiýa
+    sl: Sloweniýa
+    sm: Samoan
+    sn: Şona
+    so: Somali
+    sq: Alban
+    sr: Serb
+    st: Sesotho
+    su: Sundanese
+    sv: Şwesiýa
+    sw: Suwaýili
+    ta: tamil
+    te: telugu
+    tg: Täjik
+    th: Taý
+    ti: Tignan
+    tk: Türkmenler
+    tl: Tagalog (Filippinler)
+    tr: türk
+    ts: Dzonga
+    tt: Tatar
+    ug: Uýgur
+    uk: Ukrain
+    ur: Urdu
+    uz: Özbek
+    vi: Wýetnamly
+    xh: adamlar dili
+    yi: Yiddishahudy
+    yo: Yorubaoruba
+    zh: Hytaýlylar
+    zh-chs: Hytaý (plönekeýleşdirilen)
+    zh-cht: Hytaý (plönekeýleşdirilen)
+    zh-cn: Hytaý (plönekeýleşdirilen)
+    zh-hk: Hytaý (Gonkong)
+    zh-mo: Hytaý (Makao)
+    zh-sg: Hytaý (Singapur)
+    zh-tw: Hytaý (Taýwan)
+    zu: Zulu

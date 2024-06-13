@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Talîmatên temamkirinê neçalak bike
+        long: |
+            Ji bo şêlê diyarkirî ji bo {{.RootName}} skrîpteke xweser çêdike.
+        short: Ji bo şêlê diyarkirî skrîptek temamker biafirînin
+        subcommand:
+            short: Ji bo {{.Fermandan}} skrîpta xwetemamkirinê çêbike
     flags:
         debug: Têketinek berfireh derxe
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Hemî fonksiyonên têkildar ên hilberîna tabloyan ji bo çavkaniya dewletparêz an rêveberiya çavkaniya statîk a karûbarên karsaziyê
             short: Hemî fonksiyonên têkildar ji bo hilberîna tabloyan
+    group:
+        gen: nifşê kodê
     help:
         additional_commands: fermanên Additional
         aliases: fermana nasnav
@@ -94,10 +104,18 @@ cli:
         flags: parametre
         get_info: ji bo agahdariya berfirehtir bistînin
         global_flags: parametreyên gerdûnî
+        long: 'Alîkarî ji bo her fermanek di serîlêdanê de alîkariyê dide. '
+        short: Alîkarî li ser her fermanê
+        usage: Talîmatên ji bo bikaranîna {{.Name}}
         use: bikaranîn
     i18n:
         long: Amûrên têkildarî navneteweyîbûna pirzimanî
         short: Amûrên têkildarî navneteweyîbûna pirzimanî
+        support:
+            flags:
+                language: Zimanê ku tê nîşandan diyar bike, wekî din koda ziman dê ji bo nîşandana ziman were bikar anîn
+            long: Hemî zimanên destekkirî navnîş bikin
+            short: Lîsteya zimanên piştgirî
         tran:
             flags:
                 all-language: Hemî zimanên destekkirî wergerînin (heke rast be ala zimanan neçalak be)
@@ -114,3 +132,156 @@ cli:
             short: wergerandin
     long: Amûrek ji bo mirovên tembel, di nav de çarçoveyek paşverû ya bingehîn a 'proto', şablonên bi gelemperî têne bikar anîn, û wergera pirzimanî.
     short: Amûrek ji bo mirovên tembel
+    sync:
+        flags:
+            template-path: Rêya hevdemkirina şablonê
+        long: Veavakirinê ji dawiya dûr ve hevdeng bikin û wê di veavakirina herêmî de bikin yek Di heman demê de pelê şablonê di dema hevdengkirinê de tê piştgirî kirin (heke were mîheng kirin).
+        short: Veavakirinê ji dûr ve hevdeng bikin
+    up-mod:
+        flags:
+            goproxy: Navnîşana goproxy diyar bikin, heke na, dê di guhêrbara jîngehê de yekem were bikar anîn
+        long: Guhertoya girêdayîbûna pelê go.mod nûve bikin
+        short: Pelê go.mod nûve bikin
+lang:
+    af: Afrîkansî
+    ak: Twi (Akan)
+    am: Amharîkî
+    ar: Erebî
+    as: Assamese
+    ay: Aymara
+    az: Azerî
+    be: Belarûsî
+    bg: Bûlgarî
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengalî
+    bs: Bosnayî
+    ca: Katalanî
+    ceb: Cebuano
+    ckb: Kurdiya Soranî)
+    co: Korsîkayî
+    cs: Çekî
+    cy: Galerkî
+    da: Danîmarkî
+    de: Almanî
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Yewnanî
+    en: Îngilîzî
+    eo: Esperanto
+    es: Îspanyolî
+    et: Estonî
+    eu: Baskî
+    fa: Farsî
+    fi: Fînlandî
+    fil: Fîlîpînî (Tagalog)
+    fr: Fransî
+    fy: frîzî
+    ga: Irlandî
+    gd: Scottish Gaelic
+    gl: Galîsyayî
+    gn: Guaraní
+    gom: zimanê gonggan
+    gu: Gujaratî
+    ha: Hausa
+    haw: Hawaiyî
+    he: Îbranî
+    hi: Hindî
+    hmn: Hmongî
+    hr: Xirwatî
+    ht: Kreoliya Haîtiyî
+    hu: Macarî
+    hy: Ermenî
+    id: Îndonezî
+    ig: Igbo
+    ilo: Ilocano
+    is: Îzlandî
+    it: Îtalî
+    iw: Îbranî
+    ja: Japonî
+    jv: Javanesî
+    jw: Javanesî
+    ka: Gurcî
+    kk: Qazakî
+    km: Kamboçya
+    kn: Kanadayî
+    ko: Koreyî
+    kri: Creole
+    ku: Kurdî
+    ky: Qirgizî
+    la: Latînî
+    lb: Luksembûrgî
+    lg: Luganda
+    ln: Lingala
+    lo: Laoyî
+    lt: Lîtvanyayî
+    lus: Mizo
+    lv: Letonî
+    mai: Maithili
+    mg: Malagasy
+    mi: Maorîyî
+    mk: Makedonî
+    ml: Malayalamî
+    mn: Moxolî
+    mni-mtei: Meitei (Manipuri)
+    mr: Maratî
+    ms: Malayî
+    mt: Maltezî
+    my: Bîrmanî
+    ne: Nepalî
+    nl: Holandî
+    "no": Norwêcî
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Pencabî
+    pl: Polandî
+    ps: Peştûyî
+    pt: Portekîzî (Portekîzî, Brezîlya)
+    qu: Quechua
+    ro: Romanyayî
+    ru: Rûsî
+    rw: Kinyarwanda
+    sa: Sanskrîtî
+    sd: Sindî
+    si: sinhala
+    sk: Slovakî
+    sl: Slovenî
+    sm: Samoan
+    sn: Shona
+    so: Somalîkî
+    sq: Albanî
+    sr: Sirbî
+    st: Sesoto
+    su: Sundanese
+    sv: Swêdî
+    sw: Swahîlîyî
+    ta: Tamîlî
+    te: Teluguyî
+    tg: Tajik
+    th: Thayîkî
+    ti: Tignan
+    tk: Tirkmenî
+    tl: Tagalog (Fîlîpînî)
+    tr: Tirkî
+    ts: Dzonga
+    tt: Tatar
+    ug: Uyghur
+    uk: Ûkraynî
+    ur: Ûrdûyî
+    uz: Ozbekî
+    vi: Vîetnamî
+    xh: zimanê bantu
+    yi: Yîddîşî
+    yo: Yorûbayî
+    zh: Çînî
+    zh-chs: Çînî (Hêsandî)
+    zh-cht: Çînî (Hêsandî)
+    zh-cn: Çînî (Hêsandî)
+    zh-hk: Çînî (Hong Kong)
+    zh-mo: Çînî (Makao)
+    zh-sg: Çînî (Singapore)
+    zh-tw: Çînî ya kevneşopî)
+    zu: Zulu

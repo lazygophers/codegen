@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Zakázať pokyny na dokončenie
+        long: |
+            Generuje skript automatického dopĺňania pre {{.RootName}} pre zadaný shell.
+        short: Vytvorte skript automatického dopĺňania pre zadaný shell
+        subcommand:
+            short: Vygenerovať skript automatického dopĺňania pre {{.Command}}
     flags:
         debug: Výstup podrobného protokolu
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Všetky súvisiace funkcie generovania tabuliek pre stavové zdroje alebo statickú správu zdrojov obchodných služieb
             short: Všetky súvisiace funkcie na generovanie tabuliek
+    group:
+        gen: generovanie kódu
     help:
         additional_commands: Ďalšie príkazy
         aliases: alias príkazu
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: získať podrobnejšie informácie
         global_flags: globálne parametre
+        long: 'Pomocník poskytuje pomoc pre akýkoľvek príkaz v aplikácii. '
+        short: Pomoc pri akomkoľvek príkaze
+        usage: Pokyny na používanie {{.Name}}
         use: použitie
     i18n:
         long: Viacjazyčný súbor nástrojov súvisiacich s internacionalizáciou
         short: Viacjazyčný súbor nástrojov súvisiacich s internacionalizáciou
+        support:
+            flags:
+                language: Zadajte jazyk, ktorý sa má zobraziť, inak sa na zobrazenie jazyka použije kód jazyka
+            long: Zoznam všetkých podporovaných jazykov
+            short: Zoznam podporovaných jazykov
         tran:
             flags:
                 all-language: Preložiť všetky podporované jazyky (ak je pravda, príznak jazykov je zakázaný)
@@ -114,3 +132,156 @@ cli:
             short: preložiť
     long: Sada nástrojov pre lenivých ľudí vrátane backendového rámca založeného na „proto“, bežne používaných šablón a viacjazyčného prekladu
     short: Sada nástrojov pre lenivcov
+    sync:
+        flags:
+            template-path: Cesta synchronizácie šablóny
+        long: Synchronizujte konfiguráciu zo vzdialeného konca a zlúčte ju s lokálnou konfiguráciou Súbor šablóny je súčasne podporovaný počas synchronizácie (ak je nakonfigurovaný).
+        short: Synchronizujte konfiguráciu na diaľku
+    up-mod:
+        flags:
+            goproxy: Zadajte adresu goproxy, ak nie, použije sa prvá z premennej prostredia
+        long: Aktualizujte verziu závislosti súboru go.mod
+        short: Aktualizujte súbor go.mod
+lang:
+    af: afrikánčina
+    ak: Twi (Akan)
+    am: amharčina
+    ar: arabčina
+    as: asámsky
+    ay: Aymara
+    az: azerbajdžanský
+    be: bieloruský
+    bg: bulharčina
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengálsky
+    bs: bosniansky
+    ca: katalánsky
+    ceb: Cebuano
+    ckb: kurdčina (sorančina)
+    co: korzické
+    cs: český
+    cy: waleský
+    da: dánsky
+    de: nemecký
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: grécky
+    en: Angličtina
+    eo: Esperanto
+    es: španielčina
+    et: estónsky
+    eu: baskický
+    fa: perzský
+    fi: fínsky
+    fil: filipínčina (tagalčina)
+    fr: francúzsky
+    fy: frízsky
+    ga: írsky
+    gd: škótska galčina
+    gl: Haličský
+    gn: Guaraní
+    gom: gongganský jazyk
+    gu: gudžarátčina
+    ha: Hausa
+    haw: havajský
+    he: hebrejčina
+    hi: hindčina
+    hmn: Hmong
+    hr: chorvátsky
+    ht: haitská kreolčina
+    hu: maďarský
+    hy: arménsky
+    id: indonézsky
+    ig: Igbo
+    ilo: Ilocano
+    is: islandský
+    it: taliansky
+    iw: hebrejčina
+    ja: japončina
+    jv: jávsky
+    jw: jávsky
+    ka: gruzínsky
+    kk: kazašský
+    km: kambodžský
+    kn: Kannada
+    ko: kórejský
+    kri: kreolský
+    ku: kurdský
+    ky: kirgizský
+    la: latinčina
+    lb: luxemburský
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: litovský
+    lus: Mizo
+    lv: lotyšský
+    mai: Maithili
+    mg: malgašský
+    mi: maorskí
+    mk: macedónsky
+    ml: malajálamčina
+    mn: mongolský
+    mni-mtei: meitei (manipuri)
+    mr: maráthčina
+    ms: malajčina
+    mt: maltčina
+    my: barmský
+    ne: nepálsky
+    nl: holandský
+    "no": nórsky
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: pandžábčina
+    pl: poľský
+    ps: paštčina
+    pt: portugalčina (Portugalsko, Brazília)
+    qu: kečuánsky
+    ro: rumunský
+    ru: ruský
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhálčina
+    sk: slovenský
+    sl: slovenčina
+    sm: Samoan
+    sn: Shona
+    so: somálsky
+    sq: albánsky
+    sr: srbský
+    st: sesotho
+    su: sundánsky
+    sv: švédsky
+    sw: svahilčina
+    ta: tamilčina
+    te: telugčina
+    tg: tadžický
+    th: thajčina
+    ti: Tignan
+    tk: turkménsky
+    tl: tagalčina (filipínčina)
+    tr: turecký
+    ts: Dzonga
+    tt: tatársky
+    ug: ujgurské
+    uk: Ukrajinčina
+    ur: urdčina
+    uz: uzbecký
+    vi: Vietnamci
+    xh: bantuský jazyk
+    yi: jidiš
+    yo: joruba
+    zh: čínsky
+    zh-chs: Zjednodušená čínština)
+    zh-cht: Zjednodušená čínština)
+    zh-cn: Zjednodušená čínština)
+    zh-hk: čínština (Hongkong)
+    zh-mo: čínština (Macao)
+    zh-sg: čínština (Singapur)
+    zh-tw: čínština (Taiwan)
+    zu: Zulu

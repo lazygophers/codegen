@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Ma akwankyerɛ a wɔde wie no nyɛ adwuma
+        long: |
+            Yɛ autocomplete script ma {{.RootName}} ma shell a wɔakyerɛ no.
+        short: Yɛ autocomplete script ma shell a wɔakyerɛ no
+        subcommand:
+            short: Yɛ autocomplete script ma {{.Ahyɛde}} .
     flags:
         debug: Output nsɛm a ɛkɔ akyiri log
     gen:
@@ -24,7 +32,7 @@ cli:
             long: Yɛ nhyehyeɛ fael nsusuiɛ
             short: Yɛ nhyehyɛe fael
         dockerignore:
-            long: Yɛ .dockerignore fael ma Docker mfonini dan de bu w’ani gu fael sohwɛ so
+            long: Yɛ .dockerignore fael ma Docker mfonini dan no na ama woabu w’ani agu fael sohwɛ so
             short: Yɛ .dockerignore fael no
         editorconfig:
             long: Yɛ .editorconfig fael ma editor nhyehyeɛ
@@ -44,7 +52,7 @@ cli:
             tables-enable_field_updated_at: Sɛ ebia wobɛma updated_at field no default value a ɛwɔ database no mu no ayɛ adwuma anaa
             tables-enable_gorm_tag_column: Sɛ́ ebia wɔbɛma gorm awo ntoatoaso a ɛfa database ho no atumi ayɛ adwuma
         gitignote:
-            long: Yɛ .gitignore fael ma fael sohwɛ a wɔabu ani agu so wɔ version control mu
+            long: Yɛ .gitignore fael ma fael nhyehyɛe a wɔabu ani agu so wɔ version control mu
             short: Yɛ .gitignore fael no
         golang-lint:
             long: Yɛ .golangci.yml fael ma koodu no su nhwehwɛmu
@@ -72,13 +80,13 @@ cli:
                 short: Yɛ nhyehyɛe fael akenkan koodu
             flags:
                 cache: Sɛ́ ebia wɔbɛma awo ntoatoaso a ɛfa cache ho atumi ayɛ adwuma anaa
-                config: Sɛ́ ebia wobɛhyehyɛ nhyehyɛe-fam koodu
+                config: Sɛ́ ebia wɔbɛhyehyɛ nhyehyɛe-fam koodu
                 i18n: Sɛ́ ebia wobɛma awo ntoatoaso a ɛfa kasa ahorow pii ho atumi ayɛ adwuma (awo ntoatoaso no de ɔman mfiase ne nneɛma afoforo nkutoo ka ho, na ɛnka kasa ahorow pii nkyerɛase a ɛyɛ adwuma ankasa ho. Sɛ wuhia nkyerɛase a ɛyɛ adwuma ankasa a, yɛsrɛ wo fa {{.Ahyɛde}} di dwuma na hwɛ nsɛm no mu nsɛm)
                 table: Sɛ́ ebia wɔbɛma database a ɛfa database awo ntoatoaso ho atumi ayɛ adwuma
             i18n:
                 long: Generate i18n related code ma kasa ahorow pii amanaman ntam frɛ
                 short: Generate i18n a ɛfa ho koodu
-            long: Yɛ ɔman no dwumadi ahorow a ɛfa ho nyinaa ma stateful resource anaa static resource management of business services
+            long: Yɛ ɔman no dwumadie a ɛfa ho nyinaa ma stateful resource anaa static resource management of business services
             short: Dwumadie a ɛfa ho nyinaa ma generating state
             table:
                 long: Yɛ state.table related code, a wɔde di dwuma ma database nkitahodi ne table mfiase bere a wɔafi ɔsom no ase.
@@ -86,6 +94,8 @@ cli:
         table:
             long: Dwumadie a ɛfa ho nyinaa a ɛfa generating tables ma stateful resource anaa static resource management of business services
             short: Dwumadie a ɛfa ho nyinaa ma generating tables
+    group:
+        gen: koodu awo ntoatoaso
     help:
         additional_commands: Ahyɛde afoforo
         aliases: ahyɛdeɛ alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: sɛnea ɛbɛyɛ a wubenya nsɛm a ɛkɔ akyiri
         global_flags: wiase nyinaa nsusuwii ahorow
+        long: 'Fa akwankyerɛ a wɔde bedi dwuma ma ahyɛde biara a ɛwɔ application no mu. '
+        short: Akwankyerɛ a ɛfa sɛnea wɔde ahyɛde biara bedi dwuma ho
+        usage: Akwankyerɛ a ɛfa sɛnea wɔde {{.Name}} bedi dwuma ho.
         use: fa di dwuma
     i18n:
         long: Kasa ahorow pii amanaman ntam nkitahodi ho adwinnade
         short: Kasa ahorow pii amanaman ntam nkitahodi ho adwinnade
+        support:
+            flags:
+                language: Kyerɛ kasa a wobɛda no adi, anyɛ saa a wɔde kasa koodu no bedi dwuma de akyerɛ kasa no
+            long: Kyerɛw kasa horow a wɔboa no nyinaa
+            short: Kasa a wɔboa a wɔahyehyɛ
         tran:
             flags:
                 all-language: Kyerɛ kasa horow a wɔboa nyinaa ase (sɛ ɛyɛ nokware a kasa ahorow no frankaa no ayɛ adwuma) .
@@ -110,7 +128,160 @@ cli:
                 translater:
                     google-free: Google Wɛb Nkyerɛaseɛ
                     usage: 'Nkyerɛaseɛ kwan: Mmoa su {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
-            long: Wɔdan fael ahorow a ɛka kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.
+            long: Wɔdan fael ahorow a ɛwɔ kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.
             short: kyerɛ aseɛ
     long: Adwinnadeɛ a wɔahyehyɛ ama anihafoɔ, a ‘proto’-based backend framework, templates a wɔtaa de di dwuma, ne kasa ahodoɔ nkyerɛaseɛ ka ho
     short: Adwinnade a wɔde asi hɔ ama anihafo
+    sync:
+        flags:
+            template-path: Template synchronization kwan no so
+        long: Fa nhyehyeɛ no yɛ pɛ firi akyirikyiri awieeɛ na fa bom kɔ mpɔtam hɔ nhyehyeɛ no mu Wɔboa template fael no wɔ berɛ korɔ no ara mu wɔ synchronization mu (sɛ wɔahyehyɛ a)
+        short: Synchronize nhyehyeɛ fi akyirikyiri
+    up-mod:
+        flags:
+            goproxy: Kyerɛ goproxy address no, sɛ ɛnte saa a, wɔde nea edi kan wɔ environment variable no mu bedi dwuma
+        long: Fa go.mod fael no dependency version no yɛ foforo
+        short: Fa go.mod fael no yɛ foforo
+lang:
+    af: Afrikaans kasa
+    ak: Twi (Akan) .
+    am: Amharic kasa mu
+    ar: Arabic kasa
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijan kasa mu
+    be: Belarus kasa
+    bg: Bulgaria kasa
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali kasa mu
+    bs: Bosnia kasa
+    ca: Catalan kasa mu
+    ceb: Cebuano kasa mu
+    ckb: Kurdish (Sorani kasa) .
+    co: Corsican kasa
+    cs: Czech kasa mu
+    cy: Welsh kasa mu
+    da: danish kasa mu
+    de: German kasa
+    doi: dogglai, a ɛyɛ akraman
+    dv: Dhivehi
+    ee: Ewe
+    el: Hela kasa mu
+    en: Borɔfo
+    eo: Esperanto kasa mu
+    es: Spanish
+    et: Estonia kasa
+    eu: basque kasa mu
+    fa: Persia kasa
+    fi: Finland kasa
+    fil: Filipino kasa (Tagalog kasa) .
+    fr: Franse kasa
+    fy: Frisian kasa
+    ga: irish kasa
+    gd: Scotlandfo Gaelic kasa
+    gl: Galician kasa
+    gn: Guarani
+    gom: gongan kasa
+    gu: gujarati kasa mu
+    ha: Hausa kasa
+    haw: Hawaii kasa
+    he: hebri kasa mu
+    hi: Hindi kasa mu
+    hmn: Hmongfoɔ
+    hr: Croatia kasa
+    ht: Haitifo Creole kasa mu
+    hu: hungarian kasa mu
+    hy: Armenia kasa
+    id: Indonesia kasa
+    ig: Igbofo kasa
+    ilo: Ilocano
+    is: Iceland kasa mu
+    it: Italia kasa
+    iw: hebri kasa mu
+    ja: Japanfo kasa
+    jv: Javanese kasa
+    jw: Javanese kasa
+    ka: Georgia kasa
+    kk: Kazakhfo kasa
+    km: Cambodia kasa
+    kn: Kannada kasa mu
+    ko: Korea kasa
+    kri: Creole kasa mu
+    ku: Kurdish kasa mu
+    ky: Kyrgyz kasa mu
+    la: Latin kasa
+    lb: Luxembourgfo kasa
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuania kasa
+    lus: Mizo
+    lv: Latvia kasa
+    mai: Maithili
+    mg: Malagasy kasa
+    mi: Maorifo kasa
+    mk: Makedonia kasa
+    ml: Malayalam kasa mu
+    mn: Mongolia kasa
+    mni-mtei: Meitei (Manipuri) .
+    mr: marathi kasa
+    ms: Malay kasa
+    mt: maltese kasa
+    my: Burmafo kasa
+    ne: Nepali kasa mu
+    nl: Dutch kasa
+    "no": norway kasa mu
+    nso: Sepeti na ɔkyerɛwee
+    ny: Nyanza (Chichewa kasa) .
+    om: Oromo
+    or: Oriya (Odia kasa) .
+    pa: punjabi kasa mu
+    pl: Polish kasa mu
+    ps: Pashto kasa mu
+    pt: Portugal kasa (Portugal, Brazil) .
+    qu: Quechua
+    ro: Romania kasa
+    ru: Russia kasa
+    rw: Kinyarwanda kasa mu
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala kasa mu
+    sk: Slovak kasa
+    sl: slovenia kasa
+    sm: Samoanfo
+    sn: Shonafo kasa
+    so: Somalia kasa mu
+    sq: Albania kasa
+    sr: Serbia kasa
+    st: Sesotho kasa mu
+    su: Sundan kasa mu
+    sv: Sweden kasa mu
+    sw: Swahili kasa
+    ta: tamil kasa mu
+    te: telugu kasa mu
+    tg: Tajik kasa mu
+    th: Thailand kasa
+    ti: Tignan na ɔkyerɛwee
+    tk: Turkmenfoɔ
+    tl: Tagalog (Filipino kasa) .
+    tr: turkish kasa mu
+    ts: Dzonga
+    tt: Tatarfo
+    ug: Uighur kasa mu
+    uk: Ukraine kasa
+    ur: Urdu kasa mu
+    uz: Uzbek kasa
+    vi: Vietnamfo kasa
+    xh: bantu kasa
+    yi: Yiddish kasa mu
+    yo: yoruba kasa
+    zh: Chinafo
+    zh-chs: China kasa (Wɔayɛ no mmerɛw) .
+    zh-cht: China kasa (Wɔayɛ no mmerɛw) .
+    zh-cn: China kasa (Wɔayɛ no mmerɛw) .
+    zh-hk: Chinafo (Hong Kong) .
+    zh-mo: Chinafo(Macau) .
+    zh-sg: Chinafo (Singapore) .
+    zh-tw: Chinafo amammerɛ) .
+    zu: Zulu kasa mu

@@ -7,6 +7,7 @@ import (
 )
 
 type CfgLazyGoMod struct {
+	Goproxy         string            `json:"goproxy,omitempty" yaml:"goproxy,omitempty" toml:"goproxy,omitempty"`
 	IncludeRepo     []string          `json:"include-repo,omitempty" yaml:"include-repo,omitempty" toml:"include-repo,omitempty"`
 	Branch          map[string]string `json:"branch,omitempty" yaml:"branch,omitempty" toml:"branch,omitempty"`
 	Tag             map[string]string `json:"tag,omitempty" yaml:"tag,omitempty" toml:"tag,omitempty"`
@@ -35,11 +36,7 @@ func (p *CfgLazyGoMod) apply() {
 	}
 
 	if len(p.ExcludeBranches) == 0 {
-		p.ExcludeBranches = []string{
-			"master",
-			"main",
-			"release",
-		}
+		p.ExcludeBranches = make([]string, 0)
 	}
 }
 

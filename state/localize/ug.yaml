@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: تاماملاش كۆرسەتمىسىنى چەكلەڭ
+        long: |
+            كۆرسىتىلگەن قېپى ئۈچۈن {{.RootName} for ئۈچۈن ئاپتوماتىك تولۇق قوليازما ھاسىل قىلىدۇ.
+        short: كۆرسىتىلگەن قېپى ئۈچۈن ئاپتوماتىك تولۇق قوليازما ھاسىل قىلىڭ
+        subcommand:
+            short: '{{.Command}} ئۈچۈن ئاپتوماتىك تولۇق قوليازما ھاسىل قىلىڭ'
     flags:
         debug: تەپسىلىي خاتىرە
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: دۆلەت بايلىقى ياكى سودا مۇلازىمىتىنى تۇراقلىق بايلىق باشقۇرۇش ئۈچۈن جەدۋەل ھاسىل قىلىشنىڭ بارلىق مۇناسىۋەتلىك ئىقتىدارلىرى
             short: جەدۋەل ھاسىل قىلىشقا مۇناسىۋەتلىك بارلىق ئىقتىدارلار
+    group:
+        gen: كود ھاسىل قىلىش
     help:
         additional_commands: قوشۇمچە بۇيرۇقلار
         aliases: بۇيرۇق ئىسمى
@@ -94,10 +104,18 @@ cli:
         flags: پارامېتىر
         get_info: تېخىمۇ تەپسىلىي ئۇچۇرغا ئېرىشىش
         global_flags: يەرشارى پارامېتىرلىرى
+        long: 'ياردەم پروگراممىدىكى ھەر قانداق بۇيرۇققا ياردەم بېرىدۇ. '
+        short: ھەر قانداق بۇيرۇققا ياردەم قىلىڭ
+        usage: '{{.Name} using نى ئىشلىتىش ھەققىدىكى كۆرسەتمىلەر'
         use: use
     i18n:
         long: كۆپ تىللىق خەلقئارالىشىشقا مۇناسىۋەتلىك قوراللار
         short: كۆپ تىللىق خەلقئارالىشىشقا مۇناسىۋەتلىك قوراللار
+        support:
+            flags:
+                language: كۆرسىتىدىغان تىلنى بەلگىلەڭ ، بولمىسا تىل كودى تىلنى كۆرسىتىشكە ئىشلىتىلىدۇ
+            long: قوللايدىغان بارلىق تىللارنى تىزىڭ
+            short: قوللايدىغان تىل تىزىملىكى
         tran:
             flags:
                 all-language: قوللايدىغان بارلىق تىللارنى تەرجىمە قىلىڭ (ئەگەر راست بولسا تىل بايرىقى چەكلەنگەن)
@@ -114,3 +132,156 @@ cli:
             short: تەرجىمە قىلىڭ
     long: ھورۇن كىشىلەر ئۈچۈن ياسالغان قورال ، مەسىلەن «proto» نى ئاساس قىلغان ئارقا رامكا ، كۆپ ئىشلىتىلىدىغان قېلىپ ۋە كۆپ تىللىق تەرجىمە
     short: ھورۇن كىشىلەر ئۈچۈن ياسالغان قورال
+    sync:
+        flags:
+            template-path: قېلىپ ماس قەدەملىك يول
+        long: سەپلىمىنى يىراقتىن ماس قەدەمدە ماسلاشتۇرۇڭ ۋە ئۇنى يەرلىك سەپلىمىگە بىرلەشتۈرۈڭ قېلىپ ھۆججىتى ماس قەدەمدە بىرلا ۋاقىتتا قوللىنىدۇ.
+        short: يىراقتىن سەپلىمىنى ماسقەدەملەڭ
+    up-mod:
+        flags:
+            goproxy: Goproxy ئادرېسىنى بەلگىلەڭ ، ئەگەر ئۇنداق بولمىسا ، مۇھىت ئۆزگەرگۈچى مىقدارنىڭ بىرىنچىسى ئىشلىتىلىدۇ
+        long: Go.mod ھۆججىتىنىڭ بېقىنىش نۇسخىسىنى يېڭىلاڭ
+        short: Go.mod ھۆججىتىنى يېڭىلاڭ
+lang:
+    af: ئافرىقا
+    ak: Twi (Akan)
+    am: Amharic
+    ar: ئەرەبچە
+    as: Assamese
+    ay: Aymara
+    az: ئەزەربەيجان
+    be: بېلورۇسىيە
+    bg: بۇلغارىيە
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnian
+    ca: Catalan
+    ceb: Cebuano
+    ckb: كۇرد (سورانى)
+    co: كورسىكان
+    cs: چېخ
+    cy: Welsh
+    da: danish
+    de: German
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: گرېتسىيە
+    en: ئىنگىلىزچە
+    eo: Esperanto
+    es: ئىسپانىيە
+    et: ئېستونىيە
+    eu: باسك
+    fa: پارسچە
+    fi: فىنلاندىيە
+    fil: فىلىپپىنلىق (Tagalog)
+    fr: فىرانسۇزچە
+    fy: Frisian
+    ga: irish
+    gd: شوتلاندىيە گال تىلى
+    gl: Galician
+    gn: Guaraní
+    gom: gonggan language
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiian
+    he: hebrew
+    hi: Hindi
+    hmn: Hmong
+    hr: كىرودىيە
+    ht: ھايتى كرېئول
+    hu: ئاچارچىلىق
+    hy: ئەرمىنىيە
+    id: ھىندونېزىيە
+    ig: Igbo
+    ilo: Ilocano
+    is: ئىسلاندىيە
+    it: Italian
+    iw: hebrew
+    ja: ياپون
+    jv: Javanese
+    jw: Javanese
+    ka: گرۇزىيە
+    kk: قازاق
+    km: كامبودژا
+    kn: Kannada
+    ko: كورېيە
+    kri: Creole
+    ku: كۇرد
+    ky: قىرغىزىستان
+    la: لاتىنچە
+    lb: لىيۇكسېمبۇرگ
+    lg: Luganda
+    ln: Lingala
+    lo: لائوس
+    lt: لىتۋانىيە
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: ماكېدونىيە
+    ml: Malayalam
+    mn: موڭغۇل
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: مالايسىيا
+    mt: Maltese
+    my: بېرما
+    ne: نېپال
+    nl: گوللاندىيە
+    "no": norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: پولشا
+    ps: پۇشتۇ
+    pt: پورتۇگال تىلى (پورتۇگالىيە ، بىرازىلىيە)
+    qu: Quechua
+    ro: Romanian
+    ru: رۇسچە
+    rw: Kinyarwanda
+    sa: سانسكرىت تىلى
+    sd: سىندى
+    si: sinhala
+    sk: سلوۋاكىيە
+    sl: سىلوۋېنىيە
+    sm: Samoan
+    sn: Shona
+    so: سومالى
+    sq: ئالبانىيە
+    sr: سېربىيە
+    st: Sesotho
+    su: Sundanese
+    sv: شىۋىتسىيە
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: تاجىك
+    th: تايلاند
+    ti: Tignan
+    tk: تۈركمەنلەر
+    tl: Tagalog (فىلىپپىنچە)
+    tr: turkish
+    ts: Dzonga
+    tt: تاتار
+    ug: ئۇيغۇر
+    uk: ئۇكرائىنا
+    ur: ئوردۇچە
+    uz: ئۆزبېك
+    vi: ۋېيتنام
+    xh: ئادەم تىلى
+    yi: Yiddish
+    yo: yoruba
+    zh: خەنزۇچە
+    zh-chs: خەنزۇچە (ئاددىيلاشتۇرۇلغان)
+    zh-cht: خەنزۇچە (ئاددىيلاشتۇرۇلغان)
+    zh-cn: خەنزۇچە (ئاددىيلاشتۇرۇلغان)
+    zh-hk: خەنزۇچە (شياڭگاڭ)
+    zh-mo: خەنزۇچە (ئاۋمېن)
+    zh-sg: خەنزۇچە (سىنگاپور)
+    zh-tw: خەنزۇچە (تەيۋەن)
+    zu: Zulu

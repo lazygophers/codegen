@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Fa'agata faatonuga fa'amae'aina
+        long: |
+            Fa'atupuina se fa'auma fa'atumu mo {{.RootName}} mo le atigi fa'apitoa.
+        short: Fausia se tusitusiga fa'atumu fa'ato'a mo le atigi fa'apitoa
+        subcommand:
+            short: Fa'atupu fa'amae'a fa'atumu mo {{.Command}}
     flags:
         debug: Fa'amatalaga fa'amatalaga fa'amatalaga
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: O galuega fa'afeso'ota'i uma o le fa'atupuina o laulau mo puna'oa fa'apitoa po'o le fa'afoeina o puna'oa tumau o auaunaga tau pisinisi
             short: O galuega fa'atatau uma mo le gaosia o laulau
+    group:
+        gen: fa'atupu tulafono
     help:
         additional_commands: Poloaiga faaopoopo
         aliases: fa'atonu igoa
@@ -94,10 +104,18 @@ cli:
         flags: fa'ata'oto
         get_info: e maua ai fa'amatalaga auiliili
         global_flags: fa'asologa o le lalolagi
+        long: 'Fesoasoani e maua ai le fesoasoani mo soʻo se faʻatonuga i totonu o le talosaga. '
+        short: Fesoasoani i so'o se fa'atonuga
+        usage: Fa'atonuga mo le fa'aogaina o {{.Name}}
         use: fa'aoga
     i18n:
         long: Meafaigaluega e feso'ota'i i gagana fa'ava-o-malo
         short: Meafaigaluega e feso'ota'i i gagana fa'ava-o-malo
+        support:
+            flags:
+                language: Fa'ailoa le gagana e fa'aalia, a leai o le a fa'aoga le code gagana e fa'aali ai le gagana
+            long: Lisi gagana lagolago uma
+            short: Lisi gagana lagolago
         tran:
             flags:
                 all-language: Fa'aliliu gagana lagolago uma (pe a sa'o le fu'a gagana)
@@ -114,3 +132,156 @@ cli:
             short: fa'aliliu
     long: O se mea faigaluega seti mo tagata paie, e aofia ai 'proto' fa'avae pito i tua fa'avae, fa'ata'ita'iga masani ona fa'aoga, ma fa'aliliuga gagana e tele.
     short: Se mea faigaluega seti mo tagata paie
+    sync:
+        flags:
+            template-path: Fa'ata'ita'iga ala fa'atasi
+        long: Fa'atasi le fa'asologa mai le pito mamao ma tu'ufa'atasia i totonu o le fa'alapotopotoga fa'apitonu'u E lagolagoina le faila fa'ata'ita'i i le taimi e tasi i le taimi e fa'amaopoopoina ai (pe a fa'atulaga)
+        short: Fa'amaopoopo le fa'atulagaina mai le mamao
+    up-mod:
+        flags:
+            goproxy: Fa'ailoa le tuatusi goproxy, afai e leai, ole a fa'aogaina le mea muamua ile fesuiaiga ole siosiomaga
+        long: Fa'afou le fa'alagolago o le faila go.mod
+        short: Fa'afou le faila go.mod
+lang:
+    af: Fa'a Afelika
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Alapi
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Pelalusiana
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnian
+    ca: Katalana
+    ceb: Sepuano
+    ckb: Kurdish (Sorani)
+    co: Kosikana
+    cs: Czech
+    cy: Uelese
+    da: Danish
+    de: Siamani
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Greek
+    en: Igilisi
+    eo: Eseperano
+    es: Sipaniolo
+    et: Estonian
+    eu: Basque
+    fa: Persian
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: Falani
+    fy: Frisian
+    ga: Aialani
+    gd: Sikotilani Gaelic
+    gl: Galician
+    gn: Guarani
+    gom: gagana gonggan
+    gu: Gujarati
+    ha: Hausa
+    haw: Havaii
+    he: Eperu
+    hi: Hindi
+    hmn: Hmong
+    hr: Croatian
+    ht: Haiti Kereole
+    hu: Hungarian
+    hy: Armenian
+    id: Indonesian
+    ig: Igbo
+    ilo: Ilokano
+    is: Icelandic
+    it: Italia
+    iw: Eperu
+    ja: Iapani
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: Kasaka
+    km: Cambodia
+    kn: Kannada
+    ko: Kolea
+    kri: Creole
+    ku: Kutisa
+    ky: Kirikisi
+    la: Latina
+    lb: Lusemipoukisi
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lituaniana
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maoli
+    mk: Macedonian
+    ml: Malayalam
+    mn: Mokoliana
+    mni-mtei: Meitei (Manipuri)
+    mr: Marathi
+    ms: Malay
+    mt: Maltese
+    my: Burmese
+    ne: Nepali
+    nl: Siamani
+    "no": Norwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Punitapi
+    pl: Polish
+    ps: Pasato
+    pt: Potukale (Portugal, Pasila)
+    qu: Quechua
+    ro: Lomani
+    ru: Lusia
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: Sindhi
+    si: sinhala
+    sk: Slovak
+    sl: Slovenian
+    sm: Samoa
+    sn: Shona
+    so: Somali
+    sq: Alapania
+    sr: Serbian
+    st: Sesotho
+    su: Sundanese
+    sv: Swedish
+    sw: Swahili
+    ta: Tamil
+    te: Telugu
+    tg: Tajik
+    th: Fa'a Thai
+    ti: Tignan
+    tk: tamaloloa Take
+    tl: Tagalog (Filipino)
+    tr: turkish
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukaraina
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamese
+    xh: fesoasoani gagana
+    yi: Yiddish
+    yo: yoruba
+    zh: Saina
+    zh-chs: Saina (Fa'afaigofie)
+    zh-cht: Saina (Fa'afaigofie)
+    zh-cn: Saina (Fa'afaigofie)
+    zh-hk: Saina (Hong Kong)
+    zh-mo: Saina(Macau)
+    zh-sg: Saina (Siapore)
+    zh-tw: Saina (Taiwan)
+    zu: Zulu

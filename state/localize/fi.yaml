@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Poista täyttöohjeet käytöstä
+        long: |
+            Luo automaattisesti täydentävän komentosarjan määritetylle komentotulkille {{.RootName}}.
+        short: Luo automaattisesti täydentävä komentosarja määritetylle komentotulkille
+        subcommand:
+            short: Luo automaattinen täydennys komentosarjalle {{.Command}}
     flags:
         debug: Tulosta yksityiskohtainen loki
     gen:
@@ -22,7 +30,7 @@ cli:
             short: Luo syöttötiedosto
         conf:
             long: Luo määritystiedostomalli
-            short: Luo asetustiedosto
+            short: Luo määritystiedosto
         dockerignore:
             long: Luo .dockerignore-tiedosto Docker-kuvanrakennusta varten ohittaaksesi tiedostonhallinnan
             short: Luo .dockerignore-tiedosto
@@ -41,7 +49,7 @@ cli:
             tables-enable_field_created_at: Otetaanko tietokannan luotu_at-kentän oletuskokoonpanon luonti käyttöön
             tables-enable_field_deleted_at: Otetaanko deleted_at-kentän oletusasetus käyttöön tietokannassa
             tables-enable_field_id: Ota oletusasetusten luominen käyttöön tietokantoihin liittyvissä kentissä
-            tables-enable_field_updated_at: Otetaanko updated_at-kentän oletusarvo käyttöön tietokannassa
+            tables-enable_field_updated_at: Otetaanko tietokannan updated_at-kentän oletusarvo käyttöön
             tables-enable_gorm_tag_column: Otetaanko tietokantaan liittyvä gormien luominen käyttöön
         gitignote:
             long: Luo .gitignore-tiedostoja ohitettujen tiedostojen hallintaa varten versionhallinnassa
@@ -57,7 +65,7 @@ cli:
             short: Luo toteutustiedostoja
         long: Koodigeneraattori, tukee useita malleja
         makefile:
-            long: Luo Makefile-tiedostoja rakennustyökaluja ja muita vastaavia komentoja varten
+            long: Luo Makefile-tiedostoja rakennustyökaluja ja muita liittyviä komentoja varten
             short: Luo Makefile
         mod:
             long: Luo go.mod-tiedosto riippuvuuden hallintaa varten
@@ -68,7 +76,7 @@ cli:
         short: Koodigeneraattori
         state:
             conf:
-                long: Luo määritystiedoston lukukoodi yrityspalveluiden määritysten lukemista varten
+                long: Luo määritystiedoston lukukoodi yrityspalvelun määritysten lukemista varten
                 short: Luo määritystiedoston lukukoodi
             flags:
                 cache: Otetaanko välimuistiin liittyvä luonti käyttöön
@@ -78,14 +86,16 @@ cli:
             i18n:
                 long: Luo i18n-koodia monikielisiä ulkomaanpuheluita varten
                 short: Luo i18n-koodia
-            long: Luo kaikki asiaan liittyvät tilan toiminnot yrityspalveluiden tilatietoisten tai staattisten resurssien hallintaan
+            long: Luo kaikki asiaan liittyvät tilan toiminnot yrityspalveluiden tilallista tai staattista resurssien hallintaa varten
             short: Kaikki tilan luomiseen liittyvät toiminnot
             table:
                 long: Luo tila.taulukkoon liittyvä koodi, jota käytetään tietokantayhteyden muodostamiseen ja taulukon alustukseen, kun palvelu käynnistetään.
                 short: Luo tila.taulukkoon liittyvä koodi
         table:
-            long: Kaikki siihen liittyvät toiminnot taulukoiden luomiseen yrityspalveluiden tilatietoisten tai staattisten resurssien hallintaan
+            long: Kaikki siihen liittyvät toiminnot taulukoiden luomiseen yrityspalveluiden tilatietoisten resurssien tai staattisten resurssien hallintaan
             short: Kaikki liittyvät funktiot taulukoiden luomiseen
+    group:
+        gen: koodin luominen
     help:
         additional_commands: Lisäkomennot
         aliases: komentoalias
@@ -94,10 +104,18 @@ cli:
         flags: parametri
         get_info: saadaksesi tarkempia tietoja
         global_flags: globaaleja parametreja
+        long: 'Anna minkä tahansa sovelluksen komennon käyttöohjeet. '
+        short: Ohjeet minkä tahansa komennon käyttämiseen
+        usage: Käyttöohjeet {{.Name}}
         use: käyttää
     i18n:
         long: Monikielinen kansainvälistymiseen liittyvä työkalupakki
         short: Monikielinen kansainvälistymiseen liittyvä työkalupakki
+        support:
+            flags:
+                language: Määritä näytettävä kieli, muuten kielikoodia käytetään kielen näyttämiseen
+            long: Luettele kaikki tuetut kielet
+            short: Tuettujen kielien luettelo
         tran:
             flags:
                 all-language: Käännä kaikki tuetut kielet (jos totta, kielten lippu ei ole käytössä)
@@ -112,5 +130,158 @@ cli:
                     usage: 'Käännöskanava: Tukityyppi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Tietystä lähteestä peräisin olevat monikieliset tiedostot muunnetaan tiedostoiksi, jotka ovat samassa muodossa muilla kielillä.
             short: Kääntää
-    long: Työkalusarja laiskoille ihmisille, mukaan lukien "proto"-pohjainen taustakehys, yleisesti käytetyt mallit ja monikieliset käännökset
+    long: Laiskojen ihmisten työkalusarja, mukaan lukien "proto"-pohjainen taustakehys, yleisesti käytetyt mallit ja monikieliset käännökset
     short: Työkalusarja laiskoille
+    sync:
+        flags:
+            template-path: Mallin synkronointipolku
+        long: Synkronoi kokoonpano etäpäästä ja yhdistä se paikalliseen kokoonpanoon. Mallitiedostoa tuetaan samanaikaisesti synkronoinnin aikana (jos se on määritetty).
+        short: Synkronoi asetukset kaukosäätimestä
+    up-mod:
+        flags:
+            goproxy: Määritä goproxy-osoite, jos ei, ympäristömuuttujan ensimmäistä osoitetta käytetään
+        long: Päivitä go.mod-tiedoston riippuvuusversio
+        short: Päivitä go.mod-tiedosto
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: amhara
+    ar: arabialainen
+    as: Assami
+    ay: Aymara
+    az: Azerbaidžani
+    be: valkovenäläinen
+    bg: bulgarialainen
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengali
+    bs: bosnialainen
+    ca: katalaani
+    ceb: Cebuano
+    ckb: kurdi (sorani)
+    co: Korsikalainen
+    cs: Tšekki
+    cy: Walesin
+    da: Tanskan kieli
+    de: Saksan kieli
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: kreikkalainen
+    en: Englanti
+    eo: esperanto
+    es: Espanja
+    et: Virolainen
+    eu: baski
+    fa: persialainen
+    fi: Suomalainen
+    fil: filippiiniläinen (tagalog)
+    fr: Ranskan kieli
+    fy: friisi
+    ga: irlantilainen
+    gd: Skotlannin gaeli
+    gl: Galicialainen
+    gn: Guaraní
+    gom: gonggan kieli
+    gu: gujarati
+    ha: Hausa
+    haw: havaijilainen
+    he: heprealainen
+    hi: hindi
+    hmn: hmong
+    hr: Kroatia
+    ht: Haitin kreoli
+    hu: Unkarin kieli
+    hy: armenialainen
+    id: Indonesialainen
+    ig: Igbo
+    ilo: Ilocano
+    is: islantilainen
+    it: italialainen
+    iw: heprealainen
+    ja: japanilainen
+    jv: jaavalainen
+    jw: jaavalainen
+    ka: Georgian
+    kk: Kazakstan
+    km: kambodžalainen
+    kn: kannada
+    ko: Korealainen
+    kri: kreoli
+    ku: kurdi
+    ky: Kirgisia
+    la: Latina
+    lb: luxemburgilainen
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: liettualainen
+    lus: Mizo
+    lv: Latvialainen
+    mai: Maithili
+    mg: Madagaskari
+    mi: maori
+    mk: makedonialainen
+    ml: malajalami
+    mn: mongolialainen
+    mni-mtei: meitei (manipuri)
+    mr: marathi
+    ms: malaiji
+    mt: maltalainen
+    my: burmalainen
+    ne: Nepali
+    nl: Hollannin kieli
+    "no": Norjan kieli
+    nso: Sepeti
+    ny: nyanza (chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Kiillottaa
+    ps: pashto
+    pt: portugali (Portugali, Brasilia)
+    qu: ketsua
+    ro: romanialainen
+    ru: Venäjän kieli
+    rw: Kinyarwanda
+    sa: sanskriti
+    sd: sindhi
+    si: sinhala
+    sk: Slovakian
+    sl: slovenialainen
+    sm: samoalainen
+    sn: Shona
+    so: somali
+    sq: albanialainen
+    sr: serbia
+    st: Sesotho
+    su: sundalainen
+    sv: Ruotsin kieli
+    sw: swahili
+    ta: tamili
+    te: telugu
+    tg: tadžiki
+    th: thaimaalainen
+    ti: Tignan
+    tk: Turkmenistan
+    tl: tagalog (filipino)
+    tr: turkkilainen
+    ts: Dzonga
+    tt: tatari
+    ug: uiguuri
+    uk: ukrainalainen
+    ur: urdu
+    uz: uzbekki
+    vi: vietnam
+    xh: bantu kieli
+    yi: jiddish
+    yo: joruba
+    zh: Kiinalainen
+    zh-chs: Yksinkertaistettu kiina)
+    zh-cht: Yksinkertaistettu kiina)
+    zh-cn: Yksinkertaistettu kiina)
+    zh-hk: kiina (Hongkong)
+    zh-mo: kiina (Macao)
+    zh-sg: kiina (Singapore)
+    zh-tw: perinteinen kiina)
+    zu: zulu

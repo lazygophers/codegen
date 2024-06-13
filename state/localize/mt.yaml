@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Iddiżattiva l-istruzzjonijiet tat-tlestija
+        long: |
+            Jiġġenera skript ta' tlestija awtomatika għal {{.RootName}} għall-qoxra speċifikata.
+        short: Iġġenera skript ta' tlestija awtomatika għall-qoxra speċifikata
+        subcommand:
+            short: Iġġenera skript ta' tlestija awtomatika għal {{.Kmand}}
     flags:
         debug: Output log dettaljat
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Il-funzjonijiet kollha relatati ta 'ġenerazzjoni ta' tabelli għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
             short: Il-funzjonijiet kollha relatati għall-ġenerazzjoni ta' tabelli
+    group:
+        gen: ġenerazzjoni tal-kodiċi
     help:
         additional_commands: Kmandi addizzjonali
         aliases: alias tal-kmand
@@ -94,10 +104,18 @@ cli:
         flags: parametru
         get_info: biex tikseb aktar informazzjoni dettaljata
         global_flags: parametri globali
+        long: 'Għajnuna tipprovdi għajnuna għal kwalunkwe kmand fl-applikazzjoni. '
+        short: Għajnuna fuq kwalunkwe kmand
+        usage: Struzzjonijiet għall-użu ta' {{.Name}}
         use: użu
     i18n:
         long: Sett ta' għodod relatati mal-internazzjonalizzazzjoni multilingwi
         short: Sett ta' għodod relatati mal-internazzjonalizzazzjoni multilingwi
+        support:
+            flags:
+                language: Speċifika l-lingwa li trid turi, inkella l-kodiċi tal-lingwa se jintuża biex turi l-lingwa
+            long: Elenka l-lingwi kollha appoġġjati
+            short: Lista tal-lingwi appoġġjati
         tran:
             flags:
                 all-language: Ittraduċi l-lingwi kollha appoġġjati (jekk vera l-bandiera tal-lingwi hija diżattivata)
@@ -114,3 +132,156 @@ cli:
             short: tittraduċi
     long: Sett ta' għodda għall-għażżien, inkluż qafas ta' backend ibbażat fuq 'proto', mudelli użati b'mod komuni, u traduzzjoni b'ħafna lingwi
     short: Sett għodda għall-għażżien
+    sync:
+        flags:
+            template-path: Mogħdija ta 'sinkronizzazzjoni tal-mudell
+        long: Issinkronizza l-konfigurazzjoni mit-tarf remot u ingħaqadha fil-konfigurazzjoni lokali Il-fajl tal-mudell huwa appoġġjat fl-istess ħin waqt is-sinkronizzazzjoni (jekk ikkonfigurat).
+        short: Issinkronizza l-konfigurazzjoni mill-bogħod
+    up-mod:
+        flags:
+            goproxy: Speċifika l-indirizz goproxy, jekk le, se jintuża l-ewwel wieħed fil-varjabbli ambjentali
+        long: Aġġorna l-verżjoni tad-dipendenza tal-fajl go.mod
+        short: Aġġorna l-fajl go.mod
+lang:
+    af: Afrikans
+    ak: Twi (Akan)
+    am: Amhariku
+    ar: Għarbi
+    as: Assamese
+    ay: Aymara
+    az: Ażerbajġani
+    be: Belarussu
+    bg: Bulgaru
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnijan
+    ca: Katalan
+    ceb: Cebuano
+    ckb: Kurdi (Sorani)
+    co: Korsiku
+    cs: Ċek
+    cy: Welsh
+    da: Daniż
+    de: Ġermaniż
+    doi: dogglai
+    dv: Dhivehi
+    ee: Nagħġa
+    el: Grieg
+    en: Ingliż
+    eo: Esperanto
+    es: Spanjol
+    et: Estonjan
+    eu: bask
+    fa: Persjan
+    fi: Finlandiż
+    fil: Filippin (Tagalog)
+    fr: Franċiż
+    fy: Friżjan
+    ga: Irlandiż
+    gd: Galliku Skoċċiż
+    gl: Galizjan
+    gn: Guaraní
+    gom: lingwa gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Ħawajjan
+    he: Ebrajk
+    hi: Ħindi
+    hmn: Hmong
+    hr: Kroat
+    ht: Kreol Ħaitjan
+    hu: Ungeriż
+    hy: Armenjan
+    id: Indoneżjan
+    ig: Igbo
+    ilo: Ilocano
+    is: Iżlandiż
+    it: Taljan
+    iw: Ebrajk
+    ja: Ġappuniż
+    jv: Ġavaniż
+    jw: Ġavaniż
+    ka: Ġorġjan
+    kk: Każakistan
+    km: Kambodja
+    kn: Kannada
+    ko: Korean
+    kri: Creole
+    ku: Kurdi
+    ky: Kirgiż
+    la: Latin
+    lb: Lussemburgiż
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Litwan
+    lus: Mizo
+    lv: Latvjan
+    mai: Maithili
+    mg: Madagaskar
+    mi: Maori
+    mk: Maċedonjan
+    ml: Malajalam
+    mn: Mongoljan
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malajan
+    mt: Malti
+    my: Burmiż
+    ne: Nepaliż
+    nl: Olandiż
+    "no": norveġiż
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punġabi
+    pl: Pollakk
+    ps: Pashto
+    pt: Portugiż (Portugall, Brażil)
+    qu: Keċwa
+    ro: Rumen
+    ru: Russu
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slovakk
+    sl: slovena
+    sm: Samoan
+    sn: Shona
+    so: Somali
+    sq: Albaniż
+    sr: Serb
+    st: Sesotho
+    su: Sundaniż
+    sv: Svediż
+    sw: Swaħili
+    ta: tamil
+    te: telugu
+    tg: Taġik
+    th: Tajlandiż
+    ti: Tignan
+    tk: Turkmeni
+    tl: Tagalog (Filippin)
+    tr: Tork
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrain
+    ur: Urdu
+    uz: Użbek
+    vi: Vjetnamiż
+    xh: lingwa bantu
+    yi: Jiddix
+    yo: joruba
+    zh: Ċiniż
+    zh-chs: Ċiniż (simplifikat)
+    zh-cht: Ċiniż (simplifikat)
+    zh-cn: Ċiniż (simplifikat)
+    zh-hk: Ċiniż (Ħong Kong)
+    zh-mo: Ċiniż (Makaw)
+    zh-sg: Ċiniż (Singapor)
+    zh-tw: Ċiniż tradizzjonali)
+    zu: Żulu

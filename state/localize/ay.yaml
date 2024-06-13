@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tukuyañ yatichäwinak jan ch’amanchaña
+        long: |
+            Mä autocompleto script {{.RootName}} ukatakix uñacht’ayat shell ukatakiw lurasi.
+        short: Mä autocompleta script ukax uñt’ayat shell ukatakiw luraña
+        subcommand:
+            short: '{{.Command}} ukatakix autocompleto script luraña.'
     flags:
         debug: Salida detallada registro ukaxa
     gen:
@@ -15,7 +23,7 @@ cli:
             long: Taqi kunatix aka herramienta ukamp yanapt’atäki ukanak luraña
             short: Taqi codigo uñstayaña
         cache:
-            long: Negocio jawsañ caché ukamp chikt’at SDKs ukanakatakix caché ark luraña
+            long: Negocio jawsañ caché ukamp chikt’at SDKs ukanakatakix caché archivonak luraña
             short: Caché qillqata luraña
         cmd:
             long: Servicios empresariales ukanakatakix mantañ archivonaka luraña
@@ -86,6 +94,8 @@ cli:
         table:
             long: Taqi ukanakampi chikt ata lurawinakaxa tablas ukanaka lurañataki recurso estatal jan ukaxa recurso estático gestión de servicios empresariales ukanakataki
             short: Taqi uñt’ata lurawinakawa tablas ukanaka lurañataki
+    group:
+        gen: código generación ukax utjiwa
     help:
         additional_commands: Yaqha kamachinaka
         aliases: kamachi alias ukampi
@@ -94,10 +104,18 @@ cli:
         flags: parámetro ukaxa
         get_info: juk’amp suma yatiyawinak jikxatañataki
         global_flags: uraqpachan parámetros ukanaka
+        long: 'Aplicación ukanxa kuna kamachinakasa apnaqañataki kamachinaka churañawa. '
+        short: Kuna kamachi apnaqañatakisa yatichawi
+        usage: '{{.Name}} apnaqañataki yatichäwinaka.'
         use: apnaqaña
     i18n:
         long: Walja arunak internacionalización ukamp chikt’at herramientas
         short: Walja arunak internacionalización ukamp chikt’at herramientas
+        support:
+            flags:
+                language: Uñacht’ayaña aru uñt’ayaña, jani ukaxa aru chimpumpiwa aru uñacht’ayañatakixa apnaqatarakini
+            long: Taqi yanapt’at arunaka qillqt’aña
+            short: Yanapt’at arunak lista
         tran:
             flags:
                 all-language: Taqi yanapt’at arunaka jaqukipaña (chiqächi ukhax arunakan banderapax jan ch’amanchatawa)
@@ -114,3 +132,156 @@ cli:
             short: jaqukipaña
     long: Mä herramienta ukaw q’añu jaqinakatakix utt’ayata, ukax ‘proto’-based backend framework, plantillas ukanakax apnaqatawa, ukatx walja arut jaqukipatawa
     short: Mä herramienta wakicht’ata q’añu jaqinakataki
+    sync:
+        flags:
+            template-path: Plantilla sincronización thakhi
+        long: Jaya tukuyatat configuración ukar sincronización ukat local configuración ukar mayacht’aña Plantilla arxiwux sincronización ukanx pachpa pachan yanapt’atawa (configuración ukhamächi ukhaxa).
+        short: Jayankir chiqat configuración ukar sincronización luraña
+    up-mod:
+        flags:
+            goproxy: Goproxy ukan chiqapa uñt’ayaña, jani ukhamäkchi ukhaxa, nayrïri pachamama variable ukan apnaqatäni
+        long: Go.mod qillqatan dependencia versión ukar machaqar tukuyaña
+        short: Go.mod qillqatan machaqar tukuyaña
+lang:
+    af: Afrikaans ukax mä juk’a pachanakanwa
+    ak: Twi (Akan) ukat juk’ampinaka.
+    am: Amharic arunxa
+    ar: Árabe aru
+    as: Assamese
+    ay: Aymara
+    az: Azerbaiyano aru uñt’atawa
+    be: Bielorruso markankir jaqi
+    bg: Búlgaro aru
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali aru uñt’ayaña
+    bs: Bosnia markankir jaqe
+    ca: Cataluña aru
+    ceb: Cebuano aru
+    ckb: Kurdo (sorani) ukat juk’ampinaka.
+    co: Corsico markankir jaqinakawa
+    cs: Checo arunxa
+    cy: Galés aru parliri
+    da: danés aru uñt’atawa
+    de: Alemán aru
+    doi: dogglai ukax mä juk’a pachanakanwa
+    dv: Dhivehi
+    ee: Ewe
+    el: Griego arunjja
+    en: inklisa
+    eo: Esperanto aru
+    es: ispañula
+    et: Estonia markankir jaqi
+    eu: vasco aru
+    fa: Persa aru
+    fi: Finlandés aru
+    fil: Filipinas aru (tagalo) aru.
+    fr: Francés aru
+    fy: Frisia markankir jaqe
+    ga: irlandés aru
+    gd: Escocia markankir gaélico aru
+    gl: Galicia aru uñt’ayaña
+    gn: Waranï
+    gom: gongan aru
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiano markankir jaqe
+    he: hebreo aru
+    hi: Hindi arumpixa
+    hmn: Hmong
+    hr: Croata aru uñt’atawa
+    ht: Criollo haitiano aru
+    hu: húngaro aru
+    hy: Armenio aru
+    id: Indonesia markankir jaqinakawa
+    ig: Igbo markankir jaqinakawa
+    ilo: llocano
+    is: Islandia markankir jaqinakawa
+    it: Italiano aru
+    iw: hebreo aru
+    ja: Japonés aru
+    jv: Javanés aru
+    jw: Javanés aru
+    ka: Georgia markankir jaqe
+    kk: Kazaj arunxa
+    km: Camboya markankir jaqinakawa
+    kn: Kannada aru uñt’ayaña
+    ko: Corea markankir jaqinakawa
+    kri: Criollo aru
+    ku: Kurdo markanxa
+    ky: Kirguis markanxa
+    la: Latin aru aruxa
+    lb: Luxemburgo markankir jaqinakawa
+    lg: Luganda
+    ln: Lingala
+    lo: Lao markanxa
+    lt: Lituano aru uñt’atawa
+    lus: Mizo
+    lv: Letonia markankir jaqe
+    mai: Maithili
+    mg: Malgache aru parlaña
+    mi: Maorí ukat juk’ampinaka
+    mk: Macedonia markankir jaqe
+    ml: Malayalam arunxa
+    mn: Mongol markankir jaqinakawa
+    mni-mtei: Meitei (Manipuri) ukat juk’ampinaka.
+    mr: marathi satawa
+    ms: Malay aru
+    mt: maltesa ukat juk’ampinaka
+    my: Birmania markankir jaqinaka
+    ne: Nepal aru arst’ata
+    nl: Holandés aru
+    "no": noruego markankir jaqinakawa
+    nso: Sepeti ukax mä juk’a pachanakanwa
+    ny: Nyanza (Chichewa) ukat juk’ampinaka.
+    om: Oromo
+    or: Oriya (Odia) markanwa.
+    pa: punjabi aru
+    pl: Polonia aru
+    ps: Pashto aru uñt’ayaña
+    pt: Portugués (Portugal, Brasil) ukat juk’ampinaka.
+    qu: qhichwa
+    ro: Rumania markanxa
+    ru: Ruso aru uñt’ayaña
+    rw: Kinyarwanda ukat juk’ampinaka
+    sa: Sanskrita
+    sd: sindhi
+    si: sinhala satawa
+    sk: Eslovaco markankir jaqe
+    sl: esloveno sat jaqi
+    sm: Samoa markankir jaqinaka
+    sn: Shona satawa
+    so: Somalia aru uñt’ayaña
+    sq: Albanés aru uñt’atawa
+    sr: Serbio aru
+    st: Sesoto markankir jaqinakawa
+    su: Sundanés aru uñt’ayaña
+    sv: Suecia markankir jaqi
+    sw: Suajili arunxa
+    ta: tamil
+    te: telugu ukax mä juk’a pachanakanwa
+    tg: Tayik arunxa
+    th: Tailandés arunxa
+    ti: Tignan ukax mä juk’a pachanakanwa
+    tk: Turkmen markankir jaqinakawa
+    tl: Tagalo (Filipino) markanwa.
+    tr: turco aru uñt’ayaña
+    ts: Dzonga ukax mä juk’a pachanakanwa
+    tt: Tatar satänwa
+    ug: Uighur ukax mä juk’a pachanakanwa
+    uk: Ucrania markankir jaqinakawa
+    ur: Urdu aru arsuña
+    uz: Uzbek aru
+    vi: Vietnam markankir jaqinakawa
+    xh: bantu aru
+    yi: Yiddish aru
+    yo: yoruba aru
+    zh: Chino markanxa
+    zh-chs: Chino (Simplificado) ukat juk’ampinaka.
+    zh-cht: Chino (Simplificado) ukat juk’ampinaka.
+    zh-cn: Chino (Simplificado) ukat juk’ampinaka.
+    zh-hk: Chino (Hong Kong) ukat juk’ampinaka.
+    zh-mo: Chino(Macau) ukat juk'ampinaka.
+    zh-sg: Chino (Singapur) ukat juk’ampinaka.
+    zh-tw: nayra chino chino)
+    zu: Zulu aru

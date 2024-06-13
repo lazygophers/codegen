@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Schakel voltooiingsinstructies uit
+        long: |
+            Genereert een autocomplete-script voor {{.RootName}} voor de opgegeven shell.
+        short: Genereer een autocomplete-script voor de opgegeven shell
+        subcommand:
+            short: Genereer automatisch aanvulscript voor {{.Command}}
     flags:
         debug: Uitvoer gedetailleerd logboek
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Alle gerelateerde functies voor het genereren van tabellen voor stateful resource- of statisch resourcebeheer van zakelijke services
             short: Alle gerelateerde functies voor het genereren van tabellen
+    group:
+        gen: code genereren
     help:
         additional_commands: Extra opdrachten
         aliases: opdrachtalias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: om meer gedetailleerde informatie te krijgen
         global_flags: globale parameters
+        long: 'Help biedt hulp bij elke opdracht in de toepassing. '
+        short: Hulp bij elk commando
+        usage: Instructies voor het gebruik van {{.Name}}
         use: gebruik
     i18n:
         long: Meertalige internationaliseringsgerelateerde toolkit
         short: Meertalige internationaliseringsgerelateerde toolkit
+        support:
+            flags:
+                language: Geef de taal op die moet worden weergegeven, anders wordt de taalcode gebruikt om de taal weer te geven
+            long: Maak een lijst van alle ondersteunde talen
+            short: Ondersteunde talenlijst
         tran:
             flags:
                 all-language: Vertaal alle ondersteunde talen (indien waar is de taalvlag uitgeschakeld)
@@ -114,3 +132,156 @@ cli:
             short: vertalen
     long: Een toolset voor luie mensen, inclusief een op 'proto' gebaseerd backend-framework, veelgebruikte sjablonen en meertalige vertaling
     short: Een gereedschapsset voor luie mensen
+    sync:
+        flags:
+            template-path: Sjabloonsynchronisatiepad
+        long: Synchroniseer de configuratie vanaf de externe kant en voeg deze samen met de lokale configuratie. Het sjabloonbestand wordt tegelijkertijd ondersteund tijdens de synchronisatie (indien geconfigureerd).
+        short: Synchroniseer de configuratie op afstand
+    up-mod:
+        flags:
+            goproxy: Geef het goproxy-adres op. Als dit niet het geval is, wordt het eerste adres in de omgevingsvariabele gebruikt
+        long: Update de afhankelijkheidsversie van het go.mod-bestand
+        short: Update het go.mod-bestand
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amhaars
+    ar: Arabisch
+    as: Assamees
+    ay: Aymara
+    az: Azerbeidzjaans
+    be: Wit-Russisch
+    bg: Bulgaars
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengaals
+    bs: Bosnisch
+    ca: Catalaans
+    ceb: Cebuano
+    ckb: Koerdisch (Sorani)
+    co: Corsicaans
+    cs: Tsjechisch
+    cy: Welsh
+    da: Deens
+    de: Duits
+    doi: dogglai
+    dv: Divehi
+    ee: Ooi
+    el: Grieks
+    en: Engels
+    eo: Esperanto
+    es: Spaans
+    et: Ests
+    eu: baskisch
+    fa: Perzisch
+    fi: Fins
+    fil: Filipijns (Tagalog)
+    fr: Frans
+    fy: van Friesland afkomstige
+    ga: Iers
+    gd: Schots-Gaelisch
+    gl: Galicisch
+    gn: Guaraní
+    gom: gonggan-taal
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaïaans
+    he: Hebreeuws
+    hi: Hindi
+    hmn: Hmong
+    hr: Kroatisch
+    ht: Haïtiaans Creools
+    hu: Hongaars
+    hy: Armeens
+    id: Indonesisch
+    ig: Igbo
+    ilo: Ilocano
+    is: IJslands
+    it: Italiaans
+    iw: Hebreeuws
+    ja: Japans
+    jv: Javaans
+    jw: Javaans
+    ka: Georgisch
+    kk: Kazachs
+    km: Cambodjaans
+    kn: Kanada
+    ko: Koreaans
+    kri: Creools
+    ku: Koerdisch
+    ky: Kirgizisch
+    la: Latijns
+    lb: Luxemburgs
+    lg: Luganda
+    ln: Lingala
+    lo: Laos
+    lt: Litouws
+    lus: Mizo
+    lv: Lets
+    mai: Maithili
+    mg: Madagaskar
+    mi: Maori
+    mk: Macedonisch
+    ml: Malayalam
+    mn: Mongools
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Maleis
+    mt: Maltees
+    my: Birmees
+    ne: Nepalees
+    nl: Nederlands
+    "no": Noors
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Punjabi
+    pl: Pools
+    ps: Pasjto
+    pt: Portugees (Portugal, Brazilië)
+    qu: Quechua
+    ro: Roemeense
+    ru: Russisch
+    rw: Kinyarwanda
+    sa: Sanskriet
+    sd: sindhi
+    si: Singalees
+    sk: Slowaaks
+    sl: Sloveens
+    sm: Samoaans
+    sn: Shona
+    so: Somalisch
+    sq: Albanees
+    sr: Servisch
+    st: Sesotho
+    su: Soendanees
+    sv: Zweeds
+    sw: Swahili
+    ta: Tamil
+    te: telugu
+    tg: Tadzjiekse
+    th: Thais
+    ti: Tignan
+    tk: Turkmeens
+    tl: Tagalog (Filipijns)
+    tr: Turks
+    ts: Dzonga
+    tt: Tataars
+    ug: Oeigoerse
+    uk: Oekraïens
+    ur: Urdu
+    uz: Oezbeeks
+    vi: Vietnamees
+    xh: bantu-taal
+    yi: Jiddisch
+    yo: yoruba
+    zh: Chinese
+    zh-chs: Versimpeld Chinees)
+    zh-cht: Versimpeld Chinees)
+    zh-cn: Versimpeld Chinees)
+    zh-hk: Chinees (Hongkong)
+    zh-mo: Chinees (Macau)
+    zh-sg: Chinees (Singapore)
+    zh-tw: traditioneel Chinees)
+    zu: Zoeloe

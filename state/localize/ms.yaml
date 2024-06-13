@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Lumpuhkan arahan penyiapan
+        long: |
+            Menghasilkan skrip autolengkap untuk {{.RootName}} untuk shell yang ditentukan.
+        short: Hasilkan skrip autolengkap untuk shell yang ditentukan
+        subcommand:
+            short: Hasilkan skrip autolengkap untuk {{.Command}}
     flags:
         debug: Output log terperinci
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Semua fungsi berkaitan penjanaan jadual untuk sumber stateful atau pengurusan sumber statik perkhidmatan perniagaan
             short: Semua fungsi berkaitan untuk menjana jadual
+    group:
+        gen: penjanaan kod
     help:
         additional_commands: Perintah tambahan
         aliases: alias perintah
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: untuk mendapatkan maklumat yang lebih terperinci
         global_flags: parameter global
+        long: 'Bantuan menyediakan bantuan untuk sebarang arahan dalam aplikasi. '
+        short: Bantuan pada sebarang arahan
+        usage: Arahan untuk menggunakan {{.Name}}
         use: guna
     i18n:
         long: Kit alatan berkaitan pengantarabangsaan berbilang bahasa
         short: Kit alatan berkaitan pengantarabangsaan berbilang bahasa
+        support:
+            flags:
+                language: Tentukan bahasa untuk dipaparkan, jika tidak, kod bahasa akan digunakan untuk memaparkan bahasa
+            long: Senaraikan semua bahasa yang disokong
+            short: Senarai bahasa yang disokong
         tran:
             flags:
                 all-language: Terjemah semua bahasa yang disokong (jika benar bendera bahasa dilumpuhkan)
@@ -114,3 +132,156 @@ cli:
             short: menterjemah
     long: Set alat untuk orang yang malas, termasuk rangka kerja bahagian belakang berasaskan 'proto', templat yang biasa digunakan dan terjemahan berbilang bahasa
     short: Set alat untuk orang malas
+    sync:
+        flags:
+            template-path: Laluan penyegerakan templat
+        long: Segerakkan konfigurasi dari hujung jauh dan gabungkannya ke dalam konfigurasi setempat Fail templat disokong pada masa yang sama semasa penyegerakan (jika dikonfigurasikan).
+        short: Segerakkan konfigurasi dari jauh
+    up-mod:
+        flags:
+            goproxy: Tentukan alamat goproxy, jika tidak, yang pertama dalam pembolehubah persekitaran akan digunakan
+        long: Kemas kini versi pergantungan bagi fail go.mod
+        short: Kemas kini fail go.mod
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharic
+    ar: bahasa arab
+    as: Assam
+    ay: Aymara
+    az: Azerbaijan
+    be: Belarusia
+    bg: bahasa Bulgaria
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Benggali
+    bs: Bosnia
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Korsika
+    cs: bahasa Czech
+    cy: bahasa Wales
+    da: danish
+    de: Jerman
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: bahasa Yunani
+    en: Inggeris
+    eo: bahasa Esperanto
+    es: bahasa Sepanyol
+    et: bahasa Estonia
+    eu: basque
+    fa: Parsi
+    fi: bahasa Finland
+    fil: Filipina (Tagalog)
+    fr: Perancis
+    fy: Frisian
+    ga: irish
+    gd: Gaelik Scotland
+    gl: Galicia
+    gn: Guarani
+    gom: bahasa gonggan
+    gu: bahasa gujarati
+    ha: Hausa
+    haw: Hawaii
+    he: bahasa ibrani
+    hi: Hindi
+    hmn: Hmong
+    hr: bahasa Croatia
+    ht: Kreol Haiti
+    hu: Hungary
+    hy: bahasa Armenia
+    id: Indonesia
+    ig: Igbo
+    ilo: Ilokano
+    is: bahasa Iceland
+    it: Itali
+    iw: bahasa ibrani
+    ja: Jepun
+    jv: bahasa jawa
+    jw: bahasa jawa
+    ka: Georgian
+    kk: bahasa Kazakhstan
+    km: Kemboja
+    kn: Kannada
+    ko: Korea
+    kri: Kreol
+    ku: Kurdish
+    ky: Kyrgyz
+    la: bahasa Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: bahasa Lithuania
+    lus: Mizo
+    lv: bahasa Latvia
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedonia
+    ml: Malayalam
+    mn: Mongolia
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Melayu
+    mt: bahasa Malta
+    my: Burma
+    ne: Nepal
+    nl: Belanda
+    "no": bahasa norwegia
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Poland
+    ps: Pashto
+    pt: Portugis (Portugal, Brazil)
+    qu: Quechua
+    ro: bahasa Romania
+    ru: bahasa Rusia
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Bahasa Slovak
+    sl: bahasa slovenia
+    sm: bahasa Samoa
+    sn: Shona
+    so: Somalia
+    sq: bahasa Albania
+    sr: bahasa Serbia
+    st: bahasa sesotho
+    su: bahasa sunda
+    sv: bahasa Sweden
+    sw: bahasa Swahili
+    ta: tamil
+    te: telugu
+    tg: bahasa Tajik
+    th: Thai
+    ti: Tignan
+    tk: orang Turkmen
+    tl: Tagalog (Filipina)
+    tr: bahasa turki
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukraine
+    ur: bahasa Urdu
+    uz: Uzbek
+    vi: bahasa Vietnam
+    xh: bahasa bantu
+    yi: Yiddish
+    yo: yoruba
+    zh: cina
+    zh-chs: Cina (Mudah)
+    zh-cht: Cina (Mudah)
+    zh-cn: Cina (Mudah)
+    zh-hk: Cina (Hong Kong)
+    zh-mo: Cina(Macau)
+    zh-sg: Cina (Singapura)
+    zh-tw: Cina tradisional)
+    zu: Zulu

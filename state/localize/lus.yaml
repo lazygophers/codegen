@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Completion instruction te chu disable rawh
+        long: |
+            Shell tarlan tan {{.RootName}} tan autocomplete script a siam.
+        short: Shell tarlan tan autocomplete script siam rawh
+        subcommand:
+            short: '{{.Command}} tan autocomplete script siam rawh.'
     flags:
         debug: Output chipchiar takin log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Business services-a stateful resource emaw static resource management emaw atana table siamna hna inzawm zawng zawng
             short: Table siamna atana function inzawm zawng zawng
+    group:
+        gen: code siam chhuah a ni
     help:
         additional_commands: Thupek dang a awm bawk
         aliases: thupek alias a ni
@@ -94,10 +104,18 @@ cli:
         flags: parameter a ni
         get_info: thu chiang zawk hriat theih nan
         global_flags: khawvel pum huap parameters a ni
+        long: 'Help hian application chhunga command eng pawh tan tanpuina a pe thin. '
+        short: Thupek eng pawhah tanpui rawh
+        usage: '{{.Name}} hman dan tur hrilhfiahna.'
         use: hmang
     i18n:
         long: Multilingual internationalization nena inzawm hmanrua
         short: Multilingual internationalization nena inzawm hmanrua
+        support:
+            flags:
+                language: Ṭawng tarlan tur chu tarlang la, chuti lo chuan language code hmangin ṭawng chu a lang ang
+            long: Supported language zawng zawng list rawh
+            short: Ṭawng list thlawptu
         tran:
             flags:
                 all-language: Supported language zawng zawng lehlin vek (a dik a nih chuan languages ​​flag chu disabled a ni)
@@ -114,3 +132,156 @@ cli:
             short: letling
     long: Mi rilru hah tak takte tana hmanraw set, ‘proto’-based backend framework, template hman tlanglawn tak tak, leh multi-language translation te pawh a tel
     short: Mi rilru hah tak takte tan hmanrua set
+    sync:
+        flags:
+            template-path: Template inzawmkhawmna kawng
+        long: Remote end atanga configuration chu synchronize la, local configuration ah merge rawh Template file hi synchronization laiin (configure a nih chuan) a rualin support a ni.
+        short: Remote atanga configuration inthlunzawm
+    up-mod:
+        flags:
+            goproxy: Goproxy address kha tarlang la, a nih loh chuan environment variable-a a hmasa ber kha hman a ni ang
+        long: go.mod file a dependency version chu update rawh
+        short: go.mod file chu update rawh
+lang:
+    af: Afrikaans tawng a ni
+    ak: Twi (Akan) .
+    am: Amharic tawng a ni
+    ar: Arabic tawng a ni
+    as: Assamese tawng
+    ay: Aymara tawng
+    az: Azerbaijan tawng a ni
+    be: Belarus mi a ni
+    bg: Bulgarian tawng a ni
+    bho: Bhojpuri tawng
+    bm: Bambara tawng
+    bn: Bengali tawng a ni
+    bs: Bosnia mi a ni
+    ca: Catalan tawng a ni
+    ceb: Cebuano tawng a ni
+    ckb: Kurdish (Sorani) tawng a ni.
+    co: Corsican tawng a ni
+    cs: Czech tawng a ni
+    cy: Welsh tawng a ni
+    da: danish a ni
+    de: German tawng a ni
+    doi: dogglai
+    dv: Dhivehi tawng
+    ee: Ewe tawng
+    el: Greek tawng a ni
+    en: Sap
+    eo: Esperanto tawng a ni
+    es: Spanish
+    et: Estonian tawng a ni
+    eu: basque tawng a ni
+    fa: Persia tawng a ni
+    fi: Finnish tawng a ni
+    fil: Filipino tawng (Tagalog tawng) a ni.
+    fr: French tawng a ni
+    fy: Frisian tawng a ni
+    ga: irish a ni
+    gd: Scottish Gaelic tawng a ni
+    gl: Galician tawng a ni
+    gn: Guarani tawng
+    gom: gongan tawng
+    gu: gujarati tih a ni
+    ha: Hausa
+    haw: Hawaii tawng a ni
+    he: hebrai tawngin
+    hi: Hindi tawng a ni
+    hmn: Hmong
+    hr: Croatian tawng a ni
+    ht: Haitian Creole tawng a ni
+    hu: hungarian a ni
+    hy: Armenian tawng a ni
+    id: Indonesian tawng a ni
+    ig: Igbo a ni
+    ilo: Ilocano tawng
+    is: Icelandic tawng a ni
+    it: Italian tawng a ni
+    iw: hebrai tawngin
+    ja: Japanese tawng a ni
+    jv: Javanese tawng a ni
+    jw: Javanese tawng a ni
+    ka: Georgian tawng a ni
+    kk: Kazakh tawng a ni
+    km: Cambodian tawng a ni
+    kn: Kannada tawng a ni
+    ko: Korean tawng a ni
+    kri: Creole tawng a ni
+    ku: Kurdish tawng a ni
+    ky: Kyrgyz tawng a ni
+    la: Latin tawng a ni
+    lb: Luxembourgish tawng a ni
+    lg: Luganda tawng
+    ln: Lingala tawng
+    lo: Lao a ni
+    lt: Lithuanian tawng a ni
+    lus: Mizo tawng
+    lv: Latvian tawng a ni
+    mai: Maithili tawng
+    mg: Malagasy tawng a ni
+    mi: Maori tawng a ni
+    mk: Makedonia tawng a ni
+    ml: Malayalam tawng a ni
+    mn: Mongolian tawng a ni
+    mni-mtei: Meitei (Manipuri) a ni.
+    mr: marathi tih a ni
+    ms: Malay tawng a ni
+    mt: Malta tawng a ni
+    my: Burma mi a ni
+    ne: Nepali tawng a ni
+    nl: Dutch tawng a ni
+    "no": norwegian tawng a ni
+    nso: Sepeti a ni
+    ny: Nyanza (Chichewa) tawng a ni.
+    om: Oromo tawng
+    or: Oriya (Odia) tawng a ni.
+    pa: punjabi tawng a ni
+    pl: Polish tawng a ni
+    ps: Pashto tawng a ni
+    pt: Portuguese tawng (Portugal, Brazil) tawng a ni.
+    qu: Quechua tawng
+    ro: Romanian tawng a ni
+    ru: Russian tawng a ni
+    rw: Kinyarwanda tawng a ni
+    sa: Sanskrit tawng
+    sd: sindhi tih a ni
+    si: sinhala tih a ni
+    sk: Slovak tawng a ni
+    sl: slovenian tawng a ni
+    sm: Samoan mi a ni
+    sn: Shona a ni
+    so: Somali tawng a ni
+    sq: Albanian tawng a ni
+    sr: Serbian tawng a ni
+    st: Sesotho tawng a ni
+    su: Sundanese tawng a ni
+    sv: Swedish tawng a ni
+    sw: Swahili tawng a ni
+    ta: tamil tawng a ni
+    te: telugu
+    tg: Tajik tawng a ni
+    th: Thai tawng a ni
+    ti: Tignan a ni
+    tk: Turkmen-ho a ni
+    tl: Tagalog (Filipino) tawng a ni.
+    tr: turkish tawng a ni
+    ts: Dzonga
+    tt: Tatar a ni
+    ug: Uighur a ni
+    uk: Ukraine tawng a ni
+    ur: Urdu tawng a ni
+    uz: Uzbek tawng a ni
+    vi: Vietnamese tawng a ni
+    xh: bantu tawng
+    yi: Yiddish tawng a ni
+    yo: yoruba tawng a ni
+    zh: Chinese tawng a ni
+    zh-chs: Chinese (A awlsam zawnga sawi) .
+    zh-cht: Chinese (A awlsam zawnga sawi) .
+    zh-cn: Chinese (A awlsam zawnga sawi) .
+    zh-hk: Chinese (Hong Kong) te chuan an lo ti tawh a.
+    zh-mo: Chinese(Macau) te an ni.
+    zh-sg: Chinese (Singapore) te chuan an rawn ti a.
+    zh-tw: Chinese hnam nunphung) .
+    zu: Zulu

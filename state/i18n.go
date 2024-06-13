@@ -57,3 +57,7 @@ func LoadI18n() (err error) {
 func Localize(key string, args ...interface{}) string {
 	return I18n.Localize(key, args...)
 }
+
+func LocalizeWithLanguage(lang string, key string, args ...interface{}) string {
+	return I18n.LocalizeWithLanguage(lang, key, args...)
+}

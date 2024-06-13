@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: A kitöltési utasítások letiltása
+        long: |
+            Automatikus kiegészítési szkriptet hoz létre a(z) {{.RootName}} számára a megadott shellhez.
+        short: Hozzon létre egy automatikus kiegészítõ szkriptet a megadott héjhoz
+        subcommand:
+            short: Automatikus kiegészítési szkript létrehozása a(z) {{.Command}} számára
     flags:
         debug: Részletes napló kimenet
     gen:
@@ -8,7 +16,7 @@ cli:
                 default-role: A kötegelt interfész alapértelmezett szerepe A részletekért tekintse meg a használati dokumentációt.
                 gen-to: Adja meg a generált .go fájlok kimeneti helyét
                 list-option: A lista szűrhető is, a részleteket a használati dokumentációban találja.
-                model: Adja meg a modell nevét, és hagyja ki a "modell" előtagot
+                model: Adja meg a modell nevét, és hagyja ki a "model" előtagot
             long: Hozzon létre kötegelt felületeket, és adjon hozzá egy interfészt egy bizonyos modellhez a .proto fájlban
             short: Batch generálás interfész
         all:
@@ -57,14 +65,14 @@ cli:
             short: Implementációs fájlok létrehozása
         long: Kódgenerátor, több sablont is támogat
         makefile:
-            long: Makefile fájlok létrehozása az eszközök és más kapcsolódó parancsok létrehozásához
+            long: Makefile fájlok létrehozása az eszközök és egyéb kapcsolódó parancsok létrehozásához
             short: Makefile létrehozása
         mod:
             long: Hozzon létre go.mod fájlt a függőségek kezeléséhez
             short: Hozzon létre go.mod fájlt
         pb:
             long: .pb.go fájlok létrehozása, amelyek a .proto fájlok generálására szolgálnak. A megfelelő x mezőcímkéket a rendszer a konfigurációnak megfelelően automatikusan hozzáadja.
-            short: Hozzon létre .pb.go fájlt
+            short: .pb.go fájl létrehozása
         short: Kódgenerátor
         state:
             conf:
@@ -78,7 +86,7 @@ cli:
             i18n:
                 long: Az i18n-hez kapcsolódó kód létrehozása többnyelvű nemzetközi hívásokhoz
                 short: i18n-hez kapcsolódó kód generálása
-            long: Az állam összes kapcsolódó funkciójának létrehozása az üzleti szolgáltatások állapotalapú erőforrás- vagy statikus erőforrás-kezeléséhez
+            long: Az állapot összes kapcsolódó funkciójának létrehozása az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez
             short: Az állapot generálásához szükséges összes funkció
             table:
                 long: Állapot.táblázattal kapcsolatos kód generálása, amely adatbázis-kapcsolathoz és a tábla inicializálásához használatos a szolgáltatás indításakor.
@@ -86,6 +94,8 @@ cli:
         table:
             long: Az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez szükséges táblák előállításához kapcsolódó összes funkció
             short: Minden kapcsolódó függvény táblázatok generálásához
+    group:
+        gen: kódgenerálás
     help:
         additional_commands: További parancsok
         aliases: parancs alias
@@ -94,10 +104,18 @@ cli:
         flags: paraméter
         get_info: részletesebb információkhoz
         global_flags: globális paraméterek
+        long: 'Adjon használati utasítást az alkalmazás bármely parancsához. '
+        short: Útmutató bármely parancs használatához
+        usage: Útmutató a(z) {{.Name}} használatához
         use: használat
     i18n:
         long: Többnyelvű nemzetközivé válással kapcsolatos eszköztár
         short: Többnyelvű nemzetközivé válással kapcsolatos eszköztár
+        support:
+            flags:
+                language: Adja meg a megjelenítendő nyelvet, ellenkező esetben a nyelvi kódot fogja használni a nyelv megjelenítéséhez
+            long: Sorolja fel az összes támogatott nyelvet
+            short: Támogatott nyelvek listája
         tran:
             flags:
                 all-language: Az összes támogatott nyelv lefordítása (ha igaz, a nyelvek jelzője le van tiltva)
@@ -114,3 +132,156 @@ cli:
             short: fordít
     long: Eszközkészlet lusta emberek számára, beleértve a „proto” alapú háttérrendszert, az általánosan használt sablonokat és a többnyelvű fordítást
     short: Eszközkészlet lustáknak
+    sync:
+        flags:
+            template-path: Sablon szinkronizálási útvonala
+        long: Szinkronizálja a konfigurációt a távoli végről, és egyesítse a helyi konfigurációval A sablonfájl egyidejűleg támogatott a szinkronizálás során (ha be van állítva).
+        short: A konfiguráció szinkronizálása távolról
+    up-mod:
+        flags:
+            goproxy: Adja meg a goproxy címét, ha nem, akkor a környezeti változó első címe kerül felhasználásra
+        long: Frissítse a go.mod fájl függőségi verzióját
+        short: Frissítse a go.mod fájlt
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: amhara
+    ar: arab
+    as: asszámi
+    ay: Aymara
+    az: azerbajdzsáni
+    be: fehérorosz
+    bg: bolgár
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengáli
+    bs: bosnyák
+    ca: katalán
+    ceb: Cebuano
+    ckb: kurd (sorani)
+    co: korzikai
+    cs: cseh
+    cy: walesi
+    da: dán
+    de: német
+    doi: dogglai
+    dv: Dhivehi
+    ee: Anyajuh
+    el: görög
+    en: angol
+    eo: eszperantó
+    es: spanyol
+    et: észt
+    eu: baszk
+    fa: perzsa
+    fi: finn
+    fil: filippínó (tagalog)
+    fr: Francia
+    fy: fríz
+    ga: ír
+    gd: skót gael
+    gl: galíciai
+    gn: Guaraní
+    gom: gonggan nyelv
+    gu: gudzsaráti
+    ha: Hausa
+    haw: hawaii
+    he: héber
+    hi: hindi
+    hmn: Hmong
+    hr: horvát
+    ht: Haiti kreol
+    hu: Magyar
+    hy: örmény
+    id: indonéz
+    ig: Igbo
+    ilo: Ilocano
+    is: izlandi
+    it: olasz
+    iw: héber
+    ja: japán
+    jv: jávai
+    jw: jávai
+    ka: grúz
+    kk: kazah
+    km: kambodzsai
+    kn: kannada
+    ko: koreai
+    kri: kreol
+    ku: kurd
+    ky: kirgiz
+    la: latin
+    lb: luxemburgi
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: litván
+    lus: Mizo
+    lv: lett
+    mai: Maithili
+    mg: madagaszkári
+    mi: maori
+    mk: macedón
+    ml: Malayalam
+    mn: mongol
+    mni-mtei: meitei (manipuri)
+    mr: marathi
+    ms: maláj
+    mt: máltai
+    my: burmai
+    ne: nepáli
+    nl: holland
+    "no": norvég
+    nso: Sepeti
+    ny: nyanza (chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: pandzsábi
+    pl: fényesít
+    ps: pastu
+    pt: portugál (Portugália, Brazília)
+    qu: kecsua
+    ro: román
+    ru: orosz
+    rw: Kinyarwanda
+    sa: szanszkrit
+    sd: sindhi
+    si: szinhala
+    sk: szlovák
+    sl: szlovén
+    sm: szamoai
+    sn: Shona
+    so: szomáliai
+    sq: albán
+    sr: szerb
+    st: Sesotho
+    su: szundanai
+    sv: svéd
+    sw: szuahéli
+    ta: tamil
+    te: telugu
+    tg: tadzsik
+    th: thai
+    ti: Tignan
+    tk: türkmén
+    tl: tagalog (filippínó)
+    tr: török
+    ts: Dzonga
+    tt: tatár
+    ug: ujgur
+    uk: ukrán
+    ur: urdu
+    uz: üzbég
+    vi: vietnami
+    xh: bantu nyelv
+    yi: jiddis
+    yo: joruba
+    zh: kínai
+    zh-chs: kínai (egyszerűsített)
+    zh-cht: kínai (egyszerűsített)
+    zh-cn: kínai (egyszerűsített)
+    zh-hk: kínai (Hongkong)
+    zh-mo: kínai (Makaó)
+    zh-sg: kínai (Szingapúr)
+    zh-tw: tradicionális kínai)
+    zu: zulu

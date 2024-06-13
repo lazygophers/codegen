@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Nonaktipkeun parentah parantosan
+        long: |
+            Ngahasilkeun skrip autocomplete pikeun {{.RootName}} pikeun cangkang anu ditangtukeun.
+        short: Ngahasilkeun skrip autocomplete pikeun cangkang anu ditangtukeun
+        subcommand:
+            short: Jieun skrip autocomplete pikeun {{.Command}}
     flags:
         debug: Kaluaran log lengkep
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Kabéh fungsi patali generating tabel pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
             short: Sadaya fungsi anu aya hubunganana pikeun ngahasilkeun tabel
+    group:
+        gen: generasi kode
     help:
         additional_commands: Paréntah tambahan
         aliases: paréntah alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: pikeun meunangkeun inpo nu leuwih lengkep
         global_flags: parameter global
+        long: 'Pitulung nyadiakeun pitulung pikeun sagala paréntah dina aplikasi. '
+        short: Pitulung dina sagala paréntah
+        usage: Parentah pikeun ngagunakeun {{.Name}}
         use: ngagunakeun
     i18n:
         long: Toolkit patali internasionalisasi multibasa
         short: Toolkit patali internasionalisasi multibasa
+        support:
+            flags:
+                language: Sebutkeun basa anu bakal ditampilkeun, upami henteu kode basa bakal dianggo pikeun ningalikeun basa
+            long: Daptar sadaya basa anu dirojong
+            short: Daptar basa anu dirojong
         tran:
             flags:
                 all-language: Tarjamahkeun sadaya basa anu dirojong (upami leres bendera basa dinonaktipkeun)
@@ -114,3 +132,156 @@ cli:
             short: narjamahkeun
     long: Alat anu disetél pikeun jalma anu teu puguh, kalebet kerangka backend basis proto, témplat anu biasa dianggo, sareng tarjamahan multi-basa.
     short: Hiji alat set pikeun jalma puguh
+    sync:
+        flags:
+            template-path: Jalur sinkronisasi template
+        long: Singkronkeun konfigurasi tina tungtung jauh tur gabungkeun kana konfigurasi lokal.
+        short: Singkronkeun konfigurasi tina jauh
+    up-mod:
+        flags:
+            goproxy: Sebutkeun alamat goproxy, upami henteu, anu munggaran dina variabel lingkungan bakal dianggo
+        long: Apdet versi kagumantungan tina file go.mod
+        short: Apdet file go.mod
+lang:
+    af: urang Afrikaans
+    ak: Twi (Akan)
+    am: Amharik
+    ar: Arab
+    as: Assam
+    ay: Aymara
+    az: Basa Azerbaijan
+    be: Bélarus
+    bg: basa Bulgaria
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Benggala
+    bs: Bosnia
+    ca: Katalan
+    ceb: Cebuano
+    ckb: Kurdi (Sorani)
+    co: Korsika
+    cs: Ceko
+    cy: Welsh
+    da: Denmark
+    de: Jerman
+    doi: dogglai
+    dv: Dhivehi
+    ee: Eweuh
+    el: Yunani
+    en: Inggris
+    eo: Ésperanto
+    es: Spanyol
+    et: Éstonia
+    eu: basa basque
+    fa: Pérsia
+    fi: Finlandia
+    fil: Filipino (Tagalog)
+    fr: Perancis
+    fy: Frisian
+    ga: Basa Irlandia
+    gd: Gaelik Skotlandia
+    gl: Galisia
+    gn: Guarani
+    gom: basa gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawai
+    he: ibrani
+    hi: Hindi
+    hmn: Hmong
+    hr: Kroasia
+    ht: Kréol Haiti
+    hu: Hungaria
+    hy: Arménia
+    id: basa Indonésia
+    ig: Igbo
+    ilo: Basa Ilokano
+    is: Islandia
+    it: Italia
+    iw: ibrani
+    ja: Basa Jepang
+    jv: basa Jawa
+    jw: basa Jawa
+    ka: Georgian
+    kk: Kazakh
+    km: Kamboja
+    kn: Kannada
+    ko: Koréa
+    kri: Kreol
+    ku: Kurdi
+    ky: Kirgiz
+    la: Latin
+    lb: Luksemburg
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lituania
+    lus: Mizo
+    lv: Lativia
+    mai: Maitil
+    mg: Malagasy
+    mi: Maori
+    mk: Makedonia
+    ml: Malayalam
+    mn: Mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marati
+    ms: Malayu
+    mt: Malta
+    my: Burma
+    ne: Nepali
+    nl: Walanda
+    "no": norwégia
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polandia
+    ps: Pashto
+    pt: Portugis (Portugal, Brazil)
+    qu: Quechua
+    ro: Romania
+    ru: Rusia
+    rw: Kinyarwanda
+    sa: Sangsakerta
+    sd: sindhi
+    si: sinhala
+    sk: Slowakia
+    sl: basa Slovenia
+    sm: Samoan
+    sn: Shona
+    so: Somali
+    sq: basa Albania
+    sr: Sérbia
+    st: Sesotho
+    su: Basa Sunda
+    sv: Swédia
+    sw: basa Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmén
+    tl: Tagalog (Filipina)
+    tr: turki
+    ts: Dzonga
+    tt: Tatar Sunda
+    ug: Uighur
+    uk: Ukrania
+    ur: Basa Urdu
+    uz: Uzbek
+    vi: Vietnam
+    xh: basa bantu
+    yi: Yiddish
+    yo: yoruba
+    zh: Cina
+    zh-chs: Cina (Saderhana)
+    zh-cht: Cina (Saderhana)
+    zh-cn: Cina (Saderhana)
+    zh-hk: Cina (Hong Kong)
+    zh-mo: Cina (Makau)
+    zh-sg: Cina (Singapura)
+    zh-tw: Cina (Taiwan)
+    zu: Zulu

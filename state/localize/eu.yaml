@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Desgaitu osatzeko argibideak
+        long: |
+            {{.RootName}}-rako osatze automatikoko script bat sortzen du zehaztutako shell-erako.
+        short: Sortu automatikoki osatzeko script bat zehaztutako shell-erako
+        subcommand:
+            short: Sortu automatikoki osatzeko script-a {{.Command}}-rako
     flags:
         debug: Irteera erregistro zehatza
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Taulak sortzeko erlazionatutako funtzio guztiak enpresa-zerbitzuen baliabideen egoera edo baliabide estatikoen kudeaketarako
             short: Taulak sortzeko erlazionatutako funtzio guztiak
+    group:
+        gen: kodea sortzea
     help:
         additional_commands: Agindu osagarriak
         aliases: komandoaren ezizena
@@ -94,16 +104,24 @@ cli:
         flags: parametroa
         get_info: informazio zehatzagoa lortzeko
         global_flags: parametro globalak
+        long: 'Eman aplikazioko edozein komando erabiltzeko argibideak. '
+        short: Edozein komando erabiltzeko argibideak
+        usage: '{{.Name}} erabiltzeko argibideak'
         use: erabili
     i18n:
         long: Nazioartekotzeari lotutako tresna eleaniztunak
         short: Nazioartekotzeari lotutako tresna eleaniztunak
+        support:
+            flags:
+                language: Zehaztu bistaratzeko hizkuntza, bestela hizkuntza-kodea erabiliko da hizkuntza bistaratzeko
+            long: Zerrendatu onartzen diren hizkuntza guztiak
+            short: Onartutako hizkuntzen zerrenda
         tran:
             flags:
                 all-language: Itzuli onartzen diren hizkuntza guztiak (egia bada, hizkuntzen bandera desgaituta dago)
                 force: Gainidatzi lehendik dauden itzulpenak
                 force-key-prefix: gainidatzi behar diren gakoak
-                generate-const: Sortu zenbazio-balioak erraz deitzeko
+                generate-const: Sortu zenbaketa-balioak erraz deitzeko
                 languages: Zehaztu itzulpenerako xede-hizkuntza
                 src-file: Itzuli beharreko iturburu-fitxategia (beharrezkoa)
                 src-language: Iturburu-fitxategiaren hizkuntza (zehazten ez bada, tresnak automatikoki zehaztuko du iturburu-fitxategia)
@@ -114,3 +132,156 @@ cli:
             short: itzuli
     long: Alferentzako tresna multzoa, "proto"-n oinarritutako backend esparrua, erabili ohi diren txantiloiak eta hizkuntza anitzeko itzulpena barne.
     short: Alferrarentzat tresna multzoa
+    sync:
+        flags:
+            template-path: Txantiloiaren sinkronizazio bidea
+        long: Sinkronizatu konfigurazioa urruneko muturretik eta batu konfigurazio lokalean Txantiloi fitxategia aldi berean onartzen da sinkronizazioan (konfiguratuta badago).
+        short: Sinkronizatu konfigurazioa urrunetik
+    up-mod:
+        flags:
+            goproxy: Zehaztu goproxy helbidea, ez bada, ingurune-aldagaiko lehenengoa erabiliko da
+        long: Eguneratu go.mod fitxategiaren menpekotasun-bertsioa
+        short: Eguneratu go.mod fitxategia
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharikoa
+    ar: arabiera
+    as: Asamiera
+    ay: aimara
+    az: Azerbaijangoa
+    be: bielorrusiera
+    bg: bulgariera
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalera
+    bs: bosniarra
+    ca: katalana
+    ceb: Cebuano
+    ckb: kurduera (sorania)
+    co: Korsikera
+    cs: Txekiar
+    cy: galesera
+    da: daniera
+    de: alemana
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ardia
+    el: grekoa
+    en: ingelesa
+    eo: esperantoa
+    es: gaztelania
+    et: Estoniarra
+    eu: euskalduna
+    fa: pertsiera
+    fi: Finlandiera
+    fil: Filipina (tagalog)
+    fr: frantsesa
+    fy: frisiera
+    ga: irlandera
+    gd: Eskoziako gaelikoa
+    gl: galegoa
+    gn: guaraniera
+    gom: gonggan hizkuntza
+    gu: gujarati
+    ha: Hausa
+    haw: Oiassoarra
+    he: hebreera
+    hi: Hindia
+    hmn: Hmong
+    hr: kroaziera
+    ht: Haitiko kreolera
+    hu: hungariarra
+    hy: armeniarra
+    id: Indonesian
+    ig: Igboa
+    ilo: Ilocano
+    is: islandiera
+    it: italiarra
+    iw: hebreera
+    ja: japoniarra
+    jv: javera
+    jw: javera
+    ka: georgiarra
+    kk: Kazakh
+    km: Kanbodiara
+    kn: Kannada
+    ko: Korean
+    kri: kreolera
+    ku: kurduera
+    ky: kirgizera
+    la: latina
+    lb: Luxenburgera
+    lg: Luganda
+    ln: lingala
+    lo: Lao
+    lt: Lituaniera
+    lus: Mizo
+    lv: letoniera
+    mai: Maithili
+    mg: malgaxea
+    mi: maoria
+    mk: Mazedoniera
+    ml: malayalamera
+    mn: Mongoliera
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: malaysiera
+    mt: maltera
+    my: birmaniera
+    ne: Nepaliarra
+    nl: holandarra
+    "no": norvegiarra
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromoa
+    or: Oriya (Odia)
+    pa: punjabia
+    pl: poloniarra
+    ps: Paxtuera
+    pt: portugesa (Portugal, Brasil)
+    qu: kitxua
+    ro: errumaniera
+    ru: errusiera
+    rw: Kinyarwanda
+    sa: sanskritoa
+    sd: sindhi
+    si: sinhala
+    sk: eslovakiera
+    sl: esloveniera
+    sm: samoarra
+    sn: Shona
+    so: somaliera
+    sq: Albaniarra
+    sr: serbiarra
+    st: Sesotho
+    su: Sundanera
+    sv: Suediera
+    sw: Swahilia
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: thailandiera
+    ti: Tignan
+    tk: Turkmenera
+    tl: Tagalo (filipinera)
+    tr: turkiarra
+    ts: Dzonga
+    tt: tatariarra
+    ug: uigurrera
+    uk: Ukrainara
+    ur: Urdu
+    uz: uzbekera
+    vi: Vietnamera
+    xh: bantu hizkuntza
+    yi: Jiddisha
+    yo: yoruba
+    zh: txinera
+    zh-chs: txinera (sinplifikatua)
+    zh-cht: txinera (sinplifikatua)
+    zh-cn: txinera (sinplifikatua)
+    zh-hk: txinera (Hong Kong)
+    zh-mo: txinera (Macao)
+    zh-sg: txinera (Singapur)
+    zh-tw: txinera tradizionala)
+    zu: Zulua

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Malebligu kompletigajn instrukciojn
+        long: |
+            Generas aŭtomatan skripton por {{.RootName}} por la specifita ŝelo.
+        short: Generu aŭtomatan skripton por la specifita ŝelo
+        subcommand:
+            short: Generu aŭtomatan skripton por {{.Komando}}
     flags:
         debug: Eligi detalan protokolon
     gen:
@@ -6,7 +14,7 @@ cli:
             flags:
                 action: Kondutoj kiuj devas esti aldonitaj en aroj, bonvolu trovi la uzadodokumentaron por detaloj
                 default-role: La defaŭlta rolo de la grup-generita interfaco Bonvolu konsulti la uzdokumentadon por detaloj.
-                gen-to: Indiku la eligan lokon de la generitaj .go dosieroj
+                gen-to: Specifu la eliglokon de la generitaj .go dosieroj
                 list-option: La listo ankaŭ povas esti filtrita, bonvolu trovi la uzan dokumentaron por detaloj.
                 model: Specifu la modelnomon, subtenu preterlasi la prefikson `modelo`
             long: Generu interfacojn en aroj kaj aldonu interfacon por certa modelo en la .proto-dosiero
@@ -31,11 +39,11 @@ cli:
             short: Generu .editorconfig dosieron
         flags:
             add-proto-files: Se vi bezonas importi aliajn .proto dosierojn/dosierujojn vojojn kiuj ne estas en la sama dosierujo kiel la specifita .proto dosiero, ĉi tiu operacio aldonos (ne anstataŭigos) la vojon agordita en la agorda dosiero.
-            go-module-prefix: Por la vojo de go_package agordita en la .proto-dosiero kaj la efektiva, vi povas agordi ĉi tiun opcion
-            input: Specifu la .proto fontdosieron esti generita
+            go-module-prefix: Por la vojo de go_package agordita en la .proto-dosiero kaj la reala, vi povas agordi ĉi tiun opcion
+            input: Specifi la .proto fontdosieron esti generita
             output-path: Ĉi tiu opcio povas esti agordita kiam la vojo de go_package agordita en la .proto-dosiero estas malkonsekvenca kun la vojo, kiu efektive devas esti generita.
             overwrite: Por enhavo, kiu ne estos regenerita, devigu anstataŭigon de ekzistanta enhavo
-            proto-files: Por importi aliajn .proto-dosierojn/dosierujojn, kiuj ne estas en la sama dosierujo kiel la specifita .proto-dosiero, ĉi tiu operacio estas eblo por anstataŭi la agordan kampon en la agorda dosiero.
+            proto-files: Por importi aliajn .proto-dosierujojn/dosierujojn kiuj ne estas en la sama dosierujo kiel la specifita .proto-dosiero, ĉi tiu operacio estas opcio por anstataŭi la agordan kampon en la agorda dosiero.
             protoc: '`protoc` agordebla dosiervojo'
             protoc-gen-go: '`protoc-gen-go` kromvojo'
             tables-enable_field_created_at: Ĉu ebligi la defaŭltan agordan generacion de la datumbazo created_at-kampo
@@ -81,11 +89,13 @@ cli:
             long: Generu ĉiujn rilatajn funkciojn de ŝtato por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generado de stato
             table:
-                long: Generu state.table rilatan kodon, uzatan por datumbaza konekto kaj tabelkomenciĝo kiam la servo komenciĝas.
-                short: Generu state.table rilatan kodon
+                long: Generu state.table rilatan kodon, uzatan por datumbaza konekto kaj tabelinicialigo kiam la servo estas komencita.
+                short: Generi state.table rilatan kodon
         table:
             long: Ĉiuj rilataj funkcioj de generado de tabeloj por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generi tabelojn
+    group:
+        gen: generado de kodo
     help:
         additional_commands: Kromaj komandoj
         aliases: komando kaŝnomo
@@ -94,10 +104,18 @@ cli:
         flags: parametro
         get_info: por ricevi pli detalajn informojn
         global_flags: tutmondaj parametroj
+        long: 'Provizu uzajn instrukciojn por ajna komando en la aplikaĵo. '
+        short: Instrukcioj por uzi ajnan komandon
+        usage: Instrukcioj por uzi {{.Name}}
         use: uzi
     i18n:
         long: Plurlingva internaciigo rilata ilaro
         short: Plurlingva internaciigo rilata ilaro
+        support:
+            flags:
+                language: Indiku la lingvon por montri, alie la lingvokodo estos uzata por montri la lingvon
+            long: Listigu ĉiujn subtenatajn lingvojn
+            short: Subtena lingvolisto
         tran:
             flags:
                 all-language: Traduku ĉiujn subtenatajn lingvojn (se vera la lingvo-marko estas malŝaltita)
@@ -114,3 +132,156 @@ cli:
             short: traduki
     long: Ilaro por maldiligentaj homoj, inkluzive de "proto"-bazita backend kadro, ofte uzataj ŝablonoj kaj plurlingva traduko
     short: Ilaro por maldiligentaj homoj
+    sync:
+        flags:
+            template-path: Ŝablona sinkroniga vojo
+        long: Sinkronigu la agordon de la malproksima fino kaj kunfandu ĝin en la lokan agordon La ŝablondosiero estas subtenata samtempe dum sinkronigo (se agordita).
+        short: Sinkronigi agordon de fora
+    up-mod:
+        flags:
+            goproxy: Indiku la goproxy-adreson, se ne, la unua en la mediovariablo estos uzata
+        long: Ĝisdatigu la dependecan version de la dosiero go.mod
+        short: Ĝisdatigu la dosieron go.mod
+lang:
+    af: la afrikansa
+    ak: Twi (Akano)
+    am: Amhara
+    ar: la araba
+    as: asama
+    ay: Aymara
+    az: Azerbajĝana
+    be: Belarusian
+    bg: bulgaro
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengala
+    bs: bosnia
+    ca: kataluna
+    ceb: Cebuano
+    ckb: la kurda (sorana)
+    co: korsika
+    cs: ĉeĥa
+    cy: kimra lingvo
+    da: dana
+    de: germana
+    doi: dogglai
+    dv: Divehio
+    ee: Ŝafino
+    el: greka
+    en: la angla
+    eo: Esperanto
+    es: hispana
+    et: estona
+    eu: eŭska
+    fa: la persa
+    fi: finna
+    fil: filipina (la tagaloga)
+    fr: franca
+    fy: frisa
+    ga: irlandano
+    gd: Skotgaela
+    gl: galego
+    gn: Guaraní
+    gom: gonggan lingvo
+    gu: gujarati
+    ha: Hausa
+    haw: havajano
+    he: hebrea
+    hi: Hindia
+    hmn: Hmong
+    hr: kroata
+    ht: Haitian Creole
+    hu: hungara
+    hy: la armena
+    id: indonezia
+    ig: Igbo
+    ilo: Ilocano
+    is: islanda
+    it: itala
+    iw: hebrea
+    ja: Japanoj
+    jv: la javano
+    jw: la javano
+    ka: kartvela
+    kk: Kazaĥa
+    km: kamboĝa
+    kn: Kannada
+    ko: korea
+    kri: kreola
+    ku: kurda
+    ky: Kirgizoj
+    la: la latina
+    lb: luksemburga
+    lg: Lugando
+    ln: Lingala
+    lo: Lao
+    lt: litova
+    lus: Mizo
+    lv: latva
+    mai: Maithili
+    mg: malagasaj
+    mi: maoria
+    mk: makedona
+    ml: la malajala
+    mn: mongola
+    mni-mtei: Meitei (Manipuri)
+    mr: maratio
+    ms: malaja
+    mt: malta
+    my: birmano
+    ne: nepala
+    nl: nederlanda
+    "no": norvega
+    nso: Sepeti
+    ny: Nyanza (Ĉiĉevo)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: panĝaba
+    pl: pola
+    ps: Paŝto
+    pt: la portugala (Portugalio, Brazilo)
+    qu: la keĉua
+    ro: rumana
+    ru: rusa
+    rw: Kinyarwanda
+    sa: sanskrito
+    sd: sinda
+    si: sinhala
+    sk: la slovaka
+    sl: slovena
+    sm: samoano
+    sn: Ŝona
+    so: Somalo
+    sq: albana
+    sr: serba
+    st: Sesoto
+    su: Sundanese
+    sv: sveda
+    sw: Svahila
+    ta: tamila
+    te: la telugua
+    tg: taĝiko
+    th: tajlanda
+    ti: Tignan
+    tk: turkmenoj
+    tl: la tagaloga (filipina)
+    tr: Turka
+    ts: Dzonga
+    tt: tataro
+    ug: ujgura
+    uk: ukraina
+    ur: Urdu
+    uz: uzbeko
+    vi: vjetnama
+    xh: bantua lingvo
+    yi: jida
+    yo: jorubo
+    zh: ĉinoj
+    zh-chs: Ĉina (simpligita)
+    zh-cht: Ĉina (simpligita)
+    zh-cn: Ĉina (simpligita)
+    zh-hk: Ĉina (Honkongo)
+    zh-mo: Ĉina (Makao)
+    zh-sg: Ĉina (Singapuro)
+    zh-tw: tradicia ĉino)
+    zu: la zulua

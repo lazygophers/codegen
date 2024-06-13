@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tlosa litaelo tsa ho qetela
+        long: |
+            E hlahisa mongolo o itlhophang bakeng sa {{.RootName}} bakeng sa khetla e boletsoeng.
+        short: Hlahisa mongolo o phethelang ka boits'oaro bakeng sa khetla e boletsoeng
+        subcommand:
+            short: Hlahisa mongolo oa ho ikemela oa {{.Command}}
     flags:
         debug: Lethathamo le felletseng la lintlha
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Mesebetsi eohle e amanang le ho hlahisa litafole bakeng sa lisebelisoa tsa boemo bo holimo kapa tsamaiso e tsitsitseng ea litšebeletso tsa khoebo
             short: Mesebetsi eohle e amanang le ho hlahisa litafole
+    group:
+        gen: tlhahiso ea khoutu
     help:
         additional_commands: Litaelo tse ling
         aliases: laela alias
@@ -94,10 +104,18 @@ cli:
         flags: paramethara
         get_info: ho fumana lintlha tse qaqileng haholoanyane
         global_flags: mekhahlelo ea lefatše
+        long: 'Thuso e fana ka thuso bakeng sa taelo efe kapa efe ts''ebelisong. '
+        short: Thuso ka taelo efe kapa efe
+        usage: Litaelo tsa ho sebelisa {{.Name}}
         use: tshebediso
     i18n:
         long: Multilingual internationalization related toolkit
         short: Multilingual internationalization related toolkit
+        support:
+            flags:
+                language: Hlalosa puo e tla hlahisoa, ho seng joalo khoutu ea puo e tla sebelisoa ho hlahisa puo
+            long: Thathamisa lipuo tsohle tse tšehetsoeng
+            short: Lethathamo la lipuo tse tšehetsoeng
         tran:
             flags:
                 all-language: Fetolela lipuo tsohle tse tšehetsoeng (haeba ke 'nete folakha ea lipuo e koetsoe)
@@ -114,3 +132,156 @@ cli:
             short: fetolela
     long: Sesebelisoa se behiloeng bakeng sa batho ba botsoa, ​​ho kenyeletsoa 'proto'-based backend framework, lithempleite tse sebelisoang hangata, le phetolelo ea lipuo tse ngata.
     short: Sesebelisoa se behiloeng bakeng sa batho ba botsoa
+    sync:
+        flags:
+            template-path: Mokhoa oa ho hokahanya template
+        long: Amahanya tlhophiso ho tsoa pheletsong e hole 'me u e kopanye le tlhophiso ea lehae Faele ea template e tšehetsoa ka nako e ts'oanang nakong ea khokahano (haeba e hlophisitsoe).
+        short: Amahanya tlhophiso ho tsoa hole
+    up-mod:
+        flags:
+            goproxy: Hlalosa aterese ea goproxy, haeba ho se joalo, ho tla sebelisoa ea pele ho feto-fetoha ha tikoloho
+        long: Ntlafatsa mofuta oa ho itšetleha ka faele ea go.mod
+        short: Ntlafatsa faele ea go.mod
+lang:
+    af: Seafrikanse
+    ak: Se-Twi (Akan)
+    am: Seamharic
+    ar: Searabia
+    as: Seassamese
+    ay: Aymara
+    az: Se-Azerbaijani
+    be: Sebelarusia
+    bg: Se-Bulgaria
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Benghali
+    bs: Sebosnia
+    ca: Secatalan
+    ceb: Sebuano
+    ckb: Sekurdish (Sorani)
+    co: Corsican
+    cs: Czech
+    cy: Welsh
+    da: danish
+    de: Sejeremane
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Segerike
+    en: Senyesemane
+    eo: Esperanto
+    es: sepanishe
+    et: Seestonia
+    eu: basque
+    fa: Sepersia
+    fi: Sefinnishe
+    fil: Sefilipino (Tagalog)
+    fr: Sefora
+    fy: Sefrisia
+    ga: irish
+    gd: Segaeli sa Scotland
+    gl: Segalician
+    gn: Guaraní
+    gom: puo ya gonggan
+    gu: Segujarati
+    ha: Hausa
+    haw: Sehawai
+    he: seheberu
+    hi: Sehindi
+    hmn: Hmong
+    hr: Secroatia
+    ht: Secreole sa Haiti
+    hu: sehungary
+    hy: Searmenia
+    id: Seindonesia
+    ig: Igbo
+    ilo: Ilocano
+    is: Seiceland
+    it: Setaliana
+    iw: seheberu
+    ja: Sejapane
+    jv: Se-Javanese
+    jw: Se-Javanese
+    ka: Segeorgia
+    kk: Kazakh
+    km: Se-Cambodia
+    kn: Kannada
+    ko: Sekorea
+    kri: Secreole
+    ku: Sekurdish
+    ky: Sekyrgyz
+    la: Selatine
+    lb: Se-Luxembourgish
+    lg: Luganda
+    ln: Selingala
+    lo: Lao
+    lt: Selithuania
+    lus: Mizo
+    lv: Selatvia
+    mai: Maithili
+    mg: Semalagasy
+    mi: Semaori
+    mk: Semacedonia
+    ml: Semalayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Semalay
+    mt: Semalta
+    my: Seburmese
+    ne: tsa Nepali
+    nl: Se-Dutch
+    "no": tsa norwegian
+    nso: Sepeti
+    ny: Senyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Sepunjabi
+    pl: Sepolishe
+    ps: Sepashto
+    pt: Sepotoketsi (Portugal, Brazil)
+    qu: Se-Quechua
+    ro: Seromania
+    ru: Serussia
+    rw: Sekinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Seslovak
+    sl: Seslovenia
+    sm: Sesamoa
+    sn: Seshona
+    so: Somalia
+    sq: Sealbania
+    sr: Seserbia
+    st: Sesotho
+    su: Sesundanese
+    sv: Seswedishe
+    sw: Seswahili
+    ta: tamil
+    te: telugu
+    tg: Se-Tajik
+    th: Sethai
+    ti: Tignan
+    tk: Turkmen
+    tl: Setagalog (Sefilipino)
+    tr: turkey
+    ts: Dzonga
+    tt: Setatare
+    ug: Uighur
+    uk: Seukraine
+    ur: Seurdu
+    uz: Seuzbek
+    vi: Se-Vietnamese
+    xh: puo ya batho
+    yi: Yiddish
+    yo: yoruba
+    zh: Sechaena
+    zh-chs: Sechaena (Se Nolofalitsoeng)
+    zh-cht: Sechaena (Se Nolofalitsoeng)
+    zh-cn: Sechaena (Se Nolofalitsoeng)
+    zh-hk: Sechaena (Hong Kong)
+    zh-mo: Sechaena(Macau)
+    zh-sg: Sechaena (Singapore)
+    zh-tw: Sechaena (Taiwan)
+    zu: Sezulu

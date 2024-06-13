@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Monokia nga tohutohu whakaotinga
+        long: |
+            Ka whakaputa i te tuhinga whakaoti-aunoa mo {{.RootName}} mo te anga kua tohua.
+        short: Hangaia he tuhinga whakaoti aunoa mo te anga kua tohua
+        subcommand:
+            short: Hangaia te tuhinga whakaoti aunoa mo {{.Whakahaua}}
     flags:
         debug: Putanga rangitaki taipitopito
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Ko nga mahi katoa e pa ana ki te whakaputa ripanga mo te rauemi tuuturu, te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
             short: Nga mahi katoa e pa ana mo te whakaputa ripanga
+    group:
+        gen: hanga waehere
     help:
         additional_commands: Nga whakahau taapiri
         aliases: tono ingoakē
@@ -94,10 +104,18 @@ cli:
         flags: tawhā
         get_info: ki te tiki atu i nga korero taipitopito
         global_flags: tawhā ao
+        long: 'Ko te awhina he awhina mo tetahi tono i roto i te tono. '
+        short: Awhina mo tetahi whakahau
+        usage: Nga tohutohu mo te whakamahi i a {{.Name}}
         use: whakamahi
     i18n:
         long: He kete taputapu e pa ana ki te ao maha
         short: He kete taputapu e pa ana ki te ao maha
+        support:
+            flags:
+                language: Tauwhāitihia te reo hei whakaatu, ki te kore ka whakamahia te waehere reo hei whakaatu i te reo
+            long: Whakarārangihia nga reo tautoko katoa
+            short: Rarangi reo tautoko
         tran:
             flags:
                 all-language: Whakamaoritia nga reo tautoko katoa (mehemea he pono kua monoa te kara reo)
@@ -114,3 +132,156 @@ cli:
             short: whakamaori
     long: He huinga taputapu mo te hunga mangere, tae atu ki te anga-whakamuri o te 'proto', nga tauira e whakamahia nuitia ana, me te whakamaoritanga reo-maha
     short: He huinga taputapu mo te hunga mangere
+    sync:
+        flags:
+            template-path: ara tukutahi tauira
+        long: Tukutahitia te whirihoranga mai i te pito mamao ka hanumi ki te whirihoranga paetata Ka tautokohia te konae tauira i te wa ano i te tukutahitanga (mehemea kua whirihora).
+        short: Tukutahi whirihoranga mai i tawhiti
+    up-mod:
+        flags:
+            goproxy: Tauwhāitihia te wāhitau goproxy, ki te kore, ka whakamahia te mea tuatahi o te taurangi taiao
+        long: Whakahoutia te putanga whakawhirinaki o te kōnae go.mod
+        short: Whakahoutia te kōnae go.mod
+lang:
+    af: Awherika
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Arapi
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Belarusian
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosniana
+    ca: Katarana
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Korihika
+    cs: Czech
+    cy: Welsh
+    da: danimana
+    de: Tiamana
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Kariki
+    en: Ingarihi
+    eo: Esperanto
+    es: Paniora
+    et: Estonian
+    eu: Basque
+    fa: Pahia
+    fi: Finiana
+    fil: Filipino (Tagalog)
+    fr: Wīwī
+    fy: Frisian
+    ga: Irish
+    gd: Scottish Gaelic
+    gl: Kariri
+    gn: Guaraní
+    gom: reo gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaii
+    he: Hiperu
+    hi: Hindi
+    hmn: Hmong
+    hr: Koroati
+    ht: Haiti Creole
+    hu: hungareana
+    hy: Arameina
+    id: Initonia
+    ig: Igbo
+    ilo: Ilokano
+    is: Tiorangi
+    it: Itariana
+    iw: Hiperu
+    ja: Hapanihi
+    jv: Hawaana
+    jw: Hawaana
+    ka: Georgian
+    kk: Kazakh
+    km: Cambodian
+    kn: Kannada
+    ko: Koreana
+    kri: Creole
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Latina
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Rao
+    lt: Lithuania
+    lus: Mizo
+    lv: Latvian
+    mai: Maitiri
+    mg: Maori
+    mi: Maori
+    mk: Makeronia
+    ml: Malayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marati
+    ms: Malay
+    mt: Marite
+    my: Burmese
+    ne: Nepali
+    nl: Tatimana
+    "no": nowehia
+    nso: Hepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Porohia
+    ps: Pashto
+    pt: Potiti (Portugal, Brazil)
+    qu: Quechua
+    ro: Romanian
+    ru: Ruhia
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: Sindhi
+    si: harahara
+    sk: Slovak
+    sl: Slovenian
+    sm: Hamoa
+    sn: Shona
+    so: Somali
+    sq: Albanian
+    sr: Serbian
+    st: Sesotho
+    su: Hatana
+    sv: Huitene
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: turkish
+    ts: Dzonga
+    tt: Tatara
+    ug: Uighur
+    uk: Iukereiniana
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamese
+    xh: reo awhina
+    yi: Yiddish
+    yo: Ioruba
+    zh: Hainamana
+    zh-chs: Hainamana (Whakamāmā)
+    zh-cht: Hainamana (Whakamāmā)
+    zh-cn: Hainamana (Whakamāmā)
+    zh-hk: Hainamana (Hong Kong)
+    zh-mo: Hainamana(Makau)
+    zh-sg: Hainamana (Singapore)
+    zh-tw: Hainamana tuku iho)
+    zu: Zulu

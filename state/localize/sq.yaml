@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Çaktivizo udhëzimet e përfundimit
+        long: |
+            Gjeneron një skript të plotësimit automatik për {{.RootName}} për guaskën e specifikuar.
+        short: Gjeneroni një skript të plotësimit automatik për guaskën e specifikuar
+        subcommand:
+            short: Gjeneroni skriptin e plotësimit automatik për {{.Command}}
     flags:
         debug: Nxjerr regjistrin e detajuar
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Të gjitha funksionet e ndërlidhura të gjenerimit të tabelave për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
             short: Të gjitha funksionet përkatëse për gjenerimin e tabelave
+    group:
+        gen: gjenerimi i kodit
     help:
         additional_commands: Komandat shtesë
         aliases: pseudonimi i komandës
@@ -94,10 +104,18 @@ cli:
         flags: parametri
         get_info: për të marrë informacion më të detajuar
         global_flags: parametrat globalë
+        long: 'Ndihma ofron ndihmë për çdo komandë në aplikacion. '
+        short: Ndihmoni për çdo komandë
+        usage: Udhëzime për përdorimin e {{.Name}}
         use: përdorni
     i18n:
         long: Paketa e mjeteve në lidhje me ndërkombëtarizimin shumëgjuhësh
         short: Paketa e mjeteve në lidhje me ndërkombëtarizimin shumëgjuhësh
+        support:
+            flags:
+                language: Specifikoni gjuhën që do të shfaqet, përndryshe kodi i gjuhës do të përdoret për të shfaqur gjuhën
+            long: Listoni të gjitha gjuhët e mbështetura
+            short: Lista e gjuhëve të mbështetura
         tran:
             flags:
                 all-language: Përkthe të gjitha gjuhët e mbështetura (nëse është e vërtetë, flamuri i gjuhëve është i çaktivizuar)
@@ -114,3 +132,156 @@ cli:
             short: përkthejnë
     long: Një grup mjetesh për njerëzit dembelë, duke përfshirë kornizën mbështetëse të bazuar në "proto", shabllone të përdorura zakonisht dhe përkthim në shumë gjuhë
     short: Një grup mjetesh për dembelët
+    sync:
+        flags:
+            template-path: Rruga e sinkronizimit të shabllonit
+        long: Sinkronizoni konfigurimin nga fundi i largët dhe bashkojeni atë në konfigurimin lokal Skedari i shabllonit mbështetet në të njëjtën kohë gjatë sinkronizimit (nëse konfigurohet).
+        short: Sinkronizoni konfigurimin nga telekomanda
+    up-mod:
+        flags:
+            goproxy: Specifikoni adresën e goproxy, nëse jo, do të përdoret e para në variablin e mjedisit
+        long: Përditëso versionin e varësisë së skedarit go.mod
+        short: Përditëso skedarin go.mod
+lang:
+    af: afrikane
+    ak: Twi (Akan)
+    am: amharike
+    ar: arabisht
+    as: asamez
+    ay: Aymara
+    az: Azerbajxhani
+    be: bjellorusisht
+    bg: bullgare
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengalisht
+    bs: boshnjake
+    ca: katalanas
+    ceb: Cebuano
+    ckb: kurde (sorani)
+    co: korsikane
+    cs: çeke
+    cy: Uellsisht
+    da: daneze
+    de: gjermanisht
+    doi: dogglai
+    dv: Dhivehi
+    ee: Dele
+    el: greke
+    en: anglisht
+    eo: Esperanto
+    es: Spanjisht
+    et: estoneze
+    eu: baske
+    fa: persisht
+    fi: finlandez
+    fil: filipinase (tagaloge)
+    fr: frëngjisht
+    fy: frizianisht
+    ga: irlandeze
+    gd: gaelishte skoceze
+    gl: Galician
+    gn: Guarani
+    gom: gjuha gongan
+    gu: guxharatisht
+    ha: Hausa
+    haw: Havajane
+    he: hebraike
+    hi: Hindi
+    hmn: Hmong
+    hr: kroate
+    ht: Kreole Haitiane
+    hu: hungareze
+    hy: armene
+    id: indonezisht
+    ig: Igbo
+    ilo: Ilocano
+    is: islandeze
+    it: italisht
+    iw: hebraike
+    ja: japoneze
+    jv: javaneze
+    jw: javaneze
+    ka: gjeorgjiane
+    kk: kazake
+    km: kamboxhiane
+    kn: kanadeze
+    ko: koreane
+    kri: Kreole
+    ku: kurde
+    ky: Kirgize
+    la: latinisht
+    lb: luksemburgase
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lituanisht
+    lus: Mizo
+    lv: Letonisht
+    mai: Maithili
+    mg: Malagazi
+    mi: Maori
+    mk: maqedonase
+    ml: malajalamisht
+    mn: mongolisht
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: malteze
+    my: birmaneze
+    ne: nepalisht
+    nl: holandeze
+    "no": norvegjeze
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punxhabi
+    pl: polonisht
+    ps: Pashto
+    pt: Portugeze (Portugali, Brazil)
+    qu: Keçua
+    ro: rumun
+    ru: rusisht
+    rw: Kinyarwanda
+    sa: sanskrite
+    sd: sindhi
+    si: sinhale
+    sk: sllovake
+    sl: slloven
+    sm: Samoan
+    sn: Shona
+    so: somalez
+    sq: shqiptare
+    sr: serb
+    st: Sesoto
+    su: sundanez
+    sv: suedeze
+    sw: Suahili
+    ta: tamile
+    te: telugu
+    tg: Taxhikisht
+    th: Thai
+    ti: Tignan
+    tk: turkmen
+    tl: Tagalogisht (Filipinisht)
+    tr: turk
+    ts: Dzonga
+    tt: tatar
+    ug: ujgure
+    uk: ukrainase
+    ur: urdu
+    uz: Uzbekistani
+    vi: vietnameze
+    xh: gjuha bantu
+    yi: Jidish
+    yo: joruba
+    zh: kineze
+    zh-chs: Kineze (e thjeshtuar)
+    zh-cht: Kineze (e thjeshtuar)
+    zh-cn: Kineze (e thjeshtuar)
+    zh-hk: Kinezisht (Hong Kong)
+    zh-mo: Kinezisht (Makao)
+    zh-sg: Kinezisht (Singapori)
+    zh-tw: kineze (Tajvan)
+    zu: Zulu

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tugatish ko'rsatmalarini o'chirib qo'ying
+        long: |
+            Belgilangan qobiq uchun {{.RootName}} uchun avtomatik toʻldirish skriptini yaratadi.
+        short: Belgilangan qobiq uchun avtomatik to'ldirish skriptini yarating
+        subcommand:
+            short: '{{.Command}} uchun avtomatik toʻldirish skriptini yaratish'
     flags:
         debug: Batafsil jurnalni chiqarish
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Biznes xizmatlarining statistik manbalari yoki statik resurslarini boshqarish uchun jadvallarni yaratishning barcha tegishli funktsiyalari
             short: Jadvallarni yaratish uchun barcha tegishli funktsiyalar
+    group:
+        gen: kod ishlab chiqarish
     help:
         additional_commands: Qo'shimcha buyruqlar
         aliases: buyruq taxallus
@@ -94,10 +104,18 @@ cli:
         flags: parametr
         get_info: batafsil ma'lumot olish uchun
         global_flags: global parametrlar
+        long: 'Yordam ilovadagi har qanday buyruq uchun yordam beradi. '
+        short: Har qanday buyruq bo'yicha yordam
+        usage: '{{.Name}} dan foydalanish boʻyicha koʻrsatmalar'
         use: foydalanish
     i18n:
         long: Ko'p tilli xalqarolashtirish bilan bog'liq asboblar to'plami
         short: Ko'p tilli xalqarolashtirish bilan bog'liq asboblar to'plami
+        support:
+            flags:
+                language: Ko'rsatish uchun tilni belgilang, aks holda tilni ko'rsatish uchun til kodi ishlatiladi
+            long: Barcha qo'llab-quvvatlanadigan tillarni sanab o'ting
+            short: Qo'llab-quvvatlanadigan tillar ro'yxati
         tran:
             flags:
                 all-language: Barcha qo'llab-quvvatlanadigan tillarni tarjima qiling (agar rost bo'lsa, tillar bayrog'i o'chirilgan bo'lsa)
@@ -114,3 +132,156 @@ cli:
             short: tarjima qiling
     long: Dangasa odamlar uchun asboblar to'plami, jumladan "proto"-ga asoslangan backend ramkasi, tez-tez ishlatiladigan andozalar va ko'p tilli tarjima
     short: Dangasa odamlar uchun asboblar to'plami
+    sync:
+        flags:
+            template-path: Shablonni sinxronlashtirish yo'li
+        long: Konfiguratsiyani masofaviy uchidan sinxronlashtiring va uni mahalliy konfiguratsiyaga birlashtiring. Sinxronizatsiya paytida shablon fayli bir vaqtning o'zida qo'llab-quvvatlanadi (agar sozlangan bo'lsa).
+        short: Masofadan turib konfiguratsiyani sinxronlash
+    up-mod:
+        flags:
+            goproxy: Goproxy manzilini ko'rsating, agar bo'lmasa, muhit o'zgaruvchisidagi birinchisi ishlatiladi
+        long: Go.mod faylining qaramlik versiyasini yangilang
+        short: go.mod faylini yangilang
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: Amhar
+    ar: arabcha
+    as: Assam
+    ay: Aymara
+    az: ozarbayjon
+    be: belarus
+    bg: bolgar
+    bho: Bxojpuri
+    bm: Bambara
+    bn: bengal
+    bs: bosniyalik
+    ca: katalan
+    ceb: Sebuano
+    ckb: Kurd (Sorani)
+    co: Korsika
+    cs: chex
+    cy: uels
+    da: daniyalik
+    de: nemis
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: yunoncha
+    en: Ingliz
+    eo: Esperanto
+    es: ispancha
+    et: eston
+    eu: bask
+    fa: forscha
+    fi: fin
+    fil: Filippin (tagalog)
+    fr: frantsuz
+    fy: frizcha
+    ga: irland
+    gd: Shotlandiya gael tili
+    gl: Galisian
+    gn: Guarani
+    gom: gonggan tili
+    gu: gujarati
+    ha: Hausa
+    haw: Gavayi
+    he: ibroniy
+    hi: hind
+    hmn: Hmong
+    hr: xorvat
+    ht: Gaiti kreoli
+    hu: venger
+    hy: arman
+    id: indonez
+    ig: Igbo
+    ilo: Ilokano
+    is: island
+    it: italyancha
+    iw: ibroniy
+    ja: yapon
+    jv: yava
+    jw: yava
+    ka: gruzin
+    kk: qozoq
+    km: Kambodja
+    kn: Kannada
+    ko: koreys
+    kri: kreol
+    ku: kurd
+    ky: qirg'iz
+    la: lotin
+    lb: Lyuksemburgcha
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: litva
+    lus: Mizo
+    lv: latviyalik
+    mai: Maithili
+    mg: malagasy
+    mi: maori
+    mk: makedon
+    ml: Malayalam
+    mn: mo'g'ul
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: malay
+    mt: malta
+    my: Birma
+    ne: Nepal
+    nl: golland
+    "no": norveg
+    nso: Sepeti
+    ny: Nyanza (Chicheva)
+    om: Oromo
+    or: Oriya (Odiya)
+    pa: panjob
+    pl: polyak
+    ps: Pushtu
+    pt: Portugal (Portugaliya, Braziliya)
+    qu: Kechua
+    ro: rumin
+    ru: rus
+    rw: Kinyarvanda
+    sa: sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: slovak
+    sl: sloven
+    sm: Samoa
+    sn: Shona
+    so: Somali
+    sq: alban
+    sr: serb
+    st: Sesoto
+    su: sundan
+    sv: shvedcha
+    sw: suahili
+    ta: tamil
+    te: telugu
+    tg: tojik
+    th: tay
+    ti: Tignan
+    tk: turkman
+    tl: Tagalog (Filippin)
+    tr: turkcha
+    ts: Dzonga
+    tt: tatar
+    ug: uyg'ur
+    uk: ukrain
+    ur: urdu
+    uz: o'zbek
+    vi: Vetnam
+    xh: bantu tili
+    yi: Yahudiy
+    yo: yoruba
+    zh: Xitoy
+    zh-chs: Xitoy (soddalashtirilgan)
+    zh-cht: Xitoy (soddalashtirilgan)
+    zh-cn: Xitoy (soddalashtirilgan)
+    zh-hk: Xitoy (Gonkong)
+    zh-mo: Xitoy (Makao)
+    zh-sg: Xitoy (Singapur)
+    zh-tw: Xitoy (Tayvan)
+    zu: Zulu

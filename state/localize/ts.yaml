@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tirhisa swiletelo swo hetisa
+        long: |
+            Ku tumbuluxa xitshuriwa xo hetisisa hi xoxe xa {{.RootName}} xa xikhegelo lexi boxiweke.
+        short: Endla tsalwa ra autocomplete ra xikhegelo lexi boxiweke
+        subcommand:
+            short: Endla xitshuriwa xo hetisisa hi xoxe xa {{.Xileriso}} .
     flags:
         debug: Vuhumelerisi bya vuxokoxoko bya log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Mintirho hinkwayo leyi fambelanaka ya ku tumbuluxa matafula ya switirhisiwa swa xiyimo kumbe vulawuri bya switirhisiwa leswi nga cinciki swa vukorhokeri bya bindzu
             short: Mintirho hinkwayo leyi fambelanaka yo tumbuluxa matafula
+    group:
+        gen: ku tumbuluxiwa ka khodi
     help:
         additional_commands: Swileriso leswi engetelekeke
         aliases: vito ra xileriso
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: ku kuma vuxokoxoko lebyi engetelekeke
         global_flags: tipharamitha ta misava hinkwayo
+        long: 'Mpfuneto wu nyika mpfuneto eka xileriso xin’wana na xin’wana eka xitirhisiwa. '
+        short: Pfuna eka xileriso xin’wana ni xin’wana
+        usage: Swiletelo swo tirhisa {{.Name}} .
         use: tirhisa
     i18n:
         long: Xitirhisiwa lexi fambelanaka na ku hlanganisiwa ka tindzimi to tala ta matiko ya misava
         short: Xitirhisiwa lexi fambelanaka na ku hlanganisiwa ka tindzimi to tala ta matiko ya misava
+        support:
+            flags:
+                language: Boxa ririmi leri u nga ta ri kombisa, handle ka sweswo khodi ya ririmi yi ta tirhisiwa ku kombisa ririmi
+            long: Xaxameta tindzimi hinkwato leti seketeriwaka
+            short: Nxaxamelo wa tindzimi leti seketeriwaka
         tran:
             flags:
                 all-language: Hundzuluxela tindzimi hinkwato leti seketeriwaka (loko ku ri ntiyiso mujeko wa tindzimi wu pfaleriwile)
@@ -114,3 +132,156 @@ cli:
             short: hundzuluxa
     long: Xitirhisiwa lexi vekiweke eka vanhu vo loloha, ku katsa na rimba ra le ndzhaku leri simekiweke eka ‘proto’, tithempleyiti leti tirhisiwaka ngopfu, na vuhundzuluxi bya tindzimi to tala
     short: Xitirhisiwa lexi vekiweke eka vanhu lava lolohaka
+    sync:
+        flags:
+            template-path: Ndlela ya ku fambisana ka xifaniso
+        long: Hlanganisa vukorhokeri ku suka emakumu ya le kule ivi u byi hlanganisa eka vukorhokeri bya laha kaya Fayili ya xifaniso yi seketeriwa hi nkarhi wun’we hi nkarhi wa ku fambisana (loko yi lulamisiwile).
+        short: Fambisanisa vukorhokeri ku suka eka remote
+    up-mod:
+        flags:
+            goproxy: Boxa adirese ya goproxy, loko swi nga ri tano, yo sungula eka xihlawulekisi xa mbango yi ta tirhisiwa
+        long: Pfuxeta vuhundzuluxeri bya ku titshega bya fayili ya go.mod
+        short: Pfuxeta fayili ya go.mod
+lang:
+    af: Xiafrikaans
+    ak: Twi (Akan) .
+    am: Xiamharic
+    ar: Xiarabu
+    as: Assamese
+    ay: Aymara
+    az: Xiazerbaijan
+    be: Xibelarus
+    bg: Xibulgaria
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Xibengali
+    bs: Xibosnia
+    ca: Xicatalan
+    ceb: Xicebuano xa Xicebuano
+    ckb: Xikurd (Xisorani) .
+    co: Xicorsica
+    cs: Xiczech
+    cy: Xiwalese
+    da: xidanish
+    de: Xijarimani
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Xigriki
+    en: Xinghezi
+    eo: Xiesperanto xa Xiesperanto
+    es: Spanish
+    et: Xiestonia
+    eu: xibasque
+    fa: Xiperesiya
+    fi: Xifinixi
+    fil: Xifilipino (Xitagalog) .
+    fr: Xifurwa
+    fy: Xifrisian
+    ga: xi-irish
+    gd: Xigaelic xa le Scotland
+    gl: Xigalicia
+    gn: Guarani
+    gom: ririmi ra gongan
+    gu: xigujarati
+    ha: Xihausa
+    haw: Xihawaii
+    he: xiheveru
+    hi: Xihindi
+    hmn: Xihmong
+    hr: Xicroatia
+    ht: Xicreole xa Xihaiti
+    hu: xihungary
+    hy: Xiarmenia
+    id: Xiindonesia
+    ig: Xiigbo
+    ilo: Ilocano
+    is: Xi-Iceland
+    it: Xintariyana
+    iw: xiheveru
+    ja: Xijapani
+    jv: Xijava
+    jw: Xijava
+    ka: Xigeorgia
+    kk: Xikazakh
+    km: Xicambodia xa Xicambodia
+    kn: Xikannada
+    ko: Xikorea
+    kri: Xicreole xa Xicreole
+    ku: Xikurd
+    ky: Xikyrgyz
+    la: Xilatini
+    lb: Xiluxembourg
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Xilithuania
+    lus: Mizo
+    lv: Xilatvia
+    mai: Maithili
+    mg: Ximalagasy
+    mi: Maori
+    mk: Ximakedoniya
+    ml: Ximalayalam
+    mn: Ximongolia
+    mni-mtei: Meitei (Manipuri) .
+    mr: marathi
+    ms: Ximalay
+    mt: Ximalta
+    my: Xiburma
+    ne: Xinepali
+    nl: Xidachi
+    "no": xi-norway
+    nso: Sepeti
+    ny: Nyanza (Xichichewa) .
+    om: Oromo
+    or: Xioriya (Xiodia) .
+    pa: xipunjabi
+    pl: Xipolish
+    ps: Xipashto
+    pt: Xiputukezi (Xiputugal, Brazil) .
+    qu: Quechua
+    ro: Xiromania
+    ru: Xirhaxiya
+    rw: Xikinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: xivulavulelo xa sinhala
+    sk: Xislovakia
+    sl: xi-slovenian
+    sm: Xisamoa
+    sn: Xishona
+    so: Xisomalia
+    sq: Xialbania
+    sr: Xiserbia
+    st: Xitsonga
+    su: Xisundani
+    sv: Xisweden
+    sw: Xiswahili
+    ta: xitamil
+    te: telugu
+    tg: Xitajiki
+    th: Xithailand
+    ti: Tignan
+    tk: Turkmen
+    tl: Xitagalog (Xifilipino) .
+    tr: xiturkey
+    ts: Dzonga
+    tt: Xitatar
+    ug: Xiuighur xa xirhendzevutani
+    uk: Xiukraine
+    ur: Xiurdu
+    uz: Xiuzbek
+    vi: Xivietnam
+    xh: ririmi ra bantu
+    yi: Xiyiddish
+    yo: xiyoruba
+    zh: Xichayina
+    zh-chs: Xichayina (Xi oloviwe) .
+    zh-cht: Xichayina (Xi oloviwe) .
+    zh-cn: Xichayina (Xi oloviwe) .
+    zh-hk: Xichayina (Hong Kong) .
+    zh-mo: Xichayina(Macau) .
+    zh-sg: Xichayina (Singapore) .
+    zh-tw: Xichayina (Taiwan) .
+    zu: Xizulu

@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Desactiva les instruccions de finalització
+        long: |
+            Genera un script d'autocompletar per a {{.RootName}} per al shell especificat.
+        short: Genereu un script d'autocompletar per al shell especificat
+        subcommand:
+            short: Genera un script d'emplenament automàtic per a {{.Command}}
     flags:
         debug: Sortida del registre detallat
     gen:
@@ -42,13 +50,13 @@ cli:
             tables-enable_field_deleted_at: Si s'ha d'activar la configuració predeterminada del camp deleted_at a la base de dades
             tables-enable_field_id: Habiliteu la generació de configuració predeterminada per als camps relacionats amb la base de dades
             tables-enable_field_updated_at: Si s'ha d'activar el valor predeterminat del camp updated_at a la base de dades
-            tables-enable_gorm_tag_column: Si s'habilita la generació de gorm relacionada amb la base de dades
+            tables-enable_gorm_tag_column: Si s'ha d'activar la generació de gorm relacionada amb la base de dades
         gitignote:
             long: Genereu fitxers .gitignore per a la gestió de fitxers ignorats en el control de versions
             short: Genera un fitxer .gitignore
         golang-lint:
             long: Genereu un fitxer .golangci.yml per a la inspecció de la qualitat del codi
-            short: Genera un fitxer .golangci.yml
+            short: Genereu el fitxer .golangci.yml
         goreleaser:
             long: Genereu el fitxer .goreleaser.yml per a la configuració de les eines de llançament
             short: Genereu el fitxer .goreleaser.yml
@@ -73,7 +81,7 @@ cli:
             flags:
                 cache: Si s'ha d'activar la generació relacionada amb la memòria cau
                 config: Si s'ha de generar codi relacionat amb la configuració
-                i18n: Si s'activa la generació relacionada amb diversos idiomes (la generació només inclou la inicialització de l'estat i altres continguts, i no inclou la traducció automàtica de diversos idiomes. Si necessiteu una traducció automàtica, utilitzeu {{.Command}} per veure'n els detalls)
+                i18n: Si s'ha d'activar la generació relacionada amb diversos idiomes (la generació només inclou la inicialització de l'estat i altres continguts, i no inclou la traducció automàtica de diversos idiomes. Si necessiteu una traducció automàtica, utilitzeu {{.Command}} per veure'n els detalls)
                 table: Si s'ha d'activar la generació de bases de dades relacionades amb la base de dades
             i18n:
                 long: Genereu codi relacionat amb i18n per a trucades internacionals en diversos idiomes
@@ -82,10 +90,12 @@ cli:
             short: Totes les funcions rellevants per generar l'estat
             table:
                 long: Genereu codi relacionat amb state.table, utilitzat per a la connexió de la base de dades i la inicialització de la taula quan s'inicia el servei.
-                short: Genera codi relacionat state.table
+                short: Genera codi relacionat amb state.table
         table:
             long: Totes les funcions relacionades de generació de taules per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
             short: Totes les funcions relacionades per generar taules
+    group:
+        gen: generació de codi
     help:
         additional_commands: Ordres addicionals
         aliases: àlies de comanda
@@ -94,10 +104,18 @@ cli:
         flags: paràmetre
         get_info: per obtenir informació més detallada
         global_flags: paràmetres globals
+        long: 'Proporcioneu instruccions d''ús per a qualsevol comanda de l''aplicació. '
+        short: Instruccions per utilitzar qualsevol comanda
+        usage: Instruccions per utilitzar {{.Name}}
         use: utilitzar
     i18n:
         long: Kit d'eines multilingües relacionades amb la internacionalització
         short: Kit d'eines multilingües relacionades amb la internacionalització
+        support:
+            flags:
+                language: Especifiqueu l'idioma a mostrar, en cas contrari, el codi d'idioma s'utilitzarà per mostrar l'idioma
+            long: Llista tots els idiomes compatibles
+            short: Llista d'idiomes compatibles
         tran:
             flags:
                 all-language: Tradueix tots els idiomes admesos (si és cert, el senyalador d'idiomes està desactivat)
@@ -114,3 +132,156 @@ cli:
             short: traduir
     long: Un conjunt d'eines per a gent mandrosa, que inclou un marc de backend basat en "proto", plantilles d'ús habitual i traducció en diversos idiomes
     short: Un conjunt d'eines per a mandrosos
+    sync:
+        flags:
+            template-path: Camí de sincronització de plantilles
+        long: Sincronitzeu la configuració des de l'extrem remot i fusioneu-la amb la configuració local. El fitxer de plantilla és compatible al mateix temps durant la sincronització (si està configurat).
+        short: Sincronitza la configuració des del control remot
+    up-mod:
+        flags:
+            goproxy: Especifiqueu l'adreça de goproxy, si no, s'utilitzarà la primera de la variable d'entorn
+        long: Actualitzeu la versió de dependència del fitxer go.mod
+        short: Actualitza el fitxer go.mod
+lang:
+    af: Afrikàans
+    ak: Twi (Akan)
+    am: amàric
+    ar: àrab
+    as: assameses
+    ay: aimara
+    az: azerbaidjana
+    be: Bielorús
+    bg: búlgar
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalí
+    bs: bosnià
+    ca: català
+    ceb: Cebuà
+    ckb: kurd (sorani)
+    co: Cors
+    cs: txec
+    cy: gal·lès
+    da: danès
+    de: alemany
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ovella
+    el: grec
+    en: Anglès
+    eo: esperanto
+    es: espanyol
+    et: estonià
+    eu: basc
+    fa: persa
+    fi: finès
+    fil: filipí (tagalog)
+    fr: francès
+    fy: frisó
+    ga: irlandesa
+    gd: Gaèlic escocès
+    gl: gallec
+    gn: guaraní
+    gom: llengua gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: hawaiana
+    he: hebreu
+    hi: hindi
+    hmn: Hmong
+    hr: croat
+    ht: crioll haitiano
+    hu: hongarès
+    hy: armeni
+    id: indonesi
+    ig: Igbo
+    ilo: Ilocano
+    is: islandès
+    it: italià
+    iw: hebreu
+    ja: japonès
+    jv: javanès
+    jw: javanès
+    ka: georgiana
+    kk: Kazakh
+    km: Cambodjana
+    kn: Kannada
+    ko: coreà
+    kri: crioll
+    ku: kurd
+    ky: kirguis
+    la: llatí
+    lb: luxemburguesa
+    lg: Luganda
+    ln: lingala
+    lo: Lao
+    lt: lituà
+    lus: Mizo
+    lv: letó
+    mai: Maithili
+    mg: malgaxe
+    mi: Maori
+    mk: macedoni
+    ml: malayalam
+    mn: mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malai
+    mt: maltès
+    my: birmà
+    ne: nepalí
+    nl: holandès
+    "no": noruec
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: polonès
+    ps: Paxto
+    pt: Portuguès (Portugal, Brasil)
+    qu: Quechua
+    ro: romanès
+    ru: rus
+    rw: kinyarwanda
+    sa: sànscrit
+    sd: sindhi
+    si: sinhala
+    sk: eslovac
+    sl: eslovena
+    sm: samoà
+    sn: Shona
+    so: Somali
+    sq: albanès
+    sr: serbi
+    st: Sesotho
+    su: Sundanès
+    sv: suec
+    sw: suahili
+    ta: tamil
+    te: telugu
+    tg: Tadjik
+    th: tailandès
+    ti: Tignan
+    tk: turcomà
+    tl: Tagalog (filipí)
+    tr: turc
+    ts: Dzonga
+    tt: Tàrtar
+    ug: uigur
+    uk: Ucraïnès
+    ur: Urdú
+    uz: Uzbek
+    vi: vietnamita
+    xh: llengua bantú
+    yi: Yiddish
+    yo: ioruba
+    zh: xinès
+    zh-chs: Xinès (simplificat)
+    zh-cht: Xinès (simplificat)
+    zh-cn: Xinès (simplificat)
+    zh-hk: Xinès (Hong Kong)
+    zh-mo: Xinès (Macau)
+    zh-sg: Xinès (Singapur)
+    zh-tw: xinés tradicional)
+    zu: Zulu

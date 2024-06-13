@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Letsani malangizo omaliza
+        long: |
+            Amapanga mawu omaliza a {{.RootName}} pa chipolopolo chomwe mwasankha.
+        short: Pangani zolemba zomaliza zokha za chipolopolo chomwe mwatchulidwa
+        subcommand:
+            short: Pangani zolemba zokha za {{.Command}}
     flags:
         debug: Kutulutsa mwatsatanetsatane chipika
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Ntchito zonse zokhudzana ndi kupanga matebulo azinthu zodziwika bwino kapena kasamalidwe kazinthu zamabizinesi
             short: Ntchito zonse zokhudzana ndi kupanga matebulo
+    group:
+        gen: kupanga kodi
     help:
         additional_commands: Malamulo owonjezera
         aliases: command alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: kuti mudziwe zambiri
         global_flags: magawo apadziko lonse lapansi
+        long: 'Thandizo limapereka chithandizo ku lamulo lililonse muzogwiritsira ntchito. '
+        short: Thandizo pa lamulo lililonse
+        usage: Malangizo ogwiritsira ntchito {{.Name}}
         use: ntchito
     i18n:
         long: Multilingual internationalization related toolkit
         short: Multilingual internationalization related toolkit
+        support:
+            flags:
+                language: Tchulani chinenero chosonyeza, apo ayi chinenerocho chidzagwiritsidwa ntchito kusonyeza chinenerocho
+            long: Lembani zinenero zonse zothandizira
+            short: Mndandanda wa chinenero chothandizira
         tran:
             flags:
                 all-language: Tanthauzirani zilankhulo zonse zothandizira (ngati zowona mbendera ya zilankhulo yayimitsidwa)
@@ -114,3 +132,156 @@ cli:
             short: masulira
     long: Chida chokhazikitsidwa ndi anthu aulesi, kuphatikiza 'proto'-based backend framework, ma tempuleti omwe amagwiritsidwa ntchito kwambiri, komanso kumasulira zilankhulo zambiri.
     short: Chida chokhazikitsidwa kwa anthu aulesi
+    sync:
+        flags:
+            template-path: Template synchronization njira
+        long: Gwirizanitsani kasinthidwe kuchokera kumalekezero akutali ndikuphatikiza ndi kasinthidwe akomweko Fayilo ya template imathandizidwa nthawi yomweyo pakuyanjanitsa (ngati kukonzedwa)
+        short: Gwirizanitsani kasinthidwe kuchokera kutali
+    up-mod:
+        flags:
+            goproxy: Tchulani adilesi ya goproxy, ngati sichoncho, yoyamba pakusintha kwachilengedwe idzagwiritsidwa ntchito
+        long: Sinthani mtundu wodalira wa fayilo ya go.mod
+        short: Sinthani fayilo ya go.mod
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Chiamharic
+    ar: Chiarabu
+    as: Chiassamese
+    ay: Ayimara
+    az: Chiazerbaijani
+    be: Chibelarusi
+    bg: Chibugariya
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Chibengali
+    bs: Chibosnia
+    ca: Chikatalani
+    ceb: Cebuano
+    ckb: Chikurdi (Sorani)
+    co: Chikosikani
+    cs: Chicheki
+    cy: Chiwelesi
+    da: danish
+    de: Chijeremani
+    doi: doglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Chigriki
+    en: Chingerezi
+    eo: Chiesperanto
+    es: Spanish
+    et: Chiestonia
+    eu: basque
+    fa: Chiperisi
+    fi: Chifinishi
+    fil: Chifilipino (Tagalog)
+    fr: Chifalansa
+    fy: Chifrisian
+    ga: ayi
+    gd: Scottish Gaelic
+    gl: Chigalikiya
+    gn: Guarani
+    gom: chinenero cha gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Chihawai
+    he: Chihebri
+    hi: Chihindi
+    hmn: Hmong
+    hr: Chikroatia
+    ht: Chikiliyo cha ku Haiti
+    hu: wachi Hungary
+    hy: Chiameniya
+    id: Chi Indonesian
+    ig: Igbo
+    ilo: Ilocano
+    is: Chi Icelandic
+    it: Chitaliyana
+    iw: Chihebri
+    ja: Chijapani
+    jv: Chijavani
+    jw: Chijavani
+    ka: Chijojiya
+    kk: Kazakh
+    km: Chi Cambodian
+    kn: Kanada
+    ko: Chikorea
+    kri: Chikiliyoli
+    ku: Chikurdi
+    ky: Kyrgyz
+    la: Chilatini
+    lb: ChiLuxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Chilithuania
+    lus: Mizo
+    lv: Chilativiya
+    mai: Maithili
+    mg: Chimalagasi
+    mi: Chimaori
+    mk: Chimakedoniya
+    ml: Malayalam
+    mn: Chimongoliya
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Chimalayi
+    mt: Chimalta
+    my: Chibama
+    ne: Chinepali
+    nl: Chidatchi
+    "no": wachinorwe
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Chipolishi
+    ps: Pashto
+    pt: Chipwitikizi (Portugal, Brazil)
+    qu: Chiquechua
+    ro: Chiromania
+    ru: Chirasha
+    rw: Chinyarwanda
+    sa: Sanskrit
+    sd: sindi
+    si: sinhala
+    sk: Chisilovaki
+    sl: Chisilovenia
+    sm: Chisamoa
+    sn: Chishona
+    so: Somalia
+    sq: Chialubaniya
+    sr: Chisebiya
+    st: Sesotho
+    su: Chisundanese
+    sv: Chiswidishi
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajiki
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Chitagalog (Chifilipino)
+    tr: Turkey
+    ts: Dzonga
+    tt: Chitata
+    ug: Uighur
+    uk: Chiyukireniya
+    ur: Chiurdu
+    uz: Chiuzbeki
+    vi: Vietnamese
+    xh: Bantu language
+    yi: Chiyidi
+    yo: yoruba
+    zh: Chitchainizi
+    zh-chs: Chitchainizi (chosavuta)
+    zh-cht: Chitchainizi (chosavuta)
+    zh-cn: Chitchainizi (chosavuta)
+    zh-hk: Chitchaina (Hong Kong)
+    zh-mo: Chitchaina (Macau)
+    zh-sg: Chitchaina (Singapore)
+    zh-tw: Chinese Chinese)
+    zu: Chizulu

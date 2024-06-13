@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Désactiver ba instructions ya kosilisa
+        long: |
+            Ezali kobimisa script ya autocomplete mpo na {{.RootName}} mpo na shell oyo elakisami.
+        short: Bosala script ya autocomplete pona shell oyo elakisami
+        subcommand:
+            short: Bosala script ya autocomplete pona {{.Command}} .
     flags:
         debug: Sortie journal détaillé
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Misala nionso oyo etali yango ya kobimisa ba tableaux pona gestion ya ressource état to gestion ya ressource statique ya ba services d'affaires
             short: Ba fonctions nionso oyo etali yango pona ko générer ba tableaux
+    group:
+        gen: bokeli ya code
     help:
         additional_commands: Ba commandes ya kobakisa
         aliases: alias ya komande
@@ -94,10 +104,18 @@ cli:
         flags: paramètre
         get_info: mpo na kozwa makambo mosusu ya sikisiki
         global_flags: ba paramètres ya mokili mobimba
+        long: 'Lisalisi epesaka lisalisi mpo na etinda nyonso oyo ezali na kati ya programɛ. '
+        short: Salisa na etinda nyonso
+        usage: Malako mpo na kosalela {{.Nkombo}}
         use: kosalela
     i18n:
         long: Bokumbi bisaleli oyo etali internationalisation multilingue
         short: Bokumbi bisaleli oyo etali internationalisation multilingue
+        support:
+            flags:
+                language: Lakisa monoko oyo osengeli kolakisa, soki te code ya monoko ekosalelama mpo na kolakisa monoko
+            long: Tángá minɔkɔ nyonso oyo esungami
+            short: Liste ya minoko oyo esungami
         tran:
             flags:
                 all-language: Bobongola minoko nyonso oyo esungami (soki ezali solo drapeau ya minoko ekangami)
@@ -114,3 +132,156 @@ cli:
             short: kobongola
     long: Esaleli oyo ebongisami mpo na bato ya paresseux, bakisa mpe cadre ya sima oyo esalemi na ‘proto’, ba modèles oyo basalelaka mingi, mpe bobongoli ya minoko mingi
     short: Ensemble ya esaleli mpo na bato ya paresseux
+    sync:
+        flags:
+            template-path: Nzela ya synchronisation ya modèle
+        long: Synchroniser configuration uta na suka ya mosika mpe kosangisa yango na configuration locale Fisyé ya modèle esungami na tango moko na tango ya synchronisation (soki e configuré).
+        short: Synchroniser configuration depuis télécommande
+    up-mod:
+        flags:
+            goproxy: Lakisa adresse ya goproxy, soki te, oyo ya liboso na variable ya environnement ekosalelama
+        long: Mikolo oyo version ya dépendance ya fichier go.mod
+        short: Mikolo oyo fichier go.mod
+lang:
+    af: Liloba ya Afrika
+    ak: Twi (Akan) .
+    am: Na monɔkɔ ya Amharique
+    ar: Arabe
+    as: Assamese
+    ay: Aymara
+    az: Na monoko ya Azerbaïdjan
+    be: Moto ya Biélorussie
+    bg: Likolo ya Bulgarie
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Moto ya Bosnie
+    ca: Catalan
+    ceb: Moto ya Cebuano
+    ckb: Kurde (Sorani) .
+    co: Moto ya Corse
+    cs: Mokolo ya Tchèque
+    cy: Moto ya Galles
+    da: danois
+    de: Allemand
+    doi: dogglai ya mbwa
+    dv: Dhivehi
+    ee: Ewe
+    el: Greke
+    en: Lingelesi
+    eo: Lingomba ya Esperanto
+    es: Espagnole
+    et: Moto ya Estonie
+    eu: basque
+    fa: Liloba ya Perse
+    fi: Finlande
+    fil: Moto ya Philippines (Tagalog) .
+    fr: Lifalanse
+    fy: Moto ya Frisien
+    ga: ya irlandais
+    gd: Liloba ya Gaélique ya Écosse
+    gl: Moto ya Galicien
+    gn: Guarani
+    gom: monoko ya gongan
+    gu: na monɔkɔ ya gujarati
+    ha: Hausa
+    haw: Moto ya Hawaii
+    he: liebele
+    hi: Hindi
+    hmn: Hmong
+    hr: Mokolo ya Croatie
+    ht: Créole ya Haïtien
+    hu: monɔkɔ ya Hongrois
+    hy: Moto ya Arménie
+    id: Moto ya Indonésie
+    ig: Ba-Igbo
+    ilo: Ilocano
+    is: Moto ya Islande
+    it: Italien
+    iw: liebele
+    ja: Bato ya Japon
+    jv: Bato ya Java
+    jw: Bato ya Java
+    ka: Mokolo ya Géorgie
+    kk: Kazakhstan
+    km: Moto ya Cambodge
+    kn: Lingomba ya Kannada
+    ko: Mokolo ya Corée
+    kri: Créole
+    ku: Kurde
+    ky: Kirghizistan
+    la: Latin
+    lb: Moto ya Luxembourg
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lituanien, Lituanien
+    lus: Mizo
+    lv: Moto ya Lettonie
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Moto ya Masedonia
+    ml: Malayalam
+    mn: Moto ya Mongolia
+    mni-mtei: Meitei (Manipuri) mpe na .
+    mr: marathi ya bato
+    ms: Malais
+    mt: Moto ya Malte
+    my: Bato ya Birmanie
+    ne: Népal
+    nl: Néerlandais
+    "no": moto ya norvégien
+    nso: Sepeti, oyo azali
+    ny: Nyanza (Chichéwa) .
+    om: Oromo
+    or: Oriya (Odia) .
+    pa: punjabi
+    pl: Polonais
+    ps: Pashto
+    pt: Portugais (Portugal, Brésil) .
+    qu: Quechua
+    ro: Roumanien
+    ru: Liloba ya Russe
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi ya moto
+    si: sinhala
+    sk: Slovaque
+    sl: moto ya slovénie
+    sm: Moto ya Samoa
+    sn: Shona
+    so: Na monɔkɔ ya Somalia
+    sq: Moto ya Albanie
+    sr: Moto ya Serbie
+    st: Sesotho
+    su: Moto ya Sundan
+    sv: Liloba ya Suède
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Motajik
+    th: Thaïlandais
+    ti: Tignan ezali bongo
+    tk: Turkmen
+    tl: Tagalog (Filipino) .
+    tr: monɔkɔ ya turc
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur, bato ya Uighur
+    uk: Moto ya Ukraine
+    ur: Urdu
+    uz: Bato ya Ouzbék
+    vi: Bato ya Vietnam
+    xh: monoko ya bantu
+    yi: Liloba ya Yiddish
+    yo: yoruba
+    zh: Ba Chinois
+    zh-chs: Chinois (Ezali na pete) .
+    zh-cht: Chinois (Ezali na pete) .
+    zh-cn: Chinois (Ezali na pete) .
+    zh-hk: Ba Chinois (Hong Kong) .
+    zh-mo: Chinois(Macau) .
+    zh-sg: Chinois (Singapore) .
+    zh-tw: Chinois ya bonkoko) .
+    zu: Zulu

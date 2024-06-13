@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Cuir à comas stiùireadh crìochnachaidh
+        long: |
+            Cruthaich sgriobt fèin-choileanta airson {{.RootName}} airson an t-slige ainmichte.
+        short: Cruthaich sgriobt fèin-choileanta airson an t-slige ainmichte
+        subcommand:
+            short: Cruthaich sgriobt fèin-choileanta airson {{.command}}
     flags:
         debug: Clàr toraidh mionaideach
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: A h-uile gnìomh co-cheangailte ri bhith a’ cruthachadh chlàran airson goireasan stàiteil no goireasan statach a riaghladh seirbheisean gnìomhachais
             short: A h-uile gnìomh co-cheangailte airson bùird a ghineadh
+    group:
+        gen: ginealach còd
     help:
         additional_commands: Òrdughan a bharrachd
         aliases: ailias àithne
@@ -94,10 +104,18 @@ cli:
         flags: paramadair
         get_info: gus fiosrachadh nas mionaidiche fhaighinn
         global_flags: crìochan cruinne
+        long: 'Thoir seachad stiùireadh cleachdaidh airson àithne sam bith san tagradh. '
+        short: Stiùireadh airson a bhith a 'cleachdadh òrdugh sam bith
+        usage: Stiùireadh airson {{.Name}} a chleachdadh
         use: cleachdadh
     i18n:
         long: Inneal ioma-chànanach co-cheangailte ri eadar-nàiseantachd
         short: Inneal ioma-chànanach co-cheangailte ri eadar-nàiseantachd
+        support:
+            flags:
+                language: Sònraich an cànan a sheallas tu, air neo thèid an còd cànain a chleachdadh gus an cànan a thaisbeanadh
+            long: Dèan liosta de na cànanan le taic
+            short: Liosta cànain le taic
         tran:
             flags:
                 all-language: Eadar-theangaich a h-uile cànan le taic (ma tha e fìor tha bratach nan cànanan à comas)
@@ -114,3 +132,156 @@ cli:
             short: eadar-theangachadh
     long: Seata inneal airson daoine leisg, a’ toirt a-steach frèam backend stèidhichte air ‘proto’, teamplaidean air an cleachdadh gu cumanta, agus eadar-theangachadh ioma-chànan
     short: Seata inneal airson daoine leisg
+    sync:
+        flags:
+            template-path: An t-slighe sioncronaich teamplaid
+        long: Sioncronaich an rèiteachadh bhon cheann iomallach agus cuir a-steach e san rèiteachadh ionadail.
+        short: Sioncronaich rèiteachadh bho iomallach
+    up-mod:
+        flags:
+            goproxy: Sònraich an seòladh goproxy, mura h-eil, thèid a’ chiad fhear ann an caochladair na h-àrainneachd a chleachdadh
+        long: Ùraich an tionndadh eisimeileachd den fhaidhle go.mod
+        short: Ùraich am faidhle go.mod
+lang:
+    af: Afrikaanach
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Arabach
+    as: Asaimis
+    ay: Aimara
+    az: Azerbaijani
+    be: Belarusianach
+    bg: Bulgàrianach
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengàlach
+    bs: Bosnianach
+    ca: Catalanach
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsicanach
+    cs: Seacach
+    cy: Cuimris
+    da: Dànach
+    de: Gearmailteach
+    doi: cùglai
+    dv: Dhivehi
+    ee: Eòghainn
+    el: Grèigeach
+    en: Sasannach
+    eo: Esperanto
+    es: Spàinneach
+    et: Estòinianach
+    eu: Basgach
+    fa: Persianach
+    fi: Fionnlaineach
+    fil: Filipineach (Tagalog)
+    fr: Frangach
+    fy: Frisianach
+    ga: Èireannach
+    gd: Gàidhlig na h-Alba
+    gl: Galicianach
+    gn: Guarani
+    gom: cànan gonggan
+    gu: Gujarati
+    ha: Hausa
+    haw: Hawaiianach
+    he: Eabhrach
+    hi: Indeach
+    hmn: Hmong
+    hr: Croatianach
+    ht: Haitian Creole
+    hu: Hungàrianach
+    hy: Armenianach
+    id: And-Innseach
+    ig: Igbo
+    ilo: Ilocano
+    is: Innis Tìleach
+    it: Eadailteach
+    iw: Eabhrach
+    ja: Iapanach
+    jv: Iabhaininnseach
+    jw: Iabhaininnseach
+    ka: Georgianach
+    kk: Kasakh
+    km: Cambodianach
+    kn: Kannada
+    ko: Corèanach
+    kri: Criofd
+    ku: Curdach
+    ky: Kyrgyz
+    la: Laidinn
+    lb: Luxembourgach
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuanianach
+    lus: Mizo
+    lv: Latbhianach
+    mai: Mathili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedonianach
+    ml: Malayalamach
+    mn: Mongolianach
+    mni-mtei: Meitei (Manipuri)
+    mr: Marathiach
+    ms: Malaidheach
+    mt: Malteseach
+    my: Burmese
+    ne: Nepalach
+    nl: Duitseach
+    "no": Lochlannach
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oroma
+    or: Oria (Odia)
+    pa: Punjabi
+    pl: Pòlainneach
+    ps: Pashto
+    pt: Portagailis (Braisil, Portagal)
+    qu: Quechua
+    ro: Romànianach
+    ru: Ruiseanach
+    rw: Cinn-chinnidh
+    sa: Sanskrit
+    sd: Sindeach
+    si: sinhala
+    sk: Slovacanach
+    sl: Slobhenianach
+    sm: Samoan
+    sn: Shona
+    so: Somali
+    sq: Albànianach
+    sr: Serbianach
+    st: Sesotho
+    su: Sundais
+    sv: Suaineach
+    sw: Swahilieach
+    ta: Tamileach
+    te: Telugach
+    tg: Tajik
+    th: Thaidheach
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: Turcach
+    ts: Dzonga
+    tt: Tatarais
+    ug: Uighur
+    uk: Ucràinis
+    ur: Urdu
+    uz: Uzbek
+    vi: Bhietnam
+    xh: cànan bantu
+    yi: Giúdais
+    yo: ioruba
+    zh: Sìneach
+    zh-chs: Sìnis (Sìmplidh)
+    zh-cht: Sìnis (Sìmplidh)
+    zh-cn: Sìnis (Sìmplidh)
+    zh-hk: Sìonais (Hong Kong)
+    zh-mo: Sìnis (Macau)
+    zh-sg: Sìonais (Singapore)
+    zh-tw: Sìneach traidiseanta)
+    zu: Zulu

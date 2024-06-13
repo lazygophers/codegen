@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Qajeelfama xumuraa hojii irraa oolchuu
+        long: |
+            Iskiriiptii ofumaan guutuu {{.RootName}} qaaqa ifteessameef uuma.
+        short: Iskiriiptii ofumaan guutuu qaaqa ifteessameef uumi
+        subcommand:
+            short: '{{.Ajaja}} tiif iskiriiptii ofumaan guutu uumi.'
     flags:
         debug: Galmee bal'aa baasaa
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Faankishiniiwwan walqabatan hunda kan gabatee maddisiisuu qabeenya haalaa ykn bulchiinsa qabeenya istaatiksii tajaajila daldalaa
             short: Faankishiniiwwan walqabatan hunda gabatee uumuuf
+    group:
+        gen: dhaloota koodii
     help:
         additional_commands: Ajajoota dabalataa
         aliases: maqaa biraa ajaja
@@ -94,10 +104,18 @@ cli:
         flags: parameetara
         get_info: odeeffannoo bal’aa argachuuf
         global_flags: parameetaroota addunyaa
+        long: 'Gargaarsi ajaja kamiyyuu application keessa jiruuf gargaarsa kenna. '
+        short: Ajaja kamiyyuu irratti gargaaraa
+        usage: Qajeelfama itti fayyadama {{.Name}}.
         use: fayyadamuu
     i18n:
         long: Meeshaa afaanota hedduu idil-addunyaa waliin walqabatu
         short: Meeshaa afaanota hedduu idil-addunyaa waliin walqabatu
+        support:
+            flags:
+                language: Afaan agarsiisu ifteessi, yoo kana hin taane koodii afaanii afaanicha agarsiisuuf ni fayyadama
+            long: Afaanota deeggaraman hunda tarreessi
+            short: Tarree afaanota deeggaraman
         tran:
             flags:
                 all-language: Afaanota deeggaraman hunda hiikuu (yoo dhugaa ta'e alaabaa afaanota ni hanqifama)
@@ -114,3 +132,156 @@ cli:
             short: hiikuu
     long: Meeshaa namoota dadhaboodhaaf saagame, 'proto' irratti hundaa'e backend framework, unkaalee yeroo baay'ee fayyadaman, fi hiikkaa afaanota hedduu dabalatee
     short: Meeshaa namoota dadhaboo ta'aniif qophaa'e
+    sync:
+        flags:
+            template-path: Daandii walsimsiisaa unkaa
+        long: Qindaa'ina dhuma fagoo irraa walsimsiisuu fi gara qindeessaa naannootti walitti makuu Faayilii unkaa yeroo walsimsiisaa (yoo qindaa'e) yeroo walfakkaatutti ni deeggarama.
+        short: Qindaa'ina fagoo irraa walsimsiisi
+    up-mod:
+        flags:
+            goproxy: Teessoo goproxy ifteessi, yoo hin taane, jijjiiramaa naannoo keessaa inni jalqabaa ni fayyadama
+        long: Gosa hirkattummaa faayilii go.mod haaromsi
+        short: Faayila go.mod haaromsi
+lang:
+    af: Afaan Afrikaans
+    ak: Twi (Akan) .
+    am: Afaan Amaaraa
+    ar: Afaan Arabaa
+    as: Assaamiis
+    ay: Aymaaraa
+    az: Afaan Azarbaajaan
+    be: Lammii Beelaaruus
+    bg: Afaan Bulgaariyaa
+    bho: Boyipuurii
+    bm: Baambaaraa
+    bn: Bengali
+    bs: Lammii Bosniyaa
+    ca: Afaan Kaataaloon
+    ceb: Cebuano jedhamuun beekama
+    ckb: Afaan Oromoo (Soraanii) .
+    co: Afaan Korsikaa
+    cs: Cheek
+    cy: Afaan Weels
+    da: danish
+    de: Jarmanii
+    doi: dogglai jedhamuun beekama
+    dv: Diveehii
+    ee: Eewee
+    el: Afaan Giriikii
+    en: Afaan Ingilizii
+    eo: Esperanto
+    es: Ispaanishii
+    et: Afaan Istooniyaa
+    eu: basque
+    fa: Afaan Faarsi
+    fi: Finfinnee
+    fil: Afaan Filippiins (Tagalog) .
+    fr: Afaan Faransaayii
+    fy: Firishiyaan
+    ga: irish
+    gd: Afaan Iskootilaandii Gaalik
+    gl: Afaan Galishiyaa
+    gn: Guwaaraanii
+    gom: afaan gongan
+    gu: gujarati
+    ha: Hawusaa
+    haw: Afaan Hawaayi
+    he: afaan ibirootaa
+    hi: Afaan Oromoo
+    hmn: Hmong
+    hr: Afaan Kirooshiyaa
+    ht: Afaan Heeyitii Kiriyoolii
+    hu: afaan haangaarii
+    hy: Afaan Armeeniyaa
+    id: Afaan Indooneezhiyaa
+    ig: Igbo
+    ilo: Ilookaanoo
+    is: Afaan Aayislaandi
+    it: Afaan Xaaliyaanii
+    iw: afaan ibirootaa
+    ja: Afaan Jaappaan
+    jv: Afaan Jaavaa
+    jw: Afaan Jaavaa
+    ka: Afaan Joorjiyaa
+    kk: Kaazaakistaan
+    km: Lammii Kaamboodiyaa
+    kn: Afaan Oromoo
+    ko: Afaan Kooriyaa
+    kri: Kiriyoolii
+    ku: Kurdish
+    ky: Kirgistaan
+    la: Laatiin
+    lb: Laaksambarg
+    lg: Lugaandaa
+    ln: Liingaalaa
+    lo: Laa'oo
+    lt: Afaan Lituwaaniyaa
+    lus: Miizoo
+    lv: Laatviyaa
+    mai: Maayitiilii
+    mg: Malagasy
+    mi: Maa'oorii
+    mk: Maqedooniyaa
+    ml: Afaan Malayaalam
+    mn: Afaan Moongooliyaa
+    mni-mtei: Meitei (Manipuri) jedhamu.
+    mr: maraati
+    ms: Maalaayyoo
+    mt: Afaan Maaltaa
+    my: Afaan Burma
+    ne: Afaan Neppaal
+    nl: Dutch
+    "no": lammii noorweey
+    nso: Sepeti jedhamuun beekama
+    ny: Nyanza (Chichewa) jedhamtu.
+    om: Afaan Oromoo
+    or: Oromiyaa (Odiya) .
+    pa: punjabi
+    pl: Afaan Poolaandi
+    ps: Paashtoo
+    pt: Afaan Poortugaal (Poorchugaal, Biraazil) .
+    qu: Kuweechuwaa
+    ro: Afaan Roomaa
+    ru: Afaan Raashiyaa
+    rw: Kinyarwanda
+    sa: Saaniskiriitii
+    sd: sindhi jedhu
+    si: sinhala jechuun ni danda’ama
+    sk: Isloovaakiyaa
+    sl: afaan slovenia
+    sm: Lammii Saamoo
+    sn: Shona
+    so: Afaan Somaalee
+    sq: Afaan Albaaniyaa
+    sr: Afaan Sarbiyaa
+    st: Afaan Oromoo
+    su: Afaan Sundaanii
+    sv: Afaan Siwiidin
+    sw: Afaan Swahilii
+    ta: tamil
+    te: telugu afaan oromoo
+    tg: Taajik
+    th: Afaan Taayilaandi
+    ti: Tignaan
+    tk: Turkmeen
+    tl: Tagalog (Filipino) .
+    tr: turkii afaan oromoo
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur jedhamuun beekama
+    uk: Afaan Yukireen
+    ur: Afaan Urduu
+    uz: Uzbeek
+    vi: Lammii Veetnaam
+    xh: afaan bantu
+    yi: Afaan Yiddishii
+    yo: afaan yoruba
+    zh: Chaayinaa
+    zh-chs: Chaayinaa (Salphaa) .
+    zh-cht: Chaayinaa (Salphaa) .
+    zh-cn: Chaayinaa (Salphaa) .
+    zh-hk: Chaayinaa (Hong Kong) .
+    zh-mo: Chaayinaa(Macau) .
+    zh-sg: Chaayinaa (Siingaapoor) .
+    zh-tw: aadaa Chaayinaa) .
+    zu: Zulu

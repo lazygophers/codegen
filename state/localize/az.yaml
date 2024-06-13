@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tamamlama təlimatlarını söndürün
+        long: |
+            Göstərilən qabıq üçün {{.RootName}} üçün avtomatik tamamlama skripti yaradır.
+        short: Göstərilən qabıq üçün avtomatik tamamlama skripti yaradın
+        subcommand:
+            short: '{{.Command}} üçün avtomatik tamamlama skripti yaradın'
     flags:
         debug: Ətraflı jurnalı çıxarın
     gen:
@@ -35,11 +43,11 @@ cli:
             input: Yaradılacaq .proto mənbə faylını təyin edin
             output-path: Bu seçim .proto faylında konfiqurasiya edilmiş go_package yolu faktiki olaraq yaradılmalı olan yol yatağı ilə uyğun gəlməyəndə konfiqurasiya edilə bilər.
             overwrite: Yenilənməyəcək məzmun üçün mövcud məzmunun üzərinə yazmağa məcbur edin
-            proto-files: Göstərilən .proto faylı ilə eyni qovluqda olmayan digər .proto faylları/qovluq yollarını idxal etmək üçün bu əməliyyat konfiqurasiya faylında konfiqurasiya sahəsini ləğv etmək üçün bir seçimdir.
+            proto-files: Göstərilən .proto faylı ilə eyni qovluqda olmayan digər .proto faylları/qovluq yollarını idxal etmək üçün bu əməliyyat konfiqurasiya faylında konfiqurasiya sahəsini ləğv etmək üçün seçimdir.
             protoc: '`protoc` fərdiləşdirilə bilən fayl yolu'
             protoc-gen-go: '`protoc-gen-go` plagin yolu'
             tables-enable_field_created_at: yaradılmış_at sahəsinin standart konfiqurasiya generasiyasının aktiv edilib-edilməməsi
-            tables-enable_field_deleted_at: Verilənlər bazasında silinmiş_at sahəsinin standart parametrlərinin aktiv edilib-edilməməsi
+            tables-enable_field_deleted_at: Verilənlər bazasında silinmiş_at sahəsinin standart parametrinin aktiv edilib-edilməməsi
             tables-enable_field_id: Verilənlər bazası ilə əlaqəli sahələr üçün standart konfiqurasiya yaradılmasını aktivləşdirin
             tables-enable_field_updated_at: Verilənlər bazasında updated_at sahəsinin standart dəyərinin aktiv edilib-edilməməsi
             tables-enable_gorm_tag_column: Verilənlər bazası ilə əlaqəli gorm generasiyasının aktiv edilib-edilməməsi
@@ -55,7 +63,7 @@ cli:
         impl:
             long: Biznes xidmətlərinin həyata keçirilməsi üçün icra faylları yaradın
             short: İcra faylları yaradın
-        long: Kod generatoru, çoxsaylı şablonları dəstəkləyir
+        long: Kod generatoru, birdən çox şablonu dəstəkləyir
         makefile:
             long: Quraşdırma alətləri və digər əlaqəli əmrlər üçün Makefile faylları yaradın
             short: Makefile yaradın
@@ -84,8 +92,10 @@ cli:
                 long: Xidmət işə salındıqda verilənlər bazası bağlantısı və cədvəlin işə salınması üçün istifadə edilən state.table ilə əlaqəli kodu yaradın.
                 short: State.table əlaqəli kodu yaradın
         table:
-            long: Biznes xidmətlərinin dövlət resursu və ya statik resurslarının idarə edilməsi üçün cədvəllərin yaradılmasının bütün əlaqəli funksiyaları
+            long: Dövlət resursu və ya biznes xidmətlərinin statik resurslarının idarə edilməsi üçün cədvəllərin yaradılması ilə əlaqəli bütün funksiyalar
             short: Cədvəl yaratmaq üçün bütün əlaqəli funksiyalar
+    group:
+        gen: kod generasiyası
     help:
         additional_commands: Əlavə əmrlər
         aliases: əmr ləqəbi
@@ -94,10 +104,18 @@ cli:
         flags: parametr
         get_info: daha ətraflı məlumat almaq üçün
         global_flags: qlobal parametrlər
+        long: 'Tətbiqdəki hər hansı bir əmr üçün istifadə təlimatlarını təmin edin. '
+        short: Hər hansı bir əmrdən istifadə üçün təlimatlar
+        usage: '{{.Name}} istifadə üçün təlimatlar'
         use: istifadə edin
     i18n:
         long: Çoxdilli beynəlmiləlləşdirmə ilə bağlı alətlər dəsti
         short: Çoxdilli beynəlmiləlləşdirmə ilə bağlı alətlər dəsti
+        support:
+            flags:
+                language: Göstəriləcək dili təyin edin, əks halda dil kodu dili göstərmək üçün istifadə olunacaq
+            long: Bütün dəstəklənən dilləri sadalayın
+            short: Dəstəklənən dil siyahısı
         tran:
             flags:
                 all-language: Bütün dəstəklənən dilləri tərcümə edin (əgər doğrudursa, dillər bayrağı deaktivdir)
@@ -114,3 +132,156 @@ cli:
             short: tərcümə etmək
     long: Tənbəl insanlar üçün alət dəsti, o cümlədən 'proto' əsaslı backend çərçivəsi, çox istifadə olunan şablonlar və çoxdilli tərcümə
     short: Tənbəl insanlar üçün alət dəsti
+    sync:
+        flags:
+            template-path: Şablon sinxronizasiya yolu
+        long: Konfiqurasiyanı uzaq uçdan sinxronlaşdırın və onu yerli konfiqurasiyaya birləşdirin Şablon faylı sinxronizasiya zamanı eyni vaxtda dəstəklənir (əgər konfiqurasiya olunubsa).
+        short: Uzaqdan konfiqurasiyanı sinxronlaşdırın
+    up-mod:
+        flags:
+            goproxy: Goproxy ünvanını göstərin, əks halda mühit dəyişənində birincisi istifadə olunacaq
+        long: go.mod faylının asılılıq versiyasını yeniləyin
+        short: go.mod faylını yeniləyin
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: amhar
+    ar: ərəb
+    as: assam
+    ay: Aymara
+    az: Azərbaycan
+    be: belarus
+    bg: bolqar
+    bho: Bhojpuri
+    bm: Bambara
+    bn: benqal dili
+    bs: bosniyalı
+    ca: katalan dili
+    ceb: Cebuano
+    ckb: Kürd (Sorani)
+    co: korsika
+    cs: çex
+    cy: uels
+    da: danimarka
+    de: alman
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: yunan
+    en: İngilis dili
+    eo: esperanto
+    es: ispan
+    et: eston
+    eu: bask
+    fa: fars
+    fi: fin
+    fil: Filippin (Taqaloq)
+    fr: Fransız dili
+    fy: friz dili
+    ga: irland
+    gd: Şotlandiya Qael dili
+    gl: qalisian
+    gn: Guaraní
+    gom: gonggan dili
+    gu: qucarat dili
+    ha: Hausa
+    haw: havay
+    he: ivrit
+    hi: hind
+    hmn: Hmong
+    hr: xorvat
+    ht: Haiti Kreol
+    hu: macar
+    hy: erməni
+    id: indoneziya dili
+    ig: İqbo
+    ilo: İlokano
+    is: island
+    it: italyan
+    iw: ivrit
+    ja: yapon
+    jv: yava dili
+    jw: yava dili
+    ka: gürcü
+    kk: qazax
+    km: Kamboca
+    kn: Kannada
+    ko: koreyalı
+    kri: kreol
+    ku: kürd
+    ky: qırğız
+    la: latın
+    lb: Lüksemburq
+    lg: Luqanda
+    ln: Linqala
+    lo: Lao
+    lt: litva
+    lus: Mizo
+    lv: latış
+    mai: Maithili
+    mg: malaqas
+    mi: maori
+    mk: makedon
+    ml: malayalam
+    mn: monqol
+    mni-mtei: Meitei (Manipuri)
+    mr: marati
+    ms: malay
+    mt: malta
+    my: birma
+    ne: nepal dili
+    nl: holland
+    "no": norveçli
+    nso: Sepeti
+    ny: Nyanza (Çiçeva)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: pəncabi
+    pl: polyak
+    ps: puştu
+    pt: Portuqal (Portuqaliya, Braziliya)
+    qu: Keçua
+    ro: rumın
+    ru: rus
+    rw: Kinyarvanda
+    sa: sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: slovak
+    sl: sloven
+    sm: samoa
+    sn: Şona
+    so: Somali
+    sq: alban
+    sr: serb
+    st: Sesoto
+    su: sundan
+    sv: isveçli
+    sw: suahili
+    ta: tamil
+    te: teluqu
+    tg: tacik
+    th: Tay
+    ti: Tiqnan
+    tk: türkmən
+    tl: Taqaloq (Filipin)
+    tr: türk
+    ts: Dzonqa
+    tt: tatar
+    ug: uyğur
+    uk: ukraynalı
+    ur: Urdu
+    uz: özbək
+    vi: vyetnamlı
+    xh: bantu dili
+    yi: yəhudi dili
+    yo: yoruba
+    zh: çinli
+    zh-chs: Çin (Sadələşdirilmiş)
+    zh-cht: Çin (Sadələşdirilmiş)
+    zh-cn: Çin (Sadələşdirilmiş)
+    zh-hk: Çin (Hong Kong)
+    zh-mo: Çin (Makao)
+    zh-sg: Çin (Sinqapur)
+    zh-tw: ənənəvi Çin)
+    zu: Zulu

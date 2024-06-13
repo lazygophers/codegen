@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Thibela ditaelo tša go fetša
+        long: |
+            E tšweletša sengwalwa sa go phethagatša ka go itiriša sa {{.RootName}} sa khetla ye e laeditšwego.
+        short: Hlagiša sengwalwa sa go phethagatša ka go itiriša sa khetla ye e laeditšwego
+        subcommand:
+            short: Hlagiša sengwalwa sa go phethagatša ka go itiriša sa {{.Command}} .
     flags:
         debug: Output qaqileng log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Mešomo ka moka ye e amanago ya go tšweletša ditafola tša mohlodi wa mmušo goba taolo ya methopo ye e sa fetogego ya ditirelo tša kgwebo
             short: Mešomo ka moka ye e amanago ya go tšweletša ditafola
+    group:
+        gen: moloko wa khoutu
     help:
         additional_commands: Ditaelo tša tlaleletšo
         aliases: taelo ya leina le lengwe
@@ -94,10 +104,18 @@ cli:
         flags: paramethara ya
         get_info: go hwetša tshedimošo ye e tletšego ka botlalo
         global_flags: ditekanyetos lefatše lohle
+        long: 'Thušo e fa thušo ya taelo efe goba efe ka tirišong. '
+        short: Thuša ka taelo efe goba efe
+        usage: Ditaelo tša go šomiša {{.Leina}} .
         use: šomiša
     i18n:
         long: Sedirišwa sa go amana le boditšhabatšhaba bja maleme a mantši
         short: Sedirišwa sa go amana le boditšhabatšhaba bja maleme a mantši
+        support:
+            flags:
+                language: Laetša leleme leo o tlago go bontšhwa, go sego bjalo khoutu ya polelo e tla šomišwa go bontšha polelo
+            long: Lokeletša maleme ka moka ao a thekgwago
+            short: Lenaneo la maleme ao a thekgwago
         tran:
             flags:
                 all-language: Fetolela maleme ka moka ao a thekgwago (ge e le therešo folaga ya maleme e šitišitšwe) .
@@ -114,3 +132,156 @@ cli:
             short: fetolela
     long: Seteišene sa sedirišwa sa batho ba go tšwafa, go akaretšwa tlhako ya morago ye e theilwego godimo ga ‘proto’, dithempleite tše di šomišwago ka tlwaelo, le phetolelo ya maleme a mantši
     short: Sedirišwa se se beilwego bakeng sa batho ba botswa
+    sync:
+        flags:
+            template-path: Tsela ya go nyalantšha thempleite
+        long: Nyalantšha peakanyo go tšwa mafelelong a kgole gomme o e kopanye go peakanyo ya selegae Faele ya thempleite e thekgwa ka nako ye e swanago nakong ya go nyalantšha (ge e beakantšwe).
+        short: Nyalantšha peakanyo go tšwa kgole
+    up-mod:
+        flags:
+            goproxy: Laetša aterese ya goproxy, ge e se bjalo, ya mathomo ka go phetogo ya tikologo e tla šomišwa
+        long: Ntšhatša phetolelo ya go ithekga ya faele ya go.mod
+        short: Update go.mod faele
+lang:
+    af: Seafrikanse
+    ak: Twi (Akan) .
+    am: Seamharic
+    ar: Searabia
+    as: Assamese
+    ay: Aymara
+    az: Se-Azerbaijan, Se-Azerbaijan
+    be: Se-Belarus
+    bg: Sebulgaria
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Sebengali
+    bs: Sebosnia sa Bosnia
+    ca: Secatalan
+    ceb: Mo-Cebuano oa
+    ckb: Se-Kurd (Sorani) .
+    co: Secorsica
+    cs: Se-Czech sa se-Czech
+    cy: Sewalese sa Sewalese
+    da: sedanishe
+    de: Sejeremane
+    doi: dogglai ya dimpša
+    dv: Dhivehi
+    ee: Ewe
+    el: Segerika
+    en: Seisimane
+    eo: Se-Esperanto sa se-Esperanto
+    es: Sepeniši
+    et: Seestonia sa Seestonia
+    eu: basque basque
+    fa: Seperesia
+    fi: Sefinnishe
+    fil: Sefilipino (Setagalog) .
+    fr: Sefora
+    fy: Sefrisian
+    ga: irish ya se-irish
+    gd: Segaelic sa Scotland
+    gl: Segalicia
+    gn: Guarani
+    gom: polelo ya gonggan
+    gu: segujarati
+    ha: Se-Hausa
+    haw: Se-Hawaii
+    he: seheberu
+    hi: Sehindi sa Sehindi
+    hmn: Se-Hmong
+    hr: Secroatia
+    ht: Secreole sa Sehaiti
+    hu: se-hungary sa se-hungary
+    hy: Searmenia
+    id: Se-Indonesia
+    ig: Se-Igbo
+    ilo: Ilocano
+    is: Se-Iceland sa se-Iceland
+    it: Setaliana
+    iw: seheberu
+    ja: Sejapane
+    jv: Sejava
+    jw: Sejava
+    ka: Segeorgia
+    kk: Sekazakh sa Sekazakh
+    km: Se-Cambodia
+    kn: Sekannada sa Sekannada
+    ko: Sekorea
+    kri: Secreole sa se-Creole
+    ku: Se-Kurd
+    ky: SeKyrgyz
+    la: Selatine
+    lb: Se-Luxembourg sa se-Luxembourg
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Selithuania sa Selithuania
+    lus: Mizo
+    lv: Selatvia sa Selatvia
+    mai: Maithili
+    mg: Semalagasy
+    mi: Semaori
+    mk: Momatsedonia
+    ml: Semalayalam
+    mn: Semongolia
+    mni-mtei: Meitei (Manipuri) .
+    mr: marathi
+    ms: Semalay
+    mt: Se-Malta
+    my: Seburu
+    ne: Senepali
+    nl: Sedache sa Madache
+    "no": se-norway
+    nso: Sepeti
+    ny: Nyanza (Chichewa) .
+    om: Oromo
+    or: Se-Oriya (Se-Odia) .
+    pa: sepunjabi
+    pl: Sepoliši sa Sepoliši
+    ps: Sepashto sa Sepashto
+    pt: Sepotokisi (Sepotokisi, Brazil) .
+    qu: Quechua
+    ro: Seromania
+    ru: Se-Russia
+    rw: Sekinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala ya go swana le
+    sk: Seslovakia
+    sl: se-slovenia sa se-slovenia
+    sm: Mosamoa
+    sn: Shona
+    so: Sesomalia
+    sq: Sealbania
+    sr: Seserbia
+    st: Sesotho sa Sesotho
+    su: Sesundane
+    sv: Seswedishe
+    sw: Seswahili
+    ta: setamil
+    te: telugu
+    tg: Setajik
+    th: Sethai
+    ti: Tignan ya go ba le
+    tk: Turkmemen
+    tl: Setagalog (Sefilipino) .
+    tr: seturkey sa seturkey
+    ts: Dzonga
+    tt: Tatar
+    ug: Se-Uighur sa se-Uighur
+    uk: Seukraine
+    ur: Seurdu sa se-Urdu
+    uz: Seuzbek
+    vi: Sevietnam
+    xh: polelo ya bantu
+    yi: Seyiddish sa Seyiddish
+    yo: se-yoruba sa se-yoruba
+    zh: Setšhaena
+    zh-chs: Setšhaena (Se Nolofaditšwego) .
+    zh-cht: Setšhaena (Se Nolofaditšwego) .
+    zh-cn: Setšhaena (Se Nolofaditšwego) .
+    zh-hk: Setšhaena (Hong Kong) .
+    zh-mo: Setšhaena(Macau) .
+    zh-sg: Setšhaena (Singapore) .
+    zh-tw: Setšhaena sa setšo) .
+    zu: Sezulu

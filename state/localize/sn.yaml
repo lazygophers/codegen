@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Dzima mirairo yekupedzisa
+        long: |
+            Inogadzira chinyorwa chinokwana che{{.RootName}} cheganda rataurwa.
+        short: Gadzira chinyorwa chega chega cheganda rataurwa
+        subcommand:
+            short: Gadzira zvinyorwa zvinokwana zve{{.Command}}
     flags:
         debug: Kubuda kwakadzama log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Ese ane hukama mabasa ekugadzira matafura ezvakaita zviwanikwa kana static resource manejimendi ebhizinesi masevhisi
             short: Mabasa ese ane chekuita nekugadzira matafura
+    group:
+        gen: kugadzirwa kwekodhi
     help:
         additional_commands: Mimwe mirairo
         aliases: command alias
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: kuti uwane rumwe ruzivo rwakadzama
         global_flags: global parameters
+        long: 'Kubatsira kunopa rubatsiro kune chero kuraira mukushandisa. '
+        short: Batsira pane chero murairo
+        usage: Mirayiridzo yekushandisa {{.Name}}
         use: use
     i18n:
         long: Multilingual internationalization inoenderana neturusi
         short: Multilingual internationalization inoenderana neturusi
+        support:
+            flags:
+                language: Taura mutauro ucharatidza, kana zvikasadaro kodhi yemutauro ichashandiswa kuratidza mutauro
+            long: Nyora mitauro yose inotsigirwa
+            short: Runyorwa rwemutauro runotsigirwa
         tran:
             flags:
                 all-language: Shandura mitauro yese inotsigirwa (kana ichokwadi mureza wakadzimwa)
@@ -114,3 +132,156 @@ cli:
             short: shandura
     long: Chishandiso chakagadzirirwa vanhu vane usimbe, kusanganisira 'proto'-based backend framework, matemplate anowanzo shandiswa, uye kududzira mitauro yakawanda.
     short: Mudziyo wakagadzirirwa simbe
+    sync:
+        flags:
+            template-path: Template synchronization nzira
+        long: Batanidza zvigadziriso kubva kumagumo ekure uye uzvisanganise mukugadzirisa kwenzvimbo Iyo template faira inotsigirwa panguva imwe chete panguva yekuwiriranisa (kana yakagadziriswa)
+        short: Batanidza zvigadziriso kubva kure
+    up-mod:
+        flags:
+            goproxy: Tsanangura iyo goproxy kero, kana zvisiri, yekutanga mune nharaunda shanduko ichashandiswa
+        long: Gadziridza shanduro yekutsamira yefaira rego.mod
+        short: Gadziridza go.mod faira
+lang:
+    af: ChiAfrikaans
+    ak: Twi (Akan)
+    am: ChiAmharic
+    ar: ChiArabic
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijani
+    be: Chiberaruzi
+    bg: ChiBulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: ChiBengali
+    bs: ChiBosnian
+    ca: Katarani
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Kosikeni
+    cs: ChiCzech
+    cy: Welsh
+    da: ChiDanish
+    de: ChiJerimani
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: ChiGiriki
+    en: Chirungu
+    eo: Esiperando
+    es: ChiSpanish
+    et: ChiEstonian
+    eu: ChiBasque
+    fa: ChiPersian
+    fi: ChiFinish
+    fil: ChiPhilippines (Tagalog)
+    fr: ChiFrench
+    fy: Frisian
+    ga: ChiIrish
+    gd: ChiGaelic cheScottish
+    gl: ChiGalician
+    gn: Guaraní
+    gom: gonggan mutauro
+    gu: ChiGujarati
+    ha: ChiHausa
+    haw: Chihawayi
+    he: ChiHebhuru
+    hi: ChiHindi
+    hmn: ChiHmong
+    hr: ChiCroatian
+    ht: Kiriyoro yeHaiti
+    hu: ChiHungarian
+    hy: ChiArmenian
+    id: ChiIndonesian
+    ig: Igbo
+    ilo: Ilocano
+    is: ChiIcelandic
+    it: ChiItalian
+    iw: ChiHebhuru
+    ja: ChiJapanese
+    jv: ChiJavanese
+    jw: ChiJavanese
+    ka: ChiGeorgian
+    kk: Kazaki
+    km: Cambodian
+    kn: ChiKannada
+    ko: ChiKorean
+    kri: Creole
+    ku: ChiKedhi
+    ky: Kiyagizi
+    la: Ratini
+    lb: Rukusembogi
+    lg: Luganda
+    ln: Lingala
+    lo: Layo
+    lt: Ritunia
+    lus: Mizo
+    lv: ChiLatvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: ChiMacedonian
+    ml: ChiMalayalam
+    mn: ChiMongoria
+    mni-mtei: Meitei (Manipuri)
+    mr: ChiMarati
+    ms: ChiMalay
+    mt: ChiMaltese
+    my: ChiBurmese
+    ne: ChiNepali
+    nl: ChiDutch
+    "no": ChiNorwegian
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: Punjabi
+    pl: ChiPolish
+    ps: Pashito
+    pt: Chiputukezi (Portugal, Brazil)
+    qu: Quechua
+    ro: ChiRomanian
+    ru: ChiRussian
+    rw: Kinyarwanda
+    sa: Sanzikiriti
+    sd: ChiSindhi
+    si: sinhala
+    sk: ChiSlovak
+    sl: ChiSlovanian
+    sm: Samoan
+    sn: Shona
+    so: Somari
+    sq: ChiAlbanian
+    sr: ChiSebhiya
+    st: Sesotho
+    su: Sundanese
+    sv: ChiSwedish
+    sw: ChiSwahili
+    ta: ChiTamil
+    te: ChiTelugu
+    tg: Tajik
+    th: ChiThai
+    ti: Tignan
+    tk: ChiTeki
+    tl: Tagalog (Filipino)
+    tr: Turkish
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrainian
+    ur: Urdu
+    uz: Uzbek
+    vi: Vietnamese
+    xh: bantu language
+    yi: Yiddish
+    yo: yoruba
+    zh: ChiChinese
+    zh-chs: ChiChinese (Chakareruka)
+    zh-cht: ChiChinese (Chakareruka)
+    zh-cn: ChiChinese (Chakareruka)
+    zh-hk: chiChinese (Hong Kong)
+    zh-mo: chiChinese(Macau)
+    zh-sg: chiChinese (Singapore)
+    zh-tw: chiChinese (Taiwan)
+    zu: Zulu

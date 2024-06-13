@@ -1,4 +1,6 @@
 go-mod:
+	# 指定 goproxy 地址，如果没有则使用环境变量
+	goproxy: ""
     # 需要让工具强制更新到指定版本的仓库前缀
     include-repo:
         - github.com/lazygophers/

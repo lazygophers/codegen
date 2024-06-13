@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Lemesa ebiragiro by’okumaliriza
+        long: |
+            Ekola ekiwandiiko ekijjuvu mu ngeri ey'okwekolako ku {{.RootName}} ku kisusunku ekiragiddwa.
+        short: Tonda ekiwandiiko ekijjuvu mu ngeri ey'okwekolako ku kisusunku ekiragiddwa
+        subcommand:
+            short: Okukola ekiwandiiko ekijjuza mu ngeri ey'okwekolako ku {{.Command}}
     flags:
         debug: Ebifulumizibwa ebikwata ku log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Emirimu gyonna egyekuusa ku kukola emmeeza ez’okuddukanya eby’obugagga eby’embeera oba eby’obugagga ebitali bikyuka eby’empeereza za bizinensi
             short: Emirimu gyonna egyekuusa ku kukola emmeeza
+    group:
+        gen: okukola koodi
     help:
         additional_commands: Ebiragiro ebirala
         aliases: ekiragiro erinnya
@@ -94,10 +104,18 @@ cli:
         flags: parameter
         get_info: okufuna ebisingawo ebikwata ku nsonga eno
         global_flags: ebipimo by’ensi yonna
+        long: 'Obuyambi buwa obuyambi ku kiragiro kyonna mu nkola. '
+        short: Yamba ku kiragiro kyonna
+        usage: Ebiragiro by'okukozesa {{.Name}}
         use: omugaso
     i18n:
         long: Ekitabo ky’ebikozesebwa ebikwatagana n’okuyingiza ennimi nnyingi mu nsi yonna
         short: Ekitabo ky’ebikozesebwa ebikwatagana n’okuyingiza ennimi nnyingi mu nsi yonna
+        support:
+            flags:
+                language: Laga olulimi lw’ogenda okulaga, bwe kitaba ekyo koodi y’olulimi ejja kukozesebwa okulaga olulimi
+            long: Wandiika ennimi zonna eziwagirwa
+            short: Olukalala lw’ennimi eziwagirwa
         tran:
             flags:
                 all-language: Okuvvuunula ennimi zonna eziwagirwa (bwe kiba kituufu bendera y'ennimi eremeddwa)
@@ -114,3 +132,156 @@ cli:
             short: okuvvunula
     long: Ekikozesebwa ekitegekeddwa abantu abagayaavu, omuli 'proto'-based backend framework, templates ezitera okukozesebwa, n'okuvvuunula ennimi nnyingi
     short: Ekikozesebwa ekiteekeddwawo abantu abagayaavu
+    sync:
+        flags:
+            template-path: Ekkubo ly'okukwataganya template
+        long: Okukwataganya ensengeka okuva ku nkomerero ey'ewala era ogigatte mu nsengeka y'ekitundu Fayiro ya template ewagirwa mu kiseera kye kimu mu kiseera ky'okukwataganya (bwe kiba nga kitegekeddwa)
+        short: Okukwataganya ensengeka okuva ku remote
+    up-mod:
+        flags:
+            goproxy: Laga endagiriro ya goproxy, bwe kitaba bwe kityo, esooka mu nkyukakyuka y'obutonde ejja kukozesebwa
+        long: Okulongoosa enkyusa y'okwesigamira ku fayiro ya go.mod
+        short: Okulongoosa fayiro ya go.mod
+lang:
+    af: Olufirika olulimi Olufirika
+    ak: Twi (Akan) .
+    am: Oluamharic
+    ar: Oluwarabu
+    as: Assamese
+    ay: Aymara
+    az: Olulimi Oluazerbaijan
+    be: Olulimi Olubelarus
+    bg: Olulimi Olubulgaria
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Olubengali
+    bs: Omubosnia
+    ca: Olucatalan
+    ceb: Omucebuano
+    ckb: Olukurdi (Olusorani) .
+    co: Olulimi Olucorsica
+    cs: Omuczech
+    cy: Oluwalese
+    da: olulimi oludanishi
+    de: Omugirimaani
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Oluyonaani
+    en: Olungereeza
+    eo: Olulimi Oluesperanto
+    es: Olusupeyini
+    et: Olulimi Oluestonia
+    eu: basque
+    fa: Oluperusi
+    fi: Olufinishi
+    fil: Olufilipino (Olutagalog) .
+    fr: Olufaransa
+    fy: Omufirisiya
+    ga: irish
+    gd: Olulimi Olugaelic olw’e Scotland
+    gl: Olulimi Olugalisiya
+    gn: Guarani
+    gom: olulimi lwa gongan
+    gu: mu lulimi oluganda
+    ha: Oluhausa
+    haw: Olulimi Oluhawaii
+    he: olwebbulaniya
+    hi: Oluhindu
+    hmn: Hmong
+    hr: Olucroatia
+    ht: Olulimi Oluhaiti Olucreole
+    hu: olulimi Oluhungary
+    hy: Oluarmenia
+    id: Oluindonesia
+    ig: Omuigbo
+    ilo: Ilocano
+    is: Olulimi Olu-Iceland
+    it: Oluyitale
+    iw: olwebbulaniya
+    ja: Olujapani
+    jv: Olujava
+    jw: Olujava
+    ka: Olugeorgia
+    kk: Olukazakh
+    km: Olucambodia
+    kn: Olukannada
+    ko: Olukorea
+    kri: Olulimi Olucreole
+    ku: Olukurdi
+    ky: Kyrgyz
+    la: Olulattini
+    lb: Olulimi Oluluxembourg
+    lg: Oluganda
+    ln: Olulingala
+    lo: Lao
+    lt: Olulimi Olulithuania
+    lus: Mizo
+    lv: Olulatvia
+    mai: Maithili
+    mg: Olulimi Olumalagasy
+    mi: Omumaori
+    mk: Olulimi Olumakedoniya
+    ml: Olumalayalam
+    mn: Olumongolia
+    mni-mtei: Meitei (Manipuri) .
+    mr: marathi (marathi) nga
+    ms: Olumalayi
+    mt: Olulimi Olumalta
+    my: Oluburma
+    ne: Olunepali
+    nl: Omudaaki
+    "no": mu norwegian
+    nso: Sepeti
+    ny: Nyanza (Omuchichewa) .
+    om: Oromo
+    or: Olulimi Oluganda (Oluganda) .
+    pa: olulimi olupunjabi
+    pl: Olupolandi
+    ps: Olupashto
+    pt: Olupotugo (Portugal, Brazil) .
+    qu: Quechua
+    ro: Oluromania
+    ru: Olurussia
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Oluslovakia
+    sl: olulimi Oluslovenia
+    sm: Omusamoa
+    sn: Shona
+    so: Olusomali
+    sq: Olualbania
+    sr: Olulimi Oluserbia
+    st: Olulimi Olusesotho
+    su: Olusundani
+    sv: Oluswedi
+    sw: Oluswayiri
+    ta: olutamil
+    te: telugu
+    tg: Olutajiki
+    th: Oluthailand
+    ti: Tignan
+    tk: Aba Turkmen
+    tl: Olutagalog (Olufilipino) .
+    tr: olulimi olutuluuki
+    ts: Dzonga
+    tt: Omutatar
+    ug: Oluuighur
+    uk: Oluyukireniya
+    ur: Oluurudu
+    uz: Oluuzbek
+    vi: Olulimi Oluvietnam
+    xh: olulimi lwa bantu
+    yi: Oluyiddishi
+    yo: olulimi oluyoruba
+    zh: Abachina
+    zh-chs: Oluchina (Ebyangu) .
+    zh-cht: Oluchina (Ebyangu) .
+    zh-cn: Oluchina (Ebyangu) .
+    zh-hk: Abachina (Hong Kong) .
+    zh-mo: Abachina(Macau)
+    zh-sg: Abachina (Singapore) .
+    zh-tw: Abachina ab’ekinnansi)
+    zu: Oluzulu

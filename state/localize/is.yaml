@@ -1,11 +1,19 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Slökktu á frágangsleiðbeiningum
+        long: |
+            Býr til sjálfvirka útfyllingarskriftu fyrir {{.RootName}} fyrir tilgreinda skel.
+        short: Búðu til sjálfvirkt útfyllingarforskrift fyrir tilgreinda skel
+        subcommand:
+            short: Búðu til sjálfvirkt útfyllingarforskrift fyrir {{.Command}}
     flags:
         debug: Framleiðsla nákvæma annál
     gen:
         add-rpc:
             flags:
                 action: Hegðun sem þarf að bæta við í lotum, vinsamlegast finndu notkunarskjölin fyrir frekari upplýsingar
-                default-role: Sjálfgefið hlutverk lotumyndaðs viðmóts Vinsamlega skoðaðu notkunarskjölin til að fá nánari upplýsingar.
+                default-role: Sjálfgefið hlutverk runumyndaða viðmótsins Vinsamlega skoðaðu notkunarskjölin til að fá upplýsingar.
                 gen-to: Tilgreindu úttaksstaðsetningu myndaðra .go skráa
                 list-option: Einnig er hægt að sía listann, vinsamlegast finndu notkunarskjölin fyrir frekari upplýsingar.
                 model: Tilgreindu heiti líkansins, stuðning við að sleppa 'líkan' forskeytinu
@@ -33,7 +41,7 @@ cli:
             add-proto-files: Ef þú þarft að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá mun þessi aðgerð bæta við (ekki skrifa yfir) slóðina sem er stillt í stillingarskránni.
             go-module-prefix: Fyrir slóð go_package sem er stillt í .proto skránni og hina raunverulegu, geturðu stillt þennan valkost
             input: Tilgreindu .proto frumskrána sem á að búa til
-            output-path: Hægt er að stilla þennan valmöguleika þegar slóð go_package sem er stillt í .proto skránni er í ósamræmi við vegfarveginn sem raunverulega þarf að búa til.
+            output-path: Hægt er að stilla þennan valmöguleika þegar slóð go_package sem er stillt í .proto skránni er í ósamræmi við vegalengdina sem raunverulega þarf að búa til.
             overwrite: Fyrir efni sem verður ekki endurskapað skaltu þvinga yfir yfirskrift á núverandi efni
             proto-files: Til að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá er þessi aðgerð valkostur til að hnekkja stillingarreitnum í stillingarskránni.
             protoc: '''Protoc'' sérhannaðar skráarslóð'
@@ -82,10 +90,12 @@ cli:
             short: Allar viðeigandi aðgerðir til að búa til ástand
             table:
                 long: Búðu til state.table tengdan kóða, notaður fyrir gagnagrunnstengingu og töfluuppstillingu þegar þjónustan er ræst.
-                short: Búa til state.table tengdan kóða
+                short: Búðu til state.table tengdan kóða
         table:
             long: Allar tengdar aðgerðir við að búa til töflur fyrir staðbundna auðlinda- eða kyrrstöðustjórnun á viðskiptaþjónustu
             short: Allar tengdar aðgerðir til að búa til töflur
+    group:
+        gen: kóða kynslóð
     help:
         additional_commands: Viðbótarskipanir
         aliases: skipunarnefni
@@ -94,10 +104,18 @@ cli:
         flags: færibreytu
         get_info: til að fá ítarlegri upplýsingar
         global_flags: alþjóðlegar breytur
+        long: 'Gefðu notkunarleiðbeiningar fyrir hvaða skipun sem er í forritinu. '
+        short: Leiðbeiningar til að nota hvaða skipun sem er
+        usage: Leiðbeiningar um notkun {{.Name}}
         use: nota
     i18n:
         long: Verkfærakista sem tengist fjöltyngdum alþjóðavæðingu
         short: Verkfærakista sem tengist fjöltyngdum alþjóðavæðingu
+        support:
+            flags:
+                language: Tilgreindu tungumálið sem á að sýna, annars verður tungumálakóðinn notaður til að sýna tungumálið
+            long: Listaðu öll studd tungumál
+            short: Listi yfir studd tungumál
         tran:
             flags:
                 all-language: Þýddu öll studd tungumál (ef satt er tungumálsfáninn óvirkur)
@@ -112,5 +130,158 @@ cli:
                     usage: 'Þýðingarrás: Stuðningstegund {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fjöltyngdum skrám frá ákveðnum uppruna er breytt í skrár á sama sniði á öðrum tungumálum.
             short: þýða
-    long: Verkfærasett fyrir lata fólk, þar á meðal „frumu“-byggðan bakenda ramma, algeng sniðmát og þýðingu á mörgum tungumálum
+    long: Verkfærasett fyrir lata fólk, þar á meðal „frum“-undirstaða bakenda ramma, algeng sniðmát og þýðing á mörgum tungumálum
     short: Verkfærasett fyrir lata
+    sync:
+        flags:
+            template-path: Sniðmátssamstillingarleið
+        long: Samstilltu stillingarnar frá ytri endanum og sameinaðu hana í staðbundna stillingu Sniðmátsskráin er studd á sama tíma meðan á samstillingu stendur (ef hún er stillt).
+        short: Samstilltu stillingar frá fjarstýringu
+    up-mod:
+        flags:
+            goproxy: Tilgreindu goproxy heimilisfangið, ef ekki, þá verður það fyrsta í umhverfisbreytunni notuð
+        long: Uppfærðu ávanaútgáfuna af go.mod skránni
+        short: Uppfærðu go.mod skrána
+lang:
+    af: Afrikaans
+    ak: Tví (Akan)
+    am: amharíska
+    ar: arabíska
+    as: Assama
+    ay: Aymara
+    az: Aserbaídsjan
+    be: hvítrússneska
+    bg: búlgarska
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalska
+    bs: bosníska
+    ca: katalónska
+    ceb: Cebuano
+    ckb: Kúrdíska (Sorani)
+    co: korsíkanskt
+    cs: tékkneska
+    cy: velska
+    da: dönsku
+    de: þýska, Þjóðverji, þýskur
+    doi: dogglai
+    dv: Dhivehi
+    ee: Æ
+    el: grísku
+    en: Enska
+    eo: esperantó
+    es: spænska, spænskt
+    et: eistneska, eisti, eistneskur
+    eu: baskneska
+    fa: persneska
+    fi: finnska
+    fil: filippseyska (tagalog)
+    fr: franska
+    fy: frísneska
+    ga: írska
+    gd: skosk gelíska
+    gl: galisíska
+    gn: Guaraní
+    gom: gonggan tungumál
+    gu: gújarati
+    ha: Hausa
+    haw: Hawaiian
+    he: hebresku
+    hi: hindí
+    hmn: Hmong
+    hr: króatíska
+    ht: Haítískt kreóla
+    hu: ungverska, Ungverji, ungverskt
+    hy: Armenska
+    id: indónesíska
+    ig: Ígbó
+    ilo: Ilocano
+    is: íslenskur
+    it: ítalska
+    iw: hebresku
+    ja: japönsku
+    jv: javanska
+    jw: javanska
+    ka: georgískt
+    kk: kasakska
+    km: kambódískur
+    kn: Kannada
+    ko: kóreska
+    kri: kreóla
+    ku: Kúrda
+    ky: Kirgisi
+    la: latína
+    lb: Lúxemborg
+    lg: Lúganda
+    ln: Lingala
+    lo: Laó
+    lt: litháískur
+    lus: Mizo
+    lv: lettneska
+    mai: Maithili
+    mg: malagasíska
+    mi: Maori
+    mk: makedónska
+    ml: Malajalam
+    mn: mongólska
+    mni-mtei: Meitei (Manipúri)
+    mr: maratí
+    ms: malaíska
+    mt: maltneska
+    my: Búrma
+    ne: nepalska
+    nl: hollenska
+    "no": norskur
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: púnjabí
+    pl: pólsku
+    ps: Pastó
+    pt: Portúgalska (Portúgal, Brasilía)
+    qu: Quechua
+    ro: rúmenska
+    ru: Rússneskt
+    rw: Kínjarvanda
+    sa: Sanskrít
+    sd: sindhi
+    si: sinhala
+    sk: Slóvakíu
+    sl: slóvenska
+    sm: Samósk
+    sn: Shona
+    so: sómalska
+    sq: albanska
+    sr: serbneska
+    st: Sesótó
+    su: Sundaneskir
+    sv: sænsku
+    sw: svahílí
+    ta: tamílska
+    te: telúgú
+    tg: Tadsjikska
+    th: Tælensk
+    ti: Tignan
+    tk: Túrkmena
+    tl: Tagalog (filippseyska)
+    tr: tyrkneska
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: úkraínska
+    ur: Úrdú
+    uz: úsbekskur
+    vi: Víetnamska
+    xh: bantu tungumál
+    yi: jiddíska
+    yo: jórúba
+    zh: kínverska
+    zh-chs: Kínverska (einfölduð)
+    zh-cht: Kínverska (einfölduð)
+    zh-cn: Kínverska (einfölduð)
+    zh-hk: Kínverska (Hong Kong)
+    zh-mo: Kínverska (Macau)
+    zh-sg: Kínverska (Singapúr)
+    zh-tw: hefðbundin kínverska)
+    zu: Zulu

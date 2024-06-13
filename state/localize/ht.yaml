@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Enfim fini enstriksyon yo
+        long: |
+            Jenere yon script autocomplete pou {{.RootName}} pou koki ki espesifye a.
+        short: Jenere yon script autocomplete pou kokiy espesifye a
+        subcommand:
+            short: Jenere script autocomplete pou {{.Command}}
     flags:
         debug: Sòti detaye boutèy demi lit
     gen:
@@ -28,18 +36,18 @@ cli:
             short: Jenere fichye .dockerignore
         editorconfig:
             long: Jenere .editorconfig fichye pou konfigirasyon editè
-            short: Jenere dosye .editorconfig
+            short: Jenere .editorconfig fichye
         flags:
             add-proto-files: Si ou bezwen enpòte lòt .proto fichye/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a pral ajoute (pa ranplase) chemen ki konfigire nan fichye konfigirasyon an.
             go-module-prefix: Pou chemen an nan go_package configuré nan .proto fichye a ak youn aktyèl la, ou ka configured opsyon sa a
             input: Espesifye fichye sous .proto yo dwe pwodwi
             output-path: Opsyon sa a ka konfigirasyon lè chemen go_package configuré nan fichye .proto a pa konsistan avèk roadbed ki aktyèlman bezwen pwodwi.
             overwrite: Pou kontni ki pa pral rejenere, fòse ranplase kontni ki egziste deja
-            proto-files: Pou enpòte lòt .proto fichye/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a se yon opsyon pou pase sou pye konfigirasyon nan dosye konfigirasyon an.
+            proto-files: Pou enpòte lòt dosye .proto/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a se yon opsyon pou pase sou pye konfigirasyon an nan dosye konfigirasyon an.
             protoc: '`protoc` chemen fichye personnalisable'
             protoc-gen-go: '`protoc-gen-go` chemen plugin'
             tables-enable_field_created_at: Kit pou pèmèt jenerasyon default konfigirasyon baz done create_at jaden an
-            tables-enable_field_deleted_at: Kit pou pèmèt anviwònman an default nan deleted_at jaden an nan baz done a
+            tables-enable_field_deleted_at: Kit pou pèmèt anviwònman an default nan jaden an deleted_at nan baz done a
             tables-enable_field_id: Pèmèt jenerasyon konfigirasyon default pou jaden ki gen rapò ak baz done yo
             tables-enable_field_updated_at: Kit pou pèmèt valè defo a nan jaden updated_at nan baz done a
             tables-enable_gorm_tag_column: Kit pou pèmèt jenerasyon gorm ki gen rapò ak baz done a
@@ -84,8 +92,10 @@ cli:
                 long: Jenere state.table kòd ki gen rapò, yo itilize pou koneksyon baz done ak inisyalizasyon tab lè sèvis la kòmanse.
                 short: Jenere state.table kòd ki gen rapò
         table:
-            long: Tout fonksyon ki gen rapò ak jenere tab pou resous etatik oswa jesyon resous estatik nan sèvis biznis
+            long: Tout fonksyon ki gen rapò ak jenere tab pou resous eta oswa jesyon resous estatik nan sèvis biznis
             short: Tout fonksyon ki gen rapò pou jenere tab
+    group:
+        gen: jenerasyon kòd
     help:
         additional_commands: Lòt kòmandman
         aliases: kòmand alyas
@@ -94,10 +104,18 @@ cli:
         flags: paramèt
         get_info: pou jwenn plis enfòmasyon detaye
         global_flags: paramèt mondyal yo
+        long: 'Bay enstriksyon itilizasyon pou nenpòt kòmand nan aplikasyon an. '
+        short: Enstriksyon pou itilize nenpòt kòmand
+        usage: Enstriksyon pou itilize {{.Name}}
         use: itilize
     i18n:
         long: Kit zouti ki gen rapò ak entènasyonalizasyon miltiling
         short: Kit zouti ki gen rapò ak entènasyonalizasyon miltiling
+        support:
+            flags:
+                language: Espesifye lang pou montre, otreman y ap itilize kòd lang pou montre lang lan
+            long: Lis tout lang ki sipòte yo
+            short: Lis lang ki sipòte
         tran:
             flags:
                 all-language: Tradui tout lang yo sipòte (si se vre drapo lang yo dezaktive)
@@ -106,7 +124,7 @@ cli:
                 generate-const: Jenere valè enimerasyon pou rele fasil
                 languages: Espesifye lang sib pou tradiksyon an
                 src-file: Fichye sous yo dwe tradui (obligatwa)
-                src-language: Lang nan fichye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)
+                src-language: Lang nan dosye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)
                 translater:
                     google-free: Google Web Translate
                     usage: 'Chanèl tradiksyon: Kalite sipò {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
@@ -114,3 +132,156 @@ cli:
             short: tradwi
     long: Yon seri zouti pou moun ki parese, ki gen ladan kad backend ki baze sou 'proto', modèl yo itilize souvan, ak tradiksyon plizyè lang.
     short: Yon seri zouti pou moun ki parese
+    sync:
+        flags:
+            template-path: Chemen senkronizasyon modèl
+        long: Senkronize konfigirasyon an soti nan fen aleka epi rantre li nan konfigirasyon lokal la sipòte fichye modèl la an menm tan pandan senkronizasyon (si konfigirasyon).
+        short: Senkronize konfigirasyon soti nan aleka
+    up-mod:
+        flags:
+            goproxy: Espesifye adrès goproxy la, si se pa sa, yo pral itilize premye youn nan varyab anviwònman an
+        long: Mete ajou vèsyon depandans dosye go.mod la
+        short: Mete ajou dosye go.mod
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amarik
+    ar: Arab
+    as: Assamese
+    ay: Aymara
+    az: Azerbaydjan
+    be: Belarisyen
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosnyen
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Kors
+    cs: Czech
+    cy: Welsh
+    da: Danwa
+    de: Alman
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: grèk
+    en: angle
+    eo: Esperanto
+    es: panyòl
+    et: Estonyen
+    eu: basque
+    fa: Pèsik
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: franse
+    fy: Frisyen
+    ga: Ilandè
+    gd: Gaelic Scottish
+    gl: Galisyen
+    gn: Guarani
+    gom: langaj gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Awayi
+    he: ebre
+    hi: Hindi
+    hmn: Hmong
+    hr: Kwoasyen
+    ht: Kreyòl ayisyen
+    hu: ongwa
+    hy: Amenyen
+    id: Endonezyen
+    ig: Igbo
+    ilo: Ilocano
+    is: Icelandic
+    it: Italyen
+    iw: ebre
+    ja: Japonè
+    jv: Javanèz
+    jw: Javanèz
+    ka: Jòjyen
+    kk: Kazakh
+    km: Kanbòdjyen
+    kn: Kannada
+    ko: Koreyen
+    kri: Kreyòl
+    ku: Kurdish
+    ky: Kyrgyz
+    la: Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lityanyen
+    lus: Mizo
+    lv: Latvian
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Masedwan
+    ml: Malayalam
+    mn: Mongolyen
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: Maltese
+    my: Burmese
+    ne: Nepali
+    nl: Olandè
+    "no": norvèj
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: Polonè
+    ps: Pashto
+    pt: Pòtigè (Pòtigal, Brezil)
+    qu: Quechua
+    ro: Woumen
+    ru: Ris
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindi
+    si: sinhala
+    sk: Slovak
+    sl: slovèn
+    sm: Samoan
+    sn: Shona
+    so: Somalyen
+    sq: Albanè
+    sr: Sèb
+    st: Sesotho
+    su: Sundanese
+    sv: Swedish
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Tirkmen
+    tl: Tagalog (Filippin)
+    tr: turk
+    ts: Dzonga
+    tt: Tatar
+    ug: Ouygur
+    uk: Ukrainian
+    ur: Oudou
+    uz: Ouzbek
+    vi: Vyetnamyen
+    xh: lang bantou
+    yi: Yiddish
+    yo: yoruba
+    zh: Chinwa
+    zh-chs: Chinwa (Senplifye)
+    zh-cht: Chinwa (Senplifye)
+    zh-cn: Chinwa (Senplifye)
+    zh-hk: Chinwa (Hong Kong)
+    zh-mo: Chinwa (Makaw)
+    zh-sg: Chinwa (Singapore)
+    zh-tw: Chinwa tradisyonèl)
+    zu: Zoulou

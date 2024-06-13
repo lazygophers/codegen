@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Tukuchinapaq kamachiykunata mana ruway
+        long: |
+            {{.RootName}} nisqapaq kikin hunt'asqa qillqata paqarichimun, nisqa k'aspipaq.
+        short: Huk kikin hunt'asqa qillqa mayt'uta paqarichiy, nisqa k'aspipaq
+        subcommand:
+            short: '{{.Command}} nisqapaq kikinmanta hunt''asqa qillqata paqarichiy.'
     flags:
         debug: Salida detallada registro
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Llapan tupaq ruwanakuna tablakuna ruwaymanta estadoyuq recursopaq utaq estático recurso kamachiypaq negocio yanapakuykunamanta
             short: Tukuy tupaq ruwanakuna tablakuna paqarichiypaq
+    group:
+        gen: codigo mirachiy
     help:
         additional_commands: Yapa kamachiykuna
         aliases: kamachiy alias
@@ -94,10 +104,18 @@ cli:
         flags: parámetro nisqa
         get_info: aswan sut’i willakuykunata tarinapaq
         global_flags: pachantinpi parámetros nisqakuna
+        long: 'Yanapakuyqa yanapakuyta qun ima kamachiypaqpas ruwanapi. '
+        short: Ima kamachiypipas yanapay
+        usage: '{{.Suti}} llamk''achinapaq kamachiykuna.'
         use: hapiy
     i18n:
         long: Achka simipi internacionalización nisqawan tupaq yanapakuykuna
         short: Achka simipi internacionalización nisqawan tupaq yanapakuykuna
+        support:
+            flags:
+                language: Qhawachinapaq simita niy, mana chayqa simip chiqanchakuyninwanmi simita rikuchikunqa
+            long: Llapan yanapasqa simikunata qillqay
+            short: Yanapasqa simikuna lista
         tran:
             flags:
                 all-language: Llapan yanapasqa simikunata tikray (chiqap kaptinqa simikunap banderanqa mana llamk'achisqam)
@@ -114,3 +132,156 @@ cli:
             short: tikray
     long: Huk yanapakuy churasqa qilla runakunapaq, chaymanta 'proto'-pi sayasqa qhipa marco, común llamk'achisqa plantillakuna, chaymanta achka simi tikray
     short: Qilla runakunapaq churasqa herramienta
+    sync:
+        flags:
+            template-path: Plantilla sincronización ñan
+        long: Karu tukukuymanta wakichiyta tinkuchiy chaymanta kiti wakichiyman hukllana Plantilla willañiqiqa hukllanakuy pachapi kaq pacha yanapasqa (sichus wakichisqa kachkan).
+        short: Karumanta ruwanakunata tinkuchiy
+    up-mod:
+        flags:
+            goproxy: Goproxy direccionta niy, mana kaqtinqa, muyuriq tikraqpi ñawpaq kaqmi llamk'achisqa kanqa
+        long: go.mod willañiqip dependencia kaqninta musuqchay
+        short: go.mod qillqata musuqyachiy
+lang:
+    af: Afrikaans simipi
+    ak: Twi (Akan) .
+    am: Amharico simipi
+    ar: Arabe simipi
+    as: Asames Simi
+    ay: Aymara Simi
+    az: Azerbaiyán simipi
+    be: Bielorruso simi
+    bg: Búlgaro simipi
+    bho: Bhojpuri Simi
+    bm: Bambara Simi
+    bn: Bengali simipi
+    bs: Bosniamanta
+    ca: Catalan simipi
+    ceb: Cebuano simipi
+    ckb: Kurdu simi (Sorani) .
+    co: Corsico simipi
+    cs: Checo simipi
+    cy: Galés simipi
+    da: danés simi
+    de: Alemán simipi
+    doi: dogglai
+    dv: Dhivehi Simi
+    ee: Ewé Simi
+    el: Griego simipi
+    en: Ingles Simi
+    eo: Esperanto simipi
+    es: Español
+    et: Estonia simimanta
+    eu: vasco
+    fa: Persa simipi
+    fi: Finlandés simipi
+    fil: Filipinas simi (tagalo simipi) .
+    fr: Francés simipi
+    fy: Frisiano
+    ga: irlandés
+    gd: Escociamanta gaélico simi
+    gl: Galicia simipi
+    gn: Guarani Simi
+    gom: gongan simi
+    gu: gujarati
+    ha: Hausa
+    haw: Hawaiano
+    he: hebreo rimaypi
+    hi: Hindi simipi
+    hmn: Hmong
+    hr: Kroata simi
+    ht: Haitiano criollo
+    hu: húngaro
+    hy: Armenio simi
+    id: Indonesia simipi
+    ig: Igbo simipi
+    ilo: Ilocano Simi
+    is: Islandia simipi
+    it: Italiano simi
+    iw: hebreo rimaypi
+    ja: Japonés simi
+    jv: Javan simipi
+    jw: Javan simipi
+    ka: Georgia simipi
+    kk: Kazakh simipi
+    km: Kamboyamanta
+    kn: Kannada simipi
+    ko: Corea simimanta
+    kri: Criollo simipi
+    ku: Kurdu simipi
+    ky: Kirguis
+    la: Latin simipi
+    lb: Luxemburgo simimanta
+    lg: Luganda Simi
+    ln: Lingala Simi
+    lo: Lao suyupi
+    lt: Lituano simi
+    lus: Mizo Simi
+    lv: Letoniamanta
+    mai: Maithili Simi
+    mg: Malgache simipi
+    mi: Maori
+    mk: Macedoniamanta
+    ml: Malayalam simipi
+    mn: Mongol simi
+    mni-mtei: Meitei (Manipuri) .
+    mr: marathi
+    ms: Malay
+    mt: Malta simipi
+    my: Birmania simi
+    ne: Nepal simipi
+    nl: Holandés simi
+    "no": noruegomanta
+    nso: Sepeti
+    ny: Nyanza (Chichewa) .
+    om: Oromo Simi
+    or: Oriya (Odia) simipi.
+    pa: punjabi simipi
+    pl: Pula simi
+    ps: Pashto simipi
+    pt: Purtuyis simi (Purtugal, Brasil)
+    qu: Runasimi
+    ro: Rumania simipi
+    ru: Ruso simipi
+    rw: Kinyarwanda simipi
+    sa: Sanscrito Simi
+    sd: sindhi
+    si: sinhala simipi
+    sk: Eslovaco simipi
+    sl: esloveno
+    sm: Samoamanta
+    sn: Shona
+    so: Somalia simipi
+    sq: Albanés simipi
+    sr: Serbia simi
+    st: Sesoto simipi
+    su: Sundanu simi
+    sv: Sueco simi
+    sw: Swahili simipi
+    ta: tamil
+    te: telugu
+    tg: Tajik simipi
+    th: Tailandés simi
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalo (Filipino) simipi.
+    tr: turco
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukranyamanta
+    ur: Urdu simipi
+    uz: Uzbek simipi
+    vi: Vietnam simimanta
+    xh: bantu simi
+    yi: Yiddish simi
+    yo: yoruba
+    zh: Chino
+    zh-chs: Chino (Simplificado) .
+    zh-cht: Chino (Simplificado) .
+    zh-cn: Chino (Simplificado) .
+    zh-hk: Chino (Hong Kong) .
+    zh-mo: Chino(Macau) .
+    zh-sg: Chinu simi (Singapur) .
+    zh-tw: tradicional chino) .
+    zu: Zulu simipi

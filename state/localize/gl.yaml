@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Desactivar as instrucións de finalización
+        long: |
+            Xera un script de autocompletar para {{.RootName}} para o shell especificado.
+        short: Xera un script de autocompletar para o shell especificado
+        subcommand:
+            short: Xerar un script de autocompletar para {{.Command}}
     flags:
         debug: Saída de rexistro detallado
     gen:
@@ -48,7 +56,7 @@ cli:
             short: Xerar ficheiro .gitignore
         golang-lint:
             long: Xera un ficheiro .golangci.yml para a inspección da calidade do código
-            short: Xera o ficheiro .golangci.yml
+            short: Xerar ficheiro .golangci.yml
         goreleaser:
             long: Xera o ficheiro .goreleaser.yml para a configuración das ferramentas de lanzamento
             short: Xerar ficheiro .goreleaser.yml
@@ -72,8 +80,8 @@ cli:
                 short: Xerar código de lectura do ficheiro de configuración
             flags:
                 cache: Indica se se activa a xeración relacionada coa caché
-                config: Indica se hai que xerar código relacionado coa configuración
-                i18n: Indica se se activa a xeración relacionada en varios idiomas (a xeración só inclúe a inicialización do estado e outro contido, e non inclúe a tradución automática de varios idiomas. Se precisas unha tradución automática, utiliza {{.Command}} para ver os detalles)
+                config: Indica se se debe xerar código relacionado coa configuración
+                i18n: Indica se se activa a xeración relacionada en varios idiomas (a xeración só inclúe a inicialización do estado e outro contido, e non inclúe tradución automática de varios idiomas. Se precisas unha tradución automática, utiliza {{.Command}} para ver os detalles)
                 table: Indica se se activa a xeración de bases de datos relacionadas coa base de datos
             i18n:
                 long: Xera código relacionado con i18n para chamadas internacionais en varios idiomas
@@ -84,8 +92,10 @@ cli:
                 long: Xera código relacionado state.table, usado para a conexión de base de datos e a inicialización da táboa cando se inicia o servizo.
                 short: Xerar código relacionado state.table
         table:
-            long: Todas as funcións relacionadas de xeración de táboas para recursos con estado ou xestión de recursos estáticos de servizos empresariais
+            long: Todas as funcións relacionadas de xeración de táboas para recursos con estado ou xestión de recursos estáticos dos servizos empresariais
             short: Todas as funcións relacionadas para xerar táboas
+    group:
+        gen: xeración de código
     help:
         additional_commands: Comandos adicionais
         aliases: alias de comando
@@ -94,10 +104,18 @@ cli:
         flags: parámetro
         get_info: para obter información máis detallada
         global_flags: parámetros globais
+        long: 'Proporcione instrucións de uso para calquera comando da aplicación. '
+        short: Instrucións para usar calquera comando
+        usage: Instrucións para usar {{.Name}}
         use: usar
     i18n:
         long: Caja de ferramentas multilingüe relacionada coa internacionalización
         short: Caja de ferramentas multilingüe relacionada coa internacionalización
+        support:
+            flags:
+                language: Especifique o idioma para mostrar, se non, o código de idioma será usado para mostrar o idioma
+            long: Lista todos os idiomas admitidos
+            short: Lista de idiomas admitidos
         tran:
             flags:
                 all-language: Traduce todos os idiomas admitidos (se é verdade, a bandeira de idiomas está desactivada)
@@ -114,3 +132,156 @@ cli:
             short: traducir
     long: Un conxunto de ferramentas para preguiceiros, que inclúe un marco de backend baseado en "proto", modelos de uso habitual e tradución multilingüe
     short: Un conxunto de ferramentas para preguiceiros
+    sync:
+        flags:
+            template-path: Camiño de sincronización de modelos
+        long: Sincronice a configuración desde o extremo remoto e combínaa coa configuración local. O ficheiro de modelo é compatible ao mesmo tempo durante a sincronización (se está configurado).
+        short: Sincronizar a configuración desde o control remoto
+    up-mod:
+        flags:
+            goproxy: Especifique o enderezo de goproxy, se non, empregarase o primeiro da variable de ambiente
+        long: Actualiza a versión de dependencia do ficheiro go.mod
+        short: Actualiza o ficheiro go.mod
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: amárico
+    ar: árabe
+    as: asamés
+    ay: aimara
+    az: azerbaiyano
+    be: bielorruso
+    bg: búlgaro
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengalí
+    bs: bosníaco
+    ca: catalán
+    ceb: Cebuano
+    ckb: kurdo (sorani)
+    co: corso
+    cs: checo
+    cy: galés
+    da: danés
+    de: alemán
+    doi: dogglai
+    dv: Divehi
+    ee: Ovella
+    el: grego
+    en: inglés
+    eo: Esperanto
+    es: español
+    et: Estonio
+    eu: vasco
+    fa: persa
+    fi: finés
+    fil: filipino (tagalo)
+    fr: francés
+    fy: frisón
+    ga: irlandesa
+    gd: Gaélico escocés
+    gl: galego
+    gn: guaraní
+    gom: lingua gonggan
+    gu: guxarati
+    ha: Hausa
+    haw: hawaiano
+    he: hebreo
+    hi: Hindi
+    hmn: Hmong
+    hr: croata
+    ht: crioulo haitiano
+    hu: húngaro
+    hy: armenio
+    id: indonesio
+    ig: Igbo
+    ilo: Ilocano
+    is: islandés
+    it: italiano
+    iw: hebreo
+    ja: xaponés
+    jv: xavanés
+    jw: xavanés
+    ka: xeorxiano
+    kk: Casaco
+    km: cambadés
+    kn: Kannada
+    ko: coreano
+    kri: crioulo
+    ku: kurdo
+    ky: quirguises
+    la: latín
+    lb: luxemburgués
+    lg: Luganda
+    ln: lingala
+    lo: Lao
+    lt: lituano
+    lus: Mizo
+    lv: letón
+    mai: Maithili
+    mg: malgache
+    mi: maorí
+    mk: macedonio
+    ml: malayalam
+    mn: mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: malaio
+    mt: maltés
+    my: birmano
+    ne: nepalí
+    nl: holandés
+    "no": noruego
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punxabi
+    pl: polaco
+    ps: Paxtú
+    pt: Portugués (Portugal, Brasil)
+    qu: Quechua
+    ro: romanés
+    ru: ruso
+    rw: Kinyarwanda
+    sa: sánscrito
+    sd: sindhi
+    si: cingalés
+    sk: eslovaco
+    sl: esloveno
+    sm: samoano
+    sn: Shona
+    so: somalí
+    sq: albanés
+    sr: serbio
+    st: Sesotho
+    su: sundanés
+    sv: sueco
+    sw: suahili
+    ta: tamil
+    te: telugu
+    tg: taxico
+    th: tailandés
+    ti: Tignan
+    tk: turcomano
+    tl: Tagalo (filipino)
+    tr: turco
+    ts: Dzonga
+    tt: tártaro
+    ug: uigur
+    uk: ucraíno
+    ur: Urdú
+    uz: uzbeco
+    vi: vietnamita
+    xh: lingua bantú
+    yi: yiddish
+    yo: ioruba
+    zh: chinés
+    zh-chs: Chinés (simplificado)
+    zh-cht: Chinés (simplificado)
+    zh-cn: Chinés (simplificado)
+    zh-hk: Chinés (Hong Kong)
+    zh-mo: chinés (Macao)
+    zh-sg: Chinés (Singapur)
+    zh-tw: chinés tradicional)
+    zu: Zulú

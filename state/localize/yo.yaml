@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Pa awọn ilana ipari
+        long: |
+            Ṣiṣẹda iwe afọwọkọ aladaaṣe fun {{.RootName}} fun ikarahun pàtó kan.
+        short: Ṣe ina iwe afọwọkọ pipe fun ikarahun ti a ti sọ tẹlẹ
+        subcommand:
+            short: Ṣe agbekalẹ iwe afọwọkọ pipe fun {{.Aṣẹ}}
     flags:
         debug: Ijade alaye log
     gen:
@@ -86,6 +94,8 @@ cli:
         table:
             long: Gbogbo awọn iṣẹ ti o ni ibatan ti awọn tabili ipilẹṣẹ fun orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
             short: Gbogbo jẹmọ awọn iṣẹ fun ti o npese tabili
+    group:
+        gen: koodu iran
     help:
         additional_commands: Awọn aṣẹ afikun
         aliases: aṣẹ inagijẹ
@@ -94,10 +104,18 @@ cli:
         flags: paramita
         get_info: lati gba alaye diẹ sii
         global_flags: agbaye sile
+        long: 'Iranlọwọ n pese iranlọwọ fun eyikeyi aṣẹ ninu ohun elo naa. '
+        short: Iranlọwọ lori eyikeyi aṣẹ
+        usage: Awọn ilana fun lilo {{.Name}}
         use: lo
     i18n:
         long: Ohun elo irinṣẹ ti o ni ibatan si ilu okeere ti ede pupọ
         short: Ohun elo irinṣẹ ti o ni ibatan si ilu okeere ti ede pupọ
+        support:
+            flags:
+                language: Pato ede lati ṣafihan, bibẹẹkọ koodu ede yoo ṣee lo lati ṣafihan ede naa
+            long: Ṣe atokọ gbogbo awọn ede ti o ni atilẹyin
+            short: Atokọ ede ti o ni atilẹyin
         tran:
             flags:
                 all-language: Tumọ gbogbo awọn ede ti o ni atilẹyin (ti o ba jẹ otitọ awọn asia awọn ede jẹ alaabo)
@@ -114,3 +132,156 @@ cli:
             short: tumọ
     long: Ohun elo ti a ṣeto fun awọn ọlẹ, pẹlu 'proto' ipilẹ-ipilẹ ẹhin, awọn awoṣe ti a lo nigbagbogbo, ati itumọ ede pupọ
     short: A ọpa ṣeto fun Ọlẹ eniyan
+    sync:
+        flags:
+            template-path: Ona amuṣiṣẹpọ awoṣe
+        long: Mu iṣeto ṣiṣẹpọ lati opin jijin ki o dapọ si iṣeto agbegbe Faili awoṣe naa ni atilẹyin ni akoko kanna lakoko mimuuṣiṣẹpọ (ti o ba tunto)
+        short: Amuṣiṣẹpọ iṣeto ni lati isakoṣo latọna jijin
+    up-mod:
+        flags:
+            goproxy: Pato adirẹsi goproxy, ti kii ba ṣe bẹ, akọkọ ninu oniyipada ayika yoo ṣee lo
+        long: Ṣe imudojuiwọn ẹya igbẹkẹle ti faili go.mod
+        short: Ṣe imudojuiwọn faili go.mod
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amharic
+    ar: Larubawa
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijan
+    be: Belarusian
+    bg: Bulgarian
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Ede Bengali
+    bs: Ara Bosnia
+    ca: Catalan
+    ceb: Cebuano
+    ckb: Kurdish (Sorani)
+    co: Corsican
+    cs: Czech
+    cy: Welsh
+    da: Danish
+    de: Jẹmánì
+    doi: dogglai
+    dv: Divehi
+    ee: Ewe
+    el: Giriki
+    en: English
+    eo: Esperanto
+    es: ede Spain
+    et: Estonia
+    eu: basque
+    fa: Persian
+    fi: Finnish
+    fil: Filipino (Tagalog)
+    fr: Faranse
+    fy: Frisia
+    ga: Irish
+    gd: Scotland Gaelic
+    gl: Galician
+    gn: Guaraní
+    gom: ede gonggan
+    gu: gujarati
+    ha: Hausa
+    haw: Ilu Hawahi
+    he: Heberu
+    hi: Hindi
+    hmn: Hmong
+    hr: Ede Croatian
+    ht: Haitian Creole
+    hu: ara ilu Hungary
+    hy: Ara Armenia
+    id: Ede Indonesian
+    ig: Igbo
+    ilo: Ilocano
+    is: Icelandic
+    it: Itali
+    iw: Heberu
+    ja: Japanese
+    jv: Javanese
+    jw: Javanese
+    ka: Georgian
+    kk: Kazakh
+    km: Kambodia
+    kn: Kannada
+    ko: Korean
+    kri: Creole
+    ku: Kurdish
+    ky: Kirgisi
+    la: Latin
+    lb: Luxembourgish
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Lithuania
+    lus: Mizo
+    lv: Latvia
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedonian
+    ml: Malayalam
+    mn: Mongolian
+    mni-mtei: Meitei (Manipuri)
+    mr: marathi
+    ms: Malay
+    mt: Èdè Malta
+    my: Burmese
+    ne: Nepali
+    nl: Dutch
+    "no": ara Norway
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: pólándì
+    ps: Pashto
+    pt: Portuguese (Portugal, Brazil)
+    qu: Quechua
+    ro: Romanian
+    ru: Russian
+    rw: Kinyarwanda
+    sa: Sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: Slovakia
+    sl: Ara Slovenia
+    sm: Samoan
+    sn: Shona
+    so: Somali
+    sq: Ede Albania
+    sr: Ede Serbia
+    st: Sesotho
+    su: Ede Sundan
+    sv: Swedish
+    sw: Swahili
+    ta: tamil
+    te: telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turkmen
+    tl: Tagalog (Filipino)
+    tr: Tọki
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ukrainian
+    ur: Urdu
+    uz: Uzbekisi
+    vi: Vietnamese
+    xh: ede bantu
+    yi: Yiddish
+    yo: yoruba
+    zh: Kannada
+    zh-chs: Kannada (Irọrun)
+    zh-cht: Kannada (Irọrun)
+    zh-cn: Kannada (Irọrun)
+    zh-hk: Kannada (Hong Kong)
+    zh-mo: Kannada (Macau)
+    zh-sg: Kannada (Singapore)
+    zh-tw: Kannada (Taiwan)
+    zu: Zulu

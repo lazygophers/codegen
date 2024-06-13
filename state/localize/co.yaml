@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Disattivate l'istruzzioni di cumpletamentu
+        long: |
+            Genera un script di autocomplete per {{.RootName}} per a cunchiglia specifica.
+        short: Generate un script di autocomplete per a cunchiglia specifica
+        subcommand:
+            short: Generate script di autocomplete per {{.Command}}
     flags:
         debug: Output log detallatu
     gen:
@@ -35,7 +43,7 @@ cli:
             input: Specificate u schedariu di fonte .proto per esse generatu
             output-path: Questa opzione pò esse cunfigurata quandu a strada di go_package cunfigurata in u schedariu .proto hè inconsistente cù a strada chì deve esse generata.
             overwrite: Per u cuntenutu chì ùn serà micca rigeneratu, forza a soprascrittura di u cuntenutu esistenti
-            proto-files: Per impurtà altri .proto files / folder paths chì ùn sò micca in u stessu cartulare cum'è u schedariu .proto specificatu, questa operazione hè una opzione per annullà u campu di cunfigurazione in u schedariu di cunfigurazione.
+            proto-files: Per impurtà altri .proto files / folder paths chì ùn sò micca in u stessu cartulare cum'è u schedariu .proto specificatu, sta operazione hè una opzione per annullà u campu di cunfigurazione in u schedariu di cunfigurazione.
             protoc: '`protoc` percorso di file customizable'
             protoc-gen-go: percorso di plugin `protoc-gen-go`
             tables-enable_field_created_at: Sia per attivà a generazione di cunfigurazione predeterminata di a basa di dati creata_at campu
@@ -57,35 +65,37 @@ cli:
             short: Generate schedarii di implementazione
         long: Generatore di codice, supporta parechje mudelli
         makefile:
-            long: Generate fugliali Makefile per l'arnesi di custruzzione è altri cumandamenti rilativi
+            long: Generate fugliali Makefile per strumenti di costruzione è altri cumandamenti cunnessi
             short: Generate Makefile
         mod:
             long: Generate u schedariu go.mod per a gestione di a dependenza
             short: Generate u schedariu go.mod
         pb:
-            long: Generate schedarii .pb.go, chì sò usati per generà schedarii .proto L'etichetti di u campu pertinenti x seranu aghjuntu automaticamente secondu a cunfigurazione.
+            long: Generate schedarii .pb.go, chì sò usati per generà i schedarii .proto L'etichetti di u campu pertinenti x seranu aghjuntu automaticamente secondu a cunfigurazione.
             short: Generate u schedariu .pb.go
         short: Generatore di codice
         state:
             conf:
-                long: Genera codice di lettura di file di cunfigurazione per a lettura di cunfigurazione di serviziu cummerciale
+                long: Genera codice di lettura di u schedariu di cunfigurazione per a lettura di cunfigurazione di serviziu cummerciale
                 short: Genera codice di lettura di u schedariu di cunfigurazione
             flags:
                 cache: Sia per attivà a generazione di cache
                 config: Sia generà codice di cunfigurazione
-                i18n: Sia per attivà a generazione in parechje lingue (a generazione include solu l'inizializazione statali è altri cuntenutu, è ùn include micca a traduzzione automatica di parechje lingue. Sè avete bisognu di traduzzione automatica, per piacè utilizate {{.Command}} per vede i dettagli)
+                i18n: Sia per attivà a generazione multilingue (a generazione include solu l'inizializazione di u statu è altri cuntenutu, è ùn include micca a traduzzione automatica di parechje lingue. Sè avete bisognu di traduzzione automatica, per piacè utilizate {{.Command}} per vede i dettagli)
                 table: Sia per attivà a generazione di basa di dati di basa di dati
             i18n:
                 long: Genera codice i18n in relazione per e chjama internaziunali multilingue
                 short: Genera codice i18n in relazione
-            long: Genera tutte e funzioni di u statu ligate per a risorsa statale o a gestione di risorse statiche di i servizii cummerciale
+            long: Genera tutte e funzioni relative di u statu per a gestione di risorse statali o di risorse statiche di servizii di cummerciale
             short: Tutte e funzioni pertinenti per a generazione di u statu
             table:
                 long: Generate codice relative state.table, utilizatu per a cunnessione di a basa di dati è l'inizializazione di a tavola quandu u serviziu hè iniziatu.
                 short: Genera codice state.table rilativi
         table:
-            long: Tutte e funzioni cunnesse di generazione di tabelle per a gestione di risorse stateful o di risorse statiche di servizii di cummerciale
+            long: Tutte e funzioni cunnesse di generazione di tavule per a gestione di risorse stateful o di risorse statiche di servizii di cummerciale
             short: Tutte e funzioni relative per a generazione di tavule
+    group:
+        gen: generazione di codice
     help:
         additional_commands: Cumandamenti supplementari
         aliases: alias di cumandamentu
@@ -94,10 +104,18 @@ cli:
         flags: paràmetru
         get_info: per avè infurmazione più dettagliata
         global_flags: paràmetri globale
+        long: 'Fornite struzzioni d''usu per qualsiasi cumandamentu in l''applicazione. '
+        short: Istruzzioni per aduprà ogni cumandamentu
+        usage: Istruzzioni per aduprà {{.Name}}
         use: usu
     i18n:
         long: Toolkit multilingue in relazione à l'internazionalizazione
         short: Toolkit multilingue in relazione à l'internazionalizazione
+        support:
+            flags:
+                language: Specificate a lingua per vede, altrimenti u codice di lingua serà utilizatu per vede a lingua
+            long: Lista tutte e lingue supportate
+            short: Lista di lingue supportate
         tran:
             flags:
                 all-language: Traduce tutte e lingue supportate (se vera a bandiera di lingue hè disattivata)
@@ -114,3 +132,156 @@ cli:
             short: traduce
     long: Un set di strumenti per i pigri, cumprese un framework di backend basatu in "proto", mudelli cumuni è traduzzione multilingue.
     short: Un strumentu per i pigri
+    sync:
+        flags:
+            template-path: Percorsu di sincronizazione di mudelli
+        long: Sincronizza a cunfigurazione da l'estremità remota è unisce in a cunfigurazione lucale U schedariu di mudellu hè supportatu à u stessu tempu durante a sincronizazione (se cunfigurata).
+        short: Sincronizza a cunfigurazione da a distanza
+    up-mod:
+        flags:
+            goproxy: Specificate l'indirizzu goproxy, se no, u primu in a variabile di l'ambiente serà utilizatu
+        long: Aghjurnate a versione di dependenza di u schedariu go.mod
+        short: Aghjurnà u schedariu go.mod
+lang:
+    af: Afrikaans
+    ak: Twi (Akan)
+    am: Amaricu
+    ar: Arabu
+    as: Assamese
+    ay: Aymara
+    az: Azerbaijan
+    be: Bielorussu
+    bg: Bulgaru
+    bho: Bhojpuri
+    bm: Bambara
+    bn: Bengali
+    bs: Bosniacu
+    ca: Catalanu
+    ceb: Cebuanu
+    ckb: Curdu (Sorani)
+    co: Corsu
+    cs: Ceccu
+    cy: gallese
+    da: Danese
+    de: Tedescu
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: Grecu
+    en: Inglese
+    eo: Esperantu
+    es: Spagnolu
+    et: Estone
+    eu: Vascu
+    fa: Persianu
+    fi: Finlandese
+    fil: Filippino (tagalog)
+    fr: Francese
+    fy: frisone
+    ga: Irlandese
+    gd: gaelicu scozzese
+    gl: Galizianu
+    gn: Guaraní
+    gom: lingua gonggan
+    gu: Gujarati
+    ha: Hausa
+    haw: Hawaiianu
+    he: Ebraicu
+    hi: Hindi
+    hmn: Hmong
+    hr: Cruatu
+    ht: Creolu Haitianu
+    hu: Ungherese
+    hy: Armenu
+    id: Indonesianu
+    ig: Igbo
+    ilo: Ilocano
+    is: Islandesu
+    it: Talianu
+    iw: Ebraicu
+    ja: Ghjappunese
+    jv: Giavanese
+    jw: Giavanese
+    ka: Georgianu
+    kk: Kazakh
+    km: Cambogiana
+    kn: Kannada
+    ko: Coreanu
+    kri: criolu
+    ku: Curdu
+    ky: Kyrgyz
+    la: Latinu
+    lb: Lussemburghese
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Littuanianu
+    lus: Mizu
+    lv: Lettone
+    mai: Maithili
+    mg: Malagasy
+    mi: Maori
+    mk: Macedone
+    ml: Malayalam
+    mn: Mongolianu
+    mni-mtei: Meitei (Manipuri)
+    mr: Marathi
+    ms: Malese
+    mt: Maltese
+    my: Birmanu
+    ne: Nepalese
+    nl: Ulandesa
+    "no": Novegese
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromu
+    or: Oriya (Odia)
+    pa: Punjabi
+    pl: Pulaccu
+    ps: Pashto
+    pt: Portoghese (Portugal, Brasile)
+    qu: Quechua
+    ro: Rumenu
+    ru: Russu
+    rw: Kinyarwanda
+    sa: Sanscrittu
+    sd: Sindhi
+    si: sinhala
+    sk: Sluvaccu
+    sl: Sluvenu
+    sm: Samoan
+    sn: Shona
+    so: Somalianu
+    sq: Albanese
+    sr: Serbianu
+    st: Sesotho
+    su: Sundanese
+    sv: Svedese
+    sw: Swahili
+    ta: Tamil
+    te: Telugu
+    tg: Tajik
+    th: Thai
+    ti: Tignan
+    tk: Turchmennu
+    tl: Tagalog (Filippino)
+    tr: turcu
+    ts: Dzonga
+    tt: Tatar
+    ug: Uighur
+    uk: Ucrainu
+    ur: Urdu
+    uz: Uzbek
+    vi: vietnamita
+    xh: lingua bantu
+    yi: Yiddish
+    yo: yoruba
+    zh: Cinese
+    zh-chs: Cinese (simplificatu)
+    zh-cht: Cinese (simplificatu)
+    zh-cn: Cinese (simplificatu)
+    zh-hk: Cinese (Hong Kong)
+    zh-mo: Cinese (Macau)
+    zh-sg: Cinese (Singapore)
+    zh-tw: cinese tradiziunale)
+    zu: Zulu

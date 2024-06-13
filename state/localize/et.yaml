@@ -1,4 +1,12 @@
 cli:
+    completion:
+        flags:
+            no-descriptions: Keela täitmise juhised
+        long: |
+            Genereerib määratud kesta jaoks automaatse täitmise skripti {{.RootName}} jaoks.
+        short: Looge määratud kesta jaoks automaatse täitmise skript
+        subcommand:
+            short: Loo automaatse täitmise skript käsule {{.Command}}
     flags:
         debug: Väljund üksikasjalik logi
     gen:
@@ -30,7 +38,7 @@ cli:
             long: Redaktori seadistamiseks genereerige .editorconfig-fail
             short: Looge editorconfig fail
         flags:
-            add-proto-files: Kui teil on vaja importida teisi protofaile/kaustateid, mis ei asu määratud protofailiga samas kaustas, lisab see toiming (mitte kirjutab üle) konfiguratsioonifailis konfigureeritud tee.
+            add-proto-files: Kui teil on vaja importida teisi protofaile/kaustateid, mis ei asu määratud protofailiga samas kaustas, lisab see toiming (mitte kirjuta üle) konfiguratsioonifailis konfigureeritud tee.
             go-module-prefix: Proto failis konfigureeritud go_package tee ja tegeliku tee jaoks saate seda suvandit seadistada
             input: Määrake genereeritav .proto lähtefail
             output-path: Seda suvandit saab konfigureerida, kui failis .proto konfigureeritud go_package tee on vastuolus tegelikult genereeritava teepõhjaga.
@@ -86,6 +94,8 @@ cli:
         table:
             long: Kõik seotud funktsioonid tabelite genereerimiseks äriteenuste olekupõhiseks või staatiliseks ressursihalduseks
             short: Kõik seotud funktsioonid tabelite genereerimiseks
+    group:
+        gen: koodi genereerimine
     help:
         additional_commands: Täiendavad käsud
         aliases: käsu alias
@@ -94,10 +104,18 @@ cli:
         flags: parameeter
         get_info: täpsema teabe saamiseks
         global_flags: globaalsed parameetrid
+        long: 'Esitage rakenduse mis tahes käsu jaoks kasutusjuhised. '
+        short: Juhised mis tahes käsu kasutamiseks
+        usage: Juhised {{.Name}} kasutamiseks
         use: kasutada
     i18n:
         long: Mitmekeelne rahvusvahelistumisega seotud tööriistakomplekt
         short: Mitmekeelne rahvusvahelistumisega seotud tööriistakomplekt
+        support:
+            flags:
+                language: Määrake kuvatav keel, vastasel juhul kasutatakse keele kuvamiseks keelekoodi
+            long: Loetlege kõik toetatud keeled
+            short: Toetatud keelte loend
         tran:
             flags:
                 all-language: Tõlgi kõik toetatud keeled (kui see on tõene, on keelte lipp keelatud)
@@ -114,3 +132,156 @@ cli:
             short: tõlkida
     long: Tööriistakomplekt laiskadele inimestele, sealhulgas "proto"-põhine taustaraamistik, tavaliselt kasutatavad mallid ja mitmekeelsed tõlked
     short: Tööriistade komplekt laiskadele inimestele
+    sync:
+        flags:
+            template-path: Malli sünkroonimise tee
+        long: Sünkroonige konfiguratsioon kaugotsast ja ühendage see kohaliku konfiguratsiooniga mallifaili toetatakse samal ajal sünkroonimise ajal (kui see on konfigureeritud).
+        short: Konfiguratsiooni sünkroonimine kaugjuhtimispuldist
+    up-mod:
+        flags:
+            goproxy: Määrake goproxy aadress, kui mitte, kasutatakse keskkonnamuutuja esimest
+        long: Värskendage faili go.mod sõltuvusversiooni
+        short: Värskendage faili go.mod
+lang:
+    af: afrikaani
+    ak: Twi (akan)
+    am: amhari
+    ar: araabia keel
+    as: Assami
+    ay: Aimara
+    az: Aserbaidžaan
+    be: valgevenelane
+    bg: bulgaaria keel
+    bho: Bhojpuri
+    bm: Bambara
+    bn: bengali
+    bs: bosnia keel
+    ca: katalaani
+    ceb: Cebuano
+    ckb: kurdi (sorani)
+    co: Korsika
+    cs: tšehhi
+    cy: kõmri
+    da: taani keel
+    de: saksa keel
+    doi: dogglai
+    dv: Dhivehi
+    ee: Ewe
+    el: kreeka keel
+    en: Inglise
+    eo: esperanto
+    es: hispaania keel
+    et: eesti keel
+    eu: baski keel
+    fa: pärslane
+    fi: soome keel
+    fil: filipino (tagalog)
+    fr: prantsuse keel
+    fy: friisi keel
+    ga: iirlane
+    gd: šoti gaeli keel
+    gl: Galicia
+    gn: Guaraní
+    gom: gongani keel
+    gu: gudžarati keel
+    ha: Hausa
+    haw: Havai
+    he: heebrea keel
+    hi: hindi
+    hmn: hmong
+    hr: Horvaatia
+    ht: Haiti kreool
+    hu: ungarlane
+    hy: armeenlane
+    id: Indoneesia
+    ig: igbo
+    ilo: Ilocano
+    is: islandi
+    it: itaalia keel
+    iw: heebrea keel
+    ja: Jaapani
+    jv: jaava keel
+    jw: jaava keel
+    ka: Gruusia keel
+    kk: kasahhi
+    km: Kambodža
+    kn: kannada
+    ko: korea keel
+    kri: kreool
+    ku: kurdi
+    ky: kirgiisi
+    la: ladina keel
+    lb: Luksemburgi keel
+    lg: Luganda
+    ln: Lingala
+    lo: Lao
+    lt: Leedu
+    lus: Mizo
+    lv: lätlane
+    mai: Maithili
+    mg: Madagaskari
+    mi: maoorid
+    mk: makedoonlane
+    ml: malajalami
+    mn: mongoli keel
+    mni-mtei: meitei (manipuri)
+    mr: marati
+    ms: malai
+    mt: malta keel
+    my: birma
+    ne: Nepali
+    nl: hollandi keel
+    "no": norra keel
+    nso: Sepeti
+    ny: nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: pandžabi
+    pl: poola keel
+    ps: puštu
+    pt: portugali keel (Portugal, Brasiilia)
+    qu: ketšua
+    ro: rumeenlane
+    ru: vene keel
+    rw: Kinyarwanda
+    sa: sanskrit
+    sd: sindhi
+    si: sinhala
+    sk: slovaki
+    sl: sloveen
+    sm: Samoa
+    sn: Shona
+    so: Somaalia
+    sq: albaanlane
+    sr: serblane
+    st: Sesotho
+    su: sundalane
+    sv: rootsi keel
+    sw: suahiili keel
+    ta: tamiil
+    te: telugu
+    tg: tadžiki
+    th: Tai
+    ti: Tignan
+    tk: türkmeen
+    tl: tagalogi (filipino)
+    tr: türgi keel
+    ts: Dzonga
+    tt: tatarlane
+    ug: uiguurid
+    uk: ukrainlane
+    ur: urdu
+    uz: usbeki
+    vi: vietnamlane
+    xh: bantu keel
+    yi: jidiš
+    yo: joruba
+    zh: hiina keel
+    zh-chs: Lihtsustatud hiina keel)
+    zh-cht: Lihtsustatud hiina keel)
+    zh-cn: Lihtsustatud hiina keel)
+    zh-hk: hiina (Hongkong)
+    zh-mo: hiina (Aomen)
+    zh-sg: hiina (Singapur)
+    zh-tw: traditsiooniline hiina)
+    zu: suulu

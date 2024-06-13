@@ -17,4 +17,5 @@ func Load(rootCmd *cobra.Command) {
 	rootCmd.AddCommand(i18nCmd)
 
 	initTran()
+	initSupport()
 }
