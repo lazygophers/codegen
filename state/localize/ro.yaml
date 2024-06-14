@@ -134,7 +134,9 @@ cli:
     short: Un set de instrumente pentru leneși
     sync:
         flags:
+            password: Parola folosită pentru a solicita verificarea
             template-path: Calea de sincronizare a șablonului
+            username: Numele de utilizator folosit pentru a solicita verificarea
         long: Sincronizați configurația de la distanță și îmbinați-o în configurația locală Fișierul șablon este acceptat în același timp în timpul sincronizării (dacă este configurat).
         short: Sincronizați configurația de la distanță
     up-mod:

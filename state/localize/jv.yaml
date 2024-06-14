@@ -134,7 +134,9 @@ cli:
     short: A set alat kanggo wong kesed
     sync:
         flags:
+            password: Tembung sandhi digunakake kanggo njaluk verifikasi
             template-path: Path sinkronisasi Cithakan
+            username: Jeneng pangguna sing digunakake kanggo njaluk verifikasi
         long: Sinkronake konfigurasi saka mburi remot lan gabungke menyang konfigurasi lokal File cithakan didhukung ing wektu sing padha nalika sinkronisasi (yen dikonfigurasi).
         short: Sinkronisasi konfigurasi saka remot
     up-mod:

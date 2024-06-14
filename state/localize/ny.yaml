@@ -134,7 +134,9 @@ cli:
     short: Chida chokhazikitsidwa kwa anthu aulesi
     sync:
         flags:
+            password: Mawu achinsinsi omwe amagwiritsidwa ntchito popempha kuti atsimikizire
             template-path: Template synchronization njira
+            username: Dzina lolowera lomwe limagwiritsidwa ntchito popempha kuti litsimikizidwe
         long: Gwirizanitsani kasinthidwe kuchokera kumalekezero akutali ndikuphatikiza ndi kasinthidwe akomweko Fayilo ya template imathandizidwa nthawi yomweyo pakuyanjanitsa (ngati kukonzedwa)
         short: Gwirizanitsani kasinthidwe kuchokera kutali
     up-mod:

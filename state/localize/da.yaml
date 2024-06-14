@@ -134,7 +134,9 @@ cli:
     short: Et værktøjssæt til dovne mennesker
     sync:
         flags:
+            password: Adgangskode brugt til at anmode om bekræftelse
             template-path: Skabelonsynkroniseringssti
+            username: Brugernavn brugt til at anmode om bekræftelse
         long: Synkroniser konfigurationen fra den eksterne ende og flet den ind i den lokale konfiguration. Skabelonfilen understøttes samtidig under synkroniseringen (hvis den er konfigureret).
         short: Synkroniser konfigurationen fra fjernbetjeningen
     up-mod:

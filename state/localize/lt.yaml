@@ -134,7 +134,9 @@ cli:
     short: Priemonių rinkinys tinginiams
     sync:
         flags:
+            password: Patvirtinimo užklausai naudojamas slaptažodis
             template-path: Šablono sinchronizavimo kelias
+            username: Patvirtinimo užklausai naudotas naudotojo vardas
         long: Sinchronizuokite konfigūraciją iš nuotolinio galo ir sujunkite ją su vietine konfigūracija Sinchronizavimo metu tuo pačiu metu palaikomas šablono failas (jei sukonfigūruotas).
         short: Sinchronizuokite konfigūraciją nuotoliniu būdu
     up-mod:

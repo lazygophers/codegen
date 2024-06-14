@@ -134,7 +134,9 @@ cli:
     short: Ithuluzi elimiselwe abantu abavilaphayo
     sync:
         flags:
+            password: Iphasiwedi esetshenzisiwe ukucela ukuqinisekiswa
             template-path: Indlela yokuvumelanisa isifanekiso
+            username: Igama lomsebenzisi elisetshenziselwa ukucela ukuqinisekiswa
         long: Vumelanisa ukucushwa kusuka ekugcineni okukude futhi ukuhlanganise ekucushweni kwasendaweni Ifayela lesifanekiso liyasekelwa ngesikhathi esifanayo phakathi nokuvumelanisa (uma limisiwe)
         short: Vumelanisa ukumisa usuka kude
     up-mod:

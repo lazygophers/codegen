@@ -134,7 +134,9 @@ cli:
     short: Dɔwɔnu si woɖo na kuviatɔwo
     sync:
         flags:
+            password: Nyagbe si wozãna tsɔ bia be woaɖo kpe edzi
             template-path: Template ƒe wɔwɔ ɖekae ƒe mɔ
+            username: Zãla ƒe ŋkɔ si wozãna tsɔ bia be woaɖo kpe edzi
         long: Trɔ asi le ɖoɖowɔɖia ŋu tso didiƒe ƒe nuwuwu eye nàtsɔe aƒo ƒu ɖe teƒea ƒe ɖoɖowɔɖia me Wodoa alɔ template faɛl la le ɣeyiɣi ɖeka me le wɔwɔ ɖekae me (ne woɖoe).
         short: Wɔ ɖoɖo ɖe ɖoɖowɔɖiwo ŋu tso didiƒe
     up-mod:

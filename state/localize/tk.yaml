@@ -134,7 +134,9 @@ cli:
     short: Yalta adamlar üçin gural
     sync:
         flags:
+            password: Barlamak üçin ulanylýan parol
             template-path: Şablon sinhronizasiýa ýoly
+            username: Barlamak üçin ulanylýan ulanyjy ady
         long: Sazlamany uzakdan sinhronlaň we ýerli konfigurasiýa birleşdiriň Şablon faýly sinhronizasiýa wagtynda şol bir wagtda goldanýar (düzülen bolsa).
         short: Konfigurasiýany uzakdan sinhronlaň
     up-mod:

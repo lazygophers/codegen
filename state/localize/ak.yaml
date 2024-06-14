@@ -134,7 +134,9 @@ cli:
     short: Adwinnade a wɔde asi hɔ ama anihafo
     sync:
         flags:
+            password: Password a wɔde bisa sɛ wɔmfa nyɛ nokware
             template-path: Template synchronization kwan no so
+            username: Edin a wɔde di dwuma de bisa sɛ wɔmfa nyɛ nokware
         long: Fa nhyehyeɛ no yɛ pɛ firi akyirikyiri awieeɛ na fa bom kɔ mpɔtam hɔ nhyehyeɛ no mu Wɔboa template fael no wɔ berɛ korɔ no ara mu wɔ synchronization mu (sɛ wɔahyehyɛ a)
         short: Synchronize nhyehyeɛ fi akyirikyiri
     up-mod:

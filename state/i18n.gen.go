@@ -2,7 +2,7 @@
 //	versions:
 //		codegen	v0.0.0-SNAPSHOT-8d16d17
 //		go		go1.22.3
-//	update:	1718277415
+//	update:	1718332684
 
 package state
 
@@ -142,7 +142,9 @@ const (
 	I18nTagCliShort		= `cli.short`
 	I18nTagCliSync		= `cli.sync`
 	I18nTagCliSyncFlags		= `cli.sync.flags`
+	I18nTagCliSyncFlagsPassword		= `cli.sync.flags.password`
 	I18nTagCliSyncFlagsTemplatePath		= `cli.sync.flags.template-path`
+	I18nTagCliSyncFlagsUsername		= `cli.sync.flags.username`
 	I18nTagCliSyncLong		= `cli.sync.long`
 	I18nTagCliSyncShort		= `cli.sync.short`
 	I18nTagCliUpMod		= `cli.up-mod`

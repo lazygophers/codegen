@@ -134,7 +134,9 @@ cli:
     short: Se mea faigaluega seti mo tagata paie
     sync:
         flags:
+            password: Fa'aoga upu fa'aoga e talosagaina ai le fa'amaonia
             template-path: Fa'ata'ita'iga ala fa'atasi
+            username: Igoa fa'aoga na fa'aoga e talosagaina ai se fa'amaoniga
         long: Fa'atasi le fa'asologa mai le pito mamao ma tu'ufa'atasia i totonu o le fa'alapotopotoga fa'apitonu'u E lagolagoina le faila fa'ata'ita'i i le taimi e tasi i le taimi e fa'amaopoopoina ai (pe a fa'atulaga)
         short: Fa'amaopoopo le fa'atulagaina mai le mamao
     up-mod:

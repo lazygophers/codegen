@@ -134,7 +134,9 @@ cli:
     short: Xitirhisiwa lexi vekiweke eka vanhu lava lolohaka
     sync:
         flags:
+            password: Phasiwedi leyi tirhisiwaka ku kombela ku tiyisisiwa
             template-path: Ndlela ya ku fambisana ka xifaniso
+            username: Vito ra mutirhisi leri tirhisiwaka ku kombela ku tiyisisiwa
         long: Hlanganisa vukorhokeri ku suka emakumu ya le kule ivi u byi hlanganisa eka vukorhokeri bya laha kaya Fayili ya xifaniso yi seketeriwa hi nkarhi wun’we hi nkarhi wa ku fambisana (loko yi lulamisiwile).
         short: Fambisanisa vukorhokeri ku suka eka remote
     up-mod:

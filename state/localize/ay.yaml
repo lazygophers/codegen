@@ -134,7 +134,9 @@ cli:
     short: Mä herramienta wakicht’ata q’añu jaqinakataki
     sync:
         flags:
+            password: Contraseña ukaxa chiqapa mayiwi lurañataki apnaqatawa
             template-path: Plantilla sincronización thakhi
+            username: Usuario sutix chiqapar uñjañ mayiñatakiw apnaqasi
         long: Jaya tukuyatat configuración ukar sincronización ukat local configuración ukar mayacht’aña Plantilla arxiwux sincronización ukanx pachpa pachan yanapt’atawa (configuración ukhamächi ukhaxa).
         short: Jayankir chiqat configuración ukar sincronización luraña
     up-mod:

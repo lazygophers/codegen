@@ -134,7 +134,9 @@ cli:
     short: '''n Gereedskapstel vir lui mense'
     sync:
         flags:
+            password: Wagwoord gebruik om verifikasie te versoek
             template-path: Sjabloon sinchronisasie pad
+            username: Gebruikernaam gebruik om verifikasie te versoek
         long: Sinkroniseer die konfigurasie vanaf die afgeleë kant en voeg dit saam met die plaaslike konfigurasie Die sjabloonlêer word terselfdertyd tydens sinchronisasie ondersteun (indien gekonfigureer).
         short: Sinkroniseer konfigurasie vanaf afstandbeheer
     up-mod:

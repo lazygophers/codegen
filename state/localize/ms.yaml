@@ -134,7 +134,9 @@ cli:
     short: Set alat untuk orang malas
     sync:
         flags:
+            password: Kata laluan digunakan untuk meminta pengesahan
             template-path: Laluan penyegerakan templat
+            username: Nama pengguna digunakan untuk meminta pengesahan
         long: Segerakkan konfigurasi dari hujung jauh dan gabungkannya ke dalam konfigurasi setempat Fail templat disokong pada masa yang sama semasa penyegerakan (jika dikonfigurasikan).
         short: Segerakkan konfigurasi dari jauh
     up-mod:

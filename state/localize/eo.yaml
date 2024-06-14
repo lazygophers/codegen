@@ -134,7 +134,9 @@ cli:
     short: Ilaro por maldiligentaj homoj
     sync:
         flags:
+            password: Pasvorto uzata por peti konfirmon
             template-path: Ŝablona sinkroniga vojo
+            username: Uzantnomo uzata por peti konfirmon
         long: Sinkronigu la agordon de la malproksima fino kaj kunfandu ĝin en la lokan agordon La ŝablondosiero estas subtenata samtempe dum sinkronigo (se agordita).
         short: Sinkronigi agordon de fora
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: En Toolset fir faul Leit
     sync:
         flags:
+            password: Passwuert benotzt fir d'Verifizéierung ze froen
             template-path: Schabloun Synchroniséierung Wee
+            username: Benotzernumm benotzt fir d'Verifizéierung ze froen
         long: Synchroniséiert d'Konfiguratioun vum Remote Enn a fusionéiert se an d'lokal Konfiguratioun D'Schabloundatei gëtt zur selwechter Zäit während der Synchroniséierung ënnerstëtzt (wann konfiguréiert).
         short: Synchroniséiert d'Konfiguratioun vu Remote
     up-mod:

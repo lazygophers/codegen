@@ -134,7 +134,9 @@ cli:
     short: Baarakɛminɛn min sigilen don mɔgɔ sɛgɛnbaliw ye
     sync:
         flags:
+            password: Password min bɛ kɛ ka sɛgɛsɛgɛli ɲini
             template-path: Template synchronisation sira
+            username: Baarakɛla tɔgɔ min bɛ Kɛ ka sɛgɛsɛgɛli ɲini
         long: Labɛnni bɛ ɲɔgɔn sɔrɔ ka bɔ yɔrɔjan laban na k’a fara ɲɔgɔn kan sigida labɛncogo la Jatebla filen bɛ dɛmɛ waati kelen na sinsinni waati (ni labɛnna).
         short: Labɛncogo sinsinni ka bɔ yɔrɔjan na
     up-mod:

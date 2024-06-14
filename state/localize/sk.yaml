@@ -134,7 +134,9 @@ cli:
     short: Sada nástrojov pre lenivcov
     sync:
         flags:
+            password: Heslo používané na vyžiadanie overenia
             template-path: Cesta synchronizácie šablóny
+            username: Používateľské meno použité na vyžiadanie overenia
         long: Synchronizujte konfiguráciu zo vzdialeného konca a zlúčte ju s lokálnou konfiguráciou Súbor šablóny je súčasne podporovaný počas synchronizácie (ak je nakonfigurovaný).
         short: Synchronizujte konfiguráciu na diaľku
     up-mod:

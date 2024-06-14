@@ -134,7 +134,9 @@ cli:
     short: Mudziyo wakagadzirirwa simbe
     sync:
         flags:
+            password: Password inoshandiswa kukumbira kuoneswa
             template-path: Template synchronization nzira
+            username: Username rinoshandiswa kukumbira ongororo
         long: Batanidza zvigadziriso kubva kumagumo ekure uye uzvisanganise mukugadzirisa kwenzvimbo Iyo template faira inotsigirwa panguva imwe chete panguva yekuwiriranisa (kana yakagadziriswa)
         short: Batanidza zvigadziriso kubva kure
     up-mod:

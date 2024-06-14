@@ -134,7 +134,9 @@ cli:
     short: Set orodij za lenuhe
     sync:
         flags:
+            password: Geslo za zahtevo po preverjanju
             template-path: Pot sinhronizacije predloge
+            username: Uporabniško ime za zahtevo po preverjanju
         long: Sinhronizirajte konfiguracijo z oddaljenega konca in jo združite z lokalno konfiguracijo. Datoteka predloge je podprta hkrati med sinhronizacijo (če je konfigurirana).
         short: Sinhronizirajte konfiguracijo na daljavo
     up-mod:

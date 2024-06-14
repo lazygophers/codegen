@@ -134,7 +134,9 @@ cli:
     short: Sedirišwa se se beilwego bakeng sa batho ba botswa
     sync:
         flags:
+            password: Phasewete yeo e šomišwago go kgopela netefatšo
             template-path: Tsela ya go nyalantšha thempleite
+            username: Leina la mosediriši le šomišwa go kgopela netefatšo
         long: Nyalantšha peakanyo go tšwa mafelelong a kgole gomme o e kopanye go peakanyo ya selegae Faele ya thempleite e thekgwa ka nako ye e swanago nakong ya go nyalantšha (ge e beakantšwe).
         short: Nyalantšha peakanyo go tšwa kgole
     up-mod:

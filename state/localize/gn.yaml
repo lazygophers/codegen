@@ -134,7 +134,9 @@ cli:
     short: Peteĩ tembipuru’i oñemoĩva tapichakuéra ipererĩvape g̃uarã
     sync:
         flags:
+            password: Ñe’ẽñemi ojeporúva ojejerure hag̃ua verificación
             template-path: Plantilla ñembojoaju rape
+            username: Pojoapy réra ojeporúva ojejerure hag̃ua verificación
         long: Embojoaju ñemboheko mombyry guive ha embojoaju ñemboheko tendápegua Pe vore plantilla rehegua oipytyvõ peteĩ jave ñembojoaju aja (oñemboheko ramo).
         short: Embojoaju configuración mombyry guive
     up-mod:

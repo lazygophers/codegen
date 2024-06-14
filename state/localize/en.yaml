@@ -134,7 +134,9 @@ cli:
     short: A tool set for lazy people
     sync:
         flags:
+            password: Password used to request verification
             template-path: Template synchronization path
+            username: Username used to request verification
         long: Synchronize the configuration from the remote end and merge it into the local configuration. The template file is supported at the same time during synchronization (if configured)
         short: Synchronize configuration from remote
     up-mod:

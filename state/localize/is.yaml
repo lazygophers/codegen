@@ -134,7 +134,9 @@ cli:
     short: Verkfærasett fyrir lata
     sync:
         flags:
+            password: Lykilorð notað til að biðja um staðfestingu
             template-path: Sniðmátssamstillingarleið
+            username: Notandanafn notað til að biðja um staðfestingu
         long: Samstilltu stillingarnar frá ytri endanum og sameinaðu hana í staðbundna stillingu Sniðmátsskráin er studd á sama tíma meðan á samstillingu stendur (ef hún er stillt).
         short: Samstilltu stillingar frá fjarstýringu
     up-mod:

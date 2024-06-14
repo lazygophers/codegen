@@ -1,12 +1,10 @@
 package i18n
 
 import (
-	"bytes"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/json"
 	"github.com/pelletier/go-toml/v2"
 	"gopkg.in/yaml.v3"
-	"io"
 	"os"
 	"strings"
 )
@@ -26,19 +24,6 @@ var localizer = map[string]Localizer{
 var (
 	jsonLocalizer = NewLocalizerHandle(
 		func(path string, v any) (err error) {
-			buf, err := json.Marshal(v)
-			if err != nil {
-				log.Errorf("err:%v", err)
-				return err
-			}
-
-			var b bytes.Buffer
-			err = json.Indent(&b, buf, "", "\t")
-			if err != nil {
-				log.Errorf("err:%v", err)
-				return err
-			}
-
 			file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
 			if err != nil {
 				log.Errorf("err:%v", err)
@@ -46,7 +31,10 @@ var (
 			}
 			defer file.Close()
 
-			_, err = io.Copy(file, &b)
+			encoder := json.NewEncoder(file)
+			encoder.SetIndent("", "\t")
+
+			err = encoder.Encode(v)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err

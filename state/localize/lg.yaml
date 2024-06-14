@@ -134,7 +134,9 @@ cli:
     short: Ekikozesebwa ekiteekeddwawo abantu abagayaavu
     sync:
         flags:
+            password: Password ekozesebwa okusaba okukakasa
             template-path: Ekkubo ly'okukwataganya template
+            username: Erinnya ly'omukozesa erikozesebwa okusaba okukakasa
         long: Okukwataganya ensengeka okuva ku nkomerero ey'ewala era ogigatte mu nsengeka y'ekitundu Fayiro ya template ewagirwa mu kiseera kye kimu mu kiseera ky'okukwataganya (bwe kiba nga kitegekeddwa)
         short: Okukwataganya ensengeka okuva ku remote
     up-mod:

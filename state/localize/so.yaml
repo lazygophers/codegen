@@ -134,7 +134,9 @@ cli:
     short: Qalab loogu talagalay dadka caajiska ah
     sync:
         flags:
+            password: Furaha loo isticmaalo in lagu codsado xaqiijin
             template-path: Jidka isku xidhka qaab-dhismeedka
+            username: Magaca isticmaalaha ayaa loo isticmaalay in lagu codsado xaqiijin
         long: Isku xidhka isku xidhka dhamaadka fog oo ku mil qaabaynta deegaanka
         short: Isku xidh isku xidhka fog
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Sraith uirlisí do dhaoine leisciúil
     sync:
         flags:
+            password: Baineadh úsáid as pasfhocal chun fíorú a iarraidh
             template-path: Teimpléad conair sioncrónaithe
+            username: Ainm úsáideora a úsáideadh chun fíorú a iarraidh
         long: Sioncrónaigh an chumraíocht ón gcianchríoch agus cumasc isteach sa chumraíocht áitiúil é. Tacaítear leis an gcomhad teimpléad ag an am céanna le linn sioncrónaithe (má tá sé cumraithe)
         short: Sioncrónaigh cumraíocht ó chian
     up-mod:

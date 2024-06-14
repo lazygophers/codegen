@@ -134,7 +134,9 @@ cli:
     short: Instrumentu komplekts slinkiem cilvēkiem
     sync:
         flags:
+            password: Parole, ko izmanto, lai pieprasītu verifikāciju
             template-path: Veidnes sinhronizācijas ceļš
+            username: Lietotājvārds, kas izmantots, lai pieprasītu verifikāciju
         long: Sinhronizējiet konfigurāciju no attālā gala un apvienojiet to vietējā konfigurācijā. Sinhronizācijas laikā tiek atbalstīts veidnes fails (ja tas ir konfigurēts).
         short: Sinhronizējiet konfigurāciju no tālvadības pults
     up-mod:

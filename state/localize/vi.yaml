@@ -134,7 +134,9 @@ cli:
     short: Bộ công cụ dành cho người lười biếng
     sync:
         flags:
+            password: Mật khẩu được sử dụng để yêu cầu xác minh
             template-path: Đường dẫn đồng bộ hóa mẫu
+            username: Tên người dùng được sử dụng để yêu cầu xác minh
         long: Đồng bộ hóa cấu hình từ đầu xa và hợp nhất nó vào cấu hình cục bộ Tệp mẫu được hỗ trợ cùng lúc trong quá trình đồng bộ hóa (nếu được định cấu hình)
         short: Đồng bộ cấu hình từ xa
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Qilla runakunapaq churasqa herramienta
     sync:
         flags:
+            password: Chiqapchayta mañanapaq contraseña llamk'achisqa
             template-path: Plantilla sincronización ñan
+            username: Chiqapchayta mañanapaq llamk'achisqa username
         long: Karu tukukuymanta wakichiyta tinkuchiy chaymanta kiti wakichiyman hukllana Plantilla willañiqiqa hukllanakuy pachapi kaq pacha yanapasqa (sichus wakichisqa kachkan).
         short: Karumanta ruwanakunata tinkuchiy
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Sada nářadí pro lenochy
     sync:
         flags:
+            password: Heslo používané k žádosti o ověření
             template-path: Cesta synchronizace šablony
+            username: Uživatelské jméno použité k žádosti o ověření
         long: Synchronizovat konfiguraci ze vzdáleného konce a sloučit ji do místní konfigurace Soubor šablony je současně podporován během synchronizace (je-li nakonfigurován).
         short: Synchronizujte konfiguraci ze vzdáleného místa
     up-mod:

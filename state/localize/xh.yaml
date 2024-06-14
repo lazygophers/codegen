@@ -134,7 +134,9 @@ cli:
     short: Isixhobo esilungiselelwe amavila
     sync:
         flags:
+            password: Igama lokugqithisa elisetyenziselwa ukucela ukuqinisekiswa
             template-path: Indlela yongqamaniso yetemplate
+            username: Igama lomsebenzisi elisetyenzisiweyo ukucela ukuqinisekiswa
         long: Ngqamanisa ubumbeko ukusuka kwisiphelo esikude kwaye udibanise kuqwalaselo lobulali Ifayile yetemplate ixhaswa ngexesha elinye ngexesha longqamaniso (ukuba iqwalaselwe)
         short: Ngqamanisa ubumbeko ukusuka kude
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Seata inneal airson daoine leisg
     sync:
         flags:
+            password: Facal-faire air a chleachdadh gus dearbhadh iarraidh
             template-path: An t-slighe sioncronaich teamplaid
+            username: Ainm-cleachdaidh air a chleachdadh gus dearbhadh iarraidh
         long: Sioncronaich an rèiteachadh bhon cheann iomallach agus cuir a-steach e san rèiteachadh ionadail.
         short: Sioncronaich rèiteachadh bho iomallach
     up-mod:

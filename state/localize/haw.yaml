@@ -134,7 +134,9 @@ cli:
     short: He mea paahana no ka poe palaualelo
     sync:
         flags:
+            password: Hoʻohana ʻia ka ʻōlelo huna no ke noi ʻana i ka hōʻoia
             template-path: Alanui hoʻopololei
+            username: Hoʻohana ʻia ka inoa hoʻohana no ke noi ʻana i ka hōʻoia
         long: Hoʻopili i ka hoʻonohonoho ʻana mai ka ʻaoʻao mamao a hoʻohui iā ia i ka hoʻonohonoho kūloko Kākoʻo ʻia ka faila template i ka manawa like i ka wā hoʻonohonoho (inā hoʻonohonoho ʻia).
         short: Hoʻonohonoho hoʻonohonoho mai kahi mamao
     up-mod:

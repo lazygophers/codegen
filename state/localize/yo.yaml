@@ -134,7 +134,9 @@ cli:
     short: A ọpa ṣeto fun Ọlẹ eniyan
     sync:
         flags:
+            password: Ọrọigbaniwọle ti a lo lati beere ijẹrisi
             template-path: Ona amuṣiṣẹpọ awoṣe
+            username: Orukọ olumulo ti a lo lati beere ijẹrisi
         long: Mu iṣeto ṣiṣẹpọ lati opin jijin ki o dapọ si iṣeto agbegbe Faili awoṣe naa ni atilẹyin ni akoko kanna lakoko mimuuṣiṣẹpọ (ti o ba tunto)
         short: Amuṣiṣẹpọ iṣeto ni lati isakoṣo latọna jijin
     up-mod:

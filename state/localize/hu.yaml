@@ -134,7 +134,9 @@ cli:
     short: Eszközkészlet lustáknak
     sync:
         flags:
+            password: Az ellenőrzés kéréséhez használt jelszó
             template-path: Sablon szinkronizálási útvonala
+            username: Az ellenőrzés kéréséhez használt felhasználónév
         long: Szinkronizálja a konfigurációt a távoli végről, és egyesítse a helyi konfigurációval A sablonfájl egyidejűleg támogatott a szinkronizálás során (ha be van állítva).
         short: A konfiguráció szinkronizálása távolról
     up-mod:

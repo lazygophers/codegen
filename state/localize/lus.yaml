@@ -134,7 +134,9 @@ cli:
     short: Mi rilru hah tak takte tan hmanrua set
     sync:
         flags:
+            password: Verification dilna atana password hman thin
             template-path: Template inzawmkhawmna kawng
+            username: Verification dilna atana hman tur username
         long: Remote end atanga configuration chu synchronize la, local configuration ah merge rawh Template file hi synchronization laiin (configure a nih chuan) a rualin support a ni.
         short: Remote atanga configuration inthlunzawm
     up-mod:

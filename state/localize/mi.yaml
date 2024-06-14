@@ -134,7 +134,9 @@ cli:
     short: He huinga taputapu mo te hunga mangere
     sync:
         flags:
+            password: Kupuhipa i whakamahia hei tono manatoko
             template-path: ara tukutahi tauira
+            username: I whakamahia te ingoa kaiwhakamahi ki te tono manatoko
         long: Tukutahitia te whirihoranga mai i te pito mamao ka hanumi ki te whirihoranga paetata Ka tautokohia te konae tauira i te wa ano i te tukutahitanga (mehemea kua whirihora).
         short: Tukutahi whirihoranga mai i tawhiti
     up-mod:

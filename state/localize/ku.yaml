@@ -134,7 +134,9 @@ cli:
     short: Amûrek ji bo mirovên tembel
     sync:
         flags:
+            password: Şîfreya ji bo daxwaza verastkirinê tê bikaranîn
             template-path: Rêya hevdemkirina şablonê
+            username: Navê bikarhêner ji bo daxwaza verastkirinê tê bikaranîn
         long: Veavakirinê ji dawiya dûr ve hevdeng bikin û wê di veavakirina herêmî de bikin yek Di heman demê de pelê şablonê di dema hevdengkirinê de tê piştgirî kirin (heke were mîheng kirin).
         short: Veavakirinê ji dûr ve hevdeng bikin
     up-mod:

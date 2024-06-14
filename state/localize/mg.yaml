@@ -134,7 +134,9 @@ cli:
     short: Fitaovana ho an'ny kamo
     sync:
         flags:
+            password: Tenimiafina ampiasaina hangatahana fanamarinana
             template-path: Lalana fampifanarahana ny maodely
+            username: Anarana ampiasaina hangataka fanamarinana
         long: Ampifanaraho amin'ny faran'ny lavitr'ezaka ny fanefena ary ampifandraiso amin'ny fandrindrana eo an-toerana Ny rakitra môdely dia tohanana miaraka mandritra ny fampifanarahana (raha voarindra).
         short: Ampifanaraho amin'ny lavitra
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Sesebelisoa se behiloeng bakeng sa batho ba botsoa
     sync:
         flags:
+            password: Lekunutu le sebelisitsoeng ho kopa netefatso
             template-path: Mokhoa oa ho hokahanya template
+            username: Username e sebelisitsoeng ho kopa netefatso
         long: Amahanya tlhophiso ho tsoa pheletsong e hole 'me u e kopanye le tlhophiso ea lehae Faele ea template e tšehetsoa ka nako e ts'oanang nakong ea khokahano (haeba e hlophisitsoe).
         short: Amahanya tlhophiso ho tsoa hole
     up-mod:

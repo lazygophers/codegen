@@ -134,7 +134,9 @@ cli:
     short: Chombo kilichowekwa kwa watu wavivu
     sync:
         flags:
+            password: Nenosiri lililotumika kuomba uthibitishaji
             template-path: Njia ya ulandanishi wa kiolezo
+            username: Jina la mtumiaji linalotumika kuomba uthibitishaji
         long: Sawazisha usanidi kutoka mwisho wa mbali na uunganishe kwenye usanidi wa ndani Faili ya kiolezo inaauniwa wakati huo huo wakati wa ulandanishi (ikiwa imesanidiwa).
         short: Sawazisha usanidi kutoka kwa mbali
     up-mod:

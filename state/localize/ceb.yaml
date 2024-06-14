@@ -134,7 +134,9 @@ cli:
     short: Usa ka set nga himan alang sa mga tapolan
     sync:
         flags:
+            password: Ang password nga gigamit sa pagpangayo og verification
             template-path: Dalan sa pag-synchronize sa template
+            username: Username nga gigamit sa pagpangayo og verification
         long: I-synchronize ang configuration gikan sa hilit nga tumoy ug iusa kini ngadto sa lokal nga configuration Ang template file gisuportahan sa samang higayon atol sa pag-synchronize (kon gi-configure)
         short: I-synchronize ang configuration gikan sa hilit
     up-mod:

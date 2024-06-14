@@ -134,7 +134,9 @@ cli:
     short: Meeshaa namoota dadhaboo ta'aniif qophaa'e
     sync:
         flags:
+            password: Jecha icciitii mirkaneessuu gaafachuuf gargaaru
             template-path: Daandii walsimsiisaa unkaa
+            username: Maqaa fayyadamaa mirkaneessuu gaafachuuf fayyadamu
         long: Qindaa'ina dhuma fagoo irraa walsimsiisuu fi gara qindeessaa naannootti walitti makuu Faayilii unkaa yeroo walsimsiisaa (yoo qindaa'e) yeroo walfakkaatutti ni deeggarama.
         short: Qindaa'ina fagoo irraa walsimsiisi
     up-mod:

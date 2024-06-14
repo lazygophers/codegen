@@ -134,7 +134,9 @@ cli:
     short: Igikoresho cyashyizweho kubantu bafite ubunebwe
     sync:
         flags:
+            password: Ijambobanga ryakoreshejwe mu gusaba kugenzurwa
             template-path: Inzira yo guhuza inzira
+            username: Izina ryukoresha ryakoreshejwe gusaba verisiyo
         long: Guhuza iboneza uhereye kumpera ya kure hanyuma ukayihuza muburyo bwaho. Idosiye yinyandiko ishyigikirwa icyarimwe mugihe cyo guhuza (niba byashyizweho)
         short: Guhuza iboneza kuva kure
     up-mod:
