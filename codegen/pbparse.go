@@ -581,7 +581,7 @@ func (p *PbPackage) GoPackage() string {
 	if state.Config.GoModulePrefix != "" {
 		return filepath.ToSlash(filepath.Join(state.Config.GoModulePrefix, p.RawGoPackage))
 	} else {
-		return filepath.ToSlash(filepath.Join(p.RawGoPackage))
+		return filepath.ToSlash(p.RawGoPackage)
 	}
 }
 
