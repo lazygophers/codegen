@@ -125,7 +125,7 @@ cli:
                 languages: Ipiho ang target nga lengguwahe para sa paghubad
                 src-file: Source file nga hubaron (gikinahanglan)
                 src-language: Ang lengguwahe sa tinubdan nga payl (kung wala gipiho, ang himan awtomatik nga magtino sa tinubdan nga payl)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Hubad nga channel: Suporta nga matang {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ang multilingual nga mga file gikan sa usa ka piho nga tinubdan gi-convert ngadto sa mga file sa samang format sa ubang mga pinulongan.

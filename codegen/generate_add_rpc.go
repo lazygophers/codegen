@@ -196,6 +196,10 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 					"Model": opt.Model,
 					"Role":  role,
 				})
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				//rpcName = b.String()
 				rpcName = strings.ReplaceAll(b.String(), " ", "")

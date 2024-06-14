@@ -125,7 +125,7 @@ cli:
                 languages: Ange målspråk för översättning
                 src-file: Källfil som ska översättas (krävs)
                 src-language: Språket för källfilen (om det inte anges kommer verktyget automatiskt att avgöra källfilen)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Översättningskanal: Supporttyp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Flerspråkiga filer från en viss källa konverteras till filer i samma format på andra språk.

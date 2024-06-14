@@ -125,7 +125,7 @@ cli:
                 languages: Sebutkeun basa sasaran pikeun tarjamahan
                 src-file: Sumber file pikeun ditarjamahkeun (diperlukeun)
                 src-language: Basa file sumber (upami teu dieusian, alat bakal otomatis nangtukeun file sumber)
-                translater:
+                translator:
                     google-free: Google Web Tarjamah
                     usage: 'Saluran tarjamahan: Tipe rojongan {{rentang $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Payil multibasa tina sumber nu tangtu dirobah jadi payil dina format nu sarua dina basa séjén.

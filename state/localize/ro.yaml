@@ -125,7 +125,7 @@ cli:
                 languages: Specificați limba țintă pentru traducere
                 src-file: Fișierul sursă de tradus (obligatoriu)
                 src-language: Limba fișierului sursă (dacă nu este specificată, instrumentul va determina automat fișierul sursă)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Canal de traducere: tip de suport {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fișierele multilingve dintr-o anumită sursă sunt convertite în fișiere în același format în alte limbi.

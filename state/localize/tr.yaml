@@ -125,7 +125,7 @@ cli:
                 languages: Çeviri için hedef dili belirtin
                 src-file: Çevrilecek kaynak dosya (gerekli)
                 src-language: Kaynak dosyanın dili (belirtilmezse araç kaynak dosyayı otomatik olarak belirleyecektir)
-                translater:
+                translator:
                     google-free: Google Web Çevirisi
                     usage: 'Çeviri kanalı: Destek türü {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Belirli bir kaynaktan gelen çok dilli dosyalar, diğer dillerdeki aynı formattaki dosyalara dönüştürülür.

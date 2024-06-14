@@ -3,7 +3,7 @@ run:
     timeout: 30m
     skip-dirs-use-default: false
     skip-files:
-        - "*.gen.go"
+        - ".*.gen.go"
         - ".*.pb.go"
     modules-download-mode: readonly
     allow-parallel-runners: true
@@ -483,15 +483,6 @@ linters-settings:
     forbidigo:
         forbid:
             - '"github.com/lazygophers/log"'
-    tagliatelle:
-        case:
-            rules:
-                json: snake
-                yaml: snake
-                xml: snake
-                bson: snake
-                avro: snake
-                toml: snake
     nilnil:
         checked-types:
             - ptr
@@ -503,6 +494,7 @@ linters-settings:
         disabled-checks:
             # 可能需要删除的代码
             - commentedOutCode
+            - octalLiteral
             - elseif
             - rangeValCopy
             - paramTypeCombine
@@ -631,8 +623,6 @@ linters:
         - varnamelen
         - wastedassign
         - testpackage
-        - paralleltest
         - gofmt
         - nilerr
-        - tagliatelle
         - nakedret

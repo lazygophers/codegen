@@ -125,7 +125,7 @@ cli:
                 languages: Ƙayyade harshen manufa don fassara
                 src-file: Fayil ɗin tushen da za a fassara (an buƙata)
                 src-language: Harshen fayil ɗin tushen (idan ba a ƙayyade ba, kayan aiki zai ƙayyade fayil ɗin tushen ta atomatik)
-                translater:
+                translator:
                     google-free: Google Yanar Gizo Fassara
                     usage: 'Tashar fassarar: Nau''in tallafi {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fayilolin yaruka da yawa daga wani tushe ana jujjuya su zuwa fayiloli a cikin tsari iri ɗaya a cikin wasu harsuna.

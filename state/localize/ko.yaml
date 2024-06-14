@@ -125,7 +125,7 @@ cli:
                 languages: 번역할 대상 언어를 지정하세요.
                 src-file: 번역할 원본 파일 (필수)
                 src-language: 소스 파일의 언어(지정하지 않으면 도구가 자동으로 소스 파일을 결정합니다)
-                translater:
+                translator:
                     google-free: Google 웹 번역
                     usage: '번역 채널: 지원 유형 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: 특정 소스의 다국어 파일은 다른 언어의 동일한 형식의 파일로 변환됩니다.

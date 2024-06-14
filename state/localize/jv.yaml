@@ -125,7 +125,7 @@ cli:
                 languages: Nemtokake basa target kanggo terjemahan
                 src-file: File sumber sing arep diterjemahake (dibutuhake)
                 src-language: Basa file sumber (yen ora ditemtokake, alat kasebut bakal nemtokake file sumber kanthi otomatis)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Saluran terjemahan: Tipe dhukungan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: File multibasa saka sumber tartamtu diowahi dadi file ing format sing padha ing basa liya.

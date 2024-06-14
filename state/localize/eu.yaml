@@ -125,7 +125,7 @@ cli:
                 languages: Zehaztu itzulpenerako xede-hizkuntza
                 src-file: Itzuli beharreko iturburu-fitxategia (beharrezkoa)
                 src-language: Iturburu-fitxategiaren hizkuntza (zehazten ez bada, tresnak automatikoki zehaztuko du iturburu-fitxategia)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Itzulpen-kanala: laguntza mota {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Iturburu jakin bateko fitxategi eleaniztunak beste hizkuntza batzuetan formatu bereko fitxategietan bihurtzen dira.

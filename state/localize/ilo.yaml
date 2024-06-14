@@ -125,7 +125,7 @@ cli:
                 languages: Ibaga ti target language para iti panagipatarus
                 src-file: Gubuayan a file a maipatarus (kasapulan) .
                 src-language: Ti pagsasao ti taudan a papeles (no saan a naikeddeng, ti ramit ket automatiko a mangikeddeng ti taudan a papeles) .
-                translater:
+                translator:
                     google-free: Google Web Ipatarus
                     usage: 'Kanal ti panagipatarus: Kita ti suporta {{range $key,$value := .Tipo}}{{$key}}:{{$value}}{{end}}'
             long: Dagiti multilingual a file manipud iti maysa a naikeddeng a taudan ket mabaliwan kadagiti file iti isu met laeng a pormat kadagiti sabali a pagsasao.

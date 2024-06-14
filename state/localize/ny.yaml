@@ -125,7 +125,7 @@ cli:
                 languages: Tchulani chinenero chomwe mumasulire
                 src-file: Fayilo yochokera kuti itanthauziridwe (yofunikira)
                 src-language: Chilankhulo cha fayilo yochokera (ngati sichinatchulidwe, chidacho chidzadziwiratu fayilo yochokera)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Njira yomasulira: Mtundu wothandizira {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Mafayilo azinenero zambiri amasinthidwa kukhala mafayilo amtundu womwewo m'zinenero zina.

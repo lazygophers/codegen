@@ -125,7 +125,7 @@ cli:
                 languages: Hlalosa puo eo ho fetoleloang ho eona
                 src-file: Faele ea mohloli e tla fetoleloa (ea hlokahala)
                 src-language: Puo ea faele ea mohloli (haeba e sa hlalosoa, sesebelisoa se tla ikhethela faele ea mohloli)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Lenaneo la phetolelo: Mofuta oa tšehetso {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Lifaele tsa lipuo tse ngata tse tsoang mohloling o itseng li fetoloa lifaele ka mokhoa o tšoanang lipuong tse ling.

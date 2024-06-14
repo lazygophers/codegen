@@ -125,7 +125,7 @@ cli:
                 languages: Bamanankan baarakɛcogo bɛ kan min laɲini, o fɔ
                 src-file: Source file min ka kan ka baara (a wajibiyalen don) .
                 src-language: Soso filen kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .
-                translater:
+                translator:
                     google-free: Google Web Bamanankan baarakɛcogo
                     usage: 'Bamanankan baarakɛcogo: Dɛmɛ suguya {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Kan caman ka dosiye minnu bɛ Bɔ yɔrɔ dɔ la, olu bɛ Yɛlɛma ka Kɛ dosiyew ye cogo kelen na kan wɛrɛw la.

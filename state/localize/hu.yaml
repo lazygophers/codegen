@@ -125,7 +125,7 @@ cli:
                 languages: Adja meg a fordítás célnyelvét
                 src-file: Lefordítandó forrásfájl (kötelező)
                 src-language: A forrásfájl nyelve (ha nincs megadva, az eszköz automatikusan meghatározza a forrásfájlt)
-                translater:
+                translator:
                     google-free: Google Web Fordító
                     usage: 'Fordítási csatorna: Támogatási típus: {{tartomány $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Egy bizonyos forrásból származó többnyelvű fájlokat a rendszer más nyelvek azonos formátumú fájljaivá alakítja.

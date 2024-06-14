@@ -125,7 +125,7 @@ cli:
                 languages: Terjime etmek üçin maksat dilini görkeziň
                 src-file: Terjime edilmeli çeşme faýly (zerur)
                 src-language: Çeşme faýlynyň dili (görkezilmedik bolsa, gural deslapky faýly awtomatiki kesgitlär)
-                translater:
+                translator:
                     google-free: Google Web Terjime
                     usage: 'Terjime kanaly: Goldaw görnüşi {{diapazony $ açary, $ bahasy: = .Tip}} {{$ açar}}: {{$ bahasy}} {{end}}'
             long: Belli bir çeşmeden köp dilli faýllar beýleki dillerde şol bir formatdaky faýllara öwrüler.

@@ -125,7 +125,7 @@ cli:
                 languages: Lakisá monɔkɔ oyo olingi kobongola
                 src-file: Fisyé ya source oyo esengeli kobongolama (esengeli) .
                 src-language: Monoko ya fisyé ya source (soki elakisami te, esaleli ekoyeba automatiquement fichier source)
-                translater:
+                translator:
                     google-free: Google Web Bobongoli
                     usage: 'Nzela ya bobongoli: Lolenge ya lisungi {{range $key,$value := .Lolenge}}{{$key}}:{{$value}}{{nsuka}}'
             long: Ba fichiers ya minoko ebele oyo ewutaka na source moko boye ebongwanaka na ba fichiers na format moko na minoko misusu.

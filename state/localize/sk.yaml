@@ -125,7 +125,7 @@ cli:
                 languages: Zadajte cieľový jazyk prekladu
                 src-file: Zdrojový súbor na preklad (povinné)
                 src-language: Jazyk zdrojového súboru (ak nie je zadaný, nástroj automaticky určí zdrojový súbor)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Kanál prekladu: Typ podpory {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Viacjazyčné súbory z určitého zdroja sa skonvertujú na súbory v rovnakom formáte v iných jazykoch.

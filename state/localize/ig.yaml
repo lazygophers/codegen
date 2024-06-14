@@ -125,7 +125,7 @@ cli:
                 languages: Ezipụta asụsụ ebumnuche maka ntụgharị asụsụ
                 src-file: A ga-atụgharị asụsụ isi mmalite (chọrọ)
                 src-language: Asụsụ nke faịlụ isi mmalite (ọ bụrụ na akọwaghị ya, ngwa ahụ ga-ekpebi faịlụ isi mmalite na-akpaghị aka)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Ọwa ntụgharị: Ụdị nkwado {{oke $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
             long: A na-atụgharị faịlụ ọtụtụ asụsụ sitere n'otu ebe gaa na faịlụ n'otu usoro n'asụsụ ndị ọzọ.

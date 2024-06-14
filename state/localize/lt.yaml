@@ -125,7 +125,7 @@ cli:
                 languages: Nurodykite vertimo kalbą
                 src-file: Šaltinio failas, kurį reikia išversti (būtina)
                 src-language: Šaltinio failo kalba (jei nenurodyta, įrankis automatiškai nustatys šaltinio failą)
-                translater:
+                translator:
                     google-free: Google žiniatinklio vertėjas
                     usage: 'Vertimo kanalas: palaikymo tipas {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Daugiakalbiai failai iš tam tikro šaltinio konvertuojami į to paties formato failus kitomis kalbomis.

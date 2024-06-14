@@ -125,7 +125,7 @@ cli:
                 languages: Sheeg luqadda la beegsanayo ee tarjumaada
                 src-file: Faylka isha in la tarjumo (loo baahan yahay)
                 src-language: Luqadda faylka isha (haddii aan la cayimin, qalabku wuxuu si toos ah u go'aamin doonaa faylka isha)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Kanaalka turjumaada: Nooca taageerada {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{dhammaadka}}'
             long: Faylasha ku hadla luqadaha badan ee meel gaar ah waxaa loo rogaa faylal isku qaab ah oo luuqado kale ah.

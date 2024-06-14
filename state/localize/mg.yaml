@@ -125,7 +125,7 @@ cli:
                 languages: Lazao ny fiteny kendrena handikana
                 src-file: rakitra loharano hadika (takina)
                 src-language: Ny fitenin'ny rakitra loharano (raha tsy voafaritra dia hamaritra ho azy ny rakitra loharano ny fitaovana)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Fantsona fandikan-teny: Karazana fanohanana {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ny rakitra amin'ny fiteny maro avy amin'ny loharano iray dia avadika ho rakitra mitovy endrika amin'ny fiteny hafa.

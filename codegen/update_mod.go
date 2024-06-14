@@ -188,7 +188,7 @@ func UpdateGoMod(modPath string) (err error) {
 		}
 
 		if resp.Version == require.Mod.Version {
-			pterm.Success.Printfln("%s is already %s, skiped", require.Mod.Path, version)
+			pterm.Success.Printfln("%s is already %s, skied", require.Mod.Path, version)
 			continue
 		}
 

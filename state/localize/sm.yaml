@@ -125,7 +125,7 @@ cli:
                 languages: Fa'ailoa le gagana fa'atatau mo le fa'aliliuga
                 src-file: Fa'aliliuga faila e fa'aliliu (mana'omia)
                 src-language: Le gagana o le faila faila (pe a le faʻamaonia, o le meafaigaluega o le a otometi lava ona fuafua le faila faila)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Fa''aliliuga ala: Ituaiga lagolago {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: O faila e tele gagana mai se puna patino e liua i faila i le faatulagaga tutusa i isi gagana.

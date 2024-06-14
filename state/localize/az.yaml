@@ -125,7 +125,7 @@ cli:
                 languages: Tərcümə üçün hədəf dili göstərin
                 src-file: Tərcümə ediləcək mənbə fayl (tələb olunur)
                 src-language: Mənbə faylının dili (əgər göstərilməyibsə, alət mənbə faylı avtomatik müəyyən edəcək)
-                translater:
+                translator:
                     google-free: Google Veb Tərcümə
                     usage: 'Tərcümə kanalı: Dəstək növü {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Müəyyən mənbədən çoxdilli fayllar digər dillərdə eyni formatda olan fayllara çevrilir.

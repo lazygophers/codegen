@@ -125,7 +125,7 @@ cli:
                 languages: Pato ede ibi-afẹde fun itumọ
                 src-file: Faili orisun lati tumọ (beere)
                 src-language: Ede ti faili orisun (ti ko ba ṣe pato, ọpa yoo pinnu faili orisun laifọwọyi)
-                translater:
+                translator:
                     google-free: Google Wẹẹbu Tumọ
                     usage: 'Ikanni itumọ: Atilẹyin Iru {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{opin}}'
             long: Awọn faili onisọpọ pupọ lati orisun kan jẹ iyipada si awọn faili ni ọna kika kanna ni awọn ede miiran.

@@ -125,7 +125,7 @@ cli:
                 languages: Specificare scopum lingua pro translatione
                 src-file: Source file interpretari (requiritur)
                 src-language: Lingua fasciculi fontis (nisi specificatur, instrumentum statim fontem lima definiet)
-                translater:
+                translator:
                     google-free: Google Telae Translate
                     usage: 'Canale translatio: Support typus {{ range $clavem,$ valorem := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Multilinguales fasciculi ex quodam fonte convertuntur in lima forma in aliis linguis.

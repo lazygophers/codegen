@@ -228,10 +228,10 @@ var tranCmd = &cobra.Command{
 			return errors.New("no localizer for " + filepath.Ext(srcFile))
 		}
 
-		c.Translater, ok = i18n.GetTranslater(i18n.TransacteType(state.Config.I18n.Translater))
+		c.Translator, ok = i18n.GetTranslator(i18n.TransacteType(state.Config.I18n.Translator))
 		if !ok {
-			pterm.Warning.Printfln("no translater for %s", state.Config.I18n.Translater)
-			return errors.New("no translater be found")
+			pterm.Warning.Printfln("no translator for %s", state.Config.I18n.Translator)
+			return errors.New("no translator be found")
 		}
 
 		err = i18n.Translate(c)
@@ -267,8 +267,8 @@ func mergeTranCmdFlags(cmd *cobra.Command) {
 	if cmd.Flag("generate-const").Changed {
 		state.Config.I18n.GenerateConst = utils.GetBool("generate-const", cmd)
 	}
-	if cmd.Flag("translater").Changed {
-		state.Config.I18n.Translater = utils.GetString("translater", cmd)
+	if cmd.Flag("translator").Changed {
+		state.Config.I18n.Translator = utils.GetString("translator", cmd)
 	}
 
 	if cmd.Flag("all-languages").Changed {
@@ -296,7 +296,7 @@ func initTran() {
 	tranCmd.Flags().StringSliceP("languages", "l", state.Config.I18n.Languages, state.Localize(state.I18nTagCliI18nTranFlagsLanguages))
 
 	tranCmd.Flags().Bool("generate-const", state.Config.I18n.GenerateConst, state.Localize(state.I18nTagCliI18nTranFlagsGenerateConst))
-	tranCmd.Flags().String("translater", state.Config.I18n.Translater, state.Localize(state.I18nTagCliI18nTranFlagsTranslaterUsage, map[string]any{
+	tranCmd.Flags().String("translator", state.Config.I18n.Translator, state.Localize(state.I18nTagCliI18nTranFlagsTranslaterUsage, map[string]any{
 		"Type": map[i18n.TransacteType]string{
 			i18n.TransacteTypeGoogleFree: state.Localize(state.I18nTagCliI18nTranFlagsTranslaterGoogleFree),
 		},

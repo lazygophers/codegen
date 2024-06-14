@@ -125,7 +125,7 @@ cli:
                 languages: Spesifiseer die doeltaal vir vertaling
                 src-file: Bronlêer wat vertaal moet word (vereis)
                 src-language: Die taal van die bronlêer (indien nie gespesifiseer nie, sal die instrument outomaties die bronlêer bepaal)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Vertaalkanaal: Ondersteuningstipe {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Veeltalige lêers van 'n sekere bron word omgeskakel na lêers in dieselfde formaat in ander tale.

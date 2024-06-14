@@ -125,7 +125,7 @@ cli:
                 languages: Tarjima uchun maqsadli tilni belgilang
                 src-file: Tarjima qilinadigan manba fayl (majburiy)
                 src-language: Manba faylining tili (agar ko'rsatilmagan bo'lsa, vosita avtomatik ravishda manba faylni aniqlaydi)
-                translater:
+                translator:
                     google-free: Google veb-tarjimoni
                     usage: 'Tarjima kanali: Yordam turi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Muayyan manbadan olingan ko'p tilli fayllar boshqa tillardagi bir xil formatdagi fayllarga aylantiriladi.

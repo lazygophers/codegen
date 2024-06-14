@@ -125,7 +125,7 @@ cli:
                 languages: Tsɔ gbe si gɔme nèdi be yeaɖe gɔme
                 src-file: Dzɔtsoƒe faɛl si gɔme woaɖe (ehiã) .
                 src-language: Gbe si me faɛl si tso dzɔtsoƒe le (ne womegblɔe o la, dɔwɔnua atso nya me le eɖokui si)
-                translater:
+                translator:
                     google-free: Google Nyatakakadzraɖoƒe Gbegɔmeɖeɖe
                     usage: 'Gbegɔmeɖeɖe mɔnu: Kpekpeɖeŋu ƒomevi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Wotrɔa gbegbɔgblɔ geɖe me faɛl siwo tso teƒe aɖe la wozua faɛl siwo le nɔnɔme ɖeka me le gbe bubuwo me.

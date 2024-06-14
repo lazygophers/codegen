@@ -125,7 +125,7 @@ cli:
                 languages: Speċifika l-lingwa mira għat-traduzzjoni
                 src-file: Fajl tas-sors li jrid jiġi tradott (meħtieġa)
                 src-language: Il-lingwa tal-fajl tas-sors (jekk mhux speċifikat, l-għodda tiddetermina awtomatikament il-fajl tas-sors)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Kanal tat-traduzzjoni: Tip ta'' appoġġ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fajls multilingwi minn ċertu sors huma kkonvertiti f'fajls fl-istess format f'lingwi oħra.

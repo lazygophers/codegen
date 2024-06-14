@@ -125,7 +125,7 @@ cli:
                 languages: Określ język docelowy tłumaczenia
                 src-file: Plik źródłowy do przetłumaczenia (wymagane)
                 src-language: Język pliku źródłowego (jeśli nie zostanie określony, narzędzie automatycznie określi plik źródłowy)
-                translater:
+                translator:
                     google-free: Tłumacz internetowy Google
                     usage: 'Kanał tłumaczeniowy: Typ wsparcia {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Pliki wielojęzyczne z określonego źródła są konwertowane na pliki w tym samym formacie w innych językach.

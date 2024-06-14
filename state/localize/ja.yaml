@@ -125,7 +125,7 @@ cli:
                 languages: 翻訳対象言語を指定します
                 src-file: 翻訳対象のソースファイル（必須）
                 src-language: ソース ファイルの言語 (指定しない場合、ツールが自動的にソース ファイルを決定します)
-                translater:
+                translator:
                     google-free: Google ウェブ翻訳
                     usage: '翻訳チャネル: サポート タイプ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: 特定のソースからの多言語ファイルは、他の言語の同じ形式のファイルに変換されます。

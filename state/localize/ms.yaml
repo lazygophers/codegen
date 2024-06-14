@@ -125,7 +125,7 @@ cli:
                 languages: Tentukan bahasa sasaran untuk terjemahan
                 src-file: Fail sumber untuk diterjemahkan (diperlukan)
                 src-language: Bahasa fail sumber (jika tidak dinyatakan, alat akan menentukan fail sumber secara automatik)
-                translater:
+                translator:
                     google-free: Terjemahan Web Google
                     usage: 'Saluran terjemahan: Jenis sokongan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fail berbilang bahasa daripada sumber tertentu ditukar kepada fail dalam format yang sama dalam bahasa lain.

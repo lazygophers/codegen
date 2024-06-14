@@ -125,7 +125,7 @@ cli:
                 languages: Geben Sie die Zielsprache für die Übersetzung an
                 src-file: Zu übersetzende Quelldatei (erforderlich)
                 src-language: Die Sprache der Quelldatei (falls nicht angegeben, ermittelt das Tool die Quelldatei automatisch)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Übersetzungskanal: Support-Typ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Mehrsprachige Dateien aus einer bestimmten Quelle werden in Dateien im gleichen Format in anderen Sprachen umgewandelt.

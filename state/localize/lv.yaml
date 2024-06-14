@@ -125,7 +125,7 @@ cli:
                 languages: Norādiet tulkošanas mērķa valodu
                 src-file: Tulkojams avota fails (obligāti)
                 src-language: Avota faila valoda (ja nav norādīta, rīks automātiski noteiks avota failu)
-                translater:
+                translator:
                     google-free: Google tīmekļa tulkotājs
                     usage: 'Tulkošanas kanāls: atbalsta veids {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Daudzvalodu faili no noteikta avota tiek pārvērsti failos tādā pašā formātā citās valodās.

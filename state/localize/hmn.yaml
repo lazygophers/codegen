@@ -125,7 +125,7 @@ cli:
                 languages: Qhia meej hom lus rau kev txhais lus
                 src-file: Cov ntaub ntawv los muab txhais (yuav tsum tau)
                 src-language: Cov lus ntawm cov ntaub ntawv qhov chaw (yog tias tsis tau teev tseg, lub cuab yeej yuav txiav txim siab cov ntaub ntawv qhov chaw)
-                translater:
+                translator:
                     google-free: Google Web Txhais Lus
                     usage: 'Kev txhais channel: Txhawb hom {{ntau $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Multilingual ntaub ntawv los ntawm ib tug tej qhov chaw yog hloov dua siab tshiab rau hauv cov ntaub ntawv nyob rau hauv tib hom ntawv nyob rau hauv lwm yam lus.

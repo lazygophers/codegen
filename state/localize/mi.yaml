@@ -125,7 +125,7 @@ cli:
                 languages: Tauwhāitihia te reo whainga mo te whakamaoritanga
                 src-file: Kōnae puna hei whakamaori (hiahia)
                 src-language: Te reo o te konae puna (mehemea kaore i tohua, ka whakatau aunoatia e te taputapu te konae puna)
-                translater:
+                translator:
                     google-free: Whakamaori Tukutuku a Google
                     usage: 'Te hongere whakamaori: Momo tautoko {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ko nga konae reo maha mai i tetahi puna ka huri ki nga konae i roto i te ahua rite ki etahi atu reo.

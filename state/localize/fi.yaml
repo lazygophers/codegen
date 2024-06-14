@@ -125,7 +125,7 @@ cli:
                 languages: Määritä käännöksen kohdekieli
                 src-file: Käännettävä lähdetiedosto (pakollinen)
                 src-language: Lähdetiedoston kieli (jos sitä ei ole määritetty, työkalu määrittää lähdetiedoston automaattisesti)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Käännöskanava: Tukityyppi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Tietystä lähteestä peräisin olevat monikieliset tiedostot muunnetaan tiedostoiksi, jotka ovat samassa muodossa muilla kielillä.

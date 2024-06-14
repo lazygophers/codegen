@@ -125,7 +125,7 @@ cli:
                 languages: Laetša leleme leo le nepišitšwego bakeng sa phetolelo
                 src-file: Faele ya mohlodi yeo e tlago fetolelwa (e nyakega) .
                 src-language: Polelo ya faele ya mohlodi (ge e sa laetšwa, sedirišwa se tla laola faele ya mohlodi ka go iketla) .
-                translater:
+                translator:
                     google-free: Google Web Fetolela
                     usage: 'Mokero wa phetolelo: Mohuta wa thekgo {{range $ key,$ value := .Type}}{{$key}}:{{$ value}}{{end}}'
             long: Difaele tša maleme a mantši go tšwa mothopong wo o itšego di fetolelwa go difaele ka sebopego se se swanago ka maleme a mangwe.

@@ -125,7 +125,7 @@ cli:
                 languages: Laga olulimi lw’ogenderera okuvvuunula
                 src-file: Fayiro y'ensibuko egenda okuvvuunulwa (kyetaagisa) .
                 src-language: Olulimi lwa fayiro ensibuko (bwe kiba tekirambikiddwa, ekintu ekikozesebwa kijja kusalawo fayiro ensibuko mu ngeri ey’otoma)
-                translater:
+                translator:
                     google-free: Google Web Okuvvuunula
                     usage: 'Omukutu gw''okuvvuunula: Ekika ky''obuwagizi {{range $key,$value := .Ekika}}{{$key}}:{{$value}}{{end}}'
             long: Fayiro ez’ennimi nnyingi okuva mu nsibuko emu zikyusibwa ne zifuuka fayiro mu nkola y’emu mu nnimi endala.

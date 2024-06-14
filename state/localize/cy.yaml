@@ -125,7 +125,7 @@ cli:
                 languages: Nodwch yr iaith darged ar gyfer cyfieithu
                 src-file: Ffeil ffynhonnell i'w chyfieithu (gofynnol)
                 src-language: Iaith y ffeil ffynhonnell (os na chaiff ei nodi, bydd yr offeryn yn pennu'r ffeil ffynhonnell yn awtomatig)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Sianel gyfieithu: Math o gefnogaeth {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Mae ffeiliau amlieithog o ffynhonnell benodol yn cael eu trosi'n ffeiliau yn yr un fformat mewn ieithoedd eraill.

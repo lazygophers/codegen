@@ -125,7 +125,7 @@ cli:
                 languages: Cacisa ulimi okuqondiwe kulo ukuze kuhunyushwe
                 src-file: Ifayela elingumthombo elizohunyushwa (kuyadingeka)
                 src-language: Ulimi lwefayela elingumthombo (uma lungacacisiwe, ithuluzi lizonquma ngokuzenzakalelayo ifayela elingumthombo)
-                translater:
+                translator:
                     google-free: I-Google Web Translate
                     usage: 'Isiteshi sokuhumusha: Uhlobo losekelo {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Amafayela ezilimi eziningi asuka emthonjeni othile aguqulwa abe amafayela ngefomethi efanayo kwezinye izilimi.

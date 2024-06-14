@@ -125,7 +125,7 @@ cli:
                 languages: Navedite ciljni jezik za prijevod
                 src-file: Izvorna datoteka za prijevod (obavezno)
                 src-language: Jezik izvorne datoteke (ako nije naveden, alat će automatski odrediti izvornu datoteku)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Kanal prijevoda: Vrsta podrške {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Višejezične datoteke iz određenog izvora pretvaraju se u datoteke u istom formatu na drugim jezicima.

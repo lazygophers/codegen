@@ -125,7 +125,7 @@ cli:
                 languages: Specificare la lingua di destinazione per la traduzione
                 src-file: File sorgente da tradurre (richiesto)
                 src-language: La lingua del file sorgente (se non specificata, lo strumento determinerà automaticamente il file sorgente)
-                translater:
+                translator:
                     google-free: Google Web Traduttore
                     usage: 'Canale di traduzione: Tipo di supporto {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: I file multilingue provenienti da una determinata fonte vengono convertiti in file dello stesso formato in altre lingue.

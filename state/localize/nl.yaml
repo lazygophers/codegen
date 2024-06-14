@@ -125,7 +125,7 @@ cli:
                 languages: Geef de doeltaal voor vertaling op
                 src-file: Bronbestand dat moet worden vertaald (vereist)
                 src-language: De taal van het bronbestand (indien niet gespecificeerd, zal de tool automatisch het bronbestand bepalen)
-                translater:
+                translator:
                     google-free: Google Webvertalen
                     usage: 'Vertaalkanaal: Ondersteuningstype {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Meertalige bestanden uit een bepaalde bron worden omgezet naar bestanden in hetzelfde formaat in andere talen.

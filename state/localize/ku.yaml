@@ -125,7 +125,7 @@ cli:
                 languages: Zimanê mebest ji bo wergerê diyar bike
                 src-file: Dosyaya çavkaniyê ku were wergerandin (pêwîst e)
                 src-language: Zimanê pelê çavkaniyê (heke ne diyar be, amûr dê bixweber pelê çavkaniyê diyar bike)
-                translater:
+                translator:
                     google-free: Google Web Wergera
                     usage: 'Kanala wergerandinê: Cureya piştgirîyê {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Pelên pirzimanî yên ji çavkaniyek diyarkirî di zimanên din de di heman forma pelan de têne veguheztin.

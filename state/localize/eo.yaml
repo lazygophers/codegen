@@ -125,7 +125,7 @@ cli:
                 languages: Indiku la cellingvon por tradukado
                 src-file: Fontdosiero tradukenda (postulata)
                 src-language: La lingvo de la fontdosiero (se ne specifita, la ilo aŭtomate determinos la fontdosieron)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Traduka kanalo: Subtena tipo {{range $key,$value := .Type}}{{$key}}:{{$valoro}}{{end}}'
             long: Plurlingvaj dosieroj de certa fonto estas konvertitaj en dosierojn en la sama formato en aliaj lingvoj.

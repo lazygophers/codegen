@@ -136,9 +136,7 @@ func RegisterLocalizer(name string, v Localizer) {
 }
 
 func GetLocalizer(name string) (Localizer, bool) {
-	if strings.HasPrefix(name, ".") {
-		name = name[1:]
-	}
+	name = strings.TrimPrefix(name, ".")
 
 	l, ok := localizer[name]
 	return l, ok

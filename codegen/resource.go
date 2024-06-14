@@ -190,7 +190,7 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	tpl = template.New("").Funcs(DefaultTemplateFunc)
 
 	if systemPath != "" {
-		log.Infof("useing %s", systemPath)
+		log.Infof("using %s", systemPath)
 
 		buffer, err := os.ReadFile(systemPath)
 		if err != nil {
@@ -212,7 +212,7 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 		return tpl, nil
 	}
 
-	log.Infof("useing default %s", embedPath)
+	log.Infof("using default %s", embedPath)
 
 	buffer, err := embedFs.ReadFile(embedPath)
 	if err != nil {

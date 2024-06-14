@@ -125,7 +125,7 @@ cli:
                 languages: Specificate a lingua di destinazione per a traduzzione
                 src-file: U schedariu di origine da esse traduttu (necessariu)
                 src-language: A lingua di u schedariu fonte (se ùn hè micca specificatu, l'uttellu determina automaticamente u schedariu fonte)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Canale di traduzzione: tipu di supportu {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: I schedari multilingue da una certa fonte sò cunvertiti in i schedari in u listessu furmatu in altre lingue.

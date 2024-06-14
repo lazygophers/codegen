@@ -125,7 +125,7 @@ cli:
                 languages: Taura mutauro waunoshandura
                 src-file: Kwakabva faira rinofanira kushandurwa (rinodiwa)
                 src-language: Mutauro weiyo faira faira (kana isina kutaurwa, chishandiso chinongoona faira rekubva)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Nzira yekushandura: Rudzi rwekutsigira {{range $key,$value := .Type}}{{$kiyi}}:{{$value}}{{end}}'
             long: Mafaira emitauro yakawanda kubva kune imwe nzvimbo anoshandurwa kuita mafaera ari muchimiro chimwe chete mune mimwe mitauro.

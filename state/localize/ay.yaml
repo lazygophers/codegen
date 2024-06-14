@@ -125,7 +125,7 @@ cli:
                 languages: Jaqukipañatakixa kuna arusa uñt’ayaña
                 src-file: Jaqukipañataki phuqhat qillqata (wakisiwa) .
                 src-language: Uka phunchhawi qillqatan arupa (janiwa qhananchatäkiti, uka yänakax phunchhawi qillqat uñt’ayañapawa) .
-                translater:
+                translator:
                     google-free: Google Web Jaqukipaña
                     usage: 'Jaqukipaña thakhi: Yanapt’awi kasta {{rango $key,$value := .Tipo}}{{$clave}}:{{$value}}{{end}}'
             long: Mä chiqat walja arut arsutanakax yaqha arunakan pachpa formato ukan qillqatanakaruw jaqukipata.

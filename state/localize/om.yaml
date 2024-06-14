@@ -125,7 +125,7 @@ cli:
                 languages: Afaan galma hiikkaa ifteessi
                 src-file: Faayilii madda hiikamuu qabu (barbaachisaa) .
                 src-language: Afaan faayilii madda (yoo hin ibsamne, meeshaan ofumaan faayilii madda murteessa) .
-                translater:
+                translator:
                     google-free: Google Web Hiikkaa jedhu
                     usage: 'Chaanaalii hiikkaa: Gosa deeggarsa {{range $key,$value := .Akkaataa}}{{$key}}:{{$value}}{{end}}'
             long: Faayiloonni afaanota hedduu madda murtaa'e irraa gara faayilii bifa walfakkaataa afaanota birootiin jijjiiramu.

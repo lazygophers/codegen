@@ -125,7 +125,7 @@ cli:
                 languages: Specifikoni gjuhën e synuar për përkthim
                 src-file: Skedari burimor që do të përkthehet (kërkohet)
                 src-language: Gjuha e skedarit burimor (nëse nuk specifikohet, mjeti do të përcaktojë automatikisht skedarin burimor)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Kanali i përkthimit: Lloji i mbështetjes {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Skedarët shumëgjuhësh nga një burim i caktuar konvertohen në skedarë në të njëjtin format në gjuhë të tjera.

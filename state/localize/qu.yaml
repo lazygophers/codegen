@@ -125,7 +125,7 @@ cli:
                 languages: Tikranapaq simita niy
                 src-file: Pukyu willañiqi t'ikranapaq (mañasqa) .
                 src-language: Pukyu willañiqip rimaynin (mana nisqa kaptinqa, llamk'anaqa kikinmantam pukyu willañiqita kamachinqa)
-                translater:
+                translator:
                     google-free: Google Web Tikray
                     usage: 'Tikray ñan: Yanapakuy laya {{range $key,$value := .Tipo}}{{$llave}}:{{$value}}{{end}}'
             long: Huk pukyumanta achka simiyuq willañiqikunaqa huk simikunapi kaqlla rikch'aq willañiqikunamanmi tikrasqa.

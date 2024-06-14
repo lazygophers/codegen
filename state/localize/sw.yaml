@@ -125,7 +125,7 @@ cli:
                 languages: Bainisha lugha lengwa kwa tafsiri
                 src-file: Faili asili ya kutafsiriwa (inahitajika)
                 src-language: Lugha ya faili ya chanzo (ikiwa haijabainishwa, chombo kitaamua kiotomatiki faili ya chanzo)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Kituo cha kutafsiri: Aina ya usaidizi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Faili za lugha nyingi kutoka chanzo fulani hubadilishwa kuwa faili katika umbizo sawa katika lugha zingine.

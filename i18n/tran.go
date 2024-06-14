@@ -18,7 +18,7 @@ type TransacteConfig struct {
 	Overwrite          bool
 
 	Localizer  Localizer
-	Translater Translater
+	Translator Translator
 }
 
 func Translate(c *TransacteConfig) error {
@@ -113,7 +113,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			tran := func() {
 				log.Infof("try translate [%s]%s from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
-				traget, err := c.Translater.Translate(c.SrcLang.Tag, dstLang.Tag, x)
+				traget, err := c.Translator.Translate(c.SrcLang.Tag, dstLang.Tag, x)
 				if err != nil {
 					log.Errorf("err:%v", err)
 					pterm.Warning.Printfln("translate fail\nkey:%s\nfrom %s\nto %s\n%s",

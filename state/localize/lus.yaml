@@ -125,7 +125,7 @@ cli:
                 languages: Lehlinna tur target language chu tarlang rawh
                 src-file: Source file lehlin tur (a tul) .
                 src-language: Source file tawng (a tarlan loh chuan tool hian source file chu a hril nghal ang)
-                translater:
+                translator:
                     google-free: Google Web Translate tih a ni
                     usage: 'Lehlinna channel: Support chi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Source pakhat atanga multilingual file te chu tawng dang format inang file ah an chantir thin.

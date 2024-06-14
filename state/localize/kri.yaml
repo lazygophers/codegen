@@ -125,7 +125,7 @@ cli:
                 languages: Sho di langwej we yu want fɔ translet
                 src-file: Sɔs fayl we dɛn fɔ translet (we dɛn nid) .
                 src-language: Di langwej fɔ di sɔs fayl (if dɛn nɔ sho am, di tul go ɔtomɛtiks disayd di sɔs fayl)
-                translater:
+                translator:
                     google-free: Google Wɛb Translet
                     usage: 'Transleshɔn chanɛl: Sɔpɔt tayp {{rɛnj $ki,$valyu := .Tayp}}{{$ki}}:{{$valyu}}{{ɛnd}}'
             long: Fayl dɛn we gɛt bɔku langwej dɛn frɔm wan patikyula say, dɛn kin chenj dɛn to fayl dɛn we gɛt di sem fɔmat insay ɔda langwej dɛn.

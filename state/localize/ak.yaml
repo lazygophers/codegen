@@ -125,7 +125,7 @@ cli:
                 languages: Kyerɛ kasa a wopɛ sɛ wokyerɛ ase
                 src-file: Source file a wɔbɛkyerɛ ase (ɛhwehwɛ) .
                 src-language: Kasa a wɔde fa fael no fibea (sɛ wɔankyerɛ a, adwinnade no ankasa bɛkyerɛ fael a efi mu ba) .
-                translater:
+                translator:
                     google-free: Google Wɛb Nkyerɛaseɛ
                     usage: 'Nkyerɛaseɛ kwan: Mmoa su {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Wɔdan fael ahorow a ɛwɔ kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.

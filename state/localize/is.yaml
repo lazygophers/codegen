@@ -125,7 +125,7 @@ cli:
                 languages: Tilgreindu marktungumálið fyrir þýðingar
                 src-file: Upprunaskrá sem á að þýða (krafist)
                 src-language: Tungumál frumskrárinnar (ef ekki tilgreint mun tólið sjálfkrafa ákvarða upprunaskrána)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Þýðingarrás: Stuðningstegund {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fjöltyngdum skrám frá ákveðnum uppruna er breytt í skrár á sama sniði á öðrum tungumálum.

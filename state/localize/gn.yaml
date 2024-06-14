@@ -125,7 +125,7 @@ cli:
                 languages: Emombe’u ñe’ẽ ojehekahápe oñembohasa hag̃ua
                 src-file: Archivo ypykue oñembohasava’erã (oñeikotevẽva) .
                 src-language: Ñe’ẽ vore ypykue rehegua (noñemombe’úiramo, tembipuru ohechakuaáta ijeheguiete vore ypykue) .
-                translater:
+                translator:
                     google-free: Google Web Ñembohasaha
                     usage: 'Ñembohasaha rape: Ñepytyvõ ñemohenda {{rango $clave,$valor := .Tipo}}{{$clave}}:{{$valor}}{{end}}'
             long: Umi vore heta ñeꞌepypegua peteĩ ypykuegui oñembohasa vore peteĩchagua formato-pe ambue ñeꞌeme.

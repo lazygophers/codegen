@@ -125,7 +125,7 @@ cli:
                 languages: Boxa ririmi leri kongomisiweke eka vuhundzuluxeri
                 src-file: Fayili ya xihlovo leyi nga ta hundzuluxeriwa (ya laveka) .
                 src-language: Ririmi ra fayili ya xihlovo (loko ri nga boxiwanga, xitirhisiwa xi ta tihlawulela hi ku tisungulela fayili ya xihlovo) .
-                translater:
+                translator:
                     google-free: Google Web Hundzuluxa
                     usage: 'Xiyenge xa ​​vuhundzuluxi: Muxaka wa nseketelo {{range $key,$value := .Muxaka}}{{$key}}:{{$value}}{{end}}'
             long: Tifayili ta tindzimi to tala leti humaka eka xihlovo xo karhi ti hundzuriwa ti va tifayela ta xivumbeko lexi fanaka hi tindzimi tin’wana.

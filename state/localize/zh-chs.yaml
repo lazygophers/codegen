@@ -125,7 +125,7 @@ cli:
                 languages: 指定翻译的目标语言
                 src-file: 需要被翻译的源文件（必填）
                 src-language: 源文件的语言（如果不指定，则会工具源文件自动判断）
-                translater:
+                translator:
                     google-free: Google 网页翻译
                     usage: 翻译通道：支持类型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
             long: 通过某一个源多语言文件还以为其它语言相同格式的文件

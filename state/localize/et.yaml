@@ -125,7 +125,7 @@ cli:
                 languages: Määrake tõlke sihtkeel
                 src-file: Tõlgitav lähtefail (nõutav)
                 src-language: Lähtefaili keel (kui pole määratud, määrab tööriist lähtefaili automaatselt)
-                translater:
+                translator:
                     google-free: Google'i veebitõlge
                     usage: 'Tõlkekanal: toe tüüp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Teatud allikast pärit mitmekeelsed failid teisendatakse teistes keeltes samas vormingus failideks.

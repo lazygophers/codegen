@@ -22,26 +22,26 @@ const (
 	TransacteTypeDeeplFree  TransacteType = "deepl-free"
 )
 
-type Translater interface {
+type Translator interface {
 	Translate(srcLang, dstLang language.Tag, key string) (string, error)
 }
 
-var _ Translater = (*TranslaterHandler)(nil)
+var _ Translator = (*TranslaterHandler)(nil)
 
 type TranslaterHandler struct {
 	handler func(srcLang, dstLang language.Tag, key string) (string, error)
 }
 
-var transcterMap = map[TransacteType]Translater{
+var transcterMap = map[TransacteType]Translator{
 	TransacteTypeGoogleFree: NewTransacterGoogleFree(),
 	TransacteTypeDeeplFree:  NewTransacterDeeplFree(),
 }
 
-func RegisterTranscter(tt TransacteType, t Translater) {
+func RegisterTransctor(tt TransacteType, t Translator) {
 	transcterMap[tt] = t
 }
 
-func GetTranslater(tt TransacteType) (Translater, bool) {
+func GetTranslator(tt TransacteType) (Translator, bool) {
 	t, ok := transcterMap[tt]
 	return t, ok
 }

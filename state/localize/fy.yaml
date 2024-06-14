@@ -125,7 +125,7 @@ cli:
                 languages: Spesifisearje de doeltaal foar oersetting
                 src-file: Boarnebestân om te oersetten (ferplicht)
                 src-language: De taal fan it boarnebestân (as net oantsjutte, sil it ark automatysk it boarnebestân bepale)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Oersetkanaal: Support type {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Meartalige bestannen fan in bepaalde boarne wurde omset yn bestannen yn itselde formaat yn oare talen.

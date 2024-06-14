@@ -125,7 +125,7 @@ cli:
                 languages: Chaza ulwimi ekujoliswe kulo ukuze uguqulelwe
                 src-file: Umthombo wefayile eza kuguqulelwa (kuyafuneka)
                 src-language: Ulwimi lwefayile yemvelaphi (ukuba ayichazwanga, isixhobo siya kumisela ngokuzenzekelayo ifayile yemvelaphi)
-                translater:
+                translator:
                     google-free: IToliki yeWebhu kaGoogle
                     usage: 'Isitishi soguqulo: Uhlobo lwenkxaso {{uluhlu lwe-$sitshixo, i-$value := .Uhlobo}}{{$isitshixo}}:{{$value}}{{end}}'
             long: Iifayile zeelwimi ezininzi ezivela kumthombo othile ziguqulelwa kwiifayile ngendlela efanayo kwezinye iilwimi.

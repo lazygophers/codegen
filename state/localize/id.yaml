@@ -125,7 +125,7 @@ cli:
                 languages: Tentukan bahasa target untuk terjemahan
                 src-file: File sumber yang akan diterjemahkan (wajib)
                 src-language: Bahasa file sumber (jika tidak ditentukan, alat akan secara otomatis menentukan file sumber)
-                translater:
+                translator:
                     google-free: Google Terjemahan Web
                     usage: 'Saluran terjemahan: Jenis dukungan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: File multibahasa dari sumber tertentu diubah menjadi file dalam format yang sama dalam bahasa lain.

@@ -125,7 +125,7 @@ cli:
                 languages: Kugaragaza ururimi rugenewe gusobanura
                 src-file: Idosiye yinkomoko igomba guhindurwa (bisabwa)
                 src-language: Ururimi rwa dosiye yinkomoko (niba bidasobanuwe neza, igikoresho kizahita kigena dosiye yinkomoko)
-                translater:
+                translator:
                     google-free: Urubuga rwa Google
                     usage: 'Umuyoboro wubuhinduzi: Ubwoko bwingoboka {{urwego $ urufunguzo, $ agaciro: = .Ubwoko}} {{$ urufunguzo}}: {{$ agaciro}} {{iherezo}}'
             long: Indimi nyinshi ziva mu isoko runaka zihindurwa muri dosiye muburyo bumwe mu zindi ndimi.
