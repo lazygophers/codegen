@@ -134,7 +134,9 @@ cli:
     short: Un conjunt d'eines per a mandrosos
     sync:
         flags:
+            password: Contrasenya utilitzada per sol·licitar la verificació
             template-path: Camí de sincronització de plantilles
+            username: Nom d'usuari utilitzat per sol·licitar la verificació
         long: Sincronitzeu la configuració des de l'extrem remot i fusioneu-la amb la configuració local. El fitxer de plantilla és compatible al mateix temps durant la sincronització (si està configurat).
         short: Sincronitza la configuració des del control remot
     up-mod:

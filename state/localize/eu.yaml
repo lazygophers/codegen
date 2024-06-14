@@ -134,7 +134,9 @@ cli:
     short: Alferrarentzat tresna multzoa
     sync:
         flags:
+            password: Egiaztapena eskatzeko erabilitako pasahitza
             template-path: Txantiloiaren sinkronizazio bidea
+            username: Egiaztapena eskatzeko erabilitako erabiltzaile-izena
         long: Sinkronizatu konfigurazioa urruneko muturretik eta batu konfigurazio lokalean Txantiloi fitxategia aldi berean onartzen da sinkronizazioan (konfiguratuta badago).
         short: Sinkronizatu konfigurazioa urrunetik
     up-mod:

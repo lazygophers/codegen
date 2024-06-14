@@ -134,7 +134,9 @@ cli:
     short: A instrumentum ad populum piger posuit
     sync:
         flags:
+            password: Password ad verificationem peto
             template-path: Formula synchronisation iter
+            username: Usoris ad verificationem peto
         long: Configurationem ex remoto fine conformare et eam in loci configurationem confundere. Formulae fasciculi eodem tempore in synchronisation (si figuratum est) sustentatur.
         short: Synchronize configuratione a remotis
     up-mod:

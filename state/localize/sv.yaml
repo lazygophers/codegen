@@ -134,7 +134,9 @@ cli:
     short: Ett verktygsset för lata människor
     sync:
         flags:
+            password: Lösenord som används för att begära verifiering
             template-path: Mallsynkroniseringsväg
+            username: Användarnamn som används för att begära verifiering
         long: Synkronisera konfigurationen från fjärränden och slå samman den i den lokala konfigurationen. Mallfilen stöds samtidigt under synkroniseringen (om den är konfigurerad).
         short: Synkronisera konfigurationen från fjärrkontrollen
     up-mod:

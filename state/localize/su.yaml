@@ -134,7 +134,9 @@ cli:
     short: Hiji alat set pikeun jalma puguh
     sync:
         flags:
+            password: Sandi dipaké pikeun ménta verifikasi
             template-path: Jalur sinkronisasi template
+            username: Ngaran pamaké dipaké pikeun ménta verifikasi
         long: Singkronkeun konfigurasi tina tungtung jauh tur gabungkeun kana konfigurasi lokal.
         short: Singkronkeun konfigurasi tina jauh
     up-mod:

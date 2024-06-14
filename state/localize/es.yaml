@@ -134,7 +134,9 @@ cli:
     short: Un conjunto de herramientas para gente perezosa
     sync:
         flags:
+            password: Contraseña utilizada para solicitar la verificación
             template-path: Ruta de sincronización de plantillas
+            username: Nombre de usuario utilizado para solicitar la verificación
         long: Sincronice la configuración desde el extremo remoto y combínela con la configuración local. El archivo de plantilla se admite al mismo tiempo durante la sincronización (si está configurado).
         short: Sincronizar la configuración desde remoto
     up-mod:

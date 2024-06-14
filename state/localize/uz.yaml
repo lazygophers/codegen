@@ -134,7 +134,9 @@ cli:
     short: Dangasa odamlar uchun asboblar to'plami
     sync:
         flags:
+            password: Tasdiqlashni so'rash uchun ishlatiladigan parol
             template-path: Shablonni sinxronlashtirish yo'li
+            username: Tasdiqlashni so'rash uchun foydalanuvchi nomi ishlatilgan
         long: Konfiguratsiyani masofaviy uchidan sinxronlashtiring va uni mahalliy konfiguratsiyaga birlashtiring. Sinxronizatsiya paytida shablon fayli bir vaqtning o'zida qo'llab-quvvatlanadi (agar sozlangan bo'lsa).
         short: Masofadan turib konfiguratsiyani sinxronlash
     up-mod:

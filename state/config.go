@@ -18,7 +18,9 @@ import (
 )
 
 type CfgSync struct {
-	Remote            string `json:"remote,omitempty" yaml:"remote,omitempty" toml:"remote,omitempty"`
+	Remote  string            `json:"remote,omitempty" yaml:"remote,omitempty" toml:"remote,omitempty"`
+	Headers map[string]string `json:"headers,omitempty" yaml:"headers,omitempty" toml:"headers,omitempty"`
+
 	CacheTemplatePath string `json:"cache-template-path,omitempty" yaml:"cache-template-path,omitempty" toml:"cache-template-path,omitempty"`
 }
 
@@ -411,7 +413,7 @@ var Config = new(Cfg)
 
 type Unmarshaler func(reader io.Reader, v interface{}) error
 
-var supportedExt = map[string]Unmarshaler{
+var SupportedExt = map[string]Unmarshaler{
 	"json": func(reader io.Reader, v interface{}) error {
 		return json.NewDecoder(reader).Decode(v)
 	},
@@ -426,8 +428,15 @@ var supportedExt = map[string]Unmarshaler{
 	},
 }
 
-func tryFindConfigPath(baseDir string) string {
-	for ext := range supportedExt {
+var supportedExts = [...]string{
+	"yaml",
+	"yml",
+	"json",
+	"toml",
+}
+
+func TryFindConfigPath(baseDir string) string {
+	for _, ext := range supportedExts {
 		file := filepath.Join(baseDir, "codegen.cfg."+ext)
 		if osx.IsFile(file) {
 			return file
@@ -455,7 +464,7 @@ func LoadConfig() error {
 	// NOTE: 从系统目录中获取
 	if path == "" {
 		log.Warnf("Try to load config from system folder(%s)", pterm.Gray(filepath.Join(runtime.UserConfigDir(), app.Organization)))
-		path = tryFindConfigPath(filepath.Join(runtime.UserConfigDir(), app.Organization))
+		path = TryFindConfigPath(filepath.Join(runtime.UserConfigDir(), app.Organization))
 	}
 
 	file, err := os.Open(path)
@@ -473,7 +482,7 @@ func LoadConfig() error {
 		pterm.Success.Printfln("Config file found, use config from %s", path)
 
 		ext := filepath.Ext(path)
-		if unmarshaler, ok := supportedExt[ext[1:]]; ok {
+		if unmarshaler, ok := SupportedExt[ext[1:]]; ok {
 			err = unmarshaler(file, &Config)
 			if err != nil {
 				log.Errorf("err:%v", err)

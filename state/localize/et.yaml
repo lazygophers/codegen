@@ -134,7 +134,9 @@ cli:
     short: Tööriistade komplekt laiskadele inimestele
     sync:
         flags:
+            password: Kinnitamise taotlemiseks kasutatud parool
             template-path: Malli sünkroonimise tee
+            username: Kasutajanimi, mida kasutatakse kinnituse taotlemiseks
         long: Sünkroonige konfiguratsioon kaugotsast ja ühendage see kohaliku konfiguratsiooniga mallifaili toetatakse samal ajal sünkroonimise ajal (kui see on konfigureeritud).
         short: Konfiguratsiooni sünkroonimine kaugjuhtimispuldist
     up-mod:

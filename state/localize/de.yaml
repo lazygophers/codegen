@@ -134,7 +134,9 @@ cli:
     short: Ein Werkzeugset für Faule
     sync:
         flags:
+            password: Passwort, das zur Anforderung der Verifizierung verwendet wird
             template-path: Pfad zur Vorlagensynchronisierung
+            username: Benutzername, der zur Anforderung der Verifizierung verwendet wird
         long: Synchronisieren Sie die Konfiguration vom entfernten Ende und führen Sie sie in die lokale Konfiguration ein. Die Vorlagendatei wird gleichzeitig während der Synchronisierung unterstützt (falls konfiguriert).
         short: Synchronisieren Sie die Konfiguration aus der Ferne
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Et verktøysett for late mennesker
     sync:
         flags:
+            password: Passord brukt til å be om bekreftelse
             template-path: Malsynkroniseringsbane
+            username: Brukernavn brukt til å be om bekreftelse
         long: Synkroniser konfigurasjonen fra den eksterne enden og slå den sammen med den lokale konfigurasjonen. Malfilen støttes samtidig under synkronisering (hvis konfigurert).
         short: Synkroniser konfigurasjonen fra fjernkontrollen
     up-mod:

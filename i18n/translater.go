@@ -129,7 +129,6 @@ func NewTransacterGoogleFree() *TransacterGoogleFree {
 				request.SetHeader("User-Agent", fake.RandomUserAgent())
 				return nil
 			}).
-			SetProxy(os.Getenv("HTTPS_PROXY")).
 			SetQueryParams(map[string]string{
 				"client": "gtx",
 				"ie":     "UTF-8",

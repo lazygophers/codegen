@@ -134,7 +134,9 @@ cli:
     short: In ark set foar luie minsken
     sync:
         flags:
+            password: Wachtwurd brûkt om ferifikaasje oan te freegjen
             template-path: Template syngronisaasje paad
+            username: Brûkersnamme brûkt om ferifikaasje oan te freegjen
         long: Syngronisearje de konfiguraasje fanôf it ein fan 'e ôfstân en fusearje it yn' e lokale konfiguraasje.
         short: Syngronisearje konfiguraasje fan ôfstân
     up-mod:

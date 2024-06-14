@@ -134,7 +134,9 @@ cli:
     short: Cov cuab yeej teeb tsa rau cov neeg tub nkeeg
     sync:
         flags:
+            password: Tus password siv los thov kev txheeb xyuas
             template-path: Template synchronization txoj kev
+            username: Tus neeg siv lub npe siv los thov kev txheeb xyuas
         long: Synchronize lub configuration los ntawm tej thaj chaw deb kawg thiab muab tso rau hauv lub zos configuration Cov ntaub ntawv template yog txaus siab rau tib lub sij hawm thaum synchronization (yog tias configured).
         short: Synchronize configuration los ntawm tej thaj chaw deb
     up-mod:

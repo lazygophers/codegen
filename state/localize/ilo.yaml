@@ -134,7 +134,9 @@ cli:
     short: Maysa nga alikamen a naikabil para kadagiti natamad a tattao
     sync:
         flags:
+            password: Password nga mausar nga agkiddaw ti verification
             template-path: Dalan ti panagsinkronisar ti plantilia
+            username: Nausar ti username tapno agkiddaw iti beripikasion
         long: Isinkronisar ti panagisaad manipud iti adayo a patingga ken pagtitiponen daytoy iti lokal a panagisaad Ti plantilia a papeles ket nasuportaran iti isu met laeng a panawen bayat ti panagsinkronisar (no naikonfigura).
         short: I-synchronize ti konfigurasion manipud iti remote
     up-mod:

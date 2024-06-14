@@ -134,7 +134,9 @@ cli:
     short: Työkalusarja laiskoille
     sync:
         flags:
+            password: Salasana, jota käytetään vahvistuksen pyytämiseen
             template-path: Mallin synkronointipolku
+            username: Käyttäjätunnus, jota käytetään vahvistuksen pyytämiseen
         long: Synkronoi kokoonpano etäpäästä ja yhdistä se paikalliseen kokoonpanoon. Mallitiedostoa tuetaan samanaikaisesti synkronoinnin aikana (jos se on määritetty).
         short: Synkronoi asetukset kaukosäätimestä
     up-mod:

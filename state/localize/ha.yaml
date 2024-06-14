@@ -134,7 +134,9 @@ cli:
     short: Kayan aiki da aka saita don mutane malalaci
     sync:
         flags:
+            password: Kalmar wucewa da ake amfani da ita don neman tabbatarwa
             template-path: Hanyar aiki tare da samfuri
+            username: Sunan mai amfani da ake amfani da shi don neman tabbaci
         long: Yi aiki tare da sanyi daga ƙarshen nesa kuma haɗa shi cikin tsarin gida Ana goyan bayan fayil ɗin samfuri a lokaci guda yayin aiki tare (idan an saita shi)
         short: Aiki tare da daidaitawa daga nesa
     up-mod:

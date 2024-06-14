@@ -134,7 +134,9 @@ cli:
     short: Një grup mjetesh për dembelët
     sync:
         flags:
+            password: Fjalëkalimi i përdorur për të kërkuar verifikim
             template-path: Rruga e sinkronizimit të shabllonit
+            username: Emri i përdoruesit që përdoret për të kërkuar verifikim
         long: Sinkronizoni konfigurimin nga fundi i largët dhe bashkojeni atë në konfigurimin lokal Skedari i shabllonit mbështetet në të njëjtën kohë gjatë sinkronizimit (nëse konfigurohet).
         short: Sinkronizoni konfigurimin nga telekomanda
     up-mod:

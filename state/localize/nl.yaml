@@ -134,7 +134,9 @@ cli:
     short: Een gereedschapsset voor luie mensen
     sync:
         flags:
+            password: Wachtwoord gebruikt om verificatie aan te vragen
             template-path: Sjabloonsynchronisatiepad
+            username: Gebruikersnaam die wordt gebruikt om verificatie aan te vragen
         long: Synchroniseer de configuratie vanaf de externe kant en voeg deze samen met de lokale configuratie. Het sjabloonbestand wordt tegelijkertijd ondersteund tijdens de synchronisatie (indien geconfigureerd).
         short: Synchroniseer de configuratie op afstand
     up-mod:

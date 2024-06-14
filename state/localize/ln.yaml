@@ -134,7 +134,9 @@ cli:
     short: Ensemble ya esaleli mpo na bato ya paresseux
     sync:
         flags:
+            password: Mot de passe oyo basalelaka pona kosenga vérification
             template-path: Nzela ya synchronisation ya modèle
+            username: Nkombo ya mosaleli esalelamaka mpo na kosenga bondimi
         long: Synchroniser configuration uta na suka ya mosika mpe kosangisa yango na configuration locale Fisyé ya modèle esungami na tango moko na tango ya synchronisation (soki e configuré).
         short: Synchroniser configuration depuis télécommande
     up-mod:

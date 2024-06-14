@@ -134,7 +134,9 @@ cli:
     short: Set offer ar gyfer pobl ddiog
     sync:
         flags:
+            password: Cyfrinair a ddefnyddir i ofyn am ddilysiad
             template-path: Llwybr cydamseru templed
+            username: Enw defnyddiwr a ddefnyddir i ofyn am ddilysiad
         long: Cydamserwch y ffurfweddiad o'r pen pell a'i gyfuno â'r ffurfweddiad lleol. Cefnogir y ffeil templed ar yr un pryd yn ystod cydamseru (os yw wedi'i ffurfweddu)
         short: Cydamseru cyfluniad o bell
     up-mod:

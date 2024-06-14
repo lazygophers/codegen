@@ -134,7 +134,9 @@ cli:
     short: Un strumentu per i pigri
     sync:
         flags:
+            password: Password usata per dumandà a verificazione
             template-path: Percorsu di sincronizazione di mudelli
+            username: U nome d'utilizatore utilizatu per dumandà a verificazione
         long: Sincronizza a cunfigurazione da l'estremità remota è unisce in a cunfigurazione lucale U schedariu di mudellu hè supportatu à u stessu tempu durante a sincronizazione (se cunfigurata).
         short: Sincronizza a cunfigurazione da a distanza
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Set alata za lijene ljude
     sync:
         flags:
+            password: Lozinka korištena za traženje verifikacije
             template-path: Putanja za sinhronizaciju šablona
+            username: Korisničko ime korišteno za traženje verifikacije
         long: Sinhronizirajte konfiguraciju sa udaljenog kraja i spojite je u lokalnu konfiguraciju.
         short: Sinhronizirajte konfiguraciju s daljinskog
     up-mod:

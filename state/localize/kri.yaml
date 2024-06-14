@@ -134,7 +134,9 @@ cli:
     short: Wan tul we dɛn dɔn sɛt fɔ pipul dɛn we les
     sync:
         flags:
+            password: Paswɔd we dɛn kin yuz fɔ aks fɔ verify
             template-path: Template sinkronizashɔn pat
+            username: Yuznem we dɛn kin yuz fɔ aks fɔ verify
         long: Sinkroniz di kɔnfigyushɔn frɔm di rimot ɛnd ɛn jɔyn am to di lokal kɔnfigyushɔn Di tɛmplat fayl de sɔpɔt di sem tɛm we dɛn de sinkroniz (if dɛn kɔnfigyut am).
         short: Sinkroniz kɔnfigyushɔn frɔm rimot
     up-mod:

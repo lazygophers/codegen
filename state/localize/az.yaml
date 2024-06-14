@@ -134,7 +134,9 @@ cli:
     short: Tənbəl insanlar üçün alət dəsti
     sync:
         flags:
+            password: Doğrulama sorğusu üçün istifadə edilən parol
             template-path: Şablon sinxronizasiya yolu
+            username: Doğrulama sorğusu üçün istifadə edilən istifadəçi adı
         long: Konfiqurasiyanı uzaq uçdan sinxronlaşdırın və onu yerli konfiqurasiyaya birləşdirin Şablon faylı sinxronizasiya zamanı eyni vaxtda dəstəklənir (əgər konfiqurasiya olunubsa).
         short: Uzaqdan konfiqurasiyanı sinxronlaşdırın
     up-mod:

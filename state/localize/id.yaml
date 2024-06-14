@@ -134,7 +134,9 @@ cli:
     short: Satu set alat untuk orang malas
     sync:
         flags:
+            password: Kata sandi digunakan untuk meminta verifikasi
             template-path: Jalur sinkronisasi templat
+            username: Nama pengguna digunakan untuk meminta verifikasi
         long: Sinkronkan konfigurasi dari ujung jarak jauh dan gabungkan ke dalam konfigurasi lokal. File templat didukung secara bersamaan selama sinkronisasi (jika dikonfigurasi)
         short: Sinkronisasi konfigurasi dari jarak jauh
     up-mod:

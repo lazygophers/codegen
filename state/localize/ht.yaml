@@ -134,7 +134,9 @@ cli:
     short: Yon seri zouti pou moun ki parese
     sync:
         flags:
+            password: Modpas yo itilize pou mande verifikasyon
             template-path: Chemen senkronizasyon modèl
+            username: Non itilizatè yo itilize pou mande verifikasyon
         long: Senkronize konfigirasyon an soti nan fen aleka epi rantre li nan konfigirasyon lokal la sipòte fichye modèl la an menm tan pandan senkronizasyon (si konfigirasyon).
         short: Senkronize konfigirasyon soti nan aleka
     up-mod:

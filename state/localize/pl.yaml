@@ -134,7 +134,9 @@ cli:
     short: Zestaw narzędzi dla leniwych
     sync:
         flags:
+            password: Hasło używane do żądania weryfikacji
             template-path: Ścieżka synchronizacji szablonu
+            username: Nazwa użytkownika używana do żądania weryfikacji
         long: Zsynchronizuj konfigurację ze zdalnego końca i połącz ją z konfiguracją lokalną. Plik szablonu jest obsługiwany w tym samym czasie podczas synchronizacji (jeśli jest skonfigurowany).
         short: Synchronizuj konfigurację zdalnie
     up-mod:

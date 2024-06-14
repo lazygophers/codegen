@@ -134,7 +134,9 @@ cli:
     short: 一個適合懶人工具集
     sync:
         flags:
+            password: 用於請求校驗的密碼
             template-path: 模板同步路徑
+            username: 用於請求校驗的使用者名稱
         long: 從遠端同步配置，並且合併到本地配置中，同步時支援同時同步模板檔案（如果配置了的話）
         short: 從遠端同步配置
     up-mod:

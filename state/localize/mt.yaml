@@ -134,7 +134,9 @@ cli:
     short: Sett għodda għall-għażżien
     sync:
         flags:
+            password: Password użata biex titlob verifika
             template-path: Mogħdija ta 'sinkronizzazzjoni tal-mudell
+            username: Isem tal-utent użat biex titlob verifika
         long: Issinkronizza l-konfigurazzjoni mit-tarf remot u ingħaqadha fil-konfigurazzjoni lokali Il-fajl tal-mudell huwa appoġġjat fl-istess ħin waqt is-sinkronizzazzjoni (jekk ikkonfigurat).
         short: Issinkronizza l-konfigurazzjoni mill-bogħod
     up-mod:

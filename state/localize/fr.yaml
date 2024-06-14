@@ -134,7 +134,9 @@ cli:
     short: Un ensemble d'outils pour les paresseux
     sync:
         flags:
+            password: Mot de passe utilisé pour demander la vérification
             template-path: Chemin de synchronisation du modèle
+            username: Nom d'utilisateur utilisé pour demander la vérification
         long: Synchronisez la configuration depuis l'extrémité distante et fusionnez-la dans la configuration locale. Le fichier modèle est pris en charge en même temps pendant la synchronisation (si configuré).
         short: Synchroniser la configuration à distance
     up-mod:

@@ -134,7 +134,9 @@ cli:
     short: Ngwá ọrụ edobere maka ndị umengwụ
     sync:
         flags:
+            password: Okwuntughe eji arịọ nkwenye
             template-path: Ụzọ mmekọrịta template
+            username: Aha njirimara ejiri rịọ nkwenye
         long: Mekọrịta nhazi site na njedebe dịpụrụ adịpụ wee jikọta ya na nhazi mpaghara a na-akwado faịlụ ndebiri n'otu oge n'oge mmekọrịta (ọ bụrụ na ahaziri).
         short: Mekọrịta nhazi site na ime ime
     up-mod:

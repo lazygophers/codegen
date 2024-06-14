@@ -76,7 +76,7 @@ func LoadLazeConfig(path string) error {
 		pterm.Warning.Printfln("%s is not found, use default", path)
 	} else {
 		defer file.Close()
-		err = supportedExt["yaml"](file, &LazyConfig)
+		err = SupportedExt["yaml"](file, &LazyConfig)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err

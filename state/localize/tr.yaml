@@ -134,7 +134,9 @@ cli:
     short: Tembel insanlar için bir araç seti
     sync:
         flags:
+            password: Doğrulama istemek için kullanılan şifre
             template-path: Şablon senkronizasyon yolu
+            username: Doğrulama istemek için kullanılan kullanıcı adı
         long: Yapılandırmayı uzak uçtan senkronize edin ve yerel konfigürasyonla birleştirin. Şablon dosyası, senkronizasyon sırasında aynı anda desteklenir (yapılandırılmışsa).
         short: Yapılandırmayı uzaktan senkronize edin
     up-mod:
