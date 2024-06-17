@@ -15,7 +15,7 @@ require (
 	github.com/lazygophers/utils v0.0.0-20240611102917-4283d102dad5
 	github.com/pelletier/go-toml/v2 v2.2.2
 	github.com/pterm/pterm v0.12.79
-	github.com/spf13/cobra v1.8.0
+	github.com/spf13/cobra v1.8.1
 	go.uber.org/atomic v1.11.0
 	golang.org/x/mod v0.18.0
 	golang.org/x/text v0.16.0

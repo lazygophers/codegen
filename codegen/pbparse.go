@@ -151,12 +151,13 @@ func NewPbEnum(e *proto.Enum) *PbEnum {
 }
 
 type PbRpcGenOptions struct {
-	GenTo  string
-	Model  string
-	Action string
-	Role   string
-	Method string
-	Path   string
+	GenTo        string
+	Model        string
+	Action       string
+	Role         string
+	SkipGenRoute bool
+	Method       string
+	Path         string
 }
 
 type PbRPC struct {
@@ -201,6 +202,10 @@ func (p *PbRPC) walk() {
 
 		if gen.Role != "" {
 			p.genOption.Role = gen.Role
+		}
+
+		if gen.SkipGenRoute {
+			p.genOption.SkipGenRoute = gen.SkipGenRoute
 		}
 	}
 
@@ -547,14 +552,23 @@ type PbPackage struct {
 	rpcMap     map[string]*PbRPC
 	optionMap  map[string]*PbOption
 
-	RawGoPackage string
-	PackageName  string
+	RawGoPackage   string
+	RawPackageName string
 
 	ProtoBuffer string
 
 	// 自定义的一些字段
 	Port int64
 	Host string
+}
+
+func (p *PbPackage) PackageName() string {
+	idx := strings.LastIndex(p.RawPackageName, ".")
+	if idx > 0 {
+		return p.RawPackageName[idx+1:]
+	}
+
+	return p.RawPackageName
 }
 
 func (p *PbPackage) ProtoFilePath() string {
@@ -708,7 +722,7 @@ func (p *PbPackage) Walk() {
 			log.Infof("package:%v", pp.Name)
 			pterm.Info.Printfln("package:%s", pp.Name)
 
-			p.PackageName = pp.Name
+			p.RawPackageName = pp.Name
 		}),
 	)
 
@@ -738,22 +752,22 @@ func (p *PbPackage) Walk() {
 
 func NewPbPackage(protoFilePath string, p *proto.Proto) *PbPackage {
 	return &PbPackage{
-		protoFilePath: protoFilePath,
-		proto:         p,
-		messages:      nil,
-		enums:         nil,
-		services:      nil,
-		rpcs:          nil,
-		options:       nil,
-		msgMap:        map[string]*PbMessage{},
-		enumMap:       map[string]*PbEnum{},
-		serviceMap:    map[string]*PbService{},
-		rpcMap:        map[string]*PbRPC{},
-		optionMap:     map[string]*PbOption{},
-		RawGoPackage:  "",
-		PackageName:   "",
-		ProtoBuffer:   "",
-		Port:          8080,
+		protoFilePath:  protoFilePath,
+		proto:          p,
+		messages:       nil,
+		enums:          nil,
+		services:       nil,
+		rpcs:           nil,
+		options:        nil,
+		msgMap:         map[string]*PbMessage{},
+		enumMap:        map[string]*PbEnum{},
+		serviceMap:     map[string]*PbService{},
+		rpcMap:         map[string]*PbRPC{},
+		optionMap:      map[string]*PbOption{},
+		RawGoPackage:   "",
+		RawPackageName: "",
+		ProtoBuffer:    "",
+		Port:           8080,
 	}
 }
 

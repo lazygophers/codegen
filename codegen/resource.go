@@ -291,6 +291,9 @@ var DefaultTemplateFunc = template.FuncMap{
 	"First":    candy.First[string],
 	"Last":     candy.Last[string],
 	"Contains": candy.Contains[string],
+	"Self": func(s string) string {
+		return fmt.Sprintf("{{ %s }}", s)
+	},
 
 	"IncrKey": IncrWithKey,
 	"DecrKey": DecrWithKey,

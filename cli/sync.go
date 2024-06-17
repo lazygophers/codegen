@@ -453,8 +453,6 @@ func syncFromRemote(c *state.Cfg) error {
 		}
 	}
 
-	log.Infof("%#v", c)
-
 	return nil
 }
 

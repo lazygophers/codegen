@@ -1,3 +1,4 @@
+version: 2
 project_name: {{ .PB.GoPackageName }}
 env:
     - GO111MODULE=on
@@ -17,19 +18,19 @@ builds:
         ldflags:
             - -s -w
             - --extldflags "-static -fpic"
-            - -X github.com/lazygophers/utils/app.Name={{ .ProjectName }}
-            - -X github.com/lazygophers/utils/app.Commit={{ .FullCommit }}
-            - -X github.com/lazygophers/utils/app.ShortCommit={{ .ShortCommit }}
-            - -X github.com/lazygophers/utils/app.Branch={{ .Branch }}
-            - -X github.com/lazygophers/utils/app.Version={{ .Version }}
-            - -X github.com/lazygophers/utils/app.Tag={{ .Tag }}
-            - -X github.com/lazygophers/utils/app.BuildDate={{ .Date }}
-            - -X github.com/lazygophers/utils/app.GoVersion={{ .Env.GOVERSION }}
-            - -X github.com/lazygophers/utils/app.GoOS={{ .Os }}
-            - -X github.com/lazygophers/utils/app.Goarch={{ .Arch }}
-            - -X github.com/lazygophers/utils/app.Goarm={{ .Arm }}
-            - -X github.com/lazygophers/utils/app.Goamd64={{ .Amd64 }}
-            - -X github.com/lazygophers/utils/app.Gomips={{ .Mips }}
+            - -X github.com/lazygophers/utils/app.Name={{ Self ".ProjectName" }}}}
+            - -X github.com/lazygophers/utils/app.Commit={{ Self ".FullCommit" }}
+            - -X github.com/lazygophers/utils/app.ShortCommit={{ Self ".ShortCommit" }}
+            - -X github.com/lazygophers/utils/app.Branch={{ Self ".Branch" }}
+            - -X github.com/lazygophers/utils/app.Version={{ Self ".Version" }}
+            - -X github.com/lazygophers/utils/app.Tag={{ Self ".Tag" }}
+            - -X github.com/lazygophers/utils/app.BuildDate={{ Self ".Date" }}
+            - -X github.com/lazygophers/utils/app.GoVersion={{ .EnvSelf ".GOVERSION" }}
+            - -X github.com/lazygophers/utils/app.GoOS={{ Self ".Os" }}
+            - -X github.com/lazygophers/utils/app.Goarch={{ Self ".Arch" }}
+            - -X github.com/lazygophers/utils/app.Goarm={{ Self ".Arm" }}
+            - -X github.com/lazygophers/utils/app.Goamd64={{ Self ".Amd64" }}
+            - -X github.com/lazygophers/utils/app.Gomips={{ Self ".Mips" }}
         gcflags:
             - -N -l
         targets:

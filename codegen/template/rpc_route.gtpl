@@ -8,7 +8,7 @@ import ({{ if gt (len .RPCS) 0 }}
 
 var app = lrpc.NewApp(&lrpc.Config{})
 
-var Routes = []*lrpc.Route{ {{ range $key, $value := .RPCS }}
+var Routes = []*lrpc.Route{ {{ range $key, $value := .RPCS }}{{ if not $value.SkipGenRoute }}
 	{
 		Method:  "{{ $value.Method }}",
 		Path:    {{ $.PB.GoPackageName }}.RpcPath{{ $value.RpcName }},
@@ -16,5 +16,5 @@ var Routes = []*lrpc.Route{ {{ range $key, $value := .RPCS }}
 		Extra: map[string]any{
 			"role": "{{ $value.Role }}",
 		},
-	},{{ end }}
+	},{{ end }}{{ end }}
 }

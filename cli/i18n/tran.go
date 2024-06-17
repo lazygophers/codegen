@@ -296,9 +296,9 @@ func initTran() {
 	tranCmd.Flags().StringSliceP("languages", "l", state.Config.I18n.Languages, state.Localize(state.I18nTagCliI18nTranFlagsLanguages))
 
 	tranCmd.Flags().Bool("generate-const", state.Config.I18n.GenerateConst, state.Localize(state.I18nTagCliI18nTranFlagsGenerateConst))
-	tranCmd.Flags().String("translator", state.Config.I18n.Translator, state.Localize(state.I18nTagCliI18nTranFlagsTranslaterUsage, map[string]any{
+	tranCmd.Flags().String("translator", state.Config.I18n.Translator, state.Localize(state.I18nTagCliI18nTranFlagsTranslatorUsage, map[string]any{
 		"Type": map[i18n.TransacteType]string{
-			i18n.TransacteTypeGoogleFree: state.Localize(state.I18nTagCliI18nTranFlagsTranslaterGoogleFree),
+			i18n.TransacteTypeGoogleFree: state.Localize(state.I18nTagCliI18nTranFlagsTranslatorGoogleFree),
 		},
 	}))
 
