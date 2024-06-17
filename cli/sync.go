@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"bytes"
 	"encoding/base64"
 	"fmt"
 	"github.com/go-resty/resty/v2"
@@ -10,7 +11,6 @@ import (
 	"github.com/lazygophers/lrpc/middleware/xerror"
 	"github.com/lazygophers/utils/app"
 	"github.com/lazygophers/utils/cryptox"
-	"github.com/lazygophers/utils/fake"
 	"github.com/lazygophers/utils/json"
 	"github.com/lazygophers/utils/osx"
 	"github.com/lazygophers/utils/runtime"
@@ -19,7 +19,9 @@ import (
 	"github.com/spf13/cobra"
 	"gopkg.in/yaml.v3"
 	"io"
+	"io/fs"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -184,6 +186,13 @@ var syncCmd = &cobra.Command{
 			// 存储到当前目录下的文件（按照文件名 hash)
 			fileName := filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen", cryptox.Md5(c.Sync.Remote), "codegen.cfg.yaml")
 
+			file, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
+			defer file.Close()
+
 			encoder := yaml.NewEncoder(file)
 			encoder.SetIndent(4)
 
@@ -214,12 +223,13 @@ var syncCmd = &cobra.Command{
 }
 
 func syncFromRemote(c *state.Cfg) error {
+
 	client := resty.New().
 		SetTimeout(time.Second * 10).
 		SetRetryWaitTime(time.Second).
 		SetRetryCount(3).
 		SetHeaders(map[string]string{
-			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
+			"User-Agent": fmt.Sprintf("lazygophers/%s (%s)", app.Version, app.Organization),
 		}).
 		AddRetryCondition(func(response *resty.Response, err error) bool {
 			if err != nil {
@@ -241,12 +251,17 @@ func syncFromRemote(c *state.Cfg) error {
 			}
 		}).
 		SetHeaders(c.Sync.Headers).
-		OnBeforeRequest(func(client *resty.Client, request *resty.Request) error {
-			request.SetHeader("User-Agent", fake.RandomUserAgent())
-			return nil
-		}).
-		SetLogger(log.Clone().SetOutput(io.Discard)).
-		SetBaseURL(filepath.Dir(c.Sync.Remote))
+		SetLogger(log.Clone().SetOutput(io.Discard))
+
+	{
+		u, err := url.Parse(c.Sync.Remote)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+		u.Path = filepath.Dir(u.Path)
+		client.SetBaseURL(u.String())
+	}
 
 	if os.Getenv("HTTPS_PROXY") != "" {
 		client.SetProxy(os.Getenv("HTTPS_PROXY"))
@@ -261,8 +276,9 @@ func syncFromRemote(c *state.Cfg) error {
 		c.Sync.CacheTemplatePath = filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen", cacheKey, "template")
 	}
 
-	if !osx.IsDir(filepath.Dir(c.Sync.CacheTemplatePath)) {
-		err := os.MkdirAll(filepath.Dir(c.Sync.CacheTemplatePath), os.ModePerm)
+	if !osx.IsDir(c.Sync.CacheTemplatePath) {
+		pterm.Info.Printfln("try to create template directory at %s", c.Sync.CacheTemplatePath)
+		err := os.MkdirAll(c.Sync.CacheTemplatePath, fs.ModePerm)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -273,7 +289,6 @@ func syncFromRemote(c *state.Cfg) error {
 	// 获取新的配置
 	{
 		resp, err := client.R().
-			SetDoNotParseResponse(true).
 			Get(c.Sync.Remote)
 		if err != nil {
 			log.Errorf("err:%v", err)
@@ -308,14 +323,13 @@ func syncFromRemote(c *state.Cfg) error {
 		}
 
 		if unmarshaler, ok := state.SupportedExt[ext]; ok {
-			err = unmarshaler(resp.RawBody(), &nc)
-			resp.RawBody().Close()
+			err = unmarshaler(bytes.NewBuffer(resp.Body()), &nc)
 			if err != nil {
+				log.Error(string(resp.Body()))
 				log.Errorf("err:%v", err)
 				return err
 			}
 		} else {
-			resp.RawBody().Close()
 			log.Errorf("unsupported config file format:%v", ext)
 			return fmt.Errorf("unsupported config file format:%v", ext)
 		}
@@ -400,15 +414,13 @@ func syncFromRemote(c *state.Cfg) error {
 				pterm.Info.Printfln("try get template from %s", dst.String())
 				resp, err := client.R().Get(dst.String())
 				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
-				if err != nil {
+					log.Errorf("get template from %s", resp.Request.URL)
 					log.Errorf("err:%v", err)
 					return err
 				}
 
 				if resp.StatusCode() != http.StatusOK {
+					log.Errorf("get template from %s", resp.Request.URL)
 					log.Errorf("unexpected status code: %v", resp.StatusCode())
 					return xerror.NewError(int32(resp.StatusCode()))
 				}

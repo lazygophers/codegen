@@ -97,7 +97,7 @@ cli:
     group:
         gen: kodea sortzea
     help:
-        additional_commands: Agindu osagarriak
+        additional_commands: Komando gehigarriak
         aliases: komandoaren ezizena
         available_commands: Onartutako komandoak
         command: Agindu
@@ -121,11 +121,11 @@ cli:
                 all-language: Itzuli onartzen diren hizkuntza guztiak (egia bada, hizkuntzen bandera desgaituta dago)
                 force: Gainidatzi lehendik dauden itzulpenak
                 force-key-prefix: gainidatzi behar diren gakoak
-                generate-const: Sortu zenbaketa-balioak erraz deitzeko
+                generate-const: Sortu zenbazio-balioak erraz deitzeko
                 languages: Zehaztu itzulpenerako xede-hizkuntza
                 src-file: Itzuli beharreko iturburu-fitxategia (beharrezkoa)
                 src-language: Iturburu-fitxategiaren hizkuntza (zehazten ez bada, tresnak automatikoki zehaztuko du iturburu-fitxategia)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Itzulpen-kanala: laguntza mota {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Iturburu jakin bateko fitxategi eleaniztunak beste hizkuntza batzuetan formatu bereko fitxategietan bihurtzen dira.
@@ -149,7 +149,7 @@ lang:
     ak: Twi (Akan)
     am: Amharikoa
     ar: arabiera
-    as: Asamiera
+    as: asamiera
     ay: aimara
     az: Azerbaijangoa
     be: bielorrusiera
@@ -209,7 +209,7 @@ lang:
     km: Kanbodiara
     kn: Kannada
     ko: Korean
-    kri: kreolera
+    kri: Kreolekoa
     ku: kurduera
     ky: kirgizera
     la: latina
@@ -230,7 +230,7 @@ lang:
     mr: marathi
     ms: malaysiera
     mt: maltera
-    my: birmaniera
+    my: birmaniarra
     ne: Nepaliarra
     nl: holandarra
     "no": norvegiarra
@@ -238,7 +238,7 @@ lang:
     ny: Nyanza (Chichewa)
     om: Oromoa
     or: Oriya (Odia)
-    pa: punjabia
+    pa: punjabi
     pl: poloniarra
     ps: Paxtuera
     pt: portugesa (Portugal, Brasil)
@@ -285,5 +285,5 @@ lang:
     zh-hk: txinera (Hong Kong)
     zh-mo: txinera (Macao)
     zh-sg: txinera (Singapur)
-    zh-tw: txinera tradizionala)
+    zh-tw: txinera (Taiwan)
     zu: Zulua

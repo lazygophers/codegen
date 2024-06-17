@@ -44,7 +44,7 @@ func GetPath(t PathType, pb *PbPackage) string {
 		return pb.ProjectRoot()
 
 	case PathTypePbGo:
-		return filepath.Join(pb.ProjectRoot(), pb.PackageName+".pb.go")
+		return filepath.Join(pb.ProjectRoot(), pb.PackageName()+".pb.go")
 
 	case PathTypeGoMod:
 		return filepath.Join(pb.ProjectRoot(), "go.mod")

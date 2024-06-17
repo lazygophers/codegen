@@ -44,12 +44,12 @@ cli:
             output-path: Dizze opsje kin konfigurearre wurde as it paad fan go_package konfigurearre yn 'e .proto-bestân ynkonsistint is mei it roadbed dat eins oanmakke wurde moat.
             overwrite: Foar ynhâld dy't net wurde regenerearre, twingt oerskriuwen fan besteande ynhâld
             proto-files: Om oare .proto-bestannen/mappaden te ymportearjen dy't net yn deselde map steane as de oantsjutte .proto-bestân, is dizze operaasje in opsje om it konfiguraasjefjild yn it konfiguraasjetriem te oerskriuwen.
-            protoc: '`protoc` oanpasbere triempaad'
+            protoc: '`protoc` oanpasber bestânspaad'
             protoc-gen-go: '`protoc-gen-go` plugin paad'
             tables-enable_field_created_at: Of de standertkonfiguraasjegeneraasje fan it fjild oanmakke_at-database ynskeakelje moat
             tables-enable_field_deleted_at: Of de standertynstelling fan it fjild deleted_at yn 'e databank ynskeakelje moat
             tables-enable_field_id: Ynskeakelje standert konfiguraasje generaasje foar database-relatearre fjilden
-            tables-enable_field_updated_at: Of de standertwearde fan it fjild updated_at yn 'e databank ynskeakelje moat
+            tables-enable_field_updated_at: Of de standertwearde fan it updated_at-fjild yn 'e databank ynskeakelje moat
             tables-enable_gorm_tag_column: Oft te ynskeakeljen database-relatearre gorm generaasje
         gitignote:
             long: Generearje .gitignore-bestannen foar negearre triembehear yn ferzjekontrôle
@@ -125,7 +125,7 @@ cli:
                 languages: Spesifisearje de doeltaal foar oersetting
                 src-file: Boarnebestân om te oersetten (ferplicht)
                 src-language: De taal fan it boarnebestân (as net oantsjutte, sil it ark automatysk it boarnebestân bepale)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Oersetkanaal: Support type {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Meartalige bestannen fan in bepaalde boarne wurde omset yn bestannen yn itselde formaat yn oare talen.
@@ -266,7 +266,7 @@ lang:
     th: Taisk
     ti: Tignan
     tk: Turkmeensk
-    tl: Tagalog (Filipynsk)
+    tl: Tagalog (Filipino)
     tr: turkish
     ts: Dzonga
     tt: Tatar
@@ -285,5 +285,5 @@ lang:
     zh-hk: Sineesk (Hong Kong)
     zh-mo: Sineesk (Macau)
     zh-sg: Sineesk (Singapore)
-    zh-tw: tradisjoneel Sineesk)
+    zh-tw: Sineesk (Taiwan)
     zu: Zulu

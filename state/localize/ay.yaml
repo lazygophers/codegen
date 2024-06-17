@@ -6,7 +6,7 @@ cli:
             Mä autocompleto script {{.RootName}} ukatakix uñacht’ayat shell ukatakiw lurasi.
         short: Mä autocompleta script ukax uñt’ayat shell ukatakiw luraña
         subcommand:
-            short: '{{.Command}} ukatakix autocompleto script luraña.'
+            short: '{{.Command}} ukatakix autocompletar script luraña.'
     flags:
         debug: Salida detallada registro ukaxa
     gen:
@@ -14,16 +14,16 @@ cli:
             flags:
                 action: Sarnaqäwinakax lotes ukan yapxatatäñapawa, juk’amp yatxatañatakix apnaqañ qillqatanakap jikxatañamawa
                 default-role: Uka lurawixa lote-generada interfaz ukankiwa.
-                gen-to: Uñstayata .go qillqatanakan mistuñ chiqawj uñt’ayaña
+                gen-to: Uñacht’ayaña kawkhantixa mistuski uka .go qillqatanaka
                 list-option: Ukhamaraki lista ukaxa filtratarakispawa, ukatxa juk’ampi yatxatañatakixa apnaqañ qillqatanaka thaqhañamawa.
                 model: Modelo suti uñt’ayaña, yanapt’aña `modelo` nayrïr aru chhaqtayaña
-            long: Interfaces ukanakax lotes ukan luraña ukat mä interfaz mä modelo ukar yapxataña .proto qillqatan
+            long: Interfaces ukanakax lotes ukan luraña ukat mä interfaz mä modelo ukar .proto qillqatan yapxataña
             short: Interfaz de generación de lotes ukax mä juk’a pachanakanwa
         all:
             long: Taqi kunatix aka herramienta ukamp yanapt’atäki ukanak luraña
             short: Taqi codigo uñstayaña
         cache:
-            long: Negocio jawsañ caché ukamp chikt’at SDKs ukanakatakix caché archivonak luraña
+            long: Negocio jawsañ caché ukamp chikt’at SDKs ukanakatakix caché ark luraña
             short: Caché qillqata luraña
         cmd:
             long: Servicios empresariales ukanakatakix mantañ archivonaka luraña
@@ -46,10 +46,10 @@ cli:
             proto-files: Yaqha .proto qillqatanaka/carpeta thakhinaka apsuñataki, ukaxa janiwa pachpa carpeta ukankiti, kunjamatixa .proto qillqata uñt’ayata, aka lurawixa mä amtawiwa wakicht’awi qillqatanxa wakicht’awi chiqaru chhaqtayañataki.
             protoc: '`protoc` ukax mä jamuqaw thakhi'
             protoc-gen-go: '`protoc-gen-go` ukax mä plugin thakhiwa'
-            tables-enable_field_created_at: Ukax created_at ukanx base de datos ukan configuración generación predeterminada ukar ch’amanchañati janicha
+            tables-enable_field_created_at: Ukax created_at ukanx base de datos ukan configuración generación predeterminada ukar ch’amanchañawa
             tables-enable_field_deleted_at: Ukax deleted_at ukan chimpunakapax uñt’ayatawa
             tables-enable_field_id: Base de datos ukamp chikt’at yapunakatakix configuración de configuración predeterminada ukar ch’amanchaña
-            tables-enable_field_updated_at: Ukax updated_at ukanx default valor ukarux ch’amanchañapawa
+            tables-enable_field_updated_at: Ukax updated_at ukanx default valor ukar ch’amanchañati janicha
             tables-enable_gorm_tag_column: Ukax base de datos ukamp chikt’at gorm generación ukar ch’amanchañataki
         gitignote:
             long: .gitignore qillqatanaka luraña, versión control ukan jan yäqat qillqat apnaqañataki
@@ -104,7 +104,7 @@ cli:
         flags: parámetro ukaxa
         get_info: juk’amp suma yatiyawinak jikxatañataki
         global_flags: uraqpachan parámetros ukanaka
-        long: 'Aplicación ukanxa kuna kamachinakasa apnaqañataki kamachinaka churañawa. '
+        long: 'Aplicación ukan kuna kamachinakas apnaqañ tuqit yatichäwinak churaña. '
         short: Kuna kamachi apnaqañatakisa yatichawi
         usage: '{{.Name}} apnaqañataki yatichäwinaka.'
         use: apnaqaña
@@ -125,7 +125,7 @@ cli:
                 languages: Jaqukipañatakixa kuna arusa uñt’ayaña
                 src-file: Jaqukipañataki phuqhat qillqata (wakisiwa) .
                 src-language: Uka phunchhawi qillqatan arupa (janiwa qhananchatäkiti, uka yänakax phunchhawi qillqat uñt’ayañapawa) .
-                translater:
+                translator:
                     google-free: Google Web Jaqukipaña
                     usage: 'Jaqukipaña thakhi: Yanapt’awi kasta {{rango $key,$value := .Tipo}}{{$clave}}:{{$value}}{{end}}'
             long: Mä chiqat walja arut arsutanakax yaqha arunakan pachpa formato ukan qillqatanakaruw jaqukipata.
@@ -157,14 +157,14 @@ lang:
     bho: Bhojpuri
     bm: Bambara
     bn: Bengali aru uñt’ayaña
-    bs: Bosnia markankir jaqe
+    bs: Bosnia markankir jaqi
     ca: Cataluña aru
     ceb: Cebuano aru
     ckb: Kurdo (sorani) ukat juk’ampinaka.
     co: Corsico markankir jaqinakawa
     cs: Checo arunxa
     cy: Galés aru parliri
-    da: danés aru uñt’atawa
+    da: danés aru
     de: Alemán aru
     doi: dogglai ukax mä juk’a pachanakanwa
     dv: Dhivehi
@@ -173,7 +173,7 @@ lang:
     en: inklisa
     eo: Esperanto aru
     es: ispañula
-    et: Estonia markankir jaqi
+    et: Estonia markankir jaqe
     eu: vasco aru
     fa: Persa aru
     fi: Finlandés aru
@@ -196,7 +196,7 @@ lang:
     hu: húngaro aru
     hy: Armenio aru
     id: Indonesia markankir jaqinakawa
-    ig: Igbo markankir jaqinakawa
+    ig: Igbo markankir jaqe
     ilo: llocano
     is: Islandia markankir jaqinakawa
     it: Italiano aru
@@ -204,9 +204,9 @@ lang:
     ja: Japonés aru
     jv: Javanés aru
     jw: Javanés aru
-    ka: Georgia markankir jaqe
+    ka: Georgia markankir jaqewa
     kk: Kazaj arunxa
-    km: Camboya markankir jaqinakawa
+    km: Camboya markankir jaqi
     kn: Kannada aru uñt’ayaña
     ko: Corea markankir jaqinakawa
     kri: Criollo aru
@@ -222,14 +222,14 @@ lang:
     lv: Letonia markankir jaqe
     mai: Maithili
     mg: Malgache aru parlaña
-    mi: Maorí ukat juk’ampinaka
+    mi: Maori ukat juk’ampinaka
     mk: Macedonia markankir jaqe
     ml: Malayalam arunxa
     mn: Mongol markankir jaqinakawa
     mni-mtei: Meitei (Manipuri) ukat juk’ampinaka.
-    mr: marathi satawa
+    mr: marathi
     ms: Malay aru
-    mt: maltesa ukat juk’ampinaka
+    mt: Malta markankir jaqinakawa
     my: Birmania markankir jaqinaka
     ne: Nepal aru arst’ata
     nl: Holandés aru
@@ -250,19 +250,19 @@ lang:
     sd: sindhi
     si: sinhala satawa
     sk: Eslovaco markankir jaqe
-    sl: esloveno sat jaqi
+    sl: esloveno aru
     sm: Samoa markankir jaqinaka
     sn: Shona satawa
     so: Somalia aru uñt’ayaña
     sq: Albanés aru uñt’atawa
-    sr: Serbio aru
+    sr: Serbio aru uñt’atawa
     st: Sesoto markankir jaqinakawa
     su: Sundanés aru uñt’ayaña
     sv: Suecia markankir jaqi
-    sw: Suajili arunxa
+    sw: Suajili aru arst’aña
     ta: tamil
     te: telugu ukax mä juk’a pachanakanwa
-    tg: Tayik arunxa
+    tg: Tayik arunx wali sumawa
     th: Tailandés arunxa
     ti: Tignan ukax mä juk’a pachanakanwa
     tk: Turkmen markankir jaqinakawa
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chino (Hong Kong) ukat juk’ampinaka.
     zh-mo: Chino(Macau) ukat juk'ampinaka.
     zh-sg: Chino (Singapur) ukat juk’ampinaka.
-    zh-tw: nayra chino chino)
+    zh-tw: Chino (Taiwán) markanwa.
     zu: Zulu aru

@@ -104,8 +104,8 @@ cli:
         flags: 매개변수
         get_info: 더 자세한 정보를 얻으려면
         global_flags: 전역 매개변수
-        long: '도움말은 응용 프로그램의 모든 명령에 대한 도움말을 제공합니다. '
-        short: 모든 명령에 대한 도움말
+        long: '애플리케이션의 모든 명령에 대한 사용 지침을 제공합니다. '
+        short: 모든 명령 사용에 대한 지침
         usage: '{{.Name}} 사용 지침'
         use: 사용
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: 번역할 대상 언어를 지정하세요.
                 src-file: 번역할 원본 파일 (필수)
                 src-language: 소스 파일의 언어(지정하지 않으면 도구가 자동으로 소스 파일을 결정합니다)
-                translater:
+                translator:
                     google-free: Google 웹 번역
                     usage: '번역 채널: 지원 유형 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: 특정 소스의 다국어 파일은 다른 언어의 동일한 형식의 파일로 변환됩니다.
@@ -285,5 +285,5 @@ lang:
     zh-hk: 중국어(홍콩)
     zh-mo: 중국어(마카오)
     zh-sg: 중국어(싱가포르)
-    zh-tw: 중국어 번체)
+    zh-tw: 중국어(대만)
     zu: 줄루 족

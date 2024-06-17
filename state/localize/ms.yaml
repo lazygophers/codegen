@@ -23,7 +23,7 @@ cli:
             long: Hasilkan semua kod yang disokong oleh alat ini
             short: Hasilkan semua kod
         cache:
-            long: Hasilkan fail cache untuk SDK berkaitan caching panggilan perniagaan
+            long: Jana fail cache untuk SDK berkaitan caching panggilan perniagaan
             short: Hasilkan fail cache
         cmd:
             long: Hasilkan fail kemasukan untuk perkhidmatan perniagaan
@@ -63,7 +63,7 @@ cli:
         impl:
             long: Hasilkan fail pelaksanaan untuk pelaksanaan perkhidmatan perniagaan
             short: Hasilkan fail pelaksanaan
-        long: Penjana kod, menyokong berbilang templat
+        long: Penjana kod, menyokong pelbagai templat
         makefile:
             long: Hasilkan fail Makefile untuk membina alatan dan arahan lain yang berkaitan
             short: Hasilkan Makefile
@@ -98,14 +98,14 @@ cli:
         gen: penjanaan kod
     help:
         additional_commands: Perintah tambahan
-        aliases: alias perintah
+        aliases: alias arahan
         available_commands: Perintah yang disokong
         command: Pesanan
         flags: parameter
         get_info: untuk mendapatkan maklumat yang lebih terperinci
         global_flags: parameter global
-        long: 'Bantuan menyediakan bantuan untuk sebarang arahan dalam aplikasi. '
-        short: Bantuan pada sebarang arahan
+        long: 'Sediakan arahan penggunaan untuk sebarang arahan dalam aplikasi. '
+        short: Arahan untuk menggunakan sebarang arahan
         usage: Arahan untuk menggunakan {{.Name}}
         use: guna
     i18n:
@@ -125,12 +125,12 @@ cli:
                 languages: Tentukan bahasa sasaran untuk terjemahan
                 src-file: Fail sumber untuk diterjemahkan (diperlukan)
                 src-language: Bahasa fail sumber (jika tidak dinyatakan, alat akan menentukan fail sumber secara automatik)
-                translater:
+                translator:
                     google-free: Terjemahan Web Google
                     usage: 'Saluran terjemahan: Jenis sokongan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fail berbilang bahasa daripada sumber tertentu ditukar kepada fail dalam format yang sama dalam bahasa lain.
             short: menterjemah
-    long: Set alat untuk orang yang malas, termasuk rangka kerja bahagian belakang berasaskan 'proto', templat yang biasa digunakan dan terjemahan berbilang bahasa
+    long: Set alat untuk orang yang malas, termasuk rangka kerja belakang berasaskan 'proto', templat yang biasa digunakan dan terjemahan berbilang bahasa
     short: Set alat untuk orang malas
     sync:
         flags:
@@ -171,7 +171,7 @@ lang:
     ee: Ewe
     el: bahasa Yunani
     en: Inggeris
-    eo: bahasa Esperanto
+    eo: Esperanto
     es: bahasa Sepanyol
     et: bahasa Estonia
     eu: basque
@@ -249,7 +249,7 @@ lang:
     sa: Sanskrit
     sd: sindhi
     si: sinhala
-    sk: Bahasa Slovak
+    sk: bahasa Slovak
     sl: bahasa slovenia
     sm: bahasa Samoa
     sn: Shona
@@ -285,5 +285,5 @@ lang:
     zh-hk: Cina (Hong Kong)
     zh-mo: Cina(Macau)
     zh-sg: Cina (Singapura)
-    zh-tw: Cina tradisional)
+    zh-tw: Cina (Taiwan)
     zu: Zulu

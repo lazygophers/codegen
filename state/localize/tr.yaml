@@ -16,7 +16,7 @@ cli:
                 default-role: Toplu olarak oluşturulan arayüzün varsayılan rolü Ayrıntılar için lütfen kullanım belgelerine bakın.
                 gen-to: Oluşturulan .go dosyalarının çıktı konumunu belirtin
                 list-option: Liste ayrıca filtrelenebilir; ayrıntılar için lütfen kullanım belgelerine bakın.
-                model: Model adını belirtin, "model" önekinin çıkarılmasını destekleyin
+                model: Model adını belirtin, 'model' önekinin atlanmasını destekleyin
             long: Toplu olarak arayüzler oluşturun ve .proto dosyasına belirli bir model için arayüz ekleyin
             short: Toplu oluşturma arayüzü
         all:
@@ -48,7 +48,7 @@ cli:
             protoc-gen-go: '''protoc-gen-go'' eklenti yolu'
             tables-enable_field_created_at: Veritabanı created_at alanının varsayılan konfigürasyon oluşturmasının etkinleştirilip etkinleştirilmeyeceği
             tables-enable_field_deleted_at: Veritabanındaki silinen_at alanının varsayılan ayarının etkinleştirilip etkinleştirilmeyeceği
-            tables-enable_field_id: Veritabanıyla ilgili alanlar için varsayılan konfigürasyon oluşturmayı etkinleştir
+            tables-enable_field_id: Veritabanıyla ilgili alanlar için varsayılan yapılandırma oluşturmayı etkinleştir
             tables-enable_field_updated_at: Veritabanındaki güncellendi_at alanının varsayılan değerinin etkinleştirilip etkinleştirilmeyeceği
             tables-enable_gorm_tag_column: Veritabanıyla ilgili gorm oluşturmanın etkinleştirilip etkinleştirilmeyeceği
         gitignote:
@@ -104,8 +104,8 @@ cli:
         flags: parametre
         get_info: daha detaylı bilgi almak için
         global_flags: küresel parametreler
-        long: 'Yardım, uygulamadaki herhangi bir komut için yardım sağlar. '
-        short: Herhangi bir komutla ilgili yardım
+        long: 'Uygulamadaki herhangi bir komut için kullanım talimatlarını sağlayın. '
+        short: Herhangi bir komutu kullanma talimatları
         usage: '{{.Name}} kullanımına ilişkin talimatlar'
         use: kullanmak
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Çeviri için hedef dili belirtin
                 src-file: Çevrilecek kaynak dosya (gerekli)
                 src-language: Kaynak dosyanın dili (belirtilmezse araç kaynak dosyayı otomatik olarak belirleyecektir)
-                translater:
+                translator:
                     google-free: Google Web Çevirisi
                     usage: 'Çeviri kanalı: Destek türü {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Belirli bir kaynaktan gelen çok dilli dosyalar, diğer dillerdeki aynı formattaki dosyalara dönüştürülür.

@@ -104,8 +104,8 @@ cli:
         flags: paramètre
         get_info: mpo na kozwa makambo mosusu ya sikisiki
         global_flags: ba paramètres ya mokili mobimba
-        long: 'Lisalisi epesaka lisalisi mpo na etinda nyonso oyo ezali na kati ya programɛ. '
-        short: Salisa na etinda nyonso
+        long: 'Pesa malako ya bosaleli mpo na etinda nyonso oyo ezali na kati ya programɛ. '
+        short: Malako mpo na kosalela etinda nyonso
         usage: Malako mpo na kosalela {{.Nkombo}}
         use: kosalela
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Lakisá monɔkɔ oyo olingi kobongola
                 src-file: Fisyé ya source oyo esengeli kobongolama (esengeli) .
                 src-language: Monoko ya fisyé ya source (soki elakisami te, esaleli ekoyeba automatiquement fichier source)
-                translater:
+                translator:
                     google-free: Google Web Bobongoli
                     usage: 'Nzela ya bobongoli: Lolenge ya lisungi {{range $key,$value := .Lolenge}}{{$key}}:{{$value}}{{nsuka}}'
             long: Ba fichiers ya minoko ebele oyo ewutaka na source moko boye ebongwanaka na ba fichiers na format moko na minoko misusu.
@@ -176,8 +176,8 @@ lang:
     et: Moto ya Estonie
     eu: basque
     fa: Liloba ya Perse
-    fi: Finlande
-    fil: Moto ya Philippines (Tagalog) .
+    fi: Finnois
+    fil: Mofilipino (Tagalog) .
     fr: Lifalanse
     fy: Moto ya Frisien
     ga: ya irlandais
@@ -273,7 +273,7 @@ lang:
     ug: Uighur, bato ya Uighur
     uk: Moto ya Ukraine
     ur: Urdu
-    uz: Bato ya Ouzbék
+    uz: Ouzbék
     vi: Bato ya Vietnam
     xh: monoko ya bantu
     yi: Liloba ya Yiddish
@@ -285,5 +285,5 @@ lang:
     zh-hk: Ba Chinois (Hong Kong) .
     zh-mo: Chinois(Macau) .
     zh-sg: Chinois (Singapore) .
-    zh-tw: Chinois ya bonkoko) .
+    zh-tw: Chinois (Taïwan) .
     zu: Zulu

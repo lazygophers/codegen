@@ -12,8 +12,8 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Verhalen déi a Chargen bäigefüügt musse ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer
-                default-role: D'Standardroll vum Batch-generéierten Interface kuckt w.e.g. op d'Benotzungsdokumentatioun fir Detailer.
+                action: Behuelen déi a Chargen bäigefüügt musse ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer
+                default-role: D'Default Roll vun der batch-generéierten Interface Kuckt w.e.g. d'Benotzungsdokumentatioun fir Detailer.
                 gen-to: Gitt d'Ausgangsplaz vun den generéierten .go Dateien un
                 list-option: D'Lëscht kann och gefiltert ginn, fannt Dir d'Benotzungsdokumentatioun fir Detailer.
                 model: Gitt de Modellnumm un, ënnerstëtzen de Präfix "Modell" auszeginn
@@ -32,25 +32,25 @@ cli:
             long: Generéiere Konfiguratiounsdatei Schabloun
             short: Konfiguratiounsdatei generéieren
         dockerignore:
-            long: Generéiere .dockerignore-Datei fir Docker-Bildgebai fir Dateieverwaltung ze ignoréieren
+            long: Generéiere .dockerignore-Datei fir Docker Bildgebai fir Dateiemanagement ze ignoréieren
             short: Generéiere .dockerignore Fichier
         editorconfig:
             long: Generéiere .editorconfig Fichier fir Redakter Configuratioun
             short: Generéiere .editorconfig Datei
         flags:
             add-proto-files: Wann Dir aner .proto-Dateien / Dossierweeër importéiere musst, déi net am selwechten Dossier wéi déi spezifizéiert .proto-Datei sinn, wäert dës Operatioun de Wee, deen an der Konfiguratiounsdatei konfiguréiert ass, addéieren (net iwwerschreiwe).
-            go-module-prefix: Fir de Wee vun go_package konfiguréiert an der .proto Datei an déi aktuell, kënnt Dir dës Optioun konfiguréieren
+            go-module-prefix: Fir de Wee vun go_package konfiguréiert an der .proto Datei an déi aktuell, Dir kënnt dës Optioun konfiguréieren
             input: Gitt d'.proto Quelldatei un, déi generéiert gëtt
             output-path: Dës Optioun kann konfiguréiert ginn, wann de Wee vum go_package, deen an der .proto-Datei konfiguréiert ass, net konsequent mat der Stroossebedéngung ass, déi tatsächlech generéiert muss ginn.
-            overwrite: Fir Inhalt deen net regeneréiert gëtt, zwéngt d'Iwwerschreiwe vum existente Inhalt
+            overwrite: Fir Inhalt datt net regeneréiert ginn, Kraaft iwwerschriwwe vun bestehend Inhalt
             proto-files: Fir aner .proto Dateien/Dossierweeër z'importéieren déi net am selwechten Dossier wéi déi spezifizéiert .proto Datei sinn, ass dës Operatioun eng Optioun fir d'Konfiguratiounsfeld an der Konfiguratiounsdatei ze iwwerschreiden.
             protoc: '''Protoc'' personaliséierbar Dateiwee'
             protoc-gen-go: '`protoc-gen-go` Plugin Wee'
             tables-enable_field_created_at: Ob d'Standardkonfiguratioun Generatioun vun der Datebank create_at Feld aktivéiert
             tables-enable_field_deleted_at: Ob d'Standardastellung vum deleted_at Feld an der Datebank aktivéiert gëtt
-            tables-enable_field_id: Aktivéiert Standardkonfiguratioun Generatioun fir Datebank-Zesummenhang Felder
+            tables-enable_field_id: Aktivéiert Standardkonfiguratiounsgeneratioun fir Datebankbezunnen Felder
             tables-enable_field_updated_at: Ob de Standardwäert vum Updated_at Feld an der Datebank aktivéiert gëtt
-            tables-enable_gorm_tag_column: Ob Datebank-Zesummenhang Gorm Generatioun z'aktivéieren
+            tables-enable_gorm_tag_column: Ob Datebank-Zesummenhang Gorm Generatioun aktivéiert
         gitignote:
             long: Generéiere .gitignore Dateien fir ignoréiert Dateiverwaltung an der Versiounskontroll
             short: Generéiere .gitignore Fichier
@@ -76,13 +76,13 @@ cli:
         short: Code Generator
         state:
             conf:
-                long: Generéiere Configuratiounsdatei liesen Code fir Affär Service Configuratioun liesen
+                long: Generéiere Configuratiounsdatei Liescode fir Business Service Configuratioun Liesen
                 short: Generéiere Configuratiounsdatei liesen Code
             flags:
-                cache: Ob Cache-verbonne Generatioun z'aktivéieren
+                cache: Ob Cache-relatéiert Generatioun z'aktivéieren
                 config: Ob Configuratioun-Zesummenhang Code ze generéieren
                 i18n: Ob Multi-Language Zesummenhang Generatioun z'aktivéieren (d'Generatioun enthält nëmmen Staatsinitialiséierung an aner Inhalter, an enthält keng automatesch Iwwersetzung vu verschidde Sproochen. Wann Dir automatesch Iwwersetzung braucht, benotzt w.e.g. {{.Command}} fir Detailer ze gesinn)
-                table: Ob Datebank-Zesummenhang Datebank Generatioun aktivéiert
+                table: Ob Datebank-Zesummenhang Datebank Generatioun z'aktivéieren
             i18n:
                 long: Generéiere i18n Zesummenhang Code fir Multi-Sprooch international Appellen
                 short: Generéiere i18n Zesummenhang Code
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: fir méi detailléiert Informatiounen ze kréien
         global_flags: global Parameteren
-        long: 'Hëllef bitt Hëllef fir all Kommando an der Applikatioun. '
-        short: Hëllef op all Kommando
+        long: 'Gitt Benotzungsinstruktiounen fir all Kommando an der Applikatioun. '
+        short: Instruktioune fir all Kommando ze benotzen
         usage: Instruktioune fir {{.Name}} ze benotzen
         use: benotzen
     i18n:
@@ -113,22 +113,22 @@ cli:
         short: Multilingual Internationaliséierung-Zesummenhang Toolkit
         support:
             flags:
-                language: Spezifizéiert d'Sprooch fir ze weisen, soss gëtt de Sproochecode benotzt fir d'Sprooch ze weisen
+                language: Gitt d'Sprooch un fir ze weisen, soss gëtt de Sproochcode benotzt fir d'Sprooch ze weisen
             long: Lëscht all ënnerstëtzt Sproochen
             short: Ënnerstëtzt Sprooch Lëscht
         tran:
             flags:
                 all-language: Iwwersetze all ënnerstëtzt Sproochen (wann richteg ass de Sprooche Fändel behënnert)
                 force: Iwwerschreiwe bestehend Iwwersetzungen
-                force-key-prefix: Schlësselen déi gezwongen sinn ze iwwerschreiwe
+                force-key-prefix: Schlësselen déi musse gezwongen sinn ze iwwerschreiwe
                 generate-const: Generéiere Opzielungswäerter fir einfach ze ruffen
                 languages: Gitt d'Zilsprooch fir d'Iwwersetzung un
                 src-file: Quelldatei fir ze iwwersetzen (obligatoresch)
                 src-language: D'Sprooch vun der Quelldatei (wann net uginn, wäert d'Tool automatesch d'Quelldatei bestëmmen)
-                translater:
+                translator:
                     google-free: Google Web Iwwersetzer
                     usage: 'Iwwersetzungskanal: Ënnerstëtzungstyp {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
-            long: Méisproocheg Dateien aus enger bestëmmter Quell ginn an Dateien am selwechte Format an anere Sproochen ëmgewandelt.
+            long: Méisproocheg Dateie vun enger bestëmmter Quell ginn an Dateien am selwechte Format an anere Sproochen ëmgewandelt.
             short: iwwersetzen
     long: En Toolset fir faul Leit, dorënner 'Proto'-baséiert Backend Framework, allgemeng benotzt Templates, a Multi-Sprooch Iwwersetzung
     short: En Toolset fir faul Leit
@@ -251,7 +251,7 @@ lang:
     si: sinhala
     sk: Slowakesch
     sl: Slowenesch
-    sm: Samoanesch
+    sm: Samoan
     sn: Shona
     so: somalesch
     sq: Albanesch
@@ -262,7 +262,7 @@ lang:
     sw: Swahili
     ta: Tamil
     te: Telugu
-    tg: Tadschikesch
+    tg: Tadschi
     th: Thai
     ti: Tignan
     tk: turkmenesch
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinesesch (Hong Kong)
     zh-mo: Chinesesch (Macau)
     zh-sg: Chinesesch (Singapur)
-    zh-tw: traditionell Chinesesch)
+    zh-tw: Chinesesch (Taiwan)
     zu: Zulu

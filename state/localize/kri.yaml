@@ -104,8 +104,8 @@ cli:
         flags: paramita
         get_info: fɔ gɛt mɔ ditayli infɔmeshɔn
         global_flags: di glob ɔl paramita dɛn
-        long: 'Ɛp de gi ɛp fɔ ɛni kɔmand we de na di aplikeshɔn. '
-        short: Ɛp pan ɛni kɔmand
+        long: 'Gi yus instrɔkshɔn fɔ ɛni kɔmand we de na di aplikeshɔn. '
+        short: Instrɔkshɔn dɛn fɔ yuz ɛni kɔmand
         usage: Instrɔkshɔn fɔ yuz {{.Name}}
         use: yuz
     i18n:
@@ -125,12 +125,12 @@ cli:
                 languages: Sho di langwej we yu want fɔ translet
                 src-file: Sɔs fayl we dɛn fɔ translet (we dɛn nid) .
                 src-language: Di langwej fɔ di sɔs fayl (if dɛn nɔ sho am, di tul go ɔtomɛtiks disayd di sɔs fayl)
-                translater:
-                    google-free: Google Wɛb Translet
+                translator:
+                    google-free: Google Wɛb Translet fɔ translet
                     usage: 'Transleshɔn chanɛl: Sɔpɔt tayp {{rɛnj $ki,$valyu := .Tayp}}{{$ki}}:{{$valyu}}{{ɛnd}}'
             long: Fayl dɛn we gɛt bɔku langwej dɛn frɔm wan patikyula say, dɛn kin chenj dɛn to fayl dɛn we gɛt di sem fɔmat insay ɔda langwej dɛn.
             short: translet
-    long: Wan tul we dɛn sɛt fɔ pipul dɛn we les, we inklud ‘proto’-based bakɛnd fremwɔk, tɛmplat dɛn we dɛn kin yuz bɔku tɛm, ɛn transleshɔn we gɛt bɔku langwej dɛn
+    long: Wan tul we dɛn dɔn sɛt fɔ pipul dɛn we les, we inklud ‘proto’-based bakɛnd fremwɔk, tɛmplat dɛn we dɛn kin yuz bɔku tɛm, ɛn transleshɔn we gɛt bɔku langwej dɛn
     short: Wan tul we dɛn dɔn sɛt fɔ pipul dɛn we les
     sync:
         flags:
@@ -151,7 +151,7 @@ lang:
     ar: Arabik langwej
     as: Assamese
     ay: Aymara
-    az: Na Azerbaijan we dɛn rayt
+    az: Na Azaybayjan
     be: Na Belarus we dɛn kɔl
     bg: Bulgarian langwej
     bho: Bhojpuri
@@ -213,7 +213,7 @@ lang:
     ku: Kurdish
     ky: Kyrgyz
     la: Latin we dɛn kɔl Latin
-    lb: Laksembɔrgish pipul dɛn
+    lb: Laksembɔg pipul dɛn
     lg: Luganda
     ln: Lingala
     lo: Lao
@@ -245,7 +245,7 @@ lang:
     qu: Quechua
     ro: Romanian langwej
     ru: Rɔshian langwej
-    rw: Kinyarwanda
+    rw: Kinyarwanda langwej
     sa: Sanskrit
     sd: sindhi we dɛn kɔl sindhi
     si: sinhala we dɛn kɔl sinhala
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chaynish (Hɔng Kɔŋ) .
     zh-mo: Chaynish(Makau) .
     zh-sg: Chaynish (Singapɔ) .
-    zh-tw: tradishɔnal Chaynish) .
+    zh-tw: Chaynish (Taywan) .
     zu: Zulu

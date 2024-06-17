@@ -104,8 +104,8 @@ cli:
         flags: 參數
         get_info: 來獲取更詳細的信息
         global_flags: 全域參數
-        long: 幫助為應用程式中的任何命令提供協助。
-        short: 有關任何命令的幫助
+        long: 為應用程式中的任何命令提供使用說明。
+        short: 有關任何命令的使用說明
         usage: '{{.Name}} 的使用說明'
         use: 使用
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: 指定翻譯的目標語言
                 src-file: 需要翻譯的原始檔（必填）
                 src-language: 原始檔的語言（如果不指定，則會工具原始檔自動判斷）
-                translater:
+                translator:
                     google-free: Google 網頁翻譯
                     usage: 翻譯頻道：支援類型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
             long: 透過某一個原始多語言文件還以為其它語言相同格式的文件

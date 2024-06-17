@@ -39,7 +39,7 @@ cli:
             short: Hozzon létre .editorconfig fájlt
         flags:
             add-proto-files: Ha más .proto fájlokat/mappa elérési útvonalakat kell importálnia, amelyek nem ugyanabban a mappában vannak, mint a megadott .proto fájl, akkor ez a művelet hozzáfűzi (nem írja felül) a konfigurációs fájlban konfigurált elérési utat.
-            go-module-prefix: A .proto fájlban konfigurált go_package elérési útjához és a ténylegeshez beállíthatja ezt a beállítást
+            go-module-prefix: A .proto fájlban konfigurált go_package elérési útjához és a ténylegeshez konfigurálhatja ezt az opciót
             input: Adja meg a létrehozandó .proto forrásfájlt
             output-path: Ez a beállítás akkor konfigurálható, ha a .proto fájlban konfigurált go_package elérési útja nincs összhangban azzal az útalappal, amelyet ténylegesen elő kell állítani.
             overwrite: Olyan tartalom esetén, amelyet nem generálunk újra, kényszerítse a meglévő tartalom felülírását
@@ -65,14 +65,14 @@ cli:
             short: Implementációs fájlok létrehozása
         long: Kódgenerátor, több sablont is támogat
         makefile:
-            long: Makefile fájlok létrehozása az eszközök és egyéb kapcsolódó parancsok létrehozásához
+            long: Makefile fájlok létrehozása az eszközök és más kapcsolódó parancsok létrehozásához
             short: Makefile létrehozása
         mod:
             long: Hozzon létre go.mod fájlt a függőségek kezeléséhez
             short: Hozzon létre go.mod fájlt
         pb:
             long: .pb.go fájlok létrehozása, amelyek a .proto fájlok generálására szolgálnak. A megfelelő x mezőcímkéket a rendszer a konfigurációnak megfelelően automatikusan hozzáadja.
-            short: .pb.go fájl létrehozása
+            short: Hozzon létre .pb.go fájlt
         short: Kódgenerátor
         state:
             conf:
@@ -89,7 +89,7 @@ cli:
             long: Az állapot összes kapcsolódó funkciójának létrehozása az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez
             short: Az állapot generálásához szükséges összes funkció
             table:
-                long: Állapot.táblázattal kapcsolatos kód generálása, amely adatbázis-kapcsolathoz és a tábla inicializálásához használatos a szolgáltatás indításakor.
+                long: Állapot.táblázattal kapcsolatos kód generálása, amelyet az adatbázis-kapcsolathoz és a tábla inicializálásához használnak a szolgáltatás indításakor.
                 short: Állapot.táblázattal kapcsolatos kód generálása
         table:
             long: Az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez szükséges táblák előállításához kapcsolódó összes funkció
@@ -106,14 +106,14 @@ cli:
         global_flags: globális paraméterek
         long: 'Adjon használati utasítást az alkalmazás bármely parancsához. '
         short: Útmutató bármely parancs használatához
-        usage: Útmutató a(z) {{.Name}} használatához
+        usage: Útmutató a {{.Name}} használatához
         use: használat
     i18n:
         long: Többnyelvű nemzetközivé válással kapcsolatos eszköztár
         short: Többnyelvű nemzetközivé válással kapcsolatos eszköztár
         support:
             flags:
-                language: Adja meg a megjelenítendő nyelvet, ellenkező esetben a nyelvi kódot fogja használni a nyelv megjelenítéséhez
+                language: Adja meg a megjelenítendő nyelvet, ellenkező esetben a nyelvkódot fogja használni a nyelv megjelenítéséhez
             long: Sorolja fel az összes támogatott nyelvet
             short: Támogatott nyelvek listája
         tran:
@@ -125,7 +125,7 @@ cli:
                 languages: Adja meg a fordítás célnyelvét
                 src-file: Lefordítandó forrásfájl (kötelező)
                 src-language: A forrásfájl nyelve (ha nincs megadva, az eszköz automatikusan meghatározza a forrásfájlt)
-                translater:
+                translator:
                     google-free: Google Web Fordító
                     usage: 'Fordítási csatorna: Támogatási típus: {{tartomány $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Egy bizonyos forrásból származó többnyelvű fájlokat a rendszer más nyelvek azonos formátumú fájljaivá alakítja.
@@ -136,7 +136,7 @@ cli:
         flags:
             password: Az ellenőrzés kéréséhez használt jelszó
             template-path: Sablon szinkronizálási útvonala
-            username: Az ellenőrzés kéréséhez használt felhasználónév
+            username: Az ellenőrzés kérésére használt felhasználónév
         long: Szinkronizálja a konfigurációt a távoli végről, és egyesítse a helyi konfigurációval A sablonfájl egyidejűleg támogatott a szinkronizálás során (ha be van állítva).
         short: A konfiguráció szinkronizálása távolról
     up-mod:
@@ -190,7 +190,7 @@ lang:
     haw: hawaii
     he: héber
     hi: hindi
-    hmn: Hmong
+    hmn: hmong
     hr: horvát
     ht: Haiti kreol
     hu: Magyar
@@ -257,7 +257,7 @@ lang:
     sq: albán
     sr: szerb
     st: Sesotho
-    su: szundanai
+    su: Szundai
     sv: svéd
     sw: szuahéli
     ta: tamil
@@ -285,5 +285,5 @@ lang:
     zh-hk: kínai (Hongkong)
     zh-mo: kínai (Makaó)
     zh-sg: kínai (Szingapúr)
-    zh-tw: tradicionális kínai)
+    zh-tw: kínai (Tajvan)
     zu: zulu

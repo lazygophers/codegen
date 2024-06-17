@@ -104,8 +104,8 @@ cli:
         flags: parametr
         get_info: aby uzyskać bardziej szczegółowe informacje
         global_flags: parametry globalne
-        long: 'Pomoc zapewnia pomoc dotyczącą dowolnego polecenia w aplikacji. '
-        short: Pomoc przy każdym poleceniu
+        long: 'Podaj instrukcje użycia dowolnego polecenia w aplikacji. '
+        short: Instrukcje dotyczące korzystania z dowolnego polecenia
         usage: Instrukcje korzystania z {{.Name}}
         use: używać
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Określ język docelowy tłumaczenia
                 src-file: Plik źródłowy do przetłumaczenia (wymagane)
                 src-language: Język pliku źródłowego (jeśli nie zostanie określony, narzędzie automatycznie określi plik źródłowy)
-                translater:
+                translator:
                     google-free: Tłumacz internetowy Google
                     usage: 'Kanał tłumaczeniowy: Typ wsparcia {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Pliki wielojęzyczne z określonego źródła są konwertowane na pliki w tym samym formacie w innych językach.
@@ -134,7 +134,7 @@ cli:
     short: Zestaw narzędzi dla leniwych
     sync:
         flags:
-            password: Hasło używane do żądania weryfikacji
+            password: Hasło użyte do żądania weryfikacji
             template-path: Ścieżka synchronizacji szablonu
             username: Nazwa użytkownika używana do żądania weryfikacji
         long: Zsynchronizuj konfigurację ze zdalnego końca i połącz ją z konfiguracją lokalną. Plik szablonu jest obsługiwany w tym samym czasie podczas synchronizacji (jeśli jest skonfigurowany).
@@ -229,7 +229,7 @@ lang:
     mni-mtei: Meitei (Manipuri)
     mr: marathi
     ms: malajski
-    mt: maltański
+    mt: Maltański
     my: Birmańczyk
     ne: Nepalski
     nl: Holenderski
@@ -265,7 +265,7 @@ lang:
     tg: tadżycki
     th: tajski
     ti: Tignan
-    tk: Turkmeni
+    tk: Turkmenów
     tl: Tagalski (filipiński)
     tr: turecki
     ts: Dzonga
@@ -285,5 +285,5 @@ lang:
     zh-hk: chiński (Hongkong)
     zh-mo: Chiński (Makau)
     zh-sg: chiński (Singapur)
-    zh-tw: tradycyjne chińskie)
+    zh-tw: chiński (Tajwan)
     zu: Zulus

@@ -60,7 +60,7 @@ func GenPbFile(pb *PbPackage) error {
 
 	// NOTE: 添加注释
 	{
-		goPbFilePath := filepath.Join(pb.ProjectRoot(), pb.PackageName+".pb.go")
+		goPbFilePath := filepath.Join(pb.ProjectRoot(), pb.PackageName()+".pb.go")
 
 		stat, err := os.Stat(goPbFilePath)
 		if err != nil {

@@ -104,8 +104,8 @@ cli:
         flags: parametri
         get_info: has giňişleýin maglumat almak üçin
         global_flags: global parametrler
-        long: 'Kömek programmadaky islendik buýruk üçin kömek berýär. '
-        short: Islendik buýrukda kömek ediň
+        long: 'Programmadaky islendik buýruk üçin ulanyş görkezmelerini beriň. '
+        short: Islendik buýrugy ulanmak boýunça görkezmeler
         usage: '{{.Name} use ulanmak boýunça görkezmeler'
         use: ulanmak
     i18n:
@@ -114,7 +114,7 @@ cli:
         support:
             flags:
                 language: Görkeziljek dili görkeziň, ýogsam dili görkezmek üçin dil kody ulanylar
-            long: Goldanýan ähli dilleri sanaň
+            long: Goldanýan dilleriň hemmesini sanaň
             short: Goldanýan dil sanawy
         tran:
             flags:
@@ -125,7 +125,7 @@ cli:
                 languages: Terjime etmek üçin maksat dilini görkeziň
                 src-file: Terjime edilmeli çeşme faýly (zerur)
                 src-language: Çeşme faýlynyň dili (görkezilmedik bolsa, gural deslapky faýly awtomatiki kesgitlär)
-                translater:
+                translator:
                     google-free: Google Web Terjime
                     usage: 'Terjime kanaly: Goldaw görnüşi {{diapazony $ açary, $ bahasy: = .Tip}} {{$ açar}}: {{$ bahasy}} {{end}}'
             long: Belli bir çeşmeden köp dilli faýllar beýleki dillerde şol bir formatdaky faýllara öwrüler.

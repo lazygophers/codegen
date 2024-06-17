@@ -125,7 +125,7 @@ cli:
                 languages: Especificar el idioma de destino para la traducción
                 src-file: Archivo fuente a traducir (obligatorio)
                 src-language: El idioma del archivo fuente (si no se especifica, la herramienta determinará automáticamente el archivo fuente)
-                translater:
+                translator:
                     google-free: Traductor web de Google
                     usage: 'Canal de traducción: tipo de soporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Los archivos multilingües de una determinada fuente se convierten en archivos del mismo formato en otros idiomas.
@@ -268,7 +268,7 @@ lang:
     tk: turcomano
     tl: tagalo (filipino)
     tr: turco
-    ts: dzonga
+    ts: Dzonga
     tt: tártaro
     ug: uigur
     uk: ucranio
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chino (Hong Kong)
     zh-mo: Chino (Macao)
     zh-sg: Chino (Singapur)
-    zh-tw: chino tradicional)
+    zh-tw: Chino (Taiwán)
     zu: zulú

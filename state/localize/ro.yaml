@@ -44,7 +44,7 @@ cli:
             output-path: Această opțiune poate fi configurată atunci când calea go_package configurată în fișierul .proto este incompatibilă cu platforma care trebuie generată de fapt.
             overwrite: Pentru conținutul care nu va fi regenerat, forțați suprascrierea conținutului existent
             proto-files: Pentru a importa alte fișiere .proto/căi de foldere care nu se află în același folder cu fișierul .proto specificat, această operație este o opțiune pentru a suprascrie câmpul de configurare din fișierul de configurare.
-            protoc: Calea fișierului personalizabilă `protoc`
+            protoc: calea fișierului personalizabilă `protoc`
             protoc-gen-go: Calea pluginului `protoc-gen-go`
             tables-enable_field_created_at: Dacă se activează generarea configurației implicite a câmpului bazei de date create_at
             tables-enable_field_deleted_at: Dacă se activează setarea implicită a câmpului deleted_at din baza de date
@@ -86,11 +86,11 @@ cli:
             i18n:
                 long: Generați codul i18n pentru apelurile internaționale în mai multe limbi
                 short: Generați codul asociat i18n
-            long: Generați toate funcțiile de stat aferente pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
+            long: Generați toate funcțiile conexe de stat pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
             short: Toate funcțiile relevante pentru generarea stării
             table:
                 long: Generați cod asociat state.table, utilizat pentru conexiunea la baza de date și inițializarea tabelului atunci când serviciul este pornit.
-                short: Generați codul de stat.table
+                short: Generați codul legat de starea tabelului
         table:
             long: Toate funcțiile conexe de generare a tabelelor pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
             short: Toate funcțiile conexe pentru generarea tabelelor
@@ -104,8 +104,8 @@ cli:
         flags: parametru
         get_info: pentru a obține informații mai detaliate
         global_flags: parametri globali
-        long: 'Ajutor oferă ajutor pentru orice comandă din aplicație. '
-        short: Ajutor la orice comandă
+        long: 'Furnizați instrucțiuni de utilizare pentru orice comandă din aplicație. '
+        short: Instrucțiuni pentru utilizarea oricărei comenzi
         usage: Instrucțiuni pentru utilizarea {{.Name}}
         use: utilizare
     i18n:
@@ -119,13 +119,13 @@ cli:
         tran:
             flags:
                 all-language: Traduceți toate limbile acceptate (dacă este adevărat, indicatorul de limbi este dezactivat)
-                force: Suprascrie traducerile existente
+                force: Suprascrieți traducerile existente
                 force-key-prefix: cheile care trebuie forțate să fie suprascrise
                 generate-const: Generați valori de enumerare pentru apeluri ușoare
                 languages: Specificați limba țintă pentru traducere
                 src-file: Fișierul sursă de tradus (obligatoriu)
                 src-language: Limba fișierului sursă (dacă nu este specificată, instrumentul va determina automat fișierul sursă)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Canal de traducere: tip de suport {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fișierele multilingve dintr-o anumită sursă sunt convertite în fișiere în același format în alte limbi.
@@ -263,7 +263,7 @@ lang:
     ta: tamil
     te: telugu
     tg: Tadjik
-    th: thailandeză
+    th: thailandez
     ti: Tignan
     tk: turkmeni
     tl: Tagalog (filipineză)
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chineză (Hong Kong)
     zh-mo: Chineză (Macao)
     zh-sg: Chineză (Singapore)
-    zh-tw: chineză tradițională)
+    zh-tw: Chineză (Taiwan)
     zu: Zulu

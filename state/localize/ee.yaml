@@ -17,7 +17,7 @@ cli:
                 gen-to: Tsɔ teƒe si .go faɛl siwo wowɔ la ado le
                 list-option: Woateŋu akɔ xexlẽdzesiawo hã me, taflatse di zazã ŋuti nuŋlɔɖiwo hena numeɖeɖe tsitotsito.
                 model: Tsɔ kpɔɖeŋu ŋkɔ, do alɔ asiɖeɖe le `kpɔɖeŋu` ŋgɔdonya ŋu
-            long: Wɔ ŋgɔdonyawo le hatsotsowo me eye nàtsɔ ŋgɔdonya akpe ɖe kpɔɖeŋu aɖe ŋu le .proto faɛl la me
+            long: Wɔ ŋgɔdonyawo le hatsotsowo me eye nàtsɔ ŋgɔdonya akpe ɖe kpɔɖeŋu aɖe koŋ ŋu le .proto faɛl la me
             short: Batch dzidzime ƒe ŋgɔdonya
         all:
             long: Wɔ kɔpi siwo katã dɔwɔnu sia do alɔe
@@ -50,7 +50,7 @@ cli:
             tables-enable_field_deleted_at: Nenye be woawɔ deleted_at ƒe akpa si le nyatakakadzraɖoƒea ƒe ɖoɖo gbãtɔa ŋudɔ
             tables-enable_field_id: Na ɖoɖowɔɖi ƒe dzidzi gbãtɔ nawɔ dɔ na agble siwo do ƒome kple nyatakakadzraɖoƒe
             tables-enable_field_updated_at: Nenye be woawɔ updated_at ƒe akpa si le nyatakakadzraɖoƒea ƒe asixɔxɔ gbãtɔ ŋudɔ
-            tables-enable_gorm_tag_column: Nenye be woawɔ gorm dzidzi si ku ɖe nyatakakadzraɖoƒe ŋudɔ
+            tables-enable_gorm_tag_column: Nenye be woawɔ gorm dzidzi si do ƒome kple nyatakakadzraɖoƒe ŋudɔ
         gitignote:
             long: Wɔ .gitignore faɛlwo na faɛl dzikpɔkpɔ si dzi woŋe aɖaba ƒui le version control me
             short: Wɔ .gitignore faɛl
@@ -84,7 +84,7 @@ cli:
                 i18n: Nenye be woawɔ dzidzi si do ƒome kple gbegbɔgblɔ geɖe ŋudɔ (dzidzimea lɔ nɔnɔme ƒe gɔmedzedze kple nyatakaka bubuwo ɖe eme, eye metsɔ gbegbɔgblɔ geɖewo gɔmeɖeɖe le wo ɖokui si o. Ne èhiã gbegɔmeɖeɖe le ɖokuiwò si la, taflatse zã {{.Command}} nàtsɔ akpɔ nyatakakawo)
                 table: Nenye be woawɔ nyatakakadzraɖoƒe si ku ɖe nyatakakadzraɖoƒe ŋu ƒe dzidzi
             i18n:
-                long: Wɔ i18n ƒe kɔda si do ƒome kplii na gbegbɔgblɔ geɖe me dukɔwo dome kaƒoƒo
+                long: Wɔ i18n si do ƒome kple kɔda na dukɔwo dome kaƒoƒo siwo me gbegbɔgblɔ geɖe le
                 short: Wɔ i18n ƒe kɔda si do ƒome kplii
             long: Dzra dziɖuɖu ƒe dɔwɔwɔ siwo katã do ƒome kplii na stateful resource alo static resource management of business services
             short: Dɔwɔwɔ siwo katã sɔ na dzidzi ƒe nɔnɔme
@@ -125,7 +125,7 @@ cli:
                 languages: Tsɔ gbe si gɔme nèdi be yeaɖe gɔme
                 src-file: Dzɔtsoƒe faɛl si gɔme woaɖe (ehiã) .
                 src-language: Gbe si me faɛl si tso dzɔtsoƒe le (ne womegblɔe o la, dɔwɔnua atso nya me le eɖokui si)
-                translater:
+                translator:
                     google-free: Google Nyatakakadzraɖoƒe Gbegɔmeɖeɖe
                     usage: 'Gbegɔmeɖeɖe mɔnu: Kpekpeɖeŋu ƒomevi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Wotrɔa gbegbɔgblɔ geɖe me faɛl siwo tso teƒe aɖe la wozua faɛl siwo le nɔnɔme ɖeka me le gbe bubuwo me.
@@ -141,7 +141,7 @@ cli:
         short: Wɔ ɖoɖo ɖe ɖoɖowɔɖiwo ŋu tso didiƒe
     up-mod:
         flags:
-            goproxy: Tsɔ goproxy adrɛs, ne menye nenema o la, woazã gbãtɔ le nuto ƒe tɔtrɔ me
+            goproxy: Tsɔ goproxy adrɛs, ne menye nenema o la, woazã gbãtɔ si le nuto ƒe tɔtrɔ me
         long: Trɔ asi le go.mod faɛl ƒe dependency version ŋu
         short: Trɔ asi le go.mod faɛl ŋu
 lang:
@@ -189,7 +189,7 @@ lang:
     ha: Hausagbe me tɔ
     haw: Hawaiigbe me tɔ
     he: hebrigbe me
-    hi: Hindigbe me
+    hi: Hindigbe me nyawo
     hmn: Hmonggbe me
     hr: Croatiagbe me tɔ
     ht: Haititɔwo ƒe Creolegbe
@@ -217,7 +217,7 @@ lang:
     lg: Luganda
     ln: Lingala
     lo: Lao
-    lt: Lithuaniagbe
+    lt: Lithuaniagbe me tɔ
     lus: Mizo
     lv: Latviagbe me tɔ
     mai: Maithili
@@ -226,15 +226,15 @@ lang:
     mk: Makedoniagbe me tɔ
     ml: Malayalamgbe me
     mn: Mongoliagbe me tɔ
-    mni-mtei: Meitei (Manipuri) .
+    mni-mtei: Meitei (Manipuri) ƒe ŋkɔ .
     mr: marathigbe me nya
     ms: Malaygbe me tɔ
-    mt: maltesegbe me nya
+    mt: Maltagbe me tɔ
     my: Burmagbe me tɔ
     ne: Nepalgbe me
     nl: Hollandgbe me tɔ
     "no": norwaygbe me tɔ
-    nso: Sepeti ƒe ŋkɔ
+    nso: Sepeti ƒe agbalẽ
     ny: Nyanza (Chichewagbe) .
     om: Oromo
     or: Oriya (Odiagbe) .
@@ -245,7 +245,7 @@ lang:
     qu: Quechua
     ro: Romaniagbe me tɔ
     ru: Russiagbe me
-    rw: Kinyarwandagbe me tɔ
+    rw: Kinyarwandagbe me nyawo
     sa: Sanskrit
     sd: sindhi
     si: sinhala ƒe nya
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinatɔwo (Hong Kong) .
     zh-mo: Chinatɔwo(Macau) .
     zh-sg: Chinatɔwo (Singapore) .
-    zh-tw: Chinatɔwo ƒe dekɔnu) .
+    zh-tw: Chinatɔwo (Taiwan) .
     zu: Zulugbe me tɔ

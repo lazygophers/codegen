@@ -125,7 +125,7 @@ cli:
                 languages: Ibaga ti target language para iti panagipatarus
                 src-file: Gubuayan a file a maipatarus (kasapulan) .
                 src-language: Ti pagsasao ti taudan a papeles (no saan a naikeddeng, ti ramit ket automatiko a mangikeddeng ti taudan a papeles) .
-                translater:
+                translator:
                     google-free: Google Web Ipatarus
                     usage: 'Kanal ti panagipatarus: Kita ti suporta {{range $key,$value := .Tipo}}{{$key}}:{{$value}}{{end}}'
             long: Dagiti multilingual a file manipud iti maysa a naikeddeng a taudan ket mabaliwan kadagiti file iti isu met laeng a pormat kadagiti sabali a pagsasao.
@@ -192,7 +192,7 @@ lang:
     hi: Hindi nga
     hmn: Hmong
     hr: Croatiano nga
-    ht: Haitiano nga Creole
+    ht: Haitiano a Creole
     hu: hungarian nga
     hy: Armeniano nga
     id: Indonesiano
@@ -231,7 +231,7 @@ lang:
     ms: Malayo
     mt: Malta
     my: Burmese nga
-    ne: Nepali
+    ne: Nepali nga
     nl: Olandes nga Olandes
     "no": norwego
     nso: Sepeti
@@ -250,7 +250,7 @@ lang:
     sd: sindhi
     si: sinhala ti panagsao
     sk: Eslovako nga
-    sl: slovenian nga
+    sl: sloveniano nga
     sm: Samoano
     sn: Shona
     so: Somali nga
@@ -285,5 +285,5 @@ lang:
     zh-hk: Intsik (Hong Kong) .
     zh-mo: Intsik(Macau) .
     zh-sg: Intsik (Singapore) .
-    zh-tw: tradisional nga Insik) .
+    zh-tw: Intsik (Taiwan) .
     zu: Zulu

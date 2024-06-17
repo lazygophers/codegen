@@ -125,7 +125,7 @@ cli:
                 languages: Sònraich an cànan targaid airson eadar-theangachadh
                 src-file: Faidhle stòr ri eadar-theangachadh (riatanach)
                 src-language: Cànan an fhaidhle stòr (mura h-eil e air a shònrachadh, dearbhaidh an inneal am faidhle tùsail gu fèin-ghluasadach)
-                translater:
+                translator:
                     google-free: Eadar-theangachadh Lìn Google
                     usage: 'Seanail eadar-theangachaidh: Seòrsa taic {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Bidh faidhlichean ioma-chànanach bho thùs sònraichte air an tionndadh gu faidhlichean san aon chruth ann an cànanan eile.
@@ -285,5 +285,5 @@ lang:
     zh-hk: Sìonais (Hong Kong)
     zh-mo: Sìnis (Macau)
     zh-sg: Sìonais (Singapore)
-    zh-tw: Sìneach traidiseanta)
+    zh-tw: Sìonais (Taiwan)
     zu: Zulu

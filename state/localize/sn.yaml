@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: kuti uwane rumwe ruzivo rwakadzama
         global_flags: global parameters
-        long: 'Kubatsira kunopa rubatsiro kune chero kuraira mukushandisa. '
-        short: Batsira pane chero murairo
+        long: 'Ipa mirairo yekushandisa kune chero kuraira mukushandisa. '
+        short: Mirayiridzo yekushandisa chero murairo
         usage: Mirayiridzo yekushandisa {{.Name}}
         use: use
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Taura mutauro waunoshandura
                 src-file: Kwakabva faira rinofanira kushandurwa (rinodiwa)
                 src-language: Mutauro weiyo faira faira (kana isina kutaurwa, chishandiso chinongoona faira rekubva)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Nzira yekushandura: Rudzi rwekutsigira {{range $key,$value := .Type}}{{$kiyi}}:{{$value}}{{end}}'
             long: Mafaira emitauro yakawanda kubva kune imwe nzvimbo anoshandurwa kuita mafaera ari muchimiro chimwe chete mune mimwe mitauro.
@@ -184,7 +184,7 @@ lang:
     gd: ChiGaelic cheScottish
     gl: ChiGalician
     gn: Guaraní
-    gom: gonggan mutauro
+    gom: mutauro we gonggan
     gu: ChiGujarati
     ha: ChiHausa
     haw: Chihawayi

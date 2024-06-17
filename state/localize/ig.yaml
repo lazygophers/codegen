@@ -17,7 +17,7 @@ cli:
                 gen-to: Ezipụta ebe mmepụta nke faịlụ .go emepụtara
                 list-option: Enwere ike ịchachaa ndepụta a, biko chọta akwụkwọ eji eme ihe maka nkọwa.
                 model: Ezipụta aha ihe nlereanya, kwado ịwepụ prefix 'model'
-            long: Mepụta interfaces na batches wee tinye interface maka ụfọdụ ụdị na faịlụ .proto
+            long: Mepụta oghere n'ime batches wee gbakwunye interface maka ụdị ụfọdụ na faịlụ .proto
             short: Ogbe ọgbọ interface
         all:
             long: Mepụta koodu niile nke ngwa a kwadoro
@@ -125,7 +125,7 @@ cli:
                 languages: Ezipụta asụsụ ebumnuche maka ntụgharị asụsụ
                 src-file: A ga-atụgharị asụsụ isi mmalite (chọrọ)
                 src-language: Asụsụ nke faịlụ isi mmalite (ọ bụrụ na akọwaghị ya, ngwa ahụ ga-ekpebi faịlụ isi mmalite na-akpaghị aka)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Ọwa ntụgharị: Ụdị nkwado {{oke $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
             long: A na-atụgharị faịlụ ọtụtụ asụsụ sitere n'otu ebe gaa na faịlụ n'otu usoro n'asụsụ ndị ọzọ.
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinese (Hong Kong)
     zh-mo: Chinese (Macau)
     zh-sg: Chinese (Singapore)
-    zh-tw: Chinese omenala)
+    zh-tw: Chinese (Taiwan)
     zu: Zulu

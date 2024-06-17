@@ -6,18 +6,18 @@ cli:
             Ji bo şêlê diyarkirî ji bo {{.RootName}} skrîpteke xweser çêdike.
         short: Ji bo şêlê diyarkirî skrîptek temamker biafirînin
         subcommand:
-            short: Ji bo {{.Fermandan}} skrîpta xwetemamkirinê çêbike
+            short: Ji bo {{.Ferman}} skrîpta temamkirina xweser biafirîne
     flags:
         debug: Têketinek berfireh derxe
     gen:
         add-rpc:
             flags:
                 action: Tevgerên ku divê di koman de werin zêdekirin, ji kerema xwe ji bo hûrguliyan belgeya karanîna peyda bikin
-                default-role: Rola xwerû ya navbeynkariya ku ji hêla komê ve hatî çêkirin ji kerema xwe ji bo hûrguliyan li belgeya karanîna binihêrin.
+                default-role: Rola xwerû ya navberê ya ku ji hêla komê ve hatî çêkirin Ji kerema xwe ji bo hûrguliyan serî li belgeya karanîna bidin.
                 gen-to: Cihê derketinê yên pelên .go yên çêkirî diyar bikin
                 list-option: Di heman demê de navnîş dikare were fîlter kirin, ji kerema xwe ji bo hûrguliyan belgeya karanîna bikar bînin.
                 model: Navê modelê diyar bikin, piştgirî bidin ku pêşgira `model` derxînin
-            long: Navberan di koman de biafirînin û ji bo modelek diyar di pelê .proto de navberek lê zêde bikin
+            long: Navberan di koman de biafirînin û ji bo modelek diyar di pelê .proto de navberek zêde bikin
             short: Navrûya nifşê Batch
         all:
             long: Hemî kodên ku ji hêla vê amûrê ve têne piştgirî kirin biafirînin
@@ -38,11 +38,11 @@ cli:
             long: Ji bo veavakirina edîtorê pelê .editorconfig biafirîne
             short: Pelê .editorconfig biafirîne
         flags:
-            add-proto-files: Ger hewce be ku hûn pelên .proto/rêyên din ên peldanka ku di peldanka .proto ya diyarkirî de ne di heman peldankê de ne îtxal bikin, ev kar dê riya ku di pelê veavakirinê de hatiye mîhengkirin zêde bike (ne binivîsîne).
+            add-proto-files: Ger hewce be ku hûn pelên .proto/rêyên din ên peldanka ku di peldanka .proto ya diyarkirî de ne di heman peldankê de ne îtxal bikin, ev kar dê riya ku di pelê veavakirinê de hatî mîheng kirin zêde bike (ne li ser binivîse).
             go-module-prefix: Ji bo riya go_package ku di pelê .proto de hatî mîheng kirin û ya rastîn, hûn dikarin vê vebijarkê mîheng bikin.
             input: Pelê çavkaniya .proto ya ku were çêkirin diyar bike
             output-path: Ev vebijark dikare were mîheng kirin dema ku riya go_package-a ku di pelê .proto de hatî mîheng kirin bi rêça ku bi rastî hewce dike ku were çêkirin negunca be.
-            overwrite: Ji bo naveroka ku dê ji nû ve neyê nûve kirin, zorê bide nivîsandina naveroka heyî
+            overwrite: Ji bo naveroka ku dê ji nû ve neyê nûve kirin, zorê li ser nivîsandina naveroka heyî
             proto-files: Ji bo hinartina pelên .proto/peldankên din ên ku di peldanka .proto ya diyarkirî de ne di heman peldankê de ne, ev kar vebijarkek e ku qada veavakirinê ya di pelê veavakirinê de derbas bike.
             protoc: Rêya pelê ya xwerû ya `protoc`
             protoc-gen-go: Rêça pêvekê ya `protoc-gen-go`
@@ -55,7 +55,7 @@ cli:
             long: Di kontrola guhertoyê de pelên .gitignore biafirînin
             short: Pelê .gitignore çêbike
         golang-lint:
-            long: Ji bo kontrolkirina kalîteya kodê pelê .golangci.yml biafirînin
+            long: Ji bo vekolîna kalîteya kodê pelê .golangci.yml biafirînin
             short: Pelê .golangci.yml çêbike
         goreleaser:
             long: Ji bo veavakirina amûrên berdanê pelê .goreleaser.yml biafirînin
@@ -63,7 +63,7 @@ cli:
         impl:
             long: Ji bo pêkanîna karûbarên karsaziyê pelên pêkanînê biafirînin
             short: Pelên pêkanînê biafirînin
-        long: Hilberînerê kodê, gelek şablonan piştgirî dike
+        long: Çêkerê kodê, gelek şablonan piştgirî dike
         makefile:
             long: Pelên Makefile ji bo avakirina amûr û fermanên din ên têkildar biafirînin
             short: Makefile çêbikin
@@ -71,7 +71,7 @@ cli:
             long: Ji bo rêveberiya girêdayîbûnê pelê go.mod biafirînin
             short: Pelê go.mod biafirînin
         pb:
-            long: Pelên .pb.go biafirînin, ku ji bo çêkirina pelên .proto têne bikar anîn.
+            long: Pelên .pb.go çêbikin, ku ji bo hilberandina pelên .proto têne bikar anîn.
             short: Pelê .pb.go çêbike
         short: jeneratorê kodê
         state:
@@ -82,7 +82,7 @@ cli:
                 cache: Ma dê nifşê-girêdayî cache çalak bike
                 config: Ma ji bo afirandina koda-girêdayî veavakirina
                 i18n: Ma ji bo çalakkirina nifşa pêwendîdar bi pirzimanî (nifş tenê destpêkkirina dewletê û naverokên din dihewîne, û wergera otomatîkî ya pir zimanan nahewîne. Ger hewcedariya we bi wergera otomatîkî hebe, ji kerema xwe {{.Ferman}} bikar bînin da ku hûrguliyan bibînin)
-                table: Ma dê hilberîna databasê ya girêdayî databasê çalak bike
+                table: Ma dê hilberîna databasa girêdayî databasê çalak bike
             i18n:
                 long: Ji bo bangên navneteweyî yên pirzimanî koda têkildar bi i18n biafirînin
                 short: Koda têkildarî i18n biafirînin
@@ -90,7 +90,7 @@ cli:
             short: Hemî fonksiyonên têkildar ji bo hilberîna dewletê
             table:
                 long: Koda girêdayî state.table biafirîne, ji bo girêdana databasê û destpêkirina tabloyê dema ku karûbar dest pê dike tê bikar anîn.
-                short: Koda girêdayî state.table biafirîne
+                short: Koda têkildarî state.table biafirîne
         table:
             long: Hemî fonksiyonên têkildar ên hilberîna tabloyan ji bo çavkaniya dewletparêz an rêveberiya çavkaniya statîk a karûbarên karsaziyê
             short: Hemî fonksiyonên têkildar ji bo hilberîna tabloyan
@@ -98,14 +98,14 @@ cli:
         gen: nifşê kodê
     help:
         additional_commands: fermanên Additional
-        aliases: fermana nasnav
+        aliases: navê fermanê
         available_commands: Emrên piştgirî kirin
         command: Emir
         flags: parametre
         get_info: ji bo agahdariya berfirehtir bistînin
         global_flags: parametreyên gerdûnî
-        long: 'Alîkarî ji bo her fermanek di serîlêdanê de alîkariyê dide. '
-        short: Alîkarî li ser her fermanê
+        long: 'Ji bo her fermanek di serîlêdanê de rêwerzên karanîna peyda bikin. '
+        short: Talîmatên ji bo bikaranîna her fermanê
         usage: Talîmatên ji bo bikaranîna {{.Name}}
         use: bikaranîn
     i18n:
@@ -118,14 +118,14 @@ cli:
             short: Lîsteya zimanên piştgirî
         tran:
             flags:
-                all-language: Hemî zimanên destekkirî wergerînin (heke rast be ala zimanan neçalak be)
+                all-language: Hemî zimanên piştgirî wergerînin (eger rast be ala zimanan neçalak be)
                 force: Wergerên heyî binivîsînin
                 force-key-prefix: mifteyên ku divê bi zorê bêne nivîsandin
                 generate-const: Ji bo banga hêsan nirxên hejmartinê biafirînin
                 languages: Zimanê mebest ji bo wergerê diyar bike
                 src-file: Dosyaya çavkaniyê ku were wergerandin (pêwîst e)
                 src-language: Zimanê pelê çavkaniyê (heke ne diyar be, amûr dê bixweber pelê çavkaniyê diyar bike)
-                translater:
+                translator:
                     google-free: Google Web Wergera
                     usage: 'Kanala wergerandinê: Cureya piştgirîyê {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Pelên pirzimanî yên ji çavkaniyek diyarkirî di zimanên din de di heman forma pelan de têne veguheztin.
@@ -141,7 +141,7 @@ cli:
         short: Veavakirinê ji dûr ve hevdeng bikin
     up-mod:
         flags:
-            goproxy: Navnîşana goproxy diyar bikin, heke na, dê di guhêrbara jîngehê de yekem were bikar anîn
+            goproxy: Navnîşana goproxy diyar bikin, heke ne wusa be, dê di guhêrbara jîngehê de ya yekem were bikar anîn
         long: Guhertoya girêdayîbûna pelê go.mod nûve bikin
         short: Pelê go.mod nûve bikin
 lang:
@@ -285,5 +285,5 @@ lang:
     zh-hk: Çînî (Hong Kong)
     zh-mo: Çînî (Makao)
     zh-sg: Çînî (Singapore)
-    zh-tw: Çînî ya kevneşopî)
+    zh-tw: Çînî (Taywan)
     zu: Zulu

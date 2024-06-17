@@ -121,16 +121,17 @@ template:
     # 入口文件
     main: "<main.go> 模板文件路径"
 
-    # state/table.go 模板文件路径
-    table: "<state/table.go> 模板文件路径，如果不存在则是使用默认"
-    # state/conf.go 模板文件路径
-    conf: "<state/conf.go >模板文件路径，如果不存在则是使用默认"
-    # state/cache.go 模板文件路径
-    cache: "<state/cache.go> 模板文件路径，如果不存在则是使用默认"
-    # state/state.go 模板文件路径
-    state: "<state/state.go> 模板文件路径，如果不存在则是使用默认"
-    # state/i18n.go 模板文件路径
-    i18n: "<state/i18n.go> 模板文件路径，如果不存在则是使用默认"
+    state:
+        # state/table.go 模板文件路径
+        table: "<state/table.go> 模板文件路径，如果不存在则是使用默认"
+        # state/conf.go 模板文件路径
+        conf: "<state/conf.go >模板文件路径，如果不存在则是使用默认"
+        # state/cache.go 模板文件路径
+        cache: "<state/cache.go> 模板文件路径，如果不存在则是使用默认"
+        # state/state.go 模板文件路径
+        state: "<state/state.go> 模板文件路径，如果不存在则是使用默认"
+        # state/i18n.go 模板文件路径
+        i18n: "<state/i18n.go> 模板文件路径，如果不存在则是使用默认"
 
     # .goreleaser.yaml 模板文件
     goreleaser: "<.goreleaser.yaml> 模板文件路径，如果不存在则使用默认"

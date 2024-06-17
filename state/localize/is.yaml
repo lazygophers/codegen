@@ -3,7 +3,7 @@ cli:
         flags:
             no-descriptions: Slökktu á frágangsleiðbeiningum
         long: |
-            Býr til sjálfvirka útfyllingarskriftu fyrir {{.RootName}} fyrir tilgreinda skel.
+            Býr til sjálfvirkt útfyllingarforskrift fyrir {{.RootName}} fyrir tilgreinda skel.
         short: Búðu til sjálfvirkt útfyllingarforskrift fyrir tilgreinda skel
         subcommand:
             short: Búðu til sjálfvirkt útfyllingarforskrift fyrir {{.Command}}
@@ -41,8 +41,8 @@ cli:
             add-proto-files: Ef þú þarft að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá mun þessi aðgerð bæta við (ekki skrifa yfir) slóðina sem er stillt í stillingarskránni.
             go-module-prefix: Fyrir slóð go_package sem er stillt í .proto skránni og hina raunverulegu, geturðu stillt þennan valkost
             input: Tilgreindu .proto frumskrána sem á að búa til
-            output-path: Hægt er að stilla þennan valmöguleika þegar slóð go_package sem er stillt í .proto skránni er í ósamræmi við vegalengdina sem raunverulega þarf að búa til.
-            overwrite: Fyrir efni sem verður ekki endurskapað skaltu þvinga yfir yfirskrift á núverandi efni
+            output-path: Hægt er að stilla þennan valmöguleika þegar slóð go_package sem er stillt í .proto skránni er í ósamræmi við vegfarveginn sem raunverulega þarf að búa til.
+            overwrite: Fyrir efni sem verður ekki endurnýjað, þvingaðu yfir yfirskrift á núverandi efni
             proto-files: Til að flytja inn aðrar .proto skrár/möppuslóðir sem eru ekki í sömu möppu og tilgreind .proto skrá er þessi aðgerð valkostur til að hnekkja stillingarreitnum í stillingarskránni.
             protoc: '''Protoc'' sérhannaðar skráarslóð'
             protoc-gen-go: „protoc-gen-go“ viðbótaleið
@@ -76,7 +76,7 @@ cli:
         short: Kóða rafall
         state:
             conf:
-                long: Búðu til lestrarkóða fyrir stillingarskrá fyrir lestur stillingar fyrirtækjaþjónustu
+                long: Búðu til lestrarkóða fyrir stillingarskrár til að lesa stillingar fyrirtækjaþjónustu
                 short: Búðu til leskóða fyrir stillingarskrá
             flags:
                 cache: Hvort á að virkja skyndiminni-tengda kynslóð
@@ -113,7 +113,7 @@ cli:
         short: Verkfærakista sem tengist fjöltyngdum alþjóðavæðingu
         support:
             flags:
-                language: Tilgreindu tungumálið sem á að sýna, annars verður tungumálakóðinn notaður til að sýna tungumálið
+                language: Tilgreindu tungumálið sem á að birta, annars verður tungumálakóðinn notaður til að sýna tungumálið
             long: Listaðu öll studd tungumál
             short: Listi yfir studd tungumál
         tran:
@@ -125,7 +125,7 @@ cli:
                 languages: Tilgreindu marktungumálið fyrir þýðingar
                 src-file: Upprunaskrá sem á að þýða (krafist)
                 src-language: Tungumál frumskrárinnar (ef ekki tilgreint mun tólið sjálfkrafa ákvarða upprunaskrána)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Þýðingarrás: Stuðningstegund {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fjöltyngdum skrám frá ákveðnum uppruna er breytt í skrár á sama sniði á öðrum tungumálum.
@@ -141,7 +141,7 @@ cli:
         short: Samstilltu stillingar frá fjarstýringu
     up-mod:
         flags:
-            goproxy: Tilgreindu goproxy heimilisfangið, ef ekki, þá verður það fyrsta í umhverfisbreytunni notuð
+            goproxy: Tilgreindu goproxy vistfangið, ef ekki, þá verður það fyrsta í umhverfisbreytunni notuð
         long: Uppfærðu ávanaútgáfuna af go.mod skránni
         short: Uppfærðu go.mod skrána
 lang:
@@ -149,7 +149,7 @@ lang:
     ak: Tví (Akan)
     am: amharíska
     ar: arabíska
-    as: Assama
+    as: Assamskir
     ay: Aymara
     az: Aserbaídsjan
     be: hvítrússneska
@@ -285,5 +285,5 @@ lang:
     zh-hk: Kínverska (Hong Kong)
     zh-mo: Kínverska (Macau)
     zh-sg: Kínverska (Singapúr)
-    zh-tw: hefðbundin kínverska)
+    zh-tw: Kínverska (Taívan)
     zu: Zulu

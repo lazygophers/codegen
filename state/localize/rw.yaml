@@ -3,7 +3,7 @@ cli:
         flags:
             no-descriptions: Hagarika amabwiriza yo kurangiza
         long: |
-            Gukora inyandiko-yuzuye ya {{.RotName}} kubigenewe byerekanwe.
+            Kubyara inyandiko yuzuye ya {{.RotName}} kubigenewe byerekanwe.
         short: Gukora inyandiko yuzuye ya shell kubisobanuro byihariye
         subcommand:
             short: Gukora inyandiko yuzuye ya {{.Icyemezo}}
@@ -12,10 +12,10 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Imyitwarire ikeneye kongerwaho mubice, nyamuneka shakisha imikoreshereze yinyandiko irambuye
+                action: Imyitwarire ikeneye kongerwaho mubice, nyamuneka ushake inyandiko zikoreshwa kubisobanuro birambuye
                 default-role: Uruhare rwibanze rwimikorere-yakozwe.
                 gen-to: Kugaragaza ibisohoka aho dosiye zakozwe .go
-                list-option: Urutonde narwo rushobora gushungura, nyamuneka shakisha imikoreshereze yinyandiko irambuye.
+                list-option: Urutonde narwo rushobora gushungura, nyamuneka shakisha imikoreshereze yinyandiko kubisobanuro birambuye.
                 model: Kugaragaza izina ryicyitegererezo, shyigikira usibye `moderi` prefix
             long: Kora intera mubice hanyuma ongeraho intera ya moderi runaka muri dosiye .proto
             short: Imigaragarire yimbere
@@ -49,7 +49,7 @@ cli:
             tables-enable_field_created_at: Niba ushobora gukora igenamigambi ryibanze rya data base yaremye_umurima
             tables-enable_field_deleted_at: Niba ushobora gukora igenamiterere ryibanze ryasibwe_umurima muri base de base
             tables-enable_field_id: Gushoboza iboneza ryibanze kububiko bujyanye nimirima
-            tables-enable_field_updated_at: Niba ushobora gukora agaciro gasanzwe kavuguruwe_umurima muri base de base
+            tables-enable_field_updated_at: Niba ushobora gukora agaciro gasanzwe kavuguruwe_kumwanya wububiko
             tables-enable_gorm_tag_column: Niba ushobora gukora data base ijyanye na gorm generation
         gitignote:
             long: Gukora dosiye .gitignore kugirango wirengagize gucunga dosiye mugucunga verisiyo
@@ -104,8 +104,8 @@ cli:
         flags: ibipimo
         get_info: kugirango ubone ibisobanuro birambuye
         global_flags: ibipimo byisi
-        long: 'Ubufasha butanga ubufasha kubuyobozi ubwo aribwo bwose. '
-        short: Fasha ku itegeko iryo ari ryo ryose
+        long: 'Tanga amabwiriza yo gukoresha kubuyobozi ubwo aribwo bwose. '
+        short: Amabwiriza yo gukoresha itegeko iryo ariryo ryose
         usage: Amabwiriza yo gukoresha {{.Izina}}
         use: Koresha
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Kugaragaza ururimi rugenewe gusobanura
                 src-file: Idosiye yinkomoko igomba guhindurwa (bisabwa)
                 src-language: Ururimi rwa dosiye yinkomoko (niba bidasobanuwe neza, igikoresho kizahita kigena dosiye yinkomoko)
-                translater:
+                translator:
                     google-free: Urubuga rwa Google
                     usage: 'Umuyoboro wubuhinduzi: Ubwoko bwingoboka {{urwego $ urufunguzo, $ agaciro: = .Ubwoko}} {{$ urufunguzo}}: {{$ agaciro}} {{iherezo}}'
             long: Indimi nyinshi ziva mu isoko runaka zihindurwa muri dosiye muburyo bumwe mu zindi ndimi.
@@ -285,5 +285,5 @@ lang:
     zh-hk: Igishinwa (Hong Kong)
     zh-mo: Igishinwa (Macau)
     zh-sg: Igishinwa (Singapore)
-    zh-tw: Abashinwa gakondo)
+    zh-tw: Igishinwa (Tayiwani)
     zu: Zulu

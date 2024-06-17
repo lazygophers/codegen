@@ -17,7 +17,7 @@ cli:
                 gen-to: .go file siam chhuah tawhte output location kha tarlang rawh
                 list-option: List pawh hi filter theih a ni a, a chipchiar zawka hriat duh chuan usage documentation zawng rawh.
                 model: Model hming kha tarlang la, `model` prefix tih loh chu support rawh
-            long: Batch hrang hranga interface siam la, .proto file ah model pakhat tan interface add rawh
+            long: Batch hrang hranga interface siam la, .proto file ah model pakhat tana interface add rawh
             short: Batch siam chhuahna interface a ni
         all:
             long: He tool hian a support code zawng zawng siam vek rawh
@@ -81,7 +81,7 @@ cli:
             flags:
                 cache: Cache nena inzawm generation enable tur nge tih
                 config: Configuration nena inzawm code siam tur nge siam loh
-                i18n: Multi-language related generation enable tur nge (generation hian state initialization leh content dang chauh a huam a, tawng tam tak automatic translation a huam lo. Automatic translation i mamawh chuan {{.Command}} hmangin details en rawh)
+                i18n: Multi-language related generation enable tur nge (generation hian state initialization leh content dang chauh a huam a, ṭawng hrang hrang automatic translation a huam lo. Automatic translation i mamawh chuan {{.Command}} hmangin details en rawh)
                 table: Database nena inzawm database siam theihna tur leh hman theih tur
             i18n:
                 long: Multi-language international call atan i18n nena inzawm code siam
@@ -104,8 +104,8 @@ cli:
         flags: parameter a ni
         get_info: thu chiang zawk hriat theih nan
         global_flags: khawvel pum huap parameters a ni
-        long: 'Help hian application chhunga command eng pawh tan tanpuina a pe thin. '
-        short: Thupek eng pawhah tanpui rawh
+        long: 'Application chhunga command eng pawh hman dan tur hrilhfiah rawh. '
+        short: Command eng pawh hman dan tur hrilhfiahna
         usage: '{{.Name}} hman dan tur hrilhfiahna.'
         use: hmang
     i18n:
@@ -113,7 +113,7 @@ cli:
         short: Multilingual internationalization nena inzawm hmanrua
         support:
             flags:
-                language: Ṭawng tarlan tur chu tarlang la, chuti lo chuan language code hmangin ṭawng chu a lang ang
+                language: A lan dan tur ṭawng kha tarlang la, chuti lo chuan language code hmangin ṭawng chu a lang ang
             long: Supported language zawng zawng list rawh
             short: Ṭawng list thlawptu
         tran:
@@ -125,7 +125,7 @@ cli:
                 languages: Lehlinna tur target language chu tarlang rawh
                 src-file: Source file lehlin tur (a tul) .
                 src-language: Source file tawng (a tarlan loh chuan tool hian source file chu a hril nghal ang)
-                translater:
+                translator:
                     google-free: Google Web Translate tih a ni
                     usage: 'Lehlinna channel: Support chi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Source pakhat atanga multilingual file te chu tawng dang format inang file ah an chantir thin.
@@ -137,7 +137,7 @@ cli:
             password: Verification dilna atana password hman thin
             template-path: Template inzawmkhawmna kawng
             username: Verification dilna atana hman tur username
-        long: Remote end atanga configuration chu synchronize la, local configuration ah merge rawh Template file hi synchronization laiin (configure a nih chuan) a rualin support a ni.
+        long: Remote end atang hian configuration chu synchronize la, local configuration ah merge rawh Template file hi synchronization laiin (configure a nih chuan) a rualin support a ni.
         short: Remote atanga configuration inthlunzawm
     up-mod:
         flags:
@@ -266,7 +266,7 @@ lang:
     th: Thai tawng a ni
     ti: Tignan a ni
     tk: Turkmen-ho a ni
-    tl: Tagalog (Filipino) tawng a ni.
+    tl: Tagalog tawng (Filipino) tawng a ni.
     tr: turkish tawng a ni
     ts: Dzonga
     tt: Tatar a ni
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinese (Hong Kong) te chuan an lo ti tawh a.
     zh-mo: Chinese(Macau) te an ni.
     zh-sg: Chinese (Singapore) te chuan an rawn ti a.
-    zh-tw: Chinese hnam nunphung) .
+    zh-tw: Chinese (Taiwan) te chuan an ti a.
     zu: Zulu

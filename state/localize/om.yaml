@@ -3,7 +3,7 @@ cli:
         flags:
             no-descriptions: Qajeelfama xumuraa hojii irraa oolchuu
         long: |
-            Iskiriiptii ofumaan guutuu {{.RootName}} qaaqa ifteessameef uuma.
+            Iskiriiptii ofumaan guutu {{.RootName}} qaala ifteessameef uuma.
         short: Iskiriiptii ofumaan guutuu qaaqa ifteessameef uumi
         subcommand:
             short: '{{.Ajaja}} tiif iskiriiptii ofumaan guutu uumi.'
@@ -104,8 +104,8 @@ cli:
         flags: parameetara
         get_info: odeeffannoo bal’aa argachuuf
         global_flags: parameetaroota addunyaa
-        long: 'Gargaarsi ajaja kamiyyuu application keessa jiruuf gargaarsa kenna. '
-        short: Ajaja kamiyyuu irratti gargaaraa
+        long: 'Ajaja kamiyyuu application keessa jiruuf qajeelfama itti fayyadama kenni. '
+        short: Qajeelfama ajaja kamiyyuu fayyadamuu
         usage: Qajeelfama itti fayyadama {{.Name}}.
         use: fayyadamuu
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Afaan galma hiikkaa ifteessi
                 src-file: Faayilii madda hiikamuu qabu (barbaachisaa) .
                 src-language: Afaan faayilii madda (yoo hin ibsamne, meeshaan ofumaan faayilii madda murteessa) .
-                translater:
+                translator:
                     google-free: Google Web Hiikkaa jedhu
                     usage: 'Chaanaalii hiikkaa: Gosa deeggarsa {{range $key,$value := .Akkaataa}}{{$key}}:{{$value}}{{end}}'
             long: Faayiloonni afaanota hedduu madda murtaa'e irraa gara faayilii bifa walfakkaataa afaanota birootiin jijjiiramu.
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chaayinaa (Hong Kong) .
     zh-mo: Chaayinaa(Macau) .
     zh-sg: Chaayinaa (Siingaapoor) .
-    zh-tw: aadaa Chaayinaa) .
+    zh-tw: Chaayinaa (Taayiwaan) .
     zu: Zulu

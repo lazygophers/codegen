@@ -20,7 +20,7 @@ cli:
             long: Ƙirƙirar musaya a cikin batches kuma ƙara abin dubawa don takamaiman samfuri a cikin fayil ɗin .proto
             short: Batch tsara dubawa
         all:
-            long: Ƙirƙirar duk lambar da ke da goyan bayan wannan kayan aikin
+            long: Ƙirƙirar duk lambar da ke da goyan bayan wannan kayan aiki
             short: Ƙirƙirar duk lambar
         cache:
             long: Ƙirƙirar fayilolin cache don kiran kasuwanci mai alaƙa SDKs
@@ -41,10 +41,10 @@ cli:
             add-proto-files: Idan kana buƙatar shigo da wasu fayilolin .proto/hanyoyin manyan fayiloli waɗanda basa cikin babban fayil ɗaya da ƙayyadadden fayil ɗin .proto, wannan aikin zai ƙara (ba a sake rubutawa) hanyar da aka saita a cikin fayil ɗin sanyi ba.
             go-module-prefix: Don hanyar go_package da aka saita a cikin fayil ɗin .proto da ainihin ɗaya, zaku iya saita wannan zaɓi.
             input: Ƙayyade fayil ɗin tushen proto da za a ƙirƙira
-            output-path: Ana iya saita wannan zaɓin lokacin da aka saita hanyar go_package a cikin fayil ɗin .proto bai dace da gadon titin ba wanda a zahiri yana buƙatar ƙirƙirar.
+            output-path: Ana iya saita wannan zaɓi lokacin da aka saita hanyar go_package a cikin fayil ɗin .proto bai dace da gadon titin ba wanda a zahiri yana buƙatar ƙirƙirar.
             overwrite: Don abun ciki wanda ba za a sabunta shi ba, tilasta sake rubuta abubuwan da ke akwai
             proto-files: Don shigo da wasu fayilolin .proto/hanyoyin babban fayil waɗanda basa cikin babban fayil ɗaya da ƙayyadadden fayil ɗin .proto, wannan aiki zaɓi ne don soke filin daidaitawa a cikin fayil ɗin sanyi.
-            protoc: Hanyar fayil ɗin 'protoc' da za a iya gyarawa
+            protoc: '''protoc'' hanyar fayil ɗin da za a iya gyarawa'
             protoc-gen-go: Hanyar plugin 'protoc-gen-go'
             tables-enable_field_created_at: Ko don kunna tsohowar tsara tsara bayanai na filin da aka halitta_at
             tables-enable_field_deleted_at: Ko don kunna saitunan tsoho na filin deleted_at a cikin bayanan
@@ -86,7 +86,7 @@ cli:
             i18n:
                 long: Ƙirƙirar lamba mai alaƙa da i18n don kiran ƙasashen waje na harsuna da yawa
                 short: Ƙirƙirar lambar da ke da alaƙa i18n
-            long: Ƙirƙirar duk ayyukan da ke da alaƙa na jihar don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
+            long: Ƙirƙirar duk ayyukan da ke da alaƙa na jihar don albarkatu na jiha ko sarrafa albarkatu na ayyukan kasuwanci
             short: Duk ayyuka masu dacewa don haifar da yanayi
             table:
                 long: Ƙirƙirar lambar da ke da alaƙa ta state.table, da ake amfani da ita don haɗin bayanai da ƙaddamar da tebur lokacin da aka fara sabis.
@@ -99,7 +99,7 @@ cli:
     help:
         additional_commands: Ƙarin umarni
         aliases: umarni mai lakabi
-        available_commands: Umurnai masu goyan baya
+        available_commands: Dokokin tallafi
         command: Oda
         flags: siga
         get_info: don samun cikakken bayani
@@ -113,8 +113,8 @@ cli:
         short: Kunshin kayan aiki masu alaƙa da haɗakar harsuna da yawa
         support:
             flags:
-                language: Ƙayyade harshen da za a nuna, in ba haka ba za a yi amfani da lambar harshe don nuna harshen
-            long: Lissafa duk harsunan da aka goyan baya
+                language: Ƙayyade harshen da za a nunawa, in ba haka ba za a yi amfani da lambar harshe don nuna harshen
+            long: Jera duk harsunan da aka goyan baya
             short: Jerin harsuna masu goyan baya
         tran:
             flags:
@@ -125,7 +125,7 @@ cli:
                 languages: Ƙayyade harshen manufa don fassara
                 src-file: Fayil ɗin tushen da za a fassara (an buƙata)
                 src-language: Harshen fayil ɗin tushen (idan ba a ƙayyade ba, kayan aiki zai ƙayyade fayil ɗin tushen ta atomatik)
-                translater:
+                translator:
                     google-free: Google Yanar Gizo Fassara
                     usage: 'Tashar fassarar: Nau''in tallafi {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fayilolin yaruka da yawa daga wani tushe ana jujjuya su zuwa fayiloli a cikin tsari iri ɗaya a cikin wasu harsuna.
@@ -134,14 +134,14 @@ cli:
     short: Kayan aiki da aka saita don mutane malalaci
     sync:
         flags:
-            password: Kalmar wucewa da ake amfani da ita don neman tabbatarwa
+            password: Kalmar wucewa da ake amfani da ita don neman tabbaci
             template-path: Hanyar aiki tare da samfuri
-            username: Sunan mai amfani da ake amfani da shi don neman tabbaci
+            username: An yi amfani da sunan mai amfani don neman tabbaci
         long: Yi aiki tare da sanyi daga ƙarshen nesa kuma haɗa shi cikin tsarin gida Ana goyan bayan fayil ɗin samfuri a lokaci guda yayin aiki tare (idan an saita shi)
         short: Aiki tare da daidaitawa daga nesa
     up-mod:
         flags:
-            goproxy: Ƙayyade adireshin goproxy, idan ba haka ba, za a yi amfani da na farko a cikin mahallin mahalli
+            goproxy: Ƙayyade adreshin goproxy, idan ba haka ba, za a yi amfani da na farko a cikin canjin yanayi
         long: Sabunta sigar dogaro na fayil ɗin go.mod
         short: Sabunta fayil ɗin go.mod
 lang:
@@ -149,7 +149,7 @@ lang:
     ak: Twi (Akan)
     am: Amharic
     ar: Larabci
-    as: Asami
+    as: Assamese
     ay: Aymara
     az: Azabaijan
     be: Belarushiyanci
@@ -172,7 +172,7 @@ lang:
     el: Girkanci
     en: Turanci
     eo: Esperanto
-    es: Spanish
+    es: Mutanen Espanya
     et: Estoniya
     eu: basque
     fa: Farisa
@@ -285,5 +285,5 @@ lang:
     zh-hk: Sinanci (Hong Kong)
     zh-mo: Sinanci (Macau)
     zh-sg: Sinanci (Singapore)
-    zh-tw: gargajiya na kasar Sin)
+    zh-tw: Sinanci (Taiwan)
     zu: Zulu

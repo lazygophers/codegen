@@ -4,7 +4,7 @@ cli:
             no-descriptions: Khubaza ukugqiba imiyalelo
         long: |
             Yenza umbhalo opheleleyo we {{.RootName}} weqokobhe elikhankanyiweyo.
-        short: Yenza umbhalo opheleleyo weqokobhe elikhankanyiweyo
+        short: Yenza iscript esipheleleyo seqokobhe elikhankanyiweyo
         subcommand:
             short: Velisa iscript esizigqibezelelayo se-{{.Command}}
     flags:
@@ -43,7 +43,7 @@ cli:
             input: Chaza ifayile yemvelaphi yeproto ekufuneka yenziwe
             output-path: Olu khetho lunoqwalaselo xa umendo we-go_package uqwalaselwe kwifayile ye.proto ayihambelani nebhedi yendlela efuna ukwenziwa.
             overwrite: Ngomxholo ongazukuphinda uhlaziywe, nyanzela ukubhala ngaphezulu komxholo okhoyo
-            proto-files: Ukungenisa ezinye .iifayile zeproto/iindlela zefolda ezingekho kwisiqulathi seefayili esifana neso esixeliweyo .proto fayile, lo msebenzi uyindlela yokukhetha ukuwubhala ngaphezulu umhlaba woqwalaselo kwifayile yoqwalaselo.
+            proto-files: Ukungenisa ezinye .iifayile zeproto/iindlela zefolda ezingekho kwisiqulathi seefayili esifana nesefayile echaziweyo .proto, lo msebenzi lukhetho lokubeka ngaphezulu umhlaba woqwalaselo kwifayile yoqwalaselo.
             protoc: '`protoc` indlela yefayile enokwenziwa ngokwezifiso'
             protoc-gen-go: '`protoc-gen-go` indlela yokufaka iplagi'
             tables-enable_field_created_at: Nokuba ngaba kukuvumela ukuveliswa koqwalaselo olungagqibekanga lwedathabheyisi eyenziwe_ kwindawo
@@ -104,8 +104,8 @@ cli:
         flags: ipharamitha
         get_info: ukufumana ulwazi oluthe vetshe
         global_flags: iiparamitha zehlabathi
-        long: 'Uncedo lubonelela ngoncedo kuwo nawuphi na umyalelo kwisicelo. '
-        short: Uncedo kuwo nawuphi na umyalelo
+        long: 'Nika imiyalelo yosetyenziso kuwo nawuphi na umyalelo okwisicelo. '
+        short: Imiyalelo yokusebenzisa nawuphi na umyalelo
         usage: Imiyalelo yokusebenzisa {{.Name}}
         use: sebenzisa
     i18n:
@@ -121,11 +121,11 @@ cli:
                 all-language: Guqulela zonke iilwimi ezixhaswayo (ukuba yinyani iflegi yeelwimi ivaliwe)
                 force: Bhala phezu kweenguqulelo ezikhoyo
                 force-key-prefix: izitshixo ezifuna ukunyanzeliswa ukuba zibhalwe ngaphezulu
-                generate-const: Yenza amaxabiso okubalwayo ukuze ufowunelwe lula
+                generate-const: Veza amaxabiso okubalwa ukufowuna lula
                 languages: Chaza ulwimi ekujoliswe kulo ukuze uguqulelwe
                 src-file: Umthombo wefayile eza kuguqulelwa (kuyafuneka)
                 src-language: Ulwimi lwefayile yemvelaphi (ukuba ayichazwanga, isixhobo siya kumisela ngokuzenzekelayo ifayile yemvelaphi)
-                translater:
+                translator:
                     google-free: IToliki yeWebhu kaGoogle
                     usage: 'Isitishi soguqulo: Uhlobo lwenkxaso {{uluhlu lwe-$sitshixo, i-$value := .Uhlobo}}{{$isitshixo}}:{{$value}}{{end}}'
             long: Iifayile zeelwimi ezininzi ezivela kumthombo othile ziguqulelwa kwiifayile ngendlela efanayo kwezinye iilwimi.

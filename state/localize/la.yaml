@@ -86,7 +86,7 @@ cli:
             i18n:
                 long: Generare i18n codicem cognatum pro multi-language internationale vocat
                 short: Generate i18n codice related
-            long: Generare omnia munera publica pertinentia ad statum resource vel static subsidii administratione negotiorum officiorum
+            long: Generare omnia munera publica pertinentia ad statum resource aut static subsidii administratione negotiorum officiorum
             short: Omnes munera ad statum generandi pertinet
             table:
                 long: Generare statum.tabula cognata codicem, ad nexum datorum et ad mensam initializationem adhibita cum servitium incepit.
@@ -104,8 +104,8 @@ cli:
         flags: modulus
         get_info: ut magis detailed notitia
         global_flags: global parametri
-        long: 'Auxilium praebet auxilium ad quodlibet mandatum in applicatione. '
-        short: Auxilium in aliquo imperio
+        long: 'Praebere usus instructiones ad quodlibet mandatum in applicatione. '
+        short: Instructiones ad aliquem imperium usura
         usage: Instructiones ad utens {{.Name}}
         use: usus
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Specificare scopum lingua pro translatione
                 src-file: Source file interpretari (requiritur)
                 src-language: Lingua fasciculi fontis (nisi specificatur, instrumentum statim fontem lima definiet)
-                translater:
+                translator:
                     google-free: Google Telae Translate
                     usage: 'Canale translatio: Support typus {{ range $clavem,$ valorem := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Multilinguales fasciculi ex quodam fonte convertuntur in lima forma in aliis linguis.
@@ -241,7 +241,7 @@ lang:
     pa: punjabi
     pl: Polonica
     ps: Pashto
-    pt: Portuguese ( Portugal , Brazil )
+    pt: Portuguese (Lusitaniae, Brasiliae)
     qu: Quechua
     ro: Romanian
     ru: Russian
@@ -285,5 +285,5 @@ lang:
     zh-hk: Seres (Hongcongum)
     zh-mo: Seres (Macau)
     zh-sg: Seres (Singapore)
-    zh-tw: Traditional Chinese)
+    zh-tw: Seres (Taiwan)
     zu: Zulu

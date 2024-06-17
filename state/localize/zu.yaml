@@ -104,8 +104,8 @@ cli:
         flags: ipharamitha
         get_info: ukuze uthole ulwazi oluningiliziwe
         global_flags: imingcele yomhlaba
-        long: 'Usizo luhlinzeka ngosizo lwanoma yimuphi umyalo ohlelweni. '
-        short: Usizo kunoma yimuphi umyalo
+        long: 'Nikeza imiyalelo yokusetshenziswa yanoma yimuphi umyalo ohlelweni. '
+        short: Imiyalo yokusebenzisa noma yimuphi umyalo
         usage: Imiyalo yokusebenzisa i-{{.Name}}
         use: sebenzisa
     i18n:
@@ -125,7 +125,7 @@ cli:
                 languages: Cacisa ulimi okuqondiwe kulo ukuze kuhunyushwe
                 src-file: Ifayela elingumthombo elizohunyushwa (kuyadingeka)
                 src-language: Ulimi lwefayela elingumthombo (uma lungacacisiwe, ithuluzi lizonquma ngokuzenzakalelayo ifayela elingumthombo)
-                translater:
+                translator:
                     google-free: I-Google Web Translate
                     usage: 'Isiteshi sokuhumusha: Uhlobo losekelo {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Amafayela ezilimi eziningi asuka emthonjeni othile aguqulwa abe amafayela ngefomethi efanayo kwezinye izilimi.
@@ -134,7 +134,7 @@ cli:
     short: Ithuluzi elimiselwe abantu abavilaphayo
     sync:
         flags:
-            password: Iphasiwedi esetshenzisiwe ukucela ukuqinisekiswa
+            password: Iphasiwedi esetshenziswa ukucela ukuqinisekiswa
             template-path: Indlela yokuvumelanisa isifanekiso
             username: Igama lomsebenzisi elisetshenziselwa ukucela ukuqinisekiswa
         long: Vumelanisa ukucushwa kusuka ekugcineni okukude futhi ukuhlanganise ekucushweni kwasendaweni Ifayela lesifanekiso liyasekelwa ngesikhathi esifanayo phakathi nokuvumelanisa (uma limisiwe)
@@ -274,7 +274,7 @@ lang:
     uk: Isi-Ukraine
     ur: Isi-Urdu
     uz: Isi-Uzbek
-    vi: IsiVietnamese
+    vi: Isi-Vietnamese
     xh: ulimi lwabantu
     yi: Isi-Yiddish
     yo: isiyoruba

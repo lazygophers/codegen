@@ -8,12 +8,12 @@ cli:
         subcommand:
             short: Pangani zolemba zokha za {{.Command}}
     flags:
-        debug: Kutulutsa mwatsatanetsatane chipika
+        debug: Chotuluka mwatsatanetsatane chipika
     gen:
         add-rpc:
             flags:
                 action: Makhalidwe omwe akuyenera kuwonjezeredwa m'magulu, chonde pezani zolemba zogwiritsidwa ntchito kuti mumve zambiri
-                default-role: Ntchito yokhazikika ya mawonekedwe opangidwa ndi batch chonde onani zolembedwa zamagwiritsidwe kuti mumve zambiri.
+                default-role: Ntchito yosasinthika ya mawonekedwe opangidwa ndi batch chonde onani zolembedwa za kagwiritsidwe ntchito.
                 gen-to: Tchulani malo omwe amachokera kwa mafayilo opangidwa a .go
                 list-option: Mndandandawu ukhozanso kusefedwa, chonde pezani zolemba zogwiritsira ntchito kuti mumve zambiri.
                 model: Tchulani dzina lachitsanzo, kuthandizira kuchotsa `model` prefix
@@ -23,7 +23,7 @@ cli:
             long: Pangani ma code onse mothandizidwa ndi chida ichi
             short: Pangani ma code onse
         cache:
-            long: Pangani mafayilo osungira ma SDK okhudzana ndi bizinesi
+            long: Pangani mafayilo a cache a ma SDK okhudzana ndi bizinesi
             short: Pangani fayilo ya cache
         cmd:
             long: Pangani mafayilo olowera ntchito zamabizinesi
@@ -89,7 +89,7 @@ cli:
             long: Pangani ntchito zonse zokhudzana ndi boma kuti muzitha kuyang'anira zinthu zodziwika bwino kapena zosasunthika zamabizinesi
             short: Ntchito zonse zofunika kupanga dziko
             table:
-                long: Pangani code yokhudzana ndi state.table, yomwe imagwiritsidwa ntchito polumikizana ndi database ndikuyambitsa tebulo ntchito ikayamba.
+                long: Pangani code yokhudzana ndi state.table, yomwe imagwiritsidwa ntchito polumikiza database ndi kuyambitsa tebulo ntchito ikayamba.
                 short: Pangani code yokhudzana ndi state.table
         table:
             long: Ntchito zonse zokhudzana ndi kupanga matebulo azinthu zodziwika bwino kapena kasamalidwe kazinthu zamabizinesi
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: kuti mudziwe zambiri
         global_flags: magawo apadziko lonse lapansi
-        long: 'Thandizo limapereka chithandizo ku lamulo lililonse muzogwiritsira ntchito. '
-        short: Thandizo pa lamulo lililonse
+        long: 'Perekani malangizo ogwiritsira ntchito lamulo lililonse mu pulogalamuyi. '
+        short: Malangizo ogwiritsira ntchito lamulo lililonse
         usage: Malangizo ogwiritsira ntchito {{.Name}}
         use: ntchito
     i18n:
@@ -114,18 +114,18 @@ cli:
         support:
             flags:
                 language: Tchulani chinenero chosonyeza, apo ayi chinenerocho chidzagwiritsidwa ntchito kusonyeza chinenerocho
-            long: Lembani zinenero zonse zothandizira
+            long: Lembani zilankhulo zonse zothandizira
             short: Mndandanda wa chinenero chothandizira
         tran:
             flags:
                 all-language: Tanthauzirani zilankhulo zonse zothandizira (ngati zowona mbendera ya zilankhulo yayimitsidwa)
-                force: Lembani zomasulira zomwe zilipo
+                force: Lembani zomasulira zomwe zilipo kale
                 force-key-prefix: makiyi omwe amafunika kukakamizidwa kuti alembetsedwe
                 generate-const: Pangani zowerengera kuti muyimbe mosavuta
-                languages: Tchulani chinenero chomwe mumasulire
+                languages: Tchulani chilankhulo chomwe mungamasulire
                 src-file: Fayilo yochokera kuti itanthauziridwe (yofunikira)
                 src-language: Chilankhulo cha fayilo yochokera (ngati sichinatchulidwe, chidacho chidzadziwiratu fayilo yochokera)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Njira yomasulira: Mtundu wothandizira {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Mafayilo azinenero zambiri amasinthidwa kukhala mafayilo amtundu womwewo m'zinenero zina.
@@ -163,10 +163,10 @@ lang:
     ckb: Chikurdi (Sorani)
     co: Chikosikani
     cs: Chicheki
-    cy: Chiwelesi
+    cy: Welsh
     da: danish
     de: Chijeremani
-    doi: doglai
+    doi: dogglai
     dv: Dhivehi
     ee: Ewe
     el: Chigriki
@@ -193,7 +193,7 @@ lang:
     hmn: Hmong
     hr: Chikroatia
     ht: Chikiliyo cha ku Haiti
-    hu: wachi Hungary
+    hu: chihangare
     hy: Chiameniya
     id: Chi Indonesian
     ig: Igbo
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chitchaina (Hong Kong)
     zh-mo: Chitchaina (Macau)
     zh-sg: Chitchaina (Singapore)
-    zh-tw: Chinese Chinese)
+    zh-tw: Chitchaina (Taiwan)
     zu: Chizulu

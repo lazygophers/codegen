@@ -125,7 +125,7 @@ cli:
                 languages: Nodwch yr iaith darged ar gyfer cyfieithu
                 src-file: Ffeil ffynhonnell i'w chyfieithu (gofynnol)
                 src-language: Iaith y ffeil ffynhonnell (os na chaiff ei nodi, bydd yr offeryn yn pennu'r ffeil ffynhonnell yn awtomatig)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Sianel gyfieithu: Math o gefnogaeth {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Mae ffeiliau amlieithog o ffynhonnell benodol yn cael eu trosi'n ffeiliau yn yr un fformat mewn ieithoedd eraill.
@@ -229,7 +229,7 @@ lang:
     mni-mtei: Meitei (Manipuri)
     mr: marathi
     ms: Maleieg
-    mt: plisteg
+    mt: Malteg
     my: Byrmaneg
     ne: Nepali
     nl: Iseldireg
@@ -244,7 +244,7 @@ lang:
     pt: Portiwgaleg (Portiwgal, Brasil)
     qu: Cetshwa
     ro: Rwmania
-    ru: Rwsieg
+    ru: Rwsiaidd
     rw: Kinyarwanda
     sa: Sansgrit
     sd: sindhi
@@ -285,5 +285,5 @@ lang:
     zh-hk: Tsieinëeg (Hong Kong)
     zh-mo: Tsieinëeg (Macau)
     zh-sg: Tsieinëeg (Singapôr)
-    zh-tw: Tsieineaidd traddodiadol)
+    zh-tw: Tsieinëeg (Taiwan)
     zu: Zwlw

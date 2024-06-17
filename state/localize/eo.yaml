@@ -13,8 +13,8 @@ cli:
         add-rpc:
             flags:
                 action: Kondutoj kiuj devas esti aldonitaj en aroj, bonvolu trovi la uzadodokumentaron por detaloj
-                default-role: La defaŭlta rolo de la grup-generita interfaco Bonvolu konsulti la uzdokumentadon por detaloj.
-                gen-to: Specifu la eliglokon de la generitaj .go dosieroj
+                default-role: La defaŭlta rolo de la grup-generita interfaco Bonvolu raporti al la uzdokumentado por detaloj.
+                gen-to: Indiku la eligan lokon de la generitaj .go dosieroj
                 list-option: La listo ankaŭ povas esti filtrita, bonvolu trovi la uzan dokumentaron por detaloj.
                 model: Specifu la modelnomon, subtenu preterlasi la prefikson `modelo`
             long: Generu interfacojn en aroj kaj aldonu interfacon por certa modelo en la .proto-dosiero
@@ -38,9 +38,9 @@ cli:
             long: Generu .editorconfig dosieron por redaktila agordo
             short: Generu .editorconfig dosieron
         flags:
-            add-proto-files: Se vi bezonas importi aliajn .proto dosierojn/dosierujojn vojojn kiuj ne estas en la sama dosierujo kiel la specifita .proto dosiero, ĉi tiu operacio aldonos (ne anstataŭigos) la vojon agordita en la agorda dosiero.
-            go-module-prefix: Por la vojo de go_package agordita en la .proto-dosiero kaj la reala, vi povas agordi ĉi tiun opcion
-            input: Specifi la .proto fontdosieron esti generita
+            add-proto-files: Se vi bezonas importi aliajn .proto-dosierujojn/dosierujojn kiuj ne estas en la sama dosierujo kiel la specifita .proto-dosiero, ĉi tiu operacio aldonos (ne anstataŭigos) la vojon agordita en la agorda dosiero.
+            go-module-prefix: Por la vojo de go_package agordita en la .proto-dosiero kaj la efektiva, vi povas agordi ĉi tiun opcion
+            input: Specifu la .proto fontdosieron esti generita
             output-path: Ĉi tiu opcio povas esti agordita kiam la vojo de go_package agordita en la .proto-dosiero estas malkonsekvenca kun la vojo, kiu efektive devas esti generita.
             overwrite: Por enhavo, kiu ne estos regenerita, devigu anstataŭigon de ekzistanta enhavo
             proto-files: Por importi aliajn .proto-dosierujojn/dosierujojn kiuj ne estas en la sama dosierujo kiel la specifita .proto-dosiero, ĉi tiu operacio estas opcio por anstataŭi la agordan kampon en la agorda dosiero.
@@ -77,7 +77,7 @@ cli:
         state:
             conf:
                 long: Generu agordan legokodon por agorda legado de komerca servo
-                short: Generu agordan dosieron legante kodon
+                short: Generu agordan dosieron legantan kodon
             flags:
                 cache: Ĉu ebligi kaŝmemor-rilatan generacion
                 config: Ĉu generi agordan kodon
@@ -89,13 +89,13 @@ cli:
             long: Generu ĉiujn rilatajn funkciojn de ŝtato por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generado de stato
             table:
-                long: Generu state.table rilatan kodon, uzatan por datumbaza konekto kaj tabelinicialigo kiam la servo estas komencita.
+                long: Generu state.table rilatan kodon, uzatan por datumbaza konekto kaj tabelkomenciĝo kiam la servo komenciĝas.
                 short: Generi state.table rilatan kodon
         table:
             long: Ĉiuj rilataj funkcioj de generado de tabeloj por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generi tabelojn
     group:
-        gen: generado de kodo
+        gen: kodogenerado
     help:
         additional_commands: Kromaj komandoj
         aliases: komando kaŝnomo
@@ -125,7 +125,7 @@ cli:
                 languages: Indiku la cellingvon por tradukado
                 src-file: Fontdosiero tradukenda (postulata)
                 src-language: La lingvo de la fontdosiero (se ne specifita, la ilo aŭtomate determinos la fontdosieron)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Traduka kanalo: Subtena tipo {{range $key,$value := .Type}}{{$key}}:{{$valoro}}{{end}}'
             long: Plurlingvaj dosieroj de certa fonto estas konvertitaj en dosierojn en la sama formato en aliaj lingvoj.
@@ -205,7 +205,7 @@ lang:
     jv: la javano
     jw: la javano
     ka: kartvela
-    kk: Kazaĥa
+    kk: Kazaĥo
     km: kamboĝa
     kn: Kannada
     ko: korea
@@ -222,7 +222,7 @@ lang:
     lv: latva
     mai: Maithili
     mg: malagasaj
-    mi: maoria
+    mi: maora
     mk: makedona
     ml: la malajala
     mn: mongola
@@ -285,5 +285,5 @@ lang:
     zh-hk: Ĉina (Honkongo)
     zh-mo: Ĉina (Makao)
     zh-sg: Ĉina (Singapuro)
-    zh-tw: tradicia ĉino)
+    zh-tw: Ĉina (Tajvano)
     zu: la zulua

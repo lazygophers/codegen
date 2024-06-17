@@ -26,7 +26,7 @@ cli:
             long: Xera ficheiros de caché para os SDK relacionados coa memoria caché de chamadas empresariais
             short: Xerar ficheiro de caché
         cmd:
-            long: Xerar ficheiros de entrada para servizos empresariais
+            long: Xera ficheiros de entrada para servizos empresariais
             short: Xerar ficheiro de entrada
         conf:
             long: Xerar un modelo de ficheiro de configuración
@@ -59,7 +59,7 @@ cli:
             short: Xerar ficheiro .golangci.yml
         goreleaser:
             long: Xera o ficheiro .goreleaser.yml para a configuración das ferramentas de lanzamento
-            short: Xerar ficheiro .goreleaser.yml
+            short: Xera o ficheiro .goreleaser.yml
         impl:
             long: Xerar ficheiros de implantación para a implantación de servizos empresariais
             short: Xerar ficheiros de implementación
@@ -81,7 +81,7 @@ cli:
             flags:
                 cache: Indica se se activa a xeración relacionada coa caché
                 config: Indica se se debe xerar código relacionado coa configuración
-                i18n: Indica se se activa a xeración relacionada en varios idiomas (a xeración só inclúe a inicialización do estado e outro contido, e non inclúe tradución automática de varios idiomas. Se precisas unha tradución automática, utiliza {{.Command}} para ver os detalles)
+                i18n: Indica se se activa a xeración relacionada en varios idiomas (a xeración só inclúe a inicialización do estado e outro contido, e non inclúe a tradución automática de varios idiomas. Se precisas unha tradución automática, utiliza {{.Command}} para ver os detalles)
                 table: Indica se se activa a xeración de bases de datos relacionadas coa base de datos
             i18n:
                 long: Xera código relacionado con i18n para chamadas internacionais en varios idiomas
@@ -89,10 +89,10 @@ cli:
             long: Xera todas as funcións relacionadas do estado para a xestión de recursos con estado ou de recursos estáticos dos servizos empresariais
             short: Todas as funcións relevantes para xerar estado
             table:
-                long: Xera código relacionado state.table, usado para a conexión de base de datos e a inicialización da táboa cando se inicia o servizo.
+                long: Xera código relacionado state.table, usado para a conexión á base de datos e a inicialización da táboa cando se inicia o servizo.
                 short: Xerar código relacionado state.table
         table:
-            long: Todas as funcións relacionadas de xeración de táboas para recursos con estado ou xestión de recursos estáticos dos servizos empresariais
+            long: Todas as funcións relacionadas de xeración de táboas para recursos con estado ou xestión de recursos estáticos de servizos empresariais
             short: Todas as funcións relacionadas para xerar táboas
     group:
         gen: xeración de código
@@ -125,12 +125,12 @@ cli:
                 languages: Especifique o idioma de destino para a tradución
                 src-file: Ficheiro fonte a traducir (obrigatorio)
                 src-language: O idioma do ficheiro de orixe (se non se especifica, a ferramenta determinará automaticamente o ficheiro de orixe)
-                translater:
+                translator:
                     google-free: Tradutor web de Google
                     usage: 'Canle de tradución: tipo de soporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Os ficheiros multilingües dunha determinada fonte convértense en ficheiros no mesmo formato noutros idiomas.
             short: traducir
-    long: Un conxunto de ferramentas para preguiceiros, que inclúe un marco de backend baseado en "proto", modelos de uso habitual e tradución multilingüe
+    long: Un conxunto de ferramentas para preguiceiros, que inclúe un marco de backend baseado en 'proto', modelos de uso habitual e tradución multilingüe
     short: Un conxunto de ferramentas para preguiceiros
     sync:
         flags:
@@ -160,7 +160,7 @@ lang:
     bs: bosníaco
     ca: catalán
     ceb: Cebuano
-    ckb: kurdo (sorani)
+    ckb: Curdo (Sorani)
     co: corso
     cs: checo
     cy: galés
@@ -179,7 +179,7 @@ lang:
     fi: finés
     fil: filipino (tagalo)
     fr: francés
-    fy: frisón
+    fy: frisona
     ga: irlandesa
     gd: Gaélico escocés
     gl: galego
@@ -211,7 +211,7 @@ lang:
     ko: coreano
     kri: crioulo
     ku: kurdo
-    ky: quirguises
+    ky: Kirguiz
     la: latín
     lb: luxemburgués
     lg: Luganda
@@ -240,7 +240,7 @@ lang:
     or: Oriya (Odia)
     pa: punxabi
     pl: polaco
-    ps: Paxtú
+    ps: Pashto
     pt: Portugués (Portugal, Brasil)
     qu: Quechua
     ro: romanés
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinés (Hong Kong)
     zh-mo: chinés (Macao)
     zh-sg: Chinés (Singapur)
-    zh-tw: chinés tradicional)
+    zh-tw: chinés (Taiwán)
     zu: Zulú

@@ -125,7 +125,7 @@ cli:
                 languages: Specify the target language for translation
                 src-file: Source file to be translated (required)
                 src-language: The language of the source file (if not specified, the tool will automatically determine the source file)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Translation channel: Support type {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Multilingual files from a certain source are converted into files in the same format in other languages.
@@ -229,7 +229,7 @@ lang:
     mni-mtei: Meitei (Manipuri)
     mr: marathi
     ms: Malay
-    mt: maltese
+    mt: Maltese
     my: Burmese
     ne: Nepali
     nl: Dutch
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinese (Hong Kong)
     zh-mo: Chinese(Macau)
     zh-sg: Chinese (Singapore)
-    zh-tw: traditional Chinese)
+    zh-tw: Chinese (Taiwan)
     zu: Zulu

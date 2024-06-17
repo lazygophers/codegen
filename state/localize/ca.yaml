@@ -50,13 +50,13 @@ cli:
             tables-enable_field_deleted_at: Si s'ha d'activar la configuració predeterminada del camp deleted_at a la base de dades
             tables-enable_field_id: Habiliteu la generació de configuració predeterminada per als camps relacionats amb la base de dades
             tables-enable_field_updated_at: Si s'ha d'activar el valor predeterminat del camp updated_at a la base de dades
-            tables-enable_gorm_tag_column: Si s'ha d'activar la generació de gorm relacionada amb la base de dades
+            tables-enable_gorm_tag_column: Si s'habilita la generació de gorm relacionada amb la base de dades
         gitignote:
             long: Genereu fitxers .gitignore per a la gestió de fitxers ignorats en el control de versions
             short: Genera un fitxer .gitignore
         golang-lint:
             long: Genereu un fitxer .golangci.yml per a la inspecció de la qualitat del codi
-            short: Genereu el fitxer .golangci.yml
+            short: Genera un fitxer .golangci.yml
         goreleaser:
             long: Genereu el fitxer .goreleaser.yml per a la configuració de les eines de llançament
             short: Genereu el fitxer .goreleaser.yml
@@ -90,7 +90,7 @@ cli:
             short: Totes les funcions rellevants per generar l'estat
             table:
                 long: Genereu codi relacionat amb state.table, utilitzat per a la connexió de la base de dades i la inicialització de la taula quan s'inicia el servei.
-                short: Genera codi relacionat amb state.table
+                short: Genera codi relacionat state.table
         table:
             long: Totes les funcions relacionades de generació de taules per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
             short: Totes les funcions relacionades per generar taules
@@ -109,11 +109,11 @@ cli:
         usage: Instruccions per utilitzar {{.Name}}
         use: utilitzar
     i18n:
-        long: Kit d'eines multilingües relacionades amb la internacionalització
-        short: Kit d'eines multilingües relacionades amb la internacionalització
+        long: Kit d'eines multilingüe relacionat amb la internacionalització
+        short: Kit d'eines multilingüe relacionat amb la internacionalització
         support:
             flags:
-                language: Especifiqueu l'idioma a mostrar, en cas contrari, el codi d'idioma s'utilitzarà per mostrar l'idioma
+                language: Especifiqueu l'idioma que voleu mostrar, en cas contrari, el codi d'idioma s'utilitzarà per mostrar l'idioma
             long: Llista tots els idiomes compatibles
             short: Llista d'idiomes compatibles
         tran:
@@ -125,7 +125,7 @@ cli:
                 languages: Especifiqueu l'idioma de destinació per a la traducció
                 src-file: Fitxer font que s'ha de traduir (obligatori)
                 src-language: L'idioma del fitxer font (si no s'especifica, l'eina determinarà automàticament el fitxer font)
-                translater:
+                translator:
                     google-free: Traductor web de Google
                     usage: 'Canal de traducció: tipus de suport {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Els fitxers multilingües d'una determinada font es converteixen en fitxers en el mateix format en altres idiomes.
@@ -137,7 +137,7 @@ cli:
             password: Contrasenya utilitzada per sol·licitar la verificació
             template-path: Camí de sincronització de plantilles
             username: Nom d'usuari utilitzat per sol·licitar la verificació
-        long: Sincronitzeu la configuració des de l'extrem remot i fusioneu-la amb la configuració local. El fitxer de plantilla és compatible al mateix temps durant la sincronització (si està configurat).
+        long: Sincronitzeu la configuració des de l'extrem remot i fusioneu-la amb la configuració local El fitxer de plantilla és compatible al mateix temps durant la sincronització (si està configurat).
         short: Sincronitza la configuració des del control remot
     up-mod:
         flags:
@@ -240,7 +240,7 @@ lang:
     or: Oriya (Odia)
     pa: punjabi
     pl: polonès
-    ps: Paxto
+    ps: Pashto
     pt: Portuguès (Portugal, Brasil)
     qu: Quechua
     ro: romanès
@@ -285,5 +285,5 @@ lang:
     zh-hk: Xinès (Hong Kong)
     zh-mo: Xinès (Macau)
     zh-sg: Xinès (Singapur)
-    zh-tw: xinés tradicional)
+    zh-tw: Xinès (Taiwan)
     zu: Zulu

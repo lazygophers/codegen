@@ -289,6 +289,18 @@ func GenerateImpl(pb *PbPackage) (err error) {
 		return err
 	}
 
+	if len(goPackage) == 0 {
+		goPackage = make(map[string]*GoPackage)
+	}
+
+	if goPackage["impl"] == nil {
+		goPackage["impl"] = &GoPackage{}
+	}
+
+	if len(goPackage["impl"].FuncMap) == 0 {
+		goPackage["impl"].FuncMap = make(map[string]*GoFuncNode)
+	}
+
 	matchFunc := func(rpc *PbRPC) bool {
 		for _, goFuncNode := range goPackage["impl"].FuncMap {
 			goFunc := goFuncNode.goFunc
@@ -324,18 +336,20 @@ func GenerateImpl(pb *PbPackage) (err error) {
 }
 
 type RpcRouteOption struct {
-	RpcName string
-	Path    string
-	Method  string
-	Role    string
+	RpcName      string
+	Path         string
+	Method       string
+	Role         string
+	SkipGenRoute bool
 }
 
 func pbRpc2Route(rpc *PbRPC) *RpcRouteOption {
 	opt := &RpcRouteOption{
-		RpcName: rpc.Name,
-		Path:    rpc.genOption.Path,
-		Method:  rpc.genOption.Method,
-		Role:    rpc.genOption.Role,
+		RpcName:      rpc.Name,
+		Path:         rpc.genOption.Path,
+		Method:       rpc.genOption.Method,
+		Role:         rpc.genOption.Role,
+		SkipGenRoute: rpc.genOption.SkipGenRoute,
 	}
 
 	return opt

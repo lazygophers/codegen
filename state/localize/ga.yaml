@@ -77,7 +77,7 @@ cli:
         state:
             conf:
                 long: Gin cód léitheoireachta comhad cumraíochta le haghaidh léamh cumraíochta seirbhíse gnó
-                short: Gin cód léitheoireachta comhaid cumraíochta
+                short: Gin cód léitheoireachta comhad cumraíochta
             flags:
                 cache: Cibé an féidir giniúint a bhaineann le taisce a chumasú
                 config: Cibé an ndéanfar cód a bhaineann le cumraíocht a ghiniúint
@@ -125,7 +125,7 @@ cli:
                 languages: Sonraigh an sprioctheanga atá le haistriú
                 src-file: Comhad foinseach le haistriú (riachtanach)
                 src-language: Teanga an chomhaid foinse (mura bhfuil sé sonraithe, cinnfidh an uirlis an comhad foinse go huathoibríoch)
-                translater:
+                translator:
                     google-free: Google Web Translate
                     usage: 'Cainéal aistriúcháin: Cineál tacaíochta {{ range $key, $value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Tiontaítear comhaid ilteangacha ó fhoinse áirithe go comhaid san fhormáid chéanna i dteangacha eile.
@@ -285,5 +285,5 @@ lang:
     zh-hk: Sínis (Hong Kong)
     zh-mo: Sínis (Macao)
     zh-sg: Sínis (Singeapór)
-    zh-tw: Sínis traidisiúnta)
+    zh-tw: Sínis (Taiwan)
     zu: Súlúis

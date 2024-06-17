@@ -208,12 +208,12 @@ type CfgI18n struct {
 	Languages    []string `json:"languages,omitempty" yaml:"languages,omitempty" toml:"languages,omitempty"`
 	AllLanguages bool     `json:"all-languages,omitempty" yaml:"all-languages,omitempty" toml:"all-languages,omitempty"`
 
-	Translater string `json:"translater,omitempty" yaml:"translater,omitempty" toml:"translater,omitempty"`
+	Translator string `json:"translator,omitempty" yaml:"translator,omitempty" toml:"translator,omitempty"`
 }
 
 func (p *CfgI18n) apply() {
-	if p.Translater == "" {
-		p.Translater = "google-free"
+	if p.Translator == "" {
+		p.Translator = "google-free"
 	}
 
 	if p.AllLanguages {
