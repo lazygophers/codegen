@@ -17,7 +17,7 @@ cli:
                 gen-to: Ruwasqa .go willañiqikunap lluqsinan maypi kasqanmanta willay
                 list-option: Lista filtrasqa kanman, ama hina kaspa, llamk'achiyta qillqakunata maskay sut'inchaykunapaq.
                 model: Modelo sutita willay, yanapakuy `model` ñawpaq simita saqispa
-            long: Huñukunapi interfazkunata paqarichiy chaymanta huk interfazta yapay huk modelopaq .proto willañiqipi
+            long: Huñukunapi interfazkunata paqarichiy chaymanta huk interfazta huk modelopaq .proto willañiqipi yapay
             short: Huñu miray interfaz
         all:
             long: Kay yanapakuywan yanapasqa llapa codigokunata paqarichiy
@@ -42,13 +42,13 @@ cli:
             go-module-prefix: .proto willañiqipi wakichisqa go_package ñanpaq chaymanta chiqap kaqpaq, kay akllanata wakichiyta atikunki
             input: .proto pukyu willañiqita paqarichisqa kananpaq willay
             output-path: Kay akllanaqa wakichisqa kanman mayk'aq go_package ñan .proto willañiqipi wakichisqa ñan patawan mana tupaqchu chiqamanta paqarichisqa kanan tiyan.
-            overwrite: Mana musuqmanta paqarichisqa kananpaq, kunan kaq qillqakunata kallpachay
+            overwrite: Mana musuqmanta ruwasqa kananpaq, kunan kaq contenidomanta qillqayta kallpachay
             proto-files: Huk .proto willañiqikunata/karpeta ñankunata apamunapaq, mana kikin qillqana mayt'upichu, nisqa .proto willañiqiwan, kay llamk'ayqa huk akllana kan, wakichiy willañiqipi wakichiy pampata llallinapaq.
             protoc: '`protoc` sapanchasqa willañiqi ñan'
             protoc-gen-go: '`protoc-gen-go` yapasqa ñan'
             tables-enable_field_created_at: Sichus kamasqa_at pampap willaypa tiyapuyninpa ñawpaqmanta wakichiy mirachiyta atichinapaq
             tables-enable_field_deleted_at: Willayta waqaychanapi deleted_at pampap ñawpaqmanta churasqa kayninta atichinapaqchu icha manachu
-            tables-enable_field_id: Willayta waqaychanawan tupaq pampakunapaq ñawpaqmanta ruwasqa wakichiy mirachiyta atichiy
+            tables-enable_field_id: Willaypa tiyapuyninwan tupaq pampakunapaq ñawpaqmanta ruwasqa wakichiy mirachiyta atichiy
             tables-enable_field_updated_at: Willayta waqaychanapi updated_at pampap ñawpaqmanta chaninninta atichinapaqchu icha manachu
             tables-enable_gorm_tag_column: Willayta waqaychanawan tupaq gorm mirachiyta atichinapaqchu icha manachu
         gitignote:
@@ -73,7 +73,7 @@ cli:
         pb:
             long: .pb.go willañiqikunata paqarichiy, chaykunaqa .proto willañiqikunata paqarichinanpaqmi llamk'achisqa.
             short: .pb.go willañiqita paqarichiy
-        short: Código paqarichiq
+        short: Código generador nisqa
         state:
             conf:
                 long: Wakichiy willañiqi ñawiriy codigo ruway llamkana yanapakuy wakichiy ñawiriypaq
@@ -104,8 +104,8 @@ cli:
         flags: parámetro nisqa
         get_info: aswan sut’i willakuykunata tarinapaq
         global_flags: pachantinpi parámetros nisqakuna
-        long: 'Yanapakuyqa yanapakuyta qun ima kamachiypaqpas ruwanapi. '
-        short: Ima kamachiypipas yanapay
+        long: 'Llamkanapi mayqin kamachiypaqpas llamkana kamachiykunata quy. '
+        short: Ima kamachiytapas llamk'achinapaq kamachiykuna
         usage: '{{.Suti}} llamk''achinapaq kamachiykuna.'
         use: hapiy
     i18n:
@@ -130,7 +130,7 @@ cli:
                     usage: 'Tikray ñan: Yanapakuy laya {{range $key,$value := .Tipo}}{{$llave}}:{{$value}}{{end}}'
             long: Huk pukyumanta achka simiyuq willañiqikunaqa huk simikunapi kaqlla rikch'aq willañiqikunamanmi tikrasqa.
             short: tikray
-    long: Huk yanapakuy churasqa qilla runakunapaq, chaymanta 'proto'-pi sayasqa qhipa marco, común llamk'achisqa plantillakuna, chaymanta achka simi tikray
+    long: Qilla runakunapaq huk yanapakuy churasqa, chaymanta 'proto'-pi sayasqa qhipa marco, sapa kuti llamk'achisqa plantillakuna, achka simi tikraypas
     short: Qilla runakunapaq churasqa herramienta
     sync:
         flags:
@@ -141,7 +141,7 @@ cli:
         short: Karumanta ruwanakunata tinkuchiy
     up-mod:
         flags:
-            goproxy: Goproxy direccionta niy, mana kaqtinqa, muyuriq tikraqpi ñawpaq kaqmi llamk'achisqa kanqa
+            goproxy: Goproxy direccionta niy, mana kaptinqa, muyuriq tikraqpi ñawpaq kaqmi llamk'achisqa kanqa
         long: go.mod willañiqip dependencia kaqninta musuqchay
         short: go.mod qillqata musuqyachiy
 lang:
@@ -259,7 +259,7 @@ lang:
     st: Sesoto simipi
     su: Sundanu simi
     sv: Sueco simi
-    sw: Swahili simipi
+    sw: Suajili simipi
     ta: tamil
     te: telugu
     tg: Tajik simipi
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chino (Hong Kong) .
     zh-mo: Chino(Macau) .
     zh-sg: Chinu simi (Singapur) .
-    zh-tw: tradicional chino) .
+    zh-tw: Chino (Taiwan) .
     zu: Zulu simipi

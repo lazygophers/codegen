@@ -86,7 +86,7 @@ cli:
             i18n:
                 long: Tengeneza msimbo unaohusiana na i18n kwa simu za kimataifa za lugha nyingi
                 short: Tengeneza msimbo unaohusiana wa i18n
-            long: Tengeneza kazi zote zinazohusiana za serikali kwa rasilimali za hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
+            long: Tengeneza kazi zote zinazohusiana za serikali kwa rasilimali ya hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
             short: Vipengele vyote muhimu vya kuunda serikali
             table:
                 long: Tengeneza msimbo unaohusiana na state.table, unaotumika kwa uunganisho wa hifadhidata na uanzishaji wa jedwali wakati huduma inapoanzishwa.
@@ -104,8 +104,8 @@ cli:
         flags: kigezo
         get_info: ili kupata taarifa za kina zaidi
         global_flags: vigezo vya kimataifa
-        long: 'Msaada hutoa msaada kwa amri yoyote katika programu. '
-        short: Msaada kwa amri yoyote
+        long: 'Toa maagizo ya matumizi kwa amri yoyote kwenye programu. '
+        short: Maagizo ya kutumia amri yoyote
         usage: Maagizo ya kutumia {{.Name}}
         use: kutumia
     i18n:

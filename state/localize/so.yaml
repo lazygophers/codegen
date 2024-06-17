@@ -12,7 +12,7 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Dabeecadaha u baahan in lagu daro dufcadaha, fadlan u hel dukumentiga isticmaalka wixii faahfaahin ah
+                action: Dabeecadaha u baahan in lagu daro dufcad, fadlan u hel dukumentiga isticmaalka wixii faahfaahin ah
                 default-role: Doorka caadiga ah ee interface-ka Dufcaddii la soo saaray Fadlan tixraac dukumentiga isticmaalka.
                 gen-to: Sheeg goobta wax soo saarka ee faylasha .go ee la sameeyay
                 list-option: Liiska sidoo kale waa la shaandheyn karaa, fadlan u hel dukumeentiga isticmaalka wixii faahfaahin ah.
@@ -42,11 +42,11 @@ cli:
             go-module-prefix: Jidka go_package ee lagu habeeyay faylka .proto iyo midka dhabta ah, waxaad u habayn kartaa doorashadan
             input: Sheeg faylka isha proto ee la soo saarayo
             output-path: Doorashadan waxa la habayn karaa marka dariiqa go_package lagu habeeyay faylka .proto-ka uu yahay mid aan waafaqsanayn sariirta wadada ee runtii u baahan in la soo saaro.
-            overwrite: Wixii ka kooban ee aan dib loo soo saari doonin, ku qasbbi in wax laga beddelo waxa jira
+            overwrite: Wixii macluumaad ah ee aan dib loo soo saari doonin, ku qasbbi in wax laga beddelo waxa jira
             proto-files: Si aad u soo dejiso .proto-gale/dariiqyada galka ee aan ku jirin galka la midka ah ee faylka .proto ee la cayimay, hawlgalkani waa ikhtiyaar lagu baabi'inayo goobta qaabeynta ee faylka qaabeynta.
             protoc: Jidka faylalka 'protoc' la beddeli karo
             protoc-gen-go: Waddada 'protoc-gen-go' plugin
-            tables-enable_field_created_at: Haddi la awoodo jiilka qaabaynta caadiga ah ee kaydka created_at field
+            tables-enable_field_created_at: Haddi la awoodo jiilka qaabaynta caadiga ah ee kaydka created_at
             tables-enable_field_deleted_at: Haddii la awoodo dejinta default_at garoonka ku jira kaydka xogta
             tables-enable_field_id: U sahle jiilka qaabeynta caadiga ah ee meelaha xogta la xiriira
             tables-enable_field_updated_at: Haddii la awoodo qiimaha caadiga ah ee goobta updated_at ee kaydka xogta
@@ -71,13 +71,13 @@ cli:
             long: Samee faylka go.mod ee maaraynta ku tiirsanaanta
             short: Samee faylka go.mod
         pb:
-            long: Samee .pb.go faylalka, kuwaas oo loo isticmaalo in lagu soo saaro .faylalka proto-yada ee la xidhiidha x ayaa si toos ah loogu dari doonaa habaynta
+            long: Samee faylasha .pb.go, kuwaas oo loo isticmaalo in lagu soo saaro .faylal proto ah oo ku haboon x ayaa si toos ah loogu dari doonaa habaynta.
             short: Samee faylka .pb.go
         short: Koronto dhaliyaha
         state:
             conf:
                 long: Samee koodka akhrinta faylka qaabaynta ee akhrinta qaabaynta adeegga ganacsiga
-                short: Samee koodhka akhrinta faylka qaabeynta
+                short: Samee koodhka akhriska faylka qaabeynta
             flags:
                 cache: Haddii la awoodo jiilka la xidhiidha kaydinta
                 config: Haddii la curiyo kood isku xidhka la xidhiidha
@@ -104,8 +104,8 @@ cli:
         flags: halbeegga
         get_info: si aad u hesho xog faahfaahsan
         global_flags: xuduudaha caalamiga ah
-        long: 'Caawinadu waxay caawimo ka siisaa amar kasta oo codsiga ku jira. '
-        short: Caawi amar kasta
+        long: 'Bixi tilmaamaha isticmaalka amar kasta oo ku jira arjiga. '
+        short: Tilmaamaha isticmaalka amar kasta
         usage: Tilmaamaha isticmaalka {{.Name}}
         use: isticmaal
     i18n:
@@ -114,7 +114,7 @@ cli:
         support:
             flags:
                 language: Sheeg luqadda aad muujinayso, haddii kale koodka luqadda ayaa loo isticmaali doonaa in lagu muujiyo luqadda
-            long: Liis garee dhammaan luqadaha la taageeray
+            long: Liis garee dhammaan luqadaha la taageero
             short: Liiska luqadda la taageeray
         tran:
             flags:
@@ -171,7 +171,7 @@ lang:
     ee: Ewe
     el: Giriig
     en: Ingiriis
-    eo: Esperanto
+    eo: Espanto
     es: isbaanish
     et: Istooniyaan
     eu: basque
@@ -193,12 +193,12 @@ lang:
     hmn: Hmong
     hr: Croatian
     ht: Haitian Creole
-    hu: hunguriga
+    hu: hunguri
     hy: Armeeniyaan
     id: Indonesian
     ig: Igbo
     ilo: Ilocano
-    is: Iceland
+    is: Icelandic
     it: Talyaani
     iw: cibraan
     ja: Jabbaan

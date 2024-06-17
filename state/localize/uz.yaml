@@ -39,9 +39,9 @@ cli:
             short: .editorconfig faylini yarating
         flags:
             add-proto-files: Belgilangan .proto fayli bilan bir xil papkada bo'lmagan boshqa .proto fayllar/papka yo'llarini import qilishingiz kerak bo'lsa, bu operatsiya konfiguratsiya faylida sozlangan yo'lni qo'shadi (ustiga yozmaydi).
-            go-module-prefix: .proto faylida sozlangan go_package yo'li va haqiqiy uchun, siz ushbu parametrni sozlashingiz mumkin
+            go-module-prefix: .proto faylida sozlangan go_package yo'li va haqiqiy uchun ushbu parametrni sozlashingiz mumkin
             input: Yaratiladigan .proto manba faylini belgilang
-            output-path: Ushbu parametr .proto faylida sozlangan go_package yo'li aslida yaratilishi kerak bo'lgan yo'l to'shagiga mos kelmasa, sozlanishi mumkin.
+            output-path: Ushbu parametr .proto faylida sozlangan go_package yoʻli aslida yaratilishi kerak boʻlgan yoʻl toʻshagiga mos kelmasa, sozlanishi mumkin.
             overwrite: Qayta tiklanmaydigan kontent uchun mavjud kontentni qayta yozishga majbur qiling
             proto-files: Belgilangan .proto fayli bilan bir xil papkada boʻlmagan boshqa .proto fayllar/papka yoʻllarini import qilish uchun bu operatsiya konfiguratsiya faylidagi konfiguratsiya maydonini bekor qilish variantidir.
             protoc: '`protoc` sozlanishi mumkin bo''lgan fayl yo''li'
@@ -104,8 +104,8 @@ cli:
         flags: parametr
         get_info: batafsil ma'lumot olish uchun
         global_flags: global parametrlar
-        long: 'Yordam ilovadagi har qanday buyruq uchun yordam beradi. '
-        short: Har qanday buyruq bo'yicha yordam
+        long: 'Ilovadagi har qanday buyruq uchun foydalanish ko''rsatmalarini taqdim eting. '
+        short: Har qanday buyruqni ishlatish bo'yicha ko'rsatmalar
         usage: '{{.Name}} dan foydalanish boʻyicha koʻrsatmalar'
         use: foydalanish
     i18n:
@@ -128,7 +128,7 @@ cli:
                 translator:
                     google-free: Google veb-tarjimoni
                     usage: 'Tarjima kanali: Yordam turi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
-            long: Muayyan manbadan olingan ko'p tilli fayllar boshqa tillardagi bir xil formatdagi fayllarga aylantiriladi.
+            long: Muayyan manbadan olingan ko'p tilli fayllar boshqa tillarda bir xil formatdagi fayllarga aylantiriladi.
             short: tarjima qiling
     long: Dangasa odamlar uchun asboblar to'plami, jumladan "proto"-ga asoslangan backend ramkasi, tez-tez ishlatiladigan andozalar va ko'p tilli tarjima
     short: Dangasa odamlar uchun asboblar to'plami
@@ -213,7 +213,7 @@ lang:
     ku: kurd
     ky: qirg'iz
     la: lotin
-    lb: Lyuksemburgcha
+    lb: Lyuksemburg
     lg: Luganda
     ln: Lingala
     lo: Lao

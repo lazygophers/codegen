@@ -3,10 +3,10 @@ cli:
         flags:
             no-descriptions: Monokia nga tohutohu whakaotinga
         long: |
-            Ka whakaputa i te tuhinga whakaoti-aunoa mo {{.RootName}} mo te anga kua tohua.
+            Ka whakaputa i te tuhinga whakaoti aunoa mo {{.RootName}} mo te anga kua tohua.
         short: Hangaia he tuhinga whakaoti aunoa mo te anga kua tohua
         subcommand:
-            short: Hangaia te tuhinga whakaoti aunoa mo {{.Whakahaua}}
+            short: Hangaia te tuhinga whakaoti-aunoa mo {{.Command}}
     flags:
         debug: Putanga rangitaki taipitopito
     gen:
@@ -32,7 +32,7 @@ cli:
             long: Hangaia te tauira kōnae whirihoranga
             short: Waihanga kōnae whirihoranga
         dockerignore:
-            long: Waihangahia te konae .dockerignore mo te hanga whakaahua a Docker kia kore ai e aro ki te whakahaerenga konae
+            long: Hangaia he konae .dockerignore mo te hanga whakaahua a Docker kia kore ai e aro ki te whakahaerenga konae
             short: Hangaia te kōnae .dockerignore
         editorconfig:
             long: Hangaia he kōnae .editorconfig mo te whirihoranga ētita
@@ -46,11 +46,11 @@ cli:
             proto-files: Hei kawemai i etahi atu kōnae .proto / ara kōpaki kaore i roto i te kōpaki rite ki te konae .proto kua tohua, ko tenei mahi he whiringa ki te whakakore i te mara whirihoranga i roto i te konae whirihoranga.
             protoc: '`protoc` ara kōnae whakarite'
             protoc-gen-go: ara mono `protoc-gen-go`
-            tables-enable_field_created_at: Mena ka taea te whakangao whirihoranga taunoa o te papaunga raraunga created_at mara
+            tables-enable_field_created_at: Mena ka taea te hanga whirihoranga taunoa o te papaarangi i hangaia_i te mara
             tables-enable_field_deleted_at: Mena ka taea te tautuhinga taunoa o te deleted_at mara i roto i te pātengi raraunga
-            tables-enable_field_id: Whakahohehia te hanga whirihoranga taunoa mo nga mara e pa ana ki te papaunga raraunga
-            tables-enable_field_updated_at: Mena ka taea te uara taunoa o te apure updated_at i roto i te papaunga raraunga
-            tables-enable_gorm_tag_column: Mena ka taea te hanga gorm e pa ana ki te paataka raraunga
+            tables-enable_field_id: Whakahohehia te whakaputanga whirihoranga taunoa mo nga mara e pa ana ki te papaunga raraunga
+            tables-enable_field_updated_at: Ki te whakahohe i te uara taunoa o te āpure updated_at i te pātengi raraunga
+            tables-enable_gorm_tag_column: Mena ka whakahohehia te whakatipuranga gorm e pa ana ki te putunga raraunga
         gitignote:
             long: Waihangahia nga konae .gitignore mo te whakahaerenga o nga konae kaore i arohia ki te mana putanga
             short: Hangaia te kōnae .giignore
@@ -58,7 +58,7 @@ cli:
             long: Waihangahia te konae .golangci.yml hei tirotiro i te kounga o te waehere
             short: Hangaia te kōnae .golangci.yml
         goreleaser:
-            long: Hangaia he konae .goreleaser.yml mo te whirihoranga o nga taputapu tuku
+            long: Hangaia he kōnae .goreleaser.yml mo te whirihoranga o nga taputapu tuku
             short: Hangaia te kōnae .goreleaser.yml
         impl:
             long: Waihangahia nga konae whakatinanatanga mo te whakatinanatanga o nga ratonga pakihi
@@ -66,12 +66,12 @@ cli:
         long: Kaihanga Waehere, e tautoko ana i nga tauira maha
         makefile:
             long: Waihangahia nga konae Makefile mo nga taputapu hanga me etahi atu whakahau e pa ana
-            short: Hanga Makefile
+            short: Waihanga Makefile
         mod:
             long: Hangaia te konae go.mod mo te whakahaere whakawhirinaki
             short: Hangaia te kōnae go.mod
         pb:
-            long: Hangaia nga konae .pb.go, ka whakamahia hei whakaputa i nga konae .proto ka taapirihia nga tapanga mara e tika ana kia rite ki te whirihoranga.
+            long: Waihangahia nga konae .pb.go, ka whakamahia hei whakaputa i nga konae .proto ka taapiri aunoatia nga tapanga mara x e ai ki te whirihoranga.
             short: Hangaia te kōnae .pb.go
         short: Kaihanga Waehere
         state:
@@ -79,14 +79,14 @@ cli:
                 long: Hanga he waehere panui konae whirihoranga mo te panui whirihoranga ratonga pakihi
                 short: Hanga he waehere panui kōnae whirihoranga
             flags:
-                cache: Ki te whakahohe i te reanga e pa ana ki te keteroki
+                cache: Me whakahohea te reanga e pa ana ki te keteroki
                 config: Ki te whakaputa waehere e pa ana ki te whirihoranga
                 i18n: Ki te whakaahei i te reanga reo-maha (ko te reanga anake kei roto ko te arataki kawanatanga me etahi atu korero, kaore he whakamaoritanga aunoa o nga reo maha. Ki te hiahia koe ki te whakamaoritanga aunoa, whakamahia te {{.Command}} hei tiro taipitopito)
                 table: Mena ka whakahohehia te hanga patengi raraunga e pa ana
             i18n:
                 long: Hanga he waehere e pa ana ki te i18n mo nga waea reo maha o te ao
                 short: Hanga i18n waehere e pa ana
-            long: Waihangahia nga mahi katoa e pa ana ki te kawanatanga mo nga rauemi tuuturu, mo te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
+            long: Hangaia nga mahi katoa e pa ana ki te kawanatanga mo nga rauemi tuuturu, mo te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
             short: Nga mahi whai take katoa mo te whakaputa i te ahua
             table:
                 long: Hangaia he waehere e pa ana ki te state.table, ka whakamahia mo te hononga raraunga me te arawhiti ripanga ina timata te ratonga.
@@ -104,8 +104,8 @@ cli:
         flags: tawhā
         get_info: ki te tiki atu i nga korero taipitopito
         global_flags: tawhā ao
-        long: 'Ko te awhina he awhina mo tetahi tono i roto i te tono. '
-        short: Awhina mo tetahi whakahau
+        long: 'Whakaratohia nga tohutohu whakamahi mo tetahi tono i roto i te tono. '
+        short: Nga tohutohu mo te whakamahi i tetahi whakahau
         usage: Nga tohutohu mo te whakamahi i a {{.Name}}
         use: whakamahi
     i18n:
@@ -120,24 +120,24 @@ cli:
             flags:
                 all-language: Whakamaoritia nga reo tautoko katoa (mehemea he pono kua monoa te kara reo)
                 force: Tuhia nga whakamaoritanga o naianei
-                force-key-prefix: mau taviri e titauhia ia faahepohia ia tuhiruahia
-                generate-const: Hangaia nga uara tatau mo te waea ngawari
+                force-key-prefix: mau taviri e tia ia faahepohia ia tuhiruahia
+                generate-const: Waihanga uara tatau mo te waea ngawari
                 languages: Tauwhāitihia te reo whainga mo te whakamaoritanga
-                src-file: Kōnae puna hei whakamaori (hiahia)
+                src-file: Ko te konae puna hei whakamaori (hiahia)
                 src-language: Te reo o te konae puna (mehemea kaore i tohua, ka whakatau aunoatia e te taputapu te konae puna)
                 translator:
                     google-free: Whakamaori Tukutuku a Google
                     usage: 'Te hongere whakamaori: Momo tautoko {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Ko nga konae reo maha mai i tetahi puna ka huri ki nga konae i roto i te ahua rite ki etahi atu reo.
             short: whakamaori
-    long: He huinga taputapu mo te hunga mangere, tae atu ki te anga-whakamuri o te 'proto', nga tauira e whakamahia nuitia ana, me te whakamaoritanga reo-maha
+    long: He huinga taputapu mo te hunga mangere, tae atu ki te anga-whakamuri o te 'proto', nga tauira e whakamahia nuitia ana, me te whakamaoritanga reo-maha.
     short: He huinga taputapu mo te hunga mangere
     sync:
         flags:
             password: Kupuhipa i whakamahia hei tono manatoko
             template-path: ara tukutahi tauira
             username: I whakamahia te ingoa kaiwhakamahi ki te tono manatoko
-        long: Tukutahitia te whirihoranga mai i te pito mamao ka hanumi ki te whirihoranga paetata Ka tautokohia te konae tauira i te wa ano i te tukutahitanga (mehemea kua whirihora).
+        long: Tukutahitia te whirihoranga mai i te pito mamao ka hanumi ki te whirihoranga paetata Ka tautokohia te konae tauira i te wa ano i te wa tukutahitanga (mehemea kua whirihorahia).
         short: Tukutahi whirihoranga mai i tawhiti
     up-mod:
         flags:
@@ -157,7 +157,7 @@ lang:
     bho: Bhojpuri
     bm: Bambara
     bn: Bengali
-    bs: Bosniana
+    bs: Bosnia
     ca: Katarana
     ceb: Cebuano
     ckb: Kurdish (Sorani)
@@ -176,7 +176,7 @@ lang:
     et: Estonian
     eu: Basque
     fa: Pahia
-    fi: Finiana
+    fi: Finnish
     fil: Filipino (Tagalog)
     fr: Wīwī
     fy: Frisian
@@ -217,7 +217,7 @@ lang:
     lg: Luganda
     ln: Lingala
     lo: Rao
-    lt: Lithuania
+    lt: Lithuanian
     lus: Mizo
     lv: Latvian
     mai: Maitiri
@@ -285,5 +285,5 @@ lang:
     zh-hk: Hainamana (Hong Kong)
     zh-mo: Hainamana(Makau)
     zh-sg: Hainamana (Singapore)
-    zh-tw: Hainamana tuku iho)
+    zh-tw: Hainamana (Taiwan)
     zu: Zulu

@@ -16,7 +16,7 @@ cli:
                 default-role: Standardrollen for den batch-genererede grænseflade Se brugsdokumentationen for detaljer.
                 gen-to: Angiv outputplaceringen for de genererede .go-filer
                 list-option: Listen kan også filtreres, se brugsdokumentationen for detaljer.
-                model: Angiv modelnavnet, støtte udeladelse af "model"-præfikset
+                model: Angiv modelnavnet, støtte udeladelse af `model`-præfikset
             long: Generer grænseflader i batches og tilføj en grænseflade for en bestemt model i .proto-filen
             short: Batchgenereringsgrænseflade
         all:
@@ -45,7 +45,7 @@ cli:
             overwrite: For indhold, der ikke vil blive regenereret, skal du tvinge overskrivning af eksisterende indhold
             proto-files: For at importere andre .proto-filer/mappestier, der ikke er i samme mappe som den angivne .proto-fil, er denne handling en mulighed for at tilsidesætte konfigurationsfeltet i konfigurationsfilen.
             protoc: '"protoc" tilpasselig filsti'
-            protoc-gen-go: '"protoc-gen-go" plugin-sti'
+            protoc-gen-go: '`protoc-gen-go` plugin-sti'
             tables-enable_field_created_at: Om standardkonfigurationsgenereringen af ​​feltet oprettet_at skal aktiveres
             tables-enable_field_deleted_at: Om standardindstillingen for deleted_at-feltet i databasen skal aktiveres
             tables-enable_field_id: Aktiver generering af standardkonfiguration for databaserelaterede felter
@@ -206,7 +206,7 @@ lang:
     jw: javanesisk
     ka: georgisk
     kk: kasakhisk
-    km: cambodjanske
+    km: Cambodjansk
     kn: Kannada
     ko: koreansk
     kri: kreolsk
@@ -285,5 +285,5 @@ lang:
     zh-hk: kinesisk (Hongkong)
     zh-mo: kinesisk (Macau)
     zh-sg: kinesisk (Singapore)
-    zh-tw: traditionelt kinesisk)
+    zh-tw: kinesisk (Taiwan)
     zu: Zulu

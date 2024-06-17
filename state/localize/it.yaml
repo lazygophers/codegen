@@ -16,7 +16,7 @@ cli:
                 default-role: Il ruolo predefinito dell'interfaccia generata in batch. Per i dettagli, fare riferimento alla documentazione sull'utilizzo.
                 gen-to: Specificare il percorso di output dei file .go generati
                 list-option: L'elenco può anche essere filtrato, per i dettagli consultare la documentazione sull'utilizzo.
-                model: Specificare il nome del modello, supportare l'omissione del prefisso `model`
+                model: Specificare il nome del modello, supportare l'omissione del prefisso "modello".
             long: Genera interfacce in batch e aggiungi un'interfaccia per un determinato modello nel file .proto
             short: Interfaccia di generazione batch
         all:
@@ -213,7 +213,7 @@ lang:
     ku: curdo
     ky: Kirghizistan
     la: latino
-    lb: Lussemburghese
+    lb: lussemburghese
     lg: Uganda
     ln: Lingala
     lo: Laotiano
@@ -275,7 +275,7 @@ lang:
     ur: Urdu
     uz: Uzbeco
     vi: vietnamita
-    xh: lingua bantu
+    xh: lingua bantù
     yi: yiddish
     yo: Yoruba
     zh: Cinese
@@ -285,5 +285,5 @@ lang:
     zh-hk: Cinese (Hong Kong)
     zh-mo: Cinese (Macao)
     zh-sg: Cinese (Singapore)
-    zh-tw: cinese tradizionale)
+    zh-tw: Cinese (Taiwan)
     zu: Zulù

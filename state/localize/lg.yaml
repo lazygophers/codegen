@@ -6,7 +6,7 @@ cli:
             Ekola ekiwandiiko ekijjuvu mu ngeri ey'okwekolako ku {{.RootName}} ku kisusunku ekiragiddwa.
         short: Tonda ekiwandiiko ekijjuvu mu ngeri ey'okwekolako ku kisusunku ekiragiddwa
         subcommand:
-            short: Okukola ekiwandiiko ekijjuza mu ngeri ey'okwekolako ku {{.Command}}
+            short: Okukola ekiwandiiko ekijjuvu mu ngeri ey'okwekolako ku {{.Command}}
     flags:
         debug: Ebifulumizibwa ebikwata ku log
     gen:
@@ -16,9 +16,9 @@ cli:
                 default-role: Omulimu ogusookerwako ogw'enkolagana ekoleddwa mu kibinja Nsaba otunule mu biwandiiko by'enkozesa okumanya ebisingawo.
                 gen-to: Laga ekifo ekifulumizibwa fayiro za .go ezikoleddwa
                 list-option: Olukalala era lusobola okusengekebwa, nsaba onoonye ebiwandiiko by'enkozesa okumanya ebisingawo.
-                model: Laga erinnya ly'ekyokulabirako, obuwagizi okulekayo entandikwa ya `ekyokulabirako`
+                model: Laga erinnya ly'ekyokulabirako, obuwagizi okulekayo entandikwa ya `model`
             long: Okukola interfaces mu batches era osseeko interface ya model emu mu fayiro .proto
-            short: Enkolagana y'okutondekawo batch
+            short: Enkolagana y’okutondekawo batch
         all:
             long: Okukola code zonna eziwagirwa ekintu kino
             short: Okukola koodi zonna
@@ -43,7 +43,7 @@ cli:
             input: Laga fayiro y'ensibuko ya .proto egenda okukolebwa
             output-path: Enkola eno esobola okutegekebwa nga ekkubo lya go_package eritegekeddwa mu fayiro .proto terikwatagana na roadbed mu butuufu eyeetaaga okukolebwa.
             overwrite: Ku birimu ebitajja kuddamu kutondebwawo, kikaka okuwandiika ku birimu ebiriwo
-            proto-files: Okuyingiza fayiro endala .proto/amakubo ga folda agatali mu folda emu ne fayiro .proto eragiddwa, omulimu guno nkola ya kukyusa ekifo ky'okusengeka mu fayiro y'okusengeka.
+            proto-files: Okuyingiza fayiro endala .proto/amakubo ga folda agatali mu folda y'emu ne fayiro .proto eragiddwa, omulimu guno nkola ya kukyusa ekifo ky'okusengeka mu fayiro y'okusengeka.
             protoc: '`protoc` ekkubo lya fayiro eriyinza okulongoosebwa'
             protoc-gen-go: '`protoc-gen-go` ekkubo lya plugin'
             tables-enable_field_created_at: Oba okusobozesa okutondebwa kw'okusengeka okusookerwako okwa database created_at field
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: okufuna ebisingawo ebikwata ku nsonga eno
         global_flags: ebipimo by’ensi yonna
-        long: 'Obuyambi buwa obuyambi ku kiragiro kyonna mu nkola. '
-        short: Yamba ku kiragiro kyonna
+        long: 'Waayo ebiragiro by''okukozesa ekiragiro kyonna mu nkola. '
+        short: Ebiragiro by’okukozesa ekiragiro kyonna
         usage: Ebiragiro by'okukozesa {{.Name}}
         use: omugaso
     i18n:
@@ -223,7 +223,7 @@ lang:
     mai: Maithili
     mg: Olulimi Olumalagasy
     mi: Omumaori
-    mk: Olulimi Olumakedoniya
+    mk: Olumakedoniya
     ml: Olumalayalam
     mn: Olumongolia
     mni-mtei: Meitei (Manipuri) .
@@ -237,7 +237,7 @@ lang:
     nso: Sepeti
     ny: Nyanza (Omuchichewa) .
     om: Oromo
-    or: Olulimi Oluganda (Oluganda) .
+    or: Oriya (Oluganda) .
     pa: olulimi olupunjabi
     pl: Olupolandi
     ps: Olupashto
@@ -276,7 +276,7 @@ lang:
     uz: Oluuzbek
     vi: Olulimi Oluvietnam
     xh: olulimi lwa bantu
-    yi: Oluyiddishi
+    yi: Oluyiddish
     yo: olulimi oluyoruba
     zh: Abachina
     zh-chs: Oluchina (Ebyangu) .
@@ -285,5 +285,5 @@ lang:
     zh-hk: Abachina (Hong Kong) .
     zh-mo: Abachina(Macau)
     zh-sg: Abachina (Singapore) .
-    zh-tw: Abachina ab’ekinnansi)
+    zh-tw: Abachina (Taiwan) .
     zu: Oluzulu

@@ -23,7 +23,7 @@ cli:
             long: Generirajte sav kod koji podržava ovaj alat
             short: Generirajte sav kod
         cache:
-            long: Generirajte keš datoteke za SDK-ove povezane s keširanjem poslovnih poziva
+            long: Generirajte keš datoteke za SDK povezane s keširanjem poslovnih poziva
             short: Generirajte cache fajl
         cmd:
             long: Generirajte ulazne datoteke za poslovne usluge
@@ -42,7 +42,7 @@ cli:
             go-module-prefix: Za putanju go_package konfigurisanu u .proto datoteci i stvarnu, možete konfigurirati ovu opciju
             input: Navedite izvornu datoteku .proto koja će se generirati
             output-path: Ova opcija se može konfigurisati kada putanja go_packagea konfigurisana u .proto datoteci nije u skladu sa cestom koja se zapravo treba generisati.
-            overwrite: Za sadržaj koji se neće regenerirati, prisilno prepisivanje postojećeg sadržaja
+            overwrite: Za sadržaj koji se neće ponovo generirati, prisilno prepisivanje postojećeg sadržaja
             proto-files: Da biste uvezli druge .proto datoteke/putanja mape koje nisu u istoj fascikli kao specificirana .proto datoteka, ova operacija je opcija za nadjačavanje konfiguracijskog polja u konfiguracijskoj datoteci.
             protoc: '`protoc` prilagodljiva putanja datoteke'
             protoc-gen-go: '`protoc-gen-go` putanja dodatka'
@@ -65,7 +65,7 @@ cli:
             short: Generirajte implementacijske datoteke
         long: Generator koda, podržava više šablona
         makefile:
-            long: Generirajte Makefile datoteke za alate za izgradnju i druge povezane komande
+            long: Generirajte Makefile datoteke za alate za izgradnju i druge povezane naredbe
             short: Generiraj Makefile
         mod:
             long: Generirajte go.mod datoteku za upravljanje ovisnostima
@@ -86,7 +86,7 @@ cli:
             i18n:
                 long: Generirajte i18n povezan kod za višejezične međunarodne pozive
                 short: Generirajte i18n povezan kod
-            long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
+            long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičko upravljanje resursima poslovnih usluga
             short: Sve relevantne funkcije za generiranje stanja
             table:
                 long: Generirajte kod povezan sa state.table, koji se koristi za povezivanje baze podataka i inicijalizaciju tablice kada se servis pokrene.
@@ -97,7 +97,7 @@ cli:
     group:
         gen: generisanje koda
     help:
-        additional_commands: Dodatne naredbe
+        additional_commands: Dodatne komande
         aliases: komandni pseudonim
         available_commands: Podržane komande
         command: Red
@@ -127,7 +127,7 @@ cli:
                 src-language: Jezik izvorne datoteke (ako nije naveden, alat će automatski odrediti izvorni fajl)
                 translator:
                     google-free: Google web prevodilac
-                    usage: 'Kanal prijevoda: Vrsta podrške {{opseg $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+                    usage: 'Kanal prevoda: Tip podrške {{opseg $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Višejezične datoteke iz određenog izvora se pretvaraju u datoteke u istom formatu na drugim jezicima.
             short: prevoditi
     long: Skup alata za lijene ljude, uključujući pozadinski okvir zasnovan na 'proto', najčešće korištene šablone i višejezični prijevod
@@ -210,7 +210,7 @@ lang:
     kn: kanada
     ko: korejski
     kri: kreolski
-    ku: kurdski
+    ku: Kurdski
     ky: kirgiski
     la: Latinski
     lb: Luksemburški
@@ -229,7 +229,7 @@ lang:
     mni-mtei: meitei (manipuri)
     mr: marathi
     ms: malajski
-    mt: malteški
+    mt: Maltezer
     my: Burmanski
     ne: nepalski
     nl: Dutch
@@ -278,12 +278,12 @@ lang:
     xh: bantu jezik
     yi: jidiš
     yo: yoruba
-    zh: Kineski
+    zh: kineski
     zh-chs: kineski (pojednostavljeni)
     zh-cht: kineski (pojednostavljeni)
     zh-cn: kineski (pojednostavljeni)
     zh-hk: kineski (Hong Kong)
     zh-mo: kineski (makao)
     zh-sg: kineski (Singapur)
-    zh-tw: tradicionalni kineski)
+    zh-tw: kineski (Tajvan)
     zu: Zulu

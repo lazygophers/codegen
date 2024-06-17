@@ -104,8 +104,8 @@ cli:
         flags: 參數
         get_info: 來獲取更詳細的信息
         global_flags: 全域參數
-        long: 幫助為應用程式中的任何命令提供協助。
-        short: 有關任何命令的幫助
+        long: 為應用程式中的任何命令提供使用說明。
+        short: 有關任何命令的使用說明
         usage: '{{.Name}} 的使用說明'
         use: 使用
     i18n:

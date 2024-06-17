@@ -100,12 +100,12 @@ cli:
         additional_commands: Dodatni ukazi
         aliases: vzdevek ukaza
         available_commands: Podprti ukazi
-        command: Naročilo
+        command: naročilo
         flags: parameter
-        get_info: da bi dobili podrobnejše informacije
+        get_info: da dobite podrobnejše informacije
         global_flags: globalni parametri
-        long: 'Pomoč ponuja pomoč za kateri koli ukaz v aplikaciji. '
-        short: Pomoč pri katerem koli ukazu
+        long: 'Navedite navodila za uporabo katerega koli ukaza v aplikaciji. '
+        short: Navodila za uporabo katerega koli ukaza
         usage: Navodila za uporabo {{.Name}}
         use: uporaba
     i18n:
@@ -127,10 +127,10 @@ cli:
                 src-language: Jezik izvorne datoteke (če ni naveden, bo orodje samodejno določilo izvorno datoteko)
                 translator:
                     google-free: Googlov spletni prevajalnik
-                    usage: 'Kanal prevajanja: Vrsta podpore {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+                    usage: 'Kanal prevajanja: vrsta podpore {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Večjezične datoteke iz določenega vira se pretvorijo v datoteke v enakem formatu v drugih jezikih.
             short: prevesti
-    long: Nabor orodij za lene ljudi, vključno z ogrodjem zaledja, ki temelji na "proto", pogosto uporabljenimi predlogami in prevodom v več jezikov
+    long: Nabor orodij za lene ljudi, vključno z zalednim ogrodjem, ki temelji na 'proto', pogosto uporabljenimi predlogami in prevodom v več jezikov
     short: Set orodij za lenuhe
     sync:
         flags:
@@ -185,27 +185,27 @@ lang:
     gl: galicijski
     gn: Guaraní
     gom: gonggan jezik
-    gu: gujarati
+    gu: gudžarati
     ha: Hausa
     haw: havajski
     he: hebrejščina
     hi: Hindi
     hmn: Hmong
     hr: hrvaško
-    ht: haitska kreolščina
+    ht: haitijska kreolščina
     hu: madžarščina
     hy: armenski
     id: indonezijski
     ig: Igbo
     ilo: Ilocano
     is: islandski
-    it: Italijanski
+    it: italijanščina
     iw: hebrejščina
     ja: japonska
     jv: javanska
     jw: javanska
     ka: gruzijski
-    kk: Kazahstan
+    kk: kazahstanski
     km: kamboški
     kn: kanadščina
     ko: korejščina
@@ -260,7 +260,7 @@ lang:
     su: sundanski
     sv: švedščina
     sw: svahili
-    ta: tamilski
+    ta: tamilščina
     te: telugu
     tg: tadžikistanski
     th: tajska

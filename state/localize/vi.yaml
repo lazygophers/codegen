@@ -104,8 +104,8 @@ cli:
         flags: tham số
         get_info: để biết thêm thông tin chi tiết
         global_flags: thông số toàn cầu
-        long: 'Trợ giúp cung cấp trợ giúp cho bất kỳ lệnh nào trong ứng dụng. '
-        short: Trợ giúp về bất kỳ lệnh nào
+        long: 'Cung cấp hướng dẫn sử dụng cho bất kỳ lệnh nào trong ứng dụng. '
+        short: Hướng dẫn sử dụng lệnh bất kỳ
         usage: Hướng dẫn sử dụng {{.Name}}
         use: sử dụng
     i18n:

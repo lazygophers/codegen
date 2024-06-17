@@ -32,7 +32,7 @@ cli:
             long: Yɛ nhyehyeɛ fael nsusuiɛ
             short: Yɛ nhyehyɛe fael
         dockerignore:
-            long: Yɛ .dockerignore fael ma Docker mfonini dan no na ama woabu w’ani agu fael sohwɛ so
+            long: Yɛ .dockerignore fael ma Docker mfonini dan de bu w’ani gu fael sohwɛ so
             short: Yɛ .dockerignore fael no
         editorconfig:
             long: Yɛ .editorconfig fael ma editor nhyehyeɛ
@@ -52,7 +52,7 @@ cli:
             tables-enable_field_updated_at: Sɛ ebia wobɛma updated_at field no default value a ɛwɔ database no mu no ayɛ adwuma anaa
             tables-enable_gorm_tag_column: Sɛ́ ebia wɔbɛma gorm awo ntoatoaso a ɛfa database ho no atumi ayɛ adwuma
         gitignote:
-            long: Yɛ .gitignore fael ma fael nhyehyɛe a wɔabu ani agu so wɔ version control mu
+            long: Yɛ .gitignore fael ma fael sohwɛ a wɔabu ani agu so wɔ version control mu
             short: Yɛ .gitignore fael no
         golang-lint:
             long: Yɛ .golangci.yml fael ma koodu no su nhwehwɛmu
@@ -80,7 +80,7 @@ cli:
                 short: Yɛ nhyehyɛe fael akenkan koodu
             flags:
                 cache: Sɛ́ ebia wɔbɛma awo ntoatoaso a ɛfa cache ho atumi ayɛ adwuma anaa
-                config: Sɛ́ ebia wɔbɛhyehyɛ nhyehyɛe-fam koodu
+                config: Sɛ́ ebia wobɛhyehyɛ nhyehyɛe-fam koodu
                 i18n: Sɛ́ ebia wobɛma awo ntoatoaso a ɛfa kasa ahorow pii ho atumi ayɛ adwuma (awo ntoatoaso no de ɔman mfiase ne nneɛma afoforo nkutoo ka ho, na ɛnka kasa ahorow pii nkyerɛase a ɛyɛ adwuma ankasa ho. Sɛ wuhia nkyerɛase a ɛyɛ adwuma ankasa a, yɛsrɛ wo fa {{.Ahyɛde}} di dwuma na hwɛ nsɛm no mu nsɛm)
                 table: Sɛ́ ebia wɔbɛma database a ɛfa database awo ntoatoaso ho atumi ayɛ adwuma
             i18n:
@@ -128,7 +128,7 @@ cli:
                 translator:
                     google-free: Google Wɛb Nkyerɛaseɛ
                     usage: 'Nkyerɛaseɛ kwan: Mmoa su {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
-            long: Wɔdan fael ahorow a ɛwɔ kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.
+            long: Wɔdan fael ahorow a ɛka kasa pii a efi baabi pɔtee bi no ma ɛbɛyɛ fael ahorow a ɛwɔ ɔkwan koro no ara so wɔ kasa afoforo mu.
             short: kyerɛ aseɛ
     long: Adwinnadeɛ a wɔahyehyɛ ama anihafoɔ, a ‘proto’-based backend framework, templates a wɔtaa de di dwuma, ne kasa ahodoɔ nkyerɛaseɛ ka ho
     short: Adwinnade a wɔde asi hɔ ama anihafo
@@ -229,7 +229,7 @@ lang:
     mni-mtei: Meitei (Manipuri) .
     mr: marathi kasa
     ms: Malay kasa
-    mt: maltese kasa
+    mt: Malta kasa
     my: Burmafo kasa
     ne: Nepali kasa mu
     nl: Dutch kasa
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinafo (Hong Kong) .
     zh-mo: Chinafo(Macau) .
     zh-sg: Chinafo (Singapore) .
-    zh-tw: Chinafo amammerɛ) .
+    zh-tw: Chinafo (Taiwan) .
     zu: Zulu kasa mu

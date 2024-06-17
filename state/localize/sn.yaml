@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: kuti uwane rumwe ruzivo rwakadzama
         global_flags: global parameters
-        long: 'Kubatsira kunopa rubatsiro kune chero kuraira mukushandisa. '
-        short: Batsira pane chero murairo
+        long: 'Ipa mirairo yekushandisa kune chero kuraira mukushandisa. '
+        short: Mirayiridzo yekushandisa chero murairo
         usage: Mirayiridzo yekushandisa {{.Name}}
         use: use
     i18n:
@@ -184,7 +184,7 @@ lang:
     gd: ChiGaelic cheScottish
     gl: ChiGalician
     gn: Guaraní
-    gom: gonggan mutauro
+    gom: mutauro we gonggan
     gu: ChiGujarati
     ha: ChiHausa
     haw: Chihawayi

@@ -40,7 +40,7 @@ cli:
         flags:
             add-proto-files: Ako trebate uvesti druge staze .proto datoteka/mapa koje nisu u istoj mapi kao navedena .proto datoteka, ova će operacija dodati (ne prebrisati) stazu konfiguriranu u konfiguracijskoj datoteci.
             go-module-prefix: Za stazu go_package konfiguriranu u .proto datoteci i stvarnu, možete konfigurirati ovu opciju
-            input: Navedite izvornu datoteku .proto koja će se generirati
+            input: Navedite .proto izvornu datoteku koja će se generirati
             output-path: Ova se opcija može konfigurirati kada putanja go_package konfigurirana u .proto datoteci nije u skladu s temeljem puta koji zapravo treba generirati.
             overwrite: Za sadržaj koji se neće ponovno generirati, prisilno prebrišite postojeći sadržaj
             proto-files: Za uvoz drugih .proto datoteka/putanja mapa koje nisu u istoj mapi kao navedena .proto datoteka, ova operacija je opcija za nadjačavanje konfiguracijskog polja u konfiguracijskoj datoteci.
@@ -50,7 +50,7 @@ cli:
             tables-enable_field_deleted_at: Treba li omogućiti zadanu postavku polja deleted_at u bazi podataka
             tables-enable_field_id: Omogući generiranje zadane konfiguracije za polja povezana s bazom podataka
             tables-enable_field_updated_at: Treba li omogućiti zadanu vrijednost polja updated_at u bazi podataka
-            tables-enable_gorm_tag_column: Treba li omogućiti generiranje gormova vezanih uz bazu podataka
+            tables-enable_gorm_tag_column: Treba li omogućiti generiranje gormova povezanih s bazom podataka
         gitignote:
             long: Generirajte .gitignore datoteke za upravljanje zanemarenim datotekama u kontroli verzija
             short: Generirajte .gitignore datoteku
@@ -61,7 +61,7 @@ cli:
             long: Generirajte datoteku .goreleaser.yml za konfiguraciju alata za izdavanje
             short: Generiraj datoteku .goreleaser.yml
         impl:
-            long: Generirajte implementacijske datoteke za implementaciju poslovnih usluga
+            long: Generirati implementacijske datoteke za implementaciju poslovnih usluga
             short: Generirajte implementacijske datoteke
         long: Generator koda, podržava više predložaka
         makefile:
@@ -84,7 +84,7 @@ cli:
                 i18n: Treba li omogućiti generiranje povezano s više jezika (generiranje uključuje samo inicijalizaciju stanja i drugi sadržaj, a ne uključuje automatsko prevođenje više jezika. Ako vam je potreban automatski prijevod, upotrijebite {{.Command}} za pregled pojedinosti)
                 table: Treba li omogućiti generiranje baze podataka vezano uz bazu podataka
             i18n:
-                long: Generirajte kod povezan s i18n za višejezične međunarodne pozive
+                long: Generirajte kod za i18n za međunarodne pozive na više jezika
                 short: Generirajte kod povezan s i18n
             long: Generirajte sve povezane funkcije stanja za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
             short: Sve relevantne funkcije za generiranje stanja
@@ -92,7 +92,7 @@ cli:
                 long: Generirajte kod koji se odnosi na state.table, koji se koristi za povezivanje baze podataka i inicijalizaciju tablice kada se usluga pokrene.
                 short: Generirajte kod koji se odnosi na stanje.tablice
         table:
-            long: Sve povezane funkcije generiranja tablica za upravljanje resursima sa statusom ili statičkim resursima poslovnih usluga
+            long: Sve povezane funkcije generiranja tablica za upravljanje resursima sa stanjem ili statičkim resursima poslovnih usluga
             short: Sve povezane funkcije za generiranje tablica
     group:
         gen: generiranje koda
@@ -113,12 +113,12 @@ cli:
         short: Višejezični skup alata za internacionalizaciju
         support:
             flags:
-                language: Odredite jezik za prikaz, inače će se za prikaz jezika koristiti kod jezika
+                language: Navedite jezik za prikaz, inače će se za prikaz jezika koristiti kod jezika
             long: Navedite sve podržane jezike
             short: Popis podržanih jezika
         tran:
             flags:
-                all-language: Prevedite sve podržane jezike (ako je istina, zastavica jezika je onemogućena)
+                all-language: Prevedi sve podržane jezike (ako je istina, zastavica jezika je onemogućena)
                 force: Prebrišite postojeće prijevode
                 force-key-prefix: ključeve koje treba prisilno prebrisati
                 generate-const: Generirajte vrijednosti nabrajanja za jednostavno pozivanje
@@ -285,5 +285,5 @@ lang:
     zh-hk: kineski (Hong Kong)
     zh-mo: kineski (Makao)
     zh-sg: kineski (Singapur)
-    zh-tw: tradicionalni kineski)
+    zh-tw: kineski (Tajvan)
     zu: zulu

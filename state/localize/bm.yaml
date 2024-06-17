@@ -4,7 +4,7 @@ cli:
             no-descriptions: Aw ye baara dafalen cikanw bali
         long: |
             A bɛ sɛbɛnnibolo dafalen dɔ Dabɔ {{.RootName}} ye ka ɲɛsin shell kofɔlen ma.
-        short: Aw bɛ script autocomplete dɔ labɛn shell kofɔlen in kama
+        short: Script autocomplete dɔ dabɔ shell kofɔlen in kama
         subcommand:
             short: Script autocomplete dilan {{.Command}} kama.
     flags:
@@ -17,7 +17,7 @@ cli:
                 gen-to: .go file minnu dilannen don, olu bɔyɔrɔ jira
                 list-option: Lisiti fana bɛ se ka filɛ, aw bɛ baarakɛcogo sɛbɛnw ɲini walasa ka kunnafoni wɛrɛw sɔrɔ.
                 model: Modeli tɔgɔ fɔ, dɛmɛ ka `model` daminɛ bila
-            long: Ka 'interface (dakunw) Dabɔ 'kuluw la ani ka 'interface (dakun) dɔ Fàra modeli dɔ kan .proto file kɔnɔ
+            long: Ka 'interface (dakunw) Dabɔ batch (dakunw) la ani ka interface (dakun) dɔ Fàra modeli dɔ kan .proto file kɔnɔ
             short: Batch generation interface (baarakɛminɛnw sɛnɛcogo).
         all:
             long: Kode bɛɛ lajɛlen minnu bɛ dɛmɛ ni nin baarakɛminɛn in ye
@@ -48,7 +48,7 @@ cli:
             protoc-gen-go: '`protoc-gen-go` bɔgɔdaga sira'
             tables-enable_field_created_at: Yala ka se ka database created_at foro labɛnni daminɛcogo daminɛ
             tables-enable_field_deleted_at: Yala ka deleted_at foro sigicogo kɔrɔ daminɛ database kɔnɔ
-            tables-enable_field_id: Aw ye se ka labɛncogo daminɛcogo daminɛ kunnafonidilanw ni ɲɔgɔn cɛ forow la
+            tables-enable_field_id: A’ ye labɛncogo dafalenw dilancogo daminɛ kunnafonidilanw ni ɲɔgɔn cɛ forow la
             tables-enable_field_updated_at: Yala ka updated_at foro nafa dafalen daminɛ database kɔnɔ
             tables-enable_gorm_tag_column: Yala ka se ka database-related gorm generation (gorm generation) kɛ
         gitignote:
@@ -76,8 +76,8 @@ cli:
         short: Kode jɛnɛrato
         state:
             conf:
-                long: Labɛnni dosiye kalanni kode la jago baarakɛyɔrɔ labɛnni kalanni kama
-                short: A ye configuration file kalanni kode labɛn
+                long: Labɛnni dosiye kalanni kode labɛn jago baarakɛyɔrɔ labɛnni kalanni kama
+                short: Labɛnni filen kalanni kode
             flags:
                 cache: Yala a bɛ se ka kɛ sababu ye ka cache-related generation (cache-related generation) kɛ
                 config: Yala ka kode min bɛ tali kɛ labɛncogo la, o labɛn
@@ -105,7 +105,7 @@ cli:
         get_info: walasa ka kunnafoni caman sɔrɔ
         global_flags: diɲɛ kɔnɔ paramɛtiriw
         long: 'Baarakɛcogo cikanw di cikan o cikan ma min bɛ application kɔnɔ. '
-        short: Cikan minnu bɛ di baara kɛli ni cikan o cikan ye
+        short: Ladilikanw baara kɛli ni cikan o cikan ye
         usage: Ladilikanw baara kɛcogo kan {{.Tɔgɔ}} .
         use: k'a nafa bɔ a la
     i18n:
@@ -122,7 +122,7 @@ cli:
                 force: Bamanankan bayɛlɛmani minnu bɛ yen, olu sɛbɛn u kan
                 force-key-prefix: kilisi minnu ka kan ka wajibiya ka sɛbɛn u kan
                 generate-const: Jatebla nafaw labɔ walasa weleli ka nɔgɔn
-                languages: Bamanankan baarakɛcogo bɛ kan min laɲini, o fɔ
+                languages: Bamanankan baarakɛcogo kan min bɛna kɛ, o fɔ
                 src-file: Source file min ka kan ka baara (a wajibiyalen don) .
                 src-language: Soso filen kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .
                 translator:
@@ -131,7 +131,7 @@ cli:
             long: Kan caman ka dosiye minnu bɛ Bɔ yɔrɔ dɔ la, olu bɛ Yɛlɛma ka Kɛ dosiyew ye cogo kelen na kan wɛrɛw la.
             short: ka bayɛlɛma
     long: Baarakɛminɛn min sigilen don mɔgɔ lafiyabaliw ye, i n’a fɔ ‘proto’-based backend framework, template minnu bɛ kɛ ka caya, ani kan caman bamanankan na
-    short: Baarakɛminɛn min sigilen don mɔgɔ sɛgɛnbaliw ye
+    short: Baarakɛminɛn dɔ sigilen don sɛgɛnbagatɔw ye
     sync:
         flags:
             password: Password min bɛ kɛ ka sɛgɛsɛgɛli ɲini
@@ -157,7 +157,7 @@ lang:
     bho: Bojpuri
     bm: Bamanankan
     bn: Bengalikan
-    bs: Bosnikaw ka kan
+    bs: Bosniakaw ka kan
     ca: Katalankan na
     ceb: Sebuano
     ckb: Kurdekan (Sorani) .
@@ -205,7 +205,7 @@ lang:
     jv: Javakaw ka kan
     jw: Javakaw ka kan
     ka: Georgiekan na
-    kk: Kazakhstankan na
+    kk: Kazakhstan jamana na
     km: Kambodjakan na
     kn: Kannadakan na
     ko: Korekan na
@@ -229,7 +229,7 @@ lang:
     mni-mtei: Meitei (Manipuri) ye.
     mr: marathi
     ms: Malaykan na
-    mt: maltese ye
+    mt: Maltesekan na
     my: Burukina Fasokanw
     ne: Nepalikan na
     nl: Hollandekan na
@@ -285,5 +285,5 @@ lang:
     zh-hk: Sinuwaw (Hong Kong) .
     zh-mo: Sinuwa(Macau)
     zh-sg: Sinuwaw (Singapore)
-    zh-tw: laadala sinuwaw) .
+    zh-tw: Sinuwaw (Tayiwani)
     zu: Zulukan na

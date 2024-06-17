@@ -81,7 +81,7 @@ cli:
             flags:
                 cache: Apakah akan mengaktifkan pembuatan terkait cache
                 config: Apakah akan menghasilkan kode terkait konfigurasi
-                i18n: Apakah akan mengaktifkan pembuatan terkait multi-bahasa (pembuatan hanya mencakup inisialisasi negara dan konten lainnya, dan tidak menyertakan terjemahan otomatis beberapa bahasa. Jika Anda memerlukan terjemahan otomatis, gunakan {{.Command}} untuk melihat detailnya)
+                i18n: Apakah akan mengaktifkan pembuatan terkait multi-bahasa (pembuatan hanya mencakup inisialisasi negara dan konten lainnya, dan tidak menyertakan terjemahan otomatis beberapa bahasa. Jika Anda memerlukan terjemahan otomatis, silakan gunakan {{.Command}} untuk melihat detailnya)
                 table: Apakah akan mengaktifkan pembuatan database terkait database
             i18n:
                 long: Hasilkan kode terkait i18n untuk panggilan internasional multi-bahasa
@@ -130,7 +130,7 @@ cli:
                     usage: 'Saluran terjemahan: Jenis dukungan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: File multibahasa dari sumber tertentu diubah menjadi file dalam format yang sama dalam bahasa lain.
             short: menerjemahkan
-    long: Seperangkat alat untuk orang malas, termasuk kerangka backend berbasis 'proto', templat yang umum digunakan, dan terjemahan multi-bahasa
+    long: Seperangkat alat untuk orang yang malas, termasuk kerangka backend berbasis 'proto', templat yang umum digunakan, dan terjemahan multi-bahasa
     short: Satu set alat untuk orang malas
     sync:
         flags:
@@ -283,7 +283,7 @@ lang:
     zh-cht: Bahasa Tiongkok yang disederhanakan)
     zh-cn: Bahasa Tiongkok yang disederhanakan)
     zh-hk: Cina (Hong Kong)
-    zh-mo: Cina (Makau)
+    zh-mo: Cina (Macau)
     zh-sg: Cina (Singapura)
-    zh-tw: Cina tradisional)
+    zh-tw: Cina (Taiwan)
     zu: Zulu

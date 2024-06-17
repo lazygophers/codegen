@@ -39,17 +39,17 @@ cli:
             short: Mamorona rakitra .editorconfig
         flags:
             add-proto-files: Raha mila manafatra rakitra .proto/folder hafa izay tsy ao anatin'ny lahatahiry mitovy amin'ilay rakitra .proto voatondro ianao, dia hampiana (tsy overwrite) ny lalana voafefy ao amin'ny fichier configuration ity asa ity.
-            go-module-prefix: Ho an'ny lalan'ny go_package namboarina ao amin'ny rakitra .proto sy ny tena izy dia azonao atao ny manitsy ity safidy ity.
+            go-module-prefix: Ho an'ny lalan'ny go_package namboarina ao amin'ny rakitra .proto sy ny tena izy dia azonao atao ny manitsy ity safidy ity
             input: Lazao ny rakitra loharano .proto hatsangana
             output-path: Ity safidy ity dia azo amboarina rehefa tsy mifanaraka amin'ny sisin-dalana ny lalan'ny go_package namboarina ao amin'ny rakitra .proto izay tena mila amboarina.
-            overwrite: Ho an'ny atiny izay tsy havaozina, hanery ny fanoratana ny atiny efa misy
+            overwrite: Ho an'ny atiny izay tsy havaozina dia hanery ny fanoratana ny atiny efa misy
             proto-files: Raha hanafatra rakitra .proto/folder hafa izay tsy ao anatin'ny lahatahiry mitovy amin'ilay rakitra .proto voatondro, ity fandidiana ity dia safidy hanilihana ny saha fanamafisam-peo ao amin'ny rakitra fikirakirana.
             protoc: '`protoc` lalana rakitra azo zahana'
             protoc-gen-go: lalana plugin `protoc-gen-go`
             tables-enable_field_created_at: Na azo atao ny mamorona fandrindrana default amin'ny angon-drakitra created_at saha
             tables-enable_field_deleted_at: Na azo atao ny mametraka ny default amin'ny saha deleted_at ao amin'ny tahiry
-            tables-enable_field_id: Alefaso ny famoronana fanefena default ho an'ny saha mifandraika amin'ny angona
-            tables-enable_field_updated_at: Raha azo atao ny sandan'ny default amin'ny saha updated_at ao amin'ny tahiry
+            tables-enable_field_id: Ampidiro ny famoronana fandrindrana default ho an'ny saha mifandraika amin'ny angona
+            tables-enable_field_updated_at: Na azo atao ny sandan'ny default amin'ny saha updated_at ao amin'ny tahiry
             tables-enable_gorm_tag_column: Na azo atao ny mamorona gorm mifandraika amin'ny database
         gitignote:
             long: Mamorona rakitra .gitignore ho an'ny fitantanana rakitra tsy noraharahiana amin'ny fifehezana dikan-teny
@@ -65,7 +65,7 @@ cli:
             short: Mamorona rakitra fampiharana
         long: Mpamorona kaody, manohana modely maro
         makefile:
-            long: Mamorona rakitra Makefile ho an'ny fitaovana fananganana sy baiko mifandraika amin'izany
+            long: Mamorona rakitra Makefile ho an'ny fitaovana fananganana sy baiko hafa mifandraika amin'izany
             short: Mamorona Makefile
         mod:
             long: Mamorona rakitra go.mod ho an'ny fitantanana ny fiankinan-doha
@@ -87,13 +87,13 @@ cli:
                 long: Mamorona kaody mifandraika amin'ny i18n ho an'ny antso iraisam-pirenena amin'ny fiteny maro
                 short: Mamorona kaody mifandraika amin'ny i18n
             long: Mamorona asa rehetra mifandraika amin'ny fanjakana ho an'ny fitantanana loharanon-karena na static amin'ny serivisy fandraharahana
-            short: Ny asa rehetra mifandraika amin'ny famokarana fanjakana
+            short: Ny asa rehetra mifandraika amin'ny famoronana fanjakana
             table:
                 long: Mamorona kaody mifandraika amin'ny state.table, ampiasaina amin'ny fampifandraisana angon-drakitra sy fanombohana latabatra rehefa manomboka ny serivisy.
                 short: Mamorona code mifandraika amin'ny state.table
         table:
             long: Ny asa rehetra mifandraika amin'ny famoronana latabatra ho an'ny loharanon-karena ara-panjakana na fitantanana loharanon-karena static amin'ny serivisy fandraharahana
-            short: Ny fiasa rehetra mifandraika amin'ny famoronana latabatra
+            short: Ny fiasa rehetra mifandraika amin'ny famoronana tabilao
     group:
         gen: famoronana kaody
     help:
@@ -104,8 +104,8 @@ cli:
         flags: fikirana
         get_info: mba hahazoana fampahalalana amin'ny antsipiriany kokoa
         global_flags: masontsivana manerantany
-        long: 'Ny fanampiana dia manome fanampiana ho an''ny baiko rehetra ao amin''ny fampiharana. '
-        short: Fanampiana amin'ny baiko rehetra
+        long: 'Omeo toromarika momba ny fampiasana ny baiko rehetra ao amin''ny fampiharana. '
+        short: Torolàlana amin'ny fampiasana baiko rehetra
         usage: Torolàlana amin'ny fampiasana {{.Name}}
         use: Ampiasao
     i18n:
@@ -135,7 +135,7 @@ cli:
     sync:
         flags:
             password: Tenimiafina ampiasaina hangatahana fanamarinana
-            template-path: Lalana fampifanarahana ny maodely
+            template-path: Lalan'ny fampifanarahana modely
             username: Anarana ampiasaina hangataka fanamarinana
         long: Ampifanaraho amin'ny faran'ny lavitr'ezaka ny fanefena ary ampifandraiso amin'ny fandrindrana eo an-toerana Ny rakitra môdely dia tohanana miaraka mandritra ny fampifanarahana (raha voarindra).
         short: Ampifanaraho amin'ny lavitra
@@ -147,7 +147,7 @@ cli:
 lang:
     af: Afrikaans
     ak: Twi (Akan)
-    am: Amharic
+    am: amharic
     ar: Arabo
     as: Assamese
     ay: Aymara
@@ -285,5 +285,5 @@ lang:
     zh-hk: Sinoa (Hong Kong)
     zh-mo: Sinoa (Makau)
     zh-sg: Sinoa (Singapore)
-    zh-tw: Sinoa nentim-paharazana)
+    zh-tw: Sinoa (Taiwan)
     zu: Zulu

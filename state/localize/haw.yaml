@@ -3,7 +3,7 @@ cli:
         flags:
             no-descriptions: Hoʻopau i nā ʻōlelo aʻoaʻo hoʻopau
         long: |
-            Hoʻopuka i kahi palapala hoʻopiha piha no {{.RootName}} no ka pūpū i ʻōlelo ʻia.
+            Hoʻopuka i kahi palapala hoʻopiha piha ʻana no {{.RootName}} no ka pūpū i ʻōlelo ʻia.
         short: E hana i kahi palapala autocomplete no ka pūpū i kuhikuhi ʻia
         subcommand:
             short: E hana i ka palapala hoʻopiha ʻauʻa no {{.Command}}
@@ -18,7 +18,7 @@ cli:
                 list-option: Hiki ke kānana ʻia ka papa inoa, e ʻoluʻolu e ʻimi i ka palapala hoʻohana no nā kikoʻī.
                 model: E hōʻike i ka inoa hoʻohālike, kākoʻo e kāpae i ka prefix `model`
             long: E hana i nā pilina ma nā pūʻulu a hoʻohui i kahi interface no kekahi kumu hoʻohālike ma ka faila .proto
-            short: Pākuʻi hana pūʻulu
+            short: Pākuʻi hoʻokumu pūʻulu
         all:
             long: E hana i nā code a pau i kākoʻo ʻia e kēia mea hana
             short: E hana i nā code a pau
@@ -27,15 +27,15 @@ cli:
             short: E hana i ka waihona huna
         cmd:
             long: E hana i nā faila komo no nā lawelawe ʻoihana
-            short: E hana i ka waihona hoʻokomo
+            short: E hana i ka waihona komo
         conf:
             long: E hana i ka la'ana waihona ho'onohonoho
             short: E hana i ka waihona hoʻonohonoho
         dockerignore:
-            long: Hoʻokumu i ka faila .dockerignore no ka hale kiʻi Docker e haʻalele i ka hoʻokele waihona
+            long: E hoʻokumu i ka faila .dockerignore no ka hale kiʻi Docker e haʻalele i ka hoʻokele waihona
             short: E hana i ka faila .dockerignore
         editorconfig:
-            long: E hana i ka faila .editorconfig no ka hoʻoponopono hoʻoponopono
+            long: E hana i ka faila .editorconfig no ka hoʻonohonoho hoʻoponopono
             short: E hana i ka faila .editorconfig
         flags:
             add-proto-files: Inā pono ʻoe e hoʻokomo i nā faila .proto/ala ala ʻē aʻe ʻaʻole i loko o ka waihona like me ka faila .proto i ʻōlelo ʻia, e hoʻopili kēia hana (ʻaʻole e kākau hou) i ke ala i hoʻonohonoho ʻia i ka faila hoʻonohonoho.
@@ -43,13 +43,13 @@ cli:
             input: E wehewehe i ka waihona kumu .proto e hana ʻia
             output-path: Hiki ke hoʻonohonoho ʻia kēia koho inā ʻaʻole kūlike ke ala o ka go_package i ka faila .proto me ke alanui e pono ai e hana.
             overwrite: No ka maʻiʻo ʻaʻole e hana hou ʻia, e hoʻoikaika i ke kākau ʻana i nā mea i loaʻa
-            proto-files: No ka hoʻokomo ʻana i nā faila .proto ʻē aʻe ʻaʻole i loko o ka waihona like me ka faila .proto i kuhikuhi ʻia, he koho kēia hana e hoʻopau i ke kahua hoʻonohonoho i ka faila hoʻonohonoho.
+            proto-files: No ka hoʻokomo ʻana i nā faila .proto/ala ala ʻē aʻe ʻaʻole i loko o ka waihona like me ka faila .proto i ʻōlelo ʻia, he koho kēia hana e hoʻopau i ke kahua hoʻonohonoho i ka faila hoʻonohonoho.
             protoc: '''protoc'' ala waihona hoʻopilikino'
             protoc-gen-go: '''protoc-gen-go'' ala plugin'
             tables-enable_field_created_at: Inā paha e hiki ai i ka hoʻonohonoho hoʻonohonoho paʻamau o ka waihona i haku ʻia_at kahua
             tables-enable_field_deleted_at: Inā paha e hiki ke hoʻonohonoho paʻamau o ke kahua deleted_at i ka waihona
             tables-enable_field_id: E ho'ā i ka hana hoʻonohonoho paʻamau no nā kahua pili i ka waihona
-            tables-enable_field_updated_at: Inā hiki ke hoʻohana i ka waiwai paʻamau o ka updated_at kahua ma ka waihona
+            tables-enable_field_updated_at: Inā hiki ke hoʻohana i ka waiwai paʻamau o ka updated_at kahua i loko o ka waihona
             tables-enable_gorm_tag_column: Inā paha e hiki ai ke hoʻokumu ʻia gorm pili i ka waihona
         gitignote:
             long: E hana i nā faila .gitignore no ka mālama ʻana i ka faila ma ka mana mana
@@ -71,7 +71,7 @@ cli:
             long: Hoʻokumu i ka faila go.mod no ka hoʻokele hilinaʻi
             short: E hana i ka faila go.mod
         pb:
-            long: E hana i nā faila .pb.go, i hoʻohana ʻia no ka hoʻohua ʻana i nā faila .proto e hoʻohui ʻokoʻa ʻia e like me ka hoʻonohonoho.
+            long: E hana i nā faila .pb.go, i hoʻohana ʻia no ka hoʻohua ʻana i nā faila .proto.
             short: E hana i ka waihona .pb.go
         short: Mea hana code
         state:
@@ -79,7 +79,7 @@ cli:
                 long: E hana i ka helu helu helu waihona no ka heluhelu hoʻonohonoho lawelawe ʻoihana
                 short: E hana i ka helu helu helu waihona
             flags:
-                cache: Inā paha e hiki ai ke hoʻohana i ka hanauna pili i ka cache
+                cache: Inā paha e hiki ai ke hana i ka hana pili i ka cache
                 config: Inā paha e hana i ka code pili i ka hoʻonohonoho
                 i18n: Inā paha e hiki ke hoʻohana i ka hanauna pili i ka ʻōlelo he nui (ʻo ka hanauna wale nō ka hoʻomaka ʻana o ka mokuʻāina a me nā mea ʻē aʻe, ʻaʻole hoʻokomo i ka unuhi ʻakomi o nā ʻōlelo he nui.
                 table: Inā paha e hiki ai ke hana ʻikepili pili i ka waihona
@@ -89,10 +89,10 @@ cli:
             long: E hana i nā hana pili a pau o ka moku'āina no ka waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
             short: ʻO nā hana kūpono a pau no ka hana ʻana i ka mokuʻāina
             table:
-                long: E hana i state.table pili code, hoʻohana ʻia no ka hoʻopili ʻikepili a me ka hoʻomaka ʻana o ka papaʻaina i ka wā e hoʻomaka ai ka lawelawe.
-                short: E hana i state.table pili code
+                long: E hana i state.table pili code, hoʻohana ʻia no ka hoʻohui ʻikepili a me ka hoʻomaka ʻana o ka papaʻaina i ka wā e hoʻomaka ai ka lawelawe.
+                short: E hana i ke code pili state.table
         table:
-            long: ʻO nā hana pili āpau o ka hoʻokumu ʻana i nā papa no nā kumu waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
+            long: ʻO nā hana pili āpau o ka hoʻohua ʻana i nā papa no ka waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
             short: ʻO nā hana pili āpau no ka hana ʻana i nā papa
     group:
         gen: hana code
@@ -102,7 +102,7 @@ cli:
         available_commands: Kākoʻo ʻia nā kauoha
         command: Kauoha
         flags: ʻāpana
-        get_info: no ka loaʻa ʻana o ka ʻike kikoʻī
+        get_info: e kiʻi i ka ʻike kikoʻī
         global_flags: nā palena honua
         long: 'Hāʻawi i nā kuhikuhi hoʻohana no kēlā me kēia kauoha i ka noi. '
         short: Nā kuhikuhi no ka hoʻohana ʻana i kekahi kauoha
@@ -124,7 +124,7 @@ cli:
                 generate-const: E hana i nā waiwai helu no ke kelepona maʻalahi
                 languages: E wehewehe i ka ʻōlelo i makemake ʻia no ka unuhi
                 src-file: E unuhi ʻia ka waihona kumu (pono)
-                src-language: ʻO ka ʻōlelo o ka waihona kumu (inā ʻaʻole i kuhikuhi ʻia, e hoʻoholo koke ka mea hana i ka faila kumu)
+                src-language: ʻO ka ʻōlelo o ka waihona kumu (inā ʻaʻole i kuhikuhi ʻia, e hoʻoholo ʻokoʻa ka mea hana i ka faila kumu)
                 translator:
                     google-free: Unuhi Pūnaewele Google
                     usage: 'Kaila unuhi: Kākoʻo ʻano {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
@@ -141,7 +141,7 @@ cli:
         short: Hoʻonohonoho hoʻonohonoho mai kahi mamao
     up-mod:
         flags:
-            goproxy: E wehewehe i ka helu goproxy, inā ʻaʻole, e hoʻohana ʻia ka mea mua ma ka ʻano hoʻololi kaiapuni
+            goproxy: E wehewehe i ka helu wahi goproxy, inā ʻaʻole, e hoʻohana ʻia ka mea mua i loko o ka hoʻololi kaiapuni
         long: Hoʻohou i ka mana hilinaʻi o ka faila go.mod
         short: Hoʻohou i ka faile go.mod
 lang:
@@ -197,7 +197,7 @@ lang:
     hy: Ameniana
     id: ʻInikonia
     ig: Igbo
-    ilo: ʻIlokaʻo
+    ilo: ʻIlocano
     is: ʻĀinahau
     it: Ikalia
     iw: Hepela
@@ -237,7 +237,7 @@ lang:
     nso: Sepeti
     ny: Nyanza (Chichewa)
     om: ʻO Oromo
-    or: ʻOriya (Odia)
+    or: Oriya (Odia)
     pa: ʻŌlelo Punajabi
     pl: Pōlani
     ps: ʻŌlelo Pashto
@@ -285,5 +285,5 @@ lang:
     zh-hk: Pākē (Hong Kong)
     zh-mo: Pākē(Makau)
     zh-sg: Pākē (Singapore)
-    zh-tw: Pākē kuʻuna)
+    zh-tw: Pākē (Taiwan)
     zu: Zulu

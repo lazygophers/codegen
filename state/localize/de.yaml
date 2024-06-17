@@ -72,7 +72,7 @@ cli:
             short: Generieren Sie die Datei go.mod
         pb:
             long: Generieren Sie .pb.go-Dateien, die zum Generieren von .proto-Dateien verwendet werden. Entsprechend der Konfiguration werden automatisch relevante Feldbezeichnungen hinzugefügt.
-            short: Generieren Sie die Datei .pb.go
+            short: Generieren Sie eine .pb.go-Datei
         short: Code Generator
         state:
             conf:
@@ -92,7 +92,7 @@ cli:
                 long: Generieren Sie state.table-bezogenen Code, der für die Datenbankverbindung und die Tabelleninitialisierung verwendet wird, wenn der Dienst gestartet wird.
                 short: Generieren Sie state.table-bezogenen Code
         table:
-            long: Alle zugehörigen Funktionen zur Generierung von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
+            long: Alle zugehörigen Funktionen zum Generieren von Tabellen für die zustandsbehaftete Ressourcenverwaltung oder die statische Ressourcenverwaltung von Geschäftsdiensten
             short: Alle zugehörigen Funktionen zur Tabellenerstellung
     group:
         gen: Codegenerierung
@@ -137,7 +137,7 @@ cli:
             password: Passwort, das zur Anforderung der Verifizierung verwendet wird
             template-path: Pfad zur Vorlagensynchronisierung
             username: Benutzername, der zur Anforderung der Verifizierung verwendet wird
-        long: Synchronisieren Sie die Konfiguration vom entfernten Ende und führen Sie sie in die lokale Konfiguration ein. Die Vorlagendatei wird gleichzeitig während der Synchronisierung unterstützt (falls konfiguriert).
+        long: Synchronisieren Sie die Konfiguration vom Remote-Ende und führen Sie sie in die lokale Konfiguration ein. Die Vorlagendatei wird gleichzeitig während der Synchronisierung unterstützt (sofern konfiguriert).
         short: Synchronisieren Sie die Konfiguration aus der Ferne
     up-mod:
         flags:
@@ -283,7 +283,7 @@ lang:
     zh-cht: Vereinfachtes Chinesisch)
     zh-cn: Vereinfachtes Chinesisch)
     zh-hk: Chinesisch (Hongkong)
-    zh-mo: Chinesisch (Macao)
+    zh-mo: Chinesisch (Macau)
     zh-sg: Chinesisch (Singapur)
-    zh-tw: traditionelles Chinesisch)
+    zh-tw: Chinesisch (Taiwan)
     zu: Zulu

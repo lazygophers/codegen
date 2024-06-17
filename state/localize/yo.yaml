@@ -58,7 +58,7 @@ cli:
             long: Ṣe ina .golangci.yml faili fun ayẹwo didara koodu
             short: Ṣe ina .golangci.yml faili
         goreleaser:
-            long: Ṣe ina .goreleaser.yml faili fun iṣeto ti awọn irinṣẹ idasilẹ
+            long: Ṣe ina .goreleaser.yml faili fun iṣeto ni ti awọn irinṣẹ idasilẹ
             short: Ṣe ina .goreleaser.yml faili
         impl:
             long: Ṣẹda awọn faili imuse fun imuse awọn iṣẹ iṣowo
@@ -92,7 +92,7 @@ cli:
                 long: Ṣe ipilẹṣẹ koodu ti o ni ibatan state.table, ti a lo fun asopọ data data ati ipilẹṣẹ tabili nigbati iṣẹ naa ba bẹrẹ.
                 short: Ṣe ina state.table koodu jẹmọ
         table:
-            long: Gbogbo awọn iṣẹ ti o ni ibatan ti awọn tabili ipilẹṣẹ fun orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
+            long: Gbogbo awọn iṣẹ ti o ni ibatan ti awọn tabili ti ipilẹṣẹ fun awọn orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
             short: Gbogbo jẹmọ awọn iṣẹ fun ti o npese tabili
     group:
         gen: koodu iran
@@ -104,8 +104,8 @@ cli:
         flags: paramita
         get_info: lati gba alaye diẹ sii
         global_flags: agbaye sile
-        long: 'Iranlọwọ n pese iranlọwọ fun eyikeyi aṣẹ ninu ohun elo naa. '
-        short: Iranlọwọ lori eyikeyi aṣẹ
+        long: 'Pese awọn ilana lilo fun eyikeyi aṣẹ ninu ohun elo naa. '
+        short: Awọn ilana fun lilo eyikeyi pipaṣẹ
         usage: Awọn ilana fun lilo {{.Name}}
         use: lo
     i18n:
@@ -127,7 +127,7 @@ cli:
                 src-language: Ede ti faili orisun (ti ko ba ṣe pato, ọpa yoo pinnu faili orisun laifọwọyi)
                 translator:
                     google-free: Google Wẹẹbu Tumọ
-                    usage: 'Ikanni itumọ: Atilẹyin Iru {{range $key,$value:= .Type}}{{$key}}:{{$value}}{{opin}}'
+                    usage: 'Ikanni itumọ: Atilẹyin Iru {{range $key,$value := .Type}}{{$key}}:{{$value}}{{opin}}'
             long: Awọn faili onisọpọ pupọ lati orisun kan jẹ iyipada si awọn faili ni ọna kika kanna ni awọn ede miiran.
             short: tumọ
     long: Ohun elo ti a ṣeto fun awọn ọlẹ, pẹlu 'proto' ipilẹ-ipilẹ ẹhin, awọn awoṣe ti a lo nigbagbogbo, ati itumọ ede pupọ
@@ -223,7 +223,7 @@ lang:
     mai: Maithili
     mg: Malagasy
     mi: Maori
-    mk: Macedonian
+    mk: Macedonia
     ml: Malayalam
     mn: Mongolian
     mni-mtei: Meitei (Manipuri)

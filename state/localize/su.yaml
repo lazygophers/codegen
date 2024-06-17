@@ -32,7 +32,7 @@ cli:
             long: Ngahasilkeun template file konfigurasi
             short: Ngahasilkeun file konfigurasi
         dockerignore:
-            long: Ngahasilkeun file .dockerignore pikeun wangunan gambar Docker pikeun malire manajemén file
+            long: Ngahasilkeun file .dockerignore pikeun wangunan gambar Docker malire manajemén file
             short: Ngahasilkeun file .dockerignore
         editorconfig:
             long: Ngahasilkeun file .editorconfig pikeun konfigurasi redaktur
@@ -42,7 +42,7 @@ cli:
             go-module-prefix: Pikeun jalur go_package anu dikonpigurasi dina file .proto sareng anu saleresna, anjeun tiasa ngonpigurasikeun pilihan ieu.
             input: Sebutkeun file sumber .proto bakal dihasilkeun
             output-path: pilihan ieu bisa ngonpigurasi nalika jalur go_package ngonpigurasi dina file .proto nyaeta inconsistent jeung roadbed nu sabenerna kudu dihasilkeun.
-            overwrite: Pikeun eusi nu moal regenerated, maksakeun overwriting eusi aya
+            overwrite: Pikeun eusi nu moal regenerated, maksakeun nimpa eusi aya
             proto-files: Pikeun ngimpor file .proto séjén / jalur folder nu teu di folder sarua salaku file .proto dieusian, operasi ieu mangrupa pilihan pikeun override widang konfigurasi dina file konfigurasi.
             protoc: '`protoc` jalur file customizable'
             protoc-gen-go: '`protoc-gen-go` jalur plugin'
@@ -82,7 +82,7 @@ cli:
                 cache: Naha ngaktipkeun generasi nu patali cache
                 config: Naha ngahasilkeun kode nu patali konfigurasi
                 i18n: Naha ngaktipkeun generasi nu patali multi-basa (generasi ngan ngawengku initialization kaayaan jeung eusi lianna, sarta teu kaasup tarjamah otomatis tina sababaraha basa. Lamun perlu tarjamah otomatis, mangga nganggo {{.Command}} pikeun nempo rinci)
-                table: Naha ngaktipkeun generasi database-patali database
+                table: Naha ngaktipkeun generasi database nu patali database
             i18n:
                 long: Ngahasilkeun kode patali i18n pikeun telepon internasional multi-basa
                 short: Ngahasilkeun kode patali i18n
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: pikeun meunangkeun inpo nu leuwih lengkep
         global_flags: parameter global
-        long: 'Pitulung nyadiakeun pitulung pikeun sagala paréntah dina aplikasi. '
-        short: Pitulung dina sagala paréntah
+        long: 'Nyadiakeun parentah pamakéan pikeun sagala paréntah dina aplikasi. '
+        short: Parentah pikeun ngagunakeun sagala paréntah
         usage: Parentah pikeun ngagunakeun {{.Name}}
         use: ngagunakeun
     i18n:
@@ -182,13 +182,13 @@ lang:
     fy: Frisian
     ga: Basa Irlandia
     gd: Gaelik Skotlandia
-    gl: Galisia
+    gl: Galician
     gn: Guarani
     gom: basa gonggan
     gu: gujarati
     ha: Hausa
     haw: Hawai
-    he: ibrani
+    he: basa Ibrani
     hi: Hindi
     hmn: Hmong
     hr: Kroasia
@@ -200,7 +200,7 @@ lang:
     ilo: Basa Ilokano
     is: Islandia
     it: Italia
-    iw: ibrani
+    iw: basa Ibrani
     ja: Basa Jepang
     jv: basa Jawa
     jw: basa Jawa
@@ -209,7 +209,7 @@ lang:
     km: Kamboja
     kn: Kannada
     ko: Koréa
-    kri: Kreol
+    kri: Kréol
     ku: Kurdi
     ky: Kirgiz
     la: Latin
@@ -257,7 +257,7 @@ lang:
     sq: basa Albania
     sr: Sérbia
     st: Sesotho
-    su: Basa Sunda
+    su: basa Sunda
     sv: Swédia
     sw: basa Swahili
     ta: tamil

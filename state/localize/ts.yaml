@@ -47,7 +47,7 @@ cli:
             protoc: '`protoc` ndlela ya fayili leyi cinciwaka'
             protoc-gen-go: '`protoc-gen-go` ndlela ya xiengetelo'
             tables-enable_field_created_at: Loko ku ri ku pfumelela ku tumbuluxiwa ka vukorhokeri bya xiviri bya nsimu ya database created_at
-            tables-enable_field_deleted_at: Loko ku ri ku pfumelela xiyimiso xa ntolovelo xa nsimu ya deleted_at eka database
+            tables-enable_field_deleted_at: Loko ku ri ku pfumelela xiyimiso xa xiviri xa nsimu ya deleted_at eka database
             tables-enable_field_id: Endla leswaku ku tumbuluxiwa ka vukorhokeri bya xiviri eka tinsimu leti fambelanaka na database
             tables-enable_field_updated_at: Loko ku ri ku pfumelela ntikelo wa xiviri wa nsimu ya updated_at eka database
             tables-enable_gorm_tag_column: Leswaku ku endliwa leswaku ku va na ku tumbuluxiwa ka gorm loku fambelanaka na database
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: ku kuma vuxokoxoko lebyi engetelekeke
         global_flags: tipharamitha ta misava hinkwayo
-        long: 'Mpfuneto wu nyika mpfuneto eka xileriso xin’wana na xin’wana eka xitirhisiwa. '
-        short: Pfuna eka xileriso xin’wana ni xin’wana
+        long: 'Nyika swiletelo swa matirhiselo ya xileriso xin’wana na xin’wana eka xitirhisiwa. '
+        short: Swiletelo swo tirhisa xileriso xihi na xihi
         usage: Swiletelo swo tirhisa {{.Name}} .
         use: tirhisa
     i18n:
@@ -228,7 +228,7 @@ lang:
     mn: Ximongolia
     mni-mtei: Meitei (Manipuri) .
     mr: marathi
-    ms: Ximalay
+    ms: Ximalayi
     mt: Ximalta
     my: Xiburma
     ne: Xinepali

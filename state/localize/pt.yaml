@@ -46,7 +46,7 @@ cli:
             proto-files: Para importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta do arquivo .proto especificado, esta operação é uma opção para substituir o campo de configuração no arquivo de configuração.
             protoc: caminho de arquivo personalizável `protoc`
             protoc-gen-go: Caminho do plugin `protoc-gen-go`
-            tables-enable_field_created_at: Se deve ser habilitada a geração de configuração padrão do banco de dados criado_at campo
+            tables-enable_field_created_at: Se deve ativar a geração de configuração padrão do campo criado_at do banco de dados
             tables-enable_field_deleted_at: Se a configuração padrão do campo deletado_at deve ser habilitada no banco de dados
             tables-enable_field_id: Habilitar geração de configuração padrão para campos relacionados ao banco de dados
             tables-enable_field_updated_at: Se deve ativar o valor padrão do campo atualizado_at no banco de dados
@@ -104,8 +104,8 @@ cli:
         flags: parâmetro
         get_info: para obter informações mais detalhadas
         global_flags: parâmetros globais
-        long: 'Help fornece ajuda para qualquer comando do aplicativo. '
-        short: Ajuda em qualquer comando
+        long: 'Forneça instruções de uso para qualquer comando no aplicativo. '
+        short: Instruções para usar qualquer comando
         usage: Instruções para usar {{.Name}}
         use: usar
     i18n:
@@ -202,8 +202,8 @@ lang:
     it: italiano
     iw: hebraico
     ja: japonês
-    jv: javanês
-    jw: javanês
+    jv: Javanês
+    jw: Javanês
     ka: Georgiano
     kk: Cazaque
     km: Cambojano
@@ -224,7 +224,7 @@ lang:
     mg: malgaxe
     mi: maori
     mk: Macedônio
-    ml: malaiala
+    ml: Malaiala
     mn: mongol
     mni-mtei: Meitei (Manipuri)
     mr: marata
@@ -269,7 +269,7 @@ lang:
     tl: Tagalo (filipino)
     tr: turco
     ts: Dzonga
-    tt: Tártaro
+    tt: tártaro
     ug: Uigur
     uk: ucraniano
     ur: urdu
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinês (Hong Kong)
     zh-mo: Chinês (Macau)
     zh-sg: Chinês (Singapura)
-    zh-tw: chinês tradicional)
+    zh-tw: Chinês (Taiwan)
     zu: zulu

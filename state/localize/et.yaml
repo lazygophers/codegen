@@ -58,7 +58,7 @@ cli:
             long: Koodi kvaliteedi kontrollimiseks genereerige fail .golangci.yml
             short: Looge fail .golangci.yml
         goreleaser:
-            long: Looge väljalasketööriistade konfigureerimiseks fail .goreleaser.yml
+            long: Looge väljalasketööriistade konfigureerimiseks fail goreleaser.yml
             short: Looge fail .goreleaser.yml
         impl:
             long: Looge äriteenuste juurutamiseks rakendusfaile
@@ -146,7 +146,7 @@ cli:
         short: Värskendage faili go.mod
 lang:
     af: afrikaani
-    ak: Twi (akan)
+    ak: Twi (Akan)
     am: amhari
     ar: araabia keel
     as: Assami
@@ -162,7 +162,7 @@ lang:
     ceb: Cebuano
     ckb: kurdi (sorani)
     co: Korsika
-    cs: tšehhi
+    cs: Tšehhi
     cy: kõmri
     da: taani keel
     de: saksa keel
@@ -201,7 +201,7 @@ lang:
     is: islandi
     it: itaalia keel
     iw: heebrea keel
-    ja: Jaapani
+    ja: jaapanlane
     jv: jaava keel
     jw: jaava keel
     ka: Gruusia keel
@@ -285,5 +285,5 @@ lang:
     zh-hk: hiina (Hongkong)
     zh-mo: hiina (Aomen)
     zh-sg: hiina (Singapur)
-    zh-tw: traditsiooniline hiina)
+    zh-tw: hiina (Taiwan)
     zu: suulu

@@ -16,7 +16,7 @@ cli:
                 default-role: Výchozí role dávkově generovaného rozhraní Podrobnosti naleznete v dokumentaci k použití.
                 gen-to: Zadejte výstupní umístění vygenerovaných souborů .go
                 list-option: Seznam lze také filtrovat, podrobnosti naleznete v dokumentaci k použití.
-                model: Zadejte název modelu, podporujte vynechání předpony `model`
+                model: Zadejte název modelu, podporuje vynechání předpony `model`
             long: Generujte rozhraní v dávkách a přidejte rozhraní pro určitý model do souboru .proto
             short: Rozhraní pro dávkové generování
         all:
@@ -141,7 +141,7 @@ cli:
         short: Synchronizujte konfiguraci ze vzdáleného místa
     up-mod:
         flags:
-            goproxy: Zadejte adresu goproxy, pokud ne, použije se první v proměnné prostředí
+            goproxy: Zadejte adresu goproxy, pokud ne, použije se první adresa v proměnné prostředí
         long: Aktualizujte verzi závislosti souboru go.mod
         short: Aktualizujte soubor go.mod
 lang:
@@ -177,7 +177,7 @@ lang:
     eu: baskický
     fa: Peršan
     fi: finština
-    fil: filipínština (tagalogština)
+    fil: filipínština (tagalog)
     fr: francouzština
     fy: fríský
     ga: irština
@@ -285,5 +285,5 @@ lang:
     zh-hk: čínština (Hongkong)
     zh-mo: čínština (Macao)
     zh-sg: čínština (Singapur)
-    zh-tw: tradiční čínština)
+    zh-tw: čínština (Tchaj-wan)
     zu: Zulu

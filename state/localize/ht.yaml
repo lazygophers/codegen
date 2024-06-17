@@ -36,14 +36,14 @@ cli:
             short: Jenere fichye .dockerignore
         editorconfig:
             long: Jenere .editorconfig fichye pou konfigirasyon editè
-            short: Jenere .editorconfig fichye
+            short: Jenere dosye .editorconfig
         flags:
             add-proto-files: Si ou bezwen enpòte lòt .proto fichye/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a pral ajoute (pa ranplase) chemen ki konfigire nan fichye konfigirasyon an.
             go-module-prefix: Pou chemen an nan go_package configuré nan .proto fichye a ak youn aktyèl la, ou ka configured opsyon sa a
             input: Espesifye fichye sous .proto yo dwe pwodwi
-            output-path: Opsyon sa a ka konfigirasyon lè chemen go_package configuré nan fichye .proto a pa konsistan avèk roadbed ki aktyèlman bezwen pwodwi.
+            output-path: Opsyon sa a ka konfigirasyon lè chemen go_package configuré nan fichye .proto a pa konsistan avèk wout la ki aktyèlman bezwen pwodwi.
             overwrite: Pou kontni ki pa pral rejenere, fòse ranplase kontni ki egziste deja
-            proto-files: Pou enpòte lòt dosye .proto/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a se yon opsyon pou pase sou pye konfigirasyon an nan dosye konfigirasyon an.
+            proto-files: Pou enpòte lòt .proto fichye/chemen dosye ki pa nan menm katab ak fichye .proto espesifye a, operasyon sa a se yon opsyon pou pase sou pye konfigirasyon nan dosye konfigirasyon an.
             protoc: '`protoc` chemen fichye personnalisable'
             protoc-gen-go: '`protoc-gen-go` chemen plugin'
             tables-enable_field_created_at: Kit pou pèmèt jenerasyon default konfigirasyon baz done create_at jaden an
@@ -92,7 +92,7 @@ cli:
                 long: Jenere state.table kòd ki gen rapò, yo itilize pou koneksyon baz done ak inisyalizasyon tab lè sèvis la kòmanse.
                 short: Jenere state.table kòd ki gen rapò
         table:
-            long: Tout fonksyon ki gen rapò ak jenere tab pou resous eta oswa jesyon resous estatik nan sèvis biznis
+            long: Tout fonksyon ki gen rapò ak jenere tab pou resous etatik oswa jesyon resous estatik nan sèvis biznis
             short: Tout fonksyon ki gen rapò pou jenere tab
     group:
         gen: jenerasyon kòd
@@ -124,13 +124,13 @@ cli:
                 generate-const: Jenere valè enimerasyon pou rele fasil
                 languages: Espesifye lang sib pou tradiksyon an
                 src-file: Fichye sous yo dwe tradui (obligatwa)
-                src-language: Lang nan dosye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)
+                src-language: Lang nan fichye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)
                 translator:
                     google-free: Google Web Translate
                     usage: 'Chanèl tradiksyon: Kalite sipò {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fichye plizyè lang ki soti nan yon sèten sous yo konvèti nan dosye nan menm fòma nan lòt lang.
             short: tradwi
-    long: Yon seri zouti pou moun ki parese, ki gen ladan kad backend ki baze sou 'proto', modèl yo itilize souvan, ak tradiksyon plizyè lang.
+    long: Yon seri zouti pou moun ki parese, ki gen ladan fondasyon backend ki baze sou 'proto', modèl yo itilize souvan, ak tradiksyon plizyè lang.
     short: Yon seri zouti pou moun ki parese
     sync:
         flags:
@@ -181,13 +181,13 @@ lang:
     fr: franse
     fy: Frisyen
     ga: Ilandè
-    gd: Gaelic Scottish
+    gd: Scottish Gaelic
     gl: Galisyen
     gn: Guarani
     gom: langaj gonggan
     gu: gujarati
     ha: Hausa
-    haw: Awayi
+    haw: Awayen
     he: ebre
     hi: Hindi
     hmn: Hmong
@@ -284,6 +284,6 @@ lang:
     zh-cn: Chinwa (Senplifye)
     zh-hk: Chinwa (Hong Kong)
     zh-mo: Chinwa (Makaw)
-    zh-sg: Chinwa (Singapore)
-    zh-tw: Chinwa tradisyonèl)
+    zh-sg: Chinwa (Singapou)
+    zh-tw: Chinwa (Taiwan)
     zu: Zoulou

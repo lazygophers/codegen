@@ -29,7 +29,7 @@ cli:
             long: Genereer boekingsbestanden voor de zakelijke dienstverlening
             short: Invoerbestand genereren
         conf:
-            long: Configuratiebestandsjabloon genereren
+            long: Genereer een configuratiebestandsjabloon
             short: Configuratiebestand genereren
         dockerignore:
             long: Genereer een .dockerignore-bestand voor het maken van Docker-images om bestandsbeheer te negeren
@@ -81,7 +81,7 @@ cli:
             flags:
                 cache: Of cachegerelateerde generatie moet worden ingeschakeld
                 config: Of er configuratiegerelateerde code moet worden gegenereerd
-                i18n: Of u meertalige gerelateerde generatie wilt inschakelen (de generatie omvat alleen staatsinitialisatie en andere inhoud, en omvat geen automatische vertaling van meerdere talen. Als u automatische vertaling nodig heeft, gebruik dan {{.Command}} om details te bekijken)
+                i18n: Of u meertalige gerelateerde generatie wilt inschakelen (de generatie omvat alleen statusinitialisatie en andere inhoud, en omvat geen automatische vertaling van meerdere talen. Als u automatische vertaling nodig heeft, gebruik dan {{.Command}} om details te bekijken)
                 table: Of databasegerelateerde databasegeneratie moet worden ingeschakeld
             i18n:
                 long: Genereer i18n-gerelateerde code voor meertalige internationale gesprekken
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: om meer gedetailleerde informatie te krijgen
         global_flags: globale parameters
-        long: 'Help biedt hulp bij elke opdracht in de toepassing. '
-        short: Hulp bij elk commando
+        long: 'Geef gebruiksinstructies voor elke opdracht in de toepassing. '
+        short: Instructies voor het gebruik van elke opdracht
         usage: Instructies voor het gebruik van {{.Name}}
         use: gebruik
     i18n:
@@ -141,7 +141,7 @@ cli:
         short: Synchroniseer de configuratie op afstand
     up-mod:
         flags:
-            goproxy: Geef het goproxy-adres op. Als dit niet het geval is, wordt het eerste adres in de omgevingsvariabele gebruikt
+            goproxy: Geef het goproxy-adres op. Als dit niet het geval is, wordt het eerste in de omgevingsvariabele gebruikt
         long: Update de afhankelijkheidsversie van het go.mod-bestand
         short: Update het go.mod-bestand
 lang:
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chinees (Hongkong)
     zh-mo: Chinees (Macau)
     zh-sg: Chinees (Singapore)
-    zh-tw: traditioneel Chinees)
+    zh-tw: Chinees (Taiwan)
     zu: Zoeloe

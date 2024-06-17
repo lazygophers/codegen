@@ -8,7 +8,7 @@ cli:
         subcommand:
             short: Bumuo ng autocomplete na script para sa {{.Command}}
     flags:
-        debug: Output detalyadong log
+        debug: Detalyadong log ng output
     gen:
         add-rpc:
             flags:
@@ -38,7 +38,7 @@ cli:
             long: Bumuo ng .editorconfig file para sa configuration ng editor
             short: Bumuo ng .editorconfig file
         flags:
-            add-proto-files: Kung kailangan mong mag-import ng iba pang .proto file/folder path na wala sa parehong folder tulad ng tinukoy na .proto file, idaragdag (hindi i-overwrite) ng operasyong ito ang path na na-configure sa configuration file.
+            add-proto-files: Kung kailangan mong mag-import ng iba pang .proto file/folder path na wala sa parehong folder tulad ng tinukoy na .proto file, idaragdag ng operasyong ito (hindi i-overwrite) ang path na na-configure sa configuration file.
             go-module-prefix: Para sa path ng go_package na na-configure sa .proto file at ang aktwal na isa, maaari mong i-configure ang opsyong ito
             input: Tukuyin ang .proto source file na bubuuin
             output-path: Maaaring i-configure ang opsyong ito kapag ang path ng go_package na na-configure sa .proto file ay hindi naaayon sa roadbed na talagang kailangang mabuo.
@@ -81,7 +81,7 @@ cli:
             flags:
                 cache: Kung paganahin ang henerasyong nauugnay sa cache
                 config: Kung bubuo ng code na nauugnay sa pagsasaayos
-                i18n: Kung papaganahin ang henerasyong may kaugnayan sa maraming wika (kasama lang ng henerasyon ang pagsisimula ng estado at iba pang nilalaman, at hindi kasama ang awtomatikong pagsasalin ng maraming wika. Kung kailangan mo ng awtomatikong pagsasalin, mangyaring gamitin ang {{.Command}} upang tingnan ang mga detalye)
+                i18n: Kung paganahin ang henerasyong may kaugnayan sa maraming wika (kasama lang sa henerasyon ang pagsisimula ng estado at iba pang nilalaman, at hindi kasama ang awtomatikong pagsasalin ng maraming wika. Kung kailangan mo ng awtomatikong pagsasalin, mangyaring gamitin ang {{.Command}} upang tingnan ang mga detalye)
                 table: Kung paganahin ang pagbuo ng database na nauugnay sa database
             i18n:
                 long: Bumuo ng code na nauugnay sa i18n para sa mga multi-language na internasyonal na tawag
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: para makakuha ng mas detalyadong impormasyon
         global_flags: pandaigdigang mga parameter
-        long: 'Ang tulong ay nagbibigay ng tulong para sa anumang utos sa application. '
-        short: Tulong sa anumang utos
+        long: 'Magbigay ng mga tagubilin sa paggamit para sa anumang command sa application. '
+        short: Mga tagubilin para sa paggamit ng anumang utos
         usage: Mga tagubilin sa paggamit ng {{.Name}}
         use: gamitin
     i18n:
@@ -137,7 +137,7 @@ cli:
             password: Ginagamit ang password para humiling ng pag-verify
             template-path: Path ng pag-synchronize ng template
             username: Username na ginamit para humiling ng pag-verify
-        long: I-synchronize ang configuration mula sa remote na dulo at pagsamahin ito sa lokal na configuration Ang file ng template ay sinusuportahan nang sabay-sabay sa panahon ng pag-synchronize (kung naka-configure)
+        long: I-synchronize ang configuration mula sa remote na dulo at isama ito sa lokal na configuration Ang template na file ay sinusuportahan nang sabay-sabay sa panahon ng pag-synchronize (kung naka-configure)
         short: I-synchronize ang configuration mula sa remote
     up-mod:
         flags:

@@ -3,8 +3,8 @@ cli:
         flags:
             no-descriptions: Tlosa litaelo tsa ho qetela
         long: |
-            E hlahisa mongolo o itlhophang bakeng sa {{.RootName}} bakeng sa khetla e boletsoeng.
-        short: Hlahisa mongolo o phethelang ka boits'oaro bakeng sa khetla e boletsoeng
+            E hlahisa mongolo o ikemelang oa {{.RootName}} bakeng sa khetla e boletsoeng.
+        short: Hlahisa mongolo oa ho ikemela bakeng sa khetla e boletsoeng
         subcommand:
             short: Hlahisa mongolo oa ho ikemela oa {{.Command}}
     flags:
@@ -16,7 +16,7 @@ cli:
                 default-role: Karolo ea kamehla ea sebopeho se hlahisoang ke sehlopha Ka kopo sheba litokomane tsa tšebeliso bakeng sa lintlha.
                 gen-to: Hlalosa sebaka sa tlhahiso ea lifaele tsa .go tse hlahisitsoeng
                 list-option: Lethathamo le ka boela la hloekisoa, ka kopo fumana litokomane tsa tšebeliso bakeng sa lintlha.
-                model: Hlalosa lebitso la mohlala, ts'ehetso e siea sehlongoa sa `mohlala`
+                model: Hlalosa lebitso la mohlala, ts'ehetso e siea sehlongoa sa `model`
             long: Hlahisa likhokahano ka lihlopha 'me u kenye sebopeho sa mofuta o itseng faeleng ea .proto
             short: Sehokelo sa moloko oa batho
         all:
@@ -41,7 +41,7 @@ cli:
             add-proto-files: Haeba o hloka ho kenya tse ling tsa .proto lifaele/litsela tsa lifoldara tse seng ka har'a foldara e tšoanang le faele e boletsoeng ea .proto, ts'ebetso ena e tla hlomathisa (eseng ho hlakola) tsela e hlophisitsoeng faeleng ea tlhophiso.
             go-module-prefix: Bakeng sa tsela ea go_package e hlophisitsoeng faeleng ea .proto le ea 'nete, o ka hlophisa khetho ena.
             input: Hlalosa faele ea .proto e tla hlahisoa
-            output-path: Khetho ena e ka hlophisoa ha tsela ea go_package e hlophisitsoeng faeleng ea .proto e sa lumellane le tsela e hlileng e hlokang ho hlahisoa.
+            output-path: Khetho ena e ka lokisoa ha tsela ea go_package e hlophisitsoeng faeleng ea .proto e sa lumellane le tsela e hlileng e hlokang ho hlahisoa.
             overwrite: Bakeng sa litaba tse ke keng tsa nchafatsoa, ​​qobella ho hlakola litaba tse teng
             proto-files: Ho kenya lifaele tse ling tsa .proto/litsela tsa lifoldara tse sieo ka har'a foldara e tšoanang le faele e boletsoeng ea .proto, ts'ebetso ena ke khetho ea ho feta sebaka sa tlhophiso faeleng ea tlhophiso.
             protoc: '`protoc` tsela ea faele eo u ka e khethang'
@@ -104,8 +104,8 @@ cli:
         flags: paramethara
         get_info: ho fumana lintlha tse qaqileng haholoanyane
         global_flags: mekhahlelo ea lefatše
-        long: 'Thuso e fana ka thuso bakeng sa taelo efe kapa efe ts''ebelisong. '
-        short: Thuso ka taelo efe kapa efe
+        long: 'Fana ka litaelo tsa tšebeliso bakeng sa taelo efe kapa efe ea ts''ebeliso. '
+        short: Litaelo tsa ho sebelisa taelo efe kapa efe
         usage: Litaelo tsa ho sebelisa {{.Name}}
         use: tshebediso
     i18n:

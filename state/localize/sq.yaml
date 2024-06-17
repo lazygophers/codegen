@@ -13,7 +13,7 @@ cli:
         add-rpc:
             flags:
                 action: Sjelljet që duhet të shtohen në grupe, ju lutemi gjeni dokumentacionin e përdorimit për detaje
-                default-role: Roli i parazgjedhur i ndërfaqes së krijuar nga grupi Ju lutemi referojuni dokumentacionit të përdorimit për detaje.
+                default-role: Roli i parazgjedhur i ndërfaqes së gjeneruar nga grupi Ju lutemi referojuni dokumentacionit të përdorimit për detaje.
                 gen-to: Specifikoni vendndodhjen e daljes së skedarëve .go të gjeneruar
                 list-option: Lista gjithashtu mund të filtrohet, ju lutemi gjeni dokumentacionin e përdorimit për detaje.
                 model: Specifikoni emrin e modelit, mbështesni heqjen e prefiksit `model`
@@ -23,8 +23,8 @@ cli:
             long: Gjeneroni të gjithë kodin e mbështetur nga ky mjet
             short: Gjeneroni të gjithë kodin
         cache:
-            long: Gjeneroni skedarë memorie specifike për SDK-të e lidhura me ruajtjen e thirrjeve të biznesit
-            short: Gjeneroni skedarin e cache
+            long: Gjeneroni skedarë memorie specifike për SDK-të e lidhura me ruajtjen e telefonatave të biznesit
+            short: Gjeneroni skedarin e cache-it
         cmd:
             long: Gjeneroni skedarë hyrje për shërbimet e biznesit
             short: Gjeneroni skedarin e hyrjes
@@ -32,13 +32,13 @@ cli:
             long: Gjeneroni shabllonin e skedarit të konfigurimit
             short: Gjeneroni skedarin e konfigurimit
         dockerignore:
-            long: Krijo skedar .dockerignore për ndërtimin e imazhit Docker për të injoruar menaxhimin e skedarëve
+            long: Gjeneroni skedar .dockerignore për ndërtimin e imazhit Docker për të injoruar menaxhimin e skedarëve
             short: Gjeneroni skedarin .dockerignore
         editorconfig:
             long: Gjeneroni skedarin .editorconfig për konfigurimin e redaktorit
             short: Gjeneroni skedarin .editorconfig
         flags:
-            add-proto-files: Nëse duhet të importoni shtigje të tjera .proto/skedarë që nuk janë në të njëjtën dosje me skedarin .proto të specifikuar, ky operacion do të shtojë (nuk do të mbishkruajë) shtegun e konfiguruar në skedarin e konfigurimit.
+            add-proto-files: Nëse keni nevojë të importoni skedarë/shtigje të tjera .proto që nuk janë në të njëjtën dosje me skedarin .proto të specifikuar, ky operacion do të shtojë (jo do të mbishkruajë) shtegun e konfiguruar në skedarin e konfigurimit.
             go-module-prefix: Për shtegun e go_package të konfiguruar në skedarin .proto dhe atë aktual, mund të konfiguroni këtë opsion
             input: Specifikoni skedarin burimor .proto që do të gjenerohet
             output-path: Ky opsion mund të konfigurohet kur shtegu i go_package i konfiguruar në skedarin .proto nuk është në përputhje me shtratin e rrugës që në fakt duhet të gjenerohet.
@@ -84,15 +84,15 @@ cli:
                 i18n: Nëse do të aktivizohet gjenerimi i lidhur me shumë gjuhë (gjenerimi përfshin vetëm inicializimin e gjendjes dhe përmbajtje të tjera, dhe nuk përfshin përkthim automatik të shumë gjuhëve. Nëse keni nevojë për përkthim automatik, përdorni {{.Command}} për të parë detajet)
                 table: Nëse do të mundësohet gjenerimi i bazës së të dhënave të lidhura me bazën e të dhënave
             i18n:
-                long: Krijo kod të lidhur me i18n për thirrje ndërkombëtare shumëgjuhëshe
+                long: Gjeneroni kodin e lidhur me i18n për telefonatat ndërkombëtare shumëgjuhëshe
                 short: Gjeneroni kodin e lidhur me i18n
-            long: Gjeneroni të gjitha funksionet përkatëse të shtetit për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
+            long: Gjeneroni të gjitha funksionet e lidhura të shtetit për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
             short: Të gjitha funksionet përkatëse për gjendjen gjeneruese
             table:
-                long: Gjeneroni kodin e lidhur me status.tabela, që përdoret për lidhjen e bazës së të dhënave dhe inicializimin e tabelës kur shërbimi niset.
+                long: Gjeneroni kodin e lidhur me status.tabela, i përdorur për lidhjen e bazës së të dhënave dhe inicializimin e tabelës kur shërbimi niset.
                 short: Gjeneroni kodin e lidhur me gjendjen.tabela
         table:
-            long: Të gjitha funksionet e ndërlidhura të gjenerimit të tabelave për menaxhimin e burimeve shtetërore ose statike të burimeve të shërbimeve të biznesit
+            long: Të gjitha funksionet e ndërlidhura të gjenerimit të tabelave për menaxhimin e burimeve të gjendjes ose burimeve statike të shërbimeve të biznesit
             short: Të gjitha funksionet përkatëse për gjenerimin e tabelave
     group:
         gen: gjenerimi i kodit
@@ -104,8 +104,8 @@ cli:
         flags: parametri
         get_info: për të marrë informacion më të detajuar
         global_flags: parametrat globalë
-        long: 'Ndihma ofron ndihmë për çdo komandë në aplikacion. '
-        short: Ndihmoni për çdo komandë
+        long: 'Jep udhëzime përdorimi për çdo komandë në aplikacion. '
+        short: Udhëzime për përdorimin e çdo komande
         usage: Udhëzime për përdorimin e {{.Name}}
         use: përdorni
     i18n:
@@ -165,7 +165,7 @@ lang:
     cs: çeke
     cy: Uellsisht
     da: daneze
-    de: gjermanisht
+    de: gjermane
     doi: dogglai
     dv: Dhivehi
     ee: Dele
@@ -246,7 +246,7 @@ lang:
     ro: rumun
     ru: rusisht
     rw: Kinyarwanda
-    sa: sanskrite
+    sa: sanskritishtja
     sd: sindhi
     si: sinhale
     sk: sllovake

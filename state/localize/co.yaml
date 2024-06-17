@@ -30,7 +30,7 @@ cli:
             short: Generate un schedariu di entrata
         conf:
             long: Genera un mudellu di schedariu di cunfigurazione
-            short: Generate un schedariu di cunfigurazione
+            short: Generate u schedariu di cunfigurazione
         dockerignore:
             long: Generate .dockerignore file per a creazione di l'imaghjini Docker per ignurà a gestione di u schedariu
             short: Generate u schedariu .dockerignore
@@ -43,7 +43,7 @@ cli:
             input: Specificate u schedariu di fonte .proto per esse generatu
             output-path: Questa opzione pò esse cunfigurata quandu a strada di go_package cunfigurata in u schedariu .proto hè inconsistente cù a strada chì deve esse generata.
             overwrite: Per u cuntenutu chì ùn serà micca rigeneratu, forza a soprascrittura di u cuntenutu esistenti
-            proto-files: Per impurtà altri .proto files / folder paths chì ùn sò micca in u stessu cartulare cum'è u schedariu .proto specificatu, sta operazione hè una opzione per annullà u campu di cunfigurazione in u schedariu di cunfigurazione.
+            proto-files: Per impurtà altri .proto files / folder paths chì ùn sò micca in u stessu cartulare cum'è u schedariu .proto specificatu, questa operazione hè una opzione per annullà u campu di cunfigurazione in u schedariu di cunfigurazione.
             protoc: '`protoc` percorso di file customizable'
             protoc-gen-go: percorso di plugin `protoc-gen-go`
             tables-enable_field_created_at: Sia per attivà a generazione di cunfigurazione predeterminata di a basa di dati creata_at campu
@@ -71,7 +71,7 @@ cli:
             long: Generate u schedariu go.mod per a gestione di a dependenza
             short: Generate u schedariu go.mod
         pb:
-            long: Generate schedarii .pb.go, chì sò usati per generà i schedarii .proto L'etichetti di u campu pertinenti x seranu aghjuntu automaticamente secondu a cunfigurazione.
+            long: Generate schedarii .pb.go, chì sò usati per generà schedarii .proto L'etichetti di u campu pertinenti x seranu aghjuntu automaticamente secondu a cunfigurazione.
             short: Generate u schedariu .pb.go
         short: Generatore di codice
         state:
@@ -81,18 +81,18 @@ cli:
             flags:
                 cache: Sia per attivà a generazione di cache
                 config: Sia generà codice di cunfigurazione
-                i18n: Sia per attivà a generazione multilingue (a generazione include solu l'inizializazione di u statu è altri cuntenutu, è ùn include micca a traduzzione automatica di parechje lingue. Sè avete bisognu di traduzzione automatica, per piacè utilizate {{.Command}} per vede i dettagli)
+                i18n: Sia per attivà a generazione in parechje lingue (a generazione include solu l'inizializazione statali è altri cuntenutu, è ùn include micca a traduzzione automatica di parechje lingue. Sè avete bisognu di traduzzione automatica, per piacè utilizate {{.Command}} per vede i dettagli)
                 table: Sia per attivà a generazione di basa di dati di basa di dati
             i18n:
                 long: Genera codice i18n in relazione per e chjama internaziunali multilingue
                 short: Genera codice i18n in relazione
-            long: Genera tutte e funzioni relative di u statu per a gestione di risorse statali o di risorse statiche di servizii di cummerciale
+            long: Genera tutte e funzioni di u statu ligate per a risorsa statale o a gestione di risorse statiche di i servizii cummerciale
             short: Tutte e funzioni pertinenti per a generazione di u statu
             table:
                 long: Generate codice relative state.table, utilizatu per a cunnessione di a basa di dati è l'inizializazione di a tavola quandu u serviziu hè iniziatu.
                 short: Genera codice state.table rilativi
         table:
-            long: Tutte e funzioni cunnesse di generazione di tavule per a gestione di risorse stateful o di risorse statiche di servizii di cummerciale
+            long: Tutte e funzioni cunnesse di generazione di tabelle per a gestione di risorse stateful o di risorse statiche di servizii di cummerciale
             short: Tutte e funzioni relative per a generazione di tavule
     group:
         gen: generazione di codice
@@ -206,7 +206,7 @@ lang:
     jw: Giavanese
     ka: Georgianu
     kk: Kazakh
-    km: Cambogiana
+    km: Cambogianu
     kn: Kannada
     ko: Coreanu
     kri: criolu
@@ -251,7 +251,7 @@ lang:
     si: sinhala
     sk: Sluvaccu
     sl: Sluvenu
-    sm: Samoan
+    sm: Samoanu
     sn: Shona
     so: Somalianu
     sq: Albanese
@@ -285,5 +285,5 @@ lang:
     zh-hk: Cinese (Hong Kong)
     zh-mo: Cinese (Macau)
     zh-sg: Cinese (Singapore)
-    zh-tw: cinese tradiziunale)
+    zh-tw: Cinese (Taiwan)
     zu: Zulu

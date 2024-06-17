@@ -17,7 +17,7 @@ cli:
                 gen-to: Yaradılmış .go fayllarının çıxış yerini təyin edin
                 list-option: Siyahı da süzülə bilər, ətraflı məlumat üçün istifadə sənədlərini tapın.
                 model: Model adını göstərin, `model` prefiksini buraxmağı dəstəkləyin
-            long: Partiyalarda interfeyslər yaradın və .proto faylında müəyyən model üçün interfeys əlavə edin
+            long: Partiyalarda interfeyslər yaradın və .proto faylında müəyyən bir model üçün interfeys əlavə edin
             short: Toplu generasiya interfeysi
         all:
             long: Bu alət tərəfindən dəstəklənən bütün kodları yaradın
@@ -43,11 +43,11 @@ cli:
             input: Yaradılacaq .proto mənbə faylını təyin edin
             output-path: Bu seçim .proto faylında konfiqurasiya edilmiş go_package yolu faktiki olaraq yaradılmalı olan yol yatağı ilə uyğun gəlməyəndə konfiqurasiya edilə bilər.
             overwrite: Yenilənməyəcək məzmun üçün mövcud məzmunun üzərinə yazmağa məcbur edin
-            proto-files: Göstərilən .proto faylı ilə eyni qovluqda olmayan digər .proto faylları/qovluq yollarını idxal etmək üçün bu əməliyyat konfiqurasiya faylında konfiqurasiya sahəsini ləğv etmək üçün seçimdir.
+            proto-files: Göstərilən .proto faylı ilə eyni qovluqda olmayan digər .proto faylları/qovluq yollarını idxal etmək üçün bu əməliyyat konfiqurasiya faylında konfiqurasiya sahəsini ləğv etmək üçün bir seçimdir.
             protoc: '`protoc` fərdiləşdirilə bilən fayl yolu'
             protoc-gen-go: '`protoc-gen-go` plagin yolu'
             tables-enable_field_created_at: yaradılmış_at sahəsinin standart konfiqurasiya generasiyasının aktiv edilib-edilməməsi
-            tables-enable_field_deleted_at: Verilənlər bazasında silinmiş_at sahəsinin standart parametrinin aktiv edilib-edilməməsi
+            tables-enable_field_deleted_at: Verilənlər bazasında silinmiş_at sahəsinin standart parametrlərinin aktiv edilib-edilməməsi
             tables-enable_field_id: Verilənlər bazası ilə əlaqəli sahələr üçün standart konfiqurasiya yaradılmasını aktivləşdirin
             tables-enable_field_updated_at: Verilənlər bazasında updated_at sahəsinin standart dəyərinin aktiv edilib-edilməməsi
             tables-enable_gorm_tag_column: Verilənlər bazası ilə əlaqəli gorm generasiyasının aktiv edilib-edilməməsi
@@ -84,9 +84,9 @@ cli:
                 i18n: Çox dillə əlaqəli generasiyanın aktiv edilib-edilməməsi (nəsil yalnız dövlət başlanğıcını və digər məzmunu ehtiva edir və birdən çox dilin avtomatik tərcüməsini ehtiva etmir. Avtomatik tərcüməyə ehtiyacınız varsa, təfərrüatlara baxmaq üçün {{.Command}} istifadə edin)
                 table: Verilənlər bazası ilə əlaqəli verilənlər bazası yaradılmasının aktiv edilib-edilməməsi
             i18n:
-                long: Çoxdilli beynəlxalq zənglər üçün i18n ilə əlaqəli kod yaradın
+                long: Çoxdilli beynəlxalq zənglər üçün i18n əlaqəli kodu yaradın
                 short: i18n ilə əlaqəli kodu yaradın
-            long: Biznes xidmətlərinin dövlət resursu və ya statik resurs idarə edilməsi üçün dövlətin bütün əlaqəli funksiyalarını yaradın
+            long: Biznes xidmətlərinin dövlət resurs və ya statik resurs idarə edilməsi üçün dövlətin bütün əlaqəli funksiyalarını yaradın
             short: Dövlət yaratmaq üçün bütün müvafiq funksiyalar
             table:
                 long: Xidmət işə salındıqda verilənlər bazası bağlantısı və cədvəlin işə salınması üçün istifadə edilən state.table ilə əlaqəli kodu yaradın.
@@ -124,7 +124,7 @@ cli:
                 generate-const: Asan zəng üçün siyahı dəyərləri yaradın
                 languages: Tərcümə üçün hədəf dili göstərin
                 src-file: Tərcümə ediləcək mənbə fayl (tələb olunur)
-                src-language: Mənbə faylının dili (əgər göstərilməyibsə, alət mənbə faylı avtomatik müəyyən edəcək)
+                src-language: Mənbə faylının dili (müəyyən edilmədikdə, alət mənbə faylı avtomatik müəyyən edəcək)
                 translator:
                     google-free: Google Veb Tərcümə
                     usage: 'Tərcümə kanalı: Dəstək növü {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
@@ -217,7 +217,7 @@ lang:
     lg: Luqanda
     ln: Linqala
     lo: Lao
-    lt: litva
+    lt: litva dili
     lus: Mizo
     lv: latış
     mai: Maithili
@@ -229,7 +229,7 @@ lang:
     mni-mtei: Meitei (Manipuri)
     mr: marati
     ms: malay
-    mt: malta
+    mt: maltalı
     my: birma
     ne: nepal dili
     nl: holland
@@ -238,7 +238,7 @@ lang:
     ny: Nyanza (Çiçeva)
     om: Oromo
     or: Oriya (Odia)
-    pa: pəncabi
+    pa: pəncab
     pl: polyak
     ps: puştu
     pt: Portuqal (Portuqaliya, Braziliya)
@@ -285,5 +285,5 @@ lang:
     zh-hk: Çin (Hong Kong)
     zh-mo: Çin (Makao)
     zh-sg: Çin (Sinqapur)
-    zh-tw: ənənəvi Çin)
+    zh-tw: Çin (Tayvan)
     zu: Zulu

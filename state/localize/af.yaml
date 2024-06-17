@@ -42,7 +42,7 @@ cli:
             go-module-prefix: Vir die pad van go_package wat in die .proto-lêer gekonfigureer is en die werklike een, kan jy hierdie opsie instel
             input: Spesifiseer die .proto-bronlêer wat gegenereer moet word
             output-path: Hierdie opsie kan gekonfigureer word wanneer die pad van go_package wat in die .proto-lêer gekonfigureer is, nie ooreenstem met die padbed wat eintlik gegenereer moet word nie.
-            overwrite: Vir inhoud wat nie herskep sal word nie, dwing die oorskrywing van bestaande inhoud af
+            overwrite: Vir inhoud wat nie geregenereer sal word nie, dwing die oorskrywing van bestaande inhoud af
             proto-files: Om ander .proto-lêers/vouerpaaie in te voer wat nie in dieselfde vouer as die gespesifiseerde .proto-lêer is nie, is hierdie bewerking 'n opsie om die konfigurasieveld in die konfigurasielêer te ignoreer.
             protoc: '`protoc` aanpasbare lêerpad'
             protoc-gen-go: '`protoc-gen-go`-inproppad'
@@ -68,7 +68,7 @@ cli:
             long: Genereer Makefile-lêers vir die bou van gereedskap en ander verwante opdragte
             short: Genereer Makefile
         mod:
-            long: Genereer go.mod-lêer vir afhanklikheidbestuur
+            long: Genereer go.mod-lêer vir afhanklikheidsbestuur
             short: Genereer go.mod lêer
         pb:
             long: Genereer .pb.go-lêers, wat gebruik word om .proto-lêers te genereer. Relevante veldetikette x sal outomaties bygevoeg word volgens die konfigurasie.
@@ -82,7 +82,7 @@ cli:
                 cache: Of kasverwante generering moontlik gemaak moet word
                 config: Of konfigurasieverwante kode te genereer
                 i18n: Of om meertalige verwante generering te aktiveer (die generasie sluit slegs staatsinisiasie en ander inhoud in, en sluit nie outomatiese vertaling van veelvuldige tale in nie. As jy outomatiese vertaling benodig, gebruik asseblief {{.Command}} om besonderhede te sien)
-                table: Of databasisverwante databasisgenerering moontlik gemaak moet word
+                table: Of databasisverwante databasisgenerering geaktiveer moet word
             i18n:
                 long: Genereer i18n-verwante kode vir multi-taal internasionale oproepe
                 short: Genereer i18n-verwante kode
@@ -225,11 +225,11 @@ lang:
     mi: Maori
     mk: Masedonies
     ml: Malabaars
-    mn: Mongools
+    mn: Mongoolse
     mni-mtei: Meitei (Manipuri)
     mr: marathi
     ms: Maleis
-    mt: maltees
+    mt: Maltees
     my: Birmaanse
     ne: Nepalees
     nl: Nederlands
@@ -285,5 +285,5 @@ lang:
     zh-hk: Sjinees (Hongkong)
     zh-mo: Chinees (Macau)
     zh-sg: Sjinees (Singapoer)
-    zh-tw: tradisionele Sjinees)
+    zh-tw: Sjinees (Taiwan)
     zu: Zoeloe

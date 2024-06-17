@@ -72,7 +72,7 @@ cli:
             short: Emoheñói vore go.mod rehegua
         pb:
             long: Emoheñói .pb.go vore, ojeporúva ojejapo hag̃ua .proto vore Etiqueta campo relevante x oñembojoapýta ijeheguiete configuración heꞌiháicha.
-            short: Emoheñói vore .pb.go
+            short: Emoheñói .pb.go rembiapokue
         short: Código generador rehegua
         state:
             conf:
@@ -90,7 +90,7 @@ cli:
             short: Opaite tembiaporã iñimportánteva ojejapo hag̃ua estado
             table:
                 long: Emoheñói kódigo ojoajúva state.table rehe, ojeporúva joajuha base de datos ha tabla ñepyrũrã oñepyrũvo servicio.
-                short: Omoheñói código ojoajúva estado.tabla rehe
+                short: Omoheñói estado.tabla rehegua código
         table:
             long: Opaite tembiapo ojoajúva omoheñóivo cuadro recurso estatal térã recurso estático gestión servicio empresarial-pe g̃uarã
             short: Opaite tembiaporã ojoajúva ojejapo hag̃ua tabla
@@ -192,7 +192,7 @@ lang:
     hi: Hindi ñe’ẽ
     hmn: Hmong
     hr: Croata ñe’ẽ
-    ht: Criollo haitiano
+    ht: Criollo haitiano rehegua
     hu: húngaro
     hy: Armenio rehegua
     id: Indonesio ñe’ẽ
@@ -285,5 +285,5 @@ lang:
     zh-hk: Chino (Hong Kong) .
     zh-mo: Chino(Macau) .
     zh-sg: Chino (Singapur) .
-    zh-tw: chino tradicional) .
+    zh-tw: Chino (Taiwán) .
     zu: Zulu

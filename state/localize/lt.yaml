@@ -20,7 +20,7 @@ cli:
             long: Kurkite sąsajas paketais ir pridėkite sąsają tam tikram modeliui .proto faile
             short: Partijos generavimo sąsaja
         all:
-            long: Sugeneruokite visą šio įrankio palaikomą kodą
+            long: Sugeneruokite visą kodą, kurį palaiko šis įrankis
             short: Sugeneruoti visą kodą
         cache:
             long: Generuokite talpyklos failus, susijusius su verslo skambučių kaupimu talpykloje
@@ -32,7 +32,7 @@ cli:
             long: Sukurkite konfigūracijos failo šabloną
             short: Sukurti konfigūracijos failą
         dockerignore:
-            long: Sugeneruokite .dockerignore failą, skirtą „Docker“ vaizdų kūrimui, kad nepaisytumėte failų valdymo
+            long: Sukurkite .dockerignore failą, skirtą „Docker“ vaizdų kūrimui, kad nepaisytumėte failų valdymo
             short: Sugeneruokite .dockerignore failą
         editorconfig:
             long: Sugeneruokite .editorconfig failą redaktoriaus konfigūracijai
@@ -56,12 +56,12 @@ cli:
             short: Sugeneruokite .gitignore failą
         golang-lint:
             long: Sugeneruokite .golangci.yml failą, kad patikrintumėte kodo kokybę
-            short: Sukurkite .golangci.yml failą
+            short: Sugeneruokite .golangci.yml failą
         goreleaser:
             long: Sugeneruokite .goreleaser.yml failą leidimo įrankių konfigūravimui
             short: Sugeneruokite .goreleaser.yml failą
         impl:
-            long: Generuoti diegimo failus verslo paslaugoms įgyvendinti
+            long: Generuokite diegimo failus verslo paslaugoms įgyvendinti
             short: Generuokite diegimo failus
         long: Kodo generatorius, palaiko kelis šablonus
         makefile:
@@ -86,7 +86,7 @@ cli:
             i18n:
                 long: Sukurkite su i18n susijusį kodą, skirtą kelių kalbų tarptautiniams skambučiams
                 short: Sukurkite su i18n susijusį kodą
-            long: Generuoti visas susijusias valstybės funkcijas, skirtas verslo paslaugų būsenai arba statiniam išteklių valdymui
+            long: Generuokite visas susijusias valstybės funkcijas, skirtas verslo paslaugų būsenai arba statiniam išteklių valdymui
             short: Visos reikalingos būsenos generavimo funkcijos
             table:
                 long: Sugeneruoti su status.table susijusį kodą, naudojamą duomenų bazės prisijungimui ir lentelės inicijavimui, kai paslauga paleidžiama.
@@ -104,8 +104,8 @@ cli:
         flags: parametras
         get_info: norėdami gauti išsamesnės informacijos
         global_flags: pasauliniai parametrai
-        long: 'Pagalba teikia pagalbą bet kuriai programos komandai. '
-        short: Pagalba bet kokiai komandai
+        long: 'Pateikite bet kurios programos komandos naudojimo instrukcijas. '
+        short: Bet kurios komandos naudojimo instrukcijos
         usage: '{{.Name}} naudojimo instrukcijos'
         use: naudoti
     i18n:
@@ -165,7 +165,7 @@ lang:
     cs: čekų
     cy: valų
     da: danų
-    de: vokiškai
+    de: vokiečių kalba
     doi: dogglai
     dv: Dhivehi
     ee: Ewe
@@ -285,5 +285,5 @@ lang:
     zh-hk: kinų (Honkongas)
     zh-mo: kinų (Makao)
     zh-sg: kinų (Singapūras)
-    zh-tw: tradicinis kinietiškas)
+    zh-tw: kinų (Taivanas)
     zu: Zulu

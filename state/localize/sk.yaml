@@ -4,7 +4,7 @@ cli:
             no-descriptions: Zakázať pokyny na dokončenie
         long: |
             Generuje skript automatického dopĺňania pre {{.RootName}} pre zadaný shell.
-        short: Vytvorte skript automatického dopĺňania pre zadaný shell
+        short: Vygenerujte skript automatického dopĺňania pre zadaný shell
         subcommand:
             short: Vygenerovať skript automatického dopĺňania pre {{.Command}}
     flags:
@@ -13,7 +13,7 @@ cli:
         add-rpc:
             flags:
                 action: O správaní, ktoré je potrebné pridať v dávkach, nájdete podrobnosti v dokumentácii o používaní
-                default-role: Predvolená rola dávkovo generovaného rozhrania Podrobnosti nájdete v dokumentácii o používaní.
+                default-role: Predvolená rola rozhrania generovaného dávkami Podrobnosti nájdete v dokumentácii k použitiu.
                 gen-to: Zadajte umiestnenie výstupu vygenerovaných súborov .go
                 list-option: Zoznam je možné aj filtrovať, podrobnosti nájdete v dokumentácii k použitiu.
                 model: Zadajte názov modelu, podporte vynechanie predpony „model“.
@@ -38,7 +38,7 @@ cli:
             long: Vygenerujte súbor .editorconfig pre konfiguráciu editora
             short: Vygenerujte súbor .editorconfig
         flags:
-            add-proto-files: Ak potrebujete importovať iné súbory .proto/cesty priečinkov, ktoré nie sú v rovnakom priečinku ako zadaný súbor .proto, táto operácia pripojí (nie prepíše) cestu nakonfigurovanú v konfiguračnom súbore.
+            add-proto-files: Ak potrebujete importovať iné súbory .proto/cesty k priečinkom, ktoré nie sú v rovnakom priečinku ako zadaný súbor .proto, táto operácia pripojí (nie prepíše) cestu nakonfigurovanú v konfiguračnom súbore.
             go-module-prefix: Pre cestu go_package nakonfigurovanú v súbore .proto a aktuálnu cestu môžete nakonfigurovať túto možnosť
             input: Zadajte zdrojový súbor .proto, ktorý sa má vygenerovať
             output-path: Túto možnosť je možné nakonfigurovať, keď cesta k go_package nakonfigurovaná v súbore .proto nie je konzistentná s cestným podkladom, ktorý je v skutočnosti potrebné vygenerovať.
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: získať podrobnejšie informácie
         global_flags: globálne parametre
-        long: 'Pomocník poskytuje pomoc pre akýkoľvek príkaz v aplikácii. '
-        short: Pomoc pri akomkoľvek príkaze
+        long: 'Poskytnite návod na použitie pre akýkoľvek príkaz v aplikácii. '
+        short: Pokyny na použitie ľubovoľného príkazu
         usage: Pokyny na používanie {{.Name}}
         use: použitie
     i18n:
@@ -171,7 +171,7 @@ lang:
     ee: Ewe
     el: grécky
     en: Angličtina
-    eo: Esperanto
+    eo: esperanto
     es: španielčina
     et: estónsky
     eu: baskický
@@ -270,7 +270,7 @@ lang:
     tr: turecký
     ts: Dzonga
     tt: tatársky
-    ug: ujgurské
+    ug: Ujgur
     uk: Ukrajinčina
     ur: urdčina
     uz: uzbecký

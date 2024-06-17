@@ -62,7 +62,7 @@ cli:
             short: Hlahisa faele ya .goreleaser.yml
         impl:
             long: Hlagiša difaele tša phethagatšo ya phethagatšo ya ditirelo tša kgwebo
-            short: Hlagiša difaele tša phethagatšo
+            short: Hlahisa difaele phethagatšo
         long: Khoutu jenereithara, tšehetsa dithempleite multiple
         makefile:
             long: Hlagiša difaele tša Makefile tša go aga didirišwa le ditaelo tše dingwe tše di amanago
@@ -95,17 +95,17 @@ cli:
             long: Mešomo ka moka ye e amanago ya go tšweletša ditafola tša mohlodi wa mmušo goba taolo ya methopo ye e sa fetogego ya ditirelo tša kgwebo
             short: Mešomo ka moka ye e amanago ya go tšweletša ditafola
     group:
-        gen: moloko wa khoutu
+        gen: khoutu moloko
     help:
         additional_commands: Ditaelo tša tlaleletšo
-        aliases: taelo ya leina le lengwe
+        aliases: leina le lengwe la taelo
         available_commands: Ditaelo tše di thekgwago
         command: Tatelano
         flags: paramethara ya
         get_info: go hwetša tshedimošo ye e tletšego ka botlalo
         global_flags: ditekanyetos lefatše lohle
-        long: 'Thušo e fa thušo ya taelo efe goba efe ka tirišong. '
-        short: Thuša ka taelo efe goba efe
+        long: 'Fana ka ditaelo tša tšhomišo ya taelo efe goba efe ka tirišong. '
+        short: Ditaelo tša go šomiša taelo efe goba efe
         usage: Ditaelo tša go šomiša {{.Leina}} .
         use: šomiša
     i18n:
@@ -130,7 +130,7 @@ cli:
                     usage: 'Mokero wa phetolelo: Mohuta wa thekgo {{range $ key,$ value := .Type}}{{$key}}:{{$ value}}{{end}}'
             long: Difaele tša maleme a mantši go tšwa mothopong wo o itšego di fetolelwa go difaele ka sebopego se se swanago ka maleme a mangwe.
             short: fetolela
-    long: Seteišene sa sedirišwa sa batho ba go tšwafa, go akaretšwa tlhako ya morago ye e theilwego godimo ga ‘proto’, dithempleite tše di šomišwago ka tlwaelo, le phetolelo ya maleme a mantši
+    long: Seteišene sa sedirišwa sa batho ba go tšwafa, go akaretšwa tlhako ya morago ye e theilwego godimo ga ‘proto’, dithempleite tšeo di šomišwago ka tlwaelo, le phetolelo ya maleme a mantši
     short: Sedirišwa se se beilwego bakeng sa batho ba botswa
     sync:
         flags:
@@ -152,7 +152,7 @@ lang:
     as: Assamese
     ay: Aymara
     az: Se-Azerbaijan, Se-Azerbaijan
-    be: Se-Belarus
+    be: Se-Belarus sa se-Belarus
     bg: Sebulgaria
     bho: Bhojpuri
     bm: Bambara
@@ -180,14 +180,14 @@ lang:
     fil: Sefilipino (Setagalog) .
     fr: Sefora
     fy: Sefrisian
-    ga: irish ya se-irish
+    ga: se-irish sa se-irish
     gd: Segaelic sa Scotland
     gl: Segalicia
     gn: Guarani
     gom: polelo ya gonggan
     gu: segujarati
     ha: Se-Hausa
-    haw: Se-Hawaii
+    haw: Sehawaii
     he: seheberu
     hi: Sehindi sa Sehindi
     hmn: Se-Hmong
@@ -212,7 +212,7 @@ lang:
     kri: Secreole sa se-Creole
     ku: Se-Kurd
     ky: SeKyrgyz
-    la: Selatine
+    la: Selatine sa Selatine
     lb: Se-Luxembourg sa se-Luxembourg
     lg: Luganda
     ln: Lingala
@@ -248,13 +248,13 @@ lang:
     rw: Sekinyarwanda
     sa: Sanskrit
     sd: sindhi
-    si: sinhala ya go swana le
+    si: sinhala ya go swana le yeo
     sk: Seslovakia
     sl: se-slovenia sa se-slovenia
     sm: Mosamoa
     sn: Shona
     so: Sesomalia
-    sq: Sealbania
+    sq: Sealbania sa Sealbania
     sr: Seserbia
     st: Sesotho sa Sesotho
     su: Sesundane
@@ -285,5 +285,5 @@ lang:
     zh-hk: Setšhaena (Hong Kong) .
     zh-mo: Setšhaena(Macau) .
     zh-sg: Setšhaena (Singapore) .
-    zh-tw: Setšhaena sa setšo) .
+    zh-tw: Setšhaena (Taiwan) .
     zu: Sezulu

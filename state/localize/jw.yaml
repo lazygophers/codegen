@@ -49,7 +49,7 @@ cli:
             tables-enable_field_created_at: Apa kanggo ngaktifake generasi konfigurasi gawan saka database created_at lapangan
             tables-enable_field_deleted_at: Apa ngaktifake setelan gawan saka lapangan deleted_at ing database
             tables-enable_field_id: Aktifake generasi konfigurasi standar kanggo lapangan sing gegandhengan karo database
-            tables-enable_field_updated_at: Apa ngaktifake nilai standar saka kolom updated_at ing database
+            tables-enable_field_updated_at: Apa ngaktifake nilai standar saka kolom updated_at ing basis data
             tables-enable_gorm_tag_column: Apa ngaktifake generasi gorm sing gegandhengan karo database
         gitignote:
             long: Generate file .gitignore kanggo Manajemen file digatèkaké ing kontrol versi
@@ -89,7 +89,7 @@ cli:
             long: Nggawe kabeh fungsi negara sing gegandhengan kanggo sumber daya stateful utawa manajemen sumber daya statis layanan bisnis
             short: Kabeh fungsi sing cocog kanggo ngasilake negara
             table:
-                long: Generate kode state.table related, digunakake kanggo sambungan database lan initialization Tabel nalika layanan diwiwiti.
+                long: Generate state.table kode related, digunakake kanggo sambungan database lan tabel initialization nalika layanan diwiwiti.
                 short: Generate state.table kode related
         table:
             long: Kabeh fungsi sing gegandhengan kanggo ngasilake tabel kanggo sumber daya stateful utawa manajemen sumber daya statis layanan bisnis
@@ -99,7 +99,7 @@ cli:
     help:
         additional_commands: printah tambahan
         aliases: dhawuh alias
-        available_commands: printah didhukung
+        available_commands: Didhukung printah
         command: dhawuh
         flags: paramèter
         get_info: kanggo njaluk informasi luwih rinci
@@ -127,15 +127,15 @@ cli:
                 src-language: Basa file sumber (yen ora ditemtokake, alat kasebut bakal nemtokake file sumber kanthi otomatis)
                 translator:
                     google-free: Google Web Translate
-                    usage: 'Saluran terjemahan: Tipe dhukungan {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+                    usage: 'Saluran terjemahan: Tipe dhukungan {{rentang $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: File multibasa saka sumber tartamtu diowahi dadi file ing format sing padha ing basa liya.
             short: nerjemahake
-    long: Setel alat kanggo wong kesed, kalebu kerangka backend adhedhasar 'proto', cithakan sing umum digunakake, lan terjemahan multi-basa
-    short: A set alat kanggo wong kesed
+    long: Piranti sing disetel kanggo wong kesed, kalebu kerangka backend adhedhasar 'proto', cithakan sing umum digunakake, lan terjemahan multi-basa
+    short: Set alat kanggo wong kesed
     sync:
         flags:
-            password: Tembung sandhi digunakake kanggo njaluk verifikasi
-            template-path: Path sinkronisasi Cithakan
+            password: Sandi digunakake kanggo njaluk verifikasi
+            template-path: Path sinkronisasi cithakan
             username: Jeneng pangguna sing digunakake kanggo njaluk verifikasi
         long: Sinkronake konfigurasi saka mburi remot lan gabungke menyang konfigurasi lokal File cithakan didhukung ing wektu sing padha nalika sinkronisasi (yen dikonfigurasi).
         short: Sinkronisasi konfigurasi saka remot
@@ -210,7 +210,7 @@ lang:
     kn: Kannada
     ko: Korea
     kri: Kreol
-    ku: Kurdi
+    ku: basa Kurdi
     ky: Kyrgyz
     la: latin
     lb: Luksemburg
@@ -223,7 +223,7 @@ lang:
     mai: Maithili
     mg: Malagasi
     mi: Maori
-    mk: wong Makedonia
+    mk: Makedonia
     ml: Malayalam
     mn: Mongolian
     mni-mtei: Meitei (Manipuri)
@@ -243,7 +243,7 @@ lang:
     ps: Pashto
     pt: Portugis (Portugal, Brasil)
     qu: Quechua
-    ro: basa Romania
+    ro: basa Rumania
     ru: Rusian
     rw: Kinyarwanda
     sa: Sansekerta
@@ -285,5 +285,5 @@ lang:
     zh-hk: Cina (Hong Kong)
     zh-mo: Cina (Macau)
     zh-sg: Cina (Singapura)
-    zh-tw: Cina tradisional)
+    zh-tw: Cina (Taiwan)
     zu: Zulu

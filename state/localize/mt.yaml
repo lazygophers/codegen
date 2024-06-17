@@ -71,12 +71,12 @@ cli:
             long: Iġġenera fajl go.mod għall-ġestjoni tad-dipendenza
             short: Iġġenera fajl go.mod
         pb:
-            long: Iġġenera fajls .pb.go, li jintużaw biex jiġġeneraw fajls .proto. It-tikketti tal-qasam rilevanti x jiġu miżjuda awtomatikament skont il-konfigurazzjoni.
+            long: Iġġenera fajls .pb.go, li jintużaw biex jiġġeneraw fajls .proto It-tikketti tal-qasam rilevanti x jiġu miżjuda awtomatikament skont il-konfigurazzjoni.
             short: Iġġenera fajl .pb.go
         short: Ġeneratur tal-kodiċi
         state:
             conf:
-                long: Iġġenera kodiċi tal-qari tal-fajl tal-konfigurazzjoni għall-qari tal-konfigurazzjoni tas-servizz tan-negozju
+                long: Iġġenera l-kodiċi tal-qari tal-fajl tal-konfigurazzjoni għall-qari tal-konfigurazzjoni tas-servizz tan-negozju
                 short: Iġġenera l-kodiċi tal-qari tal-fajl tal-konfigurazzjoni
             flags:
                 cache: Jekk tippermettix il-ġenerazzjoni relatata mal-cache
@@ -87,7 +87,7 @@ cli:
                 long: Iġġenera kodiċi relatat i18n għal sejħiet internazzjonali b'ħafna lingwi
                 short: Iġġenera kodiċi relatat i18n
             long: Iġġenera l-funzjonijiet kollha relatati tal-istat għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
-            short: Il-funzjonijiet kollha rilevanti għall-ġenerazzjoni tal-istat
+            short: Il-funzjonijiet rilevanti kollha għall-ġenerazzjoni tal-istat
             table:
                 long: Iġġenera kodiċi relatat ma 'state.table, użat għall-konnessjoni tad-database u l-inizjalizzazzjoni tat-tabella meta jinbeda s-servizz.
                 short: Iġġenera stat.table kodiċi relatat
@@ -104,8 +104,8 @@ cli:
         flags: parametru
         get_info: biex tikseb aktar informazzjoni dettaljata
         global_flags: parametri globali
-        long: 'Għajnuna tipprovdi għajnuna għal kwalunkwe kmand fl-applikazzjoni. '
-        short: Għajnuna fuq kwalunkwe kmand
+        long: 'Ipprovdi istruzzjonijiet għall-użu għal kwalunkwe kmand fl-applikazzjoni. '
+        short: Struzzjonijiet għall-użu ta 'kwalunkwe kmand
         usage: Struzzjonijiet għall-użu ta' {{.Name}}
         use: użu
     i18n:
@@ -119,10 +119,10 @@ cli:
         tran:
             flags:
                 all-language: Ittraduċi l-lingwi kollha appoġġjati (jekk vera l-bandiera tal-lingwi hija diżattivata)
-                force: Ikteb mill-ġdid it-traduzzjonijiet eżistenti
+                force: Ikteb traduzzjonijiet eżistenti
                 force-key-prefix: ċwievet li jeħtieġ li jiġu sfurzati jinkitbu fuqhom
                 generate-const: Iġġenera valuri ta' enumerazzjoni għal sejħa faċli
-                languages: Speċifika l-lingwa mira għat-traduzzjoni
+                languages: Speċifika l-lingwa fil-mira għat-traduzzjoni
                 src-file: Fajl tas-sors li jrid jiġi tradott (meħtieġa)
                 src-language: Il-lingwa tal-fajl tas-sors (jekk mhux speċifikat, l-għodda tiddetermina awtomatikament il-fajl tas-sors)
                 translator:
@@ -130,7 +130,7 @@ cli:
                     usage: 'Kanal tat-traduzzjoni: Tip ta'' appoġġ {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Fajls multilingwi minn ċertu sors huma kkonvertiti f'fajls fl-istess format f'lingwi oħra.
             short: tittraduċi
-    long: Sett ta' għodda għall-għażżien, inkluż qafas ta' backend ibbażat fuq 'proto', mudelli użati b'mod komuni, u traduzzjoni b'ħafna lingwi
+    long: Sett ta' għodda għall-għażżien, inkluż qafas ta' backend ibbażat fuq 'proto', mudelli użati b'mod komuni, u traduzzjoni b'diversi lingwi
     short: Sett għodda għall-għażżien
     sync:
         flags:
@@ -285,5 +285,5 @@ lang:
     zh-hk: Ċiniż (Ħong Kong)
     zh-mo: Ċiniż (Makaw)
     zh-sg: Ċiniż (Singapor)
-    zh-tw: Ċiniż tradizzjonali)
+    zh-tw: Ċiniż (Tajwan)
     zu: Żulu

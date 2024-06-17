@@ -12,7 +12,7 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Atferd som må legges til i batcher, se bruksdokumentasjonen for detaljer
+                action: Atferd som må legges til i grupper, se bruksdokumentasjonen for detaljer
                 default-role: Standardrollen til det batchgenererte grensesnittet Se bruksdokumentasjonen for detaljer.
                 gen-to: Angi utdataplasseringen til de genererte .go-filene
                 list-option: Listen kan også filtreres, se bruksdokumentasjonen for detaljer.
@@ -23,7 +23,7 @@ cli:
             long: Generer all kode som støttes av dette verktøyet
             short: Generer all kode
         cache:
-            long: Generer hurtigbufferfiler for bufringsrelaterte SDK-er for forretningsanrop
+            long: Generer hurtigbufferfiler for cache-relaterte SDK-er for forretningsanrop
             short: Generer cache-fil
         cmd:
             long: Generer oppføringsfiler for forretningstjenester
@@ -84,7 +84,7 @@ cli:
                 i18n: Hvorvidt å aktivere flerspråksrelatert generering (genereringen inkluderer kun tilstandsinitialisering og annet innhold, og inkluderer ikke automatisk oversettelse av flere språk. Hvis du trenger automatisk oversettelse, vennligst bruk {{.Command}} for å se detaljer)
                 table: Om databaserelatert databasegenerering skal aktiveres
             i18n:
-                long: Generer i18n relatert kode for flerspråklige internasjonale samtaler
+                long: Generer i18n-relatert kode for flerspråklige internasjonale samtaler
                 short: Generer i18n relatert kode
             long: Generer alle relaterte funksjoner til staten for statisk ressurs- eller statisk ressursstyring av forretningstjenester
             short: Alle relevante funksjoner for å generere tilstand
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: for å få mer detaljert informasjon
         global_flags: globale parametere
-        long: 'Hjelp gir hjelp for enhver kommando i applikasjonen. '
-        short: Hjelp til enhver kommando
+        long: 'Gi bruksinstruksjoner for enhver kommando i applikasjonen. '
+        short: Instruksjoner for bruk av hvilken som helst kommando
         usage: Instruksjoner for bruk av {{.Name}}
         use: bruk
     i18n:
@@ -221,7 +221,7 @@ lang:
     lus: Mizo
     lv: latvisk
     mai: Maithili
-    mg: madagaskisk
+    mg: Madagaskar
     mi: Maori
     mk: makedonsk
     ml: Malayalam
@@ -285,5 +285,5 @@ lang:
     zh-hk: kinesisk (Hong Kong)
     zh-mo: kinesisk (Macau)
     zh-sg: kinesisk (Singapore)
-    zh-tw: tradisjonell kinesisk)
+    zh-tw: kinesisk (Taiwan)
     zu: Zulu

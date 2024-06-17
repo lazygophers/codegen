@@ -1,7 +1,7 @@
 cli:
     completion:
         flags:
-            no-descriptions: Inaktivera instruktioner för slutförande
+            no-descriptions: Inaktivera kompletteringsinstruktioner
         long: |
             Genererar ett autoslutförandeskript för {{.RootName}} för det angivna skalet.
         short: Generera ett autoslutförandeskript för det angivna skalet
@@ -12,7 +12,7 @@ cli:
     gen:
         add-rpc:
             flags:
-                action: Beteenden som måste läggas till i omgångar, vänligen se användardokumentationen för detaljer
+                action: Beteenden som måste läggas till i omgångar, se användardokumentationen för detaljer
                 default-role: Standardrollen för det batchgenererade gränssnittet Se användardokumentationen för detaljer.
                 gen-to: Ange utdataplatsen för de genererade .go-filerna
                 list-option: Listan kan också filtreras, se användardokumentationen för detaljer.
@@ -46,7 +46,7 @@ cli:
             proto-files: För att importera andra .proto-filer/mappsökvägar som inte finns i samma mapp som den angivna .proto-filen, är denna operation ett alternativ för att åsidosätta konfigurationsfältet i konfigurationsfilen.
             protoc: '"protoc" anpassningsbar filsökväg'
             protoc-gen-go: '"protoc-gen-go" plugin sökväg'
-            tables-enable_field_created_at: Om du vill aktivera standardkonfigurationsgenereringen av databasen create_at-fältet
+            tables-enable_field_created_at: Om du vill aktivera standardkonfigurationsgenereringen för databasen create_at-fältet
             tables-enable_field_deleted_at: Om standardinställningen för fältet deleted_at ska aktiveras i databasen
             tables-enable_field_id: Aktivera generering av standardkonfiguration för databasrelaterade fält
             tables-enable_field_updated_at: Om standardvärdet för fältet updated_at ska aktiveras i databasen
@@ -84,7 +84,7 @@ cli:
                 i18n: Om generering av flera språk ska aktiveras (genereringen inkluderar endast tillståndsinitiering och annat innehåll, och inkluderar inte automatisk översättning av flera språk. Om du behöver automatisk översättning, använd {{.Command}} för att se detaljer)
                 table: Om databasrelaterad databasgenerering ska aktiveras
             i18n:
-                long: Generera i18n-relaterad kod för internationella samtal på flera språk
+                long: Generera i18n-relaterad kod för flerspråkiga internationella samtal
                 short: Generera i18n-relaterad kod
             long: Generera alla relaterade funktioner i staten för statisk resurs- eller statisk resurshantering av företagstjänster
             short: Alla relevanta funktioner för att generera tillstånd
@@ -92,7 +92,7 @@ cli:
                 long: Generera state.table-relaterad kod, som används för databasanslutning och tabellinitiering när tjänsten startas.
                 short: Generera state.table relaterad kod
         table:
-            long: Alla relaterade funktioner för att generera tabeller för statisk resurs- eller statisk resurshantering av affärstjänster
+            long: Alla relaterade funktioner för att generera tabeller för statisk resurs eller statisk resurshantering av affärstjänster
             short: Alla relaterade funktioner för att generera tabeller
     group:
         gen: kodgenerering
@@ -104,8 +104,8 @@ cli:
         flags: parameter
         get_info: för att få mer detaljerad information
         global_flags: globala parametrar
-        long: 'Hjälp ger hjälp för alla kommandon i programmet. '
-        short: Hjälp med vilket kommando som helst
+        long: 'Ge användarinstruktioner för alla kommandon i programmet. '
+        short: Instruktioner för att använda alla kommandon
         usage: Instruktioner för att använda {{.Name}}
         use: använda sig av
     i18n:

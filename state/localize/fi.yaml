@@ -6,7 +6,7 @@ cli:
             Luo automaattisesti täydentävän komentosarjan määritetylle komentotulkille {{.RootName}}.
         short: Luo automaattisesti täydentävä komentosarja määritetylle komentotulkille
         subcommand:
-            short: Luo automaattinen täydennys komentosarjalle {{.Command}}
+            short: Luo automaattisen täydennyksen komentosarja kohteelle {{.Command}}
     flags:
         debug: Tulosta yksityiskohtainen loki
     gen:
@@ -30,7 +30,7 @@ cli:
             short: Luo syöttötiedosto
         conf:
             long: Luo määritystiedostomalli
-            short: Luo määritystiedosto
+            short: Luo asetustiedosto
         dockerignore:
             long: Luo .dockerignore-tiedosto Docker-kuvanrakennusta varten ohittaaksesi tiedostonhallinnan
             short: Luo .dockerignore-tiedosto
@@ -49,7 +49,7 @@ cli:
             tables-enable_field_created_at: Otetaanko tietokannan luotu_at-kentän oletuskokoonpanon luonti käyttöön
             tables-enable_field_deleted_at: Otetaanko deleted_at-kentän oletusasetus käyttöön tietokannassa
             tables-enable_field_id: Ota oletusasetusten luominen käyttöön tietokantoihin liittyvissä kentissä
-            tables-enable_field_updated_at: Otetaanko tietokannan updated_at-kentän oletusarvo käyttöön
+            tables-enable_field_updated_at: Otetaanko updated_at-kentän oletusarvo käyttöön tietokannassa
             tables-enable_gorm_tag_column: Otetaanko tietokantaan liittyvä gormien luominen käyttöön
         gitignote:
             long: Luo .gitignore-tiedostoja ohitettujen tiedostojen hallintaa varten versionhallinnassa
@@ -65,7 +65,7 @@ cli:
             short: Luo toteutustiedostoja
         long: Koodigeneraattori, tukee useita malleja
         makefile:
-            long: Luo Makefile-tiedostoja rakennustyökaluja ja muita liittyviä komentoja varten
+            long: Luo Makefile-tiedostoja rakennustyökaluja ja muita vastaavia komentoja varten
             short: Luo Makefile
         mod:
             long: Luo go.mod-tiedosto riippuvuuden hallintaa varten
@@ -76,7 +76,7 @@ cli:
         short: Koodigeneraattori
         state:
             conf:
-                long: Luo määritystiedoston lukukoodi yrityspalvelun määritysten lukemista varten
+                long: Luo määritystiedoston lukukoodi yrityspalveluiden määritysten lukemista varten
                 short: Luo määritystiedoston lukukoodi
             flags:
                 cache: Otetaanko välimuistiin liittyvä luonti käyttöön
@@ -130,7 +130,7 @@ cli:
                     usage: 'Käännöskanava: Tukityyppi {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
             long: Tietystä lähteestä peräisin olevat monikieliset tiedostot muunnetaan tiedostoiksi, jotka ovat samassa muodossa muilla kielillä.
             short: Kääntää
-    long: Laiskojen ihmisten työkalusarja, mukaan lukien "proto"-pohjainen taustakehys, yleisesti käytetyt mallit ja monikieliset käännökset
+    long: Työkalusarja laiskoille ihmisille, mukaan lukien "proto"-pohjainen taustakehys, yleisesti käytetyt mallit ja monikieliset käännökset
     short: Työkalusarja laiskoille
     sync:
         flags:
@@ -191,7 +191,7 @@ lang:
     he: heprealainen
     hi: hindi
     hmn: hmong
-    hr: Kroatia
+    hr: kroatialainen
     ht: Haitin kreoli
     hu: Unkarin kieli
     hy: armenialainen
@@ -285,5 +285,5 @@ lang:
     zh-hk: kiina (Hongkong)
     zh-mo: kiina (Macao)
     zh-sg: kiina (Singapore)
-    zh-tw: perinteinen kiina)
+    zh-tw: kiina (Taiwan)
     zu: zulu
