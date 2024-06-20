@@ -186,6 +186,14 @@ var syncCmd = &cobra.Command{
 			// 存储到当前目录下的文件（按照文件名 hash)
 			fileName := filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen", cryptox.Md5(c.Sync.Remote), "codegen.cfg.yaml")
 
+			if !osx.IsDir(filepath.Dir(fileName)) {
+				err = os.MkdirAll(filepath.Dir(fileName), 0777)
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
+			}
+
 			file, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
 			if err != nil {
 				log.Errorf("err:%v", err)

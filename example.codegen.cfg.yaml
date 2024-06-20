@@ -108,6 +108,12 @@ template:
         # 路由相关的配置
         route: "<rpc-route.go> 的模板文件路径"
 
+        # 客户模板文件
+        client: "<client.go> 的模板文件"
+
+        # 调用函数的模板
+        client_call: "调用函数的模板文件"
+
         # rpc 相关的
         action:
             # key → action value → 模版文件路径

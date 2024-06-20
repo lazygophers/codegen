@@ -8,6 +8,8 @@
 
 帮助文档：https://lazygophers.pages.dev/
 
+模板仓库：https://github.com/lazygophers/template
+
 ## 生成样例
 
 首先，需要创建一个文件夹存放 `proto` 文件，假设文件夹名为 `proto`，并且在 `proto` 文件夹下存在一个 `hello.proto` 文件，内容如下

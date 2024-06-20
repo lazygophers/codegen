@@ -1,16 +1,12 @@
 project_name: codegen
-
+version: 2
 env:
     - GO111MODULE=on
-    - GOSUMDB=off
     - CGO_ENABLED=0
-before:
-    hooks:
-        - go mod tidy
 
-#gomod:
-#    proxy: true
-#    mod: mod
+gomod:
+    proxy: true
+    mod: mod
 
 builds:
     -   id: cli

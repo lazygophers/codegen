@@ -59,5 +59,5 @@ func Localize(key string, args ...interface{}) string {
 }
 
 func LocalizeWithLanguage(lang string, key string, args ...interface{}) string {
-	return I18n.LocalizeWithLanguage(lang, key, args...)
+	return I18n.LocalizeWithLang(lang, key, args...)
 }

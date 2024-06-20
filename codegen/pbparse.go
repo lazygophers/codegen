@@ -267,7 +267,7 @@ func NewPbRPC(rpc *proto.RPC) *PbRPC {
 		options: make(map[string]map[string]string, len(rpc.Options)),
 		genOption: &PbRpcGenOptions{
 			Method: "POST",
-			Path:   rpc.Name,
+			Path:   "/" + rpc.Name,
 		},
 	}
 	p.walk()

@@ -26,6 +26,7 @@ const (
 	PathTypeImpl
 	PathTypeImplPath
 	PathTypeImplRoute
+	PathTypeImplClient
 
 	PathTypeCmd
 	PathTypeCmdMain
@@ -93,6 +94,9 @@ func GetPath(t PathType, pb *PbPackage) string {
 
 	case PathTypeImplRoute:
 		return filepath.Join(GetPath(PathTypeCmd, pb), "route.gen.go")
+
+	case PathTypeImplClient:
+		return filepath.Join(pb.ProjectRoot(), "client.go")
 
 	case PathTypeCmd:
 		return filepath.Join(pb.ProjectRoot(), "cmd")

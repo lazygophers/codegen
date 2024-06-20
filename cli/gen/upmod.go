@@ -2,6 +2,7 @@ package gen
 
 import (
 	"errors"
+	"github.com/lazygophers/codegen/cli/utils"
 	"github.com/lazygophers/codegen/codegen"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
@@ -64,6 +65,10 @@ var upModCmd = &cobra.Command{
 			log.Warnf("not found %s", filepath.Join(projectDir, ".lazygophers"))
 			pterm.Warning.Printfln("not found .lazygophers in product package, use defulat")
 			state.LazyConfig.Apply()
+		}
+
+		if cmd.Flag("goproxy").Value.String() != "" {
+			state.LazyConfig.GoMod.Goproxy = utils.GetString("goproxy", cmd)
 		}
 
 		err = codegen.UpdateGoMod(filepath.Join(projectDir, "go.mod"))
