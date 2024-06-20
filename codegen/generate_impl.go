@@ -440,3 +440,155 @@ func GenerateImplRpcRoute(pb *PbPackage) (err error) {
 
 	return nil
 }
+
+func generateImplClient(pb *PbPackage, rpc *PbRPC) (err error) {
+	pterm.Info.Printfln("try generate impl client %s", rpc.Name)
+
+	args := map[string]any{
+		"PB":           pb,
+		"RpcName":      rpc.Name,
+		"RequestType":  rpc.rpc.RequestType,
+		"ResponseType": rpc.rpc.ReturnsType,
+		"RPC":          pbRpc2Route(rpc),
+	}
+
+	if rpc.genOption.Model != "" {
+		log.Infof("model:%s", rpc.genOption.Model)
+
+		args["Model"] = rpc.genOption.Model
+
+		msg := pb.GetMessage(rpc.genOption.Model)
+		if msg != nil {
+			pkField := msg.PrimaryField()
+			if pkField != nil {
+				args["PrimaryKey"] = pkField.Name
+				args["PrimaryKeyType"] = pkField.Type()
+			}
+		}
+	}
+
+	tpl, err := GetTemplate(TemplateTypeImplClientCall, rpc.genOption.Action)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	file, err := os.OpenFile(GetPath(PathTypeImplClient, pb), os.O_CREATE|os.O_WRONLY|os.O_APPEND, fs.FileMode(0666))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	defer file.Close()
+
+	_, err = file.WriteString("\n")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = tpl.Execute(file, args)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	_, err = file.WriteString("\n")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	pterm.Success.Printfln("generate %s success", rpc.Name)
+
+	return nil
+}
+
+func initImplClient(pb *PbPackage) error {
+	if osx.IsFile(GetPath(PathTypeImplClient, pb)) {
+		return nil
+	}
+
+	tpl, err := GetTemplate(TemplateTypeImplClient)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	file, err := os.OpenFile(GetPath(PathTypeImplClient, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	defer file.Close()
+
+	err = tpl.Execute(file, map[string]any{
+		"PB": pb,
+	})
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
+
+func GenerateClient(pb *PbPackage) (err error) {
+	pterm.Info.Printfln("Generating impl client...")
+
+	err = initImplDirectory(pb)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	goPackage, err := ParseGoDir(filepath.Dir(GetPath(PathTypeImplClient, pb)))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	if len(goPackage) == 0 {
+		goPackage = make(map[string]*GoPackage)
+	}
+
+	if goPackage[pb.GoPackageName()] == nil {
+		goPackage[pb.GoPackageName()] = &GoPackage{}
+	}
+
+	if len(goPackage[pb.GoPackageName()].FuncMap) == 0 {
+		goPackage[pb.GoPackageName()].FuncMap = make(map[string]*GoFuncNode)
+	}
+
+	matchFunc := func(rpc *PbRPC) bool {
+		for _, goFuncNode := range goPackage[pb.GoPackageName()].FuncMap {
+			goFunc := goFuncNode.goFunc
+
+			if goFunc.RecvType != "" {
+				continue
+			}
+
+			if goFunc.Name == rpc.Name {
+				pterm.Warning.Printfln("%s is exist, skip generate", rpc.Name)
+				return true
+			}
+		}
+
+		return false
+	}
+
+	for _, rpc := range pb.RPCs() {
+		//path := filepath.Join(GetPath(PathTypeImpl, pb), rpc.genOption.GenTo+".go")
+
+		if matchFunc(rpc) {
+			continue
+		}
+
+		err = generateImplClient(pb, rpc)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+	}
+
+	return nil
+}

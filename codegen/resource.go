@@ -47,6 +47,8 @@ const (
 	TemplateTypeImplAction
 	TemplateTypeImplPath
 	TemplateTypeImplRoute
+	TemplateTypeImplClient
+	TemplateTypeImplClientCall
 
 	TemplateTypeGoreleaser
 	TemplateTypeMakefile
@@ -150,6 +152,14 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 	case TemplateTypeImplRoute:
 		systemPath = state.Config.Template.Impl.Route
 		embedPath = "template/rpc_route.gtpl"
+
+	case TemplateTypeImplClient:
+		systemPath = state.Config.Template.Impl.Client
+		embedPath = "template/client.gtpl"
+
+	case TemplateTypeImplClientCall:
+		systemPath = state.Config.Template.Impl.ClientCall
+		embedPath = "template/client.call.gtpl"
 
 	case TemplateTypeCmd:
 		systemPath = state.Config.Template.Main

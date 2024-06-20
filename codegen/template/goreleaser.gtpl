@@ -25,7 +25,7 @@ builds:
             - -X github.com/lazygophers/utils/app.Version={{ Self ".Version" }}
             - -X github.com/lazygophers/utils/app.Tag={{ Self ".Tag" }}
             - -X github.com/lazygophers/utils/app.BuildDate={{ Self ".Date" }}
-            - -X github.com/lazygophers/utils/app.GoVersion={{ .EnvSelf ".GOVERSION" }}
+            - -X github.com/lazygophers/utils/app.GoVersion={{ .EnvSelf ".Env.GOVERSION" }}
             - -X github.com/lazygophers/utils/app.GoOS={{ Self ".Os" }}
             - -X github.com/lazygophers/utils/app.Goarch={{ Self ".Arch" }}
             - -X github.com/lazygophers/utils/app.Goarm={{ Self ".Arm" }}
