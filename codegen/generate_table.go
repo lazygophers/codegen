@@ -36,9 +36,9 @@ func GenerateStateTable(pb *PbPackage) (err error) {
 				return
 			}
 
-			log.Infof("find table %s", message.Name)
+			log.Infof("find table %s", message.FullName)
 
-			models = append(models, message.Name)
+			models = append(models, message.FullName)
 		})
 
 		args["Models"] = models
@@ -79,13 +79,14 @@ func GenerateOrm(pb *PbPackage) (err error) {
 	{
 		var models []string
 		candy.Each(pb.Messages(), func(message *PbMessage) {
-			if !message.NeedOrm() {
-				return
-			}
+			// 先全部允许。实际使用的时候要考虑被 model 引用的场景
+			//if !message.NeedOrm() {
+			//	return
+			//}
 
-			log.Infof("find orm object %s", message.Name)
+			log.Infof("find orm object %s", message.FullName)
 
-			models = append(models, message.Name)
+			models = append(models, message.FullName)
 		})
 
 		args["Models"] = models
@@ -134,9 +135,9 @@ func GenerateTableName(pb *PbPackage) (err error) {
 				return
 			}
 
-			log.Infof("find table %s", message.Name)
+			log.Infof("find table %s", message.FullName)
 
-			models = append(models, message.Name)
+			models = append(models, message.FullName)
 		})
 
 		args["Models"] = models

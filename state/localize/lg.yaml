@@ -61,6 +61,9 @@ cli:
             long: Tonda fayiro .goreleaser.yml okusengeka ebikozesebwa mu kufulumya
             short: Okukola fayiro .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fayiro ekola ekkubo lya template
+                template-impl-route: Fayiro ./cmd/route.gen.go ekola ekkubo lya template
             long: Okukola fayiro z’okussa mu nkola okussa mu nkola empeereza za bizinensi
             short: Okukola fayiro z'okussa mu nkola
         long: Code generator, ewagira templates eziwera
@@ -242,6 +245,7 @@ lang:
     pl: Olupolandi
     ps: Olupashto
     pt: Olupotugo (Portugal, Brazil) .
+    pt-br: Olupotugo (Brazil) .
     qu: Quechua
     ro: Oluromania
     ru: Olurussia

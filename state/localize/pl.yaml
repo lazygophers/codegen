@@ -61,6 +61,9 @@ cli:
             long: Wygeneruj plik .goreleaser.yml w celu konfiguracji narzędzi wydających
             short: Wygeneruj plik .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Plik ./rpc_path.gen.go generuje ścieżkę szablonu
+                template-impl-route: Plik ./cmd/route.gen.go generuje ścieżkę szablonu
             long: Generowanie plików wdrożeniowych w celu wdrożenia usług biznesowych
             short: Wygeneruj pliki implementacyjne
         long: Generator kodu, obsługuje wiele szablonów
@@ -242,6 +245,7 @@ lang:
     pl: Polski
     ps: paszto
     pt: Portugalski (Portugalia, Brazylia)
+    pt-br: portugalski (Brazylia)
     qu: Keczua
     ro: rumuński
     ru: Rosyjski

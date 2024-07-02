@@ -61,6 +61,9 @@ cli:
             long: Genere el archivo .goreleaser.yml para configurar las herramientas de lanzamiento
             short: Generar archivo .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: El archivo ./rpc_path.gen.go genera la ruta de la plantilla
+                template-impl-route: El archivo ./cmd/route.gen.go genera la ruta de la plantilla
             long: Generar archivos de implementación para la implementación de servicios empresariales.
             short: Generar archivos de implementación
         long: Generador de código, admite múltiples plantillas.
@@ -242,6 +245,7 @@ lang:
     pl: Polaco
     ps: pastún
     pt: Portugués (Portugal, Brasil)
+    pt-br: Portugués (Brasil)
     qu: quechua
     ro: rumano
     ru: ruso

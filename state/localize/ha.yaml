@@ -61,6 +61,9 @@ cli:
             long: Ƙirƙirar fayil ɗin .goreleaser.yml don daidaita kayan aikin saki
             short: Ƙirƙirar fayil ɗin .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fayil yana haifar da hanyar samfuri
+                template-impl-route: ./cmd/route.gen.go fayil yana haifar da hanyar samfuri
             long: Ƙirƙirar fayilolin aiwatarwa don aiwatar da ayyukan kasuwanci
             short: Ƙirƙirar fayilolin aiwatarwa
         long: Lambar janareta, tana goyan bayan samfura da yawa
@@ -242,6 +245,7 @@ lang:
     pl: Yaren mutanen Poland
     ps: Pashto
     pt: Fotigal (Portugal, Brazil)
+    pt-br: Fotigal (Brazil)
     qu: Quechua
     ro: Romanian
     ru: Rashanci

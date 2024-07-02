@@ -61,6 +61,9 @@ cli:
             long: የመልቀቂያ መሳሪያዎችን ለማዋቀር .goreleaser.yml ፋይል ይፍጠሩ
             short: .goreleaser.yml ፋይል ይፍጠሩ
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go ፋይል የአብነት ዱካ ያመነጫል።
+                template-impl-route: ./cmd/route.gen.go ፋይል የአብነት መንገድ ያመነጫል።
             long: ለንግድ አገልግሎቶች ትግበራ የትግበራ ፋይሎችን ይፍጠሩ
             short: የማስፈጸሚያ ፋይሎችን ይፍጠሩ
         long: ኮድ ጄኔሬተር፣ በርካታ አብነቶችን ይደግፋል
@@ -242,6 +245,7 @@ lang:
     pl: ፖሊሽ
     ps: ፓሽቶ
     pt: ፖርቱጋልኛ (ፖርቱጋል፣ ብራዚል)
+    pt-br: ፖርቱጋልኛ (ብራዚል)
     qu: ኬቹዋ
     ro: ሮማንያን
     ru: ራሺያኛ

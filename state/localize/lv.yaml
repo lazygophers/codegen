@@ -61,6 +61,9 @@ cli:
             long: Ģenerējiet .goreleaser.yml failu izlaišanas rīku konfigurēšanai
             short: Ģenerējiet .goreleaser.yml failu
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fails ģenerē veidnes ceļu
+                template-impl-route: ./cmd/route.gen.go fails ģenerē veidnes ceļu
             long: Ģenerēt ieviešanas failus biznesa pakalpojumu ieviešanai
             short: Ģenerējiet ieviešanas failus
         long: Kodu ģenerators, atbalsta vairākas veidnes
@@ -242,6 +245,7 @@ lang:
     pl: poļu
     ps: puštu
     pt: portugāļu (Portugāle, Brazīlija)
+    pt-br: portugāļu (Brazīlija)
     qu: kečua
     ro: rumāņu valoda
     ru: krievu valoda

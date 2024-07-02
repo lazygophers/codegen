@@ -61,6 +61,9 @@ cli:
             long: Khiqiza ifayela le-.goreleaser.yml ukuze ulungiselele amathuluzi okukhipha
             short: Khiqiza ifayela le-.goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go ifayela likhiqiza indlela yesifanekiso
+                template-impl-route: ./cmd/route.gen.go ifayela lakha indlela yesifanekiso
             long: Khiqiza amafayela okuqalisa ukusetshenziswa kwezinsizakalo zebhizinisi
             short: Khiqiza amafayela wokuqalisa
         long: Ikhodi generator, isekela izifanekiso eziningi
@@ -242,6 +245,7 @@ lang:
     pl: IsiPolish
     ps: Isi-Pashto
     pt: Isi-Portuguese (Portugal, Brazil)
+    pt-br: Isi-Portuguese (Brazil)
     qu: IsiQuechua
     ro: IsiRomania
     ru: IsiRashiya

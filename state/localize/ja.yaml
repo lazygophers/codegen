@@ -61,6 +61,9 @@ cli:
             long: リリースツールを構成するための .goreleaser.yml ファイルを生成する
             short: .goreleaser.yml ファイルを生成する
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go ファイルはテンプレート パスを生成します
+                template-impl-route: ./cmd/route.gen.go ファイルはテンプレート パスを生成します
             long: ビジネス サービスを実装するための実装ファイルを生成する
             short: 実装ファイルを生成する
         long: コードジェネレーター、複数のテンプレートをサポート
@@ -242,6 +245,7 @@ lang:
     pl: 研磨
     ps: パシュトゥー語
     pt: ポルトガル語 (ポルトガル、ブラジル)
+    pt-br: ポルトガル語 (ブラジル)
     qu: ケチュア語
     ro: ルーマニア語
     ru: ロシア

@@ -61,6 +61,9 @@ cli:
             long: Vygenerujte súbor .goreleaser.yml na konfiguráciu nástrojov na uvoľnenie
             short: Vygenerujte súbor .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Súbor ./rpc_path.gen.go vygeneruje cestu k šablóne
+                template-impl-route: Súbor ./cmd/route.gen.go vygeneruje cestu k šablóne
             long: Generovanie implementačných súborov pre implementáciu obchodných služieb
             short: Vytvorte implementačné súbory
         long: Generátor kódu, podporuje viacero šablón
@@ -242,6 +245,7 @@ lang:
     pl: poľský
     ps: paštčina
     pt: portugalčina (Portugalsko, Brazília)
+    pt-br: portugalčina (Brazília)
     qu: kečuánsky
     ro: rumunský
     ru: ruský

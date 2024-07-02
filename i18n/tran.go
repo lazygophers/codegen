@@ -99,6 +99,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				}
 
 			default:
+				log.Errorf("data:%v", x)
 				log.Panicf("unknown type %T", x)
 			}
 		}
@@ -108,6 +109,8 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	}
 
 	for k, v := range srcLocalize {
+		log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
+
 		switch x := v.(type) {
 		case string:
 			tran := func() {
@@ -205,6 +208,19 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			srcSub := make(map[string]any, len(x))
 			for k, v := range x {
 				srcSub[strconv.FormatInt(k, 10)] = v
+			}
+
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
+
+		case map[int]string:
+			dstSub := toDstSub(k)
+			srcSub := make(map[string]any, len(x))
+			for k, v := range x {
+				srcSub[strconv.Itoa(k)] = v
 			}
 
 			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)

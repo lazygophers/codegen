@@ -61,6 +61,9 @@ cli:
             long: Cruthaich faidhle .goreleaser.yml airson rèiteachadh innealan fuasglaidh
             short: Cruthaich faidhle .goreleaseer.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faidhle a’ gineadh slighe teamplaid
+                template-impl-route: ./cmd/route.gen.go faidhle a’ gineadh slighe teamplaid
             long: Cruthaich faidhlichean buileachaidh airson buileachadh seirbheisean gnìomhachais
             short: Cruthaich faidhlichean buileachaidh
         long: Gineadair còd, a 'toirt taic do dh'iomadh teamplaid
@@ -242,6 +245,7 @@ lang:
     pl: Pòlainneach
     ps: Pashto
     pt: Portagailis (Braisil, Portagal)
+    pt-br: Portagailis (Braisil)
     qu: Quechua
     ro: Romànianach
     ru: Ruiseanach

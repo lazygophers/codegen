@@ -61,6 +61,9 @@ cli:
             long: Generer .goreleaser.yml-fil til konfiguration af udgivelsesværktøjer
             short: Generer .goreleaser.yml-fil
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go-filen genererer skabelonsti
+                template-impl-route: ./cmd/route.gen.go-filen genererer skabelonsti
             long: Generer implementeringsfiler til implementering af forretningstjenester
             short: Generer implementeringsfiler
         long: Kodegenerator, understøtter flere skabeloner
@@ -242,6 +245,7 @@ lang:
     pl: Polere
     ps: Pashto
     pt: Portugisisk (Portugal, Brasilien)
+    pt-br: Portugisisk (Brasilien)
     qu: Quechua
     ro: rumænsk
     ru: Russisk

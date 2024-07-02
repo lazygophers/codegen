@@ -61,6 +61,9 @@ cli:
             long: ንውቅር መሳርሒታት ምፍናው .goreleaser.yml ፋይል ምፍጣር
             short: .goreleaser.yml ፋይል ምፍጣር
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go ፋይል መንገዲ ቅጥዒ ይፈጥር
+                template-impl-route: ./cmd/route.gen.go ፋይል መንገዲ ቅጥዒ ይፈጥር
             long: ንኣተገባብራ ኣገልግሎት ንግዲ ዝኸውን ናይ ኣተገባብራ ፋይላት ምፍጣር
             short: ናይ ኣተገባብራ ፋይላት ምፍጣር
         long: ኮድ ጀነሬተር፣ ብዙሓት ቅጥዕታት ይድግፍ
@@ -242,6 +245,7 @@ lang:
     pl: ፖላንዳዊ
     ps: ፓሽቶ
     pt: ፖርቱጋልኛ (ፖርቱጋል፡ ብራዚል)
+    pt-br: ፖርቱጋልኛ (ብራዚል)
     qu: ቄቹዋ
     ro: ሮማናዊ
     ru: ሩስያዊ

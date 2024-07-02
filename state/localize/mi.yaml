@@ -61,6 +61,9 @@ cli:
             long: Hangaia he kōnae .goreleaser.yml mo te whirihoranga o nga taputapu tuku
             short: Hangaia te kōnae .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go te whakaputa ara tauira
+                template-impl-route: Ko te konae ./cmd/route.gen.go te whakaputa ara tauira
             long: Waihangahia nga konae whakatinanatanga mo te whakatinanatanga o nga ratonga pakihi
             short: Waihanga kōnae whakatinanatanga
         long: Kaihanga Waehere, e tautoko ana i nga tauira maha
@@ -242,6 +245,7 @@ lang:
     pl: Porohia
     ps: Pashto
     pt: Potiti (Portugal, Brazil)
+    pt-br: Potiti (Brazil)
     qu: Quechua
     ro: Romanian
     ru: Ruhia

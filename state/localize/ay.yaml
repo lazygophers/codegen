@@ -61,6 +61,9 @@ cli:
             long: .goreleaser.yml qillqat luraña, mistuwi yänaka wakicht’añataki
             short: .goreleaser.yml qillqat luraña
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go qillqatax plantilla thakhi uñstayi
+                template-impl-route: ./cmd/route.gen.go qillqatax plantilla thakhi uñstayi
             long: Servicios empresariales ukanaka phuqhañataki phuqhawi archivonaka luraña
             short: Phuqt’awi qillqatanaka luraña
         long: Código generador, walja plantillas ukanakaruw yanapt’i
@@ -242,6 +245,7 @@ lang:
     pl: Polonia aru
     ps: Pashto aru uñt’ayaña
     pt: Portugués (Portugal, Brasil) ukat juk’ampinaka.
+    pt-br: Portugués (Brasil) aru.
     qu: qhichwa
     ro: Rumania markanxa
     ru: Ruso aru uñt’ayaña

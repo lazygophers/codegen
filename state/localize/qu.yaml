@@ -61,6 +61,9 @@ cli:
             long: .goreleaser.yml willañiqita paqarichiy, kacharinapaq yanapakuykunata wakichinapaq
             short: .goreleaser.yml willañiqita paqarichiy
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go willañiqiqa plantilla ñanta paqarichimun
+                template-impl-route: ./cmd/route.gen.go willañiqiqa plantilla ñanta paqarichimun
             long: Negocio serviciokuna ruwanapaq implementacion archivokuna ruway
             short: Ruway qillqakunata paqarichiy
         long: Código generador, achka plantillakunata yanapan
@@ -242,6 +245,7 @@ lang:
     pl: Pula simi
     ps: Pashto simipi
     pt: Purtuyis simi (Purtugal, Brasil)
+    pt-br: Purtuyis simi (Brasil) .
     qu: Runasimi
     ro: Rumania simipi
     ru: Ruso simipi

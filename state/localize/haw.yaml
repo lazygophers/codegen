@@ -61,6 +61,9 @@ cli:
             long: E hana i ka faila .goreleaser.yml no ka hoʻonohonoho ʻana i nā mea hana hoʻokuʻu
             short: E hana i ka waihona .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go file e hoʻopuka i ke ala hoʻohālike
+                template-impl-route: ./cmd/route.gen.go file e hoʻopuka i ke ala hoʻohālike
             long: E hana i nā faila hoʻokō no ka hoʻokō ʻana i nā lawelawe ʻoihana
             short: E hana i nā faila hoʻokō
         long: Kākoʻo ʻia nā ʻōkuhi he nui
@@ -242,6 +245,7 @@ lang:
     pl: Pōlani
     ps: ʻŌlelo Pashto
     pt: Pukiki (Pukikala, Palakila)
+    pt-br: Pukiki (Brazil)
     qu: Quechua
     ro: Lomānia
     ru: Lukia

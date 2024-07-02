@@ -61,6 +61,9 @@ cli:
             long: Chiqarish vositalarini sozlash uchun .goreleaser.yml faylini yarating
             short: .goreleaser.yml faylini yarating
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fayli shablon yo'lini yaratadi
+                template-impl-route: ./cmd/route.gen.go fayli shablon yo'lini yaratadi
             long: Biznes xizmatlarini amalga oshirish uchun amalga oshirish fayllarini yaratish
             short: Amalga oshirish fayllarini yaratish
         long: Kod generatori, bir nechta shablonlarni qo'llab-quvvatlaydi
@@ -242,6 +245,7 @@ lang:
     pl: polyak
     ps: Pushtu
     pt: Portugal (Portugaliya, Braziliya)
+    pt-br: Portugal (Braziliya)
     qu: Kechua
     ro: rumin
     ru: rus

@@ -121,6 +121,9 @@ func NewPbComment(c *proto.Comment) *PbComment {
 type PbEnum struct {
 	enum *proto.Enum
 
+	Name     string
+	FullName string
+
 	fields []*PbEnumField
 }
 
@@ -129,10 +132,16 @@ func (p *PbEnum) Enum() *proto.Enum {
 }
 
 func (p *PbEnum) walk() {
+	p.Name = p.enum.Name
+	p.FullName = GetFullName(p.enum)
+
 	for _, element := range p.enum.Elements {
 		switch x := element.(type) {
 		case *proto.EnumField:
 			p.fields = append(p.fields, NewPbEnumField(x))
+
+		case *proto.Comment:
+			continue
 
 		default:
 			log.Panicf("unexpected enum field: %T", x)
@@ -186,7 +195,7 @@ func (p *PbRPC) walk() {
 	}
 
 	// 优先解析 options 的
-	if v, ok := p.options["lazygophers.lrpc.core.lazygen"]; ok {
+	if v, ok := p.options["(lazygophers.lrpc.core.lazygen)"]; ok {
 		var gen core.LazyGen
 		buffer, err := json.Marshal(v)
 		if err != nil {
@@ -200,6 +209,9 @@ func (p *PbRPC) walk() {
 			return
 		}
 
+		log.Info(v)
+		log.Info(gen)
+
 		if gen.Role != "" {
 			p.genOption.Role = gen.Role
 		}
@@ -207,9 +219,11 @@ func (p *PbRPC) walk() {
 		if gen.SkipGenRoute {
 			p.genOption.SkipGenRoute = gen.SkipGenRoute
 		}
+	} else {
+		log.Info(p.options)
 	}
 
-	if v, ok := p.options["lazygophers.lrpc.core.http"]; ok {
+	if v, ok := p.options["(lazygophers.lrpc.core.http)"]; ok {
 		var gen core.Http
 		buffer, err := json.Marshal(v)
 		if err != nil {
@@ -391,9 +405,10 @@ func NewPbMapField(f *proto.MapField) *PbMapField {
 }
 
 type PbEnumField struct {
-	Name    string
-	field   *proto.EnumField
-	comment *PbComment
+	Name     string
+	field    *proto.EnumField
+	comment  *PbComment
+	FullName string
 }
 
 func (p *PbEnumField) FieldName() string {
@@ -409,6 +424,9 @@ func (p *PbEnumField) IsSlice() bool {
 }
 
 func (p *PbEnumField) walk() {
+	p.Name = p.field.Name
+	p.FullName = GetFullName(p.field)
+
 	if p.field.Comment != nil {
 		p.comment = NewPbComment(p.field.Comment)
 	}
@@ -416,7 +434,6 @@ func (p *PbEnumField) walk() {
 
 func NewPbEnumField(f *proto.EnumField) *PbEnumField {
 	p := &PbEnumField{
-		Name:  f.Name,
 		field: f,
 	}
 
@@ -430,6 +447,7 @@ type PbMessage struct {
 	normalFields map[string]*PbNormalField
 	mapFields    map[string]*PbMapField
 	enumFields   map[string]*PbEnumField
+	FullName     string
 	Name         string
 }
 
@@ -477,8 +495,8 @@ func (p *PbMessage) Message() *proto.Message {
 }
 
 func (p *PbMessage) IsTable() bool {
-	if strings.HasPrefix(p.Name, "Model") {
-		if !strings.Contains(p.Name, "_") {
+	if strings.HasPrefix(p.FullName, "Model") {
+		if !strings.Contains(p.FullName, "_") {
 			return true
 		}
 	}
@@ -489,7 +507,7 @@ func (p *PbMessage) IsTable() bool {
 }
 
 func (p *PbMessage) NeedOrm() bool {
-	if strings.HasPrefix(p.Name, "Model") {
+	if strings.HasPrefix(p.FullName, "Model") {
 		return true
 	}
 
@@ -499,6 +517,7 @@ func (p *PbMessage) NeedOrm() bool {
 }
 
 func (p *PbMessage) walk() {
+	p.FullName = GetFullName(p.message)
 	p.Name = p.message.Name
 
 	for _, element := range p.message.Elements {
@@ -507,17 +526,17 @@ func (p *PbMessage) walk() {
 		element.Accept(visitor)
 
 		for _, field := range visitor.mapFields {
-			pterm.Info.Printfln("find map field:%s in %s", field.Name, p.Name)
+			pterm.Info.Printfln("find map field:%s in %s", field.Name, p.FullName)
 			p.mapFields[field.Name] = NewPbMapField(field)
 		}
 
 		for _, field := range visitor.normalFields {
-			pterm.Info.Printfln("find normal field:%s in %s", field.Name, p.Name)
+			pterm.Info.Printfln("find normal field:%s in %s", field.Name, p.FullName)
 			p.normalFields[field.Name] = NewPbNormalField(field)
 		}
 
 		for _, field := range visitor.enumFields {
-			pterm.Info.Printfln("find enum field:%s in %s", field.Name, p.Name)
+			pterm.Info.Printfln("find enum field:%s in %s", field.Name, p.FullName)
 			p.enumFields[field.Name] = NewPbEnumField(field)
 		}
 	}
@@ -593,9 +612,9 @@ func (p *PbPackage) ProjectRoot() string {
 
 func (p *PbPackage) GoPackage() string {
 	if state.Config.GoModulePrefix != "" {
-		return filepath.ToSlash(filepath.Join(state.Config.GoModulePrefix, p.RawGoPackage))
+		return strings.TrimPrefix(filepath.ToSlash(filepath.Join(state.Config.GoModulePrefix, p.RawGoPackage)), "/")
 	} else {
-		return filepath.ToSlash(p.RawGoPackage)
+		return strings.TrimPrefix(filepath.ToSlash(p.RawGoPackage), "/")
 	}
 }
 
@@ -680,13 +699,13 @@ func GetFullName(e proto.Visitee) string {
 func (p *PbPackage) Walk() {
 	proto.Walk(p.proto,
 		proto.WithMessage(func(m *proto.Message) {
-			m.Name = GetFullName(m)
+			name := GetFullName(m)
 
 			log.Infof("message:%v", m.Name)
-			pterm.Info.Printfln("find message:%s", m.Name)
+			pterm.Info.Printfln("find message:%s", name)
 
-			p.msgMap[m.Name] = NewPbMessage(m)
-			p.messages = append(p.messages, p.msgMap[m.Name])
+			p.msgMap[name] = NewPbMessage(m)
+			p.messages = append(p.messages, p.msgMap[name])
 		}),
 		proto.WithService(func(s *proto.Service) {
 			log.Infof("service:%v", s.Name)
@@ -703,13 +722,13 @@ func (p *PbPackage) Walk() {
 			p.rpcs = append(p.rpcs, p.rpcMap[r.Name])
 		}),
 		proto.WithEnum(func(e *proto.Enum) {
-			e.Name = GetFullName(e)
+			name := GetFullName(e)
 
 			log.Infof("enum:%v", e.Name)
-			pterm.Info.Printfln("find enum:%s", e.Name)
+			pterm.Info.Printfln("find enum:%s", name)
 
-			p.enumMap[e.Name] = NewPbEnum(e)
-			p.enums = append(p.enums, p.enumMap[e.Name])
+			p.enumMap[name] = NewPbEnum(e)
+			p.enums = append(p.enums, p.enumMap[name])
 		}),
 		proto.WithOption(func(option *proto.Option) {
 			log.Infof("option:%v", option.Name)

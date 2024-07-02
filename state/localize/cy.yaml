@@ -61,6 +61,9 @@ cli:
             long: Cynhyrchu ffeil .goreleaser.yml ar gyfer ffurfweddu offer rhyddhau
             short: Cynhyrchu ffeil .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Mae ffeil ./rpc_path.gen.go yn cynhyrchu llwybr templed
+                template-impl-route: Mae ffeil ./cmd/route.gen.go yn cynhyrchu llwybr templed
             long: Cynhyrchu ffeiliau gweithredu ar gyfer gweithredu gwasanaethau busnes
             short: Cynhyrchu ffeiliau gweithredu
         long: Generadur cod, yn cefnogi templedi lluosog
@@ -242,6 +245,7 @@ lang:
     pl: Pwyleg
     ps: Pashto
     pt: Portiwgaleg (Portiwgal, Brasil)
+    pt-br: Portiwgaleg (Brasil)
     qu: Cetshwa
     ro: Rwmania
     ru: Rwsiaidd

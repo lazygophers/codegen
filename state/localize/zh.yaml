@@ -61,6 +61,9 @@ cli:
         impl:
             short: 生成实现文件
             long: 生成实现文件，用于业务服务的实现
+            flags:
+                template-impl-route: ./cmd/route.gen.go 文件生成模板路径
+                template-impl-path: ./rpc_path.gen.go 文件生成模板路径
         makefile:
             short: 生成 Makefile 文件
             long: 生成 Makefile 文件，用于构建工具等相关命令
@@ -239,7 +242,8 @@ lang:
     ps: 普什图语
     fa: 波斯语
     pl: 波兰语
-    pt: 葡萄牙语（葡萄牙、巴西）
+    pt: 葡萄牙语（巴西）
+    pt-br: 葡萄牙语(巴西)
     pa: 旁遮普语
     qu: 克丘亚语
     ro: 罗马尼亚语

@@ -61,6 +61,9 @@ cli:
             long: Gere o arquivo .goreleaser.yml para configuração das ferramentas de lançamento
             short: Gerar arquivo .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: O arquivo ./rpc_path.gen.go gera o caminho do modelo
+                template-impl-route: O arquivo ./cmd/route.gen.go gera o caminho do modelo
             long: Gerar arquivos de implementação para a implementação de serviços de negócios
             short: Gerar arquivos de implementação
         long: Gerador de código, suporta vários modelos
@@ -242,6 +245,7 @@ lang:
     pl: polonês
     ps: pashto
     pt: Português (Portugal, Brasil)
+    pt-br: Português (Brasil)
     qu: Quechua
     ro: romena
     ru: russo

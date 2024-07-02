@@ -27,5 +27,5 @@ func Localize(key string, args ...interface{}) string {
 }
 
 func LocalizeWithCtx(ctx *lrpc.Ctx, key string, args ...interface{}) string {
-	return State.I18n.LocalizeWithLanguage(i18n.ParseLanguage(ctx.Header("Accept-Language")), key, args...)
+	return State.I18n.LocalizeWithLang(i18n.ParseLanguage(ctx.Header("Accept-Language")), key, args...)
 }

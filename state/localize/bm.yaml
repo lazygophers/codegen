@@ -61,6 +61,9 @@ cli:
             long: .goreleaser.yml file dilan walasa ka bɔli baarakɛminɛnw labɛn
             short: .goreleaser.yml filen dilan
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go filen bɛ jatebɔ sira dilan
+                template-impl-route: ./cmd/route.gen.go filen bɛ jatebɔ sira dilan
             long: Ka waleyali dosiyew labɛn jagokɛlaw ka baarakɛminɛnw waleyali kama
             short: Baarakɛcogo dosiyew labɛn
         long: Kode generateur, bɛ dɛmɛ don template caman ma
@@ -242,6 +245,7 @@ lang:
     pl: Polisikan na
     ps: Pashtokan na
     pt: Pɔrtigɛkan (Portugal, Berezil)
+    pt-br: Pɔrtigɛkan (Brezil)
     qu: Kecuwa
     ro: Rumanikan na
     ru: Irisikan na

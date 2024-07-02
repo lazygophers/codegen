@@ -61,6 +61,9 @@ cli:
             long: Gadzira .goreleaser.yml faira rekugadzirisa maturusi ekuburitsa
             short: Gadzira .goreleaser.yml faira
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faira rinogadzira nzira yetemplate
+                template-impl-route: ./cmd/route.gen.go faira rinogadzira nzira yetemplate
             long: Gadzira mafaira ekushandiswa kwekushandiswa kwemabasa ebhizinesi
             short: Gadzira mafaira ekushandisa
         long: Code jenareta, inotsigira akawanda matemplate
@@ -242,6 +245,7 @@ lang:
     pl: ChiPolish
     ps: Pashito
     pt: Chiputukezi (Portugal, Brazil)
+    pt-br: Chiputukezi (Brazil)
     qu: Quechua
     ro: ChiRomanian
     ru: ChiRussian

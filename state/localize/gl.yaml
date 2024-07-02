@@ -61,6 +61,9 @@ cli:
             long: Xera o ficheiro .goreleaser.yml para a configuración das ferramentas de lanzamento
             short: Xera o ficheiro .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: O ficheiro ./rpc_path.gen.go xera o camiño do modelo
+                template-impl-route: O ficheiro ./cmd/route.gen.go xera o camiño do modelo
             long: Xerar ficheiros de implantación para a implantación de servizos empresariais
             short: Xerar ficheiros de implementación
         long: Xerador de código, admite varios modelos
@@ -242,6 +245,7 @@ lang:
     pl: polaco
     ps: Pashto
     pt: Portugués (Portugal, Brasil)
+    pt-br: Portugués (Brasil)
     qu: Quechua
     ro: romanés
     ru: ruso

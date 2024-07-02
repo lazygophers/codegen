@@ -560,26 +560,14 @@ func GenerateClient(pb *PbPackage) (err error) {
 	}
 
 	matchFunc := func(rpc *PbRPC) bool {
-		for _, goFuncNode := range goPackage[pb.GoPackageName()].FuncMap {
-			goFunc := goFuncNode.goFunc
-
-			if goFunc.RecvType != "" {
-				continue
-			}
-
-			if goFunc.Name == rpc.Name {
-				pterm.Warning.Printfln("%s is exist, skip generate", rpc.Name)
-				return true
-			}
-		}
-
-		return false
+		return goPackage[pb.GoPackageName()].FuncMap[rpc.Name] != nil
 	}
 
 	for _, rpc := range pb.RPCs() {
 		//path := filepath.Join(GetPath(PathTypeImpl, pb), rpc.genOption.GenTo+".go")
 
 		if matchFunc(rpc) {
+			pterm.Warning.Printfln("%s is exist, skip generate client", rpc.Name)
 			continue
 		}
 

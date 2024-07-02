@@ -61,6 +61,9 @@ cli:
             long: Tạo tệp .goreleaser.yml để cấu hình các công cụ phát hành
             short: Tạo tệp .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Tệp ./rpc_path.gen.go tạo đường dẫn mẫu
+                template-impl-route: Tệp ./cmd/route.gen.go tạo đường dẫn mẫu
             long: Tạo các tệp triển khai để triển khai các dịch vụ kinh doanh
             short: Tạo tập tin triển khai
         long: Trình tạo mã, hỗ trợ nhiều mẫu
@@ -242,6 +245,7 @@ lang:
     pl: Đánh bóng
     ps: Tiếng Pa-tô
     pt: Tiếng Bồ Đào Nha (Bồ Đào Nha, Brazil)
+    pt-br: Tiếng Bồ Đào Nha (Brazil)
     qu: Quechua
     ro: người Rumani
     ru: tiếng Nga

@@ -61,6 +61,9 @@ cli:
             long: Hlahisa faele ea .goreleaser.yml bakeng sa ho hlophisa lisebelisoa tsa tokollo
             short: Hlahisa faele ea .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faele e hlahisa tsela ea template
+                template-impl-route: ./cmd/route.gen.go faele e hlahisa tsela ea template
             long: Hlahisa lifaele tsa ts'ebetsong bakeng sa ts'ebetsong ea litšebeletso tsa khoebo
             short: Hlahisa lifaele tsa ts'ebetsong
         long: Jenereithara ea khoutu, e tšehetsa litempele tse ngata
@@ -242,6 +245,7 @@ lang:
     pl: Sepolishe
     ps: Sepashto
     pt: Sepotoketsi (Portugal, Brazil)
+    pt-br: Sepotoketsi (Brazil)
     qu: Se-Quechua
     ro: Seromania
     ru: Serussia

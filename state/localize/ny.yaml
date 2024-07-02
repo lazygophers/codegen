@@ -61,6 +61,9 @@ cli:
             long: Pangani fayilo ya .goreleaser.yml kuti mukhazikitse zida zotulutsa
             short: Pangani fayilo ya .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fayilo imapanga njira yama template
+                template-impl-route: ./cmd/route.gen.go fayilo imapanga template njira
             long: Pangani mafayilo okhazikitsa kuti mukwaniritse ntchito zamabizinesi
             short: Pangani mafayilo okhazikitsa
         long: Code jenereta, imathandizira ma template angapo
@@ -242,6 +245,7 @@ lang:
     pl: Chipolishi
     ps: Pashto
     pt: Chipwitikizi (Portugal, Brazil)
+    pt-br: Chipwitikizi (Brazil)
     qu: Chiquechua
     ro: Chiromania
     ru: Chirasha

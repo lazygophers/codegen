@@ -61,6 +61,9 @@ cli:
             long: Endla fayili ya .goreleaser.yml ya ku lulamisa switirhisiwa swo humesa
             short: Endla fayili ya .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fayili yi tumbuluxa ndlela ya xifaniso
+                template-impl-route: Fayili ya ./cmd/route.gen.go yi tumbuluxa ndlela ya xifaniso
             long: Ku tumbuluxa tifayela ta ku tirhisiwa ka ku tirhisiwa ka vukorhokeri bya bindzu
             short: Endla tifayela ta ku tirhisiwa
         long: Khodi generator, yi seketela tithempleyiti to tala
@@ -242,6 +245,7 @@ lang:
     pl: Xipolish
     ps: Xipashto
     pt: Xiputukezi (Xiputugal, Brazil) .
+    pt-br: Xiputukezi (Brazil) .
     qu: Quechua
     ro: Xiromania
     ru: Xirhaxiya

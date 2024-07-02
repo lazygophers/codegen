@@ -61,6 +61,9 @@ cli:
             long: Búðu til .goreleaser.yml skrá til að stilla útgáfutól
             short: Búðu til .goreleaser.yml skrá
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go skrá býr til sniðmátsslóð
+                template-impl-route: ./cmd/route.gen.go skrá býr til sniðmátsslóð
             long: Búa til innleiðingarskrár fyrir innleiðingu viðskiptaþjónustu
             short: Búðu til útfærsluskrár
         long: Kóða rafall, styður mörg sniðmát
@@ -242,6 +245,7 @@ lang:
     pl: pólsku
     ps: Pastó
     pt: Portúgalska (Portúgal, Brasilía)
+    pt-br: Portúgalska (Brasilía)
     qu: Quechua
     ro: rúmenska
     ru: Rússneskt

@@ -61,6 +61,9 @@ cli:
             long: Goýberiş gurallarynyň konfigurasiýasy üçin .goreleaser.yml faýly dörediň
             short: .Goreleaser.yml faýly dörediň
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faýly şablon ýoluny döredýär
+                template-impl-route: ./cmd/route.gen.go faýly şablon ýoluny döredýär
             long: Iş hyzmatlaryny amala aşyrmak üçin ýerine ýetiriş faýllaryny dörediň
             short: Implementationerine ýetiriş faýllaryny dörediň
         long: Kod generatory, birnäçe galyplary goldaýar
@@ -242,6 +245,7 @@ lang:
     pl: Polýak
     ps: Puştun
     pt: Portugaliýa (Portugaliýa, Braziliýa)
+    pt-br: Portugaliýa (Braziliýa)
     qu: Keçua
     ro: Rumyn
     ru: Rus

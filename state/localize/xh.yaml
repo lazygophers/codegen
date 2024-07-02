@@ -61,6 +61,9 @@ cli:
             long: Yenza ifayile ye.goreleaser.yml yoqwalaselo lwezixhobo zokukhulula
             short: Yenza ifayile ye.goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go ifayile yenza indlela yetemplate
+                template-impl-route: ./cmd/route.gen.go ifayile yenza indlela yetemplate
             long: Ukuvelisa iifayile zokuphunyezwa kokuphunyezwa kweenkonzo zoshishino
             short: Yenza iifayile zokuphunyezwa
         long: Ikhowudi generator, ixhasa iitemplates ezininzi
@@ -242,6 +245,7 @@ lang:
     pl: Polish
     ps: isiPhashto
     pt: IsiPhuthukezi (ePortugal, eBrazil)
+    pt-br: IsiPhuthukezi (eBrazil)
     qu: IsiQuechua
     ro: Romanian
     ru: IsiRashiya

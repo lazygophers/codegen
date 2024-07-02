@@ -61,6 +61,9 @@ cli:
             long: צור קובץ .goreleaser.yml עבור תצורה של כלי שחרור
             short: צור קובץ .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: קובץ ./rpc_path.gen.go יוצר נתיב תבנית
+                template-impl-route: קובץ ./cmd/route.gen.go יוצר נתיב תבנית
             long: הפקת קבצי הטמעה להטמעת שירותים עסקיים
             short: יצירת קבצי יישום
         long: מחולל קוד, תומך במספר תבניות
@@ -242,6 +245,7 @@ lang:
     pl: פולני
     ps: פשטו
     pt: פורטוגזית (פורטוגל, ברזיל)
+    pt-br: פורטוגזית (ברזיל)
     qu: קצ'ואה
     ro: רומנית
     ru: רוּסִי

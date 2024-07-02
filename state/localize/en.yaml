@@ -61,6 +61,9 @@ cli:
             long: Generate .goreleaser.yml file for configuration of release tools
             short: Generate .goreleaser.yml file
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go file generates template path
+                template-impl-route: ./cmd/route.gen.go file generates template path
             long: Generate implementation files for the implementation of business services
             short: Generate implementation files
         long: Code generator, supports multiple templates
@@ -242,6 +245,7 @@ lang:
     pl: Polish
     ps: Pashto
     pt: Portuguese (Portugal, Brazil)
+    pt-br: Portuguese (Brazil)
     qu: Quechua
     ro: Romanian
     ru: Russian

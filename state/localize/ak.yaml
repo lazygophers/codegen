@@ -61,6 +61,9 @@ cli:
             long: Yɛ .goreleaser.yml fael ma nhyehyeɛ a ɛfa nnwinnadeɛ a wɔayi no adi ho
             short: Yɛ .goreleaser.yml fael no
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fael no yɛ template kwan
+                template-impl-route: ./cmd/route.gen.go fael no yɛ template kwan
             long: Yɛ fael a wɔde bedi dwuma ama adwumayɛ ho nnwuma a wɔde bedi dwuma
             short: Yɛ fael ahorow a wɔde di dwuma
         long: Code generator, boa template ahorow pii
@@ -242,6 +245,7 @@ lang:
     pl: Polish kasa mu
     ps: Pashto kasa mu
     pt: Portugal kasa (Portugal, Brazil) .
+    pt-br: Portugal kasa (Brazil kasa) .
     qu: Quechua
     ro: Romania kasa
     ru: Russia kasa

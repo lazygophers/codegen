@@ -61,6 +61,9 @@ cli:
             long: Luo .goreleaser.yml-tiedosto julkaisutyökalujen määritystä varten
             short: Luo .goreleaser.yml-tiedosto
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go-tiedosto luo mallipolun
+                template-impl-route: ./cmd/route.gen.go-tiedosto luo mallipolun
             long: Luo toteutustiedostoja yrityspalveluiden toteuttamista varten
             short: Luo toteutustiedostoja
         long: Koodigeneraattori, tukee useita malleja
@@ -242,6 +245,7 @@ lang:
     pl: Kiillottaa
     ps: pashto
     pt: portugali (Portugali, Brasilia)
+    pt-br: portugali (Brasilia)
     qu: ketsua
     ro: romanialainen
     ru: Venäjän kieli

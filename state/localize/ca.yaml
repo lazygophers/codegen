@@ -61,6 +61,9 @@ cli:
             long: Genereu el fitxer .goreleaser.yml per a la configuració de les eines de llançament
             short: Genereu el fitxer .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: El fitxer ./rpc_path.gen.go genera el camí de la plantilla
+                template-impl-route: El fitxer ./cmd/route.gen.go genera la ruta de la plantilla
             long: Generar fitxers d'implementació per a la implantació de serveis empresarials
             short: Generar fitxers d'implementació
         long: Generador de codi, admet múltiples plantilles
@@ -242,6 +245,7 @@ lang:
     pl: polonès
     ps: Pashto
     pt: Portuguès (Portugal, Brasil)
+    pt-br: portuguès (Brasil)
     qu: Quechua
     ro: romanès
     ru: rus

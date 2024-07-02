@@ -3,6 +3,7 @@ package codegen
 import (
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
+	"github.com/lazygophers/utils/anyx"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
 	"io/fs"
@@ -28,6 +29,9 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 			case string:
 				localize[key] = x
 
+			case []byte:
+				localize[key] = string(x)
+
 			case map[string]any:
 				deepKeys(append(slices.Clone(ps), k), x)
 
@@ -35,6 +39,13 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 				sub := make(map[string]any, len(x))
 				for k, v := range x {
 					sub[k] = v
+				}
+				deepKeys(append(slices.Clone(ps), k), sub)
+
+			case map[string][]byte:
+				sub := make(map[string]any, len(x))
+				for k, v := range x {
+					sub[k] = string(v)
 				}
 				deepKeys(append(slices.Clone(ps), k), sub)
 
@@ -52,6 +63,13 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 				}
 				deepKeys(append(slices.Clone(ps), k), sub)
 
+			case map[int64][]byte:
+				sub := make(map[string]any, len(x))
+				for k, v := range x {
+					sub[strconv.FormatInt(k, 10)] = string(v)
+				}
+				deepKeys(append(slices.Clone(ps), k), sub)
+
 			case map[float64]any:
 				sub := make(map[string]any, len(x))
 				for k, v := range x {
@@ -63,6 +81,20 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 				sub := make(map[string]any, len(x))
 				for k, v := range x {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
+				}
+				deepKeys(append(slices.Clone(ps), k), sub)
+
+			case map[float64][]byte:
+				sub := make(map[string]any, len(x))
+				for k, v := range x {
+					sub[strconv.FormatFloat(k, 'f', -1, 64)] = string(v)
+				}
+				deepKeys(append(slices.Clone(ps), k), sub)
+
+			case map[any]any:
+				sub := make(map[string]any, len(x))
+				for k, v := range x {
+					sub[anyx.ToString(k)] = v
 				}
 				deepKeys(append(slices.Clone(ps), k), sub)
 

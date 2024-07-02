@@ -61,6 +61,9 @@ cli:
             long: Jɛnɛret .goreleaser.yml fayl fɔ kɔnfigyushɔn fɔ rilis tul dɛn
             short: Jɛnɛret .goreleaser.yml fayl
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fayl de jenarayz tɛmplat pat
+                template-impl-route: ./cmd/route.gen.go fayl de jenarayz tɛmplat pat
             long: Jɛnɛret implimɛnt fayl dɛn fɔ di implimɛnt biznɛs savis
             short: Jɛnɛret implimɛnt fayl dɛn
         long: Kod jenɛra, sɔpɔt bɔku tɛmplat dɛn
@@ -242,6 +245,7 @@ lang:
     pl: Polish langwej
     ps: Pashto we dɛn kɔl Pashto
     pt: Pɔtyugis (Pɔtyugis, Brazil)
+    pt-br: Pɔtyugis (Brezil) .
     qu: Quechua
     ro: Romanian langwej
     ru: Rɔshian langwej

@@ -61,6 +61,9 @@ cli:
             long: Samee faylka .goreleaser.yml ee habaynta qalabka sii daynta
             short: Samee faylka .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faylka waxa uu abuuraa dariiqa qaabka
+                template-impl-route: ./cmd/route.gen.go faylka waxa uu abuuraa dariiqa qaabka
             long: Samee galalka fulinta fulinta adeegyada ganacsiga
             short: Abuur faylasha fulinta
         long: Soo-saare kood, waxa uu taageeraa qaabab badan
@@ -242,6 +245,7 @@ lang:
     pl: Polish
     ps: Pashto
     pt: Boortaqiis (Portugal, Brazil)
+    pt-br: Boortaqiis (Brazil)
     qu: Quechua
     ro: Romanian
     ru: Ruush

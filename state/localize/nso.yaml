@@ -61,6 +61,9 @@ cli:
             long: Hlagiša faele ya .goreleaser.yml bakeng sa peakanyo ya didirišwa tša go lokolla
             short: Hlahisa faele ya .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faele e tšweletša tsela ya thempleite
+                template-impl-route: ./cmd/route.gen.go faele e tšweletša tsela ya thempleite
             long: Hlagiša difaele tša phethagatšo ya phethagatšo ya ditirelo tša kgwebo
             short: Hlahisa difaele phethagatšo
         long: Khoutu jenereithara, tšehetsa dithempleite multiple
@@ -242,6 +245,7 @@ lang:
     pl: Sepoliši sa Sepoliši
     ps: Sepashto sa Sepashto
     pt: Sepotokisi (Sepotokisi, Brazil) .
+    pt-br: Sepotokisi (Brazil) .
     qu: Quechua
     ro: Seromania
     ru: Se-Russia

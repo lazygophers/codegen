@@ -61,6 +61,9 @@ cli:
             long: Release tools configuration atan .goreleaser.yml file siam rawh
             short: .goreleaser.yml file siam rawh
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go file hian template path a siam chhuak thin
+                template-impl-route: ./cmd/route.gen.go file hian template path a siam chhuak thin
             long: Business services kalpui dan tur implementation file siam
             short: Implementation file siam chhuah
         long: Code generator, template tam tak a support thei
@@ -242,6 +245,7 @@ lang:
     pl: Polish tawng a ni
     ps: Pashto tawng a ni
     pt: Portuguese tawng (Portugal, Brazil) tawng a ni.
+    pt-br: Portuguese tawng (Brazil) tawng a ni.
     qu: Quechua tawng
     ro: Romanian tawng a ni
     ru: Russian tawng a ni

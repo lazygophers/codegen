@@ -61,6 +61,9 @@ cli:
             long: Looge väljalasketööriistade konfigureerimiseks fail goreleaser.yml
             short: Looge fail .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fail genereerib malli tee
+                template-impl-route: ./cmd/route.gen.go fail genereerib malli tee
             long: Looge äriteenuste juurutamiseks rakendusfaile
             short: Loo rakendusfailid
         long: Koodigeneraator, toetab mitut malli
@@ -242,6 +245,7 @@ lang:
     pl: poola keel
     ps: puštu
     pt: portugali keel (Portugal, Brasiilia)
+    pt-br: portugali keel (Brasiilia)
     qu: ketšua
     ro: rumeenlane
     ru: vene keel

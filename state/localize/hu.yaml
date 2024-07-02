@@ -61,6 +61,9 @@ cli:
             long: A kiadási eszközök konfigurálásához hozzon létre .goreleaser.yml fájlt
             short: Hozzon létre .goreleaser.yml fájlt
         impl:
+            flags:
+                template-impl-path: Az ./rpc_path.gen.go fájl létrehozza a sablon elérési útját
+                template-impl-route: A ./cmd/route.gen.go fájl létrehozza a sablon elérési útját
             long: Implementációs fájlok létrehozása az üzleti szolgáltatások megvalósításához
             short: Implementációs fájlok létrehozása
         long: Kódgenerátor, több sablont is támogat
@@ -242,6 +245,7 @@ lang:
     pl: fényesít
     ps: pastu
     pt: portugál (Portugália, Brazília)
+    pt-br: portugál (Brazília)
     qu: kecsua
     ro: román
     ru: orosz

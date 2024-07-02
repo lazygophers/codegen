@@ -61,6 +61,9 @@ cli:
             long: Generearje .goreleaser.yml triem foar konfiguraasje fan release ark
             short: Generearje .goreleaser.yml triem
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go triem genereart template paad
+                template-impl-route: ./cmd/route.gen.go triem genereart template paad
             long: Generearje ymplemintaasjebestannen foar de ymplemintaasje fan saaklike tsjinsten
             short: Generearje ymplemintaasjebestannen
         long: Koadegenerator, stipet meardere sjabloanen
@@ -242,6 +245,7 @@ lang:
     pl: Poalsk
     ps: Pashtu
     pt: Portugeesk (Portugal, Brazylje)
+    pt-br: Portegeesk (Brazylje)
     qu: Quechua
     ro: Roemeensk
     ru: Russysk

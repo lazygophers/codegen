@@ -61,6 +61,9 @@ cli:
             long: Jenere fichye .goreleaser.yml pou konfigirasyon zouti lage yo
             short: Jenere fichye .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go dosye jenere modèl chemen
+                template-impl-route: ./cmd/route.gen.go dosye jenere modèl chemen
             long: Jenere dosye aplikasyon pou aplikasyon sèvis biznis yo
             short: Jenere dosye aplikasyon yo
         long: Kòd dèlko, sipòte plizyè modèl
@@ -242,6 +245,7 @@ lang:
     pl: Polonè
     ps: Pashto
     pt: Pòtigè (Pòtigal, Brezil)
+    pt-br: Pòtigè (Brezil)
     qu: Quechua
     ro: Woumen
     ru: Ris
