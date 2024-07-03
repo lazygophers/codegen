@@ -32,6 +32,9 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 			case []byte:
 				localize[key] = string(x)
 
+			case int:
+				localize[key] = strconv.Itoa(x)
+
 			case map[string]any:
 				deepKeys(append(slices.Clone(ps), k), x)
 
