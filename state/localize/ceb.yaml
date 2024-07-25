@@ -61,6 +61,9 @@ cli:
             long: Paghimo og .goreleaser.yml file para sa pag-configure sa mga himan sa pagpagawas
             short: Paghimo og .goreleaser.yml file
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go nga file nagmugna og template path
+                template-impl-route: Ang ./cmd/route.gen.go nga file nagmugna og template path
             long: Paghimo mga file sa pagpatuman alang sa pagpatuman sa mga serbisyo sa negosyo
             short: Paghimo mga file sa pagpatuman
         long: Code generator, nagsuporta sa daghang mga templates
@@ -242,6 +245,7 @@ lang:
     pl: kahamis
     ps: Pashto
     pt: Portuges (Portugal, Brazil)
+    pt-br: Portuges (Brazil)
     qu: Quechua
     ro: Romaniano
     ru: Ruso

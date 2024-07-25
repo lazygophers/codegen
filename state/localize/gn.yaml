@@ -61,6 +61,9 @@ cli:
             long: Emoheñói .goreleaser.yml vore tembipuru’i ñeguenohẽ ñembohekorã
             short: Emoheñói .goreleaser.yml rembiapokue
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go vore omoheñói plantilla rape
+                template-impl-route: ./cmd/route.gen.go vore omoheñói plantilla rape
             long: Omoheñói archivo implementación rehegua oñemboguata haguã servicio empresarial
             short: Omoheñói archivo implementación rehegua
         long: Código generador, oipytyvõ heta plantilla
@@ -242,6 +245,7 @@ lang:
     pl: Polaco ñe’ẽ
     ps: Pashto ñe’ẽ
     pt: Poytugañe'ẽ (Portugal, Brasil) .
+    pt-br: Poytugañe'ẽ (Brasil) .
     qu: quechua
     ro: Rumania-pe
     ru: Ruso ñe’ẽ

@@ -61,6 +61,9 @@ cli:
             long: .goreleaser.yml فائل ٺاھيو رليز ٽولز جي ٺاھ جوڙ لاءِ
             short: .goreleaser.yml فائل ٺاھيو
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go فائل ٽيمپليٽ رستو ٺاهي ٿي
+                template-impl-route: ./cmd/route.gen.go فائل ٺاهي ٿو ٽيمپليٽ جو رستو
             long: ڪاروباري خدمتن جي نفاذ لاءِ عمل درآمد فائلون ٺاھيو
             short: عمل درآمد فائلون ٺاھيو
         long: ڪوڊ جنريٽر، ڪيترن ئي ٽيمپليٽس کي سپورٽ ڪري ٿو
@@ -242,6 +245,7 @@ lang:
     pl: پالش
     ps: پشتو
     pt: پرتگالي (پرتگال، برازيل)
+    pt-br: پرتگالي (برازيل)
     qu: ڪيوچو
     ro: رومانوي
     ru: روسي

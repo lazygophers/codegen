@@ -61,6 +61,9 @@ cli:
             long: Tsim cov ntaub ntawv .goreleaser.yml rau kev teeb tsa ntawm cov cuab yeej tso tawm
             short: Tsim cov ntaub ntawv .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go file generates template path
+                template-impl-route: ./cmd/route.gen.go file generates template path
             long: Tsim cov ntaub ntawv siv rau kev siv cov kev pabcuam kev lag luam
             short: Tsim cov ntaub ntawv siv
         long: Code generator, txhawb ntau tus qauv
@@ -242,6 +245,7 @@ lang:
     pl: Polish
     ps: Pashto
     pt: Portuguese (Portugal, Brazil)
+    pt-br: Portuguese (Brazil)
     qu: Quechua
     ro: Romanian
     ru: Lavxias

@@ -61,6 +61,9 @@ cli:
             long: Mamorona rakitra .goreleaser.yml ho an'ny fanamboarana fitaovana famoahana
             short: Mamorona rakitra .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go dia mamorona lalana môdely
+                template-impl-route: ./cmd/route.gen.go dia mamorona lalan'ny môdely
             long: Mamorona rakitra fampiharana ho an'ny fampiharana ny serivisy fandraharahana
             short: Mamorona rakitra fampiharana
         long: Mpamorona kaody, manohana modely maro
@@ -242,6 +245,7 @@ lang:
     pl: poloney
     ps: Pashto
     pt: Portiogey (Portugal, Brezila)
+    pt-br: Portiogey (Brezila)
     qu: Quechua
     ro: Malagasy Romanian
     ru: ROSIANINA

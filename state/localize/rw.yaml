@@ -61,6 +61,9 @@ cli:
             long: Kora .goreleaser.yml dosiye kugirango ibone ibikoresho byo kurekura
             short: Kora .goreleaser.yml dosiye
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go dosiye itanga inzira yicyitegererezo
+                template-impl-route: ./cmd/route.gen.go dosiye itanga inzira yicyitegererezo
             long: Gukora dosiye zo gushyira mubikorwa ishyirwa mubikorwa rya serivisi zubucuruzi
             short: Gukora dosiye zo gushyira mubikorwa
         long: Kode itanga, ishyigikira inyandikorugero nyinshi
@@ -242,6 +245,7 @@ lang:
     pl: Igipolonye
     ps: Pashto
     pt: Igiporutugali (Porutugali, Burezili)
+    pt-br: Igiporutugali (Berezile)
     qu: Quechua
     ro: Ikinyarumaniya
     ru: Ikirusiya

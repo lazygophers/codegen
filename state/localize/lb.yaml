@@ -61,6 +61,9 @@ cli:
             long: Generéiere .goreleaser.yml Fichier fir Configuratioun vun Fräisetzung Handwierksgeschir
             short: Generéiere .goreleaser.yml Fichier
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go Fichier generéiert Schabloun Wee
+                template-impl-route: ./cmd/route.gen.go Fichier generéiert Schabloun Wee
             long: Generéiere Implementatiounsdateien fir d'Ëmsetzung vu Geschäftsservicer
             short: Generéiere Implementatiounsdateien
         long: Code Generator, ënnerstëtzt verschidde Templates
@@ -242,6 +245,7 @@ lang:
     pl: Polnesch
     ps: pashtu
     pt: Portugisesch (Portugal, Brasilien)
+    pt-br: Portugisesch (Brasilien)
     qu: Quechua
     ro: Rumänesch
     ru: Russesch

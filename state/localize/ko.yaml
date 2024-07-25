@@ -61,6 +61,9 @@ cli:
             long: 릴리스 도구 구성을 위한 .goreleaser.yml 파일 생성
             short: .goreleaser.yml 파일 생성
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go 파일은 템플릿 경로를 생성합니다.
+                template-impl-route: ./cmd/route.gen.go 파일은 템플릿 경로를 생성합니다.
             long: 비즈니스 서비스 구현을 위한 구현 파일 생성
             short: 구현 파일 생성
         long: 코드 생성기, 여러 템플릿 지원
@@ -242,6 +245,7 @@ lang:
     pl: 광택
     ps: 파슈토어
     pt: 포르투갈어(포르투갈, 브라질)
+    pt-br: 포르투갈어(브라질)
     qu: 케추아어
     ro: 루마니아 사람
     ru: 러시아인

@@ -61,6 +61,9 @@ cli:
             long: Ṣe ina .goreleaser.yml faili fun iṣeto ni ti awọn irinṣẹ idasilẹ
             short: Ṣe ina .goreleaser.yml faili
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faili ṣe agbejade ọna awoṣe
+                template-impl-route: ./cmd/route.gen.go faili ṣe agbejade ọna awoṣe
             long: Ṣẹda awọn faili imuse fun imuse awọn iṣẹ iṣowo
             short: Ṣe ina imuse awọn faili
         long: Olupilẹṣẹ koodu, ṣe atilẹyin awọn awoṣe pupọ
@@ -242,6 +245,7 @@ lang:
     pl: pólándì
     ps: Pashto
     pt: Portuguese (Portugal, Brazil)
+    pt-br: Portuguese (Brazil)
     qu: Quechua
     ro: Romanian
     ru: Russian

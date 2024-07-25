@@ -61,6 +61,9 @@ cli:
             long: Generați fișierul .goreleaser.yml pentru configurarea instrumentelor de lansare
             short: Generați fișierul .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Fișierul ./rpc_path.gen.go generează calea șablonului
+                template-impl-route: Fișierul ./cmd/route.gen.go generează calea șablonului
             long: Generați fișiere de implementare pentru implementarea serviciilor de afaceri
             short: Generați fișiere de implementare
         long: Generator de cod, acceptă mai multe șabloane
@@ -242,6 +245,7 @@ lang:
     pl: Lustrui
     ps: Pashto
     pt: portugheză (Portugalia, Brazilia)
+    pt-br: portugheză (Brazilia)
     qu: quechua
     ro: Română
     ru: Rusă

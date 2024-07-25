@@ -61,6 +61,9 @@ cli:
             long: Wɔ .goreleaser.yml faɛl hena ɖoɖowɔwɔ ɖe asiɖeɖe le dɔwɔnuwo ŋu
             short: Wɔ .goreleaser.yml faɛl
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faɛl la wɔa template mɔ
+                template-impl-route: ./cmd/route.gen.go faɛl la wɔa nɔnɔmetata ƒe mɔ
             long: Wɔ dɔwɔwɔ ƒe faɛlwo hena asitsatsa ƒe dɔwɔnawo ƒe dɔwɔwɔ
             short: Wɔ dɔwɔwɔ ƒe faɛlwo
         long: Code generator, doa alɔ template geɖewo
@@ -242,6 +245,7 @@ lang:
     pl: Polandgbe me tɔ
     ps: Pashtogbe me tɔ
     pt: Portugalgbe (Portugal, Brazil) .
+    pt-br: Portugalgbe (Brazilgbe) .
     qu: Quechua
     ro: Romaniagbe me tɔ
     ru: Russiagbe me

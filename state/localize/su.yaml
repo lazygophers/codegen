@@ -61,6 +61,9 @@ cli:
             long: Ngahasilkeun file .goreleaser.yml pikeun konfigurasi pakakas release
             short: Ngahasilkeun file .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go file ngahasilkeun jalur template
+                template-impl-route: ./cmd/route.gen.go file ngahasilkeun jalur template
             long: Ngahasilkeun file palaksanaan pikeun palaksanaan jasa bisnis
             short: Ngahasilkeun file palaksanaan
         long: Kode generator, ngarojong sababaraha témplat
@@ -242,6 +245,7 @@ lang:
     pl: Polandia
     ps: Pashto
     pt: Portugis (Portugal, Brazil)
+    pt-br: Portugis (Brazil)
     qu: Quechua
     ro: Romania
     ru: Rusia

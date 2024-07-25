@@ -61,6 +61,9 @@ cli:
             long: Bosala fisyé .goreleaser.yml mpo na bobongisi ya bisaleli ya kobimisa
             short: Bosala fisyé .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Fisyé ./rpc_path.gen.go ebimisaka nzela ya modèle
+                template-impl-route: Fisyé ./cmd/route.gen.go ebimisaka nzela ya modèle
             long: Kosala ba fichiers ya mise en œuvre pona mise en œuvre ya ba services d’affaires
             short: Kosala ba fichiers ya mise en œuvre
         long: Générateur ya code, esimbaka ba modèles ebele
@@ -242,6 +245,7 @@ lang:
     pl: Polonais
     ps: Pashto
     pt: Portugais (Portugal, Brésil) .
+    pt-br: Portugais (Brésil) .
     qu: Quechua
     ro: Roumanien
     ru: Liloba ya Russe

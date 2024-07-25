@@ -61,6 +61,9 @@ cli:
             long: Gjeneroni skedarin .goreleaser.yml për konfigurimin e veglave të lëshimit
             short: Gjeneroni skedarin .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Skedari ./rpc_path.gen.go gjeneron shtegun e shabllonit
+                template-impl-route: Skedari ./cmd/route.gen.go gjeneron shtegun e shabllonit
             long: Gjeneroni skedarë zbatimi për zbatimin e shërbimeve të biznesit
             short: Gjeneroni skedarë zbatimi
         long: Gjenerator kodi, mbështet modele të shumta
@@ -242,6 +245,7 @@ lang:
     pl: polonisht
     ps: Pashto
     pt: Portugeze (Portugali, Brazil)
+    pt-br: Portugeze (Brazil)
     qu: Keçua
     ro: rumun
     ru: rusisht

@@ -61,6 +61,9 @@ cli:
             long: Hasilkan fail .goreleaser.yml untuk konfigurasi alat keluaran
             short: Hasilkan fail .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Fail ./rpc_path.gen.go menjana laluan templat
+                template-impl-route: Fail ./cmd/route.gen.go menjana laluan templat
             long: Hasilkan fail pelaksanaan untuk pelaksanaan perkhidmatan perniagaan
             short: Hasilkan fail pelaksanaan
         long: Penjana kod, menyokong pelbagai templat
@@ -242,6 +245,7 @@ lang:
     pl: Poland
     ps: Pashto
     pt: Portugis (Portugal, Brazil)
+    pt-br: Portugis (Brazil)
     qu: Quechua
     ro: bahasa Romania
     ru: bahasa Rusia

@@ -61,6 +61,9 @@ cli:
             long: Generera .goreleaser.yml-fil för konfiguration av releaseverktyg
             short: Generera filen .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go-filen genererar mallsökväg
+                template-impl-route: ./cmd/route.gen.go-filen genererar mallsökväg
             long: Generera implementeringsfiler för implementering av företagstjänster
             short: Generera implementeringsfiler
         long: Kodgenerator, stöder flera mallar
@@ -242,6 +245,7 @@ lang:
     pl: putsa
     ps: Pashto
     pt: Portugisiska (Portugal, Brasilien)
+    pt-br: portugisiska (Brasilien)
     qu: Quechua
     ro: rumänska
     ru: ryska

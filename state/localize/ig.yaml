@@ -61,6 +61,9 @@ cli:
             long: Mepụta faịlụ .goreleaser.yml maka nhazi ngwaọrụ ntọhapụ
             short: Mepụta faịlụ .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faịlụ na-ewepụta ụzọ template
+                template-impl-route: ./cmd/route.gen.go faịlụ na-ewepụta ụzọ ndebiri
             long: Mepụta faịlụ mmejuputa maka mmejuputa ọrụ azụmahịa
             short: Mepụta faịlụ mmejuputa
         long: Ọkpụkpọ koodu, na-akwado ọtụtụ ndebiri
@@ -242,6 +245,7 @@ lang:
     pl: Polish
     ps: Pashto
     pt: Portuguese (Portugal, Brazil)
+    pt-br: Portuguese (Brazil)
     qu: Quechua
     ro: Romanian
     ru: Russian

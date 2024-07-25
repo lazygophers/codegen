@@ -61,6 +61,9 @@ cli:
             long: 產生.goreleaser.yml 文件，用於發布工具的配置
             short: 產生.goreleaser.yml 文件
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go 檔案產生模板路徑
+                template-impl-route: ./cmd/route.gen.go 檔案生成模板路徑
             long: 產生實作文件，用於業務服務的實現
             short: 產生實作文件
         long: 程式碼產生器，支援多種模板
@@ -242,6 +245,7 @@ lang:
     pl: 波蘭語
     ps: 普什圖語
     pt: 葡萄牙語（葡萄牙、巴西）
+    pt-br: 葡萄牙語(巴西)
     qu: 克丘亞語
     ro: 羅馬尼亞語
     ru: 俄文

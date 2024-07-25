@@ -61,6 +61,9 @@ cli:
             long: Ustvari datoteko .goreleaser.yml za konfiguracijo orodij za izdajo
             short: Ustvari datoteko .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Datoteka ./rpc_path.gen.go ustvari pot predloge
+                template-impl-route: Datoteka ./cmd/route.gen.go ustvari pot predloge
             long: Generirajte implementacijske datoteke za implementacijo poslovnih storitev
             short: Ustvari izvedbene datoteke
         long: Generator kode, podpira več predlog
@@ -242,6 +245,7 @@ lang:
     pl: poljski
     ps: paštu
     pt: portugalščina (Portugalska, Brazilija)
+    pt-br: portugalščina (Brazilija)
     qu: kečua
     ro: romunščina
     ru: ruski

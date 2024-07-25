@@ -61,6 +61,9 @@ cli:
             long: Gin comhad .goreleaser.yml chun uirlisí scaoilte a chumrú
             short: Gin comhad .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Gineann an comhad ./rpc_path.gen.go cosán teimpléid
+                template-impl-route: Gineann an comhad ./cmd/route.gen.go cosán teimpléid
             long: Comhaid cur chun feidhme a ghiniúint chun seirbhísí gnó a chur i bhfeidhm
             short: Gin comhaid feidhmithe
         long: Tacaíonn gineadóir cód, teimpléid iolracha
@@ -242,6 +245,7 @@ lang:
     pl: Polainnis
     ps: Paistis
     pt: Portaingéilis (an Phortaingéil, an Bhrasaíl)
+    pt-br: Portaingéilis (An Bhrasaíl)
     qu: Ceatsuais
     ro: Rómáinis
     ru: Rúisis

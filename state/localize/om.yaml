@@ -61,6 +61,9 @@ cli:
             long: Meeshaalee gadhiifamuu qindeessuuf faayilii .goreleaser.yml uumi
             short: Faayilii .goreleaser.yml uumi
         impl:
+            flags:
+                template-impl-path: Faayilii ./rpc_path.gen.go daandii unkaa uuma
+                template-impl-route: Faayilli ./cmd/route.gen.go daandii unkaa uuma
             long: Faayilota hojiirra oolmaa hojiirra oolmaa tajaajila daldalaa maddisiisuu
             short: Faayilota hojiirra oolmaa uumuu
         long: Jenereetarii koodii, unkaalee hedduu deeggara
@@ -242,6 +245,7 @@ lang:
     pl: Afaan Poolaandi
     ps: Paashtoo
     pt: Afaan Poortugaal (Poorchugaal, Biraazil) .
+    pt-br: Afaan Poortugaal (Biraazil) .
     qu: Kuweechuwaa
     ro: Afaan Roomaa
     ru: Afaan Raashiyaa

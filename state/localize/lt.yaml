@@ -61,6 +61,9 @@ cli:
             long: Sugeneruokite .goreleaser.yml failą leidimo įrankių konfigūravimui
             short: Sugeneruokite .goreleaser.yml failą
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go failas sugeneruoja šablono kelią
+                template-impl-route: ./cmd/route.gen.go failas sugeneruoja šablono kelią
             long: Generuokite diegimo failus verslo paslaugoms įgyvendinti
             short: Generuokite diegimo failus
         long: Kodo generatorius, palaiko kelis šablonus
@@ -242,6 +245,7 @@ lang:
     pl: lenkas
     ps: puštūnų
     pt: portugalų (Portugalija, Brazilija)
+    pt-br: portugalų (Brazilija)
     qu: kečujų
     ro: rumunų
     ru: rusų

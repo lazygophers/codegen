@@ -61,6 +61,9 @@ cli:
             long: Fausia faila .goreleaser.yml mo le faʻatulagaina o meafaigaluega faʻamalolo
             short: Fausia le faila .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faila fa'atupu ala fa'ata'ita'i
+                template-impl-route: ./cmd/route.gen.go faila fa'atupu ala fa'ata'ita'i
             long: Fausia faila faʻatinoga mo le faʻatinoina o auaunaga tau pisinisi
             short: Fausia faila fa'atinoga
         long: Code generator, lagolagoina le tele o mamanu
@@ -242,6 +245,7 @@ lang:
     pl: Polish
     ps: Pasato
     pt: Potukale (Portugal, Pasila)
+    pt-br: Potukale (Pasila)
     qu: Quechua
     ro: Lomani
     ru: Lusia

@@ -61,6 +61,9 @@ cli:
             long: Ji bo veavakirina amûrên berdanê pelê .goreleaser.yml biafirînin
             short: Pelê .goreleaser.yml çêbike
         impl:
+            flags:
+                template-impl-path: Pelê ./rpc_path.gen.go riya şablonê çêdike
+                template-impl-route: Pelê ./cmd/route.gen.go riya şablonê çêdike
             long: Ji bo pêkanîna karûbarên karsaziyê pelên pêkanînê biafirînin
             short: Pelên pêkanînê biafirînin
         long: Çêkerê kodê, gelek şablonan piştgirî dike
@@ -242,6 +245,7 @@ lang:
     pl: Polandî
     ps: Peştûyî
     pt: Portekîzî (Portekîzî, Brezîlya)
+    pt-br: Portekîzî (Brezîlya)
     qu: Quechua
     ro: Romanyayî
     ru: Rûsî

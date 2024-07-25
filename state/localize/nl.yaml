@@ -61,6 +61,9 @@ cli:
             long: Genereer het .goreleaser.yml-bestand voor de configuratie van releasetools
             short: Genereer het .goreleaser.yml-bestand
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go-bestand genereert het sjabloonpad
+                template-impl-route: ./cmd/route.gen.go-bestand genereert het sjabloonpad
             long: Implementatiebestanden genereren voor de implementatie van zakelijke dienstverlening
             short: Implementatiebestanden genereren
         long: Codegenerator, ondersteunt meerdere sjablonen
@@ -242,6 +245,7 @@ lang:
     pl: Pools
     ps: Pasjto
     pt: Portugees (Portugal, Brazilië)
+    pt-br: Portugees (Brazilië)
     qu: Quechua
     ro: Roemeense
     ru: Russisch

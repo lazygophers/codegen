@@ -61,6 +61,9 @@ cli:
             long: Sürüm araçlarının yapılandırılması için .goreleaser.yml dosyası oluşturun
             short: .goreleaser.yml dosyasını oluşturun
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go dosyası şablon yolunu oluşturur
+                template-impl-route: ./cmd/route.gen.go dosyası şablon yolunu oluşturur
             long: İş hizmetlerinin uygulanması için uygulama dosyaları oluşturun
             short: Uygulama dosyaları oluşturun
         long: Kod oluşturucu, birden fazla şablonu destekler
@@ -242,6 +245,7 @@ lang:
     pl: Lehçe
     ps: Peştuca
     pt: Portekizce (Portekiz, Brezilya)
+    pt-br: Portekiz Brezilyası)
     qu: Keçuva
     ro: Romen
     ru: Rusça

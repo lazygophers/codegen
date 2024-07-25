@@ -61,6 +61,9 @@ cli:
             long: Generu .goreleaser.yml dosieron por agordo de eldonaj iloj
             short: Generu .goreleaser.yml dosieron
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go dosiero generas ŝablonan vojon
+                template-impl-route: ./cmd/route.gen.go dosiero generas ŝablonan vojon
             long: Generu realigajn dosierojn por efektivigo de komercaj servoj
             short: Generu realigajn dosierojn
         long: Kodgeneratoro, subtenas plurajn ŝablonojn
@@ -242,6 +245,7 @@ lang:
     pl: pola
     ps: Paŝto
     pt: la portugala (Portugalio, Brazilo)
+    pt-br: Portugala (Brazilo)
     qu: la keĉua
     ro: rumana
     ru: rusa

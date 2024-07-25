@@ -61,6 +61,9 @@ cli:
             long: Tengeneza faili ya .goreleaser.yml kwa usanidi wa zana za kutoa
             short: Tengeneza faili ya .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faili hutoa njia ya kiolezo
+                template-impl-route: ./cmd/route.gen.go faili hutoa njia ya kiolezo
             long: Tengeneza faili za utekelezaji kwa utekelezaji wa huduma za biashara
             short: Tengeneza faili za utekelezaji
         long: Jenereta ya msimbo, inasaidia violezo vingi
@@ -242,6 +245,7 @@ lang:
     pl: Kipolandi
     ps: Kipashto
     pt: Kireno (Ureno, Brazili)
+    pt-br: Kireno (Brazili)
     qu: Kiquechua
     ro: Kiromania
     ru: Kirusi

@@ -61,6 +61,9 @@ cli:
             long: Generate u schedariu .gorelaser.yml per a cunfigurazione di l'arnesi di liberazione
             short: Generate u schedariu .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: U schedariu ./rpc_path.gen.go genera un caminu di mudellu
+                template-impl-route: U schedariu ./cmd/route.gen.go genera una strada di mudellu
             long: Generate fugliali di implementazione per l'implementazione di servizii cummerciale
             short: Generate schedarii di implementazione
         long: Generatore di codice, supporta parechje mudelli
@@ -242,6 +245,7 @@ lang:
     pl: Pulaccu
     ps: Pashto
     pt: Portoghese (Portugal, Brasile)
+    pt-br: Portoghese (Brasile)
     qu: Quechua
     ro: Rumenu
     ru: Russu

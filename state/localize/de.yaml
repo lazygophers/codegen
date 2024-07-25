@@ -61,6 +61,9 @@ cli:
             long: Generieren Sie die Datei .goreleaser.yml zur Konfiguration der Release-Tools
             short: Generieren Sie die Datei .goreleaser.yml
         impl:
+            flags:
+                template-impl-path: Die Datei ./rpc_path.gen.go generiert den Vorlagenpfad
+                template-impl-route: Die Datei ./cmd/route.gen.go generiert den Vorlagenpfad
             long: Generieren Sie Implementierungsdateien für die Implementierung von Business Services
             short: Generieren Sie Implementierungsdateien
         long: Codegenerator, unterstützt mehrere Vorlagen
@@ -242,6 +245,7 @@ lang:
     pl: Polieren
     ps: Paschtu
     pt: Portugiesisch (Portugal, Brasilien)
+    pt-br: Portugiesisch (Brasilien)
     qu: Quechua
     ro: rumänisch
     ru: Russisch

@@ -61,6 +61,9 @@ cli:
             long: Mangpataud ti .goreleaser.yml a papeles para iti panagisaad kadagiti ramit ti pannakairuar
             short: Mangpataud ti .goreleaser.yml a papeles
         impl:
+            flags:
+                template-impl-path: Ti ./rpc_path.gen.go a papeles ket mangpataud ti dalan ti plantilia
+                template-impl-route: Ti ./cmd/route.gen.go a papeles ket mangpataud ti dalan ti plantilia
             long: Mangpataud kadagiti file ti pannakaipatungpal para iti pannakaipatungpal dagiti serbisio ti negosio
             short: Mangpataud kadagiti file ti pannakaipatungpal
         long: Kodigo a mangpataud, mangsuporta kadagiti adu a plantilia
@@ -242,6 +245,7 @@ lang:
     pl: Polish nga
     ps: Pashto
     pt: Portuges (Portugal, Brasil) .
+    pt-br: Portuges (Brasil) .
     qu: Quechua
     ro: Romanano nga
     ru: Ruso nga Ruso

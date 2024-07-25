@@ -61,6 +61,9 @@ cli:
             long: Buraxılış alətlərinin konfiqurasiyası üçün .goreleaser.yml faylı yaradın
             short: .goreleaser.yml faylı yaradın
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go faylı şablon yolunu yaradır
+                template-impl-route: ./cmd/route.gen.go faylı şablon yolunu yaradır
             long: Biznes xidmətlərinin həyata keçirilməsi üçün icra faylları yaradın
             short: İcra faylları yaradın
         long: Kod generatoru, birdən çox şablonu dəstəkləyir
@@ -242,6 +245,7 @@ lang:
     pl: polyak
     ps: puştu
     pt: Portuqal (Portuqaliya, Braziliya)
+    pt-br: Portuqal (Braziliya)
     qu: Keçua
     ro: rumın
     ru: rus

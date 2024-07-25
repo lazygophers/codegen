@@ -112,6 +112,7 @@ var allLanguage = candy.Map([]string{
 	"pl",
 	"ps",
 	"pt",
+	"pt-br",
 	"qu",
 	"ro",
 	"ru",

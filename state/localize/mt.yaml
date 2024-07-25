@@ -61,6 +61,9 @@ cli:
             long: Iġġenera fajl .gorelaser.yml għall-konfigurazzjoni ta 'għodod ta' rilaxx
             short: Iġġenera fajl .gorelaser.yml
         impl:
+            flags:
+                template-impl-path: Il-fajl ./rpc_path.gen.go jiġġenera mogħdija tal-mudell
+                template-impl-route: Il-fajl ./cmd/route.gen.go jiġġenera mogħdija tal-mudell
             long: Iġġenera fajls ta 'implimentazzjoni għall-implimentazzjoni ta' servizzi tan-negozju
             short: Iġġenera fajls ta' implimentazzjoni
         long: Ġeneratur tal-kodiċi, jappoġġja mudelli multipli
@@ -242,6 +245,7 @@ lang:
     pl: Pollakk
     ps: Pashto
     pt: Portugiż (Portugall, Brażil)
+    pt-br: Portugiż (Brażil)
     qu: Keċwa
     ro: Rumen
     ru: Russu

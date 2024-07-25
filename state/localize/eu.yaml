@@ -61,6 +61,9 @@ cli:
             long: Sortu .goreleaser.yml fitxategia kaleratzeko tresnen konfiguraziorako
             short: Sortu .goreleaser.yml fitxategia
         impl:
+            flags:
+                template-impl-path: ./rpc_path.gen.go fitxategiak txantiloiaren bidea sortzen du
+                template-impl-route: ./cmd/route.gen.go fitxategiak txantiloiaren bidea sortzen du
             long: Enpresa-zerbitzuak ezartzeko ezarpen-fitxategiak sortzea
             short: Sortu ezarpen-fitxategiak
         long: Kode-sorgailua, hainbat txantiloi onartzen ditu
@@ -242,6 +245,7 @@ lang:
     pl: poloniarra
     ps: Paxtuera
     pt: portugesa (Portugal, Brasil)
+    pt-br: portugesa (Brasil)
     qu: kitxua
     ro: errumaniera
     ru: errusiera
