@@ -152,6 +152,7 @@ var allLanguage = candy.Map([]string{
 	"zh-cn",
 	"zh-tw",
 	"zh-chs",
+	"zh-hans",
 	"zh-hk",
 	"zh-mo",
 	"zh-sg",

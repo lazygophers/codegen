@@ -1,0 +1,295 @@
+cli:
+    completion:
+        flags:
+            no-descriptions: Desativar instruções de conclusão
+        long: |-
+            Gera um script de preenchimento automático para {{.RootName}} para o shell especificado.
+            Para obter detalhes sobre como usar o script de construção, consulte a ajuda de cada subcomando
+            Você pode salvar o comando no complemento .profile para implementar operações de conclusão automática (Observação: após a conclusão do salvamento ou a atualização da ferramenta, as funções relacionadas à conclusão não serão atualizadas automaticamente e precisarão ser atualizadas manualmente)
+        short: Gere um script de preenchimento automático para o shell especificado
+        subcommand:
+            short: Gerar script de preenchimento automático para {{.Command}}
+    flags:
+        debug: Log detalhado de saída
+    gen:
+        add-rpc:
+            flags:
+                action: Comportamentos que precisam ser adicionados em lotes, consulte a documentação de uso para obter detalhes
+                default-role: A função padrão da interface gerada em lote Consulte a documentação de uso para obter detalhes.
+                gen-to: Especifique o local de saída dos arquivos .go gerados
+                list-option: A lista também pode ser filtrada; consulte a documentação de uso para obter detalhes.
+                model: Especifique o nome do modelo, suportando a omissão do prefixo `model`
+            long: Gere interfaces em lotes e adicione uma interface para um determinado modelo no arquivo .proto
+            short: Interface de geração de lote
+        all:
+            long: Gere todo o código suportado por esta ferramenta
+            short: Gerar todo o código
+        cache:
+            long: Gerar arquivos de cache para SDKs relacionados ao cache de chamadas comerciais
+            short: Gerar arquivo de cache
+        cmd:
+            long: Gere arquivos de entrada para serviços empresariais
+            short: Gerar arquivo de entrada
+        conf:
+            long: Gerar modelo de arquivo de configuração
+            short: Gerar arquivo de configuração
+        dockerignore:
+            long: Gere o arquivo .dockerignore para construção de imagem Docker para ignorar o gerenciamento de arquivos
+            short: Gerar arquivo .dockerignore
+        editorconfig:
+            long: Gere arquivo .editorconfig para configuração do editor
+            short: Gerar arquivo .editorconfig
+        flags:
+            add-proto-files: Para outros caminhos de arquivo/pasta .proto que precisam ser importados e não estão na mesma pasta que o arquivo .proto especificado, esta operação anexará (não substituirá) o caminho configurado no arquivo de configuração.
+            go-module-prefix: Para o caminho do go_package configurado no arquivo .proto e o real, você pode configurar esta opção
+            input: Especifique o arquivo de origem .proto a ser gerado
+            output-path: Esta opção pode ser configurada quando o caminho do go_package configurado no arquivo .proto é inconsistente com o roadbed que realmente precisa ser gerado.
+            overwrite: Para conteúdo que não será regenerado, force a substituição do conteúdo existente
+            proto-files: Para importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta do arquivo .proto especificado, esta operação é uma opção para substituir o campo de configuração no arquivo de configuração.
+            protoc: caminho de arquivo personalizável `protoc`
+            protoc-gen-go: Caminho do plugin `protoc-gen-go`
+            tables-enable_field_created_at: Se deve ativar a geração de configuração padrão do campo criado_at do banco de dados
+            tables-enable_field_deleted_at: Se a configuração padrão do campo deletado_at deve ser habilitada no banco de dados
+            tables-enable_field_id: Habilitar geração de configuração padrão para campos relacionados ao banco de dados
+            tables-enable_field_updated_at: Se deve ativar o valor padrão do campo atualizado_at no banco de dados
+            tables-enable_gorm_tag_column: Se deve ser habilitada a geração de gorms relacionados ao banco de dados
+        gitignote:
+            long: Gere arquivos .gitignore para gerenciamento de arquivos ignorados no controle de versão
+            short: Gerar arquivo .gitignore
+        golang-lint:
+            long: Gere o arquivo .golangci.yml para inspeção de qualidade do código
+            short: Gerar arquivo .golangci.yml
+        goreleaser:
+            long: Gere o arquivo .goreleaser.yml para configuração das ferramentas de lançamento
+            short: Gerar arquivo .goreleaser.yml
+        impl:
+            flags:
+                template-impl-path: O arquivo ./rpc_path.gen.go gera o caminho do modelo
+                template-impl-route: O arquivo ./cmd/route.gen.go gera o caminho do modelo
+            long: Gerar arquivos de implementação para a implementação de serviços de negócios
+            short: Gerar arquivos de implementação
+        long: Gerador de código, suporta vários modelos
+        makefile:
+            long: Gere arquivos Makefile para ferramentas de construção e outros comandos relacionados
+            short: Gerar Makefile
+        mod:
+            long: Gere o arquivo go.mod para gerenciamento de dependências
+            short: Gerar arquivo go.mod
+        pb:
+            long: Gere arquivos .pb.go, que são usados ​​para gerar arquivos .proto. Os rótulos de campo relevantes x serão adicionados automaticamente de acordo com a configuração.
+            short: Gerar arquivo .pb.go
+        short: Gerador de código
+        state:
+            conf:
+                long: Gerar código de leitura de arquivo de configuração para leitura de configuração de serviço de negócios
+                short: Gerar código de leitura do arquivo de configuração
+            flags:
+                cache: Se deve ativar a geração relacionada ao cache
+                config: Se deve gerar código relacionado à configuração
+                i18n: Se deseja ativar a geração relacionada a vários idiomas (a geração inclui apenas inicialização de estado e outros conteúdos, e não inclui tradução automática de vários idiomas. Se precisar de tradução automática, use {{.Command}} para visualizar detalhes)
+                table: Se deve ativar a geração de banco de dados relacionada ao banco de dados
+            i18n:
+                long: Gere código relacionado ao i18n para chamadas internacionais em vários idiomas
+                short: Gerar código relacionado ao i18n
+            long: Gere todas as funções de estado relacionadas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
+            short: Todas as funções relevantes para gerar estado
+            table:
+                long: Gere código relacionado a state.table, usado para conexão de banco de dados e inicialização de tabela quando o serviço é iniciado.
+                short: Gerar código relacionado a state.table
+        table:
+            long: Todas as funções relacionadas à geração de tabelas para recursos com estado ou gerenciamento de recursos estáticos de serviços de negócios
+            short: Todas as funções relacionadas para geração de tabelas
+    group:
+        gen: geração de código
+    help:
+        additional_commands: Comandos adicionais
+        aliases: apelido de comando
+        available_commands: Comandos suportados
+        command: Ordem
+        flags: parâmetro
+        get_info: para obter informações mais detalhadas
+        global_flags: parâmetros globais
+        long: 'Forneça instruções de uso para qualquer comando no aplicativo. '
+        short: Instruções para usar qualquer comando
+        usage: Instruções para usar {{.Name}}
+        use: usar
+    i18n:
+        long: Kit de ferramentas multilíngue relacionado à internacionalização
+        short: Kit de ferramentas multilíngue relacionado à internacionalização
+        support:
+            flags:
+                language: Especifique o idioma a ser exibido, caso contrário, o código do idioma será usado para exibir o idioma
+            long: Listar todos os idiomas suportados
+            short: Lista de idiomas suportados
+        tran:
+            flags:
+                all-language: Traduza todos os idiomas suportados (se for verdade, a sinalização de idiomas está desativada)
+                force: Substituir traduções existentes
+                force-key-prefix: chaves que precisam ser forçadas a serem substituídas
+                generate-const: Gere valores de enumeração para facilitar a chamada
+                languages: Especifique o idioma de destino para tradução
+                src-file: Arquivo fonte a ser traduzido (obrigatório)
+                src-language: O idioma do arquivo de origem (se não for especificado, a ferramenta determinará automaticamente o arquivo de origem)
+                translator:
+                    google-free: Google Web Tradutor
+                    usage: 'Canal de tradução: Tipo de suporte {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}'
+            long: Arquivos multilíngues de uma determinada fonte são convertidos em arquivos do mesmo formato em outros idiomas.
+            short: traduzir
+    long: Um conjunto de ferramentas para pessoas preguiçosas, incluindo estrutura de back-end baseada em 'proto', modelos comumente usados ​​e tradução multilíngue
+    short: Um conjunto de ferramentas para pessoas preguiçosas
+    sync:
+        flags:
+            password: Senha usada para solicitar verificação
+            template-path: Caminho de sincronização do modelo
+            username: Nome de usuário usado para solicitar verificação
+        long: Sincronize a configuração da extremidade remota e mescle-a na configuração local O arquivo de modelo é suportado ao mesmo tempo durante a sincronização (se configurado).
+        short: Sincronizar configuração remotamente
+    up-mod:
+        flags:
+            goproxy: Especifique o endereço goproxy, caso contrário, o primeiro na variável de ambiente será usado
+        long: Atualize a versão de dependência do arquivo go.mod
+        short: Atualizar arquivo go.mod
+lang:
+    af: afrikaans
+    ak: Twi (Akan)
+    am: amárico
+    ar: árabe
+    as: Assamês
+    ay: aimará
+    az: Azerbaijano
+    be: Bielorrusso
+    bg: búlgaro
+    bho: Bhojpuri
+    bm: Bambará
+    bn: bengali
+    bs: Bósnio
+    ca: catalão
+    ceb: Cebuano
+    ckb: Curdo (Sorani)
+    co: Córsega
+    cs: Tcheco
+    cy: galês
+    da: dinamarquês
+    de: Alemão
+    doi: Dogglai
+    dv: Divehi
+    ee: Ovelha
+    el: grego
+    en: Inglês
+    eo: esperanto
+    es: espanhol
+    et: estoniano
+    eu: basco
+    fa: persa
+    fi: finlandês
+    fil: Filipino (tagalo)
+    fr: Francês
+    fy: Frísio
+    ga: irlandês
+    gd: gaélico escocês
+    gl: Galego
+    gn: guarani
+    gom: língua gonggan
+    gu: guzerate
+    ha: Hauçá
+    haw: havaiano
+    he: hebraico
+    hi: hindi
+    hmn: Hmong
+    hr: croata
+    ht: crioulo haitiano
+    hu: húngaro
+    hy: Armênio
+    id: indonésio
+    ig: Ibo
+    ilo: Ilocano
+    is: islandês
+    it: italiano
+    iw: hebraico
+    ja: japonês
+    jv: javanês
+    jw: javanês
+    ka: Georgiano
+    kk: Cazaque
+    km: Cambojano
+    kn: Kannada
+    ko: coreano
+    kri: crioulo
+    ku: curdo
+    ky: Quirguistão
+    la: Latim
+    lb: Luxemburguês
+    lg: Luganda
+    ln: Lingala
+    lo: Laos
+    lt: lituano
+    lus: Mizo
+    lv: letão
+    mai: Maithili
+    mg: malgaxe
+    mi: maori
+    mk: Macedônio
+    ml: Malaiala
+    mn: mongol
+    mni-mtei: Meitei (Manipuri)
+    mr: marata
+    ms: malaio
+    mt: maltês
+    my: birmanês
+    ne: nepalês
+    nl: Holandês
+    "no": norueguês
+    nso: Sepeti
+    ny: Nyanza (Chichewa)
+    om: Oromo
+    or: Oriya (Odia)
+    pa: punjabi
+    pl: polonês
+    ps: pashto
+    pt: Português (Brasil)
+    pt-br: Português (Brasil)
+    qu: Quéchua
+    ro: romena
+    ru: russo
+    rw: Kinyarwanda
+    sa: sânscrito
+    sd: sindi
+    si: cingalês
+    sk: Eslovaco
+    sl: esloveno
+    sm: samoano
+    sn: Shona
+    so: somali
+    sq: albanês
+    sr: sérvio
+    st: Sesoto
+    su: Sudanês
+    sv: sueco
+    sw: suaíli
+    ta: tâmil
+    te: télugo
+    tg: tadjique
+    th: tailandês
+    ti: Tignan
+    tk: turcomano
+    tl: Tagalo (filipino)
+    tr: turco
+    ts: Dzonga
+    tt: tártaro
+    ug: Uigur
+    uk: ucraniano
+    ur: urdu
+    uz: Usbeque
+    vi: vietnamita
+    xh: língua bantu
+    yi: iídiche
+    yo: iorubá
+    zh: chinês
+    zh-chs: Chinês simplificado)
+    zh-cht: Chinês simplificado)
+    zh-cn: Chinês simplificado)
+    zh-hk: Chinês (Hong Kong)
+    zh-mo: Chinês (Macau)
+    zh-sg: Chinês (Singapura)
+    zh-tw: Chinês (Taiwan)
+    zu: zulu
