@@ -125,6 +125,7 @@ cli:
                 force: Substituir traduções existentes
                 force-key-prefix: chaves que precisam ser forçadas a serem substituídas
                 generate-const: Gere valores de enumeração para facilitar a chamada
+                generate-field: Gere valores de enumeração de tipo de campo para fácil chamada
                 languages: Especifique o idioma de destino para tradução
                 src-file: Arquivo fonte a ser traduzido (obrigatório)
                 src-language: O idioma do arquivo de origem (se não for especificado, a ferramenta determinará automaticamente o arquivo de origem)

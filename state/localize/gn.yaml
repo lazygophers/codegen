@@ -125,6 +125,7 @@ cli:
                 force: Ehai umi ñe’ẽasa oĩmava ári
                 force-key-prefix: umi clave tekotevẽva ojeforsa ojehai hag̃ua hese
                 generate-const: Emoheñói valor enumeración rehegua oñehenói hag̃ua ndahasýiva
+                generate-field: Emoheñói umi valor enumeración tipo campo rehegua oñehenói hag̃ua ndahasýiva
                 languages: Emombe’u ñe’ẽ ojehekahápe oñembohasa hag̃ua
                 src-file: Archivo ypykue oñembohasava’erã (oñeikotevẽva) .
                 src-language: Ñe’ẽ vore ypykue rehegua (noñemombe’úiramo, tembipuru ohechakuaáta ijeheguiete vore ypykue) .

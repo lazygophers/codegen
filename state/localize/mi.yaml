@@ -125,6 +125,7 @@ cli:
                 force: Tuhia nga whakamaoritanga o naianei
                 force-key-prefix: mau taviri e tia ia faahepohia ia tuhiruahia
                 generate-const: Waihanga uara tatau mo te waea ngawari
+                generate-field: Hangaia nga uara tatauranga momo mara mo te waea ngawari
                 languages: Tauwhāitihia te reo whainga mo te whakamaoritanga
                 src-file: Ko te konae puna hei whakamaori (hiahia)
                 src-language: Te reo o te konae puna (mehemea kaore i tohua, ka whakatau aunoatia e te taputapu te konae puna)

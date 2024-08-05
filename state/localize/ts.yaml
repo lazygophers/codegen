@@ -125,6 +125,7 @@ cli:
                 force: Tsala ehenhla ka vuhundzuluxeri lebyi nga kona
                 force-key-prefix: swilotlelo leswi lavaka ku sindzisiwa ku tsariwa ehenhla
                 generate-const: Endla mimpimo ya ku hlayela ku olova ku vitana
+                generate-field: Endla mimpimo ya ku hlayela ka muxaka wa nsimu ku olova ku vitana
                 languages: Boxa ririmi leri kongomisiweke eka vuhundzuluxeri
                 src-file: Fayili ya xihlovo leyi nga ta hundzuluxeriwa (ya laveka) .
                 src-language: Ririmi ra fayili ya xihlovo (loko ri nga boxiwanga, xitirhisiwa xi ta tihlawulela hi ku tisungulela fayili ya xihlovo) .

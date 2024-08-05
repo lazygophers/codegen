@@ -125,6 +125,7 @@ cli:
                 force: Wergerên heyî binivîsînin
                 force-key-prefix: mifteyên ku divê bi zorê bêne nivîsandin
                 generate-const: Ji bo banga hêsan nirxên hejmartinê biafirînin
+                generate-field: Ji bo banga hêsan, nirxên hejmartinê yên celebê zeviyê biafirînin
                 languages: Zimanê mebest ji bo wergerê diyar bike
                 src-file: Dosyaya çavkaniyê ku were wergerandin (pêwîst e)
                 src-language: Zimanê pelê çavkaniyê (heke ne diyar be, amûr dê bixweber pelê çavkaniyê diyar bike)

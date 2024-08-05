@@ -125,6 +125,7 @@ cli:
                 force: Mavjud tarjimalarni qayta yozing
                 force-key-prefix: ustiga yozishga majbur bo'lishi kerak bo'lgan kalitlar
                 generate-const: Oson qo'ng'iroq qilish uchun ro'yxat qiymatlarini yarating
+                generate-field: Oson qo'ng'iroq qilish uchun maydon turi sanab qiymatlarini yarating
                 languages: Tarjima uchun maqsadli tilni belgilang
                 src-file: Tarjima qilinadigan manba fayl (majburiy)
                 src-language: Manba faylining tili (agar ko'rsatilmagan bo'lsa, vosita avtomatik ravishda manba faylni aniqlaydi)

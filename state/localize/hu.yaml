@@ -125,6 +125,7 @@ cli:
                 force: A meglévő fordítások felülírása
                 force-key-prefix: olyan kulcsok, amelyeket kényszeríteni kell felülírni
                 generate-const: Számolási értékek generálása az egyszerű hívás érdekében
+                generate-field: Generáljon mező típusú felsorolási értékeket az egyszerű hívás érdekében
                 languages: Adja meg a fordítás célnyelvét
                 src-file: Lefordítandó forrásfájl (kötelező)
                 src-language: A forrásfájl nyelve (ha nincs megadva, az eszköz automatikusan meghatározza a forrásfájlt)

@@ -125,6 +125,7 @@ cli:
                 force: Oorskryf bestaande vertalings
                 force-key-prefix: sleutels wat gedwing moet word om oorskryf te word
                 generate-const: Genereer opsommingswaardes vir maklike oproepe
+                generate-field: Genereer veldtipe opsommingswaardes vir maklike oproepe
                 languages: Spesifiseer die doeltaal vir vertaling
                 src-file: Bronlêer wat vertaal moet word (vereis)
                 src-language: Die taal van die bronlêer (indien nie gespesifiseer nie, sal die instrument outomaties die bronlêer bepaal)

@@ -125,6 +125,7 @@ cli:
                 force: Rayt di transleshɔn dɛn we dɔn de
                 force-key-prefix: ki dɛn we nid fɔ fos fɔ rayt ɔva
                 generate-const: Jɛnɛret ɛnyumɛreshɔn valyu fɔ izi kɔl
+                generate-field: Jɛnɛret fil tayp ɛnyumɛreshɔn valyu fɔ izi kɔl
                 languages: Sho di langwej we yu want fɔ translet
                 src-file: Sɔs fayl we dɛn fɔ translet (we dɛn nid) .
                 src-language: Di langwej fɔ di sɔs fayl (if dɛn nɔ sho am, di tul go ɔtomɛtiks disayd di sɔs fayl)

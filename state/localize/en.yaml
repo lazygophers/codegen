@@ -125,6 +125,7 @@ cli:
                 force: Overwrite existing translations
                 force-key-prefix: keys that need to be forced to be overwritten
                 generate-const: Generate enumeration values ​​for easy calling
+                generate-field: Generate field type enumeration values ​​for easy calling
                 languages: Specify the target language for translation
                 src-file: Source file to be translated (required)
                 src-language: The language of the source file (if not specified, the tool will automatically determine the source file)

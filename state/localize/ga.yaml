@@ -125,6 +125,7 @@ cli:
                 force: Forscríobh aistriúcháin atá ann cheana féin
                 force-key-prefix: eochracha nach mór a éigean a fhorscríobh
                 generate-const: Gin luachanna áirimh le haghaidh glaoch éasca
+                generate-field: Gin luachanna ríomh cineál réimse le haghaidh glaoch éasca
                 languages: Sonraigh an sprioctheanga atá le haistriú
                 src-file: Comhad foinseach le haistriú (riachtanach)
                 src-language: Teanga an chomhaid foinse (mura bhfuil sé sonraithe, cinnfidh an uirlis an comhad foinse go huathoibríoch)

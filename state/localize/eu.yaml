@@ -125,6 +125,7 @@ cli:
                 force: Gainidatzi lehendik dauden itzulpenak
                 force-key-prefix: gainidatzi behar diren gakoak
                 generate-const: Sortu zenbazio-balioak erraz deitzeko
+                generate-field: Sortu eremu motako zenbaketa-balioak deitzeko errazak egiteko
                 languages: Zehaztu itzulpenerako xede-hizkuntza
                 src-file: Itzuli beharreko iturburu-fitxategia (beharrezkoa)
                 src-language: Iturburu-fitxategiaren hizkuntza (zehazten ez bada, tresnak automatikoki zehaztuko du iturburu-fitxategia)

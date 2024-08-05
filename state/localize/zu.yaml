@@ -125,6 +125,7 @@ cli:
                 force: Bhala phezu kokuhumusha okukhona
                 force-key-prefix: okhiye abadinga ukuphoqwa ukuthi babhalwe ngaphezulu
                 generate-const: Khiqiza amanani okubala ukuze uthole ukushaya okulula
+                generate-field: Khiqiza amanani ezibalo ohlobo lwenkundla ukuze kube lula ukushaya
                 languages: Cacisa ulimi okuqondiwe kulo ukuze kuhunyushwe
                 src-file: Ifayela elingumthombo elizohunyushwa (kuyadingeka)
                 src-language: Ulimi lwefayela elingumthombo (uma lungacacisiwe, ithuluzi lizonquma ngokuzenzakalelayo ifayela elingumthombo)

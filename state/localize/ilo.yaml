@@ -125,6 +125,7 @@ cli:
                 force: Isurat iti rabaw dagiti addan a patarus
                 force-key-prefix: dagiti tulbek a kasapulan a mapilit a maisurat
                 generate-const: Mangpataud kadagiti pateg ti panagibilang para iti nalaka a panagayab
+                generate-field: Mangpataud kadagiti pateg ti panagibilang ti kita ti tay-ak para iti nalaka a panagayab
                 languages: Ibaga ti target language para iti panagipatarus
                 src-file: Gubuayan a file a maipatarus (kasapulan) .
                 src-language: Ti pagsasao ti taudan a papeles (no saan a naikeddeng, ti ramit ket automatiko a mangikeddeng ti taudan a papeles) .

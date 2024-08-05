@@ -125,6 +125,7 @@ cli:
                 force: Trosysgrifo cyfieithiadau presennol
                 force-key-prefix: allweddi y mae angen eu gorfodi i gael eu trosysgrifo
                 generate-const: Cynhyrchu gwerthoedd cyfrifo ar gyfer galw hawdd
+                generate-field: Cynhyrchu gwerthoedd cyfrifo math maes ar gyfer galw hawdd
                 languages: Nodwch yr iaith darged ar gyfer cyfieithu
                 src-file: Ffeil ffynhonnell i'w chyfieithu (gofynnol)
                 src-language: Iaith y ffeil ffynhonnell (os na chaiff ei nodi, bydd yr offeryn yn pennu'r ffeil ffynhonnell yn awtomatig)

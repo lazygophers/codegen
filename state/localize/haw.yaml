@@ -125,6 +125,7 @@ cli:
                 force: Kāohi i nā unuhi i loaʻa
                 force-key-prefix: nā kī pono e koi ʻia e kākau hou ʻia
                 generate-const: E hana i nā waiwai helu no ke kelepona maʻalahi
+                generate-field: E hoʻokumu i nā waiwai helu helu ʻana no ke kelepona maʻalahi
                 languages: E wehewehe i ka ʻōlelo i makemake ʻia no ka unuhi
                 src-file: E unuhi ʻia ka waihona kumu (pono)
                 src-language: ʻO ka ʻōlelo o ka waihona kumu (inā ʻaʻole i kuhikuhi ʻia, e hoʻoholo ʻokoʻa ka mea hana i ka faila kumu)

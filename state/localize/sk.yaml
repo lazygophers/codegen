@@ -125,6 +125,7 @@ cli:
                 force: Prepíšte existujúce preklady
                 force-key-prefix: kľúče, ktoré je potrebné vynútiť prepísanie
                 generate-const: Generujte hodnoty enumerácie pre jednoduché volanie
+                generate-field: Generujte hodnoty enumerácie typu poľa pre jednoduché volanie
                 languages: Zadajte cieľový jazyk prekladu
                 src-file: Zdrojový súbor na preklad (povinné)
                 src-language: Jazyk zdrojového súboru (ak nie je zadaný, nástroj automaticky určí zdrojový súbor)

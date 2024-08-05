@@ -125,6 +125,7 @@ cli:
                 force: Oerskriuwe besteande oersettingen
                 force-key-prefix: kaaien dy't twongen wurde moatte wurde oerskreaun
                 generate-const: Generearje enumeraasjewearden foar maklik skiljen
+                generate-field: Generearje fjildtype enumeraasjewearden foar maklik skiljen
                 languages: Spesifisearje de doeltaal foar oersetting
                 src-file: Boarnebestân om te oersetten (ferplicht)
                 src-language: De taal fan it boarnebestân (as net oantsjutte, sil it ark automatysk it boarnebestân bepale)

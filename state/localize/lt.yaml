@@ -125,6 +125,7 @@ cli:
                 force: Perrašyti esamus vertimus
                 force-key-prefix: raktus, kuriuos reikia priverstinai perrašyti
                 generate-const: Generuokite surašymo reikšmes, kad galėtumėte lengvai skambinti
+                generate-field: Generuokite lauko tipo surašymo reikšmes, kad galėtumėte lengvai skambinti
                 languages: Nurodykite vertimo kalbą
                 src-file: Šaltinio failas, kurį reikia išversti (būtina)
                 src-language: Šaltinio failo kalba (jei nenurodyta, įrankis automatiškai nustatys šaltinio failą)

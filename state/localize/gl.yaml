@@ -125,6 +125,7 @@ cli:
                 force: Sobrescribir as traducións existentes
                 force-key-prefix: claves que deben ser forzadas a sobrescribirlas
                 generate-const: Xera valores de enumeración para facilitar as chamadas
+                generate-field: Xera valores de enumeración de tipo de campo para facilitar as chamadas
                 languages: Especifique o idioma de destino para a tradución
                 src-file: Ficheiro fonte a traducir (obrigatorio)
                 src-language: O idioma do ficheiro de orixe (se non se especifica, a ferramenta determinará automaticamente o ficheiro de orixe)

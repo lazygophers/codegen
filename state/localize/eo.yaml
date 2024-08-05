@@ -125,6 +125,7 @@ cli:
                 force: Anstataŭigu ekzistantajn tradukojn
                 force-key-prefix: ŝlosiloj kiuj devas esti devigitaj esti anstataŭitaj
                 generate-const: Generu enumerajn valorojn por facila vokado
+                generate-field: Generu kampaspecajn listvalorojn por facila vokado
                 languages: Indiku la cellingvon por tradukado
                 src-file: Fontdosiero tradukenda (postulata)
                 src-language: La lingvo de la fontdosiero (se ne specifita, la ilo aŭtomate determinos la fontdosieron)

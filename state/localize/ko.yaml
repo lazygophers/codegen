@@ -125,6 +125,7 @@ cli:
                 force: 기존 번역 덮어쓰기
                 force-key-prefix: 강제로 덮어써야 하는 키
                 generate-const: 쉬운 호출을 위한 열거값 생성
+                generate-field: 쉬운 호출을 위한 필드형 열거값 생성
                 languages: 번역할 대상 언어를 지정하세요.
                 src-file: 번역할 원본 파일 (필수)
                 src-language: 소스 파일의 언어(지정하지 않으면 도구가 자동으로 소스 파일을 결정합니다)

@@ -125,6 +125,7 @@ cli:
                 force: Ŋlɔ gɔmeɖeɖe siwo li xoxo la ɖe edzi
                 force-key-prefix: safui siwo wòle be woazi dzi be woaŋlɔ ɖe wo dzi
                 generate-const: Wɔ xexlẽdzesiwo ƒe asixɔxɔwo hena yɔyɔ bɔbɔe
+                generate-field: Wɔ agble ƒomevi ƒe xexlẽdzesiwo hena yɔyɔ bɔbɔe
                 languages: Tsɔ gbe si gɔme nèdi be yeaɖe gɔme
                 src-file: Dzɔtsoƒe faɛl si gɔme woaɖe (ehiã) .
                 src-language: Gbe si me faɛl si tso dzɔtsoƒe le (ne womegblɔe o la, dɔwɔnua atso nya me le eɖokui si)

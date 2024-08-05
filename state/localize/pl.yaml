@@ -125,6 +125,7 @@ cli:
                 force: Zastąp istniejące tłumaczenia
                 force-key-prefix: klucze, które należy wymusić, aby zostały nadpisane
                 generate-const: Generuj wartości wyliczeniowe dla łatwego dzwonienia
+                generate-field: Generuj wartości wyliczeniowe typu pola dla łatwego wywoływania
                 languages: Określ język docelowy tłumaczenia
                 src-file: Plik źródłowy do przetłumaczenia (wymagane)
                 src-language: Język pliku źródłowego (jeśli nie zostanie określony, narzędzie automatycznie określi plik źródłowy)

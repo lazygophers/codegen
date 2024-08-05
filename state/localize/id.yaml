@@ -125,6 +125,7 @@ cli:
                 force: Timpa terjemahan yang sudah ada
                 force-key-prefix: kunci yang perlu dipaksa untuk ditimpa
                 generate-const: Hasilkan nilai enumerasi untuk memudahkan panggilan
+                generate-field: Hasilkan nilai enumerasi tipe bidang untuk memudahkan panggilan
                 languages: Tentukan bahasa target untuk terjemahan
                 src-file: File sumber yang akan diterjemahkan (wajib)
                 src-language: Bahasa file sumber (jika tidak ditentukan, alat akan secara otomatis menentukan file sumber)

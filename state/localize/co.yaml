@@ -125,6 +125,7 @@ cli:
                 force: Sovrascrivi traduzioni esistenti
                 force-key-prefix: chjavi chì deve esse furzati per esse sovrascritti
                 generate-const: Generate valori di enumerazione per chjamà faciule
+                generate-field: Generate valori di enumerazione di tipu di campu per chjamà faciule
                 languages: Specificate a lingua di destinazione per a traduzzione
                 src-file: U schedariu di origine da esse traduttu (necessariu)
                 src-language: A lingua di u schedariu fonte (se ùn hè micca specificatu, l'uttellu determina automaticamente u schedariu fonte)

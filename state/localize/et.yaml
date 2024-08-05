@@ -125,6 +125,7 @@ cli:
                 force: Olemasolevate tõlgete ülekirjutamine
                 force-key-prefix: võtmed, mis tuleb sundida üle kirjutama
                 generate-const: Looge loendusväärtusi helistamise hõlbustamiseks
+                generate-field: Lihtsaks helistamiseks genereerige väljatüüpide loendiväärtusi
                 languages: Määrake tõlke sihtkeel
                 src-file: Tõlgitav lähtefail (nõutav)
                 src-language: Lähtefaili keel (kui pole määratud, määrab tööriist lähtefaili automaatselt)

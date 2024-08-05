@@ -125,6 +125,7 @@ cli:
                 force: Mövcud tərcümələrin üzərinə yazın
                 force-key-prefix: üzərinə yazılmağa məcbur edilməli olan açarlar
                 generate-const: Asan zəng üçün siyahı dəyərləri yaradın
+                generate-field: Asan zəng üçün sahə tipli siyahı dəyərləri yaradın
                 languages: Tərcümə üçün hədəf dili göstərin
                 src-file: Tərcümə ediləcək mənbə fayl (tələb olunur)
                 src-language: Mənbə faylının dili (müəyyən edilmədikdə, alət mənbə faylı avtomatik müəyyən edəcək)

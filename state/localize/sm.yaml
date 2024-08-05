@@ -125,6 +125,7 @@ cli:
                 force: Sui fa'aliliuga o iai
                 force-key-prefix: ki e mana'omia ona fa'amalosia e fa'asolo
                 generate-const: Fausia fa'amaumauga tau mo le faigofie vala'au
+                generate-field: Fausia tulaga tau fa'asologa o fanua mo vala'au faigofie
                 languages: Fa'ailoa le gagana fa'atatau mo le fa'aliliuga
                 src-file: Fa'aliliuga faila e fa'aliliu (mana'omia)
                 src-language: Le gagana o le faila faila (pe a le faʻamaonia, o le meafaigaluega o le a otometi lava ona fuafua le faila faila)

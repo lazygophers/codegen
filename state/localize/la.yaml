@@ -125,6 +125,7 @@ cli:
                 force: Rescribere existentium translationes
                 force-key-prefix: clavium necessitatem cogendi esse overwritten
                 generate-const: Enumerationem generare valores ad facilem vocationem
+                generate-field: Genera agri genus enumerationem valorum facilium vocationis
                 languages: Specificare scopum lingua pro translatione
                 src-file: Source file interpretari (requiritur)
                 src-language: Lingua fasciculi fontis (nisi specificatur, instrumentum statim fontem lima definiet)

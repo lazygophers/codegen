@@ -125,6 +125,7 @@ cli:
                 force: Korvaa olemassa olevat käännökset
                 force-key-prefix: avaimet, jotka on pakko kirjoittaa päälle
                 generate-const: Luo luetteloarvoja helpottaaksesi soittamista
+                generate-field: Luo kenttätyyppiset luetteloarvot helpottamaan kutsumista
                 languages: Määritä käännöksen kohdekieli
                 src-file: Käännettävä lähdetiedosto (pakollinen)
                 src-language: Lähdetiedoston kieli (jos sitä ei ole määritetty, työkalu määrittää lähdetiedoston automaattisesti)

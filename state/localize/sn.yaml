@@ -125,6 +125,7 @@ cli:
                 force: Nyora shanduro dziripo
                 force-key-prefix: makiyi anoda kumanikidzwa kunyorwa
                 generate-const: Gadzira enumeration kukosha kwekufona kuri nyore
+                generate-field: Gadzira ndima yerudzi rwekuverengera kukosha kwekufona kuri nyore
                 languages: Taura mutauro waunoshandura
                 src-file: Kwakabva faira rinofanira kushandurwa (rinodiwa)
                 src-language: Mutauro weiyo faira faira (kana isina kutaurwa, chishandiso chinongoona faira rekubva)

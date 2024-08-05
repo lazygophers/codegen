@@ -125,6 +125,7 @@ cli:
                 force: Ranplase tradiksyon ki egziste deja yo
                 force-key-prefix: kle ki bezwen fòse yo dwe ranplase
                 generate-const: Jenere valè enimerasyon pou rele fasil
+                generate-field: Jenere valè enimasyon kalite jaden pou rele fasil
                 languages: Espesifye lang sib pou tradiksyon an
                 src-file: Fichye sous yo dwe tradui (obligatwa)
                 src-language: Lang nan fichye sous la (si yo pa espesifye, zouti a pral otomatikman detèmine dosye sous la)

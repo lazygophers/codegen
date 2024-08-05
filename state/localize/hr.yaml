@@ -125,6 +125,7 @@ cli:
                 force: Prebrišite postojeće prijevode
                 force-key-prefix: ključeve koje treba prisilno prebrisati
                 generate-const: Generirajte vrijednosti nabrajanja za jednostavno pozivanje
+                generate-field: Generirajte vrijednosti nabrajanja vrste polja za jednostavno pozivanje
                 languages: Navedite ciljni jezik za prijevod
                 src-file: Izvorna datoteka za prijevod (obavezno)
                 src-language: Jezik izvorne datoteke (ako nije naveden, alat će automatski odrediti izvornu datoteku)

@@ -125,6 +125,7 @@ cli:
                 force: Écraser les traductions existantes
                 force-key-prefix: les clés qui doivent être forcées à être écrasées
                 generate-const: Générez des valeurs d'énumération pour un appel facile
+                generate-field: Générez des valeurs d'énumération de type de champ pour un appel facile
                 languages: Spécifiez la langue cible pour la traduction
                 src-file: Fichier source à traduire (obligatoire)
                 src-language: La langue du fichier source (si elle n'est pas précisée, l'outil déterminera automatiquement le fichier source)

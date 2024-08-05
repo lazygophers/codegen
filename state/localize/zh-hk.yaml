@@ -125,6 +125,7 @@ cli:
                 force: 覆蓋已存在的翻譯
                 force-key-prefix: 需要被強制覆蓋的 keys
                 generate-const: 產生枚舉值，方便調用
+                generate-field: 產生欄位類型枚舉值，方便調用
                 languages: 指定翻譯的目標語言
                 src-file: 需要翻譯的原始檔（必填）
                 src-language: 原始檔的語言（如果不指定，則會工具原始檔自動判斷）
