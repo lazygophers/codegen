@@ -509,9 +509,9 @@ func GenerateI18n(pb *PbPackage) (err error) {
 	return nil
 }
 
-var I18nFieldLastTemplate = "type i8nTag{{ ToCamel .Keys }} string\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Key() string {\n    return `{{ .Keys }}`\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) String() string {\n    return `{{ .Keys }}`\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) GoString() string {\n    return `{{ .Keys }}`\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Tran(lang string, args ...any) string {\n    return Tran(lang, `{{ .Keys }}`, args...)\n}\n"
+var I18nFieldLastTemplate = "type i8nTag{{ ToCamel .Keys }} string\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Key() string {\n    return `{{ .Keys }}`\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) String() string {\n    return p.Key()\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Tran(lang string, args ...any) string {\n    return Tran(lang, p.Key(), args...)\n}\n"
 
-var I18NFieldMiddleTemplate = "type i8nTag{{ ToCamel .Keys }} struct { {{ range $key, $value := .Subs}}\n\t// {{ $.Keys }}.{{ $value }}\n\t{{ ToCamel $value }}\ti8nTag{{ ToCamel $.Keys }}{{ ToCamel $value }}{{end}}\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Key() string {\n    return `{{ .Keys }}`\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) String() string {\n    return `{{ .Keys }}`\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Tran(lang string, args ...any) string {\n    return Tran(lang, `{{ .Keys }}`, args...)\n}\n"
+var I18NFieldMiddleTemplate = "type i8nTag{{ ToCamel .Keys }} struct { {{ range $key, $value := .Subs}}\n\t// {{ $.Keys }}.{{ $value }}\n\t{{ ToCamel $value }}\ti8nTag{{ ToCamel $.Keys }}{{ ToCamel $value }}{{end}}\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Key() string {\n    return `{{ .Keys }}`\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) String() string {\n    return p.Key()\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) Tran(lang string, args ...any) string {\n    return Tran(lang, p.Key(), args...)\n}\n\nfunc (p i8nTag{{ ToCamel .Keys }}) TranWithSuffix(lang string, suffix string, args ...any) string {\n    return Tran(lang, p.Key()+\".\"+suffix, args...)\n}\n"
 
 var I18NFieldFirstTemplate = `var I18nTag{{ ToCamel .Keys }} struct { {{ range $key, $value := .Subs}}
 	// {{ $value }}

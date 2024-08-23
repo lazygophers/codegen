@@ -259,9 +259,7 @@ var tranCmd = &cobra.Command{
 				log.Errorf("err:%v", err)
 				return err
 			}
-		}
-
-		if state.Config.I18n.GenerateField {
+		} else if state.Config.I18n.GenerateField {
 			dstLocalize, err := i18n.LoadLocalize(c.SrcFile, c.Localizer)
 			if err != nil {
 				log.Errorf("err:%v", err)
