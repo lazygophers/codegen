@@ -105,6 +105,7 @@ cli:
                 all-language: 翻译所有支持的语言（如果为 true 则 languages 标记失效）
                 languages: 指定翻译的目标语言
                 generate-const: 生成枚举值，方便调用
+                generate-field: 生成字段类型枚举值，方便调用
                 translator:
                     usage: 翻译通道：支持类型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
                     google-free: Google 网页翻译

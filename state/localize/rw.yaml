@@ -125,6 +125,7 @@ cli:
                 force: Andika ibisobanuro bihari
                 force-key-prefix: urufunguzo rugomba guhatirwa kwandikwa
                 generate-const: Kubyara indangagaciro zo kubara byoroshye guhamagarwa
+                generate-field: Kubyara umurima wubwoko bwo kubara kugirango byoroshye guhamagarwa
                 languages: Kugaragaza ururimi rugenewe gusobanura
                 src-file: Idosiye yinkomoko igomba guhindurwa (bisabwa)
                 src-language: Ururimi rwa dosiye yinkomoko (niba bidasobanuwe neza, igikoresho kizahita kigena dosiye yinkomoko)

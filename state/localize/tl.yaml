@@ -125,6 +125,7 @@ cli:
                 force: I-overwrite ang mga kasalukuyang pagsasalin
                 force-key-prefix: mga susi na kailangang pilitin na ma-overwrite
                 generate-const: Bumuo ng mga halaga ng enumeration para sa madaling pagtawag
+                generate-field: Bumuo ng mga halaga ng enumeration ng uri ng field para sa madaling pagtawag
                 languages: Tukuyin ang target na wika para sa pagsasalin
                 src-file: Source file na isasalin (kinakailangan)
                 src-language: Ang wika ng source file (kung hindi tinukoy, awtomatikong tutukuyin ng tool ang source file)

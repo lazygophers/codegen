@@ -125,6 +125,7 @@ cli:
                 force: Vorhandene Übersetzungen überschreiben
                 force-key-prefix: Schlüssel, deren Überschreiben erzwungen werden muss
                 generate-const: Generieren Sie Aufzählungswerte für einen einfachen Aufruf
+                generate-field: Generieren Sie Feldtyp-Aufzählungswerte für einen einfachen Aufruf
                 languages: Geben Sie die Zielsprache für die Übersetzung an
                 src-file: Zu übersetzende Quelldatei (erforderlich)
                 src-language: Die Sprache der Quelldatei (falls nicht angegeben, ermittelt das Tool die Quelldatei automatisch)

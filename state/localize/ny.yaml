@@ -125,6 +125,7 @@ cli:
                 force: Lembani zomasulira zomwe zilipo kale
                 force-key-prefix: makiyi omwe amafunika kukakamizidwa kuti alembetsedwe
                 generate-const: Pangani zowerengera kuti muyimbe mosavuta
+                generate-field: Pangani zowerengera zamtundu wamunda kuti muyimbe mosavuta
                 languages: Tchulani chilankhulo chomwe mungamasulire
                 src-file: Fayilo yochokera kuti itanthauziridwe (yofunikira)
                 src-language: Chilankhulo cha fayilo yochokera (ngati sichinatchulidwe, chidacho chidzadziwiratu fayilo yochokera)

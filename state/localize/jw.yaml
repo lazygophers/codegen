@@ -125,6 +125,7 @@ cli:
                 force: Nimpa terjemahan sing wis ana
                 force-key-prefix: tombol sing kudu dipeksa kanggo ditindhes
                 generate-const: Gawe nilai enumerasi supaya gampang ditelpon
+                generate-field: Gawe nilai enumerasi jinis lapangan supaya gampang ditelpon
                 languages: Nemtokake basa target kanggo terjemahan
                 src-file: File sumber sing arep diterjemahake (dibutuhake)
                 src-language: Basa file sumber (yen ora ditemtokake, alat kasebut bakal nemtokake file sumber kanthi otomatis)

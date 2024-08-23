@@ -125,6 +125,7 @@ cli:
                 force: Kyerɛw nkyerɛase ahorow a ɛwɔ hɔ dedaw no so
                 force-key-prefix: nsafe a ɛsɛ sɛ wɔhyɛ ma wɔkyerɛw so
                 generate-const: Yɛ enumeration values ​​ma frɛ a ɛnyɛ den
+                generate-field: Yɛ field type enumeration values ​​ma frɛ a ɛnyɛ den
                 languages: Kyerɛ kasa a wopɛ sɛ wokyerɛ ase
                 src-file: Source file a wɔbɛkyerɛ ase (ɛhwehwɛ) .
                 src-language: Kasa a wɔde fa fael no fibea (sɛ wɔankyerɛ a, adwinnade no ankasa bɛkyerɛ fael a efi mu ba) .

@@ -2,8 +2,10 @@ cli:
     completion:
         flags:
             no-descriptions: 禁用完成说明
-        long: |
+        long: |-
             为指定 shell 的 {{.RootName}} 生成自动完成脚本。
+            有关如何使用生成脚本的详细信息，请参阅每个子命令的帮助
+            可以将命令保存至 .profile 加载项中，以实现自动补全操作（注意：保存完成后或工具更新后，不会自动更新补全相关功能，需要手动更新）
         short: 为指定 shell 生成自动完成脚本
         subcommand:
             short: 为 {{.Command}} 生成自动完成脚本
@@ -245,7 +247,7 @@ lang:
     pa: 旁遮普语
     pl: 波兰语
     ps: 普什图语
-    pt: 葡萄牙语（葡萄牙、巴西）
+    pt: 葡萄牙语（巴西）
     pt-br: 葡萄牙语(巴西)
     qu: 克丘亚语
     ro: 罗马尼亚语

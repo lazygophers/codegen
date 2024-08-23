@@ -125,6 +125,7 @@ cli:
                 force: Lehlin awm tawhte chu overwrite rawh
                 force-key-prefix: keys te chu overwrite tura nawr a ngai a ni
                 generate-const: Call awlsam zawk nan enumeration value siam rawh
+                generate-field: Call awlsam zawk nan field type enumeration value siam rawh
                 languages: Lehlinna tur target language chu tarlang rawh
                 src-file: Source file lehlin tur (a tul) .
                 src-language: Source file tawng (a tarlan loh chuan tool hian source file chu a hril nghal ang)

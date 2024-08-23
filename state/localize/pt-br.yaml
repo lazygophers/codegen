@@ -2,8 +2,10 @@ cli:
     completion:
         flags:
             no-descriptions: Desativar instruções de conclusão
-        long: |
+        long: |-
             Gera um script de preenchimento automático para {{.RootName}} para o shell especificado.
+            Para obter detalhes sobre como usar o script de construção, consulte a ajuda de cada subcomando
+            Você pode salvar o comando no complemento .profile para implementar operações de conclusão automática (Observação: após a conclusão do salvamento ou a atualização da ferramenta, as funções relacionadas à conclusão não serão atualizadas automaticamente e precisarão ser atualizadas manualmente)
         short: Gere um script de preenchimento automático para o shell especificado
         subcommand:
             short: Gerar script de preenchimento automático para {{.Command}}
@@ -38,7 +40,7 @@ cli:
             long: Gere arquivo .editorconfig para configuração do editor
             short: Gerar arquivo .editorconfig
         flags:
-            add-proto-files: Se você precisar importar outros arquivos .proto/caminhos de pasta que não estejam na mesma pasta que o arquivo .proto especificado, esta operação anexará (não substituirá) o caminho configurado no arquivo de configuração.
+            add-proto-files: Para outros caminhos de arquivo/pasta .proto que precisam ser importados e não estão na mesma pasta que o arquivo .proto especificado, esta operação anexará (não substituirá) o caminho configurado no arquivo de configuração.
             go-module-prefix: Para o caminho do go_package configurado no arquivo .proto e o real, você pode configurar esta opção
             input: Especifique o arquivo de origem .proto a ser gerado
             output-path: Esta opção pode ser configurada quando o caminho do go_package configurado no arquivo .proto é inconsistente com o roadbed que realmente precisa ser gerado.
@@ -84,7 +86,7 @@ cli:
             flags:
                 cache: Se deve ativar a geração relacionada ao cache
                 config: Se deve gerar código relacionado à configuração
-                i18n: Se deseja ativar a geração relacionada a vários idiomas (a geração inclui apenas inicialização de estado e outros conteúdos, e não inclui tradução automática de vários idiomas. Se você precisar de tradução automática, use {{.Command}} para visualizar detalhes)
+                i18n: Se deseja ativar a geração relacionada a vários idiomas (a geração inclui apenas inicialização de estado e outros conteúdos, e não inclui tradução automática de vários idiomas. Se precisar de tradução automática, use {{.Command}} para visualizar detalhes)
                 table: Se deve ativar a geração de banco de dados relacionada ao banco de dados
             i18n:
                 long: Gere código relacionado ao i18n para chamadas internacionais em vários idiomas
@@ -206,8 +208,8 @@ lang:
     it: italiano
     iw: hebraico
     ja: japonês
-    jv: Javanês
-    jw: Javanês
+    jv: javanês
+    jw: javanês
     ka: Georgiano
     kk: Cazaque
     km: Cambojano
@@ -245,9 +247,9 @@ lang:
     pa: punjabi
     pl: polonês
     ps: pashto
-    pt: Português (Portugal, Brasil)
+    pt: Português (Brasil)
     pt-br: Português (Brasil)
-    qu: Quechua
+    qu: Quéchua
     ro: romena
     ru: russo
     rw: Kinyarwanda

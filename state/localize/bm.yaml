@@ -125,6 +125,7 @@ cli:
                 force: Bamanankan bayɛlɛmani minnu bɛ yen, olu sɛbɛn u kan
                 force-key-prefix: kilisi minnu ka kan ka wajibiya ka sɛbɛn u kan
                 generate-const: Jatebla nafaw labɔ walasa weleli ka nɔgɔn
+                generate-field: Foro suguya jatebɔ nafaw labɛn walasa weleli ka nɔgɔn
                 languages: Bamanankan baarakɛcogo kan min bɛna kɛ, o fɔ
                 src-file: Source file min ka kan ka baara (a wajibiyalen don) .
                 src-language: Soso filen kan (ni a ma fɔ, baarakɛminɛn bɛna source file dantigɛ a yɛrɛma) .

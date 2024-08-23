@@ -125,6 +125,7 @@ cli:
                 force: Sgrìobh thairis air eadar-theangachaidhean gnàthaichte
                 force-key-prefix: iuchraichean a dh'fheumas a bhith air an èigneachadh a bhith air an sgrìobhadh thairis
                 generate-const: Cruthaich luachan àireamhachd airson gairm furasta
+                generate-field: Cruthaich luachan àireamhachd seòrsa achaidh airson gairm furasta
                 languages: Sònraich an cànan targaid airson eadar-theangachadh
                 src-file: Faidhle stòr ri eadar-theangachadh (riatanach)
                 src-language: Cànan an fhaidhle stòr (mura h-eil e air a shònrachadh, dearbhaidh an inneal am faidhle tùsail gu fèin-ghluasadach)

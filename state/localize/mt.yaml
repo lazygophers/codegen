@@ -125,6 +125,7 @@ cli:
                 force: Ikteb traduzzjonijiet eżistenti
                 force-key-prefix: ċwievet li jeħtieġ li jiġu sfurzati jinkitbu fuqhom
                 generate-const: Iġġenera valuri ta' enumerazzjoni għal sejħa faċli
+                generate-field: Iġġenera valuri ta 'enumerazzjoni tat-tip ta' qasam għal sejħa faċli
                 languages: Speċifika l-lingwa fil-mira għat-traduzzjoni
                 src-file: Fajl tas-sors li jrid jiġi tradott (meħtieġa)
                 src-language: Il-lingwa tal-fajl tas-sors (jekk mhux speċifikat, l-għodda tiddetermina awtomatikament il-fajl tas-sors)

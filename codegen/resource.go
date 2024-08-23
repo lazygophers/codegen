@@ -277,6 +277,10 @@ var DefaultTemplateFunc = template.FuncMap{
 	"ToLower":      strings.ToLower,
 	"ToUpper":      strings.ToUpper,
 	"ToTitle":      strings.ToTitle,
+	"ReplaceAll":   strings.ReplaceAll,
+
+	"Snake2Camel":      stringx.Snake2Camel,
+	"Snake2SmallCamel": stringx.Snake2SmallCamel,
 
 	"TrimPrefix": strings.TrimPrefix,
 	"TrimSuffix": strings.TrimSuffix,

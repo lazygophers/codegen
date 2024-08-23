@@ -125,6 +125,7 @@ cli:
                 force: Tulis ganti terjemahan sedia ada
                 force-key-prefix: kunci yang perlu dipaksa untuk ditimpa
                 generate-const: Hasilkan nilai penghitungan untuk panggilan mudah
+                generate-field: Hasilkan nilai penghitungan jenis medan untuk panggilan mudah
                 languages: Tentukan bahasa sasaran untuk terjemahan
                 src-file: Fail sumber untuk diterjemahkan (diperlukan)
                 src-language: Bahasa fail sumber (jika tidak dinyatakan, alat akan menentukan fail sumber secara automatik)

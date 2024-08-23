@@ -125,6 +125,7 @@ cli:
                 force: Batilisha tafsiri zilizopo
                 force-key-prefix: funguo zinazohitaji kulazimishwa kuandikwa tena
                 generate-const: Tengeneza maadili ya kuhesabu kwa simu rahisi
+                generate-field: Tengeneza maadili ya aina ya uga kwa ajili ya kupiga simu kwa urahisi
                 languages: Bainisha lugha lengwa kwa tafsiri
                 src-file: Faili asili ya kutafsiriwa (inahitajika)
                 src-language: Lugha ya faili ya chanzo (ikiwa haijabainishwa, chombo kitaamua kiotomatiki faili ya chanzo)

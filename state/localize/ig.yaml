@@ -125,6 +125,7 @@ cli:
                 force: Degharịa ntụgharị asụsụ ndị dị ugbu a
                 force-key-prefix: igodo ndị kwesịrị ịmanye ka edegharịa
                 generate-const: Mepụta ụkpụrụ ngụkọ maka ịkpọ oku dị mfe
+                generate-field: Mepụta ụkpụrụ ngụkọ ụdị ubi maka ịkpọ oku dị mfe
                 languages: Ezipụta asụsụ ebumnuche maka ntụgharị asụsụ
                 src-file: A ga-atụgharị asụsụ isi mmalite (chọrọ)
                 src-language: Asụsụ nke faịlụ isi mmalite (ọ bụrụ na akọwaghị ya, ngwa ahụ ga-ekpebi faịlụ isi mmalite na-akpaghị aka)

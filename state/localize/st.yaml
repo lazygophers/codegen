@@ -125,6 +125,7 @@ cli:
                 force: Ngola liphetolelo tse teng
                 force-key-prefix: linotlolo tse hlokang ho qobelloa ho ngoloa
                 generate-const: Hlahisa litekanyetso tsa lipalo bakeng sa ho letsetsa habonolo
+                generate-field: Hlahisa boleng ba palo ea mofuta oa sebaka bakeng sa ho letsetsa habonolo
                 languages: Hlalosa puo eo ho fetoleloang ho eona
                 src-file: Faele ea mohloli e tla fetoleloa (ea hlokahala)
                 src-language: Puo ea faele ea mohloli (haeba e sa hlalosoa, sesebelisoa se tla ikhethela faele ea mohloli)

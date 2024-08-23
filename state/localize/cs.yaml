@@ -125,6 +125,7 @@ cli:
                 force: Přepsat existující překlady
                 force-key-prefix: klíče, které je třeba vynutit k přepsání
                 generate-const: Generujte hodnoty výčtu pro snadné volání
+                generate-field: Generujte hodnoty výčtu typu pole pro snadné volání
                 languages: Zadejte cílový jazyk překladu
                 src-file: Zdrojový soubor k překladu (vyžadováno)
                 src-language: Jazyk zdrojového souboru (pokud není zadán, nástroj automaticky určí zdrojový soubor)

@@ -125,6 +125,7 @@ cli:
                 force: Nimpa tarjamahan nu aya
                 force-key-prefix: kenop nu kudu dipaksa pikeun overwritten
                 generate-const: Ngahasilkeun nilai enumerasi pikeun gampang nelepon
+                generate-field: Ngahasilkeun nilai enumerasi jinis lapangan pikeun gampang nelepon
                 languages: Sebutkeun basa sasaran pikeun tarjamahan
                 src-file: Sumber file pikeun ditarjamahkeun (diperlukeun)
                 src-language: Basa file sumber (upami teu dieusian, alat bakal otomatis nangtukeun file sumber)

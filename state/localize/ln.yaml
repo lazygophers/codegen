@@ -125,6 +125,7 @@ cli:
                 force: Kokoma likolo ya mabongoli oyo ezali
                 force-key-prefix: bafungola oyo esengeli kotindama na makasi mpo na kokoma likolo
                 generate-const: Bosala ba valeurs ya enumeration pona kobenga na pete
+                generate-field: Bosala ba valeurs ya enumeration ya type ya champ pona kobenga na pete
                 languages: Lakisá monɔkɔ oyo olingi kobongola
                 src-file: Fisyé ya source oyo esengeli kobongolama (esengeli) .
                 src-language: Monoko ya fisyé ya source (soki elakisami te, esaleli ekoyeba automatiquement fichier source)

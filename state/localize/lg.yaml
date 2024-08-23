@@ -125,6 +125,7 @@ cli:
                 force: Wandiika ku nkyusa eziriwo
                 force-key-prefix: ebisumuluzo ebyetaaga okuwalirizibwa okuwandiikibwako
                 generate-const: Okukola emiwendo gy'okubala okusobola okwanguyirwa okuyita
+                generate-field: Okukola emiwendo gy'okubala ekika ky'ennimiro okusobola okwanguyirwa okuyita
                 languages: Laga olulimi lw’ogenderera okuvvuunula
                 src-file: Fayiro y'ensibuko egenda okuvvuunulwa (kyetaagisa) .
                 src-language: Olulimi lwa fayiro ensibuko (bwe kiba tekirambikiddwa, ekintu ekikozesebwa kijja kusalawo fayiro ensibuko mu ngeri ey’otoma)

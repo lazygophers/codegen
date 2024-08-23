@@ -125,6 +125,7 @@ cli:
                 force: Mbishkruani përkthimet ekzistuese
                 force-key-prefix: çelësat që duhet të detyrohen të mbishkruhen
                 generate-const: Gjeneroni vlera numërimi për thirrje të lehtë
+                generate-field: Gjeneroni vlerat e numërimit të llojit të fushës për thirrje të lehtë
                 languages: Specifikoni gjuhën e synuar për përkthim
                 src-file: Skedari burimor që do të përkthehet (kërkohet)
                 src-language: Gjuha e skedarit burimor (nëse nuk specifikohet, mjeti do të përcaktojë automatikisht skedarin burimor)

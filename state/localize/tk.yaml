@@ -125,6 +125,7 @@ cli:
                 force: Bar bolan terjimeleriň üstünden ýazyň
                 force-key-prefix: gaýtadan ýazylmaga mejbur edilmeli düwmeler
                 generate-const: Aňsat jaň etmek üçin sanama bahalaryny dörediň
+                generate-field: Easyeňil jaň etmek üçin meýdan görnüşini sanamak bahalaryny dörediň
                 languages: Terjime etmek üçin maksat dilini görkeziň
                 src-file: Terjime edilmeli çeşme faýly (zerur)
                 src-language: Çeşme faýlynyň dili (görkezilmedik bolsa, gural deslapky faýly awtomatiki kesgitlär)

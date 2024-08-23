@@ -125,6 +125,7 @@ cli:
                 force: Pārrakstīt esošos tulkojumus
                 force-key-prefix: atslēgas, kuras nepieciešams piespiest pārrakstīt
                 generate-const: Ģenerējiet uzskaites vērtības, lai atvieglotu izsaukšanu
+                generate-field: Ģenerējiet lauka tipa uzskaites vērtības, lai tos varētu viegli izsaukt
                 languages: Norādiet tulkošanas mērķa valodu
                 src-file: Tulkojams avota fails (obligāti)
                 src-language: Avota faila valoda (ja nav norādīta, rīks automātiski noteiks avota failu)

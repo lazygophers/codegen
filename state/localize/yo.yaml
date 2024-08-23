@@ -125,6 +125,7 @@ cli:
                 force: Kọ awọn itumọ ti o wa tẹlẹ
                 force-key-prefix: awọn bọtini ti o nilo lati fi agbara mu lati kọ
                 generate-const: Ṣe ina awọn iye kika fun pipe pipe
+                generate-field: Ṣe ina awọn iye ikawe iru aaye fun pipe pipe
                 languages: Pato ede ibi-afẹde fun itumọ
                 src-file: Faili orisun lati tumọ (beere)
                 src-language: Ede ti faili orisun (ti ko ba ṣe pato, ọpa yoo pinnu faili orisun laifọwọyi)

@@ -125,6 +125,7 @@ cli:
                 force: Sobreescriu les traduccions existents
                 force-key-prefix: claus que s'han de forçar a sobreescriure
                 generate-const: Genereu valors d'enumeració per fer trucades fàcils
+                generate-field: Genereu valors d'enumeració de tipus de camp per fer trucades fàcils
                 languages: Especifiqueu l'idioma de destinació per a la traducció
                 src-file: Fitxer font que s'ha de traduir (obligatori)
                 src-language: L'idioma del fitxer font (si no s'especifica, l'eina determinarà automàticament el fitxer font)

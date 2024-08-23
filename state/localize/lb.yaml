@@ -125,6 +125,7 @@ cli:
                 force: Iwwerschreiwe bestehend Iwwersetzungen
                 force-key-prefix: Schlësselen déi musse gezwongen sinn ze iwwerschreiwe
                 generate-const: Generéiere Opzielungswäerter fir einfach ze ruffen
+                generate-field: Generéiere Feldtyp Opzielungswäerter fir einfach ze ruffen
                 languages: Gitt d'Zilsprooch fir d'Iwwersetzung un
                 src-file: Quelldatei fir ze iwwersetzen (obligatoresch)
                 src-language: D'Sprooch vun der Quelldatei (wann net uginn, wäert d'Tool automatesch d'Quelldatei bestëmmen)

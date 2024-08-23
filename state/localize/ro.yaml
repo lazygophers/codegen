@@ -125,6 +125,7 @@ cli:
                 force: Suprascrieți traducerile existente
                 force-key-prefix: cheile care trebuie forțate să fie suprascrise
                 generate-const: Generați valori de enumerare pentru apeluri ușoare
+                generate-field: Generați valori de enumerare a tipurilor de câmp pentru apeluri ușoare
                 languages: Specificați limba țintă pentru traducere
                 src-file: Fișierul sursă de tradus (obligatoriu)
                 src-language: Limba fișierului sursă (dacă nu este specificată, instrumentul va determina automat fișierul sursă)

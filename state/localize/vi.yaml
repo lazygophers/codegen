@@ -125,6 +125,7 @@ cli:
                 force: Ghi đè các bản dịch hiện có
                 force-key-prefix: các phím cần bị buộc phải ghi đè
                 generate-const: Tạo giá trị liệt kê để gọi dễ dàng
+                generate-field: Tạo các giá trị liệt kê loại trường để gọi dễ dàng
                 languages: Chỉ định ngôn ngữ đích để dịch
                 src-file: Tệp nguồn cần dịch (bắt buộc)
                 src-language: Ngôn ngữ của file nguồn (nếu không được chỉ định, công cụ sẽ tự động xác định file nguồn)

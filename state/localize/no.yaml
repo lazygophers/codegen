@@ -125,6 +125,7 @@ cli:
                 force: Overskriv eksisterende oversettelser
                 force-key-prefix: nøkler som må tvinges til å bli overskrevet
                 generate-const: Generer oppregningsverdier for enkelt å ringe
+                generate-field: Generer felttypeoppregningsverdier for enkelt å ringe
                 languages: Angi målspråket for oversettelse
                 src-file: Kildefil som skal oversettes (obligatorisk)
                 src-language: Språket til kildefilen (hvis ikke spesifisert, vil verktøyet automatisk bestemme kildefilen)

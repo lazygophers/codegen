@@ -125,6 +125,7 @@ cli:
                 force: Rubuta fassarorin da ke akwai
                 force-key-prefix: makullin da ake buƙatar tilastawa a sake rubuta su
                 generate-const: Ƙirƙirar ƙididdiga ƙididdiga don sauƙin kira
+                generate-field: Ƙirƙirar ƙididdiga nau'in filin don sauƙin kira
                 languages: Ƙayyade harshen manufa don fassara
                 src-file: Fayil ɗin tushen da za a fassara (an buƙata)
                 src-language: Harshen fayil ɗin tushen (idan ba a ƙayyade ba, kayan aiki zai ƙayyade fayil ɗin tushen ta atomatik)

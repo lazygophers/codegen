@@ -125,6 +125,7 @@ cli:
                 force: Dib u qor turjumaadaha jira
                 force-key-prefix: furayaasha u baahan in lagu qasbo in dib loo qoro
                 generate-const: Samee qiyamka xisaabinta ee wacitaanka fudud
+                generate-field: Samee qiimaha tirinta nooca goobta si fudud loogu waco
                 languages: Sheeg luqadda la beegsanayo ee tarjumaada
                 src-file: Faylka isha in la tarjumo (loo baahan yahay)
                 src-language: Luqadda faylka isha (haddii aan la cayimin, qalabku wuxuu si toos ah u go'aamin doonaa faylka isha)

@@ -125,6 +125,7 @@ cli:
                 force: I-overwrite ang kasamtangan nga mga hubad
                 force-key-prefix: mga yawe nga kinahanglang pugson nga ma-overwrite
                 generate-const: Paghimo mga kantidad sa enumeration alang sa dali nga pagtawag
+                generate-field: Paghimo mga kantidad sa pag-ihap sa tipo sa uma alang sa dali nga pagtawag
                 languages: Ipiho ang target nga lengguwahe para sa paghubad
                 src-file: Source file nga hubaron (gikinahanglan)
                 src-language: Ang lengguwahe sa tinubdan nga payl (kung wala gipiho, ang himan awtomatik nga magtino sa tinubdan nga payl)

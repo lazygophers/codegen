@@ -85,7 +85,7 @@ func (p *TransacterGoogleFree) Translate(srcLang, dstLang language.Tag, key stri
 		SetQueryParams(map[string]string{
 			"sl": srcLang.String(),
 			"tl": dstLang.String(),
-			"q":  strings.ReplaceAll(key, "\n", "\\n"),
+			"q":  key,
 		}).
 		SetResult(&rsp).
 		Get("")
@@ -111,7 +111,7 @@ func (p *TransacterGoogleFree) Translate(srcLang, dstLang language.Tag, key stri
 		return "", errors.New("not get translations")
 	}
 
-	return strings.ReplaceAll(trans.Trans, "\\n", "\n"), nil
+	return trans.Trans, nil
 }
 
 func NewTransacterGoogleFree() *TransacterGoogleFree {

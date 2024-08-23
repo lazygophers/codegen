@@ -125,6 +125,7 @@ cli:
                 force: Kaq t’ikraykunata hawaman qillqay
                 force-key-prefix: llavekuna, chaykunatam obligana kanqa hawanpi qillqanapaq
                 generate-const: Yupay chanikunata paqarichiy, mana sasa waqyanapaq
+                generate-field: Chakra laya yupay chanikunata paqarichiy, mana sasa waqyanapaq
                 languages: Tikranapaq simita niy
                 src-file: Pukyu willañiqi t'ikranapaq (mañasqa) .
                 src-language: Pukyu willañiqip rimaynin (mana nisqa kaptinqa, llamk'anaqa kikinmantam pukyu willañiqita kamachinqa)

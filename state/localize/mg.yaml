@@ -125,6 +125,7 @@ cli:
                 force: Soraty ny dikanteny efa misy
                 force-key-prefix: fanalahidy izay mila terena hosoloina
                 generate-const: Mamorona soatoavina fanisana ho mora fiantsoana
+                generate-field: Mamorona sanda fanisana karazana saha ho mora fiantsoana
                 languages: Lazao ny fiteny kendrena handikana
                 src-file: rakitra loharano hadika (takina)
                 src-language: Ny fitenin'ny rakitra loharano (raha tsy voafaritra dia hamaritra ho azy ny rakitra loharano ny fitaovana)

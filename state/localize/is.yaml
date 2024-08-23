@@ -125,6 +125,7 @@ cli:
                 force: Skrifaðu yfir núverandi þýðingar
                 force-key-prefix: lykla sem þarf að neyða til að skrifa yfir
                 generate-const: Búðu til upptalningargildi til að auðvelda hringingu
+                generate-field: Búðu til talningargildi fyrir svæðisgerð til að auðvelda hringingu
                 languages: Tilgreindu marktungumálið fyrir þýðingar
                 src-file: Upprunaskrá sem á að þýða (krafist)
                 src-language: Tungumál frumskrárinnar (ef ekki tilgreint mun tólið sjálfkrafa ákvarða upprunaskrána)

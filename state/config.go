@@ -206,6 +206,7 @@ func (p *CfgTables) apply() {
 
 type CfgI18n struct {
 	GenerateConst bool `json:"generate-const,omitempty" yaml:"generate-const,omitempty" toml:"generate-const,omitempty"`
+	GenerateField bool `json:"generate-field,omitempty" yaml:"generate-field,omitempty" toml:"generate-field,omitempty"`
 
 	Languages    []string `json:"languages,omitempty" yaml:"languages,omitempty" toml:"languages,omitempty"`
 	AllLanguages bool     `json:"all-languages,omitempty" yaml:"all-languages,omitempty" toml:"all-languages,omitempty"`

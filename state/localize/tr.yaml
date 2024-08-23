@@ -125,6 +125,7 @@ cli:
                 force: Mevcut çevirilerin üzerine yaz
                 force-key-prefix: Üzerine yazılmaya zorlanması gereken anahtarlar
                 generate-const: Kolay arama için numaralandırma değerleri oluşturun
+                generate-field: Kolay arama için alan türü numaralandırma değerleri oluşturun
                 languages: Çeviri için hedef dili belirtin
                 src-file: Çevrilecek kaynak dosya (gerekli)
                 src-language: Kaynak dosyanın dili (belirtilmezse araç kaynak dosyayı otomatik olarak belirleyecektir)

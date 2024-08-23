@@ -125,6 +125,7 @@ cli:
                 force: Prepiši obstoječe prevode
                 force-key-prefix: ključe, ki jih je treba prisilno prepisati
                 generate-const: Ustvarite oštevilčene vrednosti za enostavno klicanje
+                generate-field: Ustvarite vrednosti oštevilčenja vrste polja za enostavno klicanje
                 languages: Določite ciljni jezik za prevod
                 src-file: Izvorna datoteka za prevod (obvezno)
                 src-language: Jezik izvorne datoteke (če ni naveden, bo orodje samodejno določilo izvorno datoteko)

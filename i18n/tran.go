@@ -63,6 +63,8 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	toDstSub := func(k string) map[string]any {
 		sub := make(map[string]any)
 		if v, ok := dstLocalize[k]; ok {
+			log.Infof("try cover dst sub localize %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
+
 			switch x := v.(type) {
 			case map[string]any:
 				sub = x
@@ -72,7 +74,17 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					sub[k] = v
 				}
 
+			case map[string]int:
+				for k, v := range x {
+					sub[k] = v
+				}
+
 			case map[any]any:
+				for k, v := range x {
+					sub[anyx.ToString(k)] = v
+				}
+
+			case map[any]int:
 				for k, v := range x {
 					sub[anyx.ToString(k)] = v
 				}
@@ -87,6 +99,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					sub[strconv.FormatInt(k, 10)] = v
 				}
 
+			case map[int64]int:
+				for k, v := range x {
+					sub[strconv.FormatInt(k, 10)] = v
+				}
+
 			case map[float64]any:
 				sub = map[string]any{}
 				for k, v := range x {
@@ -96,6 +113,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			case map[float64]string:
 				for k, v := range x {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
+				}
+
+			case map[int]int:
+				for k, v := range x {
+					sub[strconv.Itoa(k)] = v
 				}
 
 			default:
@@ -116,31 +138,140 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			tran := func() {
 				log.Infof("try translate [%s]%s from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
-				traget, err := c.Translator.Translate(c.SrcLang.Tag, dstLang.Tag, x)
-				if err != nil {
-					log.Errorf("err:%v", err)
-					pterm.Warning.Printfln("translate fail\nkey:%s\nfrom %s\nto %s\n%s",
-						parent+"."+k,
-						c.SrcLang,
-						dstLang,
-						x,
-					)
-				} else {
-					pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",
-						parent+"."+k,
+				var tragetList []string
+				var hasError bool
 
-						c.SrcLang,
-						x,
+				for _, s := range strings.Split(x, "\n") {
+					if s == "" {
+						tragetList = append(tragetList, s)
+						continue
+					}
 
-						dstLang,
-						traget,
-					)
+					traget, err := c.Translator.Translate(c.SrcLang.Tag, dstLang.Tag, s)
+					if err != nil {
+						log.Errorf("err:%v", err)
+						pterm.Warning.Printfln("translate fail\nkey:%s\nfrom %s\nto %s\n%s",
+							parent+"."+k,
+							c.SrcLang,
+							dstLang,
+							s,
+						)
+						hasError = true
+						break
+					} else {
+						pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",
+							parent+"."+k,
 
-					dstLocalize[k] = traget
+							c.SrcLang,
+							s,
+
+							dstLang,
+							traget,
+						)
+
+						tragetList = append(tragetList, traget)
+					}
+				}
+
+				if !hasError {
+					dstLocalize[k] = strings.Join(tragetList, "\n")
 				}
 			}
 
 			// 找得到的时候，判断一下要不要覆盖
+			if _, ok := dstLocalize[k]; !ok {
+				tran()
+			} else if c.Overwrite {
+				tran()
+			} else {
+				for _, prefix := range c.OverwriteKeyPrefix {
+					if !strings.HasPrefix(parent+"."+k, prefix) {
+						continue
+					}
+					tran()
+					break
+				}
+			}
+
+		case int:
+			tran := func() {
+				log.Infof("try translate [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
+
+				pterm.Success.Printfln("key:%s\nfrom(%s) %d\nto(%s) %d",
+					parent+"."+k,
+
+					c.SrcLang,
+					x,
+
+					dstLang,
+					x,
+				)
+
+				dstLocalize[k] = strconv.Itoa(x)
+			}
+
+			if _, ok := dstLocalize[k]; !ok {
+				tran()
+			} else if c.Overwrite {
+				tran()
+			} else {
+				for _, prefix := range c.OverwriteKeyPrefix {
+					if !strings.HasPrefix(parent+"."+k, prefix) {
+						continue
+					}
+					tran()
+					break
+				}
+			}
+
+		case int64:
+			tran := func() {
+				log.Infof("try translate [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
+
+				pterm.Success.Printfln("key:%s\nfrom(%s) %d\nto(%s) %d",
+					parent+"."+k,
+
+					c.SrcLang,
+					x,
+
+					dstLang,
+					x,
+				)
+
+				dstLocalize[k] = strconv.FormatInt(x, 10)
+			}
+
+			if _, ok := dstLocalize[k]; !ok {
+				tran()
+			} else if c.Overwrite {
+				tran()
+			} else {
+				for _, prefix := range c.OverwriteKeyPrefix {
+					if !strings.HasPrefix(parent+"."+k, prefix) {
+						continue
+					}
+					tran()
+					break
+				}
+			}
+
+		case float64:
+			tran := func() {
+				log.Infof("try translate [%s]%f from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
+
+				pterm.Success.Printfln("key:%s\nfrom(%s) %f\nto(%s) %f",
+					parent+"."+k,
+
+					c.SrcLang,
+					x,
+
+					dstLang,
+					x,
+				)
+
+				dstLocalize[k] = strconv.FormatFloat(x, 'f', -1, 10)
+			}
+
 			if _, ok := dstLocalize[k]; !ok {
 				tran()
 			} else if c.Overwrite {
