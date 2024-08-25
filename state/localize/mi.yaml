@@ -95,6 +95,8 @@ cli:
                 long: Hangaia he waehere e pa ana ki te state.table, ka whakamahia mo te hononga raraunga me te arawhiti ripanga ina timata te ratonga.
                 short: Hanga he waehere e pa ana ki te state.table
         table:
+            flags:
+                template-state-table: Ko te konae ./state/table.go te whakaputa ara tauira
             long: Ko nga mahi katoa e pa ana ki te whakaputa ripanga mo te rauemi tuuturu, te whakahaere rauemi tuuturu ranei o nga ratonga pakihi
             short: Nga mahi katoa e pa ana mo te whakaputa ripanga
     group:

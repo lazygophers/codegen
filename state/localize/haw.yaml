@@ -95,6 +95,8 @@ cli:
                 long: E hana i state.table pili code, hoʻohana ʻia no ka hoʻohui ʻikepili a me ka hoʻomaka ʻana o ka papaʻaina i ka wā e hoʻomaka ai ka lawelawe.
                 short: E hana i ke code pili state.table
         table:
+            flags:
+                template-state-table: ./state/table.go file e hoʻopuka i ke ala hoʻohālike
             long: ʻO nā hana pili āpau o ka hoʻohua ʻana i nā papa no ka waiwai kūlana a i ʻole ka hoʻokele waiwai waiwai o nā lawelawe ʻoihana
             short: ʻO nā hana pili āpau no ka hana ʻana i nā papa
     group:

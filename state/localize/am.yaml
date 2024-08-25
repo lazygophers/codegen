@@ -95,6 +95,8 @@ cli:
                 long: ለዳታቤዝ ግንኙነት እና አገልግሎቱ ሲጀመር የጠረጴዛ ማስጀመሪያ የሚያገለግል state.table ተዛማጅ ኮድ ይፍጠሩ።
                 short: ከstate.table ተዛማጅ ኮድ ይፍጠሩ
         table:
+            flags:
+                template-state-table: ./state/table.go ፋይል የአብነት መንገድ ያመነጫል።
             long: ለስቴት ሀብት ወይም ለንግድ አገልግሎቶች የማይንቀሳቀስ ሀብት አስተዳደር ሰንጠረዦችን የማፍለቅ ሁሉም ተዛማጅ ተግባራት
             short: ሠንጠረዦችን ለማምረት ሁሉም ተዛማጅ ተግባራት
     group:

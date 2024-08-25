@@ -95,6 +95,8 @@ cli:
                 long: Tsim state.table ntsig txog code, siv rau kev sib txuas ntawm database thiab lub rooj pib thaum qhov kev pabcuam pib.
                 short: Tsim state.table ntsig txog code
         table:
+            flags:
+                template-state-table: ./state/table.go file generates template path
             long: Tag nrho cov haujlwm muaj feem cuam tshuam ntawm kev tsim cov rooj rau cov peev txheej hauv xeev lossis kev tswj hwm kev lag luam zoo li qub
             short: Txhua yam muaj feem xyuam rau kev tsim cov rooj
     group:

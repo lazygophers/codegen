@@ -95,6 +95,8 @@ cli:
                 long: Mepụta koodu metụtara steeti.table, ejiri maka njikọ nchekwa data yana mmalite tebụl mgbe ọrụ malitere.
                 short: Mepụta koodu metụtara steeti.table
         table:
+            flags:
+                template-state-table: ./state/table.go faịlụ na-ewepụta ụzọ template
             long: Ọrụ niile metụtara nke iwepụta tebụl maka akụrụngwa steeti ma ọ bụ njikwa akụrụngwa kwụ ọtọ nke ọrụ azụmaahịa
             short: Ọrụ niile metụtara ya maka ịmepụta tebụl
     group:

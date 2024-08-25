@@ -95,6 +95,8 @@ cli:
                 long: Hlagiša khoutu ye e amanago le state.table, yeo e šomišwago bakeng sa kgokagano ya polokelo ya tshedimošo le go thoma tafola ge tirelo e thongwa.
                 short: Hlahisa khoutu e amanang le state.table
         table:
+            flags:
+                template-state-table: ./mmušo/tafola.go faele e tšweletša tsela ya thempleite
             long: Mešomo ka moka ye e amanago ya go tšweletša ditafola tša mohlodi wa mmušo goba taolo ya methopo ye e sa fetogego ya ditirelo tša kgwebo
             short: Mešomo ka moka ye e amanago ya go tšweletša ditafola
     group:

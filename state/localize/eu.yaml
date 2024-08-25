@@ -95,6 +95,8 @@ cli:
                 long: Sortu state.table erlazionatutako kodea, datu-basea konektatzeko eta taula hasieratzeko erabiltzen dena zerbitzua abiarazten denean.
                 short: Sortu egoera.taularekin erlazionatutako kodea
         table:
+            flags:
+                template-state-table: ./state/table.go fitxategiak txantiloiaren bidea sortzen du
             long: Taulak sortzeko erlazionatutako funtzio guztiak enpresa-zerbitzuen baliabideen egoera edo baliabide estatikoen kudeaketarako
             short: Taulak sortzeko erlazionatutako funtzio guztiak
     group:

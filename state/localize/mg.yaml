@@ -95,6 +95,8 @@ cli:
                 long: Mamorona kaody mifandraika amin'ny state.table, ampiasaina amin'ny fampifandraisana angon-drakitra sy fanombohana latabatra rehefa manomboka ny serivisy.
                 short: Mamorona code mifandraika amin'ny state.table
         table:
+            flags:
+                template-state-table: ./state/table.go dia mamorona lalan'ny môdely
             long: Ny asa rehetra mifandraika amin'ny famoronana latabatra ho an'ny loharanon-karena ara-panjakana na fitantanana loharanon-karena static amin'ny serivisy fandraharahana
             short: Ny fiasa rehetra mifandraika amin'ny famoronana tabilao
     group:

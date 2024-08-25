@@ -95,6 +95,8 @@ cli:
                 long: Generer state.table relateret kode, der bruges til databaseforbindelse og tabelinitialisering, når tjenesten startes.
                 short: Generer state.table relateret kode
         table:
+            flags:
+                template-state-table: ./state/table.go-filen genererer skabelonsti
             long: Alle relaterede funktioner til generering af tabeller til stateful ressource- eller statisk ressourcestyring af forretningstjenester
             short: Alle relaterede funktioner til generering af tabeller
     group:

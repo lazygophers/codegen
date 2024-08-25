@@ -95,6 +95,8 @@ cli:
                 long: Cruthaich còd co-cheangailte ri state.table, air a chleachdadh airson ceangal stòr-dàta agus tòiseachadh clàr nuair a thòisicheas an t-seirbheis.
                 short: Cruthaich còd co-cheangailte state.table
         table:
+            flags:
+                template-state-table: ./state/table.go faidhle a’ gineadh slighe teamplaid
             long: A h-uile gnìomh co-cheangailte ri bhith a’ cruthachadh chlàran airson goireasan stàiteil no goireasan statach a riaghladh seirbheisean gnìomhachais
             short: A h-uile gnìomh co-cheangailte airson bùird a ghineadh
     group:

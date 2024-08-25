@@ -95,6 +95,8 @@ cli:
                 long: Vygenerujte kód související se state.table, který se používá pro připojení k databázi a inicializaci tabulky při spuštění služby.
                 short: Vygenerujte kód související se state.table
         table:
+            flags:
+                template-state-table: Soubor ./state/table.go vygeneruje cestu k šabloně
             long: Všechny související funkce generování tabulek pro správu stavových zdrojů nebo statických zdrojů obchodních služeb
             short: Všechny související funkce pro generování tabulek
     group:

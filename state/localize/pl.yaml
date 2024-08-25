@@ -95,6 +95,8 @@ cli:
                 long: Wygeneruj kod powiązany ze stanem.table, używany do połączenia z bazą danych i inicjowania tabeli po uruchomieniu usługi.
                 short: Wygeneruj kod powiązany ze stanem.table
         table:
+            flags:
+                template-state-table: Plik ./state/table.go generuje ścieżkę szablonu
             long: Wszystkie powiązane funkcje generowania tabel do zarządzania zasobami stanowymi lub statycznymi usług biznesowych
             short: Wszystkie powiązane funkcje generowania tabel
     group:

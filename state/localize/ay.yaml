@@ -95,6 +95,8 @@ cli:
                 long: state.table ukampi chikt’ata código luraña, ukaxa apnaqatarakiwa base de datos ukaru mayachañataki ukhamaraki tabla qalltañataki kunapachatixa servicio ukaxa qalltaski ukhaxa.
                 short: Estado.tabla ukamp chikt’at código uñstayaña
         table:
+            flags:
+                template-state-table: ./state/table.go qillqatax plantilla thakhi uñstayi
             long: Taqi ukanakampi chikt ata lurawinakaxa tablas ukanaka lurañataki recurso estatal jan ukaxa recurso estático gestión de servicios empresariales ukanakataki
             short: Taqi uñt’ata lurawinakawa tablas ukanaka lurañataki
     group:

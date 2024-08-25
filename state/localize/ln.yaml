@@ -95,6 +95,8 @@ cli:
                 long: Kosala code oyo etali state.table, oyo esalelamaka pona connexion ya base de données pe initialisation ya tableau tango service ebandi.
                 short: Generer code oyo etali state.table
         table:
+            flags:
+                template-state-table: Fisyé ./state/table.go ebimisaka nzela ya modèle
             long: Misala nionso oyo etali yango ya kobimisa ba tableaux pona gestion ya ressource état to gestion ya ressource statique ya ba services d'affaires
             short: Ba fonctions nionso oyo etali yango pona ko générer ba tableaux
     group:

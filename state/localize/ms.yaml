@@ -95,6 +95,8 @@ cli:
                 long: Hasilkan kod berkaitan state.table, digunakan untuk sambungan pangkalan data dan permulaan jadual apabila perkhidmatan dimulakan.
                 short: Hasilkan kod berkaitan state.table
         table:
+            flags:
+                template-state-table: Fail ./state/table.go menjana laluan templat
             long: Semua fungsi berkaitan penjanaan jadual untuk sumber stateful atau pengurusan sumber statik perkhidmatan perniagaan
             short: Semua fungsi berkaitan untuk menjana jadual
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Hlahisa khoutu e amanang le state.table, e sebelisetsoang ho hokahanya le database le ho qala tafole ha tšebeletso e qala.
                 short: Hlahisa khoutu e amanang le state.table
         table:
+            flags:
+                template-state-table: ./state/table.go faele e hlahisa tsela ea template
             long: Mesebetsi eohle e amanang le ho hlahisa litafole bakeng sa lisebelisoa tsa boemo bo holimo kapa tsamaiso e tsitsitseng ea litšebeletso tsa khoebo
             short: Mesebetsi eohle e amanang le ho hlahisa litafole
     group:

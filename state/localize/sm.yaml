@@ -95,6 +95,8 @@ cli:
                 long: Fausia le state.table code related, fa'aoga mo feso'ota'iga fa'amaumauga ma le amataga o le laulau pe a amata le tautua.
                 short: Fausia le state.table e feso'ota'i code
         table:
+            flags:
+                template-state-table: ./state/table.go faila fa'atupu ala fa'ata'ita'iga
             long: O galuega fa'afeso'ota'i uma o le fa'atupuina o laulau mo puna'oa fa'apitoa po'o le fa'atonuina o puna'oa fa'apitoa o auaunaga tau pisinisi
             short: O galuega fa'atatau uma mo le fa'atupuina o laulau
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Generate codice relative state.table, utilizatu per a cunnessione di a basa di dati è l'inizializazione di a tavola quandu u serviziu hè iniziatu.
                 short: Genera codice state.table rilativi
         table:
+            flags:
+                template-state-table: U schedariu ./state/table.go genera una strada di mudellu
             long: Tutte e funzioni cunnesse di generazione di tabelle per a gestione di risorse stateful o di risorse statiche di servizii di cummerciale
             short: Tutte e funzioni relative per a generazione di tavule
     group:

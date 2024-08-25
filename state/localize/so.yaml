@@ -95,6 +95,8 @@ cli:
                 long: Samee koodka laxiriira state.table, oo loo isticmaalo isku xirka xogta iyo bilowga miiska marka adeega la bilaabo.
                 short: Samee state.miiska koodka laxiriira
         table:
+            flags:
+                template-state-table: Faylka ./state/table.go wuxuu abuuraa dariiqa qaab-dhismeedka
             long: Dhammaan shaqooyinka la xidhiidha soo saarista miisaska kheyraadka gobolka ama maamulka kheyraadka taagan ee adeegyada ganacsiga
             short: Dhammaan hawlaha la xidhiidha abuurista miisaska
     group:

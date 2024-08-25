@@ -95,6 +95,8 @@ cli:
                 long: Búðu til state.table tengdan kóða, notaður fyrir gagnagrunnstengingu og töfluuppstillingu þegar þjónustan er ræst.
                 short: Búðu til state.table tengdan kóða
         table:
+            flags:
+                template-state-table: ./state/table.go skrá býr til sniðmátsslóð
             long: Allar tengdar aðgerðir við að búa til töflur fyrir staðbundna auðlinda- eða kyrrstöðustjórnun á viðskiptaþjónustu
             short: Allar tengdar aðgerðir til að búa til töflur
     group:

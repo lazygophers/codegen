@@ -95,6 +95,8 @@ cli:
                 long: 產生 state.table 相關的程式碼，用於服務啟動時對資料庫的連線、表格的初始化
                 short: 產生 state.table 相關的程式碼
         table:
+            flags:
+                template-state-table: ./state/table.go 檔案產生模板路徑
             long: 產生 table 的所有相關功能，用於業務服務的有狀態的資源或靜態資源管理
             short: 產生 table 的所有相關功能
     group:

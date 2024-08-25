@@ -95,6 +95,8 @@ cli:
                 long: Koda girêdayî state.table biafirîne, ji bo girêdana databasê û destpêkirina tabloyê dema ku karûbar dest pê dike tê bikar anîn.
                 short: Koda têkildarî state.table biafirîne
         table:
+            flags:
+                template-state-table: Pelê ./state/table.go riya şablonê çêdike
             long: Hemî fonksiyonên têkildar ên hilberîna tabloyan ji bo çavkaniya dewletparêz an rêveberiya çavkaniya statîk a karûbarên karsaziyê
             short: Hemî fonksiyonên têkildar ji bo hilberîna tabloyan
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Generu state.table rilatan kodon, uzatan por datumbaza konekto kaj tabelkomenciĝo kiam la servo komenciĝas.
                 short: Generi state.table rilatan kodon
         table:
+            flags:
+                template-state-table: ./state/table.go dosiero generas ŝablonan vojon
             long: Ĉiuj rilataj funkcioj de generado de tabeloj por ŝtata rimedo aŭ senmova rimedadministrado de komercaj servoj
             short: Ĉiuj rilataj funkcioj por generi tabelojn
     group:

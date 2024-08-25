@@ -95,6 +95,8 @@ cli:
                 long: Gjeneroni kodin e lidhur me status.tabela, i përdorur për lidhjen e bazës së të dhënave dhe inicializimin e tabelës kur shërbimi niset.
                 short: Gjeneroni kodin e lidhur me gjendjen.tabela
         table:
+            flags:
+                template-state-table: Skedari ./state/table.go gjeneron shtegun e shabllonit
             long: Të gjitha funksionet e ndërlidhura të gjenerimit të tabelave për menaxhimin e burimeve të gjendjes ose burimeve statike të shërbimeve të biznesit
             short: Të gjitha funksionet përkatëse për gjenerimin e tabelave
     group:

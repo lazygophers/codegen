@@ -33,7 +33,7 @@ func Load() (err error) {
 	    return err
 	}{{ end }}{{ with .Config.Table}}
 
-	err = ConnectDatebase()
+	err = ConnectDatabase()
 	if err != nil {
 	    log.Errorf("err:%v", err)
 	    return err

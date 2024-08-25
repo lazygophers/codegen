@@ -95,6 +95,8 @@ cli:
                 long: Generate state.table kode related, digunakake kanggo sambungan database lan tabel initialization nalika layanan diwiwiti.
                 short: Generate state.table kode related
         table:
+            flags:
+                template-state-table: ./state/table.go file ngasilake path cithakan
             long: Kabeh fungsi sing gegandhengan kanggo ngasilake tabel kanggo sumber daya stateful utawa manajemen sumber daya statis layanan bisnis
             short: Kabeh fungsi sing gegandhengan kanggo ngasilake tabel
     group:

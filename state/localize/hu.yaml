@@ -95,6 +95,8 @@ cli:
                 long: Állapot.táblázattal kapcsolatos kód generálása, amelyet az adatbázis-kapcsolathoz és a tábla inicializálásához használnak a szolgáltatás indításakor.
                 short: Állapot.táblázattal kapcsolatos kód generálása
         table:
+            flags:
+                template-state-table: A ./state/table.go fájl létrehozza a sablon elérési útját
             long: Az üzleti szolgáltatások állapotalapú vagy statikus erőforrás-kezeléséhez szükséges táblák előállításához kapcsolódó összes funkció
             short: Minden kapcsolódó függvény táblázatok generálásához
     group:

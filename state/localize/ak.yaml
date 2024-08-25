@@ -95,6 +95,8 @@ cli:
                 long: Yɛ state.table related code, a wɔde di dwuma ma database nkitahodi ne table mfiase bere a wɔafi ɔsom no ase.
                 short: Generate state.table a ɛfa ho koodu
         table:
+            flags:
+                template-state-table: ./state/table.go fael no yɛ template kwan
             long: Dwumadie a ɛfa ho nyinaa a ɛfa generating tables ma stateful resource anaa static resource management of business services
             short: Dwumadie a ɛfa ho nyinaa ma generating tables
     group:

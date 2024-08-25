@@ -95,6 +95,8 @@ cli:
                 long: Ṣe ipilẹṣẹ koodu ti o ni ibatan state.table, ti a lo fun asopọ data data ati ipilẹṣẹ tabili nigbati iṣẹ naa ba bẹrẹ.
                 short: Ṣe ina state.table koodu jẹmọ
         table:
+            flags:
+                template-state-table: ./state/table.go faili gbogbo ọna awoṣe
             long: Gbogbo awọn iṣẹ ti o ni ibatan ti awọn tabili ti ipilẹṣẹ fun awọn orisun ipinlẹ tabi iṣakoso awọn orisun aimi ti awọn iṣẹ iṣowo
             short: Gbogbo jẹmọ awọn iṣẹ fun ti o npese tabili
     group:

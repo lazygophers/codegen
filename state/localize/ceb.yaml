@@ -95,6 +95,8 @@ cli:
                 long: Paghimo state.table related code, nga gigamit alang sa database connection ug table initialization sa diha nga ang serbisyo gisugdan.
                 short: Paghimo state.table related code
         table:
+            flags:
+                template-state-table: Ang ./state/table.go nga file nagmugna og template path
             long: Ang tanan nga may kalabutan nga mga gimbuhaton sa paghimo sa mga lamesa alang sa stateful nga kapanguhaan o static nga pagdumala sa kapanguhaan sa mga serbisyo sa negosyo
             short: Ang tanan nga may kalabutan nga mga gimbuhaton alang sa paghimo og mga lamesa
     group:

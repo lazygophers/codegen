@@ -95,6 +95,8 @@ cli:
                 long: Bumuo ng state.table related code, na ginagamit para sa database connection at table initialization kapag sinimulan ang serbisyo.
                 short: Bumuo ng state.table related code
         table:
+            flags:
+                template-state-table: Ang ./state/table.go file ay bumubuo ng landas ng template
             long: Lahat ng kaugnay na function ng pagbuo ng mga talahanayan para sa stateful resource o static na resource management ng mga serbisyo sa negosyo
             short: Lahat ng mga kaugnay na function para sa pagbuo ng mga talahanayan
     group:

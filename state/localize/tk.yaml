@@ -95,6 +95,8 @@ cli:
                 long: Hyzmat başlanda maglumat bazasyna birikmek we tablisa başlamak üçin ulanylýan state.table baglanyşykly kod dörediň.
                 short: State.table bilen baglanyşykly kod dörediň
         table:
+            flags:
+                template-state-table: ./state/table.go faýly şablon ýoluny döredýär
             long: Döwlet çeşmesi ýa-da iş hyzmatlarynyň statiki çeşme dolandyryşy üçin tablisalary döretmek bilen baglanyşykly ähli funksiýalar
             short: Tablisa döretmek üçin ähli degişli funksiýalar
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Genere código relacionado con state.table, utilizado para la conexión de la base de datos y la inicialización de la tabla cuando se inicia el servicio.
                 short: Generar código relacionado con state.table
         table:
+            flags:
+                template-state-table: El archivo ./state/table.go genera la ruta de la plantilla
             long: Todas las funciones relacionadas de generación de tablas para recursos con estado o gestión de recursos estáticos de servicios empresariales.
             short: Todas las funciones relacionadas para generar tablas.
     group:

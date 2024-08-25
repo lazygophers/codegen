@@ -95,6 +95,8 @@ cli:
                 long: サービスの開始時にデータベース接続とテーブルの初期化に使用される、state.table 関連のコードを生成します。
                 short: state.table関連のコードを生成する
         table:
+            flags:
+                template-state-table: ./state/table.go ファイルはテンプレート パスを生成します
             long: ビジネス サービスのステートフル リソースまたは静的リソース管理のためのテーブルを生成するすべての関連機能
             short: テーブルを生成するためのすべての関連関数
     group:

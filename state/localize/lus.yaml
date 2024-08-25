@@ -95,6 +95,8 @@ cli:
                 long: State.table nena inzawm code siam, database connection leh service tan tirh a table initialization atana hman thin.
                 short: State.table nena inzawm code siam rawh
         table:
+            flags:
+                template-state-table: ./state/table.go file hian template path a siam chhuak thin
             long: Business services-a stateful resource emaw static resource management emaw atana table siamna hna inzawm zawng zawng
             short: Table siamna atana function inzawm zawng zawng
     group:

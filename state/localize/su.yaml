@@ -95,6 +95,8 @@ cli:
                 long: Ngahasilkeun kode state.table patali, dipaké pikeun sambungan database na tabel initialization nalika layanan ieu dimimitian.
                 short: Ngahasilkeun state.table kode patali
         table:
+            flags:
+                template-state-table: ./state/table.go file ngahasilkeun jalur template
             long: Kabéh fungsi patali generating tabel pikeun sumberdaya stateful atawa manajemén sumberdaya statik jasa bisnis
             short: Sadaya fungsi anu aya hubunganana pikeun ngahasilkeun tabel
     group:

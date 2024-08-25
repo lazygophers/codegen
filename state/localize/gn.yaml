@@ -95,6 +95,8 @@ cli:
                 long: Emoheñói kódigo ojoajúva state.table rehe, ojeporúva joajuha base de datos ha tabla ñepyrũrã oñepyrũvo servicio.
                 short: Omoheñói estado.tabla rehegua código
         table:
+            flags:
+                template-state-table: ./state/table.go vore omoheñói plantilla rape
             long: Opaite tembiapo ojoajúva omoheñóivo cuadro recurso estatal térã recurso estático gestión servicio empresarial-pe g̃uarã
             short: Opaite tembiaporã ojoajúva ojejapo hag̃ua tabla
     group:

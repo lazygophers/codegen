@@ -13,7 +13,7 @@ var (
 {{ range $key, $value := .Models }}    {{TrimPrefix $value "Model"}} *db.Model[{{ $.PB.GoPackageName }}.{{ $value }}]
 {{ end }})
 
-func ConnectDatebase() (err error) {
+func ConnectDatabase() (err error) {
 	log.Info("try init database")
 	_db, err = db.New(State.Config.Db,
 	{{ range $key, $value := .Models}}    &{{ $.PB.GoPackageName }}.{{ $value }}{},

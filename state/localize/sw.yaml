@@ -95,6 +95,8 @@ cli:
                 long: Tengeneza msimbo unaohusiana na state.table, unaotumika kwa uunganisho wa hifadhidata na uanzishaji wa jedwali wakati huduma inapoanzishwa.
                 short: Tengeneza msimbo unaohusiana na state.table
         table:
+            flags:
+                template-state-table: ./state/table.go faili hutoa njia ya kiolezo
             long: Kazi zote zinazohusiana za kutengeneza majedwali kwa rasilimali ya hali ya juu au usimamizi wa rasilimali tuli wa huduma za biashara
             short: Vitendaji vyote vinavyohusiana vya kutengeneza jedwali
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Khiqiza ikhodi ehlobene ne-state.table, esetshenziselwa uxhumano lwesizindalwazi kanye nokuqaliswa kwethebula lapho isevisi iqaliswa.
                 short: Khiqiza ikhodi ehlobene ne-state.table
         table:
+            flags:
+                template-state-table: ./state/table.go ifayela lakha indlela yesifanekiso
             long: Yonke imisebenzi ehlobene yokukhiqiza amathebula wezisetshenziswa ezisezingeni eliphezulu noma ukuphathwa kwensiza engashintshi yezinsizakalo zebhizinisi
             short: Yonke imisebenzi ehlobene yokukhiqiza amathebula
     group:

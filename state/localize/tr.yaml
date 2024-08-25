@@ -95,6 +95,8 @@ cli:
                 long: Hizmet başlatıldığında veritabanı bağlantısı ve tablonun başlatılması için kullanılan state.table ile ilgili kodu oluşturun.
                 short: state.table ile ilgili kod oluşturun
         table:
+            flags:
+                template-state-table: ./state/table.go dosyası şablon yolunu oluşturur
             long: İş hizmetlerinin durum bilgisi olan kaynak veya statik kaynak yönetimi için tablo oluşturmayla ilgili tüm işlevler
             short: Tablo oluşturmaya yönelik tüm ilgili işlevler
     group:
