@@ -80,19 +80,19 @@ func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ .RequestType 
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "int8-slice" }}
-		Int8Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int8]) error {
+		Int8Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int8) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "int16-slice" }}
-		Int16Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int16]) error {
+		Int16Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int16) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "int32-slice" }}
-		Int32Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int32]) error {
+		Int32Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int32) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "int64-slice" }}
-		Int64Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int64]) error {
+		Int64Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []int64) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "uint-slice" }}
@@ -100,27 +100,27 @@ func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ .RequestType 
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "uint16-slice" }}
-		Uint16Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []uint16]) error {
+		Uint16Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []uint16) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "uint32-slice" }}
-		Uint32Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []uint32]) error {
+		Uint32Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []uint32) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "uint64-slice" }}
-		Uint64Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []uint64]) error {
+		Uint64Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []uint64) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "float32-slice" }}
-		Float32Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []float32]) error {
+		Float32Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []float32) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "float64-slice" }}
-		Float64Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []float64]) error {
+		Float64Slice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []float64) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "bool-slice" }}
-		BoolSlice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []bool]) error {
+		BoolSlice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []bool) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ end }}{{ end }}
