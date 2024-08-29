@@ -13,4 +13,5 @@ import (
 func (m *{{ $value }}) Value() (driver.Value, error) {
 	return utils.Value(m)
 }
+
 {{ end }}

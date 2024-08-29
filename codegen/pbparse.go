@@ -347,6 +347,15 @@ func (p *PbNormalField) Field() *proto.NormalField {
 }
 
 func (p *PbNormalField) Type() string {
+	idx := strings.LastIndex(p.field.Type, ".")
+	if idx != -1 {
+		return p.field.Type[idx+1:]
+	} else {
+		return p.field.Type
+	}
+}
+
+func (p *PbNormalField) FullType() string {
 	return p.field.Type
 }
 
@@ -443,16 +452,22 @@ func NewPbEnumField(f *proto.EnumField) *PbEnumField {
 }
 
 type PbMessage struct {
-	message      *proto.Message
-	normalFields map[string]*PbNormalField
-	mapFields    map[string]*PbMapField
-	enumFields   map[string]*PbEnumField
-	FullName     string
-	Name         string
+	message *proto.Message
+
+	normalFieldMap map[string]*PbNormalField
+	mapFieldMap    map[string]*PbMapField
+	enumFieldMap   map[string]*PbEnumField
+
+	normalFieldList []*PbNormalField
+	mapFieldList    []*PbMapField
+	enumFieldList   []*PbEnumField
+
+	FullName string
+	Name     string
 }
 
 func (p *PbMessage) PrimaryField() (pkField *PbNormalField) {
-	for _, field := range p.normalFields {
+	for _, field := range p.normalFieldMap {
 		// 先简单粗暴用 id 当作主键，后面再改
 		if field.Name == "id" {
 			pkField = field
@@ -464,30 +479,15 @@ func (p *PbMessage) PrimaryField() (pkField *PbNormalField) {
 }
 
 func (p *PbMessage) NormalFields() []*PbNormalField {
-	fields := make([]*PbNormalField, 0, len(p.normalFields))
-	for _, field := range p.normalFields {
-		fields = append(fields, field)
-	}
-
-	return fields
+	return p.normalFieldList
 }
 
 func (p *PbMessage) MapFields() []*PbMapField {
-	fields := make([]*PbMapField, 0, len(p.mapFields))
-	for _, field := range p.mapFields {
-		fields = append(fields, field)
-	}
-
-	return fields
+	return p.mapFieldList
 }
 
 func (p *PbMessage) EnumFields() []*PbEnumField {
-	fields := make([]*PbEnumField, 0, len(p.enumFields))
-	for _, field := range p.enumFields {
-		fields = append(fields, field)
-	}
-
-	return fields
+	return p.enumFieldList
 }
 
 func (p *PbMessage) Message() *proto.Message {
@@ -527,17 +527,20 @@ func (p *PbMessage) walk() {
 
 		for _, field := range visitor.mapFields {
 			pterm.Info.Printfln("find map field:%s in %s", field.Name, p.FullName)
-			p.mapFields[field.Name] = NewPbMapField(field)
+			p.mapFieldMap[field.Name] = NewPbMapField(field)
+			p.mapFieldList = append(p.mapFieldList, p.mapFieldMap[field.Name])
 		}
 
 		for _, field := range visitor.normalFields {
 			pterm.Info.Printfln("find normal field:%s in %s", field.Name, p.FullName)
-			p.normalFields[field.Name] = NewPbNormalField(field)
+			p.normalFieldMap[field.Name] = NewPbNormalField(field)
+			p.normalFieldList = append(p.normalFieldList, p.normalFieldMap[field.Name])
 		}
 
 		for _, field := range visitor.enumFields {
 			pterm.Info.Printfln("find enum field:%s in %s", field.Name, p.FullName)
-			p.enumFields[field.Name] = NewPbEnumField(field)
+			p.enumFieldMap[field.Name] = NewPbEnumField(field)
+			p.enumFieldList = append(p.enumFieldList, p.enumFieldMap[field.Name])
 		}
 	}
 }
@@ -546,9 +549,9 @@ func NewPbMessage(m *proto.Message) *PbMessage {
 	p := &PbMessage{
 		message: m,
 
-		normalFields: map[string]*PbNormalField{},
-		mapFields:    map[string]*PbMapField{},
-		enumFields:   map[string]*PbEnumField{},
+		normalFieldMap: map[string]*PbNormalField{},
+		mapFieldMap:    map[string]*PbMapField{},
+		enumFieldMap:   map[string]*PbEnumField{},
 	}
 	p.walk()
 	return p
@@ -658,7 +661,7 @@ func (p *PbPackage) GetService(s string) *PbService {
 	return p.serviceMap[s]
 }
 
-func GetFullName(e proto.Visitee) string {
+func GetFullNames(e proto.Visitee) []string {
 	var names []string
 
 	var walk func(m proto.Visitee)
@@ -684,7 +687,11 @@ func GetFullName(e proto.Visitee) string {
 			}
 
 		case *proto.Proto:
-			// do nothing
+		// do nothing
+
+		case *proto.NormalField:
+			names = append(names, x.Type)
+			walk(x.Parent)
 
 		default:
 			log.Panicf("unknown parent type:%T", x)
@@ -693,7 +700,11 @@ func GetFullName(e proto.Visitee) string {
 
 	walk(e)
 
-	return strings.Join(candy.Reverse(names), "_")
+	return candy.Reverse(names)
+}
+
+func GetFullName(e proto.Visitee) string {
+	return strings.Join(GetFullNames(e), "_")
 }
 
 func (p *PbPackage) Walk() {
