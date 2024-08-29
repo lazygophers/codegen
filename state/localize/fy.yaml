@@ -95,6 +95,8 @@ cli:
                 long: Generearje state.table-relatearre koade, brûkt foar databankferbining en tafelinitialisaasje as de tsjinst is begon.
                 short: Generearje state.table relatearre koade
         table:
+            flags:
+                template-state-table: ./state/table.go-bestân genereart sjabloanpaad
             long: Alle besibbe funksjes fan it generearjen fan tabellen foar stateful boarne of statyske boarne behear fan saaklike tsjinsten
             short: Alle relatearre funksjes foar it generearjen fan tabellen
     group:

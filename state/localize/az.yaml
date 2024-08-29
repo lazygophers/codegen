@@ -95,6 +95,8 @@ cli:
                 long: Xidmət işə salındıqda verilənlər bazası bağlantısı və cədvəlin işə salınması üçün istifadə edilən state.table ilə əlaqəli kodu yaradın.
                 short: State.table əlaqəli kodu yaradın
         table:
+            flags:
+                template-state-table: ./state/table.go faylı şablon yolunu yaradır
             long: Dövlət resursu və ya biznes xidmətlərinin statik resurslarının idarə edilməsi üçün cədvəllərin yaradılması ilə əlaqəli bütün funksiyalar
             short: Cədvəl yaratmaq üçün bütün əlaqəli funksiyalar
     group:

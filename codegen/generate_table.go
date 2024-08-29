@@ -7,6 +7,7 @@ import (
 	"github.com/pterm/pterm"
 	"io/fs"
 	"os"
+	"strings"
 )
 
 func GenerateStateTable(pb *PbPackage) (err error) {
@@ -80,16 +81,46 @@ func GenerateOrm(pb *PbPackage) (err error) {
 		var models []string
 		candy.Each(pb.Messages(), func(message *PbMessage) {
 			// 先全部允许。实际使用的时候要考虑被 model 引用的场景
-			//if !message.NeedOrm() {
-			//	return
-			//}
+			if !message.NeedOrm() {
+				log.Warnf("skip message %s, because it's not a model", message.FullName)
+				return
+			}
 
 			log.Infof("find orm object %s", message.FullName)
-
 			models = append(models, message.FullName)
+
+			// 是 Model 类的，所以它的第一层都需要orm相关的配置
+			candy.Each(message.NormalFields(), func(field *PbNormalField) {
+				switch field.Type() {
+				case "bool":
+					return
+				case "int32", "int64", "uint32", "uint64", "sint32", "sint64", "fixed32", "fixed64", "sfixed32", "sfixed64":
+					return
+				case "float", "double":
+					return
+				case "string":
+					return
+				}
+
+				if field.Type() != field.FullType() {
+					return
+				}
+
+				names := GetFullNames(field.Field())
+
+				for i := len(names); i >= 0; i-- {
+					if pb.GetMessage(strings.Join(names[i:], "_")) == nil {
+						continue
+					}
+
+					models = append(models, strings.Join(names[i:], "_"))
+
+					break
+				}
+			})
 		})
 
-		args["Models"] = models
+		args["Models"] = candy.Sort(candy.Unique(models))
 	}
 
 	// 生成 table.go

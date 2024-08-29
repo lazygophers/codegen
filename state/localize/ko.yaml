@@ -95,6 +95,8 @@ cli:
                 long: 서비스 시작 시 데이터베이스 연결 및 테이블 초기화에 사용되는 state.table 관련 코드를 생성합니다.
                 short: state.table 관련 코드 생성
         table:
+            flags:
+                template-state-table: ./state/table.go 파일은 템플릿 경로를 생성합니다.
             long: 상태 저장 자원 또는 비즈니스 서비스의 정적 자원 관리를 위한 테이블 생성과 관련된 모든 기능
             short: 테이블 생성과 관련된 모든 기능
     group:

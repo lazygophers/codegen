@@ -93,6 +93,8 @@ cli:
         table:
             short: 生成 table 的所有相关功能
             long: 生成 table 的所有相关功能，用于业务服务的有状态的资源或静态资源管理
+            flags:
+                template-state-table: ./state/table.go 文件生成模板路径
     i18n:
         short: 多语言国际化相关工具包
         long: 多语言国际化相关工具包

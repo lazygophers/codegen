@@ -95,6 +95,8 @@ cli:
                 long: Veza ikhowudi ehambelana ne-state.table, esetyenziselwa uqhagamshelwano lwesiseko sedatha kunye nokuqaliswa kwetafile xa inkonzo iqaliswa.
                 short: Yenza ikhowudi ehambelana ne-state.table
         table:
+            flags:
+                template-state-table: ./state/table.go ifayile yenza indlela yetemplate
             long: Yonke imisebenzi enxulumeneyo yokuvelisa iitheyibhile zezibonelelo ezisemgangathweni okanye ulawulo lwemithombo engatshintshiyo yeenkonzo zoshishino
             short: Yonke imisebenzi enxulumeneyo yokuvelisa iitafile
     group:

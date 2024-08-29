@@ -69,7 +69,7 @@ func (p *AddRpcOption) ParseListOption(s string, msg *PbMessage) {
 			option = item
 
 			// 如果没填，会按照字段类型填充默认数据
-			if field, ok := msg.normalFields[option]; ok {
+			if field, ok := msg.normalFieldMap[option]; ok {
 				optionType = field.Type()
 			}
 

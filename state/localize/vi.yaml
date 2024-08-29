@@ -95,6 +95,8 @@ cli:
                 long: Tạo mã liên quan đến state.table, được sử dụng để kết nối cơ sở dữ liệu và khởi tạo bảng khi dịch vụ được khởi động.
                 short: Tạo mã liên quan đến state.table
         table:
+            flags:
+                template-state-table: Tệp ./state/table.go tạo đường dẫn mẫu
             long: Tất cả các chức năng liên quan đến việc tạo bảng để quản lý tài nguyên trạng thái hoặc tài nguyên tĩnh của các dịch vụ kinh doanh
             short: Tất cả các hàm liên quan để tạo bảng
     group:

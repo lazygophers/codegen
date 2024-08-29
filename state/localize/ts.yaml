@@ -95,6 +95,8 @@ cli:
                 long: Endla khodi leyi fambelanaka na state.table, leyi tirhisiwaka eka vuhlanganisi bya database na ku sunguriwa ka tafula loko vukorhokeri byi sungurile.
                 short: Endla khodi leyi fambelanaka na state.table
         table:
+            flags:
+                template-state-table: Fayili ya ./state/table.go yi tumbuluxa ndlela ya xifaniso
             long: Mintirho hinkwayo leyi fambelanaka ya ku tumbuluxa matafula ya switirhisiwa swa xiyimo kumbe vulawuri bya switirhisiwa leswi nga cinciki swa vukorhokeri bya bindzu
             short: Mintirho hinkwayo leyi fambelanaka yo tumbuluxa matafula
     group:

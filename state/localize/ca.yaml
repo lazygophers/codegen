@@ -95,6 +95,8 @@ cli:
                 long: Genereu codi relacionat amb state.table, utilitzat per a la connexió de la base de dades i la inicialització de la taula quan s'inicia el servei.
                 short: Genera codi relacionat state.table
         table:
+            flags:
+                template-state-table: El fitxer ./state/table.go genera el camí de la plantilla
             long: Totes les funcions relacionades de generació de taules per a la gestió de recursos amb estat o de recursos estàtics dels serveis empresarials
             short: Totes les funcions relacionades per generar taules
     group:

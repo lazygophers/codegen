@@ -95,6 +95,8 @@ cli:
                 long: Iġġenera kodiċi relatat ma 'state.table, użat għall-konnessjoni tad-database u l-inizjalizzazzjoni tat-tabella meta jinbeda s-servizz.
                 short: Iġġenera stat.table kodiċi relatat
         table:
+            flags:
+                template-state-table: Il-fajl ./state/table.go jiġġenera mogħdija tal-mudell
             long: Il-funzjonijiet kollha relatati ta 'ġenerazzjoni ta' tabelli għal riżorsi stateful jew ġestjoni statika tar-riżorsi tas-servizzi tan-negozju
             short: Il-funzjonijiet kollha relatati għall-ġenerazzjoni ta' tabelli
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Xera código relacionado state.table, usado para a conexión á base de datos e a inicialización da táboa cando se inicia o servizo.
                 short: Xerar código relacionado state.table
         table:
+            flags:
+                template-state-table: O ficheiro ./state/table.go xera o camiño do modelo
             long: Todas as funcións relacionadas de xeración de táboas para recursos con estado ou xestión de recursos estáticos de servizos empresariais
             short: Todas as funcións relacionadas para xerar táboas
     group:

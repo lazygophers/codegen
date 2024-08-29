@@ -95,6 +95,8 @@ cli:
                 long: Mangpataud ti kodigo a mainaig iti state.table, a maus-usar para iti koneksion ti database ken panangrugi ti lamisaan no ti serbisio ket nairugi.
                 short: Mangpataud ti kodigo a mainaig iti state.table
         table:
+            flags:
+                template-state-table: Ti ./state/table.go a papeles ket mangpataud ti dalan ti plantilia
             long: Amin a mainaig a panagandar ti panagpataud kadagiti lamisaan para iti stateful a rekurso wenno estatiko a panagmanehar ti rekurso dagiti serbisio ti negosio
             short: Amin a mainaig a panagandar para iti panagpataud kadagiti lamisaan
     group:

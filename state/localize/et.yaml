@@ -95,6 +95,8 @@ cli:
                 long: Genereeri state.table seotud kood, mida kasutatakse andmebaasi ühenduse loomiseks ja tabeli lähtestamiseks teenuse käivitamisel.
                 short: Genereeri olek.tabeliga seotud kood
         table:
+            flags:
+                template-state-table: ./state/table.go fail genereerib malli tee
             long: Kõik seotud funktsioonid tabelite genereerimiseks äriteenuste olekupõhiseks või staatiliseks ressursihalduseks
             short: Kõik seotud funktsioonid tabelite genereerimiseks
     group:

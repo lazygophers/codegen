@@ -95,6 +95,8 @@ cli:
                 long: Cynhyrchu cod cysylltiedig â state.table, a ddefnyddir ar gyfer cysylltiad cronfa ddata a chychwyn tablau pan fydd y gwasanaeth yn dechrau.
                 short: Cynhyrchu cod cysylltiedig state.table
         table:
+            flags:
+                template-state-table: Mae ffeil ./state/table.go yn cynhyrchu llwybr templed
             long: Holl swyddogaethau cysylltiedig tablau cynhyrchu ar gyfer rheoli adnoddau statig neu adnoddau sefydlog gwasanaethau busnes
             short: Pob swyddogaeth gysylltiedig ar gyfer cynhyrchu tablau
     group:

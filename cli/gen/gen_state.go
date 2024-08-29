@@ -16,13 +16,15 @@ var GenStateHook = []GenHook{
 }
 
 var stateCmd = &cobra.Command{
-	Use:  "state",
+	Use: "state",
+	PersistentPreRunE: func(cmd *cobra.Command, args []string) (err error) {
+		mergeStateFlags(cmd)
+		return nil
+	},
 	RunE: runGenState,
 }
 
 func runGenState(cmd *cobra.Command, args []string) (err error) {
-	mergeStateFlags(cmd)
-
 	err = codegen.GenerateState(pb)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -64,13 +66,16 @@ func mergeStateFlags(cmd *cobra.Command) {
 	} else if state.LazyConfig.Gen.Config != nil {
 		state.Config.State.Config = *state.LazyConfig.Gen.Config
 	}
+
+	mergeStateTableFlags(cmd)
 }
 
 func initStateFlags(cmd *cobra.Command) {
-	cmd.Flags().Bool("table", state.Config.State.Table, state.Localize(state.I18nTagCliGenStateFlagsTable))
-	cmd.Flags().Bool("cache", state.Config.State.Cache, state.Localize(state.I18nTagCliGenStateFlagsCache))
-	cmd.Flags().Bool("i18n", state.Config.State.I18n, state.Localize(state.I18nTagCliGenStateFlagsI18n))
-	cmd.Flags().Bool("config", state.Config.State.Config, state.Localize(state.I18nTagCliGenStateFlagsConfig))
+	cmd.PersistentFlags().Bool("table", state.Config.State.Table, state.Localize(state.I18nTagCliGenStateFlagsTable))
+	cmd.PersistentFlags().Bool("cache", state.Config.State.Cache, state.Localize(state.I18nTagCliGenStateFlagsCache))
+	cmd.PersistentFlags().Bool("i18n", state.Config.State.I18n, state.Localize(state.I18nTagCliGenStateFlagsI18n))
+	cmd.PersistentFlags().Bool("config", state.Config.State.Config, state.Localize(state.I18nTagCliGenStateFlagsConfig))
+	initStateTableFlags(cmd)
 }
 
 func initState() {

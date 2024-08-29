@@ -95,6 +95,8 @@ cli:
                 long: Kode min bɛ tali kɛ state.table la, o labɛn, min bɛ kɛ ka kunnafonidilanw ni tabali daminɛni kɛ ni baara daminɛna.
                 short: Kode min bɛ tali kɛ state.table la, o lawuli
         table:
+            flags:
+                template-state-table: ./state/table.go file bɛ jatebɔ sira dilan
             long: Baara bɛɛ minnu bɛ tali kɛ o la, n’o ye ka tabali dilan ka ɲɛsin nafolo maracogo ma walima nafolo maracogo jɔlen ma jagokɛlaw ka baarakɛminɛnw na
             short: Baara minnu bɛ tali kɛ ɲɔgɔn na, olu bɛɛ ye tabali dilancogo ye
     group:

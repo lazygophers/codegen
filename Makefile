@@ -13,6 +13,14 @@ build: ## build
 	goreleaser build --clean --snapshot --single-target --config=debug.goreleaser.yaml
 	#GOVERSION=$(shell go version | awk '{print $$3;}') goreleaser --clean --snapshot --skip=publish,validate --timeout=24h
 
+.PHONY: gen
+gen: ## gen
+	codegen i18n tran -s ./state/localize/zh.yaml --generate-const=true --all-languages=false -l zh,zh-hans,en
+
+.PHONY: tran
+tran: ## tran
+	codegen i18n tran --generate-const=true -s ./state/localize/zh.yaml
+
 .PHONY: lint
 lint: ## lint go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 	golangci-lint run -v

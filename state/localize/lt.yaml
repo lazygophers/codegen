@@ -95,6 +95,8 @@ cli:
                 long: Sugeneruoti su status.table susijusį kodą, naudojamą duomenų bazės prisijungimui ir lentelės inicijavimui, kai paslauga paleidžiama.
                 short: Sukurti būseną.lentelę susijusį kodą
         table:
+            flags:
+                template-state-table: ./state/table.go failas sugeneruoja šablono kelią
             long: Visos susijusios lentelių generavimo funkcijos, skirtos verslo paslaugų būsenai arba statiniam išteklių valdymui
             short: Visos susijusios lentelės generavimo funkcijos
     group:

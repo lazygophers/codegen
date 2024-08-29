@@ -95,6 +95,8 @@ cli:
                 long: Pangani code yokhudzana ndi state.table, yomwe imagwiritsidwa ntchito polumikiza database ndi kuyambitsa tebulo ntchito ikayamba.
                 short: Pangani code yokhudzana ndi state.table
         table:
+            flags:
+                template-state-table: ./state/table.go fayilo imapanga template njira
             long: Ntchito zonse zokhudzana ndi kupanga matebulo azinthu zodziwika bwino kapena kasamalidwe kazinthu zamabizinesi
             short: Ntchito zonse zokhudzana ndi kupanga matebulo
     group:

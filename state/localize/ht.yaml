@@ -95,6 +95,8 @@ cli:
                 long: Jenere state.table kòd ki gen rapò, yo itilize pou koneksyon baz done ak inisyalizasyon tab lè sèvis la kòmanse.
                 short: Jenere state.table kòd ki gen rapò
         table:
+            flags:
+                template-state-table: ./state/table.go fichye jenere modèl chemen
             long: Tout fonksyon ki gen rapò ak jenere tab pou resous etatik oswa jesyon resous estatik nan sèvis biznis
             short: Tout fonksyon ki gen rapò pou jenere tab
     group:

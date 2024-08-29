@@ -95,6 +95,8 @@ cli:
                 long: Wɔ state.table si do ƒome kple code, si wozãna na nyatakakadzraɖoƒe ƒe kadodo kple kplɔ̃ ƒe gɔmedzedze ne wodze subɔsubɔdɔa gɔme.
                 short: Wɔ state.table si do ƒome kple kɔda
         table:
+            flags:
+                template-state-table: ./state/table.go faɛl la wɔa template mɔ
             long: Dɔ siwo katã do ƒome kplii le kplɔ̃wo wɔwɔ na stateful resource alo static resource management of business services
             short: Dɔwɔwɔ siwo katã do ƒome kplii hena kplɔ̃wo wɔwɔ
     group:

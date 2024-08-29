@@ -95,6 +95,8 @@ cli:
                 long: Gadzira state.table inoenderana kodhi, inoshandiswa pakubatanidza database uye kutangisa tafura kana sevhisi yatangwa.
                 short: Gadzira state.table inoenderana kodhi
         table:
+            flags:
+                template-state-table: ./state/table.go faira rinogadzira nzira yetemplate
             long: Ese ane hukama mabasa ekugadzira matafura ezvakaita zviwanikwa kana static resource manejimendi ebhizinesi masevhisi
             short: Mabasa ese ane chekuita nekugadzira matafura
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Ƙirƙirar lambar da ke da alaƙa ta state.table, da ake amfani da ita don haɗin bayanai da ƙaddamar da tebur lokacin da aka fara sabis.
                 short: Ƙirƙirar lambar da ke da alaƙa da jiha
         table:
+            flags:
+                template-state-table: ./state/table.go fayil yana haifar da hanyar samfuri
             long: Duk ayyukan da ke da alaƙa na samar da teburi don albarkatu na jiha ko sarrafa kayan aiki a tsaye na ayyukan kasuwanci
             short: Duk ayyuka masu alaƙa don samar da tebur
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Koodii state.table walqabatee uuma, walqabsiisa kuusdeetaa fi jalqabbii gabatee yeroo tajaajilli jalqabamu fayyadama.
                 short: Koodii state.table wajjin walqabatu uumuu
         table:
+            flags:
+                template-state-table: Faayilli ./state/table.go daandii unkaa uuma
             long: Faankishiniiwwan walqabatan hunda kan gabatee maddisiisuu qabeenya haalaa ykn bulchiinsa qabeenya istaatiksii tajaajila daldalaa
             short: Faankishiniiwwan walqabatan hunda gabatee uumuuf
     group:

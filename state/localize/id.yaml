@@ -95,6 +95,8 @@ cli:
                 long: Hasilkan kode terkait state.table, yang digunakan untuk koneksi database dan inisialisasi tabel saat layanan dimulai.
                 short: Hasilkan kode terkait state.table
         table:
+            flags:
+                template-state-table: File ./state/table.go menghasilkan jalur templat
             long: Semua fungsi terkait pembuatan tabel untuk sumber daya stateful atau manajemen sumber daya statis layanan bisnis
             short: Semua fungsi terkait untuk menghasilkan tabel
     group:

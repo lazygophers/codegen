@@ -95,6 +95,8 @@ cli:
                 long: Xizmat ishga tushirilganda ma'lumotlar bazasiga ulanish va jadvalni ishga tushirish uchun ishlatiladigan state.table bilan bog'liq kodni yarating.
                 short: State.table bilan bog'liq kodni yarating
         table:
+            flags:
+                template-state-table: ./state/table.go fayli shablon yo'lini yaratadi
             long: Biznes xizmatlarining statistik manbalari yoki statik resurslarini boshqarish uchun jadvallarni yaratishning barcha tegishli funktsiyalari
             short: Jadvallarni yaratish uchun barcha tegishli funktsiyalar
     group:

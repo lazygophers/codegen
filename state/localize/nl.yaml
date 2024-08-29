@@ -95,6 +95,8 @@ cli:
                 long: Genereer state.table-gerelateerde code, gebruikt voor databaseverbinding en tabelinitialisatie wanneer de service wordt gestart.
                 short: Genereer state.table-gerelateerde code
         table:
+            flags:
+                template-state-table: ./state/table.go-bestand genereert het sjabloonpad
             long: Alle gerelateerde functies voor het genereren van tabellen voor stateful resource- of statisch resourcebeheer van zakelijke services
             short: Alle gerelateerde functies voor het genereren van tabellen
     group:

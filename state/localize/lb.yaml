@@ -95,6 +95,8 @@ cli:
                 long: Generéiere state.table Zesummenhang Code, fir Datebank Verbindung an Dësch initialization benotzt wann de Service ugefaangen ass.
                 short: Generéiere state.table Zesummenhang Code
         table:
+            flags:
+                template-state-table: ./state/table.go Fichier generéiert Schabloun Wee
             long: All Zesummenhang Funktiounen vun Generéiere Dëscher fir stateful Ressource oder statesch Ressource Gestioun vun Affär Servicer
             short: All Zesummenhang Funktiounen fir Generéiere Dëscher
     group:

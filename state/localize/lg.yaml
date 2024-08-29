@@ -95,6 +95,8 @@ cli:
                 long: Okukola koodi ekwatagana ne state.table, ekozesebwa okuyunga database n'okutandikawo emmeeza nga empeereza etandikiddwa.
                 short: Okukola koodi ekwatagana ne state.table
         table:
+            flags:
+                template-state-table: ./state/table.go fayiro ekola ekkubo lya template
             long: Emirimu gyonna egyekuusa ku kukola emmeeza ez’okuddukanya eby’obugagga eby’embeera oba eby’obugagga ebitali bikyuka eby’empeereza za bizinensi
             short: Emirimu gyonna egyekuusa ku kukola emmeeza
     group:

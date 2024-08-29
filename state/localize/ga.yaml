@@ -95,6 +95,8 @@ cli:
                 long: Gin cód a bhaineann le state.table, a úsáidtear chun bunachar sonraí a nascadh agus tábla a thosú nuair a chuirtear tús leis an tseirbhís.
                 short: Gin cód gaolmhar state.table
         table:
+            flags:
+                template-state-table: Gineann comhad ./state/table.go cosán teimpléid
             long: Gach feidhm ghaolmhar a bhaineann le táblaí giniúna do bhainistiú státseirbhíseach acmhainní nó acmhainní statacha seirbhísí gnó
             short: Na feidhmeanna go léir a bhaineann le táblaí a ghiniúint
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Ģenerējiet ar status.table saistītu kodu, ko izmanto datu bāzes savienojumam un tabulas inicializācijai, kad pakalpojums tiek startēts.
                 short: Ģenerēt ar statusu.table saistīto kodu
         table:
+            flags:
+                template-state-table: ./state/table.go fails ģenerē veidnes ceļu
             long: Visas saistītās tabulu ģenerēšanas funkcijas statusa resursu vai statisko resursu pārvaldībai biznesa pakalpojumiem
             short: Visas saistītās funkcijas tabulu ģenerēšanai
     group:

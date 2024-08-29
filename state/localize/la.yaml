@@ -95,6 +95,8 @@ cli:
                 long: Generare statum.tabula cognata codicem, ad nexum datorum et ad mensam initializationem adhibita cum servitium incepit.
                 short: Generate state.table codice related
         table:
+            flags:
+                template-state-table: ./state/table.go file generat template viam
             long: Munera omnia cognata generandi mensas pro subsidio statorum vel subsidiorum administratione negotiorum officiorum
             short: Omnes munera cognata ad tabulas generandas
     group:

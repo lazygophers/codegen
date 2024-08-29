@@ -95,6 +95,8 @@ cli:
                 long: Generirajte kodo, povezano s state.table, ki se uporablja za povezavo z bazo podatkov in inicializacijo tabele, ko se storitev zažene.
                 short: Ustvari kodo, povezano s stanjem.table
         table:
+            flags:
+                template-state-table: Datoteka ./state/table.go ustvari pot predloge
             long: Vse povezane funkcije generiranja tabel za upravljanje virov s stanjem ali statično upravljanje poslovnih storitev
             short: Vse povezane funkcije za generiranje tabel
     group:

@@ -95,6 +95,8 @@ cli:
                 long: Luo tila.taulukkoon liittyvä koodi, jota käytetään tietokantayhteyden muodostamiseen ja taulukon alustukseen, kun palvelu käynnistetään.
                 short: Luo tila.taulukkoon liittyvä koodi
         table:
+            flags:
+                template-state-table: ./state/table.go-tiedosto luo mallipolun
             long: Kaikki siihen liittyvät toiminnot taulukoiden luomiseen yrityspalveluiden tilatietoisten resurssien tai staattisten resurssien hallintaan
             short: Kaikki liittyvät funktiot taulukoiden luomiseen
     group:

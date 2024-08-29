@@ -95,6 +95,8 @@ cli:
                 long: Jɛnɛret state.table rilayt kɔd, we dɛn kin yuz fɔ database kɔnɛkshɔn ɛn tebul initializayshɔn we di savis stat.
                 short: Jɛnɛret stet.tebul rilayt kɔd
         table:
+            flags:
+                template-state-table: ./state/table.go fayl de jenarayz tɛmplat pat
             long: Ɔl di rilayt fɛnshɔn dɛn fɔ jenarayz tebul fɔ stetful risɔs ɔ statik risɔs manejmɛnt fɔ biznɛs savis
             short: Ɔl di rilayt fɛnshɔn dɛn fɔ jenarayz tebul dɛn
     group:

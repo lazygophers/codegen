@@ -28,6 +28,10 @@ var GenAllHooks = []GenHook{
 var allCmd = &cobra.Command{
 	Use:     "all",
 	Aliases: []string{"a", "all-actions"},
+	PersistentPreRunE: func(cmd *cobra.Command, args []string) (err error) {
+		mergeStateFlags(cmd)
+		return nil
+	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		for _, hook := range GenAllHooks {
 			err = hook(cmd, args)

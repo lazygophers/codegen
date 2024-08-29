@@ -95,6 +95,8 @@ cli:
                 long: Kubyara leta.ibisobanuro bifitanye isano na code, ikoreshwa muguhuza data base no gutangiza imbonerahamwe mugihe serivisi itangiye.
                 short: Gukora leta.kode ifitanye isano
         table:
+            flags:
+                template-state-table: ./state/table.go dosiye itanga inyandikorugero yinzira
             long: Imirimo yose ijyanye no kubyara imbonerahamwe yumutungo wa leta cyangwa imicungire yumutungo wa serivisi zubucuruzi
             short: Imikorere yose ijyanye no kubyara imbonerahamwe
     group:

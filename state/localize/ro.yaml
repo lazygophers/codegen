@@ -95,6 +95,8 @@ cli:
                 long: Generați cod asociat state.table, utilizat pentru conexiunea la baza de date și inițializarea tabelului atunci când serviciul este pornit.
                 short: Generați codul legat de starea tabelului
         table:
+            flags:
+                template-state-table: Fișierul ./state/table.go generează calea șablonului
             long: Toate funcțiile conexe de generare a tabelelor pentru gestionarea resurselor statice sau statice a serviciilor de afaceri
             short: Toate funcțiile conexe pentru generarea tabelelor
     group:

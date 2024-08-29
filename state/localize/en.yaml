@@ -95,6 +95,8 @@ cli:
                 long: Generate state.table related code, used for database connection and table initialization when the service is started.
                 short: Generate state.table related code
         table:
+            flags:
+                template-state-table: ./state/table.go file generates template path
             long: All related functions of generating tables for stateful resource or static resource management of business services
             short: All related functions for generating tables
     group:

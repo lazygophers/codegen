@@ -95,6 +95,8 @@ cli:
                 long: Generirajte kod povezan sa state.table, koji se koristi za povezivanje baze podataka i inicijalizaciju tablice kada se servis pokrene.
                 short: Generirajte kod povezan sa stanjem.tabela
         table:
+            flags:
+                template-state-table: ./state/table.go fajl generiše putanju šablona
             long: Sve povezane funkcije generiranja tabela za upravljanje resursima sa stanjem ili statičko upravljanje resursima poslovnih usluga
             short: Sve povezane funkcije za generiranje tablica
     group:
