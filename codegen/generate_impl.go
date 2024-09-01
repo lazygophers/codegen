@@ -83,10 +83,38 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 	log.Infof("gen impl action %s", rpc.genOption.Action)
 
 	args := map[string]any{
-		"PB":           pb,
-		"RpcName":      rpc.Name,
-		"RequestType":  rpc.rpc.RequestType,
-		"ResponseType": rpc.rpc.ReturnsType,
+		"PB":              pb,
+		"RpcName":         rpc.Name,
+		"RequestPackage":  pb.GoPackageName(),
+		"RequestType":     rpc.rpc.RequestType,
+		"ResponsePackage": pb.GoPackageName(),
+		"ResponseType":    rpc.rpc.ReturnsType,
+	}
+
+	if strings.Contains(rpc.rpc.RequestType, ".") {
+		text := rpc.rpc.RequestType
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["RequestType"] = text[idx+1:]
+			text = text[:idx]
+		}
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["RequestPackage"] = text[idx+1:]
+		} else {
+			args["RequestPackage"] = text
+		}
+	}
+
+	if strings.Contains(rpc.rpc.ReturnsType, ".") {
+		text := rpc.rpc.ReturnsType
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["ResponseType"] = text[idx+1:]
+			text = text[:idx]
+		}
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["ResponsePackage"] = text[idx+1:]
+		} else {
+			args["ResponsePackage"] = text
+		}
 	}
 
 	if rpc.genOption.Model != "" {
@@ -450,6 +478,32 @@ func generateImplClient(pb *PbPackage, rpc *PbRPC) (err error) {
 		"RequestType":  rpc.rpc.RequestType,
 		"ResponseType": rpc.rpc.ReturnsType,
 		"RPC":          pbRpc2Route(rpc),
+	}
+
+	if strings.Contains(rpc.rpc.RequestType, ".") {
+		text := rpc.rpc.RequestType
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["RequestType"] = text[idx+1:]
+			text = text[:idx]
+		}
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["RequestPackage"] = text[idx+1:]
+		} else {
+			args["RequestPackage"] = text
+		}
+	}
+
+	if strings.Contains(rpc.rpc.ReturnsType, ".") {
+		text := rpc.rpc.ReturnsType
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["ResponseType"] = text[idx+1:]
+			text = text[:idx]
+		}
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			args["ResponsePackage"] = text[idx+1:]
+		} else {
+			args["ResponsePackage"] = text
+		}
 	}
 
 	if rpc.genOption.Model != "" {
