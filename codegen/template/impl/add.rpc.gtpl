@@ -12,7 +12,7 @@ func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ .RequestType 
 		return nil, err
 	}
 
-	rsp.{{ ToCamel (TrimPrefix .Model "Model") }} = &{{ ToSnake (TrimPrefix .Model "Model") }}
+	rsp.{{ ToCamel (TrimPrefix .Model "Model") }} = &{{ ToSmallCamel (TrimPrefix .Model "Model") }}
 
 	return &rsp, nil
 }
