@@ -1,5 +1,5 @@
-func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ .RequestType }}) (*{{ .PB.GoPackageName }}.{{ .ResponseType }}, error) {
-	var rsp {{ .PB.GoPackageName }}.{{ .ResponseType }}
+func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .RequestPackage }}.{{ .RequestType }}) (*{{ .ResponsePackage }}.{{ .ResponseType }}, error) {
+	var rsp {{ .ResponsePackage }}.{{ .ResponseType }}
 
 	err := state.{{ ToCamel (TrimPrefix .Model "Model") }}.
 		NewScoop().
