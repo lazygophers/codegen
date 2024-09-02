@@ -239,9 +239,6 @@ func (p *PbRPC) walk() {
 			return
 		}
 
-		log.Info(v)
-		log.Info(gen)
-
 		if gen.Role != "" {
 			p.genOption.Role = gen.Role
 		}
