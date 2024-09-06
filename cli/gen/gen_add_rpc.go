@@ -48,11 +48,11 @@ var addRpcCmd = &cobra.Command{
 				}
 			}
 
-			// 给名字变成驼峰
+			// 给名字变成驼峰ca
 			if msg == nil {
 				msg = pb.GetMessage(stringx.ToCamel(v))
 				if msg != nil {
-					opt.Model = v
+					opt.Model = stringx.ToCamel(v)
 				}
 			}
 
