@@ -190,6 +190,11 @@ type CfgTables struct {
 	DisableFieldDeletedAt bool `json:"disable-field-deleted-at,omitempty" yaml:"disable-field-deleted-at,omitempty" toml:"disable-field-deleted-at,omitempty"`
 	// 是否禁用自动添加 gorm tag: column
 	DisableGormTagColumn bool `json:"disable-gorm-tag-column,omitempty" yaml:"disable-gorm-tag-column,omitempty" toml:"disable-gorm-tag-column,omitempty"`
+
+	// 是否禁用关于错误：数据未找到的指定错误生成
+	DisableErrorNotFound bool `json:"disable_error_not_found,omitempty" toml:"disable_error_not_found,omitempty" yaml:"disable-error-not-found,omitempty"`
+	// 是否禁用关于错误：唯一键冲突的指定错误生成
+	DisableErrorDuplicateKey bool `json:"disable-error-duplicate-key,omitempty" toml:"disable-error-duplicate-key,omitempty" yaml:"disable-error-duplicate-key,omitempty"`
 }
 
 func (p *CfgTables) apply() {

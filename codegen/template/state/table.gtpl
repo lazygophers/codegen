@@ -23,7 +23,9 @@ func ConnectDatabase() (err error) {
 		return err
 	}
 
-{{ range $key, $value := .Models}}    {{TrimPrefix $value "Model"}} = db.NewModel[{{ $.PB.GoPackageName }}.{{ $value }}](Db()).SetNotFound(xerror.NewError(int32({{ $.PB.GoPackageName }}.ErrCode_{{TrimPrefix $value "Model"}}NotFound)))
+{{ range $key, $value := .Models}}    {{TrimPrefix $value "Model"}} = db.NewModel[{{ $.PB.GoPackageName }}.{{ $value }}](Db()){{ if $.EnableErrorNotFound }}.
+		SetNotFound(xerror.NewError(int32({{ $.PB.GoPackageName }}.ErrCode_{{TrimPrefix $value "Model"}}NotFound))){{ end }}{{ if $.EnableErrorDuplicateKey }}.
+		SetDuplicatedKeyError(xerror.NewError(int32({{ $.PB.GoPackageName }}.ErrCode_{{TrimPrefix $value "Model"}}DuplicateKey))){{ end }}
 {{ end }}
 	log.Info("connect mysql successfully")
 

@@ -189,6 +189,11 @@ tables:
     # 关闭自动生成 column 的gorm tag，默认为 false
     disable-gorm-tag-column: false
 
+    # 关闭关于错误：数据未找到的指定错误生成
+    disable-error-not_found: false
+    # 关闭关于错误：唯一键冲突的指定错误生成
+    disable-error-duplicate_key: false
+
 # go.mod 相关配置
 go-mod:
     # 对 go.mod 相关 api 请求时用的代理地址，如果不填则使用系统配置的第一个
