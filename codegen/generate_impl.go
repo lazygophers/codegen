@@ -83,10 +83,12 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 	log.Infof("gen impl action %s", rpc.genOption.Action)
 
 	args := map[string]any{
-		"PB":           pb,
-		"RpcName":      rpc.Name,
-		"RequestType":  rpc.rpc.RequestType,
-		"ResponseType": rpc.rpc.ReturnsType,
+		"PB":              pb,
+		"RpcName":         rpc.Name,
+		"RequestType":     rpc.RequestType(),
+		"ResponseType":    rpc.ReturnsType(),
+		"RequestPackage":  rpc.RequestPackage(),
+		"ResponsePackage": rpc.ResponsePackage(),
 	}
 
 	if rpc.genOption.Model != "" {
@@ -445,11 +447,13 @@ func generateImplClient(pb *PbPackage, rpc *PbRPC) (err error) {
 	pterm.Info.Printfln("try generate impl client %s", rpc.Name)
 
 	args := map[string]any{
-		"PB":           pb,
-		"RpcName":      rpc.Name,
-		"RequestType":  rpc.rpc.RequestType,
-		"ResponseType": rpc.rpc.ReturnsType,
-		"RPC":          pbRpc2Route(rpc),
+		"PB":              pb,
+		"RpcName":         rpc.Name,
+		"RequestType":     rpc.RequestType(),
+		"ResponseType":    rpc.ReturnsType(),
+		"RequestPackage":  rpc.RequestPackage(),
+		"ResponsePackage": rpc.ResponsePackage(),
+		"RPC":             pbRpc2Route(rpc),
 	}
 
 	if rpc.genOption.Model != "" {

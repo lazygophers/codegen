@@ -1,5 +1,5 @@
-func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ .RequestType }}) (*{{ .PB.GoPackageName }}.{{ .ResponseType }}, error) {
-	var rsp {{ .PB.GoPackageName }}.{{ .ResponseType }}
+func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .RequestPackage }}.{{ .RequestType }}) (*{{ .ResponsePackage }}.{{ .ResponseType }}, error) {
+	var rsp {{ .ResponsePackage }}.{{ .ResponseType }}
 
 	{{ ToSmallCamel (TrimPrefix .Model "Model") }} := *req.{{ ToCamel (TrimPrefix .Model "Model") }}
 	{{ ToSmallCamel (TrimPrefix .Model "Model") }}.{{ ToCamel .PrimaryKey }} = 0
@@ -12,7 +12,7 @@ func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .PB.GoPackageName }}.{{ .RequestType 
 		return nil, err
 	}
 
-	rsp.{{ ToCamel (TrimPrefix .Model "Model") }} = &{{ ToSnake (TrimPrefix .Model "Model") }}
+	rsp.{{ ToCamel (TrimPrefix .Model "Model") }} = &{{ ToSmallCamel (TrimPrefix .Model "Model") }}
 
 	return &rsp, nil
 }

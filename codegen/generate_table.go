@@ -26,7 +26,9 @@ func GenerateStateTable(pb *PbPackage) (err error) {
 
 	// table 文件为覆盖生成
 	args := map[string]interface{}{
-		"PB": pb,
+		"PB":                      pb,
+		"EnableErrorNotFound":     !state.Config.Tables.DisableErrorNotFound,
+		"EnableErrorDuplicateKey": !state.Config.Tables.DisableErrorDuplicateKey,
 	}
 
 	// 读取 Models

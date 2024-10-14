@@ -48,6 +48,14 @@ var addRpcCmd = &cobra.Command{
 				}
 			}
 
+			// 给名字变成驼峰ca
+			if msg == nil {
+				msg = pb.GetMessage(stringx.ToCamel(v))
+				if msg != nil {
+					opt.Model = stringx.ToCamel(v)
+				}
+			}
+
 			if msg == nil {
 				log.Errorf("not found model:%v", v)
 				pterm.Error.Printfln("not found model:%v", v)

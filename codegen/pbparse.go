@@ -173,13 +173,43 @@ type PbRPC struct {
 	rpc  *proto.RPC
 	Name string
 
-	options   map[string]map[string]string
-	comment   *PbComment
-	genOption *PbRpcGenOptions
+	options         map[string]map[string]string
+	comment         *PbComment
+	genOption       *PbRpcGenOptions
+	requestType     string
+	returnsType     string
+	requestPackage  string
+	responsePackage string
+}
+
+func (p *PbRPC) setDefaultPackage(pkg string) {
+	if p.requestPackage == "" {
+		p.requestPackage = pkg
+	}
+
+	if p.responsePackage == "" {
+		p.responsePackage = pkg
+	}
 }
 
 func (p *PbRPC) RPC() *proto.RPC {
 	return p.rpc
+}
+
+func (p *PbRPC) RequestType() string {
+	return p.requestType
+}
+
+func (p *PbRPC) ReturnsType() string {
+	return p.returnsType
+}
+
+func (p *PbRPC) RequestPackage() string {
+	return p.requestPackage
+}
+
+func (p *PbRPC) ResponsePackage() string {
+	return p.responsePackage
 }
 
 func (p *PbRPC) walk() {
@@ -208,9 +238,6 @@ func (p *PbRPC) walk() {
 			log.Panicf("err:%v", err)
 			return
 		}
-
-		log.Info(v)
-		log.Info(gen)
 
 		if gen.Role != "" {
 			p.genOption.Role = gen.Role
@@ -272,6 +299,33 @@ func (p *PbRPC) walk() {
 			p.genOption.GenTo = "impl"
 		}
 	}
+
+	if strings.Contains(p.rpc.RequestType, ".") {
+		text := p.rpc.RequestType
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			p.requestType = text[idx+1:]
+			text = text[:idx]
+		}
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			p.requestPackage = text[idx+1:]
+		} else {
+			p.requestPackage = text
+		}
+	}
+
+	if strings.Contains(p.rpc.ReturnsType, ".") {
+		text := p.rpc.ReturnsType
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			p.requestType = text[idx+1:]
+			text = text[:idx]
+		}
+		if idx := strings.LastIndex(text, "."); idx > 0 {
+			p.responsePackage = text[idx+1:]
+		} else {
+			p.responsePackage = text
+		}
+	}
+
 }
 
 func NewPbRPC(rpc *proto.RPC) *PbRPC {
@@ -283,7 +337,10 @@ func NewPbRPC(rpc *proto.RPC) *PbRPC {
 			Method: "POST",
 			Path:   "/" + rpc.Name,
 		},
+		requestType: rpc.RequestType,
+		returnsType: rpc.ReturnsType,
 	}
+
 	p.walk()
 	return p
 }
@@ -756,6 +813,8 @@ func (p *PbPackage) Walk() {
 		}),
 	)
 
+	// 处理一下option
+
 	if o, ok := p.optionMap["go_package"]; ok {
 		p.RawGoPackage = o.Value
 		idx := strings.Index(p.RawGoPackage, ";")
@@ -778,6 +837,11 @@ func (p *PbPackage) Walk() {
 	} else {
 		p.Host = "*"
 	}
+
+	// 回填一些默认值
+	candy.Each(p.rpcs, func(r *PbRPC) {
+		r.setDefaultPackage(p.PackageName())
+	})
 }
 
 func NewPbPackage(protoFilePath string, p *proto.Proto) *PbPackage {
