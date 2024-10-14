@@ -141,28 +141,33 @@ func InjectTagWriteFile(inputPath string, areas []textArea) error {
 	return nil
 }
 
-func gormTagStr2Map(s string) map[string]string {
+func gormTagStr2Map(items []string) map[string]string {
 	m := make(map[string]string)
-	for _, v := range strings.Split(s, ";") {
-		idx := strings.Index(v, ":")
-		if idx < 0 {
-			m[v] = ""
-		} else {
-			m[v[:idx]] = v[idx+1:]
+
+	for _, item := range items {
+		for _, v := range strings.Split(item, ";") {
+			idx := strings.Index(v, ":")
+			if idx < 0 {
+				m[v] = ""
+			} else {
+				m[v[:idx]] = v[idx+1:]
+			}
 		}
 	}
 
 	return m
 }
 
-func tagStr2Map(s string) map[string]string {
+func tagStr2Map(items []string) map[string]string {
 	m := make(map[string]string)
-	for _, v := range strings.Split(s, ",") {
-		idx := strings.Index(v, "=")
-		if idx < 0 {
-			m[v] = ""
-		} else {
-			m[v[:idx]] = v[idx+1:]
+	for _, item := range items {
+		for _, v := range strings.Split(item, ",") {
+			idx := strings.Index(v, "=")
+			if idx < 0 {
+				m[v] = ""
+			} else {
+				m[v[:idx]] = v[idx+1:]
+			}
 		}
 	}
 
@@ -314,9 +319,64 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				}
 			}
 
-			tagsMap := state.Config.DefaultTag[fieldName]
-			if len(tagsMap) == 0 {
-				tagsMap = make(map[string]string)
+			// 先按照类型获取一下
+			var getFieldType func(xx ast.Expr) string
+			getFieldType = func(xx ast.Expr) string {
+				switch x := xx.(type) {
+				case *ast.Ident:
+					return x.Name
+
+				case *ast.StarExpr:
+					return "*" + getFieldType(x.X)
+
+				case *ast.ArrayType:
+					return "array"
+
+				case *ast.MapType:
+					return "map"
+
+				case *ast.SelectorExpr:
+					return "*" + getFieldType(x.X)
+
+				default:
+					log.Panicf("unknown type %T", x)
+				}
+
+				return ""
+			}
+
+			fieldType := getFieldType(field.Type)
+
+			log.Infof("field type: %s", fieldType)
+
+			tagsMap := make(map[string][]string)
+
+			if tm := state.Config.DefaultTag[fieldType]; tm != nil {
+				for k, v := range tm {
+					tagsMap[k] = append(tagsMap[k], v)
+				}
+			}
+			switch fieldType {
+			case "int32", "int64", "uint32", "uint64", "sint32", "sint64":
+
+			case "float", "double", "float32", "float64":
+
+			case "string", "bytes":
+
+			case "bool":
+
+			default:
+				if tm := state.Config.DefaultTag["object"]; tm != nil {
+					for k, v := range tm {
+						tagsMap[k] = append(tagsMap[k], v)
+					}
+				}
+			}
+
+			if tm := state.Config.DefaultTag[fieldName]; tm != nil {
+				for k, v := range tm {
+					tagsMap[k] = append(tagsMap[k], v)
+				}
 			}
 
 			if isModelStruct {
@@ -329,7 +389,6 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 						"column": fieldName,
 					}, injectTags.get("gorm"))
 				}
-
 			}
 
 			for key, value := range tagsMap {

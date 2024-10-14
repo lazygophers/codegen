@@ -190,6 +190,8 @@ type CfgTables struct {
 	DisableFieldDeletedAt bool `json:"disable-field-deleted-at,omitempty" yaml:"disable-field-deleted-at,omitempty" toml:"disable-field-deleted-at,omitempty"`
 	// 是否禁用自动添加 gorm tag: column
 	DisableGormTagColumn bool `json:"disable-gorm-tag-column,omitempty" yaml:"disable-gorm-tag-column,omitempty" toml:"disable-gorm-tag-column,omitempty"`
+	// 是否禁用自动添加字段类型相关的内容
+	DisableFieldType bool `json:"disable-field-type,omitempty" yaml:"disable-field-type,omitempty" tom:"disable-field-type,omitempty"`
 
 	// 是否禁用关于错误：数据未找到的指定错误生成
 	DisableErrorNotFound bool `json:"disable_error_not_found,omitempty" toml:"disable_error_not_found,omitempty" yaml:"disable-error-not-found,omitempty"`
@@ -392,6 +394,67 @@ func (p *Cfg) apply() (err error) {
 		} else if p.Tables.DisableFieldDeletedAt && ok {
 			delete(p.DefaultTag["gorm"], "deleted_at")
 		}
+
+		addBoolType := func(typ string) {
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "default:0;not null:type:tinyint(1)"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addIntegerType := func(typ string) {
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "not null:type:bigint(20)"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addFloatingType := func(typ string) {
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "not null;type:decimal(65,8)"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addStringType := func(typ string) {
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "type:varchar(255);not null"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addObjectType := func(typ string) {
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "type:json;not null"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addBoolType("bool")
+
+		addIntegerType("int32")
+		addIntegerType("int64")
+		addIntegerType("uint32")
+		addIntegerType("uint64")
+		addIntegerType("sint64")
+		addIntegerType("sint32")
+
+		addFloatingType("float")
+		addFloatingType("double")
+		addFloatingType("fixed32")
+		addFloatingType("fixed64")
+
+		addStringType("string")
+		addStringType("bytes")
+
+		addObjectType("array")
+		addObjectType("map")
+		addObjectType("object")
 
 		{
 			newTag := make(map[string]map[string]string)
