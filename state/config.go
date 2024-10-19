@@ -431,19 +431,19 @@ func (p *Cfg) apply() (err error) {
 			}
 		}
 
-		addTextType := func(typ string) {
-			typ = "@" + typ
-			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "type:text"
-			} else if p.Tables.DisableFieldType && ok {
-				delete(p.DefaultTag["gorm"], typ)
-			}
-		}
+		//addTextType := func(typ string) {
+		//	typ = "@" + typ
+		//	if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+		//		p.DefaultTag["gorm"][typ] = "type:text"
+		//	} else if p.Tables.DisableFieldType && ok {
+		//		delete(p.DefaultTag["gorm"], typ)
+		//	}
+		//}
 
 		addObjectType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "type:json"
+				p.DefaultTag["gorm"][typ] = "type:json;serializer:json"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
@@ -466,7 +466,7 @@ func (p *Cfg) apply() (err error) {
 		addStringType("string")
 		addStringType("bytes")
 
-		addTextType("array")
+		addObjectType("array")
 		addObjectType("map")
 		addObjectType("object")
 
