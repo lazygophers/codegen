@@ -396,30 +396,34 @@ func (p *Cfg) apply() (err error) {
 		}
 
 		addBoolType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "default:0;not null:type:tinyint(1)"
+				p.DefaultTag["gorm"][typ] = "default:0;not null;type:tinyint(1)"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
 		}
 
 		addIntegerType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null:type:bigint(20)"
+				p.DefaultTag["gorm"][typ] = "not null;type:bigint(20)"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
 		}
 
 		addFloatingType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;type:decimal(65,8)"
+				p.DefaultTag["gorm"][typ] = "not null;type:decimal(65,8);default:0"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
 		}
 
 		addStringType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
 				p.DefaultTag["gorm"][typ] = "type:varchar(255);not null"
 			} else if p.Tables.DisableFieldType && ok {
@@ -427,9 +431,19 @@ func (p *Cfg) apply() (err error) {
 			}
 		}
 
-		addObjectType := func(typ string) {
+		addTextType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "type:json;not null"
+				p.DefaultTag["gorm"][typ] = "type:text"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addObjectType := func(typ string) {
+			typ = "@" + typ
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "type:json"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
@@ -452,7 +466,7 @@ func (p *Cfg) apply() (err error) {
 		addStringType("string")
 		addStringType("bytes")
 
-		addObjectType("array")
+		addTextType("array")
 		addObjectType("map")
 		addObjectType("object")
 

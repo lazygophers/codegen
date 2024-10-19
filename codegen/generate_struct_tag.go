@@ -321,13 +321,43 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			// 先按照类型获取一下
 			var getFieldType func(xx ast.Expr) string
-			getFieldType = func(xx ast.Expr) string {
+			var getObjType func(xx *ast.Object) string
+
+			getObjType = func(xx *ast.Object) string {
+				if xx == nil {
+					return ""
+				}
+
+				if xx.Decl != nil {
+					switch x := xx.Decl.(type) {
+					case *ast.TypeSpec:
+						return getFieldType(x.Type)
+
+					default:
+						log.Panicf("unknown type %T", x)
+					}
+				}
+
+				return ""
+			}
+
+			getFieldType = func(xx ast.Expr) (name string) {
 				switch x := xx.(type) {
 				case *ast.Ident:
+					name = getObjType(x.Obj)
+					if name != "" {
+						return name
+					}
+
 					return x.Name
 
 				case *ast.StarExpr:
-					return "*" + getFieldType(x.X)
+					name = getFieldType(x.X)
+					if name == "" {
+						return ""
+					}
+
+					return "*" + name
 
 				case *ast.ArrayType:
 					return "array"
@@ -336,7 +366,11 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 					return "map"
 
 				case *ast.SelectorExpr:
-					return "*" + getFieldType(x.X)
+					// TODO
+					return ""
+
+				case *ast.StructType:
+					return "object"
 
 				default:
 					log.Panicf("unknown type %T", x)
@@ -347,16 +381,19 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			fieldType := getFieldType(field.Type)
 
-			log.Infof("field type: %s", fieldType)
+			log.Infof("%s field type: %s", fieldName, fieldType)
 
 			tagsMap := make(map[string][]string)
 
-			if tm := state.Config.DefaultTag[fieldType]; tm != nil {
+			if tm := state.Config.DefaultTag["@"+fieldType]; tm != nil {
 				for k, v := range tm {
 					tagsMap[k] = append(tagsMap[k], v)
 				}
 			}
+
 			switch fieldType {
+			case "":
+
 			case "int32", "int64", "uint32", "uint64", "sint32", "sint64":
 
 			case "float", "double", "float32", "float64":
@@ -365,8 +402,14 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			case "bool":
 
+			case "array":
+
+			case "map":
+
+			case "object":
+
 			default:
-				if tm := state.Config.DefaultTag["object"]; tm != nil {
+				if tm := state.Config.DefaultTag["@object"]; tm != nil {
 					for k, v := range tm {
 						tagsMap[k] = append(tagsMap[k], v)
 					}
