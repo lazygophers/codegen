@@ -8,7 +8,7 @@ func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .RequestPackage }}.{{ .RequestType }}
 			scoop.Where({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "string-slice" }}
-		StringSlice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value string) error {
+		StringSlice(int32({{ $.PB.GoPackageName }}.{{ $value.KeyField }}), func(value []string) error {
 			scoop.In({{ $.PB.GoPackageName }}.Db{{ $value.FieldName }}, value)
 			return nil
 		}).{{ else if eq $value.FieldType "like" }}
