@@ -138,7 +138,7 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 				case "str", "string":
 					opt.FieldType = "string"
 
-				case "strs", "stringslice", "string-slice":
+				case "strs", "stringslice", "string-slice", "[]string":
 					opt.FieldType = "string-slice"
 
 				case "like":
@@ -189,40 +189,40 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 				case "b", "bool":
 					opt.FieldType = "bool"
 
-				case "is", "ints", "intslice", "int-slice":
+				case "is", "ints", "intslice", "int-slice", "[]int":
 					opt.FieldType = "int-slice"
 
-				case "i8s", "int8s", "int8slice", "int8-slice":
+				case "i8s", "int8s", "int8slice", "int8-slice", "[]int8":
 					opt.FieldType = "int8-slice"
 
-				case "i16s", "int16s", "int16slice", "int16-slice":
+				case "i16s", "int16s", "int16slice", "int16-slice", "[]int16":
 					opt.FieldType = "int16-slice"
 
-				case "i32s", "int32s", "int32slice", "int32-slice":
+				case "i32s", "int32s", "int32slice", "int32-slice", "[]int32":
 					opt.FieldType = "int32-slice"
 
-				case "i64s", "int64s", "int64slice", "int64-slice":
+				case "i64s", "int64s", "int64slice", "int64-slice", "[]int64":
 					opt.FieldType = "int64-slice"
 
-				case "us", "uints", "uintslice", "uint-slice":
+				case "us", "uints", "uintslice", "uint-slice", "[]uint":
 					opt.FieldType = "uint-slice"
 
-				case "u16s", "uint16s", "uint16slice", "uint16-slice":
+				case "u16s", "uint16s", "uint16slice", "uint16-slice", "[]uint16":
 					opt.FieldType = "uint16-slice"
 
-				case "u32s", "uint32s", "uint32slice", "uint32-slice":
+				case "u32s", "uint32s", "uint32slice", "uint32-slice", "[]uint32":
 					opt.FieldType = "uint32-slice"
 
-				case "u64s", "uint64s", "uint64slice", "uint64-slice":
+				case "u64s", "uint64s", "uint64slice", "uint64-slice", "[]uint64":
 					opt.FieldType = "uint64-slice"
 
-				case "f32s", "float32s", "float32slice", "float32-slice":
+				case "f32s", "float32s", "float32slice", "float32-slice", "[]float32":
 					opt.FieldType = "float32-slice"
 
-				case "f64s", "float64s", "float64slice", "float64-slice":
+				case "f64s", "float64s", "float64slice", "float64-slice", "[]float64":
 					opt.FieldType = "float64-slice"
 
-				case "bs", "bools", "boolslice", "bool-slice":
+				case "bs", "bools", "boolslice", "bool-slice", "[]bool":
 					opt.FieldType = "bool-slice"
 
 				}
