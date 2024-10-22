@@ -383,7 +383,12 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			log.Infof("%s field type: %s", fieldName, fieldType)
 
-			tagsMap := make(map[string][]string)
+			tagsMap := map[string][]string{
+				"yaml": {
+					CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+					"omitempty",
+				},
+			}
 
 			if tm := state.Config.DefaultTag["@"+fieldType]; tm != nil {
 				for k, v := range tm {

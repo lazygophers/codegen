@@ -120,6 +120,7 @@ func (p *CfgStyleName) MarshalYAML() (interface{}, error) {
 
 type CfgStyle struct {
 	Path CfgStyleName `json:"path,omitempty" yaml:"path,omitempty" toml:"path,omitempty"`
+	Yaml CfgStyleName `json:"yaml,omitempty" yaml:"yaml,omitempty" toml:"yaml,omitempty"`
 }
 
 type CfgProtoAction struct {
