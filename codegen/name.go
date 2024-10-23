@@ -15,7 +15,7 @@ type NameStyleHandler struct {
 var NameStyle = map[state.CfgStyleName]NameStyleHandler{
 	state.CfgStyleNameDefault: {
 		Base: func(source string) string {
-			return stringx.ToSnake(source)
+			return source
 		},
 		NamePath: func(source string, modele string) string {
 			return source
