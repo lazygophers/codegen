@@ -316,7 +316,7 @@ func (p *PbRPC) walk() {
 	if strings.Contains(p.rpc.ReturnsType, ".") {
 		text := p.rpc.ReturnsType
 		if idx := strings.LastIndex(text, "."); idx > 0 {
-			p.requestType = text[idx+1:]
+			p.responsePackage = text[idx+1:]
 			text = text[:idx]
 		}
 		if idx := strings.LastIndex(text, "."); idx > 0 {
