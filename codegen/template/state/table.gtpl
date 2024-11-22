@@ -27,7 +27,7 @@ func ConnectDatabase() (err error) {
 		SetNotFound(xerror.NewError(int32({{ $.PB.GoPackageName }}.ErrCode_{{TrimPrefix $value "Model"}}NotFound))){{ end }}{{ if $.EnableErrorDuplicateKey }}.
 		SetDuplicatedKeyError(xerror.NewError(int32({{ $.PB.GoPackageName }}.ErrCode_{{TrimPrefix $value "Model"}}DuplicateKey))){{ end }}
 {{ end }}
-	log.Info("connect mysql successfully")
+	log.Info("connect database successfully")
 
 	return nil
 }
