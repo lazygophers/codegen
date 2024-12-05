@@ -68,6 +68,15 @@ func (p tagItems) override() tagItems {
 			return s != ""
 		})
 
+		// 校验如果存在 - ，则跳过
+		if candy.Contains(v, "-") {
+			overrided = append(overrided, tagItem{
+				key:   k,
+				value: "-",
+			})
+			continue
+		}
+
 		switch k {
 		case "gorm":
 			overrided = append(overrided, tagItem{
