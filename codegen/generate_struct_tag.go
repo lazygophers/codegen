@@ -67,6 +67,7 @@ func (p tagItems) override() tagItems {
 		v = candy.Filter(v, func(s string) bool {
 			return s != ""
 		})
+		v = candy.Unique(v)
 
 		// 校验如果存在 - ，则跳过
 		if candy.Contains(v, "-") {
@@ -305,11 +306,11 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				}
 
 				for _, value := range strings.Split(values, seq) {
-					idx := strings.Index(value, connect)
-					if idx < 0 {
+					before, _, found := strings.Cut(value, connect)
+					if !found {
 						delete(m, value)
 					} else {
-						delete(m, value[:idx])
+						delete(m, before)
 					}
 				}
 

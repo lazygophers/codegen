@@ -373,19 +373,19 @@ func (p *Cfg) apply() (err error) {
 		}
 
 		if _, ok := p.DefaultTag["gorm"]["id"]; !p.Tables.DisableFieldId && !ok {
-			p.DefaultTag["gorm"]["id"] = "column:id;primaryKey;autoIncrement;not null"
+			p.DefaultTag["gorm"]["id"] = "column:id;primaryKey;autoIncrement;autoIncrementIncrement:1;not null"
 		} else if p.Tables.DisableFieldId && ok {
 			delete(p.DefaultTag["gorm"], "id")
 		}
 
 		if _, ok := p.DefaultTag["gorm"]["created_at"]; !p.Tables.DisableFieldCreatedAt && !ok {
-			p.DefaultTag["gorm"]["created_at"] = "autoCreateTime;<-:create;column:created_at;not null"
+			p.DefaultTag["gorm"]["created_at"] = "autoCreateTime;column:created_at;not null"
 		} else if p.Tables.DisableFieldCreatedAt && ok {
 			delete(p.DefaultTag["gorm"], "created_at")
 		}
 
 		if _, ok := p.DefaultTag["gorm"]["updated_at"]; !p.Tables.DisableFieldUpdatedAt && !ok {
-			p.DefaultTag["gorm"]["updated_at"] = "autoUpdateTime;<-:;column:updated_at;not null"
+			p.DefaultTag["gorm"]["updated_at"] = "autoUpdateTime;column:updated_at;not null"
 		} else if p.Tables.DisableFieldUpdatedAt && ok {
 			delete(p.DefaultTag["gorm"], "updated_at")
 		}
@@ -408,7 +408,7 @@ func (p *Cfg) apply() (err error) {
 		addIntegerType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;type:bigint(20)"
+				p.DefaultTag["gorm"][typ] = "not null;default:0"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
@@ -431,15 +431,6 @@ func (p *Cfg) apply() (err error) {
 				delete(p.DefaultTag["gorm"], typ)
 			}
 		}
-
-		//addTextType := func(typ string) {
-		//	typ = "@" + typ
-		//	if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-		//		p.DefaultTag["gorm"][typ] = "type:text"
-		//	} else if p.Tables.DisableFieldType && ok {
-		//		delete(p.DefaultTag["gorm"], typ)
-		//	}
-		//}
 
 		addObjectType := func(typ string) {
 			typ = "@" + typ
