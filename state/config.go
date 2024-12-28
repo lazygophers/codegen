@@ -408,7 +408,16 @@ func (p *Cfg) apply() (err error) {
 		addIntegerType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;default:0"
+				p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20)"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addUnsignedIntegerType := func(typ string) {
+			typ = "@" + typ
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20) unsigned"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
@@ -445,10 +454,10 @@ func (p *Cfg) apply() (err error) {
 
 		addIntegerType("int32")
 		addIntegerType("int64")
-		addIntegerType("uint32")
-		addIntegerType("uint64")
-		addIntegerType("sint64")
+		addUnsignedIntegerType("uint32")
+		addUnsignedIntegerType("uint64")
 		addIntegerType("sint32")
+		addIntegerType("sint64")
 
 		addFloatingType("float")
 		addFloatingType("double")
