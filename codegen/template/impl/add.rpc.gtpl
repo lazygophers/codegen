@@ -1,6 +1,7 @@
 func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .RequestPackage }}.{{ .RequestType }}) (*{{ .ResponsePackage }}.{{ .ResponseType }}, error) {
 	var rsp {{ .ResponsePackage }}.{{ .ResponseType }}
 
+	//goland:noinspection GoVetCopyLock
 	{{ ToSmallCamel (TrimPrefix .Model "Model") }} := *req.{{ ToCamel (TrimPrefix .Model "Model") }}
 	{{ ToSmallCamel (TrimPrefix .Model "Model") }}.{{ ToCamel .PrimaryKey }} = 0
 
