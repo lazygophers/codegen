@@ -80,6 +80,13 @@ func (p tagItems) override() tagItems {
 
 		switch k {
 		case "gorm":
+			if candy.Contains(v, "autoIncrement") {
+				// 自动的，不添加 default
+				v = candy.FilterNot(v, func(s string) bool {
+					return strings.Contains(s, "default:")
+				})
+			}
+
 			overrided = append(overrided, tagItem{
 				key:   k,
 				value: strings.Join(v, ";"),
