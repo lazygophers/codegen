@@ -1,7 +1,8 @@
 module github.com/lazygophers/codegen
 
-go 1.21.6
-toolchain go1.22.5
+go 1.22.0
+
+toolchain go1.23.4
 
 require (
 	github.com/Xuanwo/go-locale v1.1.0
@@ -9,11 +10,11 @@ require (
 	github.com/go-git/go-git/v5 v5.12.0
 	github.com/go-resty/resty/v2 v2.13.1
 	github.com/gookit/color v1.5.4
-	github.com/lazygophers/log v0.0.0-20241030030827-ca71ac40248e
+	github.com/lazygophers/log v0.0.0-20241229160530-2bac6f5670ab
 	github.com/lazygophers/lrpc v0.0.0-20240611132523-488159748780
-	github.com/lazygophers/utils v0.0.0-20241121150052-36d9f2cd02f1
+	github.com/lazygophers/utils v0.0.0-20241229161346-23023c36070c
 	github.com/pelletier/go-toml/v2 v2.2.3
-	github.com/pterm/pterm v0.12.79
+	github.com/pterm/pterm v0.12.80
 	github.com/spf13/cobra v1.8.1
 	go.uber.org/atomic v1.11.0
 	golang.org/x/mod v0.22.0
@@ -29,14 +30,14 @@ require (
 	dario.cat/mergo v1.0.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/ProtonMail/go-crypto v1.0.0 // indirect
-	github.com/bytedance/sonic v1.12.4 // indirect
+	github.com/bytedance/sonic v1.12.6 // indirect
 	github.com/bytedance/sonic/loader v0.2.1 // indirect
 	github.com/cloudflare/circl v1.3.7 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect
 	github.com/cloudwego/iasm v0.2.0 // indirect
 	github.com/containerd/console v1.0.4 // indirect
 	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
-	github.com/elliotchance/pie/v2 v2.9.0 // indirect
+	github.com/elliotchance/pie/v2 v2.9.1 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
 	github.com/go-git/go-billy/v5 v5.5.0 // indirect
@@ -51,7 +52,7 @@ require (
 	github.com/lestrrat-go/strftime v1.1.0 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
-	github.com/petermattis/goid v0.0.0-20241025130422-66cb2e6d7274 // indirect
+	github.com/petermattis/goid v0.0.0-20241211131331-93ee7e083c43 // indirect
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
@@ -65,12 +66,12 @@ require (
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/arch v0.12.0 // indirect
 	golang.org/x/crypto v0.31.0 // indirect
-	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f // indirect
-	golang.org/x/net v0.31.0 // indirect
+	golang.org/x/exp v0.0.0-20241217172543-b2144cdd0a67 // indirect
+	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/sync v0.10.0 // indirect
 	golang.org/x/sys v0.28.0 // indirect
 	golang.org/x/term v0.27.0 // indirect
-	golang.org/x/tools v0.27.0 // indirect
+	golang.org/x/tools v0.28.0 // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )

@@ -3,6 +3,7 @@ package codegen
 import (
 	"bytes"
 	"fmt"
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
@@ -153,7 +154,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 
 	// NOTE: 寻找主键
 	pkField := msg.PrimaryField()
-
+	
 	var rpcBlock string
 
 	for action, actionOpt := range opt.Action {
@@ -213,7 +214,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 			args["RpcName"] = rpcName
 			args["RequestType"] = rpcName + "Req"
 			args["ResponseType"] = rpcName + "Rsp"
-			args["Path"] = CoverageStyledName(rpcName, opt.Model)
+			args["Path"] = CoverageStyledNamePath(state.Config.Style.Path, rpcName, opt.Model)
 
 			// 处理 server.rpc
 			if rpc := pb.GetRPC(rpcName); rpc == nil {

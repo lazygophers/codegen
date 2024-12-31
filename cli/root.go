@@ -42,6 +42,7 @@ func Run() {
 	if err != nil {
 		pterm.Error.Printfln("load state error\n%s", err.Error())
 		log.Errorf("err:%v", err)
+		os.Exit(1)
 		return
 	}
 
@@ -59,6 +60,7 @@ func Run() {
 	err = rootCmd.Execute()
 	if err != nil {
 		log.Errorf("err:%v", err)
+		os.Exit(1)
 		return
 	}
 }

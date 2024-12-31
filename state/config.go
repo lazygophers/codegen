@@ -120,6 +120,7 @@ func (p *CfgStyleName) MarshalYAML() (interface{}, error) {
 
 type CfgStyle struct {
 	Path CfgStyleName `json:"path,omitempty" yaml:"path,omitempty" toml:"path,omitempty"`
+	Yaml CfgStyleName `json:"yaml,omitempty" yaml:"yaml,omitempty" toml:"yaml,omitempty"`
 }
 
 type CfgProtoAction struct {
@@ -372,19 +373,19 @@ func (p *Cfg) apply() (err error) {
 		}
 
 		if _, ok := p.DefaultTag["gorm"]["id"]; !p.Tables.DisableFieldId && !ok {
-			p.DefaultTag["gorm"]["id"] = "column:id;primaryKey;autoIncrement;not null"
+			p.DefaultTag["gorm"]["id"] = "column:id;primaryKey;autoIncrement;autoIncrementIncrement:1;not null"
 		} else if p.Tables.DisableFieldId && ok {
 			delete(p.DefaultTag["gorm"], "id")
 		}
 
 		if _, ok := p.DefaultTag["gorm"]["created_at"]; !p.Tables.DisableFieldCreatedAt && !ok {
-			p.DefaultTag["gorm"]["created_at"] = "autoCreateTime;<-:create;column:created_at;not null"
+			p.DefaultTag["gorm"]["created_at"] = "autoCreateTime;column:created_at;not null"
 		} else if p.Tables.DisableFieldCreatedAt && ok {
 			delete(p.DefaultTag["gorm"], "created_at")
 		}
 
 		if _, ok := p.DefaultTag["gorm"]["updated_at"]; !p.Tables.DisableFieldUpdatedAt && !ok {
-			p.DefaultTag["gorm"]["updated_at"] = "autoUpdateTime;<-:;column:updated_at;not null"
+			p.DefaultTag["gorm"]["updated_at"] = "autoUpdateTime;column:updated_at;not null"
 		} else if p.Tables.DisableFieldUpdatedAt && ok {
 			delete(p.DefaultTag["gorm"], "updated_at")
 		}
@@ -396,30 +397,43 @@ func (p *Cfg) apply() (err error) {
 		}
 
 		addBoolType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "default:0;not null:type:tinyint(1)"
+				p.DefaultTag["gorm"][typ] = "default:0;not null;type:tinyint(1)"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
 		}
 
 		addIntegerType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null:type:bigint(20)"
+				p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20)"
+			} else if p.Tables.DisableFieldType && ok {
+				delete(p.DefaultTag["gorm"], typ)
+			}
+		}
+
+		addUnsignedIntegerType := func(typ string) {
+			typ = "@" + typ
+			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
+				p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20) unsigned"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
 		}
 
 		addFloatingType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;type:decimal(65,8)"
+				p.DefaultTag["gorm"][typ] = "not null;type:decimal(65,8);default:0"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
 		}
 
 		addStringType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
 				p.DefaultTag["gorm"][typ] = "type:varchar(255);not null"
 			} else if p.Tables.DisableFieldType && ok {
@@ -428,8 +442,9 @@ func (p *Cfg) apply() (err error) {
 		}
 
 		addObjectType := func(typ string) {
+			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "type:json;not null"
+				p.DefaultTag["gorm"][typ] = "type:json;serializer:json"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
@@ -439,10 +454,10 @@ func (p *Cfg) apply() (err error) {
 
 		addIntegerType("int32")
 		addIntegerType("int64")
-		addIntegerType("uint32")
-		addIntegerType("uint64")
-		addIntegerType("sint64")
+		addUnsignedIntegerType("uint32")
+		addUnsignedIntegerType("uint64")
 		addIntegerType("sint32")
+		addIntegerType("sint64")
 
 		addFloatingType("float")
 		addFloatingType("double")

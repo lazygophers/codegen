@@ -1,12 +1,13 @@
 func {{ .RpcName }}(ctx *lrpc.Ctx, req *{{ .RequestPackage }}.{{ .RequestType }}) (*{{ .ResponsePackage }}.{{ .ResponseType }}, error) {
 	var rsp {{ .ResponsePackage }}.{{ .ResponseType }}
 
+	//goland:noinspection GoVetCopyLock
 	{{ ToSmallCamel (TrimPrefix .Model "Model") }} := req.{{ ToCamel (TrimPrefix .Model "Model") }}
 
 	err := state.{{ ToCamel (TrimPrefix .Model "Model") }}.
 		NewScoop().
 		Where("{{ .PrimaryKey }} = ?", {{ ToSmallCamel (TrimPrefix .Model "Model") }}.{{ ToCamel .PrimaryKey }}).
-		Updates(&{{ ToSmallCamel (TrimPrefix .Model "Model") }}).
+		Updates({{ ToSmallCamel (TrimPrefix .Model "Model") }}).
 		Error
 	if err != nil {
 		log.Errorf("err:%v", err)

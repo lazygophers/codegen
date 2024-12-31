@@ -67,9 +67,26 @@ func (p tagItems) override() tagItems {
 		v = candy.Filter(v, func(s string) bool {
 			return s != ""
 		})
+		v = candy.Unique(v)
+
+		// 校验如果存在 - ，则跳过
+		if candy.Contains(v, "-") {
+			overrided = append(overrided, tagItem{
+				key:   k,
+				value: "-",
+			})
+			continue
+		}
 
 		switch k {
 		case "gorm":
+			if candy.Contains(v, "autoIncrement") {
+				// 自动的，不添加 default
+				v = candy.FilterNot(v, func(s string) bool {
+					return strings.Contains(s, "default:")
+				})
+			}
+
 			overrided = append(overrided, tagItem{
 				key:   k,
 				value: strings.Join(v, ";"),
@@ -296,11 +313,11 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				}
 
 				for _, value := range strings.Split(values, seq) {
-					idx := strings.Index(value, connect)
-					if idx < 0 {
+					before, _, found := strings.Cut(value, connect)
+					if !found {
 						delete(m, value)
 					} else {
-						delete(m, value[:idx])
+						delete(m, before)
 					}
 				}
 
@@ -321,13 +338,43 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			// 先按照类型获取一下
 			var getFieldType func(xx ast.Expr) string
-			getFieldType = func(xx ast.Expr) string {
+			var getObjType func(xx *ast.Object) string
+
+			getObjType = func(xx *ast.Object) string {
+				if xx == nil {
+					return ""
+				}
+
+				if xx.Decl != nil {
+					switch x := xx.Decl.(type) {
+					case *ast.TypeSpec:
+						return getFieldType(x.Type)
+
+					default:
+						log.Panicf("unknown type %T", x)
+					}
+				}
+
+				return ""
+			}
+
+			getFieldType = func(xx ast.Expr) (name string) {
 				switch x := xx.(type) {
 				case *ast.Ident:
+					name = getObjType(x.Obj)
+					if name != "" {
+						return name
+					}
+
 					return x.Name
 
 				case *ast.StarExpr:
-					return "*" + getFieldType(x.X)
+					name = getFieldType(x.X)
+					if name == "" {
+						return ""
+					}
+
+					return "*" + name
 
 				case *ast.ArrayType:
 					return "array"
@@ -336,7 +383,11 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 					return "map"
 
 				case *ast.SelectorExpr:
-					return "*" + getFieldType(x.X)
+					// TODO
+					return ""
+
+				case *ast.StructType:
+					return "object"
 
 				default:
 					log.Panicf("unknown type %T", x)
@@ -347,16 +398,24 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			fieldType := getFieldType(field.Type)
 
-			log.Infof("field type: %s", fieldType)
+			log.Infof("%s field type: %s", fieldName, fieldType)
 
-			tagsMap := make(map[string][]string)
+			tagsMap := map[string][]string{
+				"yaml": {
+					CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+					"omitempty",
+				},
+			}
 
-			if tm := state.Config.DefaultTag[fieldType]; tm != nil {
+			if tm := state.Config.DefaultTag["@"+fieldType]; tm != nil {
 				for k, v := range tm {
 					tagsMap[k] = append(tagsMap[k], v)
 				}
 			}
+
 			switch fieldType {
+			case "":
+
 			case "int32", "int64", "uint32", "uint64", "sint32", "sint64":
 
 			case "float", "double", "float32", "float64":
@@ -365,8 +424,14 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			case "bool":
 
+			case "array":
+
+			case "map":
+
+			case "object":
+
 			default:
-				if tm := state.Config.DefaultTag["object"]; tm != nil {
+				if tm := state.Config.DefaultTag["@object"]; tm != nil {
 					for k, v := range tm {
 						tagsMap[k] = append(tagsMap[k], v)
 					}
