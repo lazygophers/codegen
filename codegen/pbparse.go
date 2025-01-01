@@ -127,6 +127,10 @@ type PbEnum struct {
 	fields []*PbEnumField
 }
 
+func (p *PbEnum) FieldList() []*PbEnumField {
+	return p.fields
+}
+
 func (p *PbEnum) Enum() *proto.Enum {
 	return p.enum
 }
@@ -212,6 +216,22 @@ func (p *PbRPC) ResponsePackage() string {
 	return p.responsePackage
 }
 
+func (p *PbRPC) Method() string {
+	if p.genOption.Method != "" {
+		return p.genOption.Method
+	}
+
+	return "POST"
+}
+
+func (p *PbRPC) Path() string {
+	if p.genOption.Path != "" {
+		return p.genOption.Path
+	}
+
+	return "/" + p.Name
+}
+
 func (p *PbRPC) walk() {
 	for _, option := range p.rpc.Options {
 		p.options[option.Name] = make(map[string]string, len(option.AggregatedConstants))
@@ -269,7 +289,7 @@ func (p *PbRPC) walk() {
 		}
 
 		if gen.Path != nil {
-			p.genOption.Path = *gen.Path
+			p.genOption.Path = "/" + strings.TrimPrefix(*gen.Path, "/")
 		}
 	}
 
@@ -475,6 +495,32 @@ type PbEnumField struct {
 	field    *proto.EnumField
 	comment  *PbComment
 	FullName string
+	Value    int32
+}
+
+func (p *PbEnumField) Desc() string {
+	// 先尝试找 @desc 标记
+	if p.comment != nil {
+		value, ok := p.comment.tags["desc"]
+		if ok && len(value.Lines()) > 0 {
+			return strings.Join(value.Lines(), "")
+		}
+	}
+
+	// 尝试找后面接着的注释
+	if p.field.InlineComment != nil && len(p.field.InlineComment.Lines) > 0 {
+		return strings.Join(p.field.InlineComment.Lines, "")
+	}
+
+	// 找空行标记
+	if p.comment != nil {
+		value, ok := p.comment.tags[""]
+		if ok && len(value.Lines()) > 0 {
+			return strings.Join(value.Lines(), "")
+		}
+	}
+
+	return ""
 }
 
 func (p *PbEnumField) FieldName() string {
@@ -496,6 +542,8 @@ func (p *PbEnumField) walk() {
 	if p.field.Comment != nil {
 		p.comment = NewPbComment(p.field.Comment)
 	}
+
+	p.Value = int32(p.field.Integer)
 }
 
 func NewPbEnumField(f *proto.EnumField) *PbEnumField {
