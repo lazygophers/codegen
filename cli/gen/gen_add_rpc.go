@@ -26,7 +26,11 @@ var addRpcCmd = &cobra.Command{
 		}
 
 		var msg *codegen.PbMessage
-		if v, err := cmd.Flags().GetString("model"); err == nil && v != "" {
+		if v, err := cmd.Flags().GetString("model"); err == nil && (v != "" || opt.GenTo != "") {
+			if v == "" {
+				v = opt.GenTo
+			}
+
 			// 先看一下加了 Model 的 时候存在
 			{
 				model := stringx.ToSnake(v)
