@@ -328,24 +328,21 @@ func (p *PbRPC) walk() {
 		}
 		if idx := strings.LastIndex(text, "."); idx > 0 {
 			p.requestPackage = text[idx+1:]
-		} else {
-			p.requestPackage = text
+			text = text[:idx]
 		}
 	}
 
 	if strings.Contains(p.rpc.ReturnsType, ".") {
 		text := p.rpc.ReturnsType
 		if idx := strings.LastIndex(text, "."); idx > 0 {
-			p.responsePackage = text[idx+1:]
+			p.returnsType = text[idx+1:]
 			text = text[:idx]
 		}
 		if idx := strings.LastIndex(text, "."); idx > 0 {
 			p.responsePackage = text[idx+1:]
-		} else {
-			p.responsePackage = text
+			text = text[:idx]
 		}
 	}
-
 }
 
 func NewPbRPC(rpc *proto.RPC) *PbRPC {
