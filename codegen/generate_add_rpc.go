@@ -29,13 +29,15 @@ type AddRpcOption struct {
 func (p *AddRpcOption) ParseActions(s string) {
 	candy.Each(strings.Split(s, ";"), func(item string) {
 		idx := strings.Index(item, ":")
-		if idx < 0 {
+		if idx < 0 && p.Action[item] != nil {
 			p.Action[item] = &AddRpcOptionAction{}
 			return
 		}
 
 		action := item[:idx]
-		p.Action[action] = &AddRpcOptionAction{}
+		if p.Action[action] == nil {
+			p.Action[action] = &AddRpcOptionAction{}
+		}
 
 		candy.Each(strings.Split(item[idx+1:], ","), func(item string) {
 			// TODO: 更多的格式解析
@@ -58,6 +60,8 @@ func (p *AddRpcOption) ParseActions(s string) {
 
 		action.Roles = candy.Unique(action.Roles)
 	}
+
+	log.Info()
 }
 
 func (p *AddRpcOption) ParseListOption(s string, msg *PbMessage) {
@@ -154,7 +158,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 
 	// NOTE: 寻找主键
 	pkField := msg.PrimaryField()
-	
+
 	var rpcBlock string
 
 	for action, actionOpt := range opt.Action {

@@ -435,7 +435,7 @@ func (p *Cfg) apply() (err error) {
 		addStringType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "type:varchar(255);not null"
+				p.DefaultTag["gorm"][typ] = "type:varchar(255);not null;default:''"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
