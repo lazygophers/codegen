@@ -259,6 +259,12 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 						}
 
 						tag := line[1:idx]
+
+						// NOTE: 插入一段特殊逻辑，后面在加别名配置
+						if tag == "v" {
+							tag = "validate"
+						}
+
 						injectTags = append(injectTags, tagItem{
 							key:   tag,
 							value: removeStrQuote(line[idx+1:]),
@@ -307,9 +313,11 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			addTag := func(key string, m map[string]string, values string) {
 				seq := ","
 				connect := "="
-				if key == "gorm" {
+				switch key {
+				case "gorm":
 					seq = ";"
 					connect = ":"
+
 				}
 
 				for _, value := range strings.Split(values, seq) {
