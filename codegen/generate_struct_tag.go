@@ -87,6 +87,24 @@ func (p tagItems) override() tagItems {
 				})
 			}
 
+			// 解析一下是否存在 type
+			for _, line := range v {
+				if !strings.HasPrefix(line, "type:") {
+					continue
+				}
+
+				// 针对特定类型，去掉默认值
+				switch strings.ToLower(strings.TrimPrefix(line, "type:")) {
+				case "text", "blob", "geometry", "json":
+					v = candy.FilterNot(v, func(s string) bool {
+						return strings.Contains(s, "default:")
+					})
+					
+				}
+
+				break
+			}
+
 			overrided = append(overrided, tagItem{
 				key:   k,
 				value: strings.Join(v, ";"),
