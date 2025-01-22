@@ -59,14 +59,22 @@ func Translate(c *TransacteConfig) error {
 	return nil
 }
 
-type BeforeTranslate func(key, value string) (skip bool)
+type (
+	BeforeTranslate func(lang *Language, key, source, dest string) (skip bool)
+	AfterTranslate  func(lang *Language, key, source, dest string)
+)
 
 var (
 	beforeTranslate BeforeTranslate
+	afterTranslate  AfterTranslate
 )
 
 func RegisterBeforeTranslate(fn BeforeTranslate) {
 	beforeTranslate = fn
+}
+
+func RegisterAfterTranslate(fn AfterTranslate) {
+	afterTranslate = fn
 }
 
 func translate(parent string, srcLocalize map[string]any, dstLang *Language, dstLocalize map[string]any, c *TransacteConfig) (err error) {
@@ -146,11 +154,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 		needTran := func() bool {
 			if beforeTranslate != nil {
 				if value, ok := dstLocalize[k]; ok {
-					if !beforeTranslate(parent+"."+k, anyx.ToString(value)) {
+					if !beforeTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(value)) {
 						return true
 					}
 				} else {
-					if !beforeTranslate(parent+"."+k, "") {
+					if !beforeTranslate(dstLang, parent+"."+k, anyx.ToString(v), "") {
 						return true
 					}
 				}
@@ -216,6 +224,10 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 
 				if !hasError {
 					dstLocalize[k] = strings.Join(tragetList, "\n")
+
+					if afterTranslate != nil {
+						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(tragetList, "\n"))
+					}
 				}
 			}
 
@@ -241,6 +253,10 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				)
 
 				dstLocalize[k] = anyx.ToString(v)
+
+				if afterTranslate != nil {
+					afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(v))
+				}
 			}
 
 			if needTran() {
