@@ -29,8 +29,13 @@ type AddRpcOption struct {
 func (p *AddRpcOption) ParseActions(s string) {
 	candy.Each(strings.Split(s, ";"), func(item string) {
 		idx := strings.Index(item, ":")
-		if idx < 0 && p.Action[item] != nil {
-			p.Action[item] = &AddRpcOptionAction{}
+		if idx <= 0 {
+			if p.Action[item] == nil {
+				p.Action[item] = &AddRpcOptionAction{}
+			}
+
+			p.Action[item].Roles = append(p.Action[item].Roles, "")
+
 			return
 		}
 
@@ -60,8 +65,6 @@ func (p *AddRpcOption) ParseActions(s string) {
 
 		action.Roles = candy.Unique(action.Roles)
 	}
-
-	log.Info()
 }
 
 func (p *AddRpcOption) ParseListOption(s string, msg *PbMessage) {
@@ -89,6 +92,9 @@ func (p *AddRpcOption) ParseListOption(s string, msg *PbMessage) {
 
 func NewAddRpcOption() *AddRpcOption {
 	return &AddRpcOption{
+		Model:       "",
+		GenTo:       "",
+		DefaultRole: "",
 		Action:      map[string]*AddRpcOptionAction{},
 		ListOptions: map[string]string{},
 	}
