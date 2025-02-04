@@ -373,7 +373,7 @@ func (p *Cfg) apply() (err error) {
 		}
 
 		if _, ok := p.DefaultTag["gorm"]["id"]; !p.Tables.DisableFieldId && !ok {
-			p.DefaultTag["gorm"]["id"] = "column:id;primaryKey;autoIncrement;autoIncrementIncrement:1;not null"
+			p.DefaultTag["gorm"]["id"] = "column:id;primaryKey;PRIMARY KEY;autoIncrement;AUTOINCREMENT;not null"
 		} else if p.Tables.DisableFieldId && ok {
 			delete(p.DefaultTag["gorm"], "id")
 		}
@@ -417,7 +417,7 @@ func (p *Cfg) apply() (err error) {
 		addUnsignedIntegerType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20) unsigned"
+				p.DefaultTag["gorm"][typ] = "not null;default:0;type:unsigned bigint(20)"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
