@@ -99,7 +99,7 @@ func (p tagItems) override() tagItems {
 					v = candy.FilterNot(v, func(s string) bool {
 						return strings.Contains(s, "default:")
 					})
-					
+
 				}
 
 				break
@@ -242,7 +242,7 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			continue
 		}
 
-		isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model") && !strings.Contains(typeSpec.Name.Name, "_")
+		//isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model") && !strings.Contains(typeSpec.Name.Name, "_")
 
 		log.Infof("find type %s", typeSpec.Name.Name)
 
@@ -335,7 +335,6 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				case "gorm":
 					seq = ";"
 					connect = ":"
-
 				}
 
 				for _, value := range strings.Split(values, seq) {
@@ -433,28 +432,35 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				},
 			}
 
-			if tm := state.Config.DefaultTag["@"+fieldType]; tm != nil {
+			// 按照字段名的 gorm 默认
+			if tm := state.Config.DefaultTag[fieldName]; tm != nil {
 				for k, v := range tm {
 					tagsMap[k] = append(tagsMap[k], v)
 				}
 			}
 
+			// 按照字段类型的 gorm 默认
 			switch fieldType {
 			case "":
-
+				fallthrough
 			case "int32", "int64", "uint32", "uint64", "sint32", "sint64":
-
+				fallthrough
 			case "float", "double", "float32", "float64":
-
+				fallthrough
 			case "string", "bytes":
-
+				fallthrough
 			case "bool":
-
+				fallthrough
 			case "array":
-
+				fallthrough
 			case "map":
-
+				fallthrough
 			case "object":
+				if tm := state.Config.DefaultTag["@"+fieldType]; tm != nil {
+					for k, v := range tm {
+						tagsMap[k] = append(tagsMap[k], v)
+					}
+				}
 
 			default:
 				if tm := state.Config.DefaultTag["@object"]; tm != nil {
@@ -464,30 +470,17 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				}
 			}
 
-			if tm := state.Config.DefaultTag[fieldName]; tm != nil {
-				for k, v := range tm {
-					tagsMap[k] = append(tagsMap[k], v)
-				}
+			if !state.Config.Tables.DisableGormTagColumn {
+				tagsMap["gorm"] = append(tagsMap["gorm"], "column:"+fieldName)
 			}
 
-			if isModelStruct {
-				if value, ok := tagsMap["gorm"]; ok {
-					addTag("gorm", gormTagStr2Map(value), injectTags.get("gorm"))
-				}
-
-				if !state.Config.Tables.DisableGormTagColumn {
-					addTag("gorm", map[string]string{
-						"column": fieldName,
-					}, injectTags.get("gorm"))
-				}
-			}
-
+			// 处理用户填写的
 			for key, value := range tagsMap {
 				if key == "gorm" {
-					continue
+					addTag("gorm", gormTagStr2Map(value), injectTags.get("gorm"))
+				} else {
+					addTag(key, tagStr2Map(value), injectTags.get(key))
 				}
-
-				addTag(key, tagStr2Map(value), injectTags.get(key))
 			}
 
 			injectTags = injectTags.override()
