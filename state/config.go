@@ -343,11 +343,8 @@ func (p *Cfg) apply() (err error) {
 	if p.Style == nil {
 		p.Style = new(CfgStyle)
 	}
-	err = defaults.SetDefaults(p.Style)
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
-	}
+
+	defaults.SetDefaults(p.Style)
 
 	if p.I18n == nil {
 		p.I18n = new(CfgI18n)
@@ -408,7 +405,8 @@ func (p *Cfg) apply() (err error) {
 		addIntegerType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20)"
+				//p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20)"
+				p.DefaultTag["gorm"][typ] = "not null;default:0"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
@@ -417,7 +415,8 @@ func (p *Cfg) apply() (err error) {
 		addUnsignedIntegerType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;default:0;type:unsigned bigint(20)"
+				//p.DefaultTag["gorm"][typ] = "not null;default:0;type:bigint(20) unsigned"
+				p.DefaultTag["gorm"][typ] = "not null;default:0"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}

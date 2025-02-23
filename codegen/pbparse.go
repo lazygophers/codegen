@@ -460,12 +460,20 @@ type PbMapField struct {
 	field *proto.MapField
 }
 
+func (p *PbMapField) Field() *proto.MapField {
+	return p.field
+}
+
 func (p *PbMapField) FieldName() string {
 	return p.Name
 }
 
 func (p *PbMapField) FieldType() string {
 	return p.field.Type
+}
+
+func (p *PbMapField) KeyType() string {
+	return p.field.KeyType
 }
 
 func (p *PbMapField) IsSlice() bool {
