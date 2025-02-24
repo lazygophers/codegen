@@ -328,7 +328,7 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			injectTags = injectTags.override()
 
-			addTag := func(key string, m map[string]string, values string) {
+			addTag := func(key string, m []string, values string) {
 				seq := ","
 				connect := "="
 				switch key {
@@ -337,27 +337,33 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 					connect = ":"
 				}
 
+				keyMap := make(map[string]bool)
 				for _, value := range strings.Split(values, seq) {
 					before, _, found := strings.Cut(value, connect)
 					if !found {
-						delete(m, value)
+						keyMap[value] = true
 					} else {
-						delete(m, before)
+						keyMap[before] = true
 					}
 				}
 
-				for k, v := range m {
-					if v == "" {
-						injectTags = append(injectTags, tagItem{
-							key:   key,
-							value: k,
-						})
+				for _, value := range m {
+					before, _, found := strings.Cut(value, connect)
+					if !found {
+						if keyMap[value] {
+							continue
+						}
+
 					} else {
-						injectTags = append(injectTags, tagItem{
-							key:   key,
-							value: k + connect + v,
-						})
+						if keyMap[before] {
+							continue
+						}
 					}
+
+					injectTags = append(injectTags, tagItem{
+						key:   key,
+						value: value,
+					})
 				}
 			}
 
@@ -477,9 +483,9 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			// 处理用户填写的
 			for key, value := range tagsMap {
 				if key == "gorm" {
-					addTag("gorm", gormTagStr2Map(value), injectTags.get("gorm"))
+					addTag("gorm", value, injectTags.get("gorm"))
 				} else {
-					addTag(key, tagStr2Map(value), injectTags.get(key))
+					addTag(key, value, injectTags.get(key))
 				}
 			}
 
