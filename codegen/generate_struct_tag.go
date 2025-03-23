@@ -59,15 +59,22 @@ func (p tagItems) override() tagItems {
 			m[item.key] = []string{}
 		}
 
-		m[item.key] = append(m[item.key], item.value)
+		switch item.key {
+		case "gorm":
+			m[item.key] = append(m[item.key], strings.Split(item.value, ";")...)
+		default:
+			m[item.key] = append(m[item.key], strings.Split(item.value, ",")...)
+		}
+
 	}
 
 	var overrided tagItems
 	for k, v := range m {
+		v = candy.Unique(v)
+
 		v = candy.Filter(v, func(s string) bool {
 			return s != ""
 		})
-		v = candy.Unique(v)
 
 		// 校验如果存在 - ，则跳过
 		if candy.Contains(v, "-") {
@@ -84,6 +91,10 @@ func (p tagItems) override() tagItems {
 				// 自动的，不添加 default
 				v = candy.FilterNot(v, func(s string) bool {
 					return strings.Contains(s, "default:")
+				})
+				// 自动的，不添加 default
+				v = candy.FilterNot(v, func(s string) bool {
+					return strings.Contains(s, "not null")
 				})
 			}
 
@@ -326,46 +337,46 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				continue
 			}
 
-			injectTags = injectTags.override()
+			//injectTags = injectTags.override()
 
-			addTag := func(key string, m []string, values string) {
-				seq := ","
-				connect := "="
-				switch key {
-				case "gorm":
-					seq = ";"
-					connect = ":"
-				}
-
-				keyMap := make(map[string]bool)
-				for _, value := range strings.Split(values, seq) {
-					before, _, found := strings.Cut(value, connect)
-					if !found {
-						keyMap[value] = true
-					} else {
-						keyMap[before] = true
-					}
-				}
-
-				for _, value := range m {
-					before, _, found := strings.Cut(value, connect)
-					if !found {
-						if keyMap[value] {
-							continue
-						}
-
-					} else {
-						if keyMap[before] {
-							continue
-						}
-					}
-
-					injectTags = append(injectTags, tagItem{
-						key:   key,
-						value: value,
-					})
-				}
-			}
+			//addTag := func(key string, m []string, values string) {
+			//	seq := ","
+			//	connect := "="
+			//	switch key {
+			//	case "gorm":
+			//		seq = ";"
+			//		connect = ":"
+			//	}
+			//
+			//	keyMap := make(map[string]bool)
+			//	for _, value := range strings.Split(values, seq) {
+			//		before, _, found := strings.Cut(value, connect)
+			//		if !found {
+			//			keyMap[value] = true
+			//		} else {
+			//			keyMap[before] = true
+			//		}
+			//	}
+			//
+			//	for _, value := range m {
+			//		before, _, found := strings.Cut(value, connect)
+			//		if !found {
+			//			if keyMap[value] {
+			//				continue
+			//			}
+			//
+			//		} else {
+			//			if keyMap[before] {
+			//				continue
+			//			}
+			//		}
+			//
+			//		injectTags = append(injectTags, tagItem{
+			//			key:   key,
+			//			value: value,
+			//		})
+			//	}
+			//}
 
 			// 先按照类型获取一下
 			var getFieldType func(xx ast.Expr) string
@@ -432,11 +443,29 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			log.Infof("%s field type: %s", fieldName, fieldType)
 
 			tagsMap := map[string][]string{
-				"yaml": {
-					CoverageStyledBase(state.Config.Style.Yaml, fieldName),
-					"omitempty",
-				},
+				//"yaml": {
+				//	CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+				//	"omitempty",
+				//},
 			}
+
+			injectTags = append(injectTags, tagItem{
+				key:   "yaml",
+				value: CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+			})
+			injectTags = append(injectTags, tagItem{
+				key:   "yaml",
+				value: "omitempty",
+			})
+
+			injectTags = append(injectTags, tagItem{
+				key:   "toml",
+				value: CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+			})
+			injectTags = append(injectTags, tagItem{
+				key:   "toml",
+				value: "omitempty",
+			})
 
 			// 按照字段名的 gorm 默认
 			if tm := state.Config.DefaultTag[fieldName]; tm != nil {
@@ -482,10 +511,15 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 
 			// 处理用户填写的
 			for key, value := range tagsMap {
-				if key == "gorm" {
-					addTag("gorm", value, injectTags.get("gorm"))
-				} else {
-					addTag(key, value, injectTags.get(key))
+				tagsMap[key] = append(tagsMap[key], value...)
+			}
+
+			for k, v := range tagsMap {
+				for _, vv := range candy.Unique(v) {
+					injectTags = append(injectTags, tagItem{
+						key:   k,
+						value: vv,
+					})
 				}
 			}
 
