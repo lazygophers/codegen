@@ -460,12 +460,20 @@ type PbMapField struct {
 	field *proto.MapField
 }
 
+func (p *PbMapField) Field() *proto.MapField {
+	return p.field
+}
+
 func (p *PbMapField) FieldName() string {
 	return p.Name
 }
 
 func (p *PbMapField) FieldType() string {
 	return p.field.Type
+}
+
+func (p *PbMapField) KeyType() string {
+	return p.field.KeyType
 }
 
 func (p *PbMapField) IsSlice() bool {
@@ -495,25 +503,36 @@ type PbEnumField struct {
 	Value    int32
 }
 
+func cleanDesc(desc string) string {
+	for strings.HasPrefix(desc, " ") {
+		desc = strings.TrimPrefix(desc, " ")
+	}
+	for strings.HasSuffix(desc, " ") {
+		desc = strings.TrimSuffix(desc, " ")
+	}
+
+	return desc
+}
+
 func (p *PbEnumField) Desc() string {
 	// 先尝试找 @desc 标记
 	if p.comment != nil {
 		value, ok := p.comment.tags["desc"]
 		if ok && len(value.Lines()) > 0 {
-			return strings.Join(value.Lines(), "")
+			return cleanDesc(strings.Join(value.Lines(), "\n"))
 		}
 	}
 
 	// 尝试找后面接着的注释
 	if p.field.InlineComment != nil && len(p.field.InlineComment.Lines) > 0 {
-		return strings.Join(p.field.InlineComment.Lines, "")
+		return cleanDesc(strings.Join(p.field.InlineComment.Lines, "\n"))
 	}
 
 	// 找空行标记
 	if p.comment != nil {
 		value, ok := p.comment.tags[""]
 		if ok && len(value.Lines()) > 0 {
-			return strings.Join(value.Lines(), "")
+			return cleanDesc(strings.Join(value.Lines(), "\n"))
 		}
 	}
 

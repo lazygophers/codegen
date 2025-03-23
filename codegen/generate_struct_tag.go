@@ -59,15 +59,22 @@ func (p tagItems) override() tagItems {
 			m[item.key] = []string{}
 		}
 
-		m[item.key] = append(m[item.key], item.value)
+		switch item.key {
+		case "gorm":
+			m[item.key] = append(m[item.key], strings.Split(item.value, ";")...)
+		default:
+			m[item.key] = append(m[item.key], strings.Split(item.value, ",")...)
+		}
+
 	}
 
 	var overrided tagItems
 	for k, v := range m {
+		v = candy.Unique(v)
+
 		v = candy.Filter(v, func(s string) bool {
 			return s != ""
 		})
-		v = candy.Unique(v)
 
 		// 校验如果存在 - ，则跳过
 		if candy.Contains(v, "-") {
@@ -85,6 +92,28 @@ func (p tagItems) override() tagItems {
 				v = candy.FilterNot(v, func(s string) bool {
 					return strings.Contains(s, "default:")
 				})
+				// 自动的，不添加 default
+				v = candy.FilterNot(v, func(s string) bool {
+					return strings.Contains(s, "not null")
+				})
+			}
+
+			// 解析一下是否存在 type
+			for _, line := range v {
+				if !strings.HasPrefix(line, "type:") {
+					continue
+				}
+
+				// 针对特定类型，去掉默认值
+				switch strings.ToLower(strings.TrimPrefix(line, "type:")) {
+				case "text", "blob", "geometry", "json":
+					v = candy.FilterNot(v, func(s string) bool {
+						return strings.Contains(s, "default:")
+					})
+
+				}
+
+				break
 			}
 
 			overrided = append(overrided, tagItem{
@@ -224,7 +253,7 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			continue
 		}
 
-		isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model") && !strings.Contains(typeSpec.Name.Name, "_")
+		//isModelStruct := strings.HasPrefix(typeSpec.Name.Name, "Model") && !strings.Contains(typeSpec.Name.Name, "_")
 
 		log.Infof("find type %s", typeSpec.Name.Name)
 
@@ -259,6 +288,12 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 						}
 
 						tag := line[1:idx]
+
+						// NOTE: 插入一段特殊逻辑，后面在加别名配置
+						if tag == "v" {
+							tag = "validate"
+						}
+
 						injectTags = append(injectTags, tagItem{
 							key:   tag,
 							value: removeStrQuote(line[idx+1:]),
@@ -302,39 +337,46 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				continue
 			}
 
-			injectTags = injectTags.override()
+			//injectTags = injectTags.override()
 
-			addTag := func(key string, m map[string]string, values string) {
-				seq := ","
-				connect := "="
-				if key == "gorm" {
-					seq = ";"
-					connect = ":"
-				}
-
-				for _, value := range strings.Split(values, seq) {
-					before, _, found := strings.Cut(value, connect)
-					if !found {
-						delete(m, value)
-					} else {
-						delete(m, before)
-					}
-				}
-
-				for k, v := range m {
-					if v == "" {
-						injectTags = append(injectTags, tagItem{
-							key:   key,
-							value: k,
-						})
-					} else {
-						injectTags = append(injectTags, tagItem{
-							key:   key,
-							value: k + connect + v,
-						})
-					}
-				}
-			}
+			//addTag := func(key string, m []string, values string) {
+			//	seq := ","
+			//	connect := "="
+			//	switch key {
+			//	case "gorm":
+			//		seq = ";"
+			//		connect = ":"
+			//	}
+			//
+			//	keyMap := make(map[string]bool)
+			//	for _, value := range strings.Split(values, seq) {
+			//		before, _, found := strings.Cut(value, connect)
+			//		if !found {
+			//			keyMap[value] = true
+			//		} else {
+			//			keyMap[before] = true
+			//		}
+			//	}
+			//
+			//	for _, value := range m {
+			//		before, _, found := strings.Cut(value, connect)
+			//		if !found {
+			//			if keyMap[value] {
+			//				continue
+			//			}
+			//
+			//		} else {
+			//			if keyMap[before] {
+			//				continue
+			//			}
+			//		}
+			//
+			//		injectTags = append(injectTags, tagItem{
+			//			key:   key,
+			//			value: value,
+			//		})
+			//	}
+			//}
 
 			// 先按照类型获取一下
 			var getFieldType func(xx ast.Expr) string
@@ -401,34 +443,59 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			log.Infof("%s field type: %s", fieldName, fieldType)
 
 			tagsMap := map[string][]string{
-				"yaml": {
-					CoverageStyledBase(state.Config.Style.Yaml, fieldName),
-					"omitempty",
-				},
+				//"yaml": {
+				//	CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+				//	"omitempty",
+				//},
 			}
 
-			if tm := state.Config.DefaultTag["@"+fieldType]; tm != nil {
+			injectTags = append(injectTags, tagItem{
+				key:   "yaml",
+				value: CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+			})
+			injectTags = append(injectTags, tagItem{
+				key:   "yaml",
+				value: "omitempty",
+			})
+
+			injectTags = append(injectTags, tagItem{
+				key:   "toml",
+				value: CoverageStyledBase(state.Config.Style.Yaml, fieldName),
+			})
+			injectTags = append(injectTags, tagItem{
+				key:   "toml",
+				value: "omitempty",
+			})
+
+			// 按照字段名的 gorm 默认
+			if tm := state.Config.DefaultTag[fieldName]; tm != nil {
 				for k, v := range tm {
 					tagsMap[k] = append(tagsMap[k], v)
 				}
 			}
 
+			// 按照字段类型的 gorm 默认
 			switch fieldType {
 			case "":
-
+				fallthrough
 			case "int32", "int64", "uint32", "uint64", "sint32", "sint64":
-
+				fallthrough
 			case "float", "double", "float32", "float64":
-
+				fallthrough
 			case "string", "bytes":
-
+				fallthrough
 			case "bool":
-
+				fallthrough
 			case "array":
-
+				fallthrough
 			case "map":
-
+				fallthrough
 			case "object":
+				if tm := state.Config.DefaultTag["@"+fieldType]; tm != nil {
+					for k, v := range tm {
+						tagsMap[k] = append(tagsMap[k], v)
+					}
+				}
 
 			default:
 				if tm := state.Config.DefaultTag["@object"]; tm != nil {
@@ -438,30 +505,22 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 				}
 			}
 
-			if tm := state.Config.DefaultTag[fieldName]; tm != nil {
-				for k, v := range tm {
-					tagsMap[k] = append(tagsMap[k], v)
-				}
+			if !state.Config.Tables.DisableGormTagColumn {
+				tagsMap["gorm"] = append(tagsMap["gorm"], "column:"+fieldName)
 			}
 
-			if isModelStruct {
-				if value, ok := tagsMap["gorm"]; ok {
-					addTag("gorm", gormTagStr2Map(value), injectTags.get("gorm"))
-				}
-
-				if !state.Config.Tables.DisableGormTagColumn {
-					addTag("gorm", map[string]string{
-						"column": fieldName,
-					}, injectTags.get("gorm"))
-				}
-			}
-
+			// 处理用户填写的
 			for key, value := range tagsMap {
-				if key == "gorm" {
-					continue
-				}
+				tagsMap[key] = append(tagsMap[key], value...)
+			}
 
-				addTag(key, tagStr2Map(value), injectTags.get(key))
+			for k, v := range tagsMap {
+				for _, vv := range candy.Unique(v) {
+					injectTags = append(injectTags, tagItem{
+						key:   k,
+						value: vv,
+					})
+				}
 			}
 
 			injectTags = injectTags.override()

@@ -127,7 +127,7 @@ func mergeGenCmdFlags(cmd *cobra.Command) {
 	}
 
 	if cmd.Flag("add-proto-files").Changed {
-		state.Config.ProtoFiles = append(state.Config.ProtoFiles, utils.GetStringSlice("proto-files", cmd)...)
+		state.Config.ProtoFiles = append(state.Config.ProtoFiles, utils.GetStringSlice("add-proto-files", cmd)...)
 	}
 
 	// NOTE: tables

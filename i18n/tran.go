@@ -59,6 +59,24 @@ func Translate(c *TransacteConfig) error {
 	return nil
 }
 
+type (
+	BeforeTranslate func(lang *Language, key, source, dest string) (skip bool)
+	AfterTranslate  func(lang *Language, key, source, dest string)
+)
+
+var (
+	beforeTranslate BeforeTranslate
+	afterTranslate  AfterTranslate
+)
+
+func RegisterBeforeTranslate(fn BeforeTranslate) {
+	beforeTranslate = fn
+}
+
+func RegisterAfterTranslate(fn AfterTranslate) {
+	afterTranslate = fn
+}
+
 func translate(parent string, srcLocalize map[string]any, dstLang *Language, dstLocalize map[string]any, c *TransacteConfig) (err error) {
 	toDstSub := func(k string) map[string]any {
 		sub := make(map[string]any)
@@ -133,6 +151,37 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	for k, v := range srcLocalize {
 		log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
 
+		needTran := func() bool {
+			if beforeTranslate != nil {
+				if value, ok := dstLocalize[k]; ok {
+					if !beforeTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(value)) {
+						return true
+					}
+				} else {
+					if !beforeTranslate(dstLang, parent+"."+k, anyx.ToString(v), "") {
+						return true
+					}
+				}
+			}
+
+			if c.Overwrite {
+				return true
+			}
+
+			if _, ok := dstLocalize[k]; !ok {
+				return true
+			}
+
+			for _, prefix := range c.OverwriteKeyPrefix {
+				if !strings.HasPrefix(parent+"."+k, prefix) {
+					continue
+				}
+				return true
+			}
+
+			return false
+		}
+
 		switch x := v.(type) {
 		case string:
 			tran := func() {
@@ -175,25 +224,21 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 
 				if !hasError {
 					dstLocalize[k] = strings.Join(tragetList, "\n")
-				}
-			}
 
-			// 找得到的时候，判断一下要不要覆盖
-			if _, ok := dstLocalize[k]; !ok {
-				tran()
-			} else if c.Overwrite {
-				tran()
-			} else {
-				for _, prefix := range c.OverwriteKeyPrefix {
-					if !strings.HasPrefix(parent+"."+k, prefix) {
-						continue
+					if afterTranslate != nil {
+						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(tragetList, "\n"))
 					}
-					tran()
-					break
 				}
 			}
 
-		case int:
+			if needTran() {
+				tran()
+			}
+
+		case int, int8, int16, int32, int64,
+			uint, uint8, uint16, uint32, uint64,
+			float32, float64:
+
 			tran := func() {
 				log.Infof("try translate [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
@@ -207,83 +252,15 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					x,
 				)
 
-				dstLocalize[k] = strconv.Itoa(x)
-			}
+				dstLocalize[k] = anyx.ToString(v)
 
-			if _, ok := dstLocalize[k]; !ok {
-				tran()
-			} else if c.Overwrite {
-				tran()
-			} else {
-				for _, prefix := range c.OverwriteKeyPrefix {
-					if !strings.HasPrefix(parent+"."+k, prefix) {
-						continue
-					}
-					tran()
-					break
+				if afterTranslate != nil {
+					afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(v))
 				}
 			}
 
-		case int64:
-			tran := func() {
-				log.Infof("try translate [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
-
-				pterm.Success.Printfln("key:%s\nfrom(%s) %d\nto(%s) %d",
-					parent+"."+k,
-
-					c.SrcLang,
-					x,
-
-					dstLang,
-					x,
-				)
-
-				dstLocalize[k] = strconv.FormatInt(x, 10)
-			}
-
-			if _, ok := dstLocalize[k]; !ok {
+			if needTran() {
 				tran()
-			} else if c.Overwrite {
-				tran()
-			} else {
-				for _, prefix := range c.OverwriteKeyPrefix {
-					if !strings.HasPrefix(parent+"."+k, prefix) {
-						continue
-					}
-					tran()
-					break
-				}
-			}
-
-		case float64:
-			tran := func() {
-				log.Infof("try translate [%s]%f from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
-
-				pterm.Success.Printfln("key:%s\nfrom(%s) %f\nto(%s) %f",
-					parent+"."+k,
-
-					c.SrcLang,
-					x,
-
-					dstLang,
-					x,
-				)
-
-				dstLocalize[k] = strconv.FormatFloat(x, 'f', -1, 10)
-			}
-
-			if _, ok := dstLocalize[k]; !ok {
-				tran()
-			} else if c.Overwrite {
-				tran()
-			} else {
-				for _, prefix := range c.OverwriteKeyPrefix {
-					if !strings.HasPrefix(parent+"."+k, prefix) {
-						continue
-					}
-					tran()
-					break
-				}
 			}
 
 		case map[string]any:
