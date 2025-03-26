@@ -91,7 +91,7 @@ func (p tagItems) override() tagItems {
 			if candy.Contains(v, "autoIncrement") {
 				// 自动的，不添加 default
 				v = candy.FilterNot(v, func(s string) bool {
-					return strings.Contains(s, "default:")
+					return strings.HasPrefix(s, "default:")
 				})
 				// 自动的，不添加 default
 				v = candy.FilterNot(v, func(s string) bool {
@@ -109,7 +109,7 @@ func (p tagItems) override() tagItems {
 				switch strings.ToLower(strings.TrimPrefix(line, "type:")) {
 				case "text", "blob", "geometry", "json", "longtext", "longblob":
 					v = candy.FilterNot(v, func(s string) bool {
-						return strings.Contains(s, "default:")
+						return strings.HasPrefix(s, "default:")
 					})
 
 				}
