@@ -2,6 +2,7 @@ package codegen
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
@@ -114,6 +115,30 @@ func (p tagItems) override() tagItems {
 				}
 
 				break
+			}
+
+			// 去除重复的
+			m := make(map[string]string)
+			for _, s := range v {
+				before, after, found := strings.Cut(s, ":")
+				if found {
+					if _, ok := m[before]; !ok {
+						m[before] = after
+					}
+				} else {
+					if _, ok := m[s]; !ok {
+						m[s] = ""
+					}
+				}
+			}
+
+			v = make([]string, 0, len(m))
+			for key, value := range m {
+				if value == "" {
+					v = append(v, key)
+				} else {
+					v = append(v, fmt.Sprintf("%s:%s", key, value))
+				}
 			}
 
 			overrided = append(overrided, tagItem{

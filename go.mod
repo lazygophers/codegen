@@ -2,8 +2,6 @@ module github.com/lazygophers/codegen
 
 go 1.22.0
 
-toolchain go1.23.4
-
 require (
 	github.com/Xuanwo/go-locale v1.1.0
 	github.com/emicklei/proto v1.13.2
