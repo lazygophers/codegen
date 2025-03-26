@@ -107,7 +107,7 @@ func (p tagItems) override() tagItems {
 
 				// 针对特定类型，去掉默认值
 				switch strings.ToLower(strings.TrimPrefix(line, "type:")) {
-				case "text", "blob", "geometry", "json":
+				case "text", "blob", "geometry", "json", "longtext", "longblob":
 					v = candy.FilterNot(v, func(s string) bool {
 						return strings.Contains(s, "default:")
 					})
