@@ -854,13 +854,13 @@ func (p *PbPackage) Walk() {
 			p.rpcs = append(p.rpcs, p.rpcMap[r.Name])
 		}),
 		proto.WithEnum(func(e *proto.Enum) {
-			name := GetFullName(e)
+			enum := NewPbEnum(e)
 
 			log.Infof("enum:%v", e.Name)
-			pterm.Info.Printfln("find enum:%s", name)
+			pterm.Info.Printfln("find enum:%s", enum.FullName)
 
-			p.enumMap[name] = NewPbEnum(e)
-			p.enums = append(p.enums, p.enumMap[name])
+			p.enumMap[enum.FullName] = enum
+			p.enums = append(p.enums, enum)
 		}),
 		proto.WithOption(func(option *proto.Option) {
 			log.Infof("option:%v", option.Name)

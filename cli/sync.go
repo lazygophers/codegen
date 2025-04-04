@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
-	"github.com/go-resty/resty/v2"
 	"github.com/lazygophers/codegen/cli/utils"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
@@ -25,6 +24,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"resty.dev/v3"
 	"strings"
 	"time"
 )
@@ -239,7 +239,7 @@ func syncFromRemote(c *state.Cfg) error {
 		SetHeaders(map[string]string{
 			"User-Agent": fmt.Sprintf("lazygophers/%s (%s)", app.Version, app.Organization),
 		}).
-		AddRetryCondition(func(response *resty.Response, err error) bool {
+		AddRetryConditions(func(response *resty.Response, err error) bool {
 			if err != nil {
 				return true
 			}
@@ -331,9 +331,9 @@ func syncFromRemote(c *state.Cfg) error {
 		}
 
 		if unmarshaler, ok := state.SupportedExt[ext]; ok {
-			err = unmarshaler(bytes.NewBuffer(resp.Body()), &nc)
+			err = unmarshaler(bytes.NewBuffer(resp.Bytes()), &nc)
 			if err != nil {
-				log.Error(string(resp.Body()))
+				log.Error(string(resp.Bytes()))
 				log.Errorf("err:%v", err)
 				return err
 			}
@@ -434,10 +434,10 @@ func syncFromRemote(c *state.Cfg) error {
 				}
 
 				// md5+原始文件名，如果文件没有变更就可以不用写文件了
-				fieName := filepath.Join(c.Sync.CacheTemplatePath, cryptox.Md5(resp.Body())+"-"+filepath.Base(dst.String()))
+				fieName := filepath.Join(c.Sync.CacheTemplatePath, cryptox.Md5(resp.Bytes())+"-"+filepath.Base(dst.String()))
 
 				if !osx.IsFile(fieName) {
-					err = os.WriteFile(fieName, resp.Body(), 0666)
+					err = os.WriteFile(fieName, resp.Bytes(), 0666)
 					if err != nil {
 						log.Errorf("err:%v", err)
 						return err
