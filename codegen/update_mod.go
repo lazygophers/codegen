@@ -3,7 +3,6 @@ package codegen
 import (
 	"errors"
 	"fmt"
-	"github.com/go-resty/resty/v2"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
@@ -14,6 +13,7 @@ import (
 	"os"
 	"os/exec"
 	"regexp"
+	"resty.dev/v3"
 	"strings"
 	"time"
 )
@@ -80,7 +80,7 @@ func UpdateGoMod(modPath string) (err error) {
 		SetRetryCount(3).
 		SetRetryMaxWaitTime(time.Second * 30).
 		SetRetryWaitTime(time.Second).
-		AddRetryCondition(func(response *resty.Response, err error) bool {
+		AddRetryConditions(func(response *resty.Response, err error) bool {
 			if err != nil {
 				return true
 			}

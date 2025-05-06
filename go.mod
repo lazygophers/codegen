@@ -2,13 +2,10 @@ module github.com/lazygophers/codegen
 
 go 1.22.0
 
-toolchain go1.23.4
-
 require (
 	github.com/Xuanwo/go-locale v1.1.0
 	github.com/emicklei/proto v1.13.2
 	github.com/go-git/go-git/v5 v5.12.0
-	github.com/go-resty/resty/v2 v2.13.1
 	github.com/gookit/color v1.5.4
 	github.com/lazygophers/log v0.0.0-20241229160530-2bac6f5670ab
 	github.com/lazygophers/lrpc v0.0.0-20240611132523-488159748780
@@ -21,6 +18,7 @@ require (
 	golang.org/x/text v0.21.0
 	gopkg.in/yaml.v3 v3.0.1
 	gotest.tools/v3 v3.5.1
+	resty.dev/v3 v3.0.0-beta.2
 )
 
 require (

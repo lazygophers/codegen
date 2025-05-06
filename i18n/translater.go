@@ -2,7 +2,6 @@ package i18n
 
 import (
 	"errors"
-	"github.com/go-resty/resty/v2"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/fake"
@@ -11,6 +10,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"resty.dev/v3"
 	"strings"
 	"time"
 )
@@ -124,7 +124,7 @@ func NewTransacterGoogleFree() *TransacterGoogleFree {
 				"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
 				"Keep-Alive": "5",
 			}).
-			OnBeforeRequest(func(client *resty.Client, request *resty.Request) error {
+			AddRequestMiddleware(func(client *resty.Client, request *resty.Request) error {
 				request.SetCookie(&http.Cookie{})
 				request.SetHeader("User-Agent", fake.RandomUserAgent())
 				return nil
@@ -135,7 +135,7 @@ func NewTransacterGoogleFree() *TransacterGoogleFree {
 				"dt":     "t",
 				"dj":     "1",
 			}).
-			AddRetryCondition(func(response *resty.Response, err error) bool {
+			AddRetryConditions(func(response *resty.Response, err error) bool {
 				if err != nil {
 					return true
 				}
@@ -328,12 +328,12 @@ func NewTransacterDeeplFree() *TransacterDeeplFree {
 				"Origin":     "https://www.deepl.com/",
 				"Host":       "www2.deepl.com",
 			}).
-			OnBeforeRequest(func(client *resty.Client, request *resty.Request) error {
+			AddRequestMiddleware(func(client *resty.Client, request *resty.Request) error {
 				request.SetCookie(&http.Cookie{})
 				request.SetHeader("User-Agent", fake.RandomUserAgent())
 				return nil
 			}).
-			AddRetryCondition(func(response *resty.Response, err error) bool {
+			AddRetryConditions(func(response *resty.Response, err error) bool {
 				if err != nil {
 					return true
 				}

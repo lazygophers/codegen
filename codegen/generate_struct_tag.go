@@ -2,6 +2,7 @@ package codegen
 
 import (
 	"bytes"
+	"fmt"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
@@ -90,7 +91,7 @@ func (p tagItems) override() tagItems {
 			if candy.Contains(v, "autoIncrement") {
 				// 自动的，不添加 default
 				v = candy.FilterNot(v, func(s string) bool {
-					return strings.Contains(s, "default:")
+					return strings.HasPrefix(s, "default:")
 				})
 				// 自动的，不添加 default
 				v = candy.FilterNot(v, func(s string) bool {
@@ -106,14 +107,38 @@ func (p tagItems) override() tagItems {
 
 				// 针对特定类型，去掉默认值
 				switch strings.ToLower(strings.TrimPrefix(line, "type:")) {
-				case "text", "blob", "geometry", "json":
+				case "text", "blob", "geometry", "json", "longtext", "longblob":
 					v = candy.FilterNot(v, func(s string) bool {
-						return strings.Contains(s, "default:")
+						return strings.HasPrefix(s, "default:")
 					})
 
 				}
 
 				break
+			}
+
+			// 去除重复的
+			m := make(map[string]string)
+			for _, s := range v {
+				before, after, found := strings.Cut(s, ":")
+				if found {
+					if _, ok := m[before]; !ok {
+						m[before] = after
+					}
+				} else {
+					if _, ok := m[s]; !ok {
+						m[s] = ""
+					}
+				}
+			}
+
+			v = make([]string, 0, len(m))
+			for key, value := range m {
+				if value == "" {
+					v = append(v, key)
+				} else {
+					v = append(v, fmt.Sprintf("%s:%s", key, value))
+				}
 			}
 
 			overrided = append(overrided, tagItem{
