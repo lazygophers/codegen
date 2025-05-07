@@ -62,3 +62,7 @@ Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" gorm:"prima
 		- hello
 			- hello.pb.go
 ```
+
+
+## 想要了解更多信息，可参考以下内容
+- [DeepWiki](https://deepwiki.com/lazygophers/codegen)
