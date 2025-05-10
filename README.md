@@ -1,5 +1,11 @@
 # codegen
 
+<p>
+	<a href="https://deepwiki.com/usememos/memos">
+		<img src="https://devin.ai/assets/deepwiki-badge.png" alt="Ask DeepWiki" height="20"/>
+	</a>
+</p>
+
 > 根据proto文件生成代码，并且将相关标记写入 `pb.go` 中
 
 这个项目是一个基于代码生成帮助快速开发 CURD 类的项目，你可以使用它来快速生成代码。
@@ -63,6 +69,6 @@ Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty" gorm:"prima
 			- hello.pb.go
 ```
 
-
 ## 想要了解更多信息，可参考以下内容
+
 - [DeepWiki](https://deepwiki.com/lazygophers/codegen)
