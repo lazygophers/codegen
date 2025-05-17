@@ -4,6 +4,7 @@ import (
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
+	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
 	"io/fs"
@@ -110,6 +111,13 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 
 	deepKeys([]string{}, dstLocalize)
 
+	//sort
+	keys := make([]string, 0)
+	for k, _ := range localize {
+		keys = append(keys, k)
+	}
+	keys = candy.Sort(keys)
+
 	tpl, err := GetTemplate(TemplateTypeI18nConst)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -133,6 +141,7 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 		"DirName":      filepath.Base(filepath.Dir(path)),
 		"Localize":     localize,
 		"DeepLocalize": dstLocalize,
+		"SortedKeys":   keys,
 	})
 	if err != nil {
 		log.Errorf("err:%v", err)

@@ -1,5 +1,5 @@
 package {{ .DirName }}
 
-const ({{ range $key, $value := .Localize}}
-	I18nTag{{ ToCamel $key }}		= `{{ $key }}`{{ end }}
+const ({{ range $value := .SortedKeys}}
+	I18nTag{{ ToCamel $value }}		= `{{ $value }}`{{ end }}
 )
