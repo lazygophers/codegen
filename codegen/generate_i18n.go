@@ -243,10 +243,10 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 	}
 
 	// 递归一下
-	localize := map[string][]string{}
 	var deepKeys func(ps []string, m map[string]interface{}) (err error)
 	deepKeys = func(ps []string, m map[string]interface{}) (err error) {
-		for k, v := range m {
+		for _, k := range candy.Sort(anyx.MapKeysString(m)) {
+			v := m[k]
 			key := strings.Join(append(slices.Clone(ps), k), ".")
 
 			switch x := v.(type) {
@@ -272,7 +272,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 				}
 
 			case map[string]any:
-				localize[key] = anyx.MapKeysString(x)
+				err = writeMiddle(key, anyx.MapKeysString(x))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), x)
 				if err != nil {
@@ -286,7 +290,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[k] = v
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -300,7 +308,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[k] = string(v)
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -314,7 +326,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = v
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -328,7 +344,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = v
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -342,7 +362,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = string(v)
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -356,7 +380,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -381,7 +409,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = string(v)
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -395,7 +427,11 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[anyx.ToString(k)] = v
 				}
 
-				localize[key] = anyx.MapKeysString(sub)
+				err = writeMiddle(key, anyx.MapKeysString(sub))
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -415,14 +451,6 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
-	}
-
-	for _, value := range candy.Sort(anyx.MapKeysString(localize)) {
-		err = writeMiddle(value, localize[value])
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return err
-		}
 	}
 
 	err = writeFirst("", anyx.MapKeysString(dstLocalize))
