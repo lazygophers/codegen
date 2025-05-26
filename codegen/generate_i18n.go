@@ -4,6 +4,7 @@ import (
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
+	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
 	"io/fs"
@@ -21,7 +22,6 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 	localize := map[string]string{}
 	var deepKeys func(ps []string, m map[string]interface{})
 	deepKeys = func(ps []string, m map[string]interface{}) {
-
 		for k, v := range m {
 			key := strings.Join(append(slices.Clone(ps), k), ".")
 			localize[key] = ""
@@ -206,7 +206,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 		err = template.Must(template.New("").Funcs(DefaultTemplateFunc).Parse(I18NFieldMiddleTemplate)).
 			Execute(file, map[string]any{
 				"Keys": key,
-				"Subs": subs,
+				"Subs": candy.Sort(subs),
 			})
 		if err != nil {
 			log.Errorf("err:%v", err)
@@ -226,7 +226,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 		err = template.Must(template.New("").Funcs(DefaultTemplateFunc).Parse(I18NFieldFirstTemplate)).
 			Execute(file, map[string]any{
 				"Keys": key,
-				"Subs": subs,
+				"Subs": candy.Sort(subs),
 			})
 		if err != nil {
 			log.Errorf("err:%v", err)
@@ -243,6 +243,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 	}
 
 	// 递归一下
+	localize := map[string][]string{}
 	var deepKeys func(ps []string, m map[string]interface{}) (err error)
 	deepKeys = func(ps []string, m map[string]interface{}) (err error) {
 		for k, v := range m {
@@ -271,11 +272,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 				}
 
 			case map[string]any:
-				err = writeMiddle(key, anyx.MapKeysString(x))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(x)
 
 				err = deepKeys(append(slices.Clone(ps), k), x)
 				if err != nil {
@@ -289,11 +286,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[k] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -307,11 +300,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[k] = string(v)
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -325,11 +314,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -343,11 +328,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -361,11 +342,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = string(v)
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -379,11 +356,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -408,11 +381,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = string(v)
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -426,11 +395,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[anyx.ToString(k)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
+				localize[key] = anyx.MapKeysString(sub)
 
 				err = deepKeys(append(slices.Clone(ps), k), sub)
 				if err != nil {
@@ -450,6 +415,14 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
+	}
+
+	for _, value := range candy.Sort(anyx.MapKeysString(localize)) {
+		err = writeMiddle(value, localize[value])
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
 	}
 
 	err = writeFirst("", anyx.MapKeysString(dstLocalize))
