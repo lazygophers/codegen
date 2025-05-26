@@ -4,6 +4,7 @@ import (
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
+	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
 	"io/fs"
@@ -205,7 +206,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 		err = template.Must(template.New("").Funcs(DefaultTemplateFunc).Parse(I18NFieldMiddleTemplate)).
 			Execute(file, map[string]any{
 				"Keys": key,
-				"Subs": subs,
+				"Subs": candy.Sort(subs),
 			})
 		if err != nil {
 			log.Errorf("err:%v", err)
@@ -225,7 +226,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 		err = template.Must(template.New("").Funcs(DefaultTemplateFunc).Parse(I18NFieldFirstTemplate)).
 			Execute(file, map[string]any{
 				"Keys": key,
-				"Subs": subs,
+				"Subs": candy.Sort(subs),
 			})
 		if err != nil {
 			log.Errorf("err:%v", err)
@@ -244,7 +245,8 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 	// 递归一下
 	var deepKeys func(ps []string, m map[string]interface{}) (err error)
 	deepKeys = func(ps []string, m map[string]interface{}) (err error) {
-		for k, v := range m {
+		for _, k := range candy.Sort(anyx.MapKeysString(m)) {
+			v := m[k]
 			key := strings.Join(append(slices.Clone(ps), k), ".")
 
 			switch x := v.(type) {
