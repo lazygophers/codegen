@@ -298,13 +298,14 @@ var DefaultTemplateFunc = template.FuncMap{
 		return len(ss) == 0
 	},
 
-	"Unique":   candy.Unique[string],
-	"Sort":     candy.Sort[string],
-	"Reverse":  candy.Reverse[string],
-	"Top":      candy.Top[string],
-	"First":    candy.First[string],
-	"Last":     candy.Last[string],
-	"Contains": candy.Contains[string],
+	"MapKeysString": anyx.MapKeysString,
+	"Unique":        candy.Unique[string],
+	"Sort":          candy.Sort[string],
+	"Reverse":       candy.Reverse[string],
+	"Top":           candy.Top[string],
+	"First":         candy.First[string],
+	"Last":          candy.Last[string],
+	"Contains":      candy.Contains[string],
 	"Self": func(s string) string {
 		return fmt.Sprintf("{{ %s }}", s)
 	},
