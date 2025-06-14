@@ -69,6 +69,7 @@ require (
 	github.com/valyala/fasthttp v1.62.0 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
+	go.etcd.io/bbolt v1.4.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.1-0.20240725153609-f95879bd02b8 // indirect
 	golang.org/x/arch v0.17.0 // indirect
