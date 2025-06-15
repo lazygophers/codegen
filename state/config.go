@@ -425,7 +425,8 @@ func (p *Cfg) apply() (err error) {
 		addFloatingType := func(typ string) {
 			typ = "@" + typ
 			if _, ok := p.DefaultTag["gorm"][typ]; !p.Tables.DisableFieldId && !ok {
-				p.DefaultTag["gorm"][typ] = "not null;type:decimal(65,8);default:0"
+				// type:decimal(65,8)
+				p.DefaultTag["gorm"][typ] = "not null;default:0"
 			} else if p.Tables.DisableFieldType && ok {
 				delete(p.DefaultTag["gorm"], typ)
 			}
