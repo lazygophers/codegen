@@ -124,6 +124,7 @@ cli:
         tran:
             flags:
                 all-language: Translate all supported languages ​​(if true the languages ​​flag is disabled)
+                auto-tran: {}
                 force: Overwrite existing translations
                 force-key-prefix: keys that need to be forced to be overwritten
                 generate-const: Generate enumeration values ​​for easy calling

@@ -1,6 +1,7 @@
 package i18n
 
 import (
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
 	"github.com/lazygophers/utils/cryptox"
@@ -63,6 +64,9 @@ type TranCache struct {
 }
 
 func NewTranCache(filepath string) (*TranCache, error) {
+	if filepath == "" {
+		filepath = state.Config.I18n.AutoTran.RecordPath
+	}
 	db, err := bolt.Open(filepath, 0600, nil)
 	if err != nil {
 		log.Errorf("err:%v", err)

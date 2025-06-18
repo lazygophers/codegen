@@ -1,6 +1,7 @@
 package i18n
 
 import (
+	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
 	"github.com/pterm/pterm"
@@ -28,6 +29,16 @@ func Translate(c *TransacteConfig) error {
 		return err
 	}
 
+	var cache *TranCache
+	if state.Config.I18n.AutoTran.EnableRecord {
+		cache, err = NewTranCache(state.Config.I18n.AutoTran.RecordPath)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+		defer cache.Close()
+	}
+
 	for _, dstLang := range c.Langs {
 		if dstLang.Lang == c.SrcLang.Lang {
 			continue
@@ -43,16 +54,40 @@ func Translate(c *TransacteConfig) error {
 			return err
 		}
 
-		err = translate("", srcLocalize, dstLang, dstLocalize, c)
+		var tx *TranTx
+		if cache != nil {
+			tx, err = cache.Begin()
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
+		}
+
+		err = translate("", srcLocalize, dstLang, dstLocalize, c, tx)
 		if err != nil {
 			log.Errorf("err:%v", err)
+			if tx != nil {
+				_ = tx.Rollback()
+			}
 			return err
 		}
 
 		err = saveLocalizer(filepath.Join(filepath.Dir(c.SrcFile), dstLang.Lang+filepath.Ext(c.SrcFile)), dstLocalize, c.Localizer)
 		if err != nil {
 			log.Errorf("err:%v", err)
+			if tx != nil {
+				_ = tx.Rollback()
+			}
+
 			return err
+		}
+
+		if tx != nil {
+			err = tx.Commit()
+			if err != nil {
+				log.Errorf("err:%v", err)
+				_ = tx.Rollback()
+			}
 		}
 	}
 
@@ -77,7 +112,7 @@ func RegisterAfterTranslate(fn AfterTranslate) {
 	afterTranslate = fn
 }
 
-func translate(parent string, srcLocalize map[string]any, dstLang *Language, dstLocalize map[string]any, c *TransacteConfig) (err error) {
+func translate(parent string, srcLocalize map[string]any, dstLang *Language, dstLocalize map[string]any, c *TransacteConfig, tx *TranTx) (err error) {
 	toDstSub := func(k string) map[string]any {
 		sub := make(map[string]any)
 		if v, ok := dstLocalize[k]; ok {
@@ -179,12 +214,16 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				return true
 			}
 
+			if ok, err := tx.Check(dstLang.Lang, k, dstLocalize[k]); err != nil || !ok {
+				return true
+			}
+
 			return false
 		}
 
 		switch x := v.(type) {
 		case string:
-			tran := func() {
+			tran := func() error {
 				log.Infof("try translate [%s]%s from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
 				var tragetList []string
@@ -224,22 +263,27 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 
 				if !hasError {
 					dstLocalize[k] = strings.Join(tragetList, "\n")
-
 					if afterTranslate != nil {
 						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(tragetList, "\n"))
 					}
+					err := tx.Update(dstLang.Lang, k, dstLocalize[k])
+					if err != nil {
+						log.Errorf("err:%v", err)
+						return err
+					}
 				}
+				return nil
 			}
 
 			if needTran() {
-				tran()
+				return tran()
 			}
 
 		case int, int8, int16, int32, int64,
 			uint, uint8, uint16, uint32, uint64,
 			float32, float64:
 
-			tran := func() {
+			tran := func() error {
 				log.Infof("try translate [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
 				pterm.Success.Printfln("key:%s\nfrom(%s) %d\nto(%s) %d",
@@ -257,16 +301,23 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				if afterTranslate != nil {
 					afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(v))
 				}
+
+				err := tx.Update(dstLang.Lang, k, dstLocalize[k])
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
+				return nil
 			}
 
 			if needTran() {
-				tran()
+				return tran()
 			}
 
 		case map[string]any:
 			dstSub := toDstSub(k)
 
-			err = translate(parent+"."+k, x, dstLang, dstSub, c)
+			err = translate(parent+"."+k, x, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -279,7 +330,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				srcSub[anyx.ToString(k)] = v
 			}
 
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -292,7 +343,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				srcSub[k] = v
 			}
 
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -305,7 +356,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				srcSub[strconv.FormatInt(k, 10)] = v
 			}
 
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -318,7 +369,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				srcSub[strconv.FormatInt(k, 10)] = v
 			}
 
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -331,7 +382,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				srcSub[strconv.Itoa(k)] = v
 			}
 
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -344,7 +395,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				srcSub[strconv.FormatFloat(k, 'f', -1, 64)] = v
 			}
 
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -357,7 +408,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				srcSub[strconv.FormatFloat(k, 'f', -1, 64)] = v
 			}
 
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c)
+			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
