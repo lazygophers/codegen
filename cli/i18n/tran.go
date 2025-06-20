@@ -307,6 +307,14 @@ func mergeTranCmdFlags(cmd *cobra.Command) {
 		state.Config.Overwrite = utils.GetBool("force", cmd)
 	}
 
+	if cmd.Flag("auto-tran-enable-record").Changed {
+		state.Config.I18n.AutoTran.EnableRecord = utils.GetBool("auto-tran-enable-record", cmd)
+	}
+
+	if cmd.Flag("record-path").Changed {
+		state.Config.I18n.AutoTran.RecordPath = utils.GetString("record-path", cmd)
+	}
+
 }
 
 func initTran() {
@@ -326,6 +334,9 @@ func initTran() {
 			i18n.TransacteTypeGoogleFree: state.Localize(state.I18nTagCliI18nTranFlagsTranslatorGoogleFree),
 		},
 	}))
+
+	tranCmd.Flags().Bool("auto-tran-enable-record", state.Config.I18n.AutoTran.EnableRecord, state.Localize(state.I18nTagCliI18nTranFlagsAutoTran))
+	tranCmd.Flags().String("auto-tran-record-path", state.Config.I18n.AutoTran.RecordPath, state.Localize(state.I18nTagCliI18nTranFlagsAutoTranRecordPath))
 
 	tranCmd.Flags().StringSlice("force-key-prefix", []string{}, state.Localize(state.I18nTagCliI18nTranFlagsForce))
 

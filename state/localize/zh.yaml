@@ -111,6 +111,9 @@ cli:
                 translator:
                     usage: 翻译通道：支持类型 {{range $key,$value := .Type}}{{$key}}:{{$value}}{{end}}
                     google-free: Google 网页翻译
+                auto-tran:
+                    enable-record: 当翻译字典发生变化时，是否开启存储相应变更后的翻译结果的记录
+                    record-path: 存储翻译记录的路径
                 force: 覆盖已存在的翻译
                 force-key-prefix: 需要被强制覆盖的 keys
         support:

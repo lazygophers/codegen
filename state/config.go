@@ -212,6 +212,11 @@ func (p *CfgTables) apply() {
 	}
 }
 
+type CfgI18nAutoTran struct {
+	EnableRecord bool   `json:"enable-record,omitempty" yaml:"enable-record,omitempty" toml:"enable-record,omitempty"`
+	RecordPath   string `json:"record-path,omitempty" yaml:"record-path,omitempty" toml:"record-path,omitempty"`
+}
+
 type CfgI18n struct {
 	GenerateConst bool `json:"generate-const,omitempty" yaml:"generate-const,omitempty" toml:"generate-const,omitempty"`
 	GenerateField bool `json:"generate-field,omitempty" yaml:"generate-field,omitempty" toml:"generate-field,omitempty"`
@@ -220,11 +225,23 @@ type CfgI18n struct {
 	AllLanguages bool     `json:"all-languages,omitempty" yaml:"all-languages,omitempty" toml:"all-languages,omitempty"`
 
 	Translator string `json:"translator,omitempty" yaml:"translator,omitempty" toml:"translator,omitempty"`
+
+	AutoTran *CfgI18nAutoTran `json:"auto-tran,omitempty" yaml:"auto-tran,omitempty" toml:"auto-tran,omitempty"`
 }
 
 func (p *CfgI18n) apply() {
 	if p.Translator == "" {
 		p.Translator = "google-free"
+	}
+
+	if p.AutoTran == nil {
+		p.AutoTran = &CfgI18nAutoTran{
+			EnableRecord: true,
+		}
+	}
+
+	if p.AutoTran.RecordPath == "" {
+		p.AutoTran.RecordPath = filepath.Join(runtime.Pwd(), ".i18n.cache")
 	}
 
 	if p.AllLanguages {
