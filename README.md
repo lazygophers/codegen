@@ -1,10 +1,6 @@
 # codegen
 
-<p>
-	<a href="https://deepwiki.com/lazygophers/codegen">
-		<img src="https://devin.ai/assets/deepwiki-badge.png" alt="Ask DeepWiki" height="20"/>
-	</a>
-</p>
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lazygophers/codegen)
 
 > 根据proto文件生成代码，并且将相关标记写入 `pb.go` 中
 
