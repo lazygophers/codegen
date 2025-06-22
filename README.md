@@ -1,7 +1,7 @@
 # codegen
 
 <p>
-	<a href="https://deepwiki.com/usememos/memos">
+	<a href="https://deepwiki.com/lazygophers/codegen">
 		<img src="https://devin.ai/assets/deepwiki-badge.png" alt="Ask DeepWiki" height="20"/>
 	</a>
 </p>
