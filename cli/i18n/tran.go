@@ -311,8 +311,8 @@ func mergeTranCmdFlags(cmd *cobra.Command) {
 		state.Config.I18n.AutoTran.EnableRecord = utils.GetBool("auto-tran-enable-record", cmd)
 	}
 
-	if cmd.Flag("record-path").Changed {
-		state.Config.I18n.AutoTran.RecordPath = utils.GetString("record-path", cmd)
+	if cmd.Flag("auto-tran-record-path").Changed {
+		state.Config.I18n.AutoTran.RecordPath = utils.GetString("auto-tran-record-path", cmd)
 	}
 
 }
