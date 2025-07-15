@@ -256,7 +256,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					if afterTranslate != nil {
 						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(tragetList, "\n"))
 					}
-					err := tx.Update(dstLang.Lang, k, dstLocalize[k])
+					err := tx.Update(dstLang.Lang, k, srcLocalize[k])
 					if err != nil {
 						log.Errorf("err:%v", err)
 						return err
