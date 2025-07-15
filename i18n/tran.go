@@ -18,6 +18,8 @@ type TransacteConfig struct {
 	OverwriteKeyPrefix []string
 	Overwrite          bool
 
+	AutoTran *state.CfgI18nAutoTran
+
 	Localizer  Localizer
 	Translator Translator
 }
@@ -29,9 +31,15 @@ func Translate(c *TransacteConfig) error {
 		return err
 	}
 
+	err = updateAutoTrain(c.AutoTran, filepath.Dir(c.SrcFile))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	var cache *TranCache
-	if state.Config.I18n.AutoTran.EnableRecord {
-		cache, err = NewTranCache(state.Config.I18n.AutoTran.RecordPath)
+	if c.AutoTran.EnableRecord {
+		cache, err = NewTranCache(c.AutoTran.RecordPath)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -116,7 +124,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	toDstSub := func(k string) map[string]any {
 		sub := make(map[string]any)
 		if v, ok := dstLocalize[k]; ok {
-			log.Infof("try cover dst sub localize %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
+			//log.Infof("try cover dst sub localize %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
 
 			switch x := v.(type) {
 			case map[string]any:
@@ -184,7 +192,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	}
 
 	for k, v := range srcLocalize {
-		log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
+		//log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
 
 		needTran := func() bool {
 			if beforeTranslate != nil {
@@ -200,10 +208,12 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			}
 
 			if c.Overwrite {
+				log.Warnf("need tran %s because of overwrite", k)
 				return true
 			}
 
 			if _, ok := dstLocalize[k]; !ok {
+				log.Warnf("need tran %s because of not exist", k)
 				return true
 			}
 
@@ -211,12 +221,16 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				if !strings.HasPrefix(parent+"."+k, prefix) {
 					continue
 				}
+				log.Warnf("need tran %s because of overwrite key prefix %s", k, prefix)
 				return true
 			}
 
 			if tx != nil {
-				ok, err := tx.Check(dstLang.Lang, k, dstLocalize[k])
-				if err == nil && !ok {
+				ok, err := tx.NeedTran(dstLang.Lang, parent+"."+k, srcLocalize[k])
+				if err != nil {
+					log.Errorf("err:%v", err)
+				} else if ok {
+					log.Warnf("need tran %s because of source text changed", k)
 					return true
 				}
 			}
@@ -229,51 +243,56 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			tran := func() error {
 				log.Infof("try translate [%s]%s from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
-				var tragetList []string
+				var targetList []string
 				var hasError bool
 
 				for _, s := range strings.Split(x, "\n") {
 					if s == "" {
-						tragetList = append(tragetList, s)
+						targetList = append(targetList, s)
 						continue
 					}
 
-					traget, err := c.Translator.Translate(c.SrcLang.Tag, dstLang.Tag, s)
+					target, err := c.Translator.Translate(c.SrcLang.Tag, dstLang.Tag, s)
 					if err != nil {
 						log.Errorf("err:%v", err)
-						pterm.Warning.Printfln("translate fail\nkey:%s\nfrom %s\nto %s\n%s",
-							parent+"."+k,
-							c.SrcLang,
-							dstLang,
-							s,
-						)
 						hasError = true
 						break
 					} else {
-						pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",
-							parent+"."+k,
 
-							c.SrcLang,
-							s,
-
-							dstLang,
-							traget,
-						)
-
-						tragetList = append(tragetList, traget)
+						targetList = append(targetList, target)
 					}
 				}
 
 				if !hasError {
-					dstLocalize[k] = strings.Join(tragetList, "\n")
+					dstLocalize[k] = strings.Join(targetList, "\n")
 					if afterTranslate != nil {
-						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(tragetList, "\n"))
+						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(targetList, "\n"))
 					}
-					err := tx.Update(dstLang.Lang, k, dstLocalize[k])
-					if err != nil {
-						log.Errorf("err:%v", err)
-						return err
+
+					if tx != nil {
+						err := tx.Update(dstLang.Lang, parent+"."+k, srcLocalize[k])
+						if err != nil {
+							log.Errorf("err:%v", err)
+							return err
+						}
 					}
+
+					pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",
+						parent+"."+k,
+
+						c.SrcLang,
+						srcLocalize[k],
+
+						dstLang,
+						dstLocalize[k],
+					)
+				} else {
+					pterm.Warning.Printfln("translate fail\nkey:%s\nfrom %s\nto %s\n%s",
+						parent+"."+k,
+						c.SrcLang,
+						dstLang,
+						srcLocalize[k],
+					)
 				}
 				return nil
 			}
@@ -305,11 +324,14 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(v))
 				}
 
-				err := tx.Update(dstLang.Lang, k, dstLocalize[k])
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
+				if tx != nil {
+					err := tx.Update(dstLang.Lang, parent+"."+k, srcLocalize[k])
+					if err != nil {
+						log.Errorf("err:%v", err)
+						return err
+					}
 				}
+
 				return nil
 			}
 

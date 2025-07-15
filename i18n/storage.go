@@ -1,7 +1,7 @@
 package i18n
 
 import (
-	"github.com/lazygophers/codegen/state"
+	"errors"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/anyx"
 	"github.com/lazygophers/utils/cryptox"
@@ -33,14 +33,23 @@ func (p *TranTx) Rollback() error {
 	return nil
 }
 
-func (p *TranTx) Check(lang string, key string, value any) (bool, error) {
+func (p *TranTx) NeedTran(lang string, key string, value any) (bool, error) {
 	bucket, err := p.tx.CreateBucketIfNotExists(stringx.ToBytes(lang))
 	if err != nil {
 		log.Errorf("err:%s", err)
 		return false, err
 	}
 
-	return stringx.ToString(bucket.Get(stringx.ToBytes(key))) == cryptox.Md5(anyx.ToBytes(value)), nil
+	old := stringx.ToString(bucket.Get(stringx.ToBytes(key)))
+	if old == "" {
+		err = bucket.Put(anyx.ToBytes(key), stringx.ToBytes(cryptox.Md5(anyx.ToBytes(value))))
+		if err != nil {
+			log.Errorf("err:%s", err)
+		}
+		return false, nil
+	}
+
+	return old != cryptox.Md5(anyx.ToBytes(value)), nil
 }
 
 func (p *TranTx) Update(lang string, key string, value any) error {
@@ -65,7 +74,7 @@ type TranCache struct {
 
 func NewTranCache(filepath string) (*TranCache, error) {
 	if filepath == "" {
-		filepath = state.Config.I18n.AutoTran.RecordPath
+		return nil, errors.New("filepath is empty")
 	}
 	db, err := bolt.Open(filepath, 0600, nil)
 	if err != nil {
@@ -76,6 +85,7 @@ func NewTranCache(filepath string) (*TranCache, error) {
 }
 
 func (p *TranCache) Close() error {
+	_ = p.db.Sync()
 	return p.db.Close()
 }
 
