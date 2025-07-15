@@ -252,7 +252,7 @@ func TestNameStyle(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			assert.Equal(t, codegen.NameStyle[tt.args.style]("AddUserRecord", "ModelUserRecord"), tt.want.s)
+			assert.Equal(t, codegen.NameStyle[tt.args.style].NamePath("AddUserRecord", "ModelUserRecord"), tt.want.s)
 		})
 	}
 }
