@@ -31,6 +31,12 @@ func Translate(c *TransacteConfig) error {
 		return err
 	}
 
+	err = updateAutoTrain(c.AutoTran, filepath.Dir(c.SrcFile))
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	var cache *TranCache
 	if c.AutoTran.EnableRecord {
 		cache, err = NewTranCache(c.AutoTran.RecordPath)
@@ -233,12 +239,12 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			tran := func() error {
 				log.Infof("try translate [%s]%s from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
-				var tragetList []string
+				var targetList []string
 				var hasError bool
 
 				for _, s := range strings.Split(x, "\n") {
 					if s == "" {
-						tragetList = append(tragetList, s)
+						targetList = append(targetList, s)
 						continue
 					}
 
@@ -249,19 +255,22 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 						break
 					} else {
 
-						tragetList = append(tragetList, target)
+						targetList = append(targetList, target)
 					}
 				}
 
 				if !hasError {
-					dstLocalize[k] = strings.Join(tragetList, "\n")
+					dstLocalize[k] = strings.Join(targetList, "\n")
 					if afterTranslate != nil {
-						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(tragetList, "\n"))
+						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(targetList, "\n"))
 					}
-					err := tx.Update(dstLang.Lang, k, srcLocalize[k])
-					if err != nil {
-						log.Errorf("err:%v", err)
-						return err
+
+					if tx != nil {
+						err := tx.Update(dstLang.Lang, k, srcLocalize[k])
+						if err != nil {
+							log.Errorf("err:%v", err)
+							return err
+						}
 					}
 
 					pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",

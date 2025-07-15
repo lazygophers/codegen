@@ -241,7 +241,7 @@ func (p *CfgI18n) apply() {
 	}
 
 	if p.AutoTran.RecordPath == "" {
-		p.AutoTran.RecordPath = filepath.Join(runtime.Pwd(), ".i18n.cache")
+		p.AutoTran.RecordPath = "{{ .LocalizeDir }}/.i18n.cache"
 	}
 
 	if p.AllLanguages {
