@@ -320,11 +320,14 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(v))
 				}
 
-				err := tx.Update(dstLang.Lang, k, dstLocalize[k])
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
+				if tx != nil {
+					err := tx.Update(dstLang.Lang, k, srcLocalize[k])
+					if err != nil {
+						log.Errorf("err:%v", err)
+						return err
+					}
 				}
+
 				return nil
 			}
 
