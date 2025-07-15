@@ -184,6 +184,7 @@ var tranCmd = &cobra.Command{
 				return "." + key
 			}),
 			Overwrite: state.Config.Overwrite,
+			AutoTran:  state.Config.I18n.AutoTran,
 		}
 
 		if cmd.Flag("src-language").Changed {

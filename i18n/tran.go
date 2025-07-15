@@ -18,6 +18,8 @@ type TransacteConfig struct {
 	OverwriteKeyPrefix []string
 	Overwrite          bool
 
+	AutoTran *state.CfgI18nAutoTran
+
 	Localizer  Localizer
 	Translator Translator
 }
@@ -30,8 +32,8 @@ func Translate(c *TransacteConfig) error {
 	}
 
 	var cache *TranCache
-	if state.Config.I18n.AutoTran.EnableRecord {
-		cache, err = NewTranCache(state.Config.I18n.AutoTran.RecordPath)
+	if c.AutoTran.EnableRecord {
+		cache, err = NewTranCache(c.AutoTran.RecordPath)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
