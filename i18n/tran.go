@@ -238,29 +238,14 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 						continue
 					}
 
-					traget, err := c.Translator.Translate(c.SrcLang.Tag, dstLang.Tag, s)
+					target, err := c.Translator.Translate(c.SrcLang.Tag, dstLang.Tag, s)
 					if err != nil {
 						log.Errorf("err:%v", err)
-						pterm.Warning.Printfln("translate fail\nkey:%s\nfrom %s\nto %s\n%s",
-							parent+"."+k,
-							c.SrcLang,
-							dstLang,
-							s,
-						)
 						hasError = true
 						break
 					} else {
-						pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",
-							parent+"."+k,
 
-							c.SrcLang,
-							s,
-
-							dstLang,
-							traget,
-						)
-
-						tragetList = append(tragetList, traget)
+						tragetList = append(tragetList, target)
 					}
 				}
 
@@ -274,6 +259,23 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 						log.Errorf("err:%v", err)
 						return err
 					}
+
+					pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",
+						parent+"."+k,
+
+						c.SrcLang,
+						srcLocalize[k],
+
+						dstLang,
+						dstLocalize[k],
+					)
+				} else {
+					pterm.Warning.Printfln("translate fail\nkey:%s\nfrom %s\nto %s\n%s",
+						parent+"."+k,
+						c.SrcLang,
+						dstLang,
+						srcLocalize[k],
+					)
 				}
 				return nil
 			}
