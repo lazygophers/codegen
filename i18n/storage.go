@@ -33,14 +33,23 @@ func (p *TranTx) Rollback() error {
 	return nil
 }
 
-func (p *TranTx) Check(lang string, key string, value any) (bool, error) {
+func (p *TranTx) NeedTran(lang string, key string, value any) (bool, error) {
 	bucket, err := p.tx.CreateBucketIfNotExists(stringx.ToBytes(lang))
 	if err != nil {
 		log.Errorf("err:%s", err)
 		return false, err
 	}
 
-	return stringx.ToString(bucket.Get(stringx.ToBytes(key))) == cryptox.Md5(anyx.ToBytes(value)), nil
+	old := stringx.ToString(bucket.Get(stringx.ToBytes(key)))
+	if old == "" {
+		err = bucket.Put(anyx.ToBytes(key), stringx.ToBytes(cryptox.Md5(anyx.ToBytes(value))))
+		if err != nil {
+			log.Errorf("err:%s", err)
+		}
+		return false, nil
+	}
+
+	return old != cryptox.Md5(anyx.ToBytes(value)), nil
 }
 
 func (p *TranTx) Update(lang string, key string, value any) error {
@@ -76,6 +85,7 @@ func NewTranCache(filepath string) (*TranCache, error) {
 }
 
 func (p *TranCache) Close() error {
+	_ = p.db.Sync()
 	return p.db.Close()
 }
 

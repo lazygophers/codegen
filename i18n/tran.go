@@ -124,7 +124,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	toDstSub := func(k string) map[string]any {
 		sub := make(map[string]any)
 		if v, ok := dstLocalize[k]; ok {
-			log.Infof("try cover dst sub localize %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
+			//log.Infof("try cover dst sub localize %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
 
 			switch x := v.(type) {
 			case map[string]any:
@@ -192,7 +192,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	}
 
 	for k, v := range srcLocalize {
-		log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
+		//log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
 
 		needTran := func() bool {
 			if beforeTranslate != nil {
@@ -208,10 +208,12 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			}
 
 			if c.Overwrite {
+				log.Warnf("need tran %s because of overwrite", k)
 				return true
 			}
 
 			if _, ok := dstLocalize[k]; !ok {
+				log.Warnf("need tran %s because of not exist", k)
 				return true
 			}
 
@@ -219,14 +221,16 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				if !strings.HasPrefix(parent+"."+k, prefix) {
 					continue
 				}
+				log.Warnf("need tran %s because of overwrite key prefix %s", k, prefix)
 				return true
 			}
 
 			if tx != nil {
-				ok, err := tx.Check(dstLang.Lang, k, srcLocalize[k])
+				ok, err := tx.NeedTran(dstLang.Lang, parent+"."+k, srcLocalize[k])
 				if err != nil {
 					log.Errorf("err:%v", err)
-				} else if !ok {
+				} else if ok {
+					log.Warnf("need tran %s because of source text changed", k)
 					return true
 				}
 			}
@@ -266,7 +270,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					}
 
 					if tx != nil {
-						err := tx.Update(dstLang.Lang, k, srcLocalize[k])
+						err := tx.Update(dstLang.Lang, parent+"."+k, srcLocalize[k])
 						if err != nil {
 							log.Errorf("err:%v", err)
 							return err
@@ -321,7 +325,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				}
 
 				if tx != nil {
-					err := tx.Update(dstLang.Lang, k, srcLocalize[k])
+					err := tx.Update(dstLang.Lang, parent+"."+k, srcLocalize[k])
 					if err != nil {
 						log.Errorf("err:%v", err)
 						return err
