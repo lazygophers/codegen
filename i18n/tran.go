@@ -215,8 +215,10 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			}
 
 			if tx != nil {
-				ok, err := tx.Check(dstLang.Lang, k, dstLocalize[k])
-				if err == nil && !ok {
+				ok, err := tx.Check(dstLang.Lang, k, srcLocalize[k])
+				if err != nil {
+					log.Errorf("err:%v", err)
+				} else if !ok {
 					return true
 				}
 			}
