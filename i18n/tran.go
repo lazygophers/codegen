@@ -192,7 +192,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	}
 
 	for k, v := range srcLocalize {
-		//log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
+		log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
 
 		needTran := func() bool {
 			if beforeTranslate != nil {
@@ -336,7 +336,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			}
 
 			if needTran() {
-				return tran()
+				err = tran()
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 			}
 
 		case map[string]any:
