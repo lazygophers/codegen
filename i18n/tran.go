@@ -298,7 +298,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			}
 
 			if needTran() {
-				return tran()
+				err = tran()
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return err
+				}
 			}
 
 		case int, int8, int16, int32, int64,
