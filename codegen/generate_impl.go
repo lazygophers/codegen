@@ -125,11 +125,11 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 
 				if field.comment != nil {
 					if v, ok := field.comment.tags["type"]; ok {
-						opt.FieldType = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+						opt.FieldType = clearText(strings.Join(v.Lines(), ""))
 					}
 
 					if v, ok := field.comment.tags["field"]; ok {
-						opt.FieldName = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+						opt.FieldName = clearText(strings.Join(v.Lines(), ""))
 					}
 				}
 
