@@ -5,6 +5,7 @@ import (
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/app"
+	"github.com/lazygophers/utils/runtime"
 	"github.com/pterm/pterm"
 	"os"
 	"os/exec"
@@ -24,6 +25,10 @@ func GenPbFile(pb *PbPackage) error {
 	args = append(args, "--proto_path", filepath.ToSlash(filepath.Dir(protoFilePath)))
 
 	for _, protoDir := range state.Config.ProtoFiles {
+		if strings.HasPrefix(protoDir, "./") ||
+			strings.HasPrefix(protoDir, "../") {
+			protoDir = filepath.ToSlash(filepath.Join(runtime.Pwd(), protoDir))
+		}
 		args = append(args, "--proto_path", protoDir)
 	}
 
