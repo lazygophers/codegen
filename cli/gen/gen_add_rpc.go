@@ -2,13 +2,14 @@ package gen
 
 import (
 	"errors"
+	"strings"
+
 	"github.com/lazygophers/codegen/codegen"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
 	"github.com/spf13/cobra"
-	"strings"
 )
 
 var addRpcCmd = &cobra.Command{
@@ -19,6 +20,11 @@ var addRpcCmd = &cobra.Command{
 
 		if v, err := cmd.Flags().GetString("default-role"); err == nil {
 			opt.DefaultRole = v
+
+			opt.DefaultRole = strings.ReplaceAll(v, "\r", "")
+			opt.DefaultRole = strings.ReplaceAll(v, "\n", "")
+			opt.DefaultRole = strings.ReplaceAll(v, "\t", "")
+			opt.DefaultRole = strings.ReplaceAll(v, " ", "")
 		}
 
 		if v, err := cmd.Flags().GetString("gen-to"); err == nil {
