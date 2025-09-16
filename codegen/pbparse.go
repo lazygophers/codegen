@@ -296,19 +296,19 @@ func (p *PbRPC) walk() {
 	// 然后解析 注释的
 	if p.comment != nil {
 		if v, ok := p.comment.tags["gen"]; ok {
-			p.genOption.GenTo = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+			p.genOption.GenTo = clearText(strings.Join(v.Lines(), ""))
 		}
 
 		if v, ok := p.comment.tags["model"]; ok {
-			p.genOption.Model = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+			p.genOption.Model = clearText(strings.Join(v.Lines(), ""))
 		}
 
 		if v, ok := p.comment.tags["action"]; ok {
-			p.genOption.Action = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+			p.genOption.Action = clearText(strings.Join(v.Lines(), ""))
 		}
 
 		if v, ok := p.comment.tags["role"]; ok {
-			p.genOption.Role = strings.ReplaceAll(strings.Join(v.Lines(), ""), " ", "")
+			p.genOption.Role = clearText(strings.Join(v.Lines(), ""))
 		}
 	}
 

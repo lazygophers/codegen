@@ -297,7 +297,7 @@ func InjectTagParseFile(inputPath string) ([]textArea, error) {
 			if field.Doc != nil {
 				var lastTag string
 				for _, v := range field.Doc.List {
-					line := strings.ReplaceAll(strings.ReplaceAll(strings.TrimPrefix(v.Text, "//"), " ", ""), "\t", "")
+					line := strings.ReplaceAll(clearText(strings.TrimPrefix(v.Text, "//")), "\t", "")
 					if !strings.HasPrefix(line, "@") {
 						if lastTag != "" {
 							injectTags = append(injectTags, tagItem{

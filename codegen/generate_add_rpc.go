@@ -213,9 +213,7 @@ func GenerateAddRpc(pb *PbPackage, msg *PbMessage, opt *AddRpcOption) (err error
 				}
 
 				//rpcName = b.String()
-				rpcName = strings.ReplaceAll(b.String(), " ", "")
-				rpcName = strings.ReplaceAll(rpcName, "\n", "")
-				rpcName = strings.ReplaceAll(rpcName, "\r", "")
+				rpcName = clearText(b.String())
 				rpcName = strings.ReplaceAll(rpcName, "\t", "")
 			}
 

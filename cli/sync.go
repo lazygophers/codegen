@@ -52,11 +52,11 @@ var syncCmd = &cobra.Command{
 		// NOTE: 从系统目录中获取
 		if configPath == "" {
 			log.Warnf("Try to load config from system folder(%s)", pterm.Gray(filepath.Join(runtime.UserConfigDir(), app.Organization)))
-			configPath = state.TryFindConfigPath(filepath.Join(runtime.UserConfigDir(), app.Organization))
+			configPath = state.TryFindConfigPath(filepath.ToSlash(filepath.Join(runtime.UserConfigDir(), app.Organization)))
 		}
 
 		if configPath == "" {
-			configPath = filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen.cfg.yaml")
+			configPath = filepath.ToSlash(filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen.cfg.yaml"))
 		}
 
 		var c state.Cfg
@@ -184,7 +184,7 @@ var syncCmd = &cobra.Command{
 
 		} else {
 			// 存储到当前目录下的文件（按照文件名 hash)
-			fileName := filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen", cryptox.Md5(c.Sync.Remote), "codegen.cfg.yaml")
+			fileName := filepath.ToSlash(filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen", cryptox.Md5(c.Sync.Remote), "codegen.cfg.yaml"))
 
 			if !osx.IsDir(filepath.Dir(fileName)) {
 				err = os.MkdirAll(filepath.Dir(fileName), 0777)
@@ -281,7 +281,7 @@ func syncFromRemote(c *state.Cfg) error {
 
 	cacheKey := cryptox.Md5(c.Sync.Remote)
 	if c.Sync.CacheTemplatePath == "" {
-		c.Sync.CacheTemplatePath = filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen", cacheKey, "template")
+		c.Sync.CacheTemplatePath = filepath.ToSlash(filepath.Join(runtime.UserConfigDir(), app.Organization, "codegen", cacheKey, "template"))
 	}
 
 	if !osx.IsDir(c.Sync.CacheTemplatePath) {
@@ -434,7 +434,7 @@ func syncFromRemote(c *state.Cfg) error {
 				}
 
 				// md5+原始文件名，如果文件没有变更就可以不用写文件了
-				fieName := filepath.Join(c.Sync.CacheTemplatePath, cryptox.Md5(resp.Bytes())+"-"+filepath.Base(dst.String()))
+				fieName := filepath.ToSlash(filepath.Join(c.Sync.CacheTemplatePath, cryptox.Md5(resp.Bytes())+"-"+filepath.Base(dst.String())))
 
 				if !osx.IsFile(fieName) {
 					err = os.WriteFile(fieName, resp.Bytes(), 0666)
