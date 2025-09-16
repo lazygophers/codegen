@@ -3,17 +3,17 @@ package codegen
 import (
 	"embed"
 	"fmt"
+	"os"
+	"strings"
+	"text/template"
+
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/utils/anyx"
 	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
 	"go.uber.org/atomic"
-	"os"
-	"strings"
-	"text/template"
 )
 
 //go:embed template/*
@@ -287,18 +287,18 @@ var DefaultTemplateFunc = template.FuncMap{
 	"HasPrefix":  strings.HasPrefix,
 	"HasSuffix":  strings.HasSuffix,
 
-	"PluckString": anyx.PluckString,
-	"PluckInt":    anyx.PluckInt,
-	"PluckInt32":  anyx.PluckInt32,
-	"PluckUint32": anyx.PluckUint32,
-	"PluckInt64":  anyx.PluckInt64,
-	"PluckUint64": anyx.PluckUint64,
+	"PluckString": candy.PluckString,
+	"PluckInt":    candy.PluckInt,
+	"PluckInt32":  candy.PluckInt32,
+	"PluckUint32": candy.PluckUint32,
+	"PluckInt64":  candy.PluckInt64,
+	"PluckUint64": candy.PluckUint64,
 
 	"StringSliceEmpty": func(ss []string) bool {
 		return len(ss) == 0
 	},
 
-	"MapKeysString": anyx.MapKeysString,
+	"MapKeysString": candy.MapKeysString,
 	"Unique":        candy.Unique[string],
 	"Sort":          candy.Sort[string],
 	"Reverse":       candy.Reverse[string],

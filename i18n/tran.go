@@ -3,7 +3,7 @@ package i18n
 import (
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/utils/anyx"
+	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
 	"os"
 	"path/filepath"
@@ -142,12 +142,12 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 
 			case map[any]any:
 				for k, v := range x {
-					sub[anyx.ToString(k)] = v
+					sub[candy.ToString(k)] = v
 				}
 
 			case map[any]int:
 				for k, v := range x {
-					sub[anyx.ToString(k)] = v
+					sub[candy.ToString(k)] = v
 				}
 
 			case map[int64]any:
@@ -197,11 +197,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 		needTran := func() bool {
 			if beforeTranslate != nil {
 				if value, ok := dstLocalize[k]; ok {
-					if !beforeTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(value)) {
+					if !beforeTranslate(dstLang, parent+"."+k, candy.ToString(v), candy.ToString(value)) {
 						return true
 					}
 				} else {
-					if !beforeTranslate(dstLang, parent+"."+k, anyx.ToString(v), "") {
+					if !beforeTranslate(dstLang, parent+"."+k, candy.ToString(v), "") {
 						return true
 					}
 				}
@@ -266,7 +266,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				if !hasError {
 					dstLocalize[k] = strings.Join(targetList, "\n")
 					if afterTranslate != nil {
-						afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), strings.Join(targetList, "\n"))
+						afterTranslate(dstLang, parent+"."+k, candy.ToString(v), strings.Join(targetList, "\n"))
 					}
 
 					if tx != nil {
@@ -322,10 +322,10 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 					x,
 				)
 
-				dstLocalize[k] = anyx.ToString(v)
+				dstLocalize[k] = candy.ToString(v)
 
 				if afterTranslate != nil {
-					afterTranslate(dstLang, parent+"."+k, anyx.ToString(v), anyx.ToString(v))
+					afterTranslate(dstLang, parent+"."+k, candy.ToString(v), candy.ToString(v))
 				}
 
 				if tx != nil {
@@ -360,7 +360,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			dstSub := toDstSub(k)
 			srcSub := make(map[string]any, len(x))
 			for k, v := range x {
-				srcSub[anyx.ToString(k)] = v
+				srcSub[candy.ToString(k)] = v
 			}
 
 			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)

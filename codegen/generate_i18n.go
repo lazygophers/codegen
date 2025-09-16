@@ -3,7 +3,6 @@ package codegen
 import (
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/utils/anyx"
 	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
@@ -98,7 +97,7 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 			case map[any]any:
 				sub := make(map[string]any, len(x))
 				for k, v := range x {
-					sub[anyx.ToString(k)] = v
+					sub[candy.ToString(k)] = v
 				}
 				deepKeys(append(slices.Clone(ps), k), sub)
 
@@ -245,7 +244,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 	// 递归一下
 	var deepKeys func(ps []string, m map[string]interface{}) (err error)
 	deepKeys = func(ps []string, m map[string]interface{}) (err error) {
-		for _, k := range candy.Sort(anyx.MapKeysString(m)) {
+		for _, k := range candy.Sort(candy.MapKeysString(m)) {
 			v := m[k]
 			key := strings.Join(append(slices.Clone(ps), k), ".")
 
@@ -272,7 +271,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 				}
 
 			case map[string]any:
-				err = writeMiddle(key, anyx.MapKeysString(x))
+				err = writeMiddle(key, candy.MapKeysString(x))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -290,7 +289,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[k] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -308,7 +307,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[k] = string(v)
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -326,7 +325,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -344,7 +343,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -362,7 +361,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatInt(k, 10)] = string(v)
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -380,7 +379,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -409,7 +408,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 					sub[strconv.FormatFloat(k, 'f', -1, 64)] = string(v)
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -424,10 +423,10 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 			case map[any]any:
 				sub := make(map[string]any, len(x))
 				for k, v := range x {
-					sub[anyx.ToString(k)] = v
+					sub[candy.ToString(k)] = v
 				}
 
-				err = writeMiddle(key, anyx.MapKeysString(sub))
+				err = writeMiddle(key, candy.MapKeysString(sub))
 				if err != nil {
 					log.Errorf("err:%v", err)
 					return err
@@ -453,7 +452,7 @@ func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 		return err
 	}
 
-	err = writeFirst("", anyx.MapKeysString(dstLocalize))
+	err = writeFirst("", candy.MapKeysString(dstLocalize))
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

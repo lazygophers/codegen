@@ -3,7 +3,7 @@ package i18n
 import (
 	"errors"
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/utils/anyx"
+	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/cryptox"
 	"github.com/lazygophers/utils/stringx"
 	bolt "go.etcd.io/bbolt"
@@ -42,14 +42,14 @@ func (p *TranTx) NeedTran(lang string, key string, value any) (bool, error) {
 
 	old := stringx.ToString(bucket.Get(stringx.ToBytes(key)))
 	if old == "" {
-		err = bucket.Put(anyx.ToBytes(key), stringx.ToBytes(cryptox.Md5(anyx.ToBytes(value))))
+		err = bucket.Put(candy.ToBytes(key), stringx.ToBytes(cryptox.Md5(candy.ToBytes(value))))
 		if err != nil {
 			log.Errorf("err:%s", err)
 		}
 		return false, nil
 	}
 
-	return old != cryptox.Md5(anyx.ToBytes(value)), nil
+	return old != cryptox.Md5(candy.ToBytes(value)), nil
 }
 
 func (p *TranTx) Update(lang string, key string, value any) error {
@@ -59,7 +59,7 @@ func (p *TranTx) Update(lang string, key string, value any) error {
 		return err
 	}
 
-	err = bucket.Put(anyx.ToBytes(key), stringx.ToBytes(cryptox.Md5(anyx.ToBytes(value))))
+	err = bucket.Put(candy.ToBytes(key), stringx.ToBytes(cryptox.Md5(candy.ToBytes(value))))
 	if err != nil {
 		log.Errorf("err:%s", err)
 		return err
