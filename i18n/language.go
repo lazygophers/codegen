@@ -24,10 +24,6 @@ func (l *Language) GoString() string {
 	return l.String()
 }
 
-func (l *Language) ʔ() string {
-	return l.String()
-}
-
 func ParseLanguage(lang string) (*Language, error) {
 	lang = strings.ToLower(lang)
 

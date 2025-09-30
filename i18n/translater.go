@@ -15,48 +15,69 @@ import (
 	"time"
 )
 
-type TransacteType string
+const (
+	// HTTP client configuration
+	defaultTimeout       = 10 * time.Second
+	defaultRetryWaitTime = 1 * time.Second
+	defaultRetryCount    = 3
+
+	// Rate limit retry wait times
+	googleRateLimitWait = 30 * time.Second
+	deeplRateLimitWait  = 1 * time.Minute
+)
+
+type TranslateType string
 
 const (
-	TransacteTypeGoogleFree TransacteType = "google-free"
-	TransacteTypeDeeplFree  TransacteType = "deepl-free"
+	TranslateTypeGoogleFree TranslateType = "google-free"
 )
 
 type Translator interface {
 	Translate(srcLang, dstLang language.Tag, key string) (string, error)
 }
 
-var _ Translator = (*TranslaterHandler)(nil)
+var _ Translator = (*TranslatorHandler)(nil)
 
-type TranslaterHandler struct {
+type TranslatorHandler struct {
 	handler func(srcLang, dstLang language.Tag, key string) (string, error)
 }
 
-var transcterMap = map[TransacteType]Translator{
-	TransacteTypeGoogleFree: NewTransacterGoogleFree(),
-	TransacteTypeDeeplFree:  NewTransacterDeeplFree(),
+var translatorMap = map[TranslateType]Translator{
+	TranslateTypeGoogleFree: NewTranslatorGoogleFree(),
+	TranslateTypeDeeplFree:  NewTranslatorDeeplFree(),
 }
 
-func RegisterTransctor(tt TransacteType, t Translator) {
-	transcterMap[tt] = t
+func RegisterTranslator(tt TranslateType, t Translator) {
+	translatorMap[tt] = t
 }
 
-func GetTranslator(tt TransacteType) (Translator, bool) {
-	t, ok := transcterMap[tt]
+func GetTranslator(tt TranslateType) (Translator, bool) {
+	t, ok := translatorMap[tt]
 	return t, ok
 }
 
-func (p *TranslaterHandler) Translate(srcLang, dstLang language.Tag, key string) (string, error) {
+func (p *TranslatorHandler) Translate(srcLang, dstLang language.Tag, key string) (string, error) {
 	return p.handler(srcLang, dstLang, key)
 }
 
-func NewTranslaterHandler(handler func(srcLang, dstLang language.Tag, key string) (string, error)) *TranslaterHandler {
-	return &TranslaterHandler{
+func NewTranslatorHandler(handler func(srcLang, dstLang language.Tag, key string) (string, error)) *TranslatorHandler {
+	return &TranslatorHandler{
 		handler: handler,
 	}
 }
 
-type TransacterGoogleFree struct {
+// setupProxy configures proxy settings from environment variables
+func setupProxy(client *resty.Client) {
+	if proxy := os.Getenv("HTTPS_PROXY"); proxy != "" {
+		client.SetProxy(proxy)
+	} else if proxy := os.Getenv("ALL_PROXY"); proxy != "" {
+		client.SetProxy(proxy)
+	} else if proxy := os.Getenv("HTTP_PROXY"); proxy != "" {
+		client.SetProxy(proxy)
+	}
+}
+
+type TranslatorGoogleFree struct {
 	client *resty.Client
 }
 
@@ -79,7 +100,7 @@ type googleTranslateResp struct {
 	} `json:"ld_result"`
 }
 
-func (p *TransacterGoogleFree) Translate(srcLang, dstLang language.Tag, key string) (string, error) {
+func (p *TranslatorGoogleFree) Translate(srcLang, dstLang language.Tag, key string) (string, error) {
 	var rsp googleTranslateResp
 	resp, err := p.client.R().
 		SetQueryParams(map[string]string{
@@ -114,12 +135,12 @@ func (p *TransacterGoogleFree) Translate(srcLang, dstLang language.Tag, key stri
 	return trans.Trans, nil
 }
 
-func NewTransacterGoogleFree() *TransacterGoogleFree {
-	p := &TransacterGoogleFree{
+func NewTranslatorGoogleFree() *TranslatorGoogleFree {
+	p := &TranslatorGoogleFree{
 		client: resty.New().
-			SetTimeout(time.Second * 10).
-			SetRetryWaitTime(time.Second).
-			SetRetryCount(3).
+			SetTimeout(defaultTimeout).
+			SetRetryWaitTime(defaultRetryWaitTime).
+			SetRetryCount(defaultRetryCount).
 			SetHeaders(map[string]string{
 				"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
 				"Keep-Alive": "5",
@@ -144,7 +165,7 @@ func NewTransacterGoogleFree() *TransacterGoogleFree {
 				case 200:
 					return false
 				case 429:
-					wait := time.Duration(response.Request.Attempt) * time.Second * 30
+					wait := time.Duration(response.Request.Attempt) * googleRateLimitWait
 					pterm.Warning.Printfln("google request too quick, wait %s before retrying", wait)
 					log.Warnf("google request too quick, wait %s before retrying", wait)
 					time.Sleep(wait)
@@ -158,18 +179,11 @@ func NewTransacterGoogleFree() *TransacterGoogleFree {
 			SetBaseURL("https://translate.google.com/translate_a/single"),
 	}
 
-	if os.Getenv("HTTPS_PROXY") != "" {
-		p.client.SetProxy(os.Getenv("HTTPS_PROXY"))
-	} else if os.Getenv("ALL_PROXY") != "" {
-		p.client.SetProxy(os.Getenv("ALL_PROXY"))
-	} else if os.Getenv("HTTP_PROXY") != "" {
-		p.client.SetProxy(os.Getenv("HTTP_PROXY"))
-	}
-
+	setupProxy(p.client)
 	return p
 }
 
-type TransacterDeeplFree struct {
+type TranslatorDeeplFree struct {
 	client *resty.Client
 }
 
@@ -250,7 +264,7 @@ type DeeplFreeResp struct {
 	Result  *DeeplFreeResult `json:"result"`
 }
 
-func (p *TransacterDeeplFree) Translate(srcLang, dstLang language.Tag, key string) (string, error) {
+func (p *TranslatorDeeplFree) Translate(srcLang, dstLang language.Tag, key string) (string, error) {
 	var rsp DeeplFreeResp
 	var resp, err = p.client.R().
 		SetBody(&DeeplFreeReq{
@@ -317,12 +331,12 @@ func (p *TransacterDeeplFree) Translate(srcLang, dstLang language.Tag, key strin
 	return trans.Sentences[0].Text, nil
 }
 
-func NewTransacterDeeplFree() *TransacterDeeplFree {
-	p := &TransacterDeeplFree{
+func NewTranslatorDeeplFree() *TranslatorDeeplFree {
+	p := &TranslatorDeeplFree{
 		client: resty.New().
-			SetTimeout(time.Second * 10).
-			SetRetryWaitTime(time.Second).
-			SetRetryCount(3).
+			SetTimeout(defaultTimeout).
+			SetRetryWaitTime(defaultRetryWaitTime).
+			SetRetryCount(defaultRetryCount).
 			SetHeaders(map[string]string{
 				"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
 				"Origin":     "https://www.deepl.com/",
@@ -342,8 +356,8 @@ func NewTransacterDeeplFree() *TransacterDeeplFree {
 				case 200:
 					return false
 				case 429:
-					log.Warnf("deepl request too quick, wait 1m before retrying")
-					time.Sleep(time.Minute)
+					log.Warnf("deepl request too quick, wait %s before retrying", deeplRateLimitWait)
+					time.Sleep(deeplRateLimitWait)
 					return true
 
 				default:
@@ -353,18 +367,10 @@ func NewTransacterDeeplFree() *TransacterDeeplFree {
 			SetQueryParams(map[string]string{
 				"method": "LMT_handle_jobs",
 			}).
-			SetDebug(true).
-			//SetLogger(log.Clone().SetOutput(io.Discard)).
+			SetLogger(log.Clone().SetOutput(io.Discard)).
 			SetBaseURL("https://www2.deepl.com/jsonrpc"),
 	}
 
-	if os.Getenv("HTTPS_PROXY") != "" {
-		p.client.SetProxy(os.Getenv("HTTPS_PROXY"))
-	} else if os.Getenv("ALL_PROXY") != "" {
-		p.client.SetProxy(os.Getenv("ALL_PROXY"))
-	} else if os.Getenv("HTTP_PROXY") != "" {
-		p.client.SetProxy(os.Getenv("HTTP_PROXY"))
-	}
-
+	setupProxy(p.client)
 	return p
 }

@@ -1,6 +1,8 @@
 package i18n
 
 import (
+	"errors"
+	"fmt"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
@@ -11,7 +13,7 @@ import (
 	"strings"
 )
 
-type TransacteConfig struct {
+type TranslateConfig struct {
 	SrcFile            string
 	SrcLang            *Language
 	Langs              []*Language
@@ -24,7 +26,7 @@ type TransacteConfig struct {
 	Translator Translator
 }
 
-func Translate(c *TransacteConfig) error {
+func Translate(c *TranslateConfig) error {
 	srcLocalize, err := LoadLocalize(c.SrcFile, c.Localizer)
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -94,7 +96,7 @@ func Translate(c *TransacteConfig) error {
 			err = tx.Commit()
 			if err != nil {
 				log.Errorf("err:%v", err)
-				_ = tx.Rollback()
+				return err
 			}
 		}
 	}
@@ -120,75 +122,92 @@ func RegisterAfterTranslate(fn AfterTranslate) {
 	afterTranslate = fn
 }
 
-func translate(parent string, srcLocalize map[string]any, dstLang *Language, dstLocalize map[string]any, c *TransacteConfig, tx *TranTx) (err error) {
-	toDstSub := func(k string) map[string]any {
-		sub := make(map[string]any)
+// convertToStringAnyMap converts various map types to map[string]any
+func convertToStringAnyMap(v any) (map[string]any, error) {
+	sub := make(map[string]any)
+
+	switch x := v.(type) {
+	case map[string]any:
+		return x, nil
+
+	case map[string]string:
+		for k, v := range x {
+			sub[k] = v
+		}
+
+	case map[string]int:
+		for k, v := range x {
+			sub[k] = v
+		}
+
+	case map[any]any:
+		for k, v := range x {
+			sub[candy.ToString(k)] = v
+		}
+
+	case map[any]int:
+		for k, v := range x {
+			sub[candy.ToString(k)] = v
+		}
+
+	case map[int64]any:
+		for k, v := range x {
+			sub[strconv.FormatInt(k, 10)] = v
+		}
+
+	case map[int64]string:
+		for k, v := range x {
+			sub[strconv.FormatInt(k, 10)] = v
+		}
+
+	case map[int64]int:
+		for k, v := range x {
+			sub[strconv.FormatInt(k, 10)] = v
+		}
+
+	case map[float64]any:
+		for k, v := range x {
+			sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
+		}
+
+	case map[float64]string:
+		for k, v := range x {
+			sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
+		}
+
+	case map[int]int:
+		for k, v := range x {
+			sub[strconv.Itoa(k)] = v
+		}
+
+	case map[int]string:
+		for k, v := range x {
+			sub[strconv.Itoa(k)] = v
+		}
+
+	default:
+		log.Errorf("unsupported map type %T, data:%v", x, x)
+		return nil, errors.New("unsupported map type: " + fmt.Sprintf("%T", x))
+	}
+
+	return sub, nil
+}
+
+func translate(parent string, srcLocalize map[string]any, dstLang *Language, dstLocalize map[string]any, c *TranslateConfig, tx *TranTx) (err error) {
+	toDstSub := func(k string) (map[string]any, error) {
+		var sub map[string]any
+		var err error
 		if v, ok := dstLocalize[k]; ok {
-			//log.Infof("try cover dst sub localize %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
-
-			switch x := v.(type) {
-			case map[string]any:
-				sub = x
-
-			case map[string]string:
-				for k, v := range x {
-					sub[k] = v
-				}
-
-			case map[string]int:
-				for k, v := range x {
-					sub[k] = v
-				}
-
-			case map[any]any:
-				for k, v := range x {
-					sub[candy.ToString(k)] = v
-				}
-
-			case map[any]int:
-				for k, v := range x {
-					sub[candy.ToString(k)] = v
-				}
-
-			case map[int64]any:
-				for k, v := range x {
-					sub[strconv.FormatInt(k, 10)] = v
-				}
-
-			case map[int64]string:
-				for k, v := range x {
-					sub[strconv.FormatInt(k, 10)] = v
-				}
-
-			case map[int64]int:
-				for k, v := range x {
-					sub[strconv.FormatInt(k, 10)] = v
-				}
-
-			case map[float64]any:
-				sub = map[string]any{}
-				for k, v := range x {
-					sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
-				}
-
-			case map[float64]string:
-				for k, v := range x {
-					sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
-				}
-
-			case map[int]int:
-				for k, v := range x {
-					sub[strconv.Itoa(k)] = v
-				}
-
-			default:
-				log.Errorf("data:%v", x)
-				log.Panicf("unknown type %T", x)
+			sub, err = convertToStringAnyMap(v)
+			if err != nil {
+				return nil, err
 			}
+		} else {
+			sub = make(map[string]any)
 		}
 
 		dstLocalize[k] = sub
-		return sub
+		return sub, nil
 	}
 
 	for k, v := range srcLocalize {
@@ -348,7 +367,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			}
 
 		case map[string]any:
-			dstSub := toDstSub(k)
+			dstSub, err := toDstSub(k)
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
 
 			err = translate(parent+"."+k, x, dstLang, dstSub, c, tx)
 			if err != nil {
@@ -356,89 +379,18 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 				return err
 			}
 
-		case map[any]any:
-			dstSub := toDstSub(k)
-			srcSub := make(map[string]any, len(x))
-			for k, v := range x {
-				srcSub[candy.ToString(k)] = v
-			}
-
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
+		case map[any]any, map[string]string, map[int64]any, map[int64]string,
+			map[int]string, map[float64]any, map[float64]string:
+			dstSub, err := toDstSub(k)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
 			}
 
-		case map[string]string:
-			dstSub := toDstSub(k)
-			srcSub := make(map[string]any, len(x))
-			for k, v := range x {
-				srcSub[k] = v
-			}
-
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
+			srcSub, err := convertToStringAnyMap(x)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
-			}
-
-		case map[int64]any:
-			dstSub := toDstSub(k)
-			srcSub := make(map[string]any, len(x))
-			for k, v := range x {
-				srcSub[strconv.FormatInt(k, 10)] = v
-			}
-
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
-			if err != nil {
-				log.Errorf("err:%v", err)
-				return err
-			}
-
-		case map[int64]string:
-			dstSub := toDstSub(k)
-			srcSub := make(map[string]any, len(x))
-			for k, v := range x {
-				srcSub[strconv.FormatInt(k, 10)] = v
-			}
-
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
-			if err != nil {
-				log.Errorf("err:%v", err)
-				return err
-			}
-
-		case map[int]string:
-			dstSub := toDstSub(k)
-			srcSub := make(map[string]any, len(x))
-			for k, v := range x {
-				srcSub[strconv.Itoa(k)] = v
-			}
-
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
-			if err != nil {
-				log.Errorf("err:%v", err)
-				return err
-			}
-
-		case map[float64]any:
-			dstSub := toDstSub(k)
-			srcSub := make(map[string]any, len(x))
-			for k, v := range x {
-				srcSub[strconv.FormatFloat(k, 'f', -1, 64)] = v
-			}
-
-			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
-			if err != nil {
-				log.Errorf("err:%v", err)
-				return err
-			}
-
-		case map[float64]string:
-			dstSub := toDstSub(k)
-			srcSub := make(map[string]any, len(x))
-			for k, v := range x {
-				srcSub[strconv.FormatFloat(k, 'f', -1, 64)] = v
 			}
 
 			err = translate(parent+"."+k, srcSub, dstLang, dstSub, c, tx)
@@ -448,7 +400,8 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			}
 
 		default:
-			log.Panicf("unsupported type: %T", x)
+			log.Errorf("unsupported value type: %T for key %s", x, parent+"."+k)
+			return errors.New("unsupported value type: " + fmt.Sprintf("%T", x))
 		}
 	}
 
