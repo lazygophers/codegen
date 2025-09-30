@@ -33,7 +33,7 @@ func Translate(c *TranslateConfig) error {
 		return err
 	}
 
-	err = updateAutoTrain(c.AutoTran, filepath.Dir(c.SrcFile))
+	err = updateAutoTran(c.AutoTran, filepath.Dir(c.SrcFile))
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -71,24 +71,24 @@ func Translate(c *TranslateConfig) error {
 				log.Errorf("err:%v", err)
 				return err
 			}
+
+			// Setup deferred rollback on error
+			defer func() {
+				if err != nil && tx != nil {
+					_ = tx.Rollback()
+				}
+			}()
 		}
 
 		err = translate("", srcLocalize, dstLang, dstLocalize, c, tx)
 		if err != nil {
 			log.Errorf("err:%v", err)
-			if tx != nil {
-				_ = tx.Rollback()
-			}
 			return err
 		}
 
 		err = saveLocalizer(filepath.Join(filepath.Dir(c.SrcFile), dstLang.Lang+filepath.Ext(c.SrcFile)), dstLocalize, c.Localizer)
 		if err != nil {
 			log.Errorf("err:%v", err)
-			if tx != nil {
-				_ = tx.Rollback()
-			}
-
 			return err
 		}
 
@@ -193,6 +193,55 @@ func convertToStringAnyMap(v any) (map[string]any, error) {
 	return sub, nil
 }
 
+// shouldTranslate checks if a key needs to be translated
+func shouldTranslate(c *TranslateConfig, dstLang *Language, parent, key string, srcValue any, dstValue any, tx *TranTx) bool {
+	fullKey := parent + "." + key
+
+	// Check beforeTranslate hook
+	if beforeTranslate != nil {
+		var dstStr string
+		if dstValue != nil {
+			dstStr = candy.ToString(dstValue)
+		}
+		if !beforeTranslate(dstLang, fullKey, candy.ToString(srcValue), dstStr) {
+			return true
+		}
+	}
+
+	// Check overwrite mode
+	if c.Overwrite {
+		log.Warnf("need tran %s because of overwrite", key)
+		return true
+	}
+
+	// Check if key doesn't exist
+	if dstValue == nil {
+		log.Warnf("need tran %s because of not exist", key)
+		return true
+	}
+
+	// Check overwrite key prefix
+	for _, prefix := range c.OverwriteKeyPrefix {
+		if strings.HasPrefix(fullKey, prefix) {
+			log.Warnf("need tran %s because of overwrite key prefix %s", key, prefix)
+			return true
+		}
+	}
+
+	// Check source text changed via cache
+	if tx != nil {
+		ok, err := tx.NeedTran(dstLang.Lang, fullKey, srcValue)
+		if err != nil {
+			log.Errorf("err:%v", err)
+		} else if ok {
+			log.Warnf("need tran %s because of source text changed", key)
+			return true
+		}
+	}
+
+	return false
+}
+
 func translate(parent string, srcLocalize map[string]any, dstLang *Language, dstLocalize map[string]any, c *TranslateConfig, tx *TranTx) (err error) {
 	toDstSub := func(k string) (map[string]any, error) {
 		var sub map[string]any
@@ -213,53 +262,9 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	for k, v := range srcLocalize {
 		log.Infof("try translate %s from %s to %s", parent+"."+k, c.SrcLang, dstLang)
 
-		needTran := func() bool {
-			if beforeTranslate != nil {
-				if value, ok := dstLocalize[k]; ok {
-					if !beforeTranslate(dstLang, parent+"."+k, candy.ToString(v), candy.ToString(value)) {
-						return true
-					}
-				} else {
-					if !beforeTranslate(dstLang, parent+"."+k, candy.ToString(v), "") {
-						return true
-					}
-				}
-			}
-
-			if c.Overwrite {
-				log.Warnf("need tran %s because of overwrite", k)
-				return true
-			}
-
-			if _, ok := dstLocalize[k]; !ok {
-				log.Warnf("need tran %s because of not exist", k)
-				return true
-			}
-
-			for _, prefix := range c.OverwriteKeyPrefix {
-				if !strings.HasPrefix(parent+"."+k, prefix) {
-					continue
-				}
-				log.Warnf("need tran %s because of overwrite key prefix %s", k, prefix)
-				return true
-			}
-
-			if tx != nil {
-				ok, err := tx.NeedTran(dstLang.Lang, parent+"."+k, srcLocalize[k])
-				if err != nil {
-					log.Errorf("err:%v", err)
-				} else if ok {
-					log.Warnf("need tran %s because of source text changed", k)
-					return true
-				}
-			}
-
-			return false
-		}
-
 		switch x := v.(type) {
 		case string:
-			tran := func() error {
+			if shouldTranslate(c, dstLang, parent, k, v, dstLocalize[k], tx) {
 				log.Infof("try translate [%s]%s from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
 				var targetList []string
@@ -276,10 +281,8 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 						log.Errorf("err:%v", err)
 						hasError = true
 						break
-					} else {
-
-						targetList = append(targetList, target)
 					}
+					targetList = append(targetList, target)
 				}
 
 				if !hasError {
@@ -298,10 +301,8 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 
 					pterm.Success.Printfln("key:%s\nfrom(%s) %s\nto(%s) %s",
 						parent+"."+k,
-
 						c.SrcLang,
 						srcLocalize[k],
-
 						dstLang,
 						dstLocalize[k],
 					)
@@ -313,30 +314,19 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 						srcLocalize[k],
 					)
 				}
-				return nil
-			}
-
-			if needTran() {
-				err = tran()
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
-				}
 			}
 
 		case int, int8, int16, int32, int64,
 			uint, uint8, uint16, uint32, uint64,
 			float32, float64:
 
-			tran := func() error {
+			if shouldTranslate(c, dstLang, parent, k, v, dstLocalize[k], tx) {
 				log.Infof("try translate [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
 				pterm.Success.Printfln("key:%s\nfrom(%s) %d\nto(%s) %d",
 					parent+"."+k,
-
 					c.SrcLang,
 					x,
-
 					dstLang,
 					x,
 				)
@@ -353,16 +343,6 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 						log.Errorf("err:%v", err)
 						return err
 					}
-				}
-
-				return nil
-			}
-
-			if needTran() {
-				err = tran()
-				if err != nil {
-					log.Errorf("err:%v", err)
-					return err
 				}
 			}
 

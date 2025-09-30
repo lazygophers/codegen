@@ -9,7 +9,7 @@ import (
 	"text/template"
 )
 
-func updateAutoTrain(c *state.CfgI18nAutoTran, localizeDir string) error {
+func updateAutoTran(c *state.CfgI18nAutoTran, localizeDir string) error {
 	if c.EnableRecord {
 		t, err := template.New("").Parse(c.RecordPath)
 		if err != nil {
