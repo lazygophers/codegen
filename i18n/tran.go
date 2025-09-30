@@ -9,6 +9,7 @@ import (
 	"github.com/pterm/pterm"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strconv"
 	"strings"
 )
@@ -86,7 +87,7 @@ func Translate(c *TranslateConfig) error {
 			return err
 		}
 
-		err = saveLocalizer(filepath.Join(filepath.Dir(c.SrcFile), dstLang.Lang+filepath.Ext(c.SrcFile)), dstLocalize, c.Localizer)
+		err = SaveLocalize(filepath.Join(filepath.Dir(c.SrcFile), dstLang.Lang+filepath.Ext(c.SrcFile)), dstLocalize, c.Localizer)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -122,72 +123,41 @@ func RegisterAfterTranslate(fn AfterTranslate) {
 	afterTranslate = fn
 }
 
-// convertToStringAnyMap converts various map types to map[string]any
+// convertToStringAnyMap converts various map types to map[string]any using reflection
 func convertToStringAnyMap(v any) (map[string]any, error) {
+	// Fast path for already correct type
+	if m, ok := v.(map[string]any); ok {
+		return m, nil
+	}
+
+	// Use reflection for generic handling
+	val := reflect.ValueOf(v)
+	if val.Kind() != reflect.Map {
+		return nil, errors.New(fmt.Sprintf("expected map type, got %T", v))
+	}
+
 	sub := make(map[string]any)
+	iter := val.MapRange()
+	for iter.Next() {
+		k := iter.Key()
+		v := iter.Value()
 
-	switch x := v.(type) {
-	case map[string]any:
-		return x, nil
-
-	case map[string]string:
-		for k, v := range x {
-			sub[k] = v
+		// Convert key to string
+		var keyStr string
+		switch k.Kind() {
+		case reflect.String:
+			keyStr = k.String()
+		case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
+			keyStr = strconv.FormatInt(k.Int(), 10)
+		case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
+			keyStr = strconv.FormatUint(k.Uint(), 10)
+		case reflect.Float32, reflect.Float64:
+			keyStr = strconv.FormatFloat(k.Float(), 'f', -1, 64)
+		default:
+			keyStr = candy.ToString(k.Interface())
 		}
 
-	case map[string]int:
-		for k, v := range x {
-			sub[k] = v
-		}
-
-	case map[any]any:
-		for k, v := range x {
-			sub[candy.ToString(k)] = v
-		}
-
-	case map[any]int:
-		for k, v := range x {
-			sub[candy.ToString(k)] = v
-		}
-
-	case map[int64]any:
-		for k, v := range x {
-			sub[strconv.FormatInt(k, 10)] = v
-		}
-
-	case map[int64]string:
-		for k, v := range x {
-			sub[strconv.FormatInt(k, 10)] = v
-		}
-
-	case map[int64]int:
-		for k, v := range x {
-			sub[strconv.FormatInt(k, 10)] = v
-		}
-
-	case map[float64]any:
-		for k, v := range x {
-			sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
-		}
-
-	case map[float64]string:
-		for k, v := range x {
-			sub[strconv.FormatFloat(k, 'f', -1, 64)] = v
-		}
-
-	case map[int]int:
-		for k, v := range x {
-			sub[strconv.Itoa(k)] = v
-		}
-
-	case map[int]string:
-		for k, v := range x {
-			sub[strconv.Itoa(k)] = v
-		}
-
-	default:
-		log.Errorf("unsupported map type %T, data:%v", x, x)
-		return nil, errors.New("unsupported map type: " + fmt.Sprintf("%T", x))
+		sub[keyStr] = v.Interface()
 	}
 
 	return sub, nil
@@ -264,6 +234,15 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 
 		switch x := v.(type) {
 		case string:
+			// Skip empty or whitespace-only strings
+			if strings.TrimSpace(x) == "" {
+				log.Infof("skip empty string for key %s", parent+"."+k)
+				if _, exists := dstLocalize[k]; !exists {
+					dstLocalize[k] = x
+				}
+				continue
+			}
+
 			if shouldTranslate(c, dstLang, parent, k, v, dstLocalize[k], tx) {
 				log.Infof("try translate [%s]%s from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
@@ -272,6 +251,12 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 
 				for _, s := range strings.Split(x, "\n") {
 					if s == "" {
+						targetList = append(targetList, s)
+						continue
+					}
+
+					// Skip whitespace-only lines
+					if strings.TrimSpace(s) == "" {
 						targetList = append(targetList, s)
 						continue
 					}
@@ -320,18 +305,11 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 			uint, uint8, uint16, uint32, uint64,
 			float32, float64:
 
-			if shouldTranslate(c, dstLang, parent, k, v, dstLocalize[k], tx) {
-				log.Infof("try translate [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
+			// Numeric types don't need translation, just copy if key doesn't exist
+			if _, exists := dstLocalize[k]; !exists {
+				log.Infof("copy numeric value [%s]%d from %s to %s", parent+"."+k, x, c.SrcLang, dstLang)
 
-				pterm.Success.Printfln("key:%s\nfrom(%s) %d\nto(%s) %d",
-					parent+"."+k,
-					c.SrcLang,
-					x,
-					dstLang,
-					x,
-				)
-
-				dstLocalize[k] = candy.ToString(v)
+				dstLocalize[k] = v
 
 				if afterTranslate != nil {
 					afterTranslate(dstLang, parent+"."+k, candy.ToString(v), candy.ToString(v))
@@ -344,6 +322,8 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 						return err
 					}
 				}
+
+				pterm.Success.Printfln("key:%s copied numeric value: %v", parent+"."+k, x)
 			}
 
 		case map[string]any:
@@ -388,6 +368,7 @@ func translate(parent string, srcLocalize map[string]any, dstLang *Language, dst
 	return nil
 }
 
+// LoadLocalize loads localization data from a file
 func LoadLocalize(path string, localizer Localizer) (map[string]any, error) {
 	m := make(map[string]any)
 	err := localizer.UnmarshalFromFile(path, &m)
@@ -401,7 +382,8 @@ func LoadLocalize(path string, localizer Localizer) (map[string]any, error) {
 	return m, nil
 }
 
-func saveLocalizer(path string, m map[string]any, localizer Localizer) error {
+// SaveLocalize saves localization data to a file
+func SaveLocalize(path string, m map[string]any, localizer Localizer) error {
 	err := localizer.MarshalToFile(path, m)
 	if err != nil {
 		log.Errorf("err:%v", err)
