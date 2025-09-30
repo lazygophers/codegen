@@ -12,10 +12,12 @@ import (
 
 const (
 	// Error messages and installation guides
-	protocNotFoundMsg       = "protoc not found"
-	protocInstallGuide      = "please download it at `https://github.com/protocolbuffers/protobuf/releases`"
-	protocGenGoNotFoundMsg  = "protoc-gen-go not found"
-	protocGenGoInstallGuide = "please install it by running `go install github.com/golang/protobuf/protoc-gen-go`"
+	protocNotFoundMsg           = "protoc not found"
+	protocInstallGuide          = "please download it at `https://github.com/protocolbuffers/protobuf/releases`"
+	protocGenGoNotFoundMsg      = "protoc-gen-go not found"
+	protocGenGoInstallGuide     = "please install it by running `go install google.golang.org/protobuf/cmd/protoc-gen-go@latest`"
+	protocGenGoGrpcNotFoundMsg  = "protoc-gen-go-grpc not found"
+	protocGenGoGrpcInstallGuide = "please install it by running `go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest`"
 )
 
 // commandCheckConfig holds configuration for checking a command
@@ -27,6 +29,11 @@ type commandCheckConfig struct {
 	shouldPrintVersion bool
 }
 
+// errorMessage returns the formatted error message
+func (cfg commandCheckConfig) errorMessage() string {
+	return fmt.Sprintf("%s, %s", cfg.notFoundMsg, cfg.installGuide)
+}
+
 // checkCommand checks if a command exists and optionally prints its version
 func checkCommand(cfg commandCheckConfig) error {
 	log.Debugf("check %s:%v", cfg.cmdName, cfg.cmdPath)
@@ -35,7 +42,7 @@ func checkCommand(cfg commandCheckConfig) error {
 	resolvedPath, err := exec.LookPath(cfg.cmdPath)
 	if err != nil {
 		if errors.Is(err, exec.ErrNotFound) {
-			errMsg := fmt.Sprintf("%s, %s", cfg.notFoundMsg, cfg.installGuide)
+			errMsg := cfg.errorMessage()
 			pterm.Error.Println(errMsg)
 			log.Errorf("err:%v", err)
 			return errors.New(errMsg)
@@ -44,46 +51,37 @@ func checkCommand(cfg commandCheckConfig) error {
 		return err
 	}
 
-	// Try to get version information
 	if cfg.shouldPrintVersion {
-		cmd := exec.Command(resolvedPath, "--version")
-		output, err := cmd.Output()
-		if err != nil {
-			//goland:noinspection GoTypeAssertionOnErrors
-			switch x := err.(type) {
-			case *exec.ExitError:
-				// Some commands don't support --version flag
-				if x.ExitCode() == 1 && strings.Contains(string(x.Stderr), `unknown argument`) {
-					// Command exists but doesn't support --version, that's okay
-					log.Infof("%s found at %s (version unavailable)", cfg.cmdName, resolvedPath)
-					pterm.Success.Printfln("%s found at %s", cfg.cmdName, resolvedPath)
-					return nil
-				}
-				log.Errorf("err:%v", err)
-				return err
-			case *exec.Error:
-				if errors.Is(x.Err, exec.ErrNotFound) {
-					errMsg := fmt.Sprintf("%s, %s", cfg.notFoundMsg, cfg.installGuide)
-					pterm.Error.Println(errMsg)
-					log.Errorf("err:%v", err)
-					return errors.New(errMsg)
-				}
-				log.Errorf("err:%v", err)
-				return err
-			default:
-				log.Errorf("err:%v", err)
-				return err
-			}
-		}
-
-		version := strings.TrimSpace(string(output))
-		log.Infof("%s version:%s", cfg.cmdName, version)
-		pterm.Success.Printfln("%s version:%s", cfg.cmdName, version)
-	} else {
-		log.Infof("%s found at %s", cfg.cmdName, resolvedPath)
-		pterm.Success.Printfln("%s found at %s", cfg.cmdName, resolvedPath)
+		return printVersion(cfg, resolvedPath)
 	}
 
+	log.Infof("%s found at %s", cfg.cmdName, resolvedPath)
+	pterm.Success.Printfln("%s found at %s", cfg.cmdName, resolvedPath)
+	return nil
+}
+
+// printVersion prints the version of a command
+func printVersion(cfg commandCheckConfig, cmdPath string) error {
+	cmd := exec.Command(cmdPath, "--version")
+	output, err := cmd.Output()
+	if err != nil {
+		var exitErr *exec.ExitError
+		if errors.As(err, &exitErr) {
+			// Some commands don't support --version flag
+			if exitErr.ExitCode() == 1 && strings.Contains(string(exitErr.Stderr), `unknown argument`) {
+				// Command exists but doesn't support --version, that's okay
+				log.Infof("%s found at %s (version unavailable)", cfg.cmdName, cmdPath)
+				pterm.Success.Printfln("%s found at %s", cfg.cmdName, cmdPath)
+				return nil
+			}
+		}
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	version := strings.TrimSpace(string(output))
+	log.Infof("%s version:%s", cfg.cmdName, version)
+	pterm.Success.Printfln("%s version:%s", cfg.cmdName, version)
 	return nil
 }
 
@@ -113,8 +111,17 @@ func CheckEnvironments() error {
 		return err
 	}
 
+	// Check protoc-gen-go-grpc
+	if err := checkCommand(commandCheckConfig{
+		cmdPath:         state.Config.ProtoGenGoGrpcPath,
+		cmdName:         "protoc-gen-go-grpc",
+		notFoundMsg:     protocGenGoGrpcNotFoundMsg,
+		installGuide:    protocGenGoGrpcInstallGuide,
+		shouldPrintVersion: true,
+	}); err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	return nil
 }
-
-// protoc-gen-go-grpc
-// go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
