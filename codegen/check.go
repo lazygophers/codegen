@@ -88,37 +88,40 @@ func printVersion(cfg commandCheckConfig, cmdPath string) error {
 // CheckEnvironments checks if required protobuf tools are installed
 func CheckEnvironments() error {
 	// Check protoc
-	if err := checkCommand(commandCheckConfig{
+	err := checkCommand(commandCheckConfig{
 		cmdPath:         state.Config.ProtocPath,
 		cmdName:         "protoc",
 		notFoundMsg:     protocNotFoundMsg,
 		installGuide:    protocInstallGuide,
 		shouldPrintVersion: true,
-	}); err != nil {
+	})
+	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
 	// Check protoc-gen-go
-	if err := checkCommand(commandCheckConfig{
+	err = checkCommand(commandCheckConfig{
 		cmdPath:         state.Config.ProtoGenGoPath,
 		cmdName:         "protoc-gen-go",
 		notFoundMsg:     protocGenGoNotFoundMsg,
 		installGuide:    protocGenGoInstallGuide,
 		shouldPrintVersion: true,
-	}); err != nil {
+	})
+	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
 	// Check protoc-gen-go-grpc
-	if err := checkCommand(commandCheckConfig{
+	err = checkCommand(commandCheckConfig{
 		cmdPath:         state.Config.ProtoGenGoGrpcPath,
 		cmdName:         "protoc-gen-go-grpc",
 		notFoundMsg:     protocGenGoGrpcNotFoundMsg,
 		installGuide:    protocGenGoGrpcInstallGuide,
 		shouldPrintVersion: true,
-	}); err != nil {
+	})
+	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
