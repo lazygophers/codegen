@@ -8,11 +8,11 @@ import (
 	"github.com/pterm/pterm"
 	"golang.org/x/text/language"
 	"io"
-	"net/http"
 	"resty.dev/v3"
 	"time"
 )
 
+// TranslatorGoogleFree implements Translator interface using Google's free translation service
 type TranslatorGoogleFree struct {
 	client *resty.Client
 }
@@ -27,15 +27,15 @@ type googleTranslateResp struct {
 	Sentences  []googleSentences `json:"sentences"`
 	Src        string            `json:"src"`
 	Confidence float64           `json:"confidence"`
-	Spell      struct {
-	} `json:"spell"`
-	LdResult struct {
+	Spell      interface{}       `json:"spell"`
+	LdResult   struct {
 		Srclangs            []string  `json:"srclangs"`
 		SrclangsConfidences []float64 `json:"srclangs_confidences"`
 		ExtendedSrclangs    []string  `json:"extended_srclangs"`
 	} `json:"ld_result"`
 }
 
+// Translate translates text from source language to destination language using Google Translate
 func (p *TranslatorGoogleFree) Translate(srcLang, dstLang language.Tag, key string) (string, error) {
 	var rsp googleTranslateResp
 	resp, err := p.client.R().
@@ -52,12 +52,12 @@ func (p *TranslatorGoogleFree) Translate(srcLang, dstLang language.Tag, key stri
 	}
 
 	if resp.StatusCode() != 200 {
-		log.Errorf("err:%v", err)
+		log.Errorf("http request failed with status %s", resp.Status())
 		return "", errors.New(resp.Status())
 	}
 
 	if len(rsp.Sentences) == 0 {
-		return "", errors.New("not get translations")
+		return "", errors.New("no translations found")
 	}
 
 	trans := candy.FirstOr(candy.SortUsing(rsp.Sentences, func(a, b googleSentences) bool {
@@ -65,12 +65,13 @@ func (p *TranslatorGoogleFree) Translate(srcLang, dstLang language.Tag, key stri
 	}), googleSentences{})
 
 	if trans.Trans == "" {
-		return "", errors.New("not get translations")
+		return "", errors.New("no translations found")
 	}
 
 	return trans.Trans, nil
 }
 
+// NewTranslatorGoogleFree creates a new Google translator instance
 func NewTranslatorGoogleFree() *TranslatorGoogleFree {
 	p := &TranslatorGoogleFree{
 		client: resty.New().
@@ -78,11 +79,10 @@ func NewTranslatorGoogleFree() *TranslatorGoogleFree {
 			SetRetryWaitTime(defaultRetryWaitTime).
 			SetRetryCount(defaultRetryCount).
 			SetHeaders(map[string]string{
-				"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36",
 				"Keep-Alive": "5",
 			}).
 			AddRequestMiddleware(func(client *resty.Client, request *resty.Request) error {
-				request.SetCookie(&http.Cookie{})
+				// Set random User-Agent for each request to avoid rate limiting
 				request.SetHeader("User-Agent", fake.RandomUserAgent())
 				return nil
 			}).
