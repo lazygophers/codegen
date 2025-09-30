@@ -9,3 +9,4 @@
 .DS_Store
 .idea
 debug.goreleaser.yaml
+state/localize/.i18n.cache

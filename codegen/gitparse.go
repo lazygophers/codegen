@@ -56,5 +56,5 @@ func FindGitRoot(dir string) (string, error) {
 		}
 		dir = filepath.Dir(dir)
 	}
-	return "", fmt.Errorf("not found .git directory %s perent", dir)
+	return "", fmt.Errorf("not found .git directory in %s or its parents", dir)
 }

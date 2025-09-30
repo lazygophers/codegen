@@ -6,7 +6,6 @@ import (
 	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/pterm/pterm"
-	"io/fs"
 	"os"
 	"path/filepath"
 	"slices"
@@ -115,7 +114,7 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -146,7 +145,7 @@ func GenerateI18nConst(dstLocalize map[string]any, path string) (err error) {
 func GenerateI18nField(dstLocalize map[string]any, path string) (err error) {
 	pterm.Info.Printfln("try gen i18n field to %s", path)
 
-	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -490,7 +489,7 @@ func GenerateI18n(pb *PbPackage) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeStateI18n, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeStateI18n, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
