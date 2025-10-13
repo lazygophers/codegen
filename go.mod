@@ -9,14 +9,14 @@ require (
 	github.com/gookit/color v1.6.0
 	github.com/lazygophers/log v0.0.0-20250921073910-e5ecde8b16f4
 	github.com/lazygophers/lrpc v0.0.0-20251009102735-cbd4e3496c58
-	github.com/lazygophers/utils v0.0.0-20251009080741-a215847208a1
+	github.com/lazygophers/utils v0.0.0-20251013095735-5d2f3fbf7349
 	github.com/pelletier/go-toml/v2 v2.2.4
 	github.com/pterm/pterm v0.12.81
 	github.com/spf13/cobra v1.10.1
 	go.etcd.io/bbolt v1.4.3
 	go.uber.org/atomic v1.11.0
-	golang.org/x/mod v0.28.0
-	golang.org/x/text v0.29.0
+	golang.org/x/mod v0.29.0
+	golang.org/x/text v0.30.0
 	gopkg.in/yaml.v3 v3.0.1
 	gotest.tools/v3 v3.5.2
 	resty.dev/v3 v3.0.0-beta.3
