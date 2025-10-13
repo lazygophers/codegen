@@ -12,6 +12,7 @@ import (
 	"io"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"regexp"
 	"resty.dev/v3"
 	"strings"
@@ -227,11 +228,20 @@ func UpdateGoMod(modPath string) (err error) {
 		pterm.Success.Printfln("update go.mod success")
 
 		pterm.Info.Printfln("try exec `go mod tidy` to update go.sum and cache mod")
-		err = exec.Command("go", "mod", "tidy").Run()
+		cmd := exec.Command("go", "mod", "tidy")
+		cmd.Dir = filepath.Dir(modPath)
+		output, err := cmd.CombinedOutput()
 		if err != nil {
 			log.Errorf("err:%v", err)
+			if len(output) > 0 {
+				pterm.Error.Printfln("go mod tidy output: %s", string(output))
+			}
 			return err
 		}
+		if len(output) > 0 {
+			log.Infof("go mod tidy output: %s", string(output))
+		}
+		pterm.Success.Printfln("go mod tidy completed successfully")
 
 	}
 

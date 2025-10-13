@@ -52,7 +52,7 @@ func GenerateState(pb *PbPackage) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeStateState, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeStateState, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

@@ -277,8 +277,9 @@ type CfgState struct {
 type Cfg struct {
 	Sync *CfgSync `json:"sync,omitempty" yaml:"sync,omitempty" toml:"sync,omitempty"`
 
-	ProtocPath     string `json:"protoc-path,omitempty" yaml:"protoc-path,omitempty" toml:"protoc-path,omitempty"`
-	ProtoGenGoPath string `json:"protogen-go-path,omitempty" yaml:"protogen-go-path,omitempty" toml:"protogen-go-path,omitempty"`
+	ProtocPath         string `json:"protoc-path,omitempty" yaml:"protoc-path,omitempty" toml:"protoc-path,omitempty"`
+	ProtoGenGoPath     string `json:"protogen-go-path,omitempty" yaml:"protogen-go-path,omitempty" toml:"protogen-go-path,omitempty"`
+	ProtoGenGoGrpcPath string `json:"protogen-go-grpc-path,omitempty" yaml:"protogen-go-grpc-path,omitempty" toml:"protogen-go-grpc-path,omitempty"`
 
 	ProtoFiles []string `json:"proto-files,omitempty" yaml:"proto-files,omitempty" toml:"proto-files,omitempty"`
 
@@ -327,6 +328,14 @@ func (p *Cfg) apply() (err error) {
 			p.ProtoGenGoPath = "protoc-gen-go.exe"
 		} else {
 			p.ProtoGenGoPath = "protoc-gen-go"
+		}
+	}
+
+	if p.ProtoGenGoGrpcPath == "" {
+		if runtime.IsWindows() {
+			p.ProtoGenGoGrpcPath = "protoc-gen-go-grpc.exe"
+		} else {
+			p.ProtoGenGoGrpcPath = "protoc-gen-go-grpc"
 		}
 	}
 

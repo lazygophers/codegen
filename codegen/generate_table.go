@@ -5,7 +5,6 @@ import (
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/candy"
 	"github.com/pterm/pterm"
-	"io/fs"
 	"os"
 	"strings"
 )
@@ -56,7 +55,7 @@ func GenerateStateTable(pb *PbPackage) (err error) {
 
 	// TODO: 自动添加错误码到 proto 文件中
 
-	file, err := os.OpenFile(GetPath(PathTypeStateTable, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeStateTable, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -132,7 +131,7 @@ func GenerateOrm(pb *PbPackage) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeOrm, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeOrm, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -183,7 +182,7 @@ func GenerateTableName(pb *PbPackage) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeTableName, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeTableName, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -237,7 +236,7 @@ func GenerateTableField(pb *PbPackage) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeTableField, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeTableField, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

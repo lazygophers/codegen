@@ -178,7 +178,7 @@ var tranCmd = &cobra.Command{
 			return errors.New("src-file not found")
 		}
 
-		c := &i18n.TransacteConfig{
+		c := &i18n.TranslateConfig{
 			SrcFile: srcFile,
 			OverwriteKeyPrefix: candy.Map(utils.GetStringSlice("force-key-prefix", cmd), func(key string) string {
 				return "." + key
@@ -231,7 +231,7 @@ var tranCmd = &cobra.Command{
 			return errors.New("no localizer for " + filepath.Ext(srcFile))
 		}
 
-		c.Translator, ok = i18n.GetTranslator(i18n.TransacteType(state.Config.I18n.Translator))
+		c.Translator, ok = i18n.GetTranslator(i18n.TranslateType(state.Config.I18n.Translator))
 		if !ok {
 			pterm.Warning.Printfln("no translator for %s", state.Config.I18n.Translator)
 			return errors.New("no translator be found")
@@ -331,8 +331,8 @@ func initTran() {
 	tranCmd.Flags().Bool("generate-const", state.Config.I18n.GenerateConst, state.Localize(state.I18nTagCliI18nTranFlagsGenerateConst))
 	tranCmd.Flags().Bool("generate-field", state.Config.I18n.GenerateField, state.Localize(state.I18nTagCliI18nTranFlagsGenerateField))
 	tranCmd.Flags().String("translator", state.Config.I18n.Translator, state.Localize(state.I18nTagCliI18nTranFlagsTranslatorUsage, map[string]any{
-		"Type": map[i18n.TransacteType]string{
-			i18n.TransacteTypeGoogleFree: state.Localize(state.I18nTagCliI18nTranFlagsTranslatorGoogleFree),
+		"Type": map[i18n.TranslateType]string{
+			i18n.TranslateTypeGoogleFree: state.Localize(state.I18nTagCliI18nTranFlagsTranslatorGoogleFree),
 		},
 	}))
 

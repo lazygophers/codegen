@@ -37,7 +37,7 @@ func initImplFile(pb *PbPackage, genTo string) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(p, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(p, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -246,7 +246,7 @@ func generateImpl(pb *PbPackage, rpc *PbRPC) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, fs.FileMode(0666))
+	file, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -372,7 +372,7 @@ func GenerateImplRpcPath(pb *PbPackage) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeImplPath, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeImplPath, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -418,7 +418,7 @@ func GenerateImplRpcRoute(pb *PbPackage) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeImplRoute, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeImplRoute, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -477,7 +477,7 @@ func generateImplClient(pb *PbPackage, rpc *PbRPC) (err error) {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeImplClient, pb), os.O_CREATE|os.O_WRONLY|os.O_APPEND, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeImplClient, pb), os.O_CREATE|os.O_WRONLY|os.O_APPEND, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -518,7 +518,7 @@ func initImplClient(pb *PbPackage) error {
 		return err
 	}
 
-	file, err := os.OpenFile(GetPath(PathTypeImplClient, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, fs.FileMode(0666))
+	file, err := os.OpenFile(GetPath(PathTypeImplClient, pb), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, FilePermDefault)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
