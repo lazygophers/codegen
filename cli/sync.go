@@ -305,7 +305,7 @@ func syncFromRemote(c *state.Cfg) error {
 
 		if resp.StatusCode() != http.StatusOK {
 			log.Errorf("unexpected status code: %v", resp.StatusCode())
-			return xerror.NewError(int32(resp.StatusCode()))
+			return xerror.New(int32(resp.StatusCode()))
 		}
 
 		ext := filepath.Ext(c.Sync.Remote)
@@ -430,7 +430,7 @@ func syncFromRemote(c *state.Cfg) error {
 				if resp.StatusCode() != http.StatusOK {
 					log.Errorf("get template from %s", resp.Request.URL)
 					log.Errorf("unexpected status code: %v", resp.StatusCode())
-					return xerror.NewError(int32(resp.StatusCode()))
+					return xerror.New(int32(resp.StatusCode()))
 				}
 
 				// md5+原始文件名，如果文件没有变更就可以不用写文件了
