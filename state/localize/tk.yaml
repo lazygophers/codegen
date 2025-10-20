@@ -31,6 +31,12 @@ cli:
         conf:
             long: Konfigurasiýa faýl şablonyny dörediň
             short: Sazlama faýly dörediň
+        doc:
+            flags:
+                language: Resminama dili, bellenmesi hytaýlylar (zh)
+                output-dir: Resminamanyň çykyş katalogy, deslapky resminamalar
+            long: Proto faýly modelinde modelden we maglumat bazasynyň dizaýn resminamalaryny dörediň
+            short: Maglumatlar bazasynyň dizaýn resminamalaryny dörediň
         dockerignore:
             long: Faýl dolandyryşyny äsgermezlik etmek üçin Docker şekil binasy üçin .dockerignore faýly dörediň
             short: .Dockerignore faýly dörediň
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Goldanýan dilleriň hemmesini terjime ediň (eger hakykat bolsa dilleriň baýdagy ýapyk)
+                auto-tran:
+                    enable-record: Adaasta terjime sözlük terjimeda degişli terjime netijelerini saklamak üçin rekordma açmak
+                    record-path: Tasport ýazgylary saklamak üçin ýol
                 force: Bar bolan terjimeleriň üstünden ýazyň
                 force-key-prefix: gaýtadan ýazylmaga mejbur edilmeli düwmeler
                 generate-const: Aňsat jaň etmek üçin sanama bahalaryny dörediň

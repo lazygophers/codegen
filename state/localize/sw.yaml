@@ -31,6 +31,12 @@ cli:
         conf:
             long: Tengeneza kiolezo cha faili ya usanidi
             short: Tengeneza faili ya usanidi
+        doc:
+            flags:
+                language: Lugha ya Hati, chaguo -msingi ni Kichina (ZH)
+                output-dir: Saraka ya pato la hati, chaguo -msingi ni hati
+            long: Panga ujumbe unaoanza na mfano katika faili ya proto na toa hati za muundo wa hifadhidata
+            short: Tengeneza hati za muundo wa hifadhidata
         dockerignore:
             long: Tengeneza faili ya .dockerignore ya ujenzi wa picha ya Docker ili kupuuza usimamizi wa faili
             short: Tengeneza faili ya .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tafsiri lugha zote zinazotumika (ikiwa ni kweli bendera ya lugha imezimwa)
+                auto-tran:
+                    enable-record: Wakati kamusi ya tafsiri inabadilika, ikiwa ni kufungua rekodi ya kuhifadhi matokeo yanayolingana ya tafsiri yaliyobadilishwa
+                    record-path: Njia ya kuhifadhi rekodi za tafsiri
                 force: Batilisha tafsiri zilizopo
                 force-key-prefix: funguo zinazohitaji kulazimishwa kuandikwa tena
                 generate-const: Tengeneza maadili ya kuhesabu kwa simu rahisi

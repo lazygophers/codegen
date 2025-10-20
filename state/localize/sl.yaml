@@ -31,6 +31,12 @@ cli:
         conf:
             long: Ustvari predlogo konfiguracijske datoteke
             short: Ustvari konfiguracijsko datoteko
+        doc:
+            flags:
+                language: Jezik dokumenta, privzeto je kitajščina (zh)
+                output-dir: Izhodni imenik dokumenta, privzeto je dokumenti
+            long: Razčlenite sporočilo, ki se začne z modelom v proto datoteki, in ustvarite načrtovalne dokumente baze podatkov
+            short: Ustvari dokumente za načrtovanje baze podatkov
         dockerignore:
             long: Ustvarite datoteko .dockerignore za gradnjo slike Docker, da prezrete upravljanje datotek
             short: Ustvari datoteko .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Prevedi vse podprte jezike (če je res, je zastavica jezikov onemogočena)
+                auto-tran:
+                    enable-record: Ko se prevodni slovar spremeni, ali odpreti zapis za shranjevanje ustreznih spremenjenih rezultatov prevoda
+                    record-path: Pot do shranjevanja prevodnih zapisov
                 force: Prepiši obstoječe prevode
                 force-key-prefix: ključe, ki jih je treba prisilno prepisati
                 generate-const: Ustvarite oštevilčene vrednosti za enostavno klicanje

@@ -31,6 +31,12 @@ cli:
         conf:
             long: Ģenerēt konfigurācijas faila veidni
             short: Ģenerējiet konfigurācijas failu
+        doc:
+            flags:
+                language: Dokumenta valoda, noklusējuma ķīniešu (zh)
+                output-dir: Dokumentu izvades direktorijs, pēc noklusējuma ir dokumenti
+            long: Parsējiet ziņojumu, sākot ar Modelis proto failā, un ģenerējiet datu bāzes dizaina dokumentus
+            short: Ģenerēt datu bāzes dizaina dokumentus
         dockerignore:
             long: Ģenerējiet .dockerignore failu Docker attēlu veidošanai, lai ignorētu failu pārvaldību
             short: Ģenerējiet .dockerignore failu
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tulkot visas atbalstītās valodas (ja tā ir patiesa, valodu karodziņš ir atspējots)
+                auto-tran:
+                    enable-record: Kad tulkošanas vārdnīca mainās, vai atvērt ierakstu, lai saglabātu atbilstošos mainītos tulkošanas rezultātus
+                    record-path: Tulkošanas ierakstu glabāšanas ceļš
                 force: Pārrakstīt esošos tulkojumus
                 force-key-prefix: atslēgas, kuras nepieciešams piespiest pārrakstīt
                 generate-const: Ģenerējiet uzskaites vērtības, lai atvieglotu izsaukšanu

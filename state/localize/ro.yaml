@@ -31,6 +31,12 @@ cli:
         conf:
             long: Generați șablon de fișier de configurare
             short: Generați fișierul de configurare
+        doc:
+            flags:
+                language: Limba documentului, implicit este chineza (zh)
+                output-dir: Director de ieșire a documentului, implicit este docs
+            long: Analizați mesajul începând cu Model în fișierul proto și generați documente de proiectare a bazei de date
+            short: Generați documente de proiectare a bazei de date
         dockerignore:
             long: Generați fișierul .dockerignore pentru construirea imaginii Docker pentru a ignora gestionarea fișierelor
             short: Generați fișierul .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Traduceți toate limbile acceptate (dacă este adevărat, indicatorul de limbi este dezactivat)
+                auto-tran:
+                    enable-record: Când se modifică dicționarul de traducere, dacă se deschide o înregistrare pentru a stoca rezultatele corespunzătoare ale traducerii modificate
+                    record-path: Cale pentru stocarea înregistrărilor de traducere
                 force: Suprascrieți traducerile existente
                 force-key-prefix: cheile care trebuie forțate să fie suprascrise
                 generate-const: Generați valori de enumerare pentru apeluri ușoare

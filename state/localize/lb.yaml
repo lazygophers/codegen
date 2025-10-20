@@ -31,6 +31,12 @@ cli:
         conf:
             long: Generéiere Konfiguratiounsdatei Schabloun
             short: Konfiguratiounsdatei generéieren
+        doc:
+            flags:
+                language: Dokument Sprooch, Standard ass Chinesesch (zh)
+                output-dir: Dokument Output Verzeechnes, Standard ass docs
+            long: Parse de Message unzefänken mam Model an der Protodatei a generéiert Datebankdesigndokumenter
+            short: Generéiere Datebank Design Dokumenter
         dockerignore:
             long: Generéiere .dockerignore-Datei fir Docker Bildgebai fir Dateiemanagement ze ignoréieren
             short: Generéiere .dockerignore Fichier
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Iwwersetze all ënnerstëtzt Sproochen (wann richteg ass de Sprooche Fändel behënnert)
+                auto-tran:
+                    enable-record: Wann d'Iwwersetzungswörterbuch ännert, ob e Rekord opmaache fir déi entspriechend geännert Iwwersetzungsresultater ze späicheren
+                    record-path: Wee fir Iwwersetzungsrecords ze späicheren
                 force: Iwwerschreiwe bestehend Iwwersetzungen
                 force-key-prefix: Schlësselen déi musse gezwongen sinn ze iwwerschreiwe
                 generate-const: Generéiere Opzielungswäerter fir einfach ze ruffen

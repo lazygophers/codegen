@@ -31,6 +31,12 @@ cli:
         conf:
             long: Generieren Sie eine Konfigurationsdateivorlage
             short: Konfigurationsdatei generieren
+        doc:
+            flags:
+                language: Dokumentsprache, Standard ist Chinesisch (zh)
+                output-dir: Dokumentausgabeverzeichnis, Standard ist docs
+            long: Analysieren Sie die Nachricht beginnend mit „Model“ in der Protodatei und generieren Sie Datenbankentwurfsdokumente
+            short: Erstellen Sie Datenbankentwurfsdokumente
         dockerignore:
             long: Generieren Sie eine .dockerignore-Datei für die Docker-Image-Erstellung, um die Dateiverwaltung zu ignorieren
             short: Generieren Sie eine .dockerignore-Datei
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Alle unterstützten Sprachen übersetzen (falls wahr, ist das Sprachen-Flag deaktiviert)
+                auto-tran:
+                    enable-record: Wenn sich das Übersetzungswörterbuch ändert, wird angegeben, ob ein Datensatz geöffnet werden soll, um die entsprechenden geänderten Übersetzungsergebnisse zu speichern
+                    record-path: Pfad zum Speichern von Übersetzungsdatensätzen
                 force: Vorhandene Übersetzungen überschreiben
                 force-key-prefix: Schlüssel, deren Überschreiben erzwungen werden muss
                 generate-const: Generieren Sie Aufzählungswerte für einen einfachen Aufruf

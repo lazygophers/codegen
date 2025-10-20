@@ -31,6 +31,12 @@ cli:
         conf:
             long: Vytvorte šablónu konfiguračného súboru
             short: Vygenerujte konfiguračný súbor
+        doc:
+            flags:
+                language: Jazyk dokumentu, predvolený jazyk je čínština (zh)
+                output-dir: Výstupný adresár dokumentu, predvolený je docs
+            long: Analyzujte správu začínajúcu modelom v súbore proto a vygenerujte dokumenty návrhu databázy
+            short: Generovať dokumenty návrhu databázy
         dockerignore:
             long: Ak chcete ignorovať správu súborov, vygenerujte súbor .dockerignore na vytváranie obrazu Docker
             short: Vygenerujte súbor .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Preložiť všetky podporované jazyky (ak je pravda, príznak jazykov je zakázaný)
+                auto-tran:
+                    enable-record: Keď sa prekladový slovník zmení, či sa má otvoriť záznam na uloženie zodpovedajúcich zmenených výsledkov prekladu
+                    record-path: Cesta k uloženiu prekladových záznamov
                 force: Prepíšte existujúce preklady
                 force-key-prefix: kľúče, ktoré je potrebné vynútiť prepísanie
                 generate-const: Generujte hodnoty enumerácie pre jednoduché volanie

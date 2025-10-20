@@ -31,6 +31,12 @@ cli:
         conf:
             long: Xerar un modelo de ficheiro de configuración
             short: Xerar ficheiro de configuración
+        doc:
+            flags:
+                language: Idioma do documento, o predeterminado é chinés (zh)
+                output-dir: Directorio de saída do documento, o predeterminado é docs
+            long: Analiza a mensaxe comezando por Model no ficheiro proto e xera documentos de deseño da base de datos
+            short: Xerar documentos de deseño de bases de datos
         dockerignore:
             long: Xera un ficheiro .dockerignore para a creación de imaxes de Docker para ignorar a xestión de ficheiros
             short: Xerar ficheiro .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Traduce todos os idiomas admitidos (se é verdade, a bandeira de idiomas está desactivada)
+                auto-tran:
+                    enable-record: Cando o dicionario de tradución cambia, se debe abrir un rexistro para almacenar os resultados da tradución modificados correspondentes
+                    record-path: Camiño para almacenar rexistros de tradución
                 force: Sobrescribir as traducións existentes
                 force-key-prefix: claves que deben ser forzadas a sobrescribirlas
                 generate-const: Xera valores de enumeración para facilitar as chamadas

@@ -307,6 +307,8 @@ type Cfg struct {
 
 	State *CfgState `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 
+	DocOutputDir string `json:"doc-output-dir,omitempty" yaml:"doc-output-dir,omitempty" toml:"doc-output-dir,omitempty"`
+
 	Overwrite bool `json:"-" yaml:"-" toml:"-"`
 }
 

@@ -179,6 +179,7 @@ func initGen() {
 	initCache()
 	initCmd()
 	initConf()
+	initDoc()
 	initEditorconfig()
 	initGolangLint()
 	initGoreleaser()

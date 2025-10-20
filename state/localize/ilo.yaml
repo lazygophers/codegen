@@ -31,6 +31,12 @@ cli:
         conf:
             long: Mangpataud ti plantilia ti file ti panagisaad
             short: Mangpataud ti file ti konfigurasion
+        doc:
+            flags:
+                language: Lenguahe ti dokumento, default ket Intsik (ZH) .
+                output-dir: Direktorio ti Output ti Dokumento, Default IS DOCS .
+            long: parse ti mensahe a mangrugi iti modelo iti proto file ken mangpataud kadagiti dokumento ti disenio ti database .
+            short: Mangpataud kadagiti dokumento ti disenio ti database .
         dockerignore:
             long: Mangpataud ti .dockerignore a papeles para iti panagbangon ti ladawan ti Docker tapno di ikankano ti panagmanehar ti papeles
             short: Mangpataud ti .dockerignore a papeles
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Ipatarus amin a nasuportaran a pagsasao (no pudno ti bandera dagiti pagsasao ket nabalbaliwan) .
+                auto-tran:
+                    enable-record: No agbaliw ti diksionario ti panagipatarus, no manglukat iti rekord tapno maidulin dagiti maitunos a nabaliwan a resulta ti panagipatarus .
+                    record-path: Dalan agingga kadagiti Rekord ti Panagpatarus ti Tindahan .
                 force: Isurat iti rabaw dagiti addan a patarus
                 force-key-prefix: dagiti tulbek a kasapulan a mapilit a maisurat
                 generate-const: Mangpataud kadagiti pateg ti panagibilang para iti nalaka a panagayab

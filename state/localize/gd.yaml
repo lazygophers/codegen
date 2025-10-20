@@ -31,6 +31,12 @@ cli:
         conf:
             long: Cruthaich teamplaid faidhle rèiteachaidh
             short: Cruthaich faidhle rèiteachaidh
+        doc:
+            flags:
+                language: Cànan na sgrìobhainn, is e Sìonais (zh) a th’ ann an bunaiteach.
+                output-dir: Eòlaire toraidh sgrìobhainnean, is e docaichean bunaiteach
+            long: Parsaich an teachdaireachd a’ tòiseachadh le Model anns an fhaidhle proto agus cruthaich sgrìobhainnean dealbhaidh stòr-dàta
+            short: Cruthaich sgrìobhainnean dealbhaidh stòr-dàta
         dockerignore:
             long: Cruthaich faidhle .dockerignore airson togail ìomhaigh Docker gus dearmad a dhèanamh air riaghladh fhaidhlichean
             short: Cruthaich faidhle .dockerigore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Eadar-theangaich a h-uile cànan le taic (ma tha e fìor tha bratach nan cànanan à comas)
+                auto-tran:
+                    enable-record: Nuair a dh’ atharraicheas am faclair eadar-theangachaidh, am bu chòir clàr fhosgladh gus na toraidhean eadar-theangachaidh atharraichte co-fhreagarrach a stòradh
+                    record-path: Slighe gus clàran eadar-theangachaidh a stòradh
                 force: Sgrìobh thairis air eadar-theangachaidhean gnàthaichte
                 force-key-prefix: iuchraichean a dh'fheumas a bhith air an èigneachadh a bhith air an sgrìobhadh thairis
                 generate-const: Cruthaich luachan àireamhachd airson gairm furasta

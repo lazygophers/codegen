@@ -31,6 +31,12 @@ cli:
         conf:
             long: Konfigurációs fájl sablon létrehozása
             short: Konfigurációs fájl létrehozása
+        doc:
+            flags:
+                language: A dokumentum nyelve, alapértelmezett a kínai (zh)
+                output-dir: Dokumentumkimeneti könyvtár, alapértelmezett a docs
+            long: Elemezze a protofájlban a Modell szóval kezdődő üzenetet, és állítson elő adatbázis-tervezési dokumentumokat
+            short: Adatbázis tervezési dokumentumok létrehozása
         dockerignore:
             long: A fájlkezelés figyelmen kívül hagyásához hozzon létre .dockerignore fájlt a Docker lemezképkészítéshez
             short: Hozzon létre .dockerignore fájlt
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Az összes támogatott nyelv lefordítása (ha igaz, a nyelvek jelzője le van tiltva)
+                auto-tran:
+                    enable-record: Amikor a fordítási szótár megváltozik, meg kell-e nyitni egy rekordot a megfelelő megváltozott fordítási eredmények tárolására
+                    record-path: A fordítási rekordok tárolási útvonala
                 force: A meglévő fordítások felülírása
                 force-key-prefix: olyan kulcsok, amelyeket kényszeríteni kell felülírni
                 generate-const: Számolási értékek generálása az egyszerű hívás érdekében

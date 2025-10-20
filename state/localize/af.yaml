@@ -31,6 +31,12 @@ cli:
         conf:
             long: Genereer konfigurasie lêer sjabloon
             short: Genereer konfigurasielêer
+        doc:
+            flags:
+                language: Dokumenttaal, verstek is Chinees (zh)
+                output-dir: Dokumentuitvoergids, verstek is docs
+            long: Ontleed die boodskap wat met Model in die protolêer begin en genereer databasisontwerpdokumente
+            short: Genereer databasisontwerpdokumente
         dockerignore:
             long: Genereer .dockerignore-lêer vir Docker-beeldbou om lêerbestuur te ignoreer
             short: Genereer .dockerignore-lêer
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Vertaal alle ondersteunde tale (indien waar is die talevlag gedeaktiveer)
+                auto-tran:
+                    enable-record: Wanneer die vertaalwoordeboek verander, of 'n rekord oopgemaak moet word om die ooreenstemmende veranderde vertaalresultate te stoor
+                    record-path: Pad om vertaalrekords te stoor
                 force: Oorskryf bestaande vertalings
                 force-key-prefix: sleutels wat gedwing moet word om oorskryf te word
                 generate-const: Genereer opsommingswaardes vir maklike oproepe

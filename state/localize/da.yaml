@@ -31,6 +31,12 @@ cli:
         conf:
             long: Generer skabelon til konfigurationsfil
             short: Generer konfigurationsfil
+        doc:
+            flags:
+                language: Dokumentsprog, standard er kinesisk (zh)
+                output-dir: Dokumentoutputmappe, standard er docs
+            long: Parse meddelelsen, der starter med Model i protofilen, og generer databasedesigndokumenter
+            short: Generer databasedesigndokumenter
         dockerignore:
             long: Generer .dockerignore-fil til Docker-billedbygning for at ignorere filhåndtering
             short: Generer .dockerignore-fil
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Oversæt alle understøttede sprog (hvis det er sandt, er sprogflaget deaktiveret)
+                auto-tran:
+                    enable-record: Når oversættelsesordbogen ændres, om der skal åbnes en post for at gemme de tilsvarende ændrede oversættelsesresultater
+                    record-path: Sti til at gemme oversættelsesposter
                 force: Overskriv eksisterende oversættelser
                 force-key-prefix: nøgler, der skal tvinges til at blive overskrevet
                 generate-const: Generer opregningsværdier for nemt at ringe

@@ -31,6 +31,12 @@ cli:
         conf:
             long: Konfiguratsiya fayli shablonini yarating
             short: Konfiguratsiya faylini yarating
+        doc:
+            flags:
+                language: Hujjat tilida, standart xitoycha (zh)
+                output-dir: Hujjatni chiqarish katalogi, standart bu doktor
+            long: Proto faylida model bilan boshlanadigan va ma'lumotlar bazasi dizaynidagi hujjatlarni yarating Xabarni tahlil qiling
+            short: Ma'lumotlar bazasi dizayni hujjatlarini yarating
         dockerignore:
             long: Fayl boshqaruvini e'tiborsiz qoldirish uchun Docker tasvirini yaratish uchun .dockerignore faylini yarating
             short: .dockerignore faylini yarating
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Barcha qo'llab-quvvatlanadigan tillarni tarjima qiling (agar rost bo'lsa, tillar bayrog'i o'chirilgan bo'lsa)
+                auto-tran:
+                    enable-record: Tarjima lug'ati o'zgarganda, tegishli o'zgartirish varish natijalarini saqlash uchun yozuvni ochish
+                    record-path: Tarjima yozuvlarini saqlash uchun yo'l
                 force: Mavjud tarjimalarni qayta yozing
                 force-key-prefix: ustiga yozishga majbur bo'lishi kerak bo'lgan kalitlar
                 generate-const: Oson qo'ng'iroq qilish uchun ro'yxat qiymatlarini yarating

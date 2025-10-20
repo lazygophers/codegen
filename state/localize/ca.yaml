@@ -31,6 +31,12 @@ cli:
         conf:
             long: Genera una plantilla de fitxer de configuració
             short: Genera un fitxer de configuració
+        doc:
+            flags:
+                language: Idioma del document, el predeterminat és el xinès (zh)
+                output-dir: Directori de sortida del document, per defecte és docs
+            long: Analitzeu el missatge començant per Model al fitxer proto i genereu documents de disseny de base de dades
+            short: Generar documents de disseny de bases de dades
         dockerignore:
             long: Genereu un fitxer .dockerignore per a la creació d'imatges de Docker per ignorar la gestió de fitxers
             short: Genera un fitxer .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tradueix tots els idiomes admesos (si és cert, el senyalador d'idiomes està desactivat)
+                auto-tran:
+                    enable-record: Quan el diccionari de traducció canvia, s'ha d'obrir un registre per emmagatzemar els resultats de traducció modificats corresponents
+                    record-path: Camí per emmagatzemar els registres de traducció
                 force: Sobreescriu les traduccions existents
                 force-key-prefix: claus que s'han de forçar a sobreescriure
                 generate-const: Genereu valors d'enumeració per fer trucades fàcils

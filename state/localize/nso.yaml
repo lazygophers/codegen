@@ -31,6 +31,12 @@ cli:
         conf:
             long: Hlagiša thempleite ya faele ya peakanyo
             short: Hlahisa faele ya peakanyo
+        doc:
+            flags:
+                language: Polelo ya tokomane, default ke Sechaena (ZH) .
+                output-dir: Tokomane dipholo tsa directory, default ke docs .
+            long: Lekana molaetša wo o thomago ka mohlala ka faeleng ya proto gomme o tšweletše ditokomane tša tlhamo ya polokelo ya tshedimošo .
+            short: Hlagiša ditokomane tša tlhamo ya polokelo ya tshedimošo .
         dockerignore:
             long: Hlagiša faele ya .dockerignore bakeng sa go aga seswantšho sa Docker go hlokomologa taolo ya faele
             short: Hlagiša faele ya .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Fetolela maleme ka moka ao a thekgwago (ge e le therešo folaga ya maleme e šitišitšwe) .
+                auto-tran:
+                    enable-record: Ge pukuntšu ya phetolelo e fetoga, ge e ba go swanetše go bulwa rekoto ya go boloka dipoelo tša phetolelo tše di fetotšwego tše di swanetšego .
+                    record-path: Tsela ya go boloka direkoto tša phetolelo .
                 force: Ngwala godimo ga diphetolelo tše di lego gona
                 force-key-prefix: dinotlelo tšeo di swanetšego go gapeletšwa go ngwalwa godimo
                 generate-const: Hlagiša dikelo tša go bala bakeng sa go bitša gabonolo

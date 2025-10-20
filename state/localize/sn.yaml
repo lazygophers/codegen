@@ -31,6 +31,12 @@ cli:
         conf:
             long: Gadzira configuration file template
             short: Gadzira faira yekumisikidza
+        doc:
+            flags:
+                language: Mutauro Wemutauro, Default Is Chinese (ZH)
+                output-dir: Gwaro rinobuda dhairekitori, default ndeye ma docs
+            long: Parse meseji inotanga nemhando mune iyo proto faira uye gadzira database dhizaini magwaro
+            short: Gadzira DATABASE Dhizaini magwaro
         dockerignore:
             long: Gadzira .dockerignore faira yeDocker image building kuti usatarise faira management
             short: Gadzira .dockerignore file
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Shandura mitauro yese inotsigirwa (kana ichokwadi mureza wakadzimwa)
+                auto-tran:
+                    enable-record: Kana dudziro yeshanduro inoshanduka, kungave kuvhura rekodhi kuti iite zvinoenderana nekuchinja kwakachinja mhedzisiro
+                    record-path: Nzira yekuchengetedza zvinyorwa zvekushandura
                 force: Nyora shanduro dziripo
                 force-key-prefix: makiyi anoda kumanikidzwa kunyorwa
                 generate-const: Gadzira enumeration kukosha kwekufona kuri nyore

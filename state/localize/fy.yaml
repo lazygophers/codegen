@@ -31,6 +31,12 @@ cli:
         conf:
             long: Generearje konfiguraasjetriem sjabloan
             short: Generearje konfiguraasjetriem
+        doc:
+            flags:
+                language: Dokuminttaal, standert is Sineesk (zh)
+                output-dir: Dokumintútfiermap, standert is docs
+            long: Parse it berjocht begjinnend mei Model yn it proto-bestân en generearje database-ûntwerpdokuminten
+            short: Generearje databankûntwerpdokuminten
         dockerignore:
             long: Generearje .dockerignore-bestân foar Docker-ôfbyldingsbou om triembehear te negearjen
             short: Generearje .dockerignore triem
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Oersette alle stipe talen (as wier is de talenflagge útskeakele)
+                auto-tran:
+                    enable-record: As it oersettingswurdboek feroaret, of in record te iepenjen om de korrespondearjende feroare oersettingsresultaten op te slaan
+                    record-path: Paad om oersettingsrecords op te slaan
                 force: Oerskriuwe besteande oersettingen
                 force-key-prefix: kaaien dy't twongen wurde moatte wurde oerskreaun
                 generate-const: Generearje enumeraasjewearden foar maklik skiljen

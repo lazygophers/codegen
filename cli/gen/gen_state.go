@@ -73,7 +73,7 @@ func mergeStateFlags(cmd *cobra.Command) {
 func initStateFlags(cmd *cobra.Command) {
 	cmd.PersistentFlags().Bool("table", state.Config.State.Table, state.Localize(state.I18nTagCliGenStateFlagsTable))
 	cmd.PersistentFlags().Bool("cache", state.Config.State.Cache, state.Localize(state.I18nTagCliGenStateFlagsCache))
-	cmd.PersistentFlags().Bool("i18n", state.Config.State.I18n, state.Localize(state.I18nTagCliGenStateFlagsI18n))
+	cmd.PersistentFlags().Bool("i18n", state.Config.State.I18n, state.Localize(state.I18nTagCliGenStateFlagsI18N))
 	cmd.PersistentFlags().Bool("config", state.Config.State.Config, state.Localize(state.I18nTagCliGenStateFlagsConfig))
 	initStateTableFlags(cmd)
 }

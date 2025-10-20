@@ -31,6 +31,12 @@ cli:
         conf:
             long: Mamorona môdely fichier configuration
             short: Mamorona rakitra fikirakirana
+        doc:
+            flags:
+                language: Teny an-tsoratra, ny Default dia sinoa (zh)
+                output-dir: Directut Office Director, Docs dia Docs
+            long: Parse ny hafatra manomboka amin'ny modely ao amin'ny rakitra Proto ary miteraka antontan-taratasy famolavolana Database
+            short: Miteraka antontan-taratasy famolavolana Database
         dockerignore:
             long: Mamorona rakitra .dockerignore ho an'ny fananganana sary Docker mba tsy hiraharaha ny fitantanana rakitra
             short: Mamorona rakitra .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Adikao ny fiteny tohanana rehetra (raha marina ny sainam-pirenena dia kilemaina)
+                auto-tran:
+                    enable-record: Rehefa miova ny fanovana ny diksionera, na hanokatra rakitsoratra mba hitokanana ny valin'ny fandikan-teny miovaova
+                    record-path: Lalana mankany amin'ny fivarotana rakitsoratra
                 force: Soraty ny dikanteny efa misy
                 force-key-prefix: fanalahidy izay mila terena hosoloina
                 generate-const: Mamorona soatoavina fanisana ho mora fiantsoana

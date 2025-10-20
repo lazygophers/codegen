@@ -31,6 +31,12 @@ cli:
         conf:
             long: Sortu konfigurazio fitxategi txantiloia
             short: Sortu konfigurazio fitxategia
+        doc:
+            flags:
+                language: Dokumentuaren hizkuntza, lehenetsia txinera da (zh)
+                output-dir: Dokumentuaren irteera direktorioa, lehenetsia docs da
+            long: Analizatu mezua Modelotik hasita proto-fitxategian eta sortu datu-basearen diseinu-dokumentuak
+            short: Sortu datu-basearen diseinu-dokumentuak
         dockerignore:
             long: Sortu .dockerignore fitxategia Docker irudia eraikitzeko, fitxategien kudeaketa alde batera uzteko
             short: Sortu .dockerignore fitxategia
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Itzuli onartzen diren hizkuntza guztiak (egia bada, hizkuntzen bandera desgaituta dago)
+                auto-tran:
+                    enable-record: Itzulpen-hiztegia aldatzen denean, erregistro bat ireki behar den dagozkion itzulpen-emaitzak gordetzeko
+                    record-path: Itzulpen-erregistroak gordetzeko bidea
                 force: Gainidatzi lehendik dauden itzulpenak
                 force-key-prefix: gainidatzi behar diren gakoak
                 generate-const: Sortu zenbazio-balioak erraz deitzeko

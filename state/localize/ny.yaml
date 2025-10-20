@@ -31,6 +31,12 @@ cli:
         conf:
             long: Pangani template yosinthira fayilo
             short: Pangani fayilo yosinthira
+        doc:
+            flags:
+                language: Chilankhulo, chosasinthika ndi China (ZH)
+                output-dir: Chikalata Chotulutsa, chosasinthika ndi ma docs
+            long: Ganizirani uthenga woyambira ndi mtundu mu fayilo ya Proto ndikupanga zikalata zopanga database
+            short: Pangani zikalata za database
         dockerignore:
             long: Pangani fayilo ya .dockerignore yomanga zithunzi za Docker kuti musanyalanyaze kasamalidwe ka fayilo
             short: Pangani fayilo ya .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tanthauzirani zilankhulo zonse zothandizira (ngati zowona mbendera ya zilankhulo yayimitsidwa)
+                auto-tran:
+                    enable-record: Pamene matanthauzidwe atanthauzoni otanthauzira, kaya akutsegulira mbiri kuti musunge zotsatira zosintha zosintha zosintha
+                    record-path: Njira yosungira mabuku omasulira
                 force: Lembani zomasulira zomwe zilipo kale
                 force-key-prefix: makiyi omwe amafunika kukakamizidwa kuti alembetsedwe
                 generate-const: Pangani zowerengera kuti muyimbe mosavuta

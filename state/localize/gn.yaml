@@ -31,6 +31,12 @@ cli:
         conf:
             long: Emoheñói plantilla archivo configuración rehegua
             short: Emoheñói vore ñembohekorã
+        doc:
+            flags:
+                language: Kuatia ñe’ẽ, ñepyrũrã ha’e chino (ZH) .
+                output-dir: Kuatia ñesẽ ryru, ñepyrũrã haꞌehína DOCS .
+            long: Emohenda marandu oñepyrũva modelo-gui archivo PROTO-pe ha emoheñói kuatiakuéra diseño base de datos rehegua .
+            short: Ojejapo kuatia diseño base de datos rehegua .
         dockerignore:
             long: Emoheñói .dockerignore vore Docker ta’ãngamýi ñemopu’ãrã emboyke hag̃ua vore jesareko
             short: Emoheñói .dockerignore rembiapokue
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Embohasa opaite ñe’ẽ oipytyvõva (añete ramo oñembogue umi ñe’ẽ poyvi)
+                auto-tran:
+                    enable-record: Oñemoambuéramo pe diccionario de traducción, ojepe’átapa peteĩ registro oñeñongatu hag̃ua umi resultado de traducción oñemoambuéva okorrespondéva .
+                    record-path: Path to Store Traducción Records .
                 force: Ehai umi ñe’ẽasa oĩmava ári
                 force-key-prefix: umi clave tekotevẽva ojeforsa ojehai hag̃ua hese
                 generate-const: Emoheñói valor enumeración rehegua oñehenói hag̃ua ndahasýiva

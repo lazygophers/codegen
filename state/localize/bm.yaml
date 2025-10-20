@@ -31,6 +31,12 @@ cli:
         conf:
             long: A ye configuration file template dilan
             short: A ye configuration file (labɛnni filen) dilan
+        doc:
+            flags:
+                language: Sɛbɛn kan, default ye chinois (ZH) ye .
+                output-dir: Document Output Directory, default ye DOCS ye .
+            long: Aw bɛ cikan daminɛ ni modɛli ye Proto file kɔnɔ ani ka database design sɛbɛnw dilan .
+            short: Donanw dilanni sɛbɛnw dilan .
         dockerignore:
             long: .dockerignore file dilan Docker ja jɔli kama walasa ka filen ɲɛnabɔli jateminɛn
             short: .dockerignore filen dilan
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Kan dɛmɛnenw bɛɛ bamanankan na (ni tiɲɛ don kanw ka darapo bɛ baara kɛ)
+                auto-tran:
+                    enable-record: Ni bamanankan daɲɛgafe bɛ Changé, hali ni a ka kan ka sɛbɛn dɔ da wuli walasa ka baarakɛcogo caman sɛmɛntiyalenw mara minnu bɛ bɛn o ma .
+                    record-path: Sira min bɛ taa ka ɲɛsin bamanankan baarakɛcogo sɛbɛnw ma .
                 force: Bamanankan bayɛlɛmani minnu bɛ yen, olu sɛbɛn u kan
                 force-key-prefix: kilisi minnu ka kan ka wajibiya ka sɛbɛn u kan
                 generate-const: Jatebla nafaw labɔ walasa weleli ka nɔgɔn

@@ -31,6 +31,12 @@ cli:
         conf:
             long: Generu ŝablonon de agorda dosiero
             short: Generu agordan dosieron
+        doc:
+            flags:
+                language: Dokumentlingvo, defaŭlta estas la ĉina (zh)
+                output-dir: Dokumenta eligo dosierujo, defaŭlta estas dokumentoj
+            long: Analizu la mesaĝon komencante per Modelo en la pradosiero kaj generu datumbazajn desegnajn dokumentojn
+            short: Generu datumbazajn desegnajn dokumentojn
         dockerignore:
             long: Generu .dockerignore dosieron por Docker-bildkonstruado por ignori dosieradministradon
             short: Generu .dockerignore dosieron
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Traduku ĉiujn subtenatajn lingvojn (se vera la lingvo-marko estas malŝaltita)
+                auto-tran:
+                    enable-record: Kiam la tradukvortaro ŝanĝiĝas, ĉu malfermi rekordon por konservi la respondajn ŝanĝitajn tradukrezultojn
+                    record-path: Vojo por konservi tradukajn registrojn
                 force: Anstataŭigu ekzistantajn tradukojn
                 force-key-prefix: ŝlosiloj kiuj devas esti devigitaj esti anstataŭitaj
                 generate-const: Generu enumerajn valorojn por facila vokado

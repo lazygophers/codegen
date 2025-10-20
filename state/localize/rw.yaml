@@ -31,6 +31,12 @@ cli:
         conf:
             long: Gukora iboneza rya dosiye
             short: Gukora dosiye iboneza
+        doc:
+            flags:
+                language: Ururimi rwinyandiko, Mburabuzi ni Igishinwa (ZH)
+                output-dir: Ububiko bwibisohoka, busanzwe ni docs
+            long: Transanga Ubutumwa butangirana na Moderi muri dosiye ya Proto no kubyara Ububikoshingiro
+            short: Kubyara basease base
         dockerignore:
             long: Gukora .dockerignore dosiye yo kubaka amashusho ya Docker kugirango wirengagize gucunga dosiye
             short: Gukora dosiye .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Sobanura indimi zose zishyigikiwe (niba arukuri ibendera ibendera ryahagaritswe)
+                auto-tran:
+                    enable-record: Iyo Inkoranyamagambo Inkoranyamagambo Ihinduka, niba gufungura inyandiko kugirango ubike ibisubizo bihuye
+                    record-path: Inzira yo kubika inyandiko zubuhinduzi
                 force: Andika ibisobanuro bihari
                 force-key-prefix: urufunguzo rugomba guhatirwa kwandikwa
                 generate-const: Kubyara indangagaciro zo kubara byoroshye guhamagarwa

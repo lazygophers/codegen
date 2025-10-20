@@ -31,6 +31,12 @@ cli:
         conf:
             long: Hasilkan templat fail konfigurasi
             short: Hasilkan fail konfigurasi
+        doc:
+            flags:
+                language: Bahasa Dokumen, Lalai adalah Cina (ZH)
+                output-dir: Direktori output dokumen, lalai adalah dokumen
+            long: Menghuraikan mesej bermula dengan model dalam fail proto dan menghasilkan dokumen reka bentuk pangkalan data
+            short: Menjana dokumen reka bentuk pangkalan data
         dockerignore:
             long: Hasilkan fail .dockerignore untuk pembinaan imej Docker untuk mengabaikan pengurusan fail
             short: Hasilkan fail .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Terjemah semua bahasa yang disokong (jika benar bendera bahasa dilumpuhkan)
+                auto-tran:
+                    enable-record: Apabila kamus terjemahan berubah, sama ada untuk membuka rekod untuk menyimpan hasil terjemahan yang sama
+                    record-path: Jalan untuk menyimpan rekod terjemahan
                 force: Tulis ganti terjemahan sedia ada
                 force-key-prefix: kunci yang perlu dipaksa untuk ditimpa
                 generate-const: Hasilkan nilai penghitungan untuk panggilan mudah

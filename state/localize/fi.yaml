@@ -31,6 +31,12 @@ cli:
         conf:
             long: Luo määritystiedostomalli
             short: Luo asetustiedosto
+        doc:
+            flags:
+                language: Asiakirjan kieli, oletus on kiina (zh)
+                output-dir: Asiakirjan tulostushakemisto, oletus on docs
+            long: Jäsennä prototiedoston mallilla alkava viesti ja luo tietokannan suunnitteluasiakirjat
+            short: Luo tietokannan suunnitteluasiakirjoja
         dockerignore:
             long: Luo .dockerignore-tiedosto Docker-kuvanrakennusta varten ohittaaksesi tiedostonhallinnan
             short: Luo .dockerignore-tiedosto
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Käännä kaikki tuetut kielet (jos totta, kielten lippu ei ole käytössä)
+                auto-tran:
+                    enable-record: Kun käännössanakirja muuttuu, avataanko tietue vastaavien muuttuneiden käännöstulosten tallentamiseksi
+                    record-path: Polku käännöstietueiden tallentamiseen
                 force: Korvaa olemassa olevat käännökset
                 force-key-prefix: avaimet, jotka on pakko kirjoittaa päälle
                 generate-const: Luo luetteloarvoja helpottaaksesi soittamista

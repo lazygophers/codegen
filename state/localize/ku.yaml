@@ -31,6 +31,12 @@ cli:
         conf:
             long: Şablonek pelê veavakirinê biafirînin
             short: Pelê veavakirinê çêbike
+        doc:
+            flags:
+                language: Zimanê belgeyê, xwerû Çînî ye (zh)
+                output-dir: Peldanka derana belgeyê, xwerû belge ye
+            long: Peyama ku bi Modelê dest pê dike di pelê proto de parve bikin û belgeyên sêwirana databasê biafirînin
+            short: Belgeyên sêwirana databasê biafirînin
         dockerignore:
             long: Ji bo avakirina wêneya Docker pelê .dockerignore biafirîne ku rêveberiya pelê paşguh bike
             short: Pelê .dockerignore biafirîne
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Hemî zimanên piştgirî wergerînin (eger rast be ala zimanan neçalak be)
+                auto-tran:
+                    enable-record: Dema ku ferhenga wergerê diguhere, gelo ji bo tomarkirina encamên werger ên guherî tomarek veke
+                    record-path: Rêya hilanîna tomarên wergerê
                 force: Wergerên heyî binivîsînin
                 force-key-prefix: mifteyên ku divê bi zorê bêne nivîsandin
                 generate-const: Ji bo banga hêsan nirxên hejmartinê biafirînin

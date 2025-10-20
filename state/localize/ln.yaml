@@ -31,6 +31,12 @@ cli:
         conf:
             long: Generer modèle ya fichier ya configuration
             short: Bosala fichier ya configuration
+        doc:
+            flags:
+                language: Language de document, Default ezali Chinois (ZH) .
+                output-dir: Annuaire ya sortie ya mokanda, par défaut ezali docs .
+            long: Parse message oyo ebandi na modèle na fichier PROTO pe generer ba documents ya conception ya base de données .
+            short: Bokeli mikanda ya bokeli ba bases ya ba données .
         dockerignore:
             long: Bosala fisyé .dockerignore mpo na botongi ya bilili ya Docker mpo na koboya boyangeli fisyé
             short: Bosala fisyé .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Bobongola minoko nyonso oyo esungami (soki ezali solo drapeau ya minoko ekangami)
+                auto-tran:
+                    enable-record: Ntango dictionnaire ya traduction ebongwanaka, soki esengeli kofungola enregistrement mpo na kobomba ba résultats ya traduction oyo ebongwanaki oyo ekokani na yango
+                    record-path: Nzela ya kobomba mikanda ya libongoli .
                 force: Kokoma likolo ya mabongoli oyo ezali
                 force-key-prefix: bafungola oyo esengeli kotindama na makasi mpo na kokoma likolo
                 generate-const: Bosala ba valeurs ya enumeration pona kobenga na pete

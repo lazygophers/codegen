@@ -31,6 +31,12 @@ cli:
         conf:
             long: Iġġenera mudell tal-fajl tal-konfigurazzjoni
             short: Iġġenera fajl tal-konfigurazzjoni
+        doc:
+            flags:
+                language: Lingwa tad-dokument, default huwa Ċiniż (zh)
+                output-dir: Id-direttorju tal-output tad-dokument, default huwa docs
+            long: Analiżi l-messaġġ li jibda bil-Mudell fil-fajl proto u ġġenera dokumenti tad-disinn tad-database
+            short: Iġġenera dokumenti tad-disinn tad-database
         dockerignore:
             long: Iġġenera fajl .dockerignore għall-bini tal-immaġni Docker biex tinjora l-ġestjoni tal-fajls
             short: Iġġenera fajl .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Ittraduċi l-lingwi kollha appoġġjati (jekk vera l-bandiera tal-lingwi hija diżattivata)
+                auto-tran:
+                    enable-record: Meta jinbidel id-dizzjunarju tat-traduzzjoni, jekk tiftaħx rekord biex taħżen ir-riżultati tat-traduzzjoni mibdula korrispondenti
+                    record-path: Mogħdija biex taħżen ir-rekords tat-traduzzjoni
                 force: Ikteb traduzzjonijiet eżistenti
                 force-key-prefix: ċwievet li jeħtieġ li jiġu sfurzati jinkitbu fuqhom
                 generate-const: Iġġenera valuri ta' enumerazzjoni għal sejħa faċli

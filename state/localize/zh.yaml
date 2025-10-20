@@ -95,6 +95,12 @@ cli:
             long: 生成 table 的所有相关功能，用于业务服务的有状态的资源或静态资源管理
             flags:
                 template-state-table: ./state/table.go 文件生成模板路径
+        doc:
+            short: 生成数据库设计文档
+            long: 解析 proto 文件中 Model 开头的 message，生成数据库设计文档
+            flags:
+                language: 文档语言
+                output-dir: 文档输出目录
     i18n:
         short: 多语言国际化相关工具包
         long: 多语言国际化相关工具包

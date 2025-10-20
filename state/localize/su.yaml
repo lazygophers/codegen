@@ -31,6 +31,12 @@ cli:
         conf:
             long: Ngahasilkeun template file konfigurasi
             short: Ngahasilkeun file konfigurasi
+        doc:
+            flags:
+                language: Bisi dokumen, standar Cina (Zh)
+                output-dir: Dokume diréktipkeun Dokume, standar nyaéta Dokter
+            long: Parse pesen dimimitian ku modél dina file proto sareng ngahasilkeun dokumen desain database
+            short: Ngahasilkeun dokumen desain database
         dockerignore:
             long: Ngahasilkeun file .dockerignore pikeun wangunan gambar Docker malire manajemén file
             short: Ngahasilkeun file .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tarjamahkeun sadaya basa anu dirojong (upami leres bendera basa dinonaktipkeun)
+                auto-tran:
+                    enable-record: Nalika parobahan nurutan parobahan, naha muka catetan pikeun nyimpen hasil tarjamah anu diskraskeun
+                    record-path: Jalur pikeun ngémutan rékaman toko
                 force: Nimpa tarjamahan nu aya
                 force-key-prefix: kenop nu kudu dipaksa pikeun overwritten
                 generate-const: Ngahasilkeun nilai enumerasi pikeun gampang nelepon

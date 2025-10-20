@@ -31,6 +31,12 @@ cli:
         conf:
             long: Paghimo template sa configuration file
             short: Paghimo configuration file
+        doc:
+            flags:
+                language: Dokumento sa Dokumento, ang default mao ang Intsik (ZH)
+                output-dir: Directory sa Dokumento sa Dokumento, ang default mao ang mga DOC
+            long: Ipasiugda ang mensahe nga nagsugod sa modelo sa proto file ug makamugna mga dokumento sa disenyo sa database
+            short: Maghimo mga dokumento sa Disenyo sa Database
         dockerignore:
             long: Paghimo og .dockerignore nga file para sa Docker image building aron dili ibaliwala ang pagdumala sa file
             short: Paghimo og .dockerignore nga payl
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Paghubad sa tanan nga gisuportahan nga mga sinultian (kung tinuod ang bandila sa mga sinultian gi-disable)
+                auto-tran:
+                    enable-record: Kung ang mga pagbag-o sa Diksyonaryo sa paghubad, kung magbukas ba ang usa ka talaan aron tipigan ang katugbang nga pagbag-o nga mga resulta sa paghubad
+                    record-path: Agianan sa pagtipig sa mga rekord sa paghubad
                 force: I-overwrite ang kasamtangan nga mga hubad
                 force-key-prefix: mga yawe nga kinahanglang pugson nga ma-overwrite
                 generate-const: Paghimo mga kantidad sa enumeration alang sa dali nga pagtawag

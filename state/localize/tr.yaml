@@ -31,6 +31,12 @@ cli:
         conf:
             long: Yapılandırma dosyası şablonu oluştur
             short: Yapılandırma dosyası oluştur
+        doc:
+            flags:
+                language: Belge dili, varsayılan Çincedir (zh)
+                output-dir: Belge çıkış dizini, varsayılan dokümanlar'dır
+            long: Protokol dosyasında Model ile başlayan mesajı ayrıştırın ve veritabanı tasarım belgeleri oluşturun
+            short: Veritabanı tasarım belgeleri oluşturun
         dockerignore:
             long: Dosya yönetimini yoksaymak amacıyla Docker görüntüsü oluşturma için .dockerignore dosyası oluşturun
             short: .dockerignore dosyası oluştur
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Desteklenen tüm dilleri çevirin (doğruysa dil bayrağı devre dışı bırakılır)
+                auto-tran:
+                    enable-record: Çeviri sözlüğü değiştiğinde, karşılık gelen değiştirilmiş çeviri sonuçlarını depolamak için bir kayıt açılıp açılmayacağı
+                    record-path: Çeviri kayıtlarının saklanacağı yol
                 force: Mevcut çevirilerin üzerine yaz
                 force-key-prefix: Üzerine yazılmaya zorlanması gereken anahtarlar
                 generate-const: Kolay arama için numaralandırma değerleri oluşturun

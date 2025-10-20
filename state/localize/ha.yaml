@@ -31,6 +31,12 @@ cli:
         conf:
             long: Ƙirƙirar samfurin fayil ɗin sanyi
             short: Ƙirƙirar fayil ɗin sanyi
+        doc:
+            flags:
+                language: Harshen Laftito, Tsoho shine Sinanci (ZH)
+                output-dir: Adireshin fitarwa na Daftewa, Tsoho shine Docs
+            long: Alamar saƙo fara da samfurin a cikin fayil ɗin da aka gabatar don ƙirƙirar takaddun bayanai na bayanai
+            short: Haɗa bayanan zane-zane
         dockerignore:
             long: Ƙirƙirar fayil ɗin .dockerignore don ginin hoton Docker don yin watsi da sarrafa fayil
             short: Ƙirƙirar .dockerignore fayil
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Fassara duk harsunan da aka goyan baya (idan gaskiya an kashe tutar harsunan)
+                auto-tran:
+                    enable-record: Lokacin da fassarar ƙamus, ko don buɗe rikodin don adana sakamakon fassarar ya canza
+                    record-path: Hanya don adana bayanan fassarar
                 force: Rubuta fassarorin da ke akwai
                 force-key-prefix: makullin da ake buƙatar tilastawa a sake rubuta su
                 generate-const: Ƙirƙirar ƙididdiga ƙididdiga don sauƙin kira

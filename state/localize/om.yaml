@@ -31,6 +31,12 @@ cli:
         conf:
             long: Unkaa faayilii qindeessaa uumi
             short: Faayilii qindeessaa uumuu
+        doc:
+            flags:
+                language: Afaan galmee, durtii Chaayinaa (ZH) dha .
+                output-dir: Galmee firii galmee, durtii docs .
+            long: Ergaa faayilii Proto keessatti moodeela irraa eegalee parse fi galmeewwan dizaayinii kuusdeetaa uumuu .
+            short: Sanadoota dizaayinii kuusdeetaa uumuu .
         dockerignore:
             long: Bulchiinsa faayilii tuffachuudhaaf ijaarsa fakkii Docker faayilii .dockerignore uumi
             short: Faayilii .dockerignore uumi
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Afaanota deeggaraman hunda hiikuu (yoo dhugaa ta'e alaabaa afaanota ni hanqifama)
+                auto-tran:
+                    enable-record: Yeroo galmee jechootaa hiikkaa jijjiiramu, bu'aa hiikkaa jijjiirame kuusuudhaaf galmee banuu fi dhiisuu .
+                    record-path: Karaa galmee hiikkaa itti kuusuu .
                 force: Hiikkaawwan jiran irra barreessi
                 force-key-prefix: furtuuwwan dirqiin irra barreeffamuu qaban
                 generate-const: Waamicha salphaadhaaf gatiiwwan lakkaa'uu uumi

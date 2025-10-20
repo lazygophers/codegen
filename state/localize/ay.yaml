@@ -31,6 +31,12 @@ cli:
         conf:
             long: Plantilla de archivo de configuración luraña
             short: Configuración qillqata luraña
+        doc:
+            flags:
+                language: Documento aru, default ukax chino (ZH) .
+                output-dir: Documento Salida Directorio, Default ukax DOCS .
+            long: Proto archivon modelo ukamp qalltaski uka yatiyawix uñakipañawa ukat base de datos ukan diseño documentos ukanakaw lurasi .
+            short: Diseño de base de datos uka qillqatanaka luraña .
         dockerignore:
             long: Docker uñacht’äw lurañataki .dockerignore qillqat luraña, qillqat apnaqañ jan yäqañataki
             short: .dockerignore qillqat luraña
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Taqi yanapt’at arunaka jaqukipaña (chiqächi ukhax arunakan banderapax jan ch’amanchatawa)
+                auto-tran:
+                    enable-record: Kunapachatixa jaqukipaña aruxa mayjt’ki ukhaxa, mä registro jist’araña jani ukaxa correspondiente mayjt’ayata jaqukipaña.
+                    record-path: Jaqukipañ qillqatanakar imañ thakhi .
                 force: Jichhax utjki uka jaqukipäwinakat qillqt’aña
                 force-key-prefix: llaves ukax forzado ukhamaw qillqt’atäñapa
                 generate-const: Jasaki jawsañataki jakthapiwi chimpunaka luraña

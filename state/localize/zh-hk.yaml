@@ -31,6 +31,12 @@ cli:
         conf:
             long: 生成設定檔模板
             short: 產生設定檔
+        doc:
+            flags:
+                language: 文檔語言，默認為中文(zh)
+                output-dir: 文檔輸出目錄，默認為 docs
+            long: 解析 proto 文件中 Model 開頭的 message，生成數據庫設計文檔
+            short: 生成數據庫設計文檔
         dockerignore:
             long: 生成.dockerignore 文件，用於 Docker 映像建置忽略文件管理
             short: 生成.dockerignore 文件
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: 翻譯所有支援的語言（如果為 true 則 languages 標記失效）
+                auto-tran:
+                    enable-record: 當翻譯字典發生變化時，是否開啟存儲相應變更後的翻譯結果的記錄
+                    record-path: 存儲翻譯記錄的路徑
                 force: 覆蓋已存在的翻譯
                 force-key-prefix: 需要被強制覆蓋的 keys
                 generate-const: 產生枚舉值，方便調用

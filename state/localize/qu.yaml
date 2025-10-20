@@ -31,6 +31,12 @@ cli:
         conf:
             long: Plantilla de archivo de configuración nisqa paqarichiy
             short: Wakichiy willañiqita paqarichiy
+        doc:
+            flags:
+                language: Documento simi, ñawpaqmanta churasqa chino (ZH) .
+                output-dir: Qillqa lluqsiy qillqana mayt'u, ñawpaqmanta churasqa docs .
+            long: PROTO qillqapi modelowan qallariq willakuyta t'aqwiy hinaspa willakuypa waqaychanan qillqa qillqakunata ruway .
+            short: Willaypa waqaychanan qillqa qillqakunata paqarichiy .
         dockerignore:
             long: Docker siq'i wasipaq .dockerignore willañiqita paqarichiy, willañiqi kamachiyta mana qhawanapaq
             short: .dockerignore willañiqita paqarichiy
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Llapan yanapasqa simikunata tikray (chiqap kaptinqa simikunap banderanqa mana llamk'achisqam)
+                auto-tran:
+                    enable-record: Traducción diccionario cambian, sichus huk discota kichayta munanki chaywan tupaq cambiasqa traducción resultadokunata waqaychaypaq .
+                    record-path: Path to Store Traducción Records .
                 force: Kaq t’ikraykunata hawaman qillqay
                 force-key-prefix: llavekuna, chaykunatam obligana kanqa hawanpi qillqanapaq
                 generate-const: Yupay chanikunata paqarichiy, mana sasa waqyanapaq

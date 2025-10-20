@@ -31,6 +31,12 @@ cli:
         conf:
             long: Bumuo ng template ng configuration file
             short: Bumuo ng configuration file
+        doc:
+            flags:
+                language: Dokumento ng Dokumento, Default ay Intsik (ZH)
+                output-dir: Direktoryo ng Output ng Dokumento, ang default ay mga doc
+            long: I -parse ang mensahe na nagsisimula sa modelo sa proto file at makabuo ng mga dokumento ng disenyo ng database
+            short: Bumuo ng mga dokumento sa disenyo ng database
         dockerignore:
             long: Bumuo ng .dockerignore file para sa paggawa ng imahe ng Docker upang balewalain ang pamamahala ng file
             short: Bumuo ng .dockerignore file
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Isalin ang lahat ng sinusuportahang wika (kung totoo ang flag ng mga wika ay hindi pinagana)
+                auto-tran:
+                    enable-record: Kapag nagbabago ang diksyunaryo ng pagsasalin, kung magbubukas ng isang tala upang maiimbak ang kaukulang nagbago na mga resulta ng pagsasalin
+                    record-path: Landas upang mag -imbak ng mga talaan ng pagsasalin
                 force: I-overwrite ang mga kasalukuyang pagsasalin
                 force-key-prefix: mga susi na kailangang pilitin na ma-overwrite
                 generate-const: Bumuo ng mga halaga ng enumeration para sa madaling pagtawag
