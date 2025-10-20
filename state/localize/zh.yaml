@@ -158,6 +158,10 @@ cli:
         aliases: 命令别名
         flags: 参数
         global_flags: 全局参数
+    doc:
+        filename:
+            database-design: 数据库设计
+            api: 接口文档
 
 lang:
     af: 南非荷兰语

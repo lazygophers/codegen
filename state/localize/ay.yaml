@@ -7,6 +7,8 @@ cli:
         short: Mä autocompleta script ukax uñt’ayat shell ukatakiw luraña
         subcommand:
             short: '{{.Command}} ukatakix autocompletar script luraña.'
+    doc:
+        filename: {}
     flags:
         debug: Salida detallada registro ukaxa
     gen:

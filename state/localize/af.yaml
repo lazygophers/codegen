@@ -7,6 +7,8 @@ cli:
         short: Genereer 'n outovoltooi-skrip vir die gespesifiseerde dop
         subcommand:
             short: Genereer outovoltooi-skrip vir {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: Voer gedetailleerde log uit
     gen:

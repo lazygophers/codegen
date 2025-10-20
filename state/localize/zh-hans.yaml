@@ -35,8 +35,8 @@ cli:
             short: 生成配置文件
         doc:
             flags:
-                language: 文档语言，默认为中文(zh)
-                output-dir: 文档输出目录，默认为 docs
+                language: 文档语言
+                output-dir: 文档输出目录
             long: 解析 proto 文件中 Model 开头的 message，生成数据库设计文档
             short: 生成数据库设计文档
         dockerignore:

@@ -7,6 +7,8 @@ cli:
         short: Generate un script di autocomplete per a cunchiglia specifica
         subcommand:
             short: Generate script di autocomplete per {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: Output log detallatu
     gen:

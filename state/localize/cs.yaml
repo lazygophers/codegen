@@ -7,6 +7,8 @@ cli:
         short: Vygenerujte skript automatického doplňování pro zadaný shell
         subcommand:
             short: Vygenerovat skript automatického doplňování pro {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: Výstup podrobného protokolu
     gen:

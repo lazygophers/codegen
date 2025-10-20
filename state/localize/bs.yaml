@@ -7,6 +7,8 @@ cli:
         short: Generirajte skriptu za automatsko dovršavanje za navedenu ljusku
         subcommand:
             short: Generiraj autokompletnu skriptu za {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: Izlaz detaljnog dnevnika
     gen:

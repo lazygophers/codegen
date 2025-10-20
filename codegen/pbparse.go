@@ -2,6 +2,11 @@ package codegen
 
 import (
 	"bytes"
+	"os"
+	"path/filepath"
+	"strconv"
+	"strings"
+
 	"github.com/emicklei/proto"
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
@@ -10,10 +15,6 @@ import (
 	"github.com/lazygophers/utils/json"
 	"github.com/lazygophers/utils/stringx"
 	"github.com/pterm/pterm"
-	"os"
-	"path/filepath"
-	"strconv"
-	"strings"
 )
 
 type PbOption struct {
@@ -387,6 +388,7 @@ type PbField interface {
 	FieldName() string
 	FieldType() string
 	IsSlice() bool
+	Desc() string
 }
 
 var _ PbField = (*PbNormalField)(nil)
@@ -402,6 +404,31 @@ type PbNormalField struct {
 
 	// 写在字段后面的注释
 	inlineComment *PbComment
+}
+
+func (p *PbNormalField) Desc() string {
+	// 先尝试找 @desc 标记
+	if p.comment != nil {
+		value, ok := p.comment.tags["desc"]
+		if ok && len(value.Lines()) > 0 {
+			return cleanDesc(strings.Join(value.Lines(), "\n"))
+		}
+	}
+
+	// 尝试找后面接着的注释
+	if p.field.InlineComment != nil && len(p.field.InlineComment.Lines) > 0 {
+		return cleanDesc(strings.Join(p.field.InlineComment.Lines, "\n"))
+	}
+
+	// 找空行标记
+	if p.comment != nil {
+		value, ok := p.comment.tags[""]
+		if ok && len(value.Lines()) > 0 {
+			return cleanDesc(strings.Join(value.Lines(), "\n"))
+		}
+	}
+
+	return ""
 }
 
 func (p *PbNormalField) FieldName() string {
@@ -456,8 +483,36 @@ func NewPbNormalField(f *proto.NormalField) *PbNormalField {
 }
 
 type PbMapField struct {
-	Name  string
+	Name string
+
 	field *proto.MapField
+
+	comment *PbComment
+}
+
+func (p *PbMapField) Desc() string {
+	// 先尝试找 @desc 标记
+	if p.comment != nil {
+		value, ok := p.comment.tags["desc"]
+		if ok && len(value.Lines()) > 0 {
+			return cleanDesc(strings.Join(value.Lines(), "\n"))
+		}
+	}
+
+	// 尝试找后面接着的注释
+	if p.field.InlineComment != nil && len(p.field.InlineComment.Lines) > 0 {
+		return cleanDesc(strings.Join(p.field.InlineComment.Lines, "\n"))
+	}
+
+	// 找空行标记
+	if p.comment != nil {
+		value, ok := p.comment.tags[""]
+		if ok && len(value.Lines()) > 0 {
+			return cleanDesc(strings.Join(value.Lines(), "\n"))
+		}
+	}
+
+	return ""
 }
 
 func (p *PbMapField) Field() *proto.MapField {
@@ -488,6 +543,10 @@ func NewPbMapField(f *proto.MapField) *PbMapField {
 	p := &PbMapField{
 		Name:  f.Name,
 		field: f,
+	}
+
+	if f.Comment != nil {
+		p.comment = NewPbComment(f.Comment)
 	}
 
 	p.walk()

@@ -7,6 +7,8 @@ cli:
         short: قم بإنشاء برنامج نصي للإكمال التلقائي للصدفة المحددة
         subcommand:
             short: إنشاء برنامج نصي للإكمال التلقائي لـ {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: سجل مفصل للإخراج
     gen:

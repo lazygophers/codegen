@@ -7,6 +7,8 @@ cli:
         short: ለተጠቀሰው ሼል ራስ-አጠናቅቅ ስክሪፕት ይፍጠሩ
         subcommand:
             short: ለ{{.Command}} ራስ-አጠናቅቅ ስክሪፕት ይፍጠሩ
+    doc:
+        filename: {}
     flags:
         debug: የውጤት ዝርዝር ምዝግብ ማስታወሻ
     gen:

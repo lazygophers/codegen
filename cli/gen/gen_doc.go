@@ -30,10 +30,6 @@ func mergeDocFlags(cmd *cobra.Command) {
 	if utils.Changed("doc-language", cmd) {
 		state.Config.Language = utils.GetString("doc-language", cmd)
 	}
-
-	if utils.Changed("doc-output-dir", cmd) {
-		state.Config.DocOutputDir = utils.GetString("doc-output-dir", cmd)
-	}
 }
 
 func initDoc() {

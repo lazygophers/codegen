@@ -7,6 +7,8 @@ cli:
         short: Paghimo ug autocomplete nga script para sa gipiho nga kabhang
         subcommand:
             short: Paghimo og autocomplete nga script para sa {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: Output detalyado nga log
     gen:

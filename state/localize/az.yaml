@@ -7,6 +7,8 @@ cli:
         short: Göstərilən qabıq üçün avtomatik tamamlama skripti yaradın
         subcommand:
             short: '{{.Command}} üçün avtomatik tamamlama skripti yaradın'
+    doc:
+        filename: {}
     flags:
         debug: Ətraflı jurnalı çıxarın
     gen:

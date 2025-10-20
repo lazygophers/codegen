@@ -7,6 +7,8 @@ cli:
         short: Yɛ autocomplete script ma shell a wɔakyerɛ no
         subcommand:
             short: Yɛ autocomplete script ma {{.Ahyɛde}} .
+    doc:
+        filename: {}
     flags:
         debug: Output nsɛm a ɛkɔ akyiri log
     gen:

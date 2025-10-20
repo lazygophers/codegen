@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	// FilePermDefault 默认文件权限（rw-rw-rw-）
-	FilePermDefault = fs.FileMode(0666)
+	// FilePermDefault 默认文件权限
+	FilePermDefault = fs.FileMode(0644)
 )
 
 func clearText(content string) string {

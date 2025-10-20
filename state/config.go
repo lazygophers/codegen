@@ -2,6 +2,11 @@ package state
 
 import (
 	"fmt"
+	"io"
+	"os"
+	"path/filepath"
+	"strings"
+
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/utils/app"
 	"github.com/lazygophers/utils/defaults"
@@ -11,10 +16,6 @@ import (
 	"github.com/pelletier/go-toml/v2"
 	"github.com/pterm/pterm"
 	"gopkg.in/yaml.v3"
-	"io"
-	"os"
-	"path/filepath"
-	"strings"
 )
 
 type CfgSync struct {
@@ -153,6 +154,11 @@ type CfgTemplateState struct {
 	I18n  string `json:"i18n,omitempty" yaml:"i18n,omitempty" toml:"i18n,omitempty"`
 }
 
+type CfgTemplateDoc struct {
+	DatabaseDesign string `json:"database-design,omitempty" yaml:"database-design,omitempty" toml:"database-design,omitempty"`
+	Api            string `json:"api,omitempty" yaml:"api,omitempty" toml:"api,omitempty"`
+}
+
 type CfgTemplate struct {
 	Editorconfig string `json:"editorconfig,omitempty" yaml:"editorconfig,omitempty" toml:"editorconfig,omitempty"`
 
@@ -176,6 +182,8 @@ type CfgTemplate struct {
 	Dockerignore string `json:"dockerignore,omitempty" yaml:"dockerignore,omitempty" toml:"dockerignore,omitempty"`
 
 	I18nConst string `json:"i18n-const,omitempty" yaml:"i18n-const,omitempty" toml:"i18n-const,omitempty"`
+
+	Doc *CfgTemplateDoc `json:"doc,omitempty" yaml:"doc,omitempty" toml:"doc,omitempty"`
 }
 
 type CfgTables struct {
@@ -307,8 +315,6 @@ type Cfg struct {
 
 	State *CfgState `json:"state,omitempty" yaml:"state,omitempty" toml:"state,omitempty"`
 
-	DocOutputDir string `json:"doc-output-dir,omitempty" yaml:"doc-output-dir,omitempty" toml:"doc-output-dir,omitempty"`
-
 	Overwrite bool `json:"-" yaml:"-" toml:"-"`
 }
 
@@ -362,6 +368,9 @@ func (p *Cfg) apply() (err error) {
 	}
 	if p.Template.State == nil {
 		p.Template.State = new(CfgTemplateState)
+	}
+	if p.Template.Doc == nil {
+		p.Template.Doc = new(CfgTemplateDoc)
 	}
 
 	if p.Tables == nil {
