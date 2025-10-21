@@ -394,23 +394,25 @@ type PbGormTag struct {
 }
 
 func (p *PbGormTag) walk() {
-	p.line = strings.ToLower(strings.TrimSpace(strings.Join(p.tag.Lines(), ";")))
+	if p.tag != nil {
+		p.line = strings.ToLower(strings.TrimSpace(strings.Join(p.tag.Lines(), ";")))
 
-	// 解析拆分 gorm 的 tag
-	for _, tag := range strings.Split(p.line, ";") {
-		k, v, found := strings.Cut(tag, "=")
-		if !found {
-			// 比如主键、not null等
-			p.tagMap[tag] = append(p.tagMap[tag], "")
-			continue
+		// 解析拆分 gorm 的 tag
+		for _, tag := range strings.Split(p.line, ";") {
+			k, v, found := strings.Cut(tag, "=")
+			if !found {
+				// 比如主键、not null等
+				p.tagMap[tag] = append(p.tagMap[tag], "")
+				continue
+			}
+
+			if strings.HasSuffix(v, ",unique") {
+				p.tagMap["uniqueIndex"] = append(p.tagMap["uniqueIndex"], strings.TrimSuffix(v, ",unique"))
+				continue
+			}
+
+			p.tagMap[k] = append(p.tagMap[k], v)
 		}
-
-		if strings.HasSuffix(v, ",unique") {
-			p.tagMap["uniqueIndex"] = append(p.tagMap["uniqueIndex"], strings.TrimSuffix(v, ",unique"))
-			continue
-		}
-
-		p.tagMap[k] = append(p.tagMap[k], v)
 	}
 }
 
@@ -482,7 +484,7 @@ func (p *PbNormalField) GormTag() *PbGormTag {
 		}
 	}
 
-	return nil
+	return NewPbGormTag(p, nil)
 }
 
 func (p *PbNormalField) Desc() string {
@@ -578,7 +580,7 @@ func (p *PbMapField) GormTag() *PbGormTag {
 		}
 	}
 
-	return nil
+	return NewPbGormTag(p, nil)
 }
 
 func (p *PbMapField) Desc() string {
@@ -665,7 +667,7 @@ func (p *PbEnumField) GormTag() *PbGormTag {
 		}
 	}
 
-	return nil
+	return NewPbGormTag(p, nil)
 }
 
 func cleanDesc(desc string) string {
