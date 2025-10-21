@@ -5,8 +5,6 @@ import (
 	"path/filepath"
 	"time"
 
-	"strings"
-
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/lazygophers/lrpc/middleware/i18n"
@@ -131,7 +129,17 @@ func convertPbMessageToDocModel(pbMsg *PbMessage) DocModel {
 }
 
 func GenerateDoc(pb *PbPackage) (err error) {
-	pterm.Info.Println("try generate documentation")
+	err = GenerateDatabaseDoc(pb)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
+
+func GenerateDatabaseDoc(pb *PbPackage) (err error) {
+	pterm.Info.Println("try generate database documentation")
 
 	// 获取文档输出目录
 	docsDir := filepath.Join(pb.ProjectRoot(), "docs")
@@ -189,19 +197,4 @@ func GenerateDoc(pb *PbPackage) (err error) {
 
 	pterm.Success.Println("documentation generated successfully")
 	return nil
-}
-
-// generateIndexName 生成索引名称
-// prefix: 索引前缀 (idx, uk 等)
-// modelName: 模型名称
-// fieldName: 字段名称
-func generateIndexName(prefix, modelName, fieldName string) string {
-	// 移除 Model 前缀并转换为小写蛇形命名
-	tableName := stringx.ToSnake(modelName)
-	if strings.HasPrefix(tableName, "model_") {
-		tableName = tableName[6:] // 移除 "model_" 前缀
-	}
-
-	// 生成索引名: prefix_tablename_fieldname
-	return strings.ToLower(prefix + "_" + tableName + "_" + stringx.ToSnake(fieldName))
 }
