@@ -31,6 +31,12 @@ cli:
         conf:
             long: Hangaia te tauira kōnae whirihoranga
             short: Waihanga kōnae whirihoranga
+        doc:
+            flags:
+                language: Reo tuhinga, ko te taunoa he Hainamana (ZH)
+                output-dir: Whaiaronga Putanga tuhinga, ko te taunoa he Docs
+            long: Whakapaihia te panui ka tiimata me te tauira i roto i te konae tohu me te whakaputa tuhinga hoahoa pātengi raraunga
+            short: Hangaia nga tuhinga hoahoa pātengi raraunga
         dockerignore:
             long: Hangaia he konae .dockerignore mo te hanga whakaahua a Docker kia kore ai e aro ki te whakahaerenga konae
             short: Hangaia te kōnae .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Whakamaoritia nga reo tautoko katoa (mehemea he pono kua monoa te kara reo)
+                auto-tran:
+                    enable-record: I te wa e whakarereke ana te papakupu Whakawhiti, ahakoa ki te whakatuwhera i tetahi rekoata ki te rokiroki i nga hua whakamaoritanga e pa ana
+                    record-path: Ara ki te penapena i nga rekoata whakamaori
                 force: Tuhia nga whakamaoritanga o naianei
                 force-key-prefix: mau taviri e tia ia faahepohia ia tuhiruahia
                 generate-const: Waihanga uara tatau mo te waea ngawari

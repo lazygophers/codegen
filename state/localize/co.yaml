@@ -7,6 +7,8 @@ cli:
         short: Generate un script di autocomplete per a cunchiglia specifica
         subcommand:
             short: Generate script di autocomplete per {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: Output log detallatu
     gen:
@@ -31,6 +33,12 @@ cli:
         conf:
             long: Genera un mudellu di schedariu di cunfigurazione
             short: Generate u schedariu di cunfigurazione
+        doc:
+            flags:
+                language: Lingua di u documentu, predefinitu hè Chinese (zh)
+                output-dir: U cartulare di output di u documentu, predeterminatu hè docs
+            long: Analizà u messagiu cuminciendu cù Model in u protofile è generà documenti di cuncepimentu di basa di dati
+            short: Generate documenti di cuncepimentu di basa di dati
         dockerignore:
             long: Generate .dockerignore file per a creazione di l'imaghjini Docker per ignurà a gestione di u schedariu
             short: Generate u schedariu .dockerignore
@@ -124,6 +132,9 @@ cli:
         tran:
             flags:
                 all-language: Traduce tutte e lingue supportate (se vera a bandiera di lingue hè disattivata)
+                auto-tran:
+                    enable-record: Quandu u dizziunariu di traduzzione cambia, sia per apre un registru per almacenà i risultati di traduzzione cambiati currispondenti
+                    record-path: Percorsu per almacenà i registri di traduzzione
                 force: Sovrascrivi traduzioni esistenti
                 force-key-prefix: chjavi chì deve esse furzati per esse sovrascritti
                 generate-const: Generate valori di enumerazione per chjamà faciule

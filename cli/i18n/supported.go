@@ -47,10 +47,10 @@ var supportedCmd = &cobra.Command{
 }
 
 func initSupport() {
-	supportedCmd.Short = state.Localize(state.I18nTagCliI18nSupportShort)
-	supportedCmd.Long = state.Localize(state.I18nTagCliI18nSupportLong)
+	supportedCmd.Short = state.Localize(state.I18nTagCliI18NSupportShort)
+	supportedCmd.Long = state.Localize(state.I18nTagCliI18NSupportLong)
 
-	supportedCmd.Flags().String("language", "", state.Localize(state.I18nTagCliI18nSupportFlagsLanguage))
+	supportedCmd.Flags().String("language", "", state.Localize(state.I18nTagCliI18NSupportFlagsLanguage))
 
 	i18nCmd.AddCommand(supportedCmd)
 }

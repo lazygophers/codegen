@@ -31,6 +31,12 @@ cli:
         conf:
             long: Configuration file template siam rawh
             short: Configuration file siam rawh
+        doc:
+            flags:
+                language: Document tawng, default chu Chinese (ZH) a ni.
+                output-dir: Document output directory, default chu DOCS a ni.
+            long: Proto file a model atanga intan message chu parse la, database design documents siam rawh .
+            short: Database design document siam .
         dockerignore:
             long: File management ngaihthah nan Docker image building atan .dockerignore file siam rawh
             short: .dockerignore file siam rawh
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Supported language zawng zawng lehlin vek (a dik a nih chuan languages ​​flag chu disabled a ni)
+                auto-tran:
+                    enable-record: Lehlin dictionary a inthlak chuan, a inmilna thlak danglamna result chu dahkhawmna tur record hawn emaw, hawn emaw pawh nise
+                    record-path: Lehlin record dahna tur kawng .
                 force: Lehlin awm tawhte chu overwrite rawh
                 force-key-prefix: keys te chu overwrite tura nawr a ngai a ni
                 generate-const: Call awlsam zawk nan enumeration value siam rawh

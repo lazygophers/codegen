@@ -31,6 +31,12 @@ cli:
         conf:
             long: Fausia le fa'ata'ita'iga faila faila
             short: Fausia faila fa'atulagaina
+        doc:
+            flags:
+                language: O le gagana pepa, o le le atoatoa o le Saina (ZH)
+                output-dir: Pepa aloaia o loʻo i ai faʻamatalaga
+            long: Talia le feʻau amata mai le faʻataʻitaʻiga i le proto faila ma gaosia ni faʻamaumauga o ata
+            short: Fausia pepa o ata tusia pepa
         dockerignore:
             long: Fausia faila .dockerignore mo le fausiaina o ata Docker e le amanaia ai le puleaina o faila
             short: Fausia faila .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Fa'aliliu gagana lagolago uma (pe a sa'o le fu'a gagana)
+                auto-tran:
+                    enable-record: A oʻo mai le faʻaliliuga o faʻafitauli, pe tatala se faʻamaumauga e teu ai le faʻaliliuga o suiga
+                    record-path: Auala e teu ai faʻamaumauga faʻaliliuga
                 force: Sui fa'aliliuga o iai
                 force-key-prefix: ki e mana'omia ona fa'amalosia e fa'asolo
                 generate-const: Fausia fa'amaumauga tau mo le faigofie vala'au

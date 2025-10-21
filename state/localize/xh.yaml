@@ -31,6 +31,12 @@ cli:
         conf:
             long: Yenza itemplate yefayile yoqwalaselo
             short: Yenza ifayile yoqwalaselo
+        doc:
+            flags:
+                language: Ulwimi lweXwebhu, ukungagqibekanga sisiTshayina (Zh)
+                output-dir: Ulwakhiwo lwemveliso yemveliso, Ukungagqibeki kwamanzi
+            long: Phinda uMyalezo oqala ngemodeli kwifayile yefayile kwaye uvelise ugcino lwedatha
+            short: Yenza i-Devetal Fingu
         dockerignore:
             long: Yenza ifayile ye-dockerignore yesakhiwo somfanekiso we-Docker ukungahoyi ulawulo lwefayile
             short: Yenza ifayile ye.dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Guqulela zonke iilwimi ezixhaswayo (ukuba yinyani iflegi yeelwimi ivaliwe)
+                auto-tran:
+                    enable-record: Xa isichazi-sigama esiguqulelayo sitshintsha, nokuba sivule irekhodi ukugcina iziphumo ezinokutshintshwa
+                    record-path: Indlela yokugcina iirekhodi zokuguqulela
                 force: Bhala phezu kweenguqulelo ezikhoyo
                 force-key-prefix: izitshixo ezifuna ukunyanzeliswa ukuba zibhalwe ngaphezulu
                 generate-const: Veza amaxabiso okubalwa ukufowuna lula

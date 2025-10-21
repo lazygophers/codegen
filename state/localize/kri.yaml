@@ -31,6 +31,12 @@ cli:
         conf:
             long: Jɛnɛret kɔnfigyushɔn fayl tɛmplat
             short: Jɛnɛret kɔnfigyushɔn fayl
+        doc:
+            flags:
+                language: Dokumɛnt Langwej, Difɔlt na Chaynish (ZH)
+                output-dir: Dokumɛnt ɔtput dairektrɔ, difɔlt na doks .
+            long: Parse di mɛsej we bigin wit mɔdel na di Proto fayl ɛn jenarayz database dizayn dɔkyumɛnt dɛn .
+            short: Jɛnɛret di database dizayn dɔkyumɛnt dɛn .
         dockerignore:
             long: Jɛnɛret .dockerignore fayl fɔ Docker imej bildin fɔ ignore fayl manejmɛnt
             short: Jɛnɛret .dockerignore fayl
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Translet ɔl di langwej dɛn we dɛn sɔpɔt (if na tru di langwej dɛn flag nɔ de wok)
+                auto-tran:
+                    enable-record: We di transleshɔn dikshɔnari chenj, if dɛn fɔ opin wan rɛkɔd fɔ kip di kɔrɛspɔndɛns chenj transleshɔn rizɔlt dɛn .
+                    record-path: Path to Store Transleshɔn Rɛkɔd dɛn .
                 force: Rayt di transleshɔn dɛn we dɔn de
                 force-key-prefix: ki dɛn we nid fɔ fos fɔ rayt ɔva
                 generate-const: Jɛnɛret ɛnyumɛreshɔn valyu fɔ izi kɔl

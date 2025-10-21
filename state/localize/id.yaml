@@ -31,6 +31,12 @@ cli:
         conf:
             long: Hasilkan templat file konfigurasi
             short: Hasilkan file konfigurasi
+        doc:
+            flags:
+                language: Bahasa dokumen, standarnya adalah Cina (zh)
+                output-dir: Direktori keluaran dokumen, defaultnya adalah dokumen
+            long: Parsing pesan yang dimulai dengan Model di file proto dan buat dokumen desain database
+            short: Menghasilkan dokumen desain basis data
         dockerignore:
             long: Hasilkan file .dockerignore untuk pembuatan image Docker untuk mengabaikan manajemen file
             short: Hasilkan file .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Terjemahkan semua bahasa yang didukung (jika benar, bendera bahasa dinonaktifkan)
+                auto-tran:
+                    enable-record: Ketika kamus terjemahan berubah, apakah akan membuka catatan untuk menyimpan hasil terjemahan yang diubah terkait
+                    record-path: Jalur untuk menyimpan catatan terjemahan
                 force: Timpa terjemahan yang sudah ada
                 force-key-prefix: kunci yang perlu dipaksa untuk ditimpa
                 generate-const: Hasilkan nilai enumerasi untuk memudahkan panggilan

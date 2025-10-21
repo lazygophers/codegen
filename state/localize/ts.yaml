@@ -31,6 +31,12 @@ cli:
         conf:
             long: Endla xifaniso xa fayili ya vuhlanganisi
             short: Endla fayili ya vuhlanganisi
+        doc:
+            flags:
+                language: Ririmi ra matsalwa, xihlawulekisi i Xichayina (ZH) .
+                output-dir: Xikombo xa Vuhumelerisi bya Matsalwa, Xihlawulekisi i DOCS .
+            long: Hlawula rungula leri sungulaka hi modele eka fayili ya proto na ku tumbuluxa matsalwa ya dizayini ya database .
+            short: Endla matsalwa ya dizayini ya database .
         dockerignore:
             long: Endla fayili ya .dockerignore ya ku aka swifaniso swa Docker ku honisa vulawuri bya fayili
             short: Endla fayili ya .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Hundzuluxela tindzimi hinkwato leti seketeriwaka (loko ku ri ntiyiso mujeko wa tindzimi wu pfaleriwile)
+                auto-tran:
+                    enable-record: Loko xihlamusela-marito xa vuhundzuluxeri xi cinca, loko u fanele u pfula rhekhodo leswaku u hlayisa vuyelo lebyi fambisanaka ni vuhundzuluxeri lebyi cinciweke .
+                    record-path: Path to Store Tirhekhodo ta Vuhundzuluxi .
                 force: Tsala ehenhla ka vuhundzuluxeri lebyi nga kona
                 force-key-prefix: swilotlelo leswi lavaka ku sindzisiwa ku tsariwa ehenhla
                 generate-const: Endla mimpimo ya ku hlayela ku olova ku vitana

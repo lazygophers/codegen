@@ -6,6 +6,7 @@ import (
 	"os"
 	"strings"
 	"text/template"
+	"time"
 
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
@@ -57,6 +58,9 @@ const (
 	TemplateTypeGitignore
 	TemplateTypeDockerignore
 	TemplateTypeConf
+
+	TemplateTypeDocsDatabase
+	TemplateTypeDocsApi
 )
 
 func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err error) {
@@ -193,6 +197,23 @@ func GetTemplate(t TemplateType, args ...string) (tpl *template.Template, err er
 		systemPath = state.Config.Template.Conf
 		embedPath = "template/conf.gtpl"
 
+	case TemplateTypeDocsDatabase:
+		if len(args) != 1 {
+			panic("Must language")
+		}
+
+		systemPath = state.Config.Template.Doc.DatabaseDesign
+		embedPath = fmt.Sprintf("template/docs/%s/database-design.gtpl", args[0])
+
+	case TemplateTypeDocsApi:
+		if len(args) != 1 {
+			panic("Must language")
+		}
+
+		systemPath = state.Config.Template.Doc.Api
+
+		embedPath = fmt.Sprintf("template/docs/%s/api.gtpl", args[0])
+
 	default:
 		panic("unsupported template type")
 	}
@@ -312,4 +333,14 @@ var DefaultTemplateFunc = template.FuncMap{
 
 	"IncrKey": IncrWithKey,
 	"DecrKey": DecrWithKey,
+
+	"Now": func() int64 {
+		return time.Now().Unix()
+	},
+	"NowDate": func() string {
+		return time.Now().Format(time.DateOnly)
+	},
+	"NowDatetime": func() string {
+		return time.Now().Format(time.DateTime)
+	},
 }

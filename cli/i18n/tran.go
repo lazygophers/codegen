@@ -319,29 +319,29 @@ func mergeTranCmdFlags(cmd *cobra.Command) {
 }
 
 func initTran() {
-	tranCmd.Short = state.Localize(state.I18nTagCliI18nTranShort)
-	tranCmd.Long = state.Localize(state.I18nTagCliI18nLong)
+	tranCmd.Short = state.Localize(state.I18nTagCliI18NTranShort)
+	tranCmd.Long = state.Localize(state.I18nTagCliI18NLong)
 
-	tranCmd.Flags().StringP("src-file", "s", "", state.Localize(state.I18nTagCliI18nTranFlagsSrcFile))
-	tranCmd.Flags().String("src-language", "", state.Localize(state.I18nTagCliI18nTranFlagsSrcLanguage))
+	tranCmd.Flags().StringP("src-file", "s", "", state.Localize(state.I18nTagCliI18NTranFlagsSrcFile))
+	tranCmd.Flags().String("src-language", "", state.Localize(state.I18nTagCliI18NTranFlagsSrcLanguage))
 
-	tranCmd.Flags().Bool("all-languages", state.Config.I18n.AllLanguages, state.Localize(state.I18nTagCliI18nTranFlagsAllLanguage))
-	tranCmd.Flags().StringSliceP("languages", "l", state.Config.I18n.Languages, state.Localize(state.I18nTagCliI18nTranFlagsLanguages))
+	tranCmd.Flags().Bool("all-languages", state.Config.I18n.AllLanguages, state.Localize(state.I18nTagCliI18NTranFlagsAllLanguage))
+	tranCmd.Flags().StringSliceP("languages", "l", state.Config.I18n.Languages, state.Localize(state.I18nTagCliI18NTranFlagsLanguages))
 
-	tranCmd.Flags().Bool("generate-const", state.Config.I18n.GenerateConst, state.Localize(state.I18nTagCliI18nTranFlagsGenerateConst))
-	tranCmd.Flags().Bool("generate-field", state.Config.I18n.GenerateField, state.Localize(state.I18nTagCliI18nTranFlagsGenerateField))
-	tranCmd.Flags().String("translator", state.Config.I18n.Translator, state.Localize(state.I18nTagCliI18nTranFlagsTranslatorUsage, map[string]any{
+	tranCmd.Flags().Bool("generate-const", state.Config.I18n.GenerateConst, state.Localize(state.I18nTagCliI18NTranFlagsGenerateConst))
+	tranCmd.Flags().Bool("generate-field", state.Config.I18n.GenerateField, state.Localize(state.I18nTagCliI18NTranFlagsGenerateField))
+	tranCmd.Flags().String("translator", state.Config.I18n.Translator, state.Localize(state.I18nTagCliI18NTranFlagsTranslatorUsage, map[string]any{
 		"Type": map[i18n.TranslateType]string{
-			i18n.TranslateTypeGoogleFree: state.Localize(state.I18nTagCliI18nTranFlagsTranslatorGoogleFree),
+			i18n.TranslateTypeGoogleFree: state.Localize(state.I18nTagCliI18NTranFlagsTranslatorGoogleFree),
 		},
 	}))
 
-	tranCmd.Flags().Bool("auto-tran-enable-record", state.Config.I18n.AutoTran.EnableRecord, state.Localize(state.I18nTagCliI18nTranFlagsAutoTran))
-	tranCmd.Flags().String("auto-tran-record-path", state.Config.I18n.AutoTran.RecordPath, state.Localize(state.I18nTagCliI18nTranFlagsAutoTranRecordPath))
+	tranCmd.Flags().Bool("auto-tran-enable-record", state.Config.I18n.AutoTran.EnableRecord, state.Localize(state.I18nTagCliI18NTranFlagsAutoTran))
+	tranCmd.Flags().String("auto-tran-record-path", state.Config.I18n.AutoTran.RecordPath, state.Localize(state.I18nTagCliI18NTranFlagsAutoTranRecordPath))
 
-	tranCmd.Flags().StringSlice("force-key-prefix", []string{}, state.Localize(state.I18nTagCliI18nTranFlagsForce))
+	tranCmd.Flags().StringSlice("force-key-prefix", []string{}, state.Localize(state.I18nTagCliI18NTranFlagsForce))
 
-	tranCmd.Flags().BoolP("force", "f", false, state.Localize(state.I18nTagCliI18nTranFlagsForce))
+	tranCmd.Flags().BoolP("force", "f", false, state.Localize(state.I18nTagCliI18NTranFlagsForce))
 
 	i18nCmd.AddCommand(tranCmd)
 }

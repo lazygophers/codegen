@@ -7,6 +7,10 @@ cli:
         short: Luo automaattisesti täydentävä komentosarja määritetylle komentotulkille
         subcommand:
             short: Luo automaattisen täydennyksen komentosarja kohteelle {{.Command}}
+    doc:
+        filename:
+            api: Käyttöliittymän dokumentaatio
+            database-design: Tietokannan suunnittelu
     flags:
         debug: Tulosta yksityiskohtainen loki
     gen:
@@ -31,6 +35,12 @@ cli:
         conf:
             long: Luo määritystiedostomalli
             short: Luo asetustiedosto
+        doc:
+            flags:
+                language: Asiakirjan kieli
+                output-dir: Asiakirjan tulostushakemisto
+            long: Jäsennä prototiedoston mallilla alkava viesti ja luo tietokannan suunnitteluasiakirjat
+            short: Luo tietokannan suunnitteluasiakirjoja
         dockerignore:
             long: Luo .dockerignore-tiedosto Docker-kuvanrakennusta varten ohittaaksesi tiedostonhallinnan
             short: Luo .dockerignore-tiedosto
@@ -124,6 +134,9 @@ cli:
         tran:
             flags:
                 all-language: Käännä kaikki tuetut kielet (jos totta, kielten lippu ei ole käytössä)
+                auto-tran:
+                    enable-record: Kun käännössanakirja muuttuu, avataanko tietue vastaavien muuttuneiden käännöstulosten tallentamiseksi
+                    record-path: Polku käännöstietueiden tallentamiseen
                 force: Korvaa olemassa olevat käännökset
                 force-key-prefix: avaimet, jotka on pakko kirjoittaa päälle
                 generate-const: Luo luetteloarvoja helpottaaksesi soittamista

@@ -31,6 +31,12 @@ cli:
         conf:
             long: ናይ ውቅር ፋይል ቅጥዒ ምፍጣር
             short: ናይ ውቅር ፋይል ምፍጣር
+        doc:
+            flags:
+                language: ቋንቋ ሰነድ፣ ነባሪ ቻይናዊ እዩ (ZH)
+                output-dir: Document Output Directory, ነባሪ እዩ DOCS .
+            long: ኣብ ፕሮቶ ፋይል ብሞዴል ዝጅምር መልእኽቲ ምጽናዕን ናይ ዳታቤዝ ዲዛይን ሰነዳት ምፍጣርን
+            short: ናይ ዳታቤዝ ዲዛይን ሰነዳት ምፍጣር
         dockerignore:
             long: ምሕደራ ፋይል ዕሽሽ ንምባል ንህንጸት ምስሊ ዶከር .dockerignore ፋይል ምፍጣር
             short: .dockerignore ዝብል ፋይል ምፍጣር
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: ንኹሎም ዝድገፉ ቋንቋታት ምትርጓም (ሓቂ እንተኾይኑ እቲ ናይ ቋንቋታት ባንዴራ ተሰናኺሉ ኣሎ)
+                auto-tran:
+                    enable-record: መዝገበ ቃላት ትርጉም ክቕየር ከሎ፡ ነቲ ተዛማዲ ዝተቐየረ ውጽኢት ትርጉም ንምዕቃብ መዝገብ ምኽፋት ድዩ ኣይኮነን
+                    record-path: መዛግብቲ ትርጉም ንምዕቃብ ዝሕግዝ መንገዲ
                 force: ንዝጸንሑ ትርጉማት ምጽሓፍ
                 force-key-prefix: ክግደዱ ዘለዎም መፍትሕታት
                 generate-const: ንቐሊል ጻውዒት ናይ ምዝርዛር ክብርታት ምፍጣር

@@ -26,8 +26,8 @@ func runGenI18n(c *cobra.Command, args []string) (err error) {
 }
 
 func initI18n() {
-	i18nCmd.Short = state.Localize(state.I18nTagCliGenStateI18nShort)
-	i18nCmd.Long = state.Localize(state.I18nTagCliGenStateI18nLong)
+	i18nCmd.Short = state.Localize(state.I18nTagCliGenStateI18NShort)
+	i18nCmd.Long = state.Localize(state.I18nTagCliGenStateI18NLong)
 
 	stateCmd.AddCommand(i18nCmd)
 }

@@ -1,22 +1,22 @@
 module github.com/lazygophers/codegen
 
-go 1.24.0
+go 1.25.0
 
 require (
 	github.com/Xuanwo/go-locale v1.1.3
 	github.com/emicklei/proto v1.14.2
 	github.com/go-git/go-git/v5 v5.16.2
 	github.com/gookit/color v1.6.0
-	github.com/lazygophers/log v0.0.0-20250913143351-cedd7b275cf8
-	github.com/lazygophers/lrpc v0.0.0-20250916043213-53101436689f
-	github.com/lazygophers/utils v0.0.0-20250916070756-7e2b0bc3a398
+	github.com/lazygophers/log v0.0.0-20250921073910-e5ecde8b16f4
+	github.com/lazygophers/lrpc v0.0.0-20251009102735-cbd4e3496c58
+	github.com/lazygophers/utils v0.0.0-20251013095735-5d2f3fbf7349
 	github.com/pelletier/go-toml/v2 v2.2.4
 	github.com/pterm/pterm v0.12.81
 	github.com/spf13/cobra v1.10.1
 	go.etcd.io/bbolt v1.4.3
 	go.uber.org/atomic v1.11.0
-	golang.org/x/mod v0.28.0
-	golang.org/x/text v0.29.0
+	golang.org/x/mod v0.29.0
+	golang.org/x/text v0.30.0
 	gopkg.in/yaml.v3 v3.0.1
 	gotest.tools/v3 v3.5.2
 	resty.dev/v3 v3.0.0-beta.3
@@ -59,11 +59,11 @@ require (
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.1-0.20240725153609-f95879bd02b8 // indirect
-	golang.org/x/arch v0.21.0 // indirect
+	golang.org/x/arch v0.22.0 // indirect
 	golang.org/x/crypto v0.42.0 // indirect
-	golang.org/x/net v0.44.0 // indirect
-	golang.org/x/sys v0.36.0 // indirect
+	golang.org/x/net v0.45.0 // indirect
+	golang.org/x/sys v0.37.0 // indirect
 	golang.org/x/term v0.35.0 // indirect
-	google.golang.org/protobuf v1.36.9 // indirect
+	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )

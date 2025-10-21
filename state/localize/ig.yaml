@@ -31,6 +31,12 @@ cli:
         conf:
             long: Mepụta template nhazi faịlụ
             short: Mepụta faịlụ nhazi
+        doc:
+            flags:
+                language: Asụsụ akwụkwọ, ndabara bụ Chinese (zh)
+                output-dir: Ndekọ akwụkwọ ngalaba, ndabara
+            long: Jiri ozi na-amalite na ihe nlere
+            short: Seasezọ Ederede data
         dockerignore:
             long: Mepụta faịlụ .dockerignore maka ụlọ ihe onyonyo Docker ileghara njikwa faịlụ anya
             short: Mepụta faịlụ .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tụgharịa asụsụ niile akwadoro (ọ bụrụ eziokwu na ọkọlọtọ asụsụ a nwere nkwarụ)
+                auto-tran:
+                    enable-record: Mgbe ọkọwa okwu nsụgharị mgbanwe mgbanwe, ma ọ ga-emeghe ndekọ iji chekwaa nsonaazụ mgbanwe gbanwere agbanwe agbanwe
+                    record-path: Zụọ ụzọ iji chekwaa ndekọ ntụgharị
                 force: Degharịa ntụgharị asụsụ ndị dị ugbu a
                 force-key-prefix: igodo ndị kwesịrị ịmanye ka edegharịa
                 generate-const: Mepụta ụkpụrụ ngụkọ maka ịkpọ oku dị mfe

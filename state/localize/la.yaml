@@ -31,6 +31,12 @@ cli:
         conf:
             long: Configuratione generare file template
             short: Configuratione file generate
+        doc:
+            flags:
+                language: Documenti lingua, defalta est Sinica (zh)
+                output-dir: Document output directorium, defalta est soUicitudo
+            long: Parse nuntium incipiens cum Model in tabula proto et documentorum datorum generare consilium
+            short: Datorum consilia generare documenta
         dockerignore:
             long: Generare .dockerignore lima pro Docker imaginem aedificii ignorare lima procuratio
             short: Generare .dockerignore file
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Transferre omnes linguas suffultae (si verum linguarum vexillum debilitatum est)
+                auto-tran:
+                    enable-record: Cum glossarium translationis mutat, utrum librum aperire ad reponendas mutatorum interpretationum proventus
+                    record-path: Iter condere translation records
                 force: Rescribere existentium translationes
                 force-key-prefix: clavium necessitatem cogendi esse overwritten
                 generate-const: Enumerationem generare valores ad facilem vocationem

@@ -31,6 +31,12 @@ cli:
         conf:
             long: Samee qaabeynta faylka qaabeynta
             short: Samee faylka qaabeynta
+        doc:
+            flags:
+                language: Luuqadda dukumiintiga, sida caadiga ah waa Shiinaha (zh)
+                output-dir: Diiwaangelinta Diiwaangelinta Diiwaangelinta Diiwaangelinta, Defaultu waa Docs
+            long: Parse fariinta ka bilaabmaysa moodalka faylka faylka ku jira oo abuuro dukumiintiyada naqshadeynta keydka macluumaadka
+            short: Abuuri dukumiintiyada naqshadeynta keydka macluumaadka
         dockerignore:
             long: U samee faylka .dockerignore ee dhismaha sawirka Docker si aad isaga indho tirto maamulka faylka
             short: Samee faylka dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Turjun dhammaan luqadaha la taageero (haddii ay run tahay calanka luqadaha waa naafo)
+                auto-tran:
+                    enable-record: Marka qaamuuska tarjumaadda la beddelo, ha ahaato in la furo diiwaan si loo kaydiyo u dhigma natiijooyinka turjumaada
+                    record-path: Dariiqa lagu keydiyo diiwaannada tarjumaadda
                 force: Dib u qor turjumaadaha jira
                 force-key-prefix: furayaasha u baahan in lagu qasbo in dib loo qoro
                 generate-const: Samee qiyamka xisaabinta ee wacitaanka fudud

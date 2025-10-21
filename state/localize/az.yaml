@@ -7,6 +7,8 @@ cli:
         short: Göstərilən qabıq üçün avtomatik tamamlama skripti yaradın
         subcommand:
             short: '{{.Command}} üçün avtomatik tamamlama skripti yaradın'
+    doc:
+        filename: {}
     flags:
         debug: Ətraflı jurnalı çıxarın
     gen:
@@ -31,6 +33,12 @@ cli:
         conf:
             long: Konfiqurasiya faylı şablonunu yaradın
             short: Konfiqurasiya faylı yaradın
+        doc:
+            flags:
+                language: Sənəd dili, standart Çin (Zh)
+                output-dir: Sənəd çıxışı qovluğu, defolt sənədlərdir
+            long: Proto faylında model ilə başlayan mesajı təhlil edin və verilənlər bazası dizayn sənədlərini yaradın
+            short: Database Dizayn Sənədləri yaradın
         dockerignore:
             long: Fayl idarəçiliyinə məhəl qoymamaq üçün Docker təsvirinin qurulması üçün .dockerignore faylı yaradın
             short: .dockerignore faylı yaradın
@@ -124,6 +132,9 @@ cli:
         tran:
             flags:
                 all-language: Bütün dəstəklənən dilləri tərcümə edin (əgər doğrudursa, dillər bayrağı deaktivdir)
+                auto-tran:
+                    enable-record: Tərcümə lüğəti dəyişdikdə, müvafiq dəyişdirilmiş tərcümə nəticələrini saxlamaq üçün bir qeyd açmaq istər
+                    record-path: Tərcümə qeydlərini saxlamaq üçün yol
                 force: Mövcud tərcümələrin üzərinə yazın
                 force-key-prefix: üzərinə yazılmağa məcbur edilməli olan açarlar
                 generate-const: Asan zəng üçün siyahı dəyərləri yaradın

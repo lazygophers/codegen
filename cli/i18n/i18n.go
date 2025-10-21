@@ -11,8 +11,8 @@ var i18nCmd = &cobra.Command{
 }
 
 func Load(rootCmd *cobra.Command) {
-	i18nCmd.Short = state.Localize(state.I18nTagCliI18nShort)
-	i18nCmd.Long = state.Localize(state.I18nTagCliI18nLong)
+	i18nCmd.Short = state.Localize(state.I18nTagCliI18NShort)
+	i18nCmd.Long = state.Localize(state.I18nTagCliI18NLong)
 
 	rootCmd.AddCommand(i18nCmd)
 

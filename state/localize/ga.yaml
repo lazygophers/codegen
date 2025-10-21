@@ -31,6 +31,12 @@ cli:
         conf:
             long: Gin teimpléad comhad cumraíochta
             short: Gin comhad cumraíochta
+        doc:
+            flags:
+                language: Teanga dhoiciméid, is í Sínis (zh) an réamhshocrú
+                output-dir: Eolaire aschuir doiciméad, is é an réamhshocrú ná docs
+            long: Parsáil an teachtaireacht ag tosú le Múnla sa chomhad proto agus giniúint doiciméid dearaidh bunachar sonraí
+            short: Gin doiciméid dearaidh bunachar sonraí
         dockerignore:
             long: Gin comhad .dockerignore le haghaidh tógáil íomhá Docker chun neamhaird a dhéanamh ar bhainistiú comhad
             short: Gin comhad .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Aistrigh na teangacha go léir a dtacaítear leo (más fíor tá bratach na dteangacha díchumasaithe)
+                auto-tran:
+                    enable-record: Nuair a athraíonn foclóir an aistriúcháin, cibé acu ar cheart nó nár cheart taifead a oscailt chun na torthaí aistrithe comhfhreagracha athraithe a stóráil
+                    record-path: Conair chun taifid aistriúcháin a stóráil
                 force: Forscríobh aistriúcháin atá ann cheana féin
                 force-key-prefix: eochracha nach mór a éigean a fhorscríobh
                 generate-const: Gin luachanna áirimh le haghaidh glaoch éasca

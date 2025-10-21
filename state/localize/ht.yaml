@@ -31,6 +31,12 @@ cli:
         conf:
             long: Jenere modèl fichye konfigirasyon
             short: Jenere fichye konfigirasyon
+        doc:
+            flags:
+                language: Lang dokiman an, default se Chinwa (zh)
+                output-dir: Anyè pwodiksyon dokiman, default se docs
+            long: Analize mesaj la kòmanse ak Modèl nan fichye pwoto a epi jenere dokiman konsepsyon baz done
+            short: Jenere dokiman konsepsyon baz done
         dockerignore:
             long: Jenere fichye .dockerignore pou bilding imaj Docker pou inyore jesyon dosye
             short: Jenere fichye .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tradui tout lang yo sipòte (si se vre drapo lang yo dezaktive)
+                auto-tran:
+                    enable-record: Lè diksyonè tradiksyon an chanje, si wi ou non yo louvri yon dosye pou estoke rezilta tradiksyon korespondan yo chanje
+                    record-path: Chemen pou sere dosye tradiksyon yo
                 force: Ranplase tradiksyon ki egziste deja yo
                 force-key-prefix: kle ki bezwen fòse yo dwe ranplase
                 generate-const: Jenere valè enimerasyon pou rele fasil

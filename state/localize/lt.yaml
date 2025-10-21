@@ -31,6 +31,12 @@ cli:
         conf:
             long: Sukurkite konfigūracijos failo šabloną
             short: Sukurti konfigūracijos failą
+        doc:
+            flags:
+                language: Dokumento kalba, numatytoji kinų (zh)
+                output-dir: Dokumento išvesties katalogas, pagal nutylėjimą yra dokumentai
+            long: Išanalizuoti pranešimą, pradedant nuo Modelis proto faile ir generuoti duomenų bazės projektavimo dokumentus
+            short: Sukurti duomenų bazės projektavimo dokumentus
         dockerignore:
             long: Sukurkite .dockerignore failą, skirtą „Docker“ vaizdų kūrimui, kad nepaisytumėte failų valdymo
             short: Sugeneruokite .dockerignore failą
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Išversti visas palaikomas kalbas (jei tiesa, kalbų žyma išjungta)
+                auto-tran:
+                    enable-record: Pasikeitus vertimo žodynui, ar atidaryti įrašą, kad būtų saugomi atitinkami pakeisti vertimo rezultatai
+                    record-path: Kelias į vertimo įrašų saugojimą
                 force: Perrašyti esamus vertimus
                 force-key-prefix: raktus, kuriuos reikia priverstinai perrašyti
                 generate-const: Generuokite surašymo reikšmes, kad galėtumėte lengvai skambinti

@@ -31,6 +31,12 @@ cli:
         conf:
             long: Ṣe ina iṣeto ni awoṣe faili
             short: Ṣe ina iṣeto ni faili
+        doc:
+            flags:
+                language: Ede iwe, aiyipada jẹ Kannada (ZH)
+                output-dir: Iwe-iṣẹ Iṣalaye iwe, Aiyipada jẹ Awọn Dos
+            long: Parse ifiranṣẹ naa ti o bẹrẹ pẹlu awoṣe ninu faili Proto ati ṣe ina awọn iwe apẹrẹ data
+            short: Ṣe ina awọn iwe elo apẹrẹ data
         dockerignore:
             long: Ṣe ipilẹṣẹ faili .dockerignore fun ile aworan Docker lati foju kọ iṣakoso faili
             short: Ṣe ina .dockerignore faili
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tumọ gbogbo awọn ede ti o ni atilẹyin (ti o ba jẹ otitọ awọn asia awọn ede jẹ alaabo)
+                auto-tran:
+                    enable-record: Nigbati iwe-itumọ itumọ naa yipada, boya lati ṣii igbasilẹ lati fi awọn abajade itumọ ti o baamu ti o baamu
+                    record-path: Ọna lati ṣaajo awọn igbasilẹ itumọ
                 force: Kọ awọn itumọ ti o wa tẹlẹ
                 force-key-prefix: awọn bọtini ti o nilo lati fi agbara mu lati kọ
                 generate-const: Ṣe ina awọn iye kika fun pipe pipe

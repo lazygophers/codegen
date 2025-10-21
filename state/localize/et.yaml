@@ -31,6 +31,12 @@ cli:
         conf:
             long: Loo konfiguratsioonifaili mall
             short: Loo konfiguratsioonifail
+        doc:
+            flags:
+                language: Dokumendi keel, vaikimisi on hiina (zh)
+                output-dir: Dokumendi väljundkataloog, vaikimisi on dokumendid
+            long: Parsige protofailis sõnum, mis algab sõnaga Model, ja genereerige andmebaasi kujundusdokumendid
+            short: Genereeri andmebaasi kujundusdokumente
         dockerignore:
             long: Failihalduse ignoreerimiseks looge Dockeri pildiloome jaoks .dockerignore-fail
             short: Loo .dockerignore fail
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Tõlgi kõik toetatud keeled (kui see on tõene, on keelte lipp keelatud)
+                auto-tran:
+                    enable-record: Kui tõlkesõnastik muutub, kas avada kirje vastavate muudetud tõlketulemuste salvestamiseks
+                    record-path: Tõlkekirjete salvestamise tee
                 force: Olemasolevate tõlgete ülekirjutamine
                 force-key-prefix: võtmed, mis tuleb sundida üle kirjutama
                 generate-const: Looge loendusväärtusi helistamise hõlbustamiseks

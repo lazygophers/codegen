@@ -7,6 +7,8 @@ cli:
         short: Yɛ autocomplete script ma shell a wɔakyerɛ no
         subcommand:
             short: Yɛ autocomplete script ma {{.Ahyɛde}} .
+    doc:
+        filename: {}
     flags:
         debug: Output nsɛm a ɛkɔ akyiri log
     gen:
@@ -31,6 +33,12 @@ cli:
         conf:
             long: Yɛ nhyehyeɛ fael nsusuiɛ
             short: Yɛ nhyehyɛe fael
+        doc:
+            flags:
+                language: Document kasa, default yɛ chinese (ZH) .
+                output-dir: Document output kyerɛwtohɔ, default yɛ docs .
+            long: Parse nkra a efi ase wɔ model wɔ proto fael no mu na yɛ database design nkrataa .
+            short: Yɛ database nhyehyɛe ho nkrataa .
         dockerignore:
             long: Yɛ .dockerignore fael ma Docker mfonini dan de bu w’ani gu fael sohwɛ so
             short: Yɛ .dockerignore fael no
@@ -124,6 +132,9 @@ cli:
         tran:
             flags:
                 all-language: Kyerɛ kasa horow a wɔboa nyinaa ase (sɛ ɛyɛ nokware a kasa ahorow no frankaa no ayɛ adwuma) .
+                auto-tran:
+                    enable-record: Bere a nkyerɛase nsɛm asekyerɛ nhoma no sesa no, sɛ ebia wobebue kyerɛwtohɔ bi de akora nkyerɛase a wɔasesa a ɛne no hyia no so .
+                    record-path: Ɔkwan a wɔfa so de nkyerɛase ho kyerɛwtohɔ sie .
                 force: Kyerɛw nkyerɛase ahorow a ɛwɔ hɔ dedaw no so
                 force-key-prefix: nsafe a ɛsɛ sɛ wɔhyɛ ma wɔkyerɛw so
                 generate-const: Yɛ enumeration values ​​ma frɛ a ɛnyɛ den

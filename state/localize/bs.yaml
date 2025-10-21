@@ -7,6 +7,8 @@ cli:
         short: Generirajte skriptu za automatsko dovršavanje za navedenu ljusku
         subcommand:
             short: Generiraj autokompletnu skriptu za {{.Command}}
+    doc:
+        filename: {}
     flags:
         debug: Izlaz detaljnog dnevnika
     gen:
@@ -31,6 +33,12 @@ cli:
         conf:
             long: Generirajte predložak konfiguracijske datoteke
             short: Generirajte konfiguracionu datoteku
+        doc:
+            flags:
+                language: Jezik dokumenta, podrazumevani je kineski (zh)
+                output-dir: Izlazni direktorij dokumenta, default je dokumenti
+            long: Parsirajte poruku koja počinje sa Modelom u proto datoteci i generirajte dokumente dizajna baze podataka
+            short: Generirajte dokumente za dizajn baze podataka
         dockerignore:
             long: Generirajte .dockerignore datoteku za izgradnju Docker slike da zanemarite upravljanje datotekama
             short: Generirajte .dockerignore datoteku
@@ -124,6 +132,9 @@ cli:
         tran:
             flags:
                 all-language: Prevedite sve podržane jezike (ako je tačno, zastavica jezika je onemogućena)
+                auto-tran:
+                    enable-record: Kada se rječnik prijevoda promijeni, treba li otvoriti zapis za pohranjivanje odgovarajućih izmijenjenih rezultata prijevoda
+                    record-path: Put do pohranjivanja zapisa prijevoda
                 force: Zamijenite postojeće prijevode
                 force-key-prefix: ključeve koje je potrebno prisilno prepisati
                 generate-const: Generirajte vrijednosti nabrajanja za jednostavno pozivanje

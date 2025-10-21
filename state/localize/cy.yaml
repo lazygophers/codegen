@@ -31,6 +31,12 @@ cli:
         conf:
             long: Cynhyrchu templed ffeil ffurfweddu
             short: Cynhyrchu ffeil ffurfweddu
+        doc:
+            flags:
+                language: Iaith y ddogfen, Tsieinëeg yw diofyn (zh)
+                output-dir: Cyfeiriadur allbwn dogfen, rhagosodiad yw docs
+            long: Dosrannu'r neges sy'n dechrau gyda Model yn y ffeil proto a chynhyrchu dogfennau dylunio cronfa ddata
+            short: Cynhyrchu dogfennau dylunio cronfa ddata
         dockerignore:
             long: Cynhyrchu ffeil .dockerignore ar gyfer adeiladu delwedd Docker i anwybyddu rheoli ffeiliau
             short: Cynhyrchu ffeil .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Cyfieithwch yr holl ieithoedd a gefnogir (os yn wir mae baner yr ieithoedd wedi'i hanalluogi)
+                auto-tran:
+                    enable-record: Pan fydd y geiriadur cyfieithu yn newid, p'un ai i agor cofnod i storio'r canlyniadau cyfieithu cyfatebol wedi'u newid
+                    record-path: Llwybr i storio cofnodion cyfieithu
                 force: Trosysgrifo cyfieithiadau presennol
                 force-key-prefix: allweddi y mae angen eu gorfodi i gael eu trosysgrifo
                 generate-const: Cynhyrchu gwerthoedd cyfrifo ar gyfer galw hawdd

@@ -31,6 +31,12 @@ cli:
         conf:
             long: E hana i ka la'ana waihona ho'onohonoho
             short: E hana i ka waihona hoʻonohonoho
+        doc:
+            flags:
+                language: Palapala palapala, he chinese ka chinese (zh)
+                output-dir: Palapala palapala palapala palapala, he mau docs
+            long: Parse i ka leka e hoʻomaka ana me ka hoʻohālike ma ka faila proto a hana i nā palapala hoʻolālā waihona waihona
+            short: Hana i nā palapala hoʻolālā waihona waihona
         dockerignore:
             long: E hoʻokumu i ka faila .dockerignore no ka hale kiʻi Docker e haʻalele i ka hoʻokele waihona
             short: E hana i ka faila .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Unuhi i nā ʻōlelo i kākoʻo ʻia (inā ʻoiaʻiʻo ua pio ka hae ʻōlelo)
+                auto-tran:
+                    enable-record: Ke hoʻololi nei ka unuhi unuhi'ōlelo, inā e wehe i kahi moʻolelo e mālama i ka hopena o ka mea i hoʻololiʻia
+                    record-path: Ala e mālama ai i nā moʻolelo unuhi
                 force: Kāohi i nā unuhi i loaʻa
                 force-key-prefix: nā kī pono e koi ʻia e kākau hou ʻia
                 generate-const: E hana i nā waiwai helu no ke kelepona maʻalahi

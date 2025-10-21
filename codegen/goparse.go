@@ -2,8 +2,6 @@ package codegen
 
 import (
 	"fmt"
-	"github.com/lazygophers/utils/candy"
-	"github.com/lazygophers/utils/osx"
 	"go/ast"
 	"go/parser"
 	"go/token"
@@ -12,6 +10,9 @@ import (
 	"path"
 	"runtime"
 	"strings"
+
+	"github.com/lazygophers/utils/candy"
+	"github.com/lazygophers/utils/osx"
 
 	"github.com/gookit/color"
 	"github.com/lazygophers/log"

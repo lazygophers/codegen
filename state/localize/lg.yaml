@@ -31,6 +31,12 @@ cli:
         conf:
             long: Okukola ekifaananyi kya fayiro y'okusengeka
             short: Okukola fayiro y'okusengeka
+        doc:
+            flags:
+                language: Olulimi lw'ekiwandiiko, olusookerwako lwe luchina (ZH) .
+                output-dir: Ekiwandiiko ekifulumizibwa mu kiwandiiko, ekisookerwako ye DOCS .
+            long: Okusengejja obubaka obutandika ne model mu fayiro ya proto era okukola database design documents .
+            short: Okukola ebiwandiiko ebikwata ku dizayini ya database .
         dockerignore:
             long: Tonda fayiro .dockerignore ey'okuzimba ekifaananyi kya Docker okubuusa amaaso enzirukanya ya fayiro
             short: Okukola fayiro ya .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Okuvvuunula ennimi zonna eziwagirwa (bwe kiba kituufu bendera y'ennimi eremeddwa)
+                auto-tran:
+                    enable-record: Enkuluze y’okuvvuunula bw’ekyuka, oba okuggulawo ekiwandiiko okutereka ebivudde mu kuvvuunula ebikyuse ebikwatagana .
+                    record-path: Path to Store Ebiwandiiko by'okuvvuunula .
                 force: Wandiika ku nkyusa eziriwo
                 force-key-prefix: ebisumuluzo ebyetaaga okuwalirizibwa okuwandiikibwako
                 generate-const: Okukola emiwendo gy'okubala okusobola okwanguyirwa okuyita

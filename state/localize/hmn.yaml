@@ -31,6 +31,12 @@ cli:
         conf:
             long: Tsim cov ntaub ntawv configuration template
             short: Tsim cov ntaub ntawv configuration
+        doc:
+            flags:
+                language: Cov Lus Sau Cov Lus, Lub neej ntawd yog Suav (ZH)
+                output-dir: Cov Ntawv Tso Cai Tso Cai Tso Cai, Lub Ntsiab Lus yog docs
+            long: Parse cov lus pib nrog cov qauv hauv cov ntaub ntawv proto thiab tsim cov ntaub ntawv tsim database
+            short: Tsim cov ntaub ntawv tsim database
         dockerignore:
             long: Tsim cov ntaub ntawv .dockerignore rau Docker duab lub tsev kom tsis quav ntsej kev tswj cov ntaub ntawv
             short: Tsim cov ntaub ntawv .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Txhais txhua yam lus txhawb (yog tias muaj tseeb cov lus chij yog neeg xiam)
+                auto-tran:
+                    enable-record: Thaum cov txhais lus phau ntawv txhais lus hloov pauv, seb yuav qhib cov ntaub ntawv los khaws cov qauv hloov pauv tau
+                    record-path: Txoj Kev Los Khaws Cia Cov Ntaub Ntawv Txhais Lus
                 force: Overwrite cov lus txhais uas twb muaj lawm
                 force-key-prefix: cov yuam sij uas yuav tsum tau yuam kom overwritten
                 generate-const: Tsim kom muaj nuj nqis rau kev hu tau yooj yim

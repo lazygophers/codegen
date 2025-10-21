@@ -31,6 +31,12 @@ cli:
         conf:
             long: Búðu til sniðmát fyrir stillingarskrá
             short: Búðu til stillingarskrá
+        doc:
+            flags:
+                language: Tungumál skjala, sjálfgefið er kínverska (zh)
+                output-dir: Skjalaúttaksmappa, sjálfgefið er skjöl
+            long: Tjáðu skilaboðin sem byrja á Model í frumskránni og búðu til gagnagrunnshönnunarskjöl
+            short: Búðu til gagnagrunnshönnunarskjöl
         dockerignore:
             long: Búðu til .dockerignore skrá fyrir Docker myndbyggingu til að hunsa skráarstjórnun
             short: Búðu til .dockerignore skrá
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Þýddu öll studd tungumál (ef satt er tungumálsfáninn óvirkur)
+                auto-tran:
+                    enable-record: Þegar þýðingarorðabókin breytist, hvort opna eigi skrá til að geyma samsvarandi breyttar þýðingarniðurstöður
+                    record-path: Leið til að geyma þýðingarskrár
                 force: Skrifaðu yfir núverandi þýðingar
                 force-key-prefix: lykla sem þarf að neyða til að skrifa yfir
                 generate-const: Búðu til upptalningargildi til að auðvelda hringingu

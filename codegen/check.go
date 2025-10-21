@@ -3,11 +3,12 @@ package codegen
 import (
 	"errors"
 	"fmt"
+	"os/exec"
+	"strings"
+
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
 	"github.com/pterm/pterm"
-	"os/exec"
-	"strings"
 )
 
 const (
@@ -22,10 +23,10 @@ const (
 
 // commandCheckConfig holds configuration for checking a command
 type commandCheckConfig struct {
-	cmdPath         string
-	cmdName         string
-	notFoundMsg     string
-	installGuide    string
+	cmdPath            string
+	cmdName            string
+	notFoundMsg        string
+	installGuide       string
 	shouldPrintVersion bool
 }
 
@@ -89,10 +90,10 @@ func printVersion(cfg commandCheckConfig, cmdPath string) error {
 func CheckEnvironments() error {
 	// Check protoc
 	err := checkCommand(commandCheckConfig{
-		cmdPath:         state.Config.ProtocPath,
-		cmdName:         "protoc",
-		notFoundMsg:     protocNotFoundMsg,
-		installGuide:    protocInstallGuide,
+		cmdPath:            state.Config.ProtocPath,
+		cmdName:            "protoc",
+		notFoundMsg:        protocNotFoundMsg,
+		installGuide:       protocInstallGuide,
 		shouldPrintVersion: true,
 	})
 	if err != nil {
@@ -102,10 +103,10 @@ func CheckEnvironments() error {
 
 	// Check protoc-gen-go
 	err = checkCommand(commandCheckConfig{
-		cmdPath:         state.Config.ProtoGenGoPath,
-		cmdName:         "protoc-gen-go",
-		notFoundMsg:     protocGenGoNotFoundMsg,
-		installGuide:    protocGenGoInstallGuide,
+		cmdPath:            state.Config.ProtoGenGoPath,
+		cmdName:            "protoc-gen-go",
+		notFoundMsg:        protocGenGoNotFoundMsg,
+		installGuide:       protocGenGoInstallGuide,
 		shouldPrintVersion: true,
 	})
 	if err != nil {
@@ -115,10 +116,10 @@ func CheckEnvironments() error {
 
 	// Check protoc-gen-go-grpc
 	err = checkCommand(commandCheckConfig{
-		cmdPath:         state.Config.ProtoGenGoGrpcPath,
-		cmdName:         "protoc-gen-go-grpc",
-		notFoundMsg:     protocGenGoGrpcNotFoundMsg,
-		installGuide:    protocGenGoGrpcInstallGuide,
+		cmdPath:            state.Config.ProtoGenGoGrpcPath,
+		cmdName:            "protoc-gen-go-grpc",
+		notFoundMsg:        protocGenGoGrpcNotFoundMsg,
+		installGuide:       protocGenGoGrpcInstallGuide,
 		shouldPrintVersion: true,
 	})
 	if err != nil {

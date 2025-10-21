@@ -31,6 +31,12 @@ cli:
         conf:
             long: Tạo mẫu tập tin cấu hình
             short: Tạo tập tin cấu hình
+        doc:
+            flags:
+                language: Ngôn ngữ tài liệu, mặc định là tiếng Trung (zh)
+                output-dir: Thư mục đầu ra tài liệu, mặc định là docs
+            long: Phân tích thông báo bắt đầu bằng Model trong tệp proto và tạo tài liệu thiết kế cơ sở dữ liệu
+            short: Tạo tài liệu thiết kế cơ sở dữ liệu
         dockerignore:
             long: Tạo tệp .dockerignore để xây dựng hình ảnh Docker để bỏ qua việc quản lý tệp
             short: Tạo tệp .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Dịch tất cả các ngôn ngữ được hỗ trợ (nếu đúng, cờ ngôn ngữ sẽ bị tắt)
+                auto-tran:
+                    enable-record: Khi từ điển dịch thay đổi có nên mở bản ghi để lưu kết quả dịch đã thay đổi tương ứng hay không
+                    record-path: Đường dẫn lưu trữ bản dịch
                 force: Ghi đè các bản dịch hiện có
                 force-key-prefix: các phím cần bị buộc phải ghi đè
                 generate-const: Tạo giá trị liệt kê để gọi dễ dàng

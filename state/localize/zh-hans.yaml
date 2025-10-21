@@ -33,6 +33,12 @@ cli:
         conf:
             long: 生成配置文件模板
             short: 生成配置文件
+        doc:
+            flags:
+                language: 文档语言
+                output-dir: 文档输出目录
+            long: 解析 proto 文件中 Model 开头的 message，生成数据库设计文档
+            short: 生成数据库设计文档
         dockerignore:
             long: 生成.dockerignore 文件，用于 Docker 镜像构建忽略文件管理
             short: 生成.dockerignore 文件
@@ -126,6 +132,9 @@ cli:
         tran:
             flags:
                 all-language: 翻译所有支持的语言（如果为 true 则 languages 标记失效）
+                auto-tran:
+                    enable-record: 当翻译字典发生变化时，是否开启存储相应变更后的翻译结果的记录
+                    record-path: 存储翻译记录的路径
                 force: 覆盖已存在的翻译
                 force-key-prefix: 需要被强制覆盖的 keys
                 generate-const: 生成枚举值，方便调用

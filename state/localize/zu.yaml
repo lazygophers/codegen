@@ -31,6 +31,12 @@ cli:
         conf:
             long: Khiqiza isifanekiso sefayela lokumisa
             short: Khiqiza ifayela lokumisa
+        doc:
+            flags:
+                language: Ulimi lwedokhumenti, okuzenzakalelayo kuyi-Chinese (zh)
+                output-dir: Isiqondisi Sokukhipha Idokhumenti, Okuzenzakalelayo yi-Docs
+            long: Hlukanisa umyalezo oqala ngemodeli kufayela le-proto futhi ukhiqize amadokhumenti e-database design
+            short: Khiqiza amadokhumenti e-Database Design
         dockerignore:
             long: Khiqiza ifayela le-.dockerignore lesakhiwo sesithombe se-Docker ukuze uzibe ukuphathwa kwefayela
             short: Khiqiza ifayela le-.dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Humusha zonke izilimi ezisekelwayo (uma kuyiqiniso ifulegi lezilimi livaliwe)
+                auto-tran:
+                    enable-record: Lapho isichazamazwi sokuhumusha siguquka, noma ukuvula irekhodi lokugcina imiphumela ehambelana naye eguqukile yokuhumusha
+                    record-path: Indlela yokugcina amarekhodi okuhumusha
                 force: Bhala phezu kokuhumusha okukhona
                 force-key-prefix: okhiye abadinga ukuphoqwa ukuthi babhalwe ngaphezulu
                 generate-const: Khiqiza amanani okubala ukuze uthole ukushaya okulula

@@ -171,3 +171,61 @@ When translating:
 3. **Overwrite protection**: By default, impl files won't be overwritten. Use `--overwrite` flag with caution.
 
 4. **Lazy config**: The tool looks for `.lazygophers` file in the project root (determined by go_package). This configures project-specific generation options.
+
+## Development Guidelines
+
+### Core Development Principles
+
+- **Memory Management**: When users say "remember xxx" or repeatedly emphasize certain rules, behaviors, etc., automatically update relevant memory banks and documentation
+- **Code Analysis**: Before coding, analyze at least 3 existing implementations or patterns to identify reusable interfaces and constraints
+- **Dependency Mapping**: Draw dependencies and integration points, confirming input/output protocols, configuration, and environment requirements
+- **Code Consistency**: Understand existing testing frameworks, naming conventions, and formatting rules to ensure output aligns with the codebase
+- **Documentation Priority**: Use context7 to query programming library documentation first, avoid over-reliance on web searches or assumptions
+- **Best Practice Learning**: Use github.search_code to search open-source implementation examples and learn best practices
+- **Complete Implementation**: Absolutely prohibit MVP, minimal implementations, or placeholders; full functionality and data paths must be completed before submission
+- **Code Cleanup**: Must improve all MVP, minimal implementations, and placeholders to complete, concrete code implementations
+- **Active Cleanup**: Must proactively delete outdated, duplicate, or escape-style code to maintain clean implementations
+- **Style Consistency**: Must always adhere to programming language standard code styles and project-specific style specifications
+- **Breaking Changes**: Do not maintain backward compatibility for breaking changes, while providing migration steps or rollback plans
+- **Disruptive Strategy**: Must always adopt disruptive breaking change strategy, absolutely no backward compatibility
+- **Quality Assurance**: Must follow best practices to ensure code quality and maintainability
+- **Language-Specific Patterns**: Absolutely prohibit using Java-style coding standards to write code or documentation in other languages
+- **Performance Evaluation**: Must evaluate time complexity, memory usage, and I/O impact during design to avoid unnecessary consumption
+- **Optimization Awareness**: After identifying potential bottlenecks, provide monitoring or optimization suggestions to ensure sustainable iteration
+- **Dependency Assessment**: Prohibit introducing unevaluated expensive dependencies or blocking operations
+
+## 🔧 Project Integration Rules
+
+### Learning the Codebase
+- Must find at least 3 similar features or components to understand their design and reuse patterns
+- Must identify common patterns and conventions in the project and apply them in new implementations
+- Must prioritize using existing libraries, tools, or helper functions
+- Must follow existing testing arrangements and沿用 assertion and fixture structures
+
+### Tools
+- Must use the project's existing build system, no private addition of scripts
+- Must use the project's established testing framework and execution methods
+- Must use the project's formatting/static checking settings
+- If there is indeed a need for new tools, must provide sufficient justification and obtain documented approval
+
+## ⚠️ Important Reminders
+
+**Absolutely Prohibited:**
+- Making assumptions without evidence; all conclusions must cite existing code or documentation
+
+**Must Be Done:**
+- Complete detailed planning and documentation before implementing complex tasks
+- Generate task decomposition for cross-module or more than 5 subtasks work
+- Maintain TODO lists for complex tasks and update progress in a timely manner
+- Verify planning documents are confirmed before starting development
+- Maintain small-step delivery, ensuring each commit is in a usable state
+- Synchronously update planning documents and progress records during execution
+- Proactively learn the advantages and disadvantages of existing implementations and reuse or improve them
+- Must pause operations after three consecutive failures and reassess strategy
+
+## 🎯 Content Uniqueness Rules
+
+- Each level must be self-consistent in mastering its own abstract scope, prohibiting cross-level content mixing
+- Must reference materials from other levels rather than copy-pasting, maintaining unique information sources
+- Each level must describe the system from the corresponding perspective, avoiding overreaching details
+- Prohibit stacking implementation details in high-level documents, ensuring clear architecture and implementation boundaries

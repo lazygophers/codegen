@@ -31,6 +31,12 @@ cli:
         conf:
             long: Wɔ ɖoɖowɔɖi ƒe faɛl ƒe nɔnɔmetata
             short: Wɔ ɖoɖowɔɖi ƒe faɛl
+        doc:
+            flags:
+                language: Nuŋlɔɖi Gbegbɔgblɔ, Default nye Chinagbe (ZH) .
+                output-dir: Document Output Directory, Default nye docs .
+            long: Parse gbedasi si dze egɔme kple kpɔɖeŋu le Proto faɛl la me eye nàwɔ nyatakakadzraɖoƒe ƒe ɖoɖowɔwɔ ƒe nuŋlɔɖiwo .
+            short: Wɔ nyatakakadzraɖoƒe ƒe ɖoɖowɔwɔ ŋuti nuŋlɔɖiwo .
         dockerignore:
             long: Wɔ .dockerignore faɛl na Docker nɔnɔmetata tutu be nàŋe aɖaba aƒu faɛl dzikpɔkpɔ dzi
             short: Wɔ .dockerignore faɛl
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Gblɔ gbegbɔgblɔ siwo katã wodo alɔe (ne nyateƒee la, wotu gbegbɔgblɔwo ƒe aflaga)
+                auto-tran:
+                    enable-record: Ne nyagɔmeɖegbalẽa trɔ, nenye be woaʋu nuŋlɔɖi aɖe atsɔ adzra gbegɔmeɖeɖe ƒe emetsonu siwo sɔ kple wo nɔewo ɖo .
+                    record-path: Mɔ si dzi woato adzra gbegɔmeɖeɖe ŋuti nuŋlɔɖiwo ɖo .
                 force: Ŋlɔ gɔmeɖeɖe siwo li xoxo la ɖe edzi
                 force-key-prefix: safui siwo wòle be woazi dzi be woaŋlɔ ɖe wo dzi
                 generate-const: Wɔ xexlẽdzesiwo ƒe asixɔxɔwo hena yɔyɔ bɔbɔe

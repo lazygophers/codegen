@@ -31,6 +31,12 @@ cli:
         conf:
             long: 構成ファイルテンプレートの生成
             short: 設定ファイルを生成する
+        doc:
+            flags:
+                language: ドキュメント言語、デフォルトは中国語 (zh)
+                output-dir: ドキュメント出力ディレクトリ、デフォルトは docs
+            long: proto ファイル内の Model で始まるメッセージを解析し、データベース設計ドキュメントを生成します
+            short: データベース設計ドキュメントの生成
         dockerignore:
             long: Docker イメージ構築用の .dockerignore ファイルを生成してファイル管理を無視する
             short: .dockerignore ファイルを生成する
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: サポートされているすべての言語を翻訳します (true の場合、言語フラグは無効になります)
+                auto-tran:
+                    enable-record: 翻訳辞書が変更された場合、対応する変更された翻訳結果を保存するレコードを開くかどうか
+                    record-path: 翻訳レコードを保存するパス
                 force: 既存の翻訳を上書きする
                 force-key-prefix: 強制的に上書きする必要があるキー
                 generate-const: 列挙値を生成して簡単に呼び出すことができます

@@ -31,6 +31,12 @@ cli:
         conf:
             long: Hlahisa template ea faele ea tlhophiso
             short: Hlahisa faele ea tlhophiso
+        doc:
+            flags:
+                language: Puo ea Puo, kamehla ke Sechaena (zh)
+                output-dir: Ngola Directory Recking, kamehla ke PAPS
+            long: Ngolisa molaetsa o qalang ka faele ea proto le mofuta oa database oa database oa database
+            short: Fana ka litokomane tsa database tsa database
         dockerignore:
             long: Hlahisa faele ea .dockerignore bakeng sa mohaho oa setšoantšo sa Docker ho hlokomoloha tsamaiso ea lifaele
             short: Hlahisa faele ea .dockerignore
@@ -124,6 +130,9 @@ cli:
         tran:
             flags:
                 all-language: Fetolela lipuo tsohle tse tšehetsoeng (haeba ke 'nete folakha ea lipuo e koetsoe)
+                auto-tran:
+                    enable-record: Ha translation Dinagin
+                    record-path: Tsela ea ho boloka Lirekoto tsa Phetolelo
                 force: Ngola liphetolelo tse teng
                 force-key-prefix: linotlolo tse hlokang ho qobelloa ho ngoloa
                 generate-const: Hlahisa litekanyetso tsa lipalo bakeng sa ho letsetsa habonolo
