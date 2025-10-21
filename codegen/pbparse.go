@@ -399,7 +399,7 @@ func (p *PbGormTag) walk() {
 
 		// 解析拆分 gorm 的 tag
 		for _, tag := range strings.Split(p.line, ";") {
-			k, v, found := strings.Cut(tag, "=")
+			k, v, found := strings.Cut(tag, ":")
 			if !found {
 				// 比如主键、not null等
 				p.tagMap[tag] = append(p.tagMap[tag], "")
@@ -477,8 +477,8 @@ type PbNormalField struct {
 }
 
 func (p *PbNormalField) GormTag() *PbGormTag {
-	if p.inlineComment != nil {
-		value, ok := p.inlineComment.tags["gorm"]
+	if p.comment != nil {
+		value, ok := p.comment.tags["gorm"]
 		if ok && len(value.Lines()) > 0 {
 			return NewPbGormTag(p, value)
 		}
@@ -573,8 +573,8 @@ type PbMapField struct {
 }
 
 func (p *PbMapField) GormTag() *PbGormTag {
-	if p.inlineComment != nil {
-		value, ok := p.inlineComment.tags["gorm"]
+	if p.comment != nil {
+		value, ok := p.comment.tags["gorm"]
 		if ok && len(value.Lines()) > 0 {
 			return NewPbGormTag(p, value)
 		}
@@ -660,8 +660,8 @@ type PbEnumField struct {
 }
 
 func (p *PbEnumField) GormTag() *PbGormTag {
-	if p.inlineComment != nil {
-		value, ok := p.inlineComment.tags["gorm"]
+	if p.comment != nil {
+		value, ok := p.comment.tags["gorm"]
 		if ok && len(value.Lines()) > 0 {
 			return NewPbGormTag(p, value)
 		}

@@ -32,6 +32,8 @@ cli:
             long: 生成配置文件模板
             short: 生成配置文件
         doc:
+            filename:
+                database-design: 数据库设计
             flags:
                 language: 文档语言
                 output-dir: 文档输出目录
