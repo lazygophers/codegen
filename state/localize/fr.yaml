@@ -7,6 +7,10 @@ cli:
         short: Générer un script de saisie semi-automatique pour le shell spécifié
         subcommand:
             short: Générer un script de saisie semi-automatique pour {{.Command}}
+    doc:
+        filename:
+            api: Documentation des interfaces
+            database-design: Conception de base de données
     flags:
         debug: Journal détaillé de sortie
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Générer le fichier de configuration
         doc:
             flags:
-                language: Langue du document, la valeur par défaut est le chinois (zh)
-                output-dir: Répertoire de sortie du document, la valeur par défaut est docs
+                language: Langue du document
+                output-dir: Répertoire de sortie des documents
             long: Analysez le message commençant par Model dans le fichier proto et générez des documents de conception de base de données
             short: Générer des documents de conception de base de données
         dockerignore:

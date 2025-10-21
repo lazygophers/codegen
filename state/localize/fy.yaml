@@ -7,6 +7,10 @@ cli:
         short: Generearje in autofolje-skript foar de opjûne shell
         subcommand:
             short: Generearje autofolje skript foar {{.Command}}
+    doc:
+        filename:
+            api: Interface dokumintaasje
+            database-design: Databank ûntwerp
     flags:
         debug: Utfier detaillearre log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Generearje konfiguraasjetriem
         doc:
             flags:
-                language: Dokuminttaal, standert is Sineesk (zh)
-                output-dir: Dokumintútfiermap, standert is docs
+                language: Dokuminttaal
+                output-dir: Dokumintútfiermap
             long: Parse it berjocht begjinnend mei Model yn it proto-bestân en generearje database-ûntwerpdokuminten
             short: Generearje databankûntwerpdokuminten
         dockerignore:

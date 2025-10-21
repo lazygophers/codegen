@@ -7,6 +7,10 @@ cli:
         short: Luo automaattisesti täydentävä komentosarja määritetylle komentotulkille
         subcommand:
             short: Luo automaattisen täydennyksen komentosarja kohteelle {{.Command}}
+    doc:
+        filename:
+            api: Käyttöliittymän dokumentaatio
+            database-design: Tietokannan suunnittelu
     flags:
         debug: Tulosta yksityiskohtainen loki
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Luo asetustiedosto
         doc:
             flags:
-                language: Asiakirjan kieli, oletus on kiina (zh)
-                output-dir: Asiakirjan tulostushakemisto, oletus on docs
+                language: Asiakirjan kieli
+                output-dir: Asiakirjan tulostushakemisto
             long: Jäsennä prototiedoston mallilla alkava viesti ja luo tietokannan suunnitteluasiakirjat
             short: Luo tietokannan suunnitteluasiakirjoja
         dockerignore:
