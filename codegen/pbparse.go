@@ -384,11 +384,79 @@ func NewPbService(service *proto.Service) *PbService {
 	return p
 }
 
+type PbGormTag struct {
+	tag   *PbCommentTag
+	field PbField
+
+	line string
+
+	tagMap map[string][]string
+}
+
+func (p *PbGormTag) walk() {
+	p.line = strings.ToLower(strings.TrimSpace(strings.Join(p.tag.Lines(), ";")))
+
+	// 解析拆分 gorm 的 tag
+	for _, tag := range strings.Split(p.line, ";") {
+		k, v, found := strings.Cut(tag, "=")
+		if !found {
+			// 比如主键、not null等
+			p.tagMap[tag] = append(p.tagMap[tag], "")
+			continue
+		}
+
+		if strings.HasSuffix(v, ",unique") {
+			p.tagMap["uniqueIndex"] = append(p.tagMap["uniqueIndex"], strings.TrimSuffix(v, ",unique"))
+			continue
+		}
+
+		p.tagMap[k] = append(p.tagMap[k], v)
+	}
+}
+
+func (p *PbGormTag) Index() []string {
+	return p.tagMap["index"]
+}
+
+func (p *PbGormTag) UniqueIndex() []string {
+	return p.tagMap["uniqueIndex"]
+}
+
+func (p *PbGormTag) Column() string {
+	if v, ok := p.tagMap["column"]; ok && len(v) > 0 {
+		return v[0]
+	}
+
+	return stringx.ToSnake(p.field.FieldName())
+}
+
+func (p *PbGormTag) Type() string {
+	if v, ok := p.tagMap["type"]; ok && len(v) > 0 {
+		return v[0]
+	}
+
+	return p.field.FieldType()
+}
+
+func NewPbGormTag(field PbField, tag *PbCommentTag) *PbGormTag {
+	p := &PbGormTag{
+		field:  field,
+		tag:    tag,
+		line:   "",
+		tagMap: make(map[string][]string),
+	}
+
+	p.walk()
+
+	return p
+}
+
 type PbField interface {
 	FieldName() string
 	FieldType() string
 	IsSlice() bool
 	Desc() string
+	GormTag() *PbGormTag
 }
 
 var _ PbField = (*PbNormalField)(nil)
@@ -404,6 +472,17 @@ type PbNormalField struct {
 
 	// 写在字段后面的注释
 	inlineComment *PbComment
+}
+
+func (p *PbNormalField) GormTag() *PbGormTag {
+	if p.inlineComment != nil {
+		value, ok := p.inlineComment.tags["gorm"]
+		if ok && len(value.Lines()) > 0 {
+			return NewPbGormTag(p, value)
+		}
+	}
+
+	return nil
 }
 
 func (p *PbNormalField) Desc() string {
@@ -487,7 +566,19 @@ type PbMapField struct {
 
 	field *proto.MapField
 
-	comment *PbComment
+	comment       *PbComment
+	inlineComment *PbComment
+}
+
+func (p *PbMapField) GormTag() *PbGormTag {
+	if p.inlineComment != nil {
+		value, ok := p.inlineComment.tags["gorm"]
+		if ok && len(value.Lines()) > 0 {
+			return NewPbGormTag(p, value)
+		}
+	}
+
+	return nil
 }
 
 func (p *PbMapField) Desc() string {
@@ -500,8 +591,8 @@ func (p *PbMapField) Desc() string {
 	}
 
 	// 尝试找后面接着的注释
-	if p.field.InlineComment != nil && len(p.field.InlineComment.Lines) > 0 {
-		return cleanDesc(strings.Join(p.field.InlineComment.Lines, "\n"))
+	if p.inlineComment != nil && len(p.inlineComment.Comment().Lines) > 0 {
+		return cleanDesc(strings.Join(p.inlineComment.Comment().Lines, "\n"))
 	}
 
 	// 找空行标记
@@ -536,17 +627,19 @@ func (p *PbMapField) IsSlice() bool {
 }
 
 func (p *PbMapField) walk() {
+	if p.field.Comment != nil {
+		p.comment = NewPbComment(p.field.Comment)
+	}
 
+	if p.field.InlineComment != nil {
+		p.inlineComment = NewPbComment(p.field.InlineComment)
+	}
 }
 
 func NewPbMapField(f *proto.MapField) *PbMapField {
 	p := &PbMapField{
 		Name:  f.Name,
 		field: f,
-	}
-
-	if f.Comment != nil {
-		p.comment = NewPbComment(f.Comment)
 	}
 
 	p.walk()
@@ -557,9 +650,22 @@ func NewPbMapField(f *proto.MapField) *PbMapField {
 type PbEnumField struct {
 	Name     string
 	field    *proto.EnumField
-	comment  *PbComment
 	FullName string
 	Value    int32
+
+	comment       *PbComment
+	inlineComment *PbComment
+}
+
+func (p *PbEnumField) GormTag() *PbGormTag {
+	if p.inlineComment != nil {
+		value, ok := p.inlineComment.tags["gorm"]
+		if ok && len(value.Lines()) > 0 {
+			return NewPbGormTag(p, value)
+		}
+	}
+
+	return nil
 }
 
 func cleanDesc(desc string) string {
@@ -583,8 +689,8 @@ func (p *PbEnumField) Desc() string {
 	}
 
 	// 尝试找后面接着的注释
-	if p.field.InlineComment != nil && len(p.field.InlineComment.Lines) > 0 {
-		return cleanDesc(strings.Join(p.field.InlineComment.Lines, "\n"))
+	if p.inlineComment != nil && len(p.inlineComment.Comment().Lines) > 0 {
+		return cleanDesc(strings.Join(p.inlineComment.Comment().Lines, "\n"))
 	}
 
 	// 找空行标记
@@ -616,6 +722,10 @@ func (p *PbEnumField) walk() {
 
 	if p.field.Comment != nil {
 		p.comment = NewPbComment(p.field.Comment)
+	}
+
+	if p.field.InlineComment != nil {
+		p.inlineComment = NewPbComment(p.field.InlineComment)
 	}
 
 	p.Value = int32(p.field.Integer)
