@@ -7,6 +7,10 @@ cli:
         short: Ngahasilkeun skrip autocomplete pikeun cangkang anu ditangtukeun
         subcommand:
             short: Jieun skrip autocomplete pikeun {{.Command}}
+    doc:
+        filename:
+            api: Dokuméntasi antarmuka
+            database-design: Desain database
     flags:
         debug: Kaluaran log lengkep
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Ngahasilkeun file konfigurasi
         doc:
             flags:
-                language: Bisi dokumen, standar Cina (Zh)
-                output-dir: Dokume diréktipkeun Dokume, standar nyaéta Dokter
+                language: Basa
+                output-dir: Dokume diréktori
             long: Parse pesen dimimitian ku modél dina file proto sareng ngahasilkeun dokumen desain database
             short: Ngahasilkeun dokumen desain database
         dockerignore:

@@ -7,6 +7,10 @@ cli:
         short: Bosala script ya autocomplete pona shell oyo elakisami
         subcommand:
             short: Bosala script ya autocomplete pona {{.Command}} .
+    doc:
+        filename:
+            api: Mikanda ya interface .
+            database-design: Bokeli ya ba bases ya ba données .
     flags:
         debug: Sortie journal détaillé
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Bosala fichier ya configuration
         doc:
             flags:
-                language: Language de document, Default ezali Chinois (ZH) .
-                output-dir: Annuaire ya sortie ya mokanda, par défaut ezali docs .
+                language: Elobeli ya mokanda .
+                output-dir: Annuaire ya kobima ya mikanda .
             long: Parse message oyo ebandi na modèle na fichier PROTO pe generer ba documents ya conception ya base de données .
             short: Bokeli mikanda ya bokeli ba bases ya ba données .
         dockerignore:

@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Genera un script d'emplenament automàtic per a {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Documentació de la interfície
+            database-design: Disseny de bases de dades
     flags:
         debug: Sortida del registre detallat
     gen:

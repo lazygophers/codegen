@@ -7,6 +7,10 @@ cli:
         short: Generera ett autoslutförandeskript för det angivna skalet
         subcommand:
             short: Generera autoslutförandeskript för {{.Command}}
+    doc:
+        filename:
+            api: Gränssnittsdokumentation
+            database-design: Databasdesign
     flags:
         debug: Skriv ut detaljerad logg
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Generera konfigurationsfil
         doc:
             flags:
-                language: Dokumentspråk, standard är kinesiska (zh)
-                output-dir: Dokumentutdatakatalog, standard är docs
+                language: Dokumentspråk
+                output-dir: Dokumentutmatningskatalog
             long: Analysera meddelandet som börjar med Model i protofilen och generera databasdesigndokument
             short: Skapa databasdesigndokument
         dockerignore:

@@ -7,6 +7,10 @@ cli:
         short: Generer et autofuldførelsesscript for den angivne shell
         subcommand:
             short: Generer autofuldførelsesscript for {{.Command}}
+    doc:
+        filename:
+            api: Interface dokumentation
+            database-design: Database design
     flags:
         debug: Udfør detaljeret log
     gen:

@@ -7,6 +7,10 @@ cli:
         short: ንዝተገለፀ ሸል ኣውቶኮምፕሊት ስክሪፕት ምፍጣር
         subcommand:
             short: ን {{.Command}} ዝኸውን ኣውቶኮምፕሊት ስክሪፕት ምፍጣር
+    doc:
+        filename:
+            api: ናይ መተሓላለፊ ሰነድ
+            database-design: ዲዛይን ዳታቤዝ
     flags:
         debug: ውጽኢት ዝርዝር ሎግ
     gen:
@@ -33,8 +37,8 @@ cli:
             short: ናይ ውቅር ፋይል ምፍጣር
         doc:
             flags:
-                language: ቋንቋ ሰነድ፣ ነባሪ ቻይናዊ እዩ (ZH)
-                output-dir: Document Output Directory, ነባሪ እዩ DOCS .
+                language: ቋንቋ ሰነድ
+                output-dir: ናይ ሰነድ ውጽኢት ማህደር
             long: ኣብ ፕሮቶ ፋይል ብሞዴል ዝጅምር መልእኽቲ ምጽናዕን ናይ ዳታቤዝ ዲዛይን ሰነዳት ምፍጣርን
             short: ናይ ዳታቤዝ ዲዛይን ሰነዳት ምፍጣር
         dockerignore:

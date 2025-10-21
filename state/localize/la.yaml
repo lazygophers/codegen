@@ -7,6 +7,10 @@ cli:
         short: Generate scriptum est autocomplete ad certum testam
         subcommand:
             short: Generate scriptum autocompletum pro {{.Command}}
+    doc:
+        filename:
+            api: Interface documenta
+            database-design: Database design
     flags:
         debug: Output detailed iniuriarum
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Configuratione file generate
         doc:
             flags:
-                language: Documenti lingua, defalta est Sinica (zh)
-                output-dir: Document output directorium, defalta est soUicitudo
+                language: Documentum lingua
+                output-dir: Document output Directory
             long: Parse nuntium incipiens cum Model in tabula proto et documentorum datorum generare consilium
             short: Datorum consilia generare documenta
         dockerignore:

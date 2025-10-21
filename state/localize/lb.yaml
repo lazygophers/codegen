@@ -7,6 +7,10 @@ cli:
         short: Generéiere en Autocomplete Skript fir déi spezifizéiert Shell
         subcommand:
             short: Generéiere Autocomplete Skript fir {{.Command}}
+    doc:
+        filename:
+            api: Interface Dokumentatioun
+            database-design: Datebank Design
     flags:
         debug: Output detailléierte Logbuch
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Konfiguratiounsdatei generéieren
         doc:
             flags:
-                language: Dokument Sprooch, Standard ass Chinesesch (zh)
-                output-dir: Dokument Output Verzeechnes, Standard ass docs
+                language: Dokument Sprooch
+                output-dir: Dokument Output Verzeechnes
             long: Parse de Message unzefänken mam Model an der Protodatei a generéiert Datebankdesigndokumenter
             short: Generéiere Datebank Design Dokumenter
         dockerignore:

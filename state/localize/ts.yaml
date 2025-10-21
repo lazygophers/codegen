@@ -7,6 +7,10 @@ cli:
         short: Endla tsalwa ra autocomplete ra xikhegelo lexi boxiweke
         subcommand:
             short: Endla xitshuriwa xo hetisisa hi xoxe xa {{.Xileriso}} .
+    doc:
+        filename:
+            api: Matsalwa ya vuhlanganisi .
+            database-design: Dizayini ya database .
     flags:
         debug: Vuhumelerisi bya vuxokoxoko bya log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Endla fayili ya vuhlanganisi
         doc:
             flags:
-                language: Ririmi ra matsalwa, xihlawulekisi i Xichayina (ZH) .
-                output-dir: Xikombo xa Vuhumelerisi bya Matsalwa, Xihlawulekisi i DOCS .
+                language: Ririmi ra matsalwa .
+                output-dir: Xikombo xa vuhumelerisi bya matsalwa .
             long: Hlawula rungula leri sungulaka hi modele eka fayili ya proto na ku tumbuluxa matsalwa ya dizayini ya database .
             short: Endla matsalwa ya dizayini ya database .
         dockerignore:

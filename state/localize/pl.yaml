@@ -7,6 +7,10 @@ cli:
         short: Wygeneruj skrypt autouzupełniania dla określonej powłoki
         subcommand:
             short: Wygeneruj skrypt autouzupełniania dla {{.Command}}
+    doc:
+        filename:
+            api: Dokumentacja interfejsu
+            database-design: Projekt bazy danych
     flags:
         debug: Wyprowadź szczegółowy dziennik
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Wygeneruj plik konfiguracyjny
         doc:
             flags:
-                language: Język dokumentu, domyślny jest chiński (zh)
-                output-dir: Katalog wyjściowy dokumentu, domyślnie jest to docs
+                language: Język dokumentu
+                output-dir: Katalog wyjściowy dokumentu
             long: Przeanalizuj wiadomość zaczynając od Model w pliku proto i wygeneruj dokumenty projektu bazy danych
             short: Generowanie dokumentów projektu bazy danych
         dockerignore:

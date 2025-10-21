@@ -7,6 +7,10 @@ cli:
         short: צור סקריפט השלמה אוטומטית עבור המעטפת שצוינה
         subcommand:
             short: צור סקריפט השלמה אוטומטית עבור {{.Command}}
+    doc:
+        filename:
+            api: תיעוד ממשק
+            database-design: עיצוב מסד נתונים
     flags:
         debug: פלט יומן מפורט
     gen:
@@ -33,8 +37,8 @@ cli:
             short: צור קובץ תצורה
         doc:
             flags:
-                language: שפת המסמך, ברירת המחדל היא סינית (zh)
-                output-dir: ספריית פלט מסמכים, ברירת המחדל היא docs
+                language: שפת המסמך
+                output-dir: ספריית פלט מסמכים
             long: נתח את ההודעה החל מדגם בקובץ הפרוטו והפק מסמכי עיצוב של מסד נתונים
             short: הפקת מסמכי עיצוב של מסד נתונים
         dockerignore:

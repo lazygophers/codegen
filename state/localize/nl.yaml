@@ -7,6 +7,10 @@ cli:
         short: Genereer een autocomplete-script voor de opgegeven shell
         subcommand:
             short: Genereer automatisch aanvulscript voor {{.Command}}
+    doc:
+        filename:
+            api: Interface-documentatie
+            database-design: Database-ontwerp
     flags:
         debug: Uitvoer gedetailleerd logboek
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Configuratiebestand genereren
         doc:
             flags:
-                language: Documenttaal, standaard is Chinees (zh)
-                output-dir: Documentuitvoermap, standaard is docs
+                language: Documenttaal
+                output-dir: Documentuitvoermap
             long: Parseer het bericht, beginnend met Model, in het prototypebestand en genereer databaseontwerpdocumenten
             short: Genereer databaseontwerpdocumenten
         dockerignore:

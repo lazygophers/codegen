@@ -7,6 +7,10 @@ cli:
         short: Belirtilen kabuk için otomatik tamamlama komut dosyası oluştur
         subcommand:
             short: '{{.Command}} için otomatik tamamlama komut dosyası oluştur'
+    doc:
+        filename:
+            api: Arayüz belgeleri
+            database-design: Veritabanı tasarımı
     flags:
         debug: Ayrıntılı günlüğün çıktısını alın
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Yapılandırma dosyası oluştur
         doc:
             flags:
-                language: Belge dili, varsayılan Çincedir (zh)
-                output-dir: Belge çıkış dizini, varsayılan dokümanlar'dır
+                language: Belge dili
+                output-dir: Belge çıktı dizini
             long: Protokol dosyasında Model ile başlayan mesajı ayrıştırın ve veritabanı tasarım belgeleri oluşturun
             short: Veritabanı tasarım belgeleri oluşturun
         dockerignore:

@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: '{{.Command}} ৰ বাবে স্বয়ংসম্পূৰ্ণ স্ক্ৰিপ্ট সৃষ্টি কৰক'
     doc:
-        filename: {}
+        filename:
+            api: আন্তঃপৃষ্ঠ নথিপত্ৰ
+            database-design: ডাটাবেছ ডিজাইন
     flags:
         debug: আউটপুট বিশদ লগ
     gen:

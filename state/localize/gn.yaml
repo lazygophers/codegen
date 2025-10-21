@@ -7,6 +7,10 @@ cli:
         short: Emoheñói peteĩ script autocomplete pe shell ojeꞌevaꞌekuépe g̃uarã
         subcommand:
             short: Emoheñói script autocompleta {{.Command}}-pe g̃uarã.
+    doc:
+        filename:
+            api: Kuatiañe’ẽ interfaz rehegua .
+            database-design: Diseño de base de datos rehegua .
     flags:
         debug: Salida registro detallado rehegua
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Emoheñói vore ñembohekorã
         doc:
             flags:
-                language: Kuatia ñe’ẽ, ñepyrũrã ha’e chino (ZH) .
-                output-dir: Kuatia ñesẽ ryru, ñepyrũrã haꞌehína DOCS .
+                language: Kuatia ñe’ẽ rehegua .
+                output-dir: Kuatiañe’ẽ osẽva .
             long: Emohenda marandu oñepyrũva modelo-gui archivo PROTO-pe ha emoheñói kuatiakuéra diseño base de datos rehegua .
             short: Ojejapo kuatia diseño base de datos rehegua .
         dockerignore:

@@ -7,6 +7,10 @@ cli:
         short: Generieren Sie ein Autovervollständigungsskript für die angegebene Shell
         subcommand:
             short: Generieren Sie ein Autovervollständigungsskript für {{.Command}}
+    doc:
+        filename:
+            api: Schnittstellendokumentation
+            database-design: Datenbankdesign
     flags:
         debug: Detailliertes Protokoll ausgeben
     gen:

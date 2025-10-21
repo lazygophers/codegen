@@ -7,6 +7,10 @@ cli:
         short: Gjeneroni një skript të plotësimit automatik për guaskën e specifikuar
         subcommand:
             short: Gjeneroni skriptin e plotësimit automatik për {{.Command}}
+    doc:
+        filename:
+            api: Dokumentacioni i ndërfaqes
+            database-design: Dizajni i bazës së të dhënave
     flags:
         debug: Nxjerr regjistrin e detajuar
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Gjeneroni skedarin e konfigurimit
         doc:
             flags:
-                language: Gjuha e dokumentit, e paracaktuar është kinezisht (zh)
-                output-dir: Drejtoria e daljes së dokumentit, parazgjedhja është dokumentet
+                language: Gjuha e dokumentit
+                output-dir: Drejtoria e daljes së dokumentit
             long: Analizoni mesazhin duke filluar me Model në skedarin proto dhe gjeneroni dokumente të projektimit të bazës së të dhënave
             short: Gjeneroni dokumente të projektimit të bazës së të dhënave
         dockerignore:

@@ -7,6 +7,10 @@ cli:
         short: Ṣe ina iwe afọwọkọ pipe fun ikarahun ti a ti sọ tẹlẹ
         subcommand:
             short: Ṣe agbekalẹ iwe afọwọkọ pipe fun {{.Aṣẹ}}
+    doc:
+        filename:
+            api: Iwe iwe wiwo
+            database-design: Apẹrẹ data
     flags:
         debug: Ijade alaye log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Ṣe ina iṣeto ni faili
         doc:
             flags:
-                language: Ede iwe, aiyipada jẹ Kannada (ZH)
-                output-dir: Iwe-iṣẹ Iṣalaye iwe, Aiyipada jẹ Awọn Dos
+                language: Ede Iwe adehun
+                output-dir: Iwe itẹjade Ifọwọsi
             long: Parse ifiranṣẹ naa ti o bẹrẹ pẹlu awoṣe ninu faili Proto ati ṣe ina awọn iwe apẹrẹ data
             short: Ṣe ina awọn iwe elo apẹrẹ data
         dockerignore:

@@ -7,6 +7,10 @@ cli:
         short: Generirajte skriptu za automatsko dovršavanje za navedenu ljusku
         subcommand:
             short: Generiraj skriptu za automatsko dovršavanje za {{.Command}}
+    doc:
+        filename:
+            api: Dokumentacija sučelja
+            database-design: Dizajn baze podataka
     flags:
         debug: Ispis detaljnog dnevnika
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Generiraj konfiguracijsku datoteku
         doc:
             flags:
-                language: Jezik dokumenta, zadani je kineski (zh)
-                output-dir: Izlazni direktorij dokumenta, zadano je dokumenti
+                language: Jezik dokumenta
+                output-dir: Izlazni direktorij dokumenta
             long: Raščlanite poruku koja počinje s Model u proto datoteci i generirajte dokumente dizajna baze podataka
             short: Generirajte dokumente dizajna baze podataka
         dockerignore:

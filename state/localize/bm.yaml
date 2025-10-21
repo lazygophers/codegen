@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Script autocomplete dilan {{.Command}} kama.
     doc:
-        filename: {}
+        filename:
+            api: Interface sɛbɛnw .
+            database-design: Donanw dilanni .
     flags:
         debug: Bɔli detayɛli log
     gen:

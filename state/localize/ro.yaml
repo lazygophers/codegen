@@ -7,6 +7,10 @@ cli:
         short: Generați un script de autocompletare pentru shell-ul specificat
         subcommand:
             short: Generați un script de completare automată pentru {{.Command}}
+    doc:
+        filename:
+            api: Documentația interfeței
+            database-design: Proiectarea bazei de date
     flags:
         debug: Ieșire jurnal detaliat
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Generați fișierul de configurare
         doc:
             flags:
-                language: Limba documentului, implicit este chineza (zh)
-                output-dir: Director de ieșire a documentului, implicit este docs
+                language: Limba documentului
+                output-dir: Directorul de ieșire a documentului
             long: Analizați mesajul începând cu Model în fișierul proto și generați documente de proiectare a bazei de date
             short: Generați documente de proiectare a bazei de date
         dockerignore:

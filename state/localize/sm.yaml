@@ -7,6 +7,10 @@ cli:
         short: Fausia se tusitusiga fa'atumu fa'ato'a mo le atigi fa'apitoa
         subcommand:
             short: Fa'atupu fa'amae'a fa'atumu mo {{.Command}}
+    doc:
+        filename:
+            api: Pepa o Interface
+            database-design: Database mamanu
     flags:
         debug: Fa'amatalaga fa'amatalaga fa'amatalaga
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Fausia faila fa'atulagaina
         doc:
             flags:
-                language: O le gagana pepa, o le le atoatoa o le Saina (ZH)
-                output-dir: Pepa aloaia o loʻo i ai faʻamatalaga
+                language: Pepa o pepa
+                output-dir: Pepa aloaia
             long: Talia le feʻau amata mai le faʻataʻitaʻiga i le proto faila ma gaosia ni faʻamaumauga o ata
             short: Fausia pepa o ata tusia pepa
         dockerignore:

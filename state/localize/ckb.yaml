@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: دروستکردنی سکریپتی تەواوکردنی خۆکارانە بۆ {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: بەڵگەنامەی ڕووکار
+            database-design: دیزاینی بنکەدراوە
     flags:
         debug: لۆگی وردی دەرچوون
     gen:

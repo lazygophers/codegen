@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: إنشاء برنامج نصي للإكمال التلقائي لـ {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: وثائق الواجهة
+            database-design: تصميم قاعدة البيانات
     flags:
         debug: سجل مفصل للإخراج
     gen:

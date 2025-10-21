@@ -7,6 +7,10 @@ cli:
         short: Ustvari skript za samodokončanje za navedeno lupino
         subcommand:
             short: Ustvari skript za samodokončanje za {{.Command}}
+    doc:
+        filename:
+            api: Dokumentacija vmesnika
+            database-design: Oblikovanje baze podatkov
     flags:
         debug: Izhod podroben dnevnik
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Ustvari konfiguracijsko datoteko
         doc:
             flags:
-                language: Jezik dokumenta, privzeto je kitajščina (zh)
-                output-dir: Izhodni imenik dokumenta, privzeto je dokumenti
+                language: Jezik dokumenta
+                output-dir: Izhodni imenik dokumenta
             long: Razčlenite sporočilo, ki se začne z modelom v proto datoteki, in ustvarite načrtovalne dokumente baze podatkov
             short: Ustvari dokumente za načrtovanje baze podatkov
         dockerignore:

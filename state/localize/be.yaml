@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Стварыце скрыпт аўтазапаўнення для {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Дакументацыя інтэрфейсу
+            database-design: Дызайн базы дадзеных
     flags:
         debug: Вывад падрабязнага часопіса
     gen:

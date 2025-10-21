@@ -7,6 +7,10 @@ cli:
         short: သတ်မှတ်ထားသော shell အတွက် အလိုအလျောက်ဖြည့်စက္ခတ်ကို ဖန်တီးပါ။
         subcommand:
             short: '{{.Command}} အတွက် အလိုအလျောက် ဖြည့်သွင်းသော script ကို ဖန်တီးပါ'
+    doc:
+        filename:
+            api: Interface စာရွက်စာတမ်းများ
+            database-design: ဒေတာဘေ့စဒီဇိုင်း
     flags:
         debug: အသေးစိတ်မှတ်တမ်းကို ထုတ်ပေးပါသည်။
     gen:
@@ -33,8 +37,8 @@ cli:
             short: ဖွဲ့စည်းမှုဖိုင်ကို ဖန်တီးပါ။
         doc:
             flags:
-                language: စာရွက်စာတမ်းဘာသာစကား, ပုံမှန်လျှင်တရုတ် (zh)
-                output-dir: Document Default Output Directory Document Document ဖြစ်သည်
+                language: စာရွက်စာတမ်းဘာသာစကား
+                output-dir: စာရွက်စာတမ်း output လမ်းညွှန်
             long: Proto ဖိုင်တွင်မော်ဒယ်လ်နှင့်စသည့်မက်ဆေ့ခ်ျကိုခွဲခြမ်းစိတ်ဖြာခြင်းနှင့် database ဒီဇိုင်းစာရွက်စာတမ်းများကိုထုတ်လုပ်ပါ
             short: ဒေတာဘေ့စဒီဇိုင်းစာရွက်စာတမ်းများထုတ်လုပ်ပါ
         dockerignore:

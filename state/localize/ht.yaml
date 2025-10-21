@@ -7,6 +7,10 @@ cli:
         short: Jenere yon script autocomplete pou kokiy espesifye a
         subcommand:
             short: Jenere script autocomplete pou {{.Command}}
+    doc:
+        filename:
+            api: Dokiman entèfas
+            database-design: Konsepsyon baz done
     flags:
         debug: Sòti detaye boutèy demi lit
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Jenere fichye konfigirasyon
         doc:
             flags:
-                language: Lang dokiman an, default se Chinwa (zh)
-                output-dir: Anyè pwodiksyon dokiman, default se docs
+                language: Lang dokiman
+                output-dir: Anyè pwodiksyon dokiman
             long: Analize mesaj la kòmanse ak Modèl nan fichye pwoto a epi jenere dokiman konsepsyon baz done
             short: Jenere dokiman konsepsyon baz done
         dockerignore:

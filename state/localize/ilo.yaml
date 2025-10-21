@@ -7,6 +7,10 @@ cli:
         short: Mangpataud ti autocomplete nga iskrip para iti naikeddeng a shell
         subcommand:
             short: Mangpataud ti autokompleto nga iskrip para iti {{.Command}} .
+    doc:
+        filename:
+            api: dokumentasion ti interface .
+            database-design: Disenyo ti database .
     flags:
         debug: Output detalyado a log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Mangpataud ti file ti konfigurasion
         doc:
             flags:
-                language: Lenguahe ti dokumento, default ket Intsik (ZH) .
-                output-dir: Direktorio ti Output ti Dokumento, Default IS DOCS .
+                language: Lenguahe ti dokumento .
+                output-dir: Direktorio ti panagruar ti dokumento .
             long: parse ti mensahe a mangrugi iti modelo iti proto file ken mangpataud kadagiti dokumento ti disenio ti database .
             short: Mangpataud kadagiti dokumento ti disenio ti database .
         dockerignore:

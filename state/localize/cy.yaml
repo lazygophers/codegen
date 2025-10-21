@@ -7,6 +7,10 @@ cli:
         short: Cynhyrchu sgript awtolenwi ar gyfer y plisgyn penodedig
         subcommand:
             short: Cynhyrchu sgript awtolenwi ar gyfer {{.Command}}
+    doc:
+        filename:
+            api: Dogfennaeth rhyngwyneb
+            database-design: Dylunio cronfa ddata
     flags:
         debug: Log manwl allbwn
     gen:

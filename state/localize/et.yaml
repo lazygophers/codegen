@@ -7,6 +7,10 @@ cli:
         short: Looge määratud kesta jaoks automaatse täitmise skript
         subcommand:
             short: Loo automaatse täitmise skript käsule {{.Command}}
+    doc:
+        filename:
+            api: Liidese dokumentatsioon
+            database-design: Andmebaasi disain
     flags:
         debug: Väljund üksikasjalik logi
     gen:

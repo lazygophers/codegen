@@ -7,6 +7,10 @@ cli:
         short: Ƙirƙirar rubutun da ya cika ta atomatik don ƙayyadadden harsashi
         subcommand:
             short: Ƙirƙirar rubutun cikawa ta atomatik don {{.Command}}
+    doc:
+        filename:
+            api: Takaitaccen Bayani
+            database-design: Database Design
     flags:
         debug: Fitar da cikakken log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Ƙirƙirar fayil ɗin sanyi
         doc:
             flags:
-                language: Harshen Laftito, Tsoho shine Sinanci (ZH)
-                output-dir: Adireshin fitarwa na Daftewa, Tsoho shine Docs
+                language: Yare
+                output-dir: Littattafan fitarwa
             long: Alamar saƙo fara da samfurin a cikin fayil ɗin da aka gabatar don ƙirƙirar takaddun bayanai na bayanai
             short: Haɗa bayanan zane-zane
         dockerignore:

@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: '{{.Command}}-এর জন্য স্বয়ংসম্পূর্ণ স্ক্রিপ্ট তৈরি করুন'
     doc:
-        filename: {}
+        filename:
+            api: ইন্টারফেস ডকুমেন্টেশন
+            database-design: ডাটাবেস ডিজাইন
     flags:
         debug: আউটপুট বিস্তারিত লগ
     gen:

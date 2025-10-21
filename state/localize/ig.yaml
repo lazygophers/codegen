@@ -7,6 +7,10 @@ cli:
         short: Mepụta ederede akpakachapụrụ maka shei akọwapụtara
         subcommand:
             short: Mepụta ederede akpaaka maka {{.Command}}
+    doc:
+        filename:
+            api: Akwụkwọ interface
+            database-design: Nhazi data
     flags:
         debug: Wepụta ndekọ zuru ezu
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Mepụta faịlụ nhazi
         doc:
             flags:
-                language: Asụsụ akwụkwọ, ndabara bụ Chinese (zh)
-                output-dir: Ndekọ akwụkwọ ngalaba, ndabara
+                language: Asụsụ akwụkwọ
+                output-dir: Ndepụta akwụkwọ mmeputa
             long: Jiri ozi na-amalite na ihe nlere
             short: Seasezọ Ederede data
         dockerignore:

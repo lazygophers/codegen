@@ -7,6 +7,10 @@ cli:
         short: Hangaia he tuhinga whakaoti aunoa mo te anga kua tohua
         subcommand:
             short: Hangaia te tuhinga whakaoti-aunoa mo {{.Command}}
+    doc:
+        filename:
+            api: Tuhinga o mua
+            database-design: Hoahoa pātengi raraunga
     flags:
         debug: Putanga rangitaki taipitopito
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Waihanga kōnae whirihoranga
         doc:
             flags:
-                language: Reo tuhinga, ko te taunoa he Hainamana (ZH)
-                output-dir: Whaiaronga Putanga tuhinga, ko te taunoa he Docs
+                language: Reo tuhinga
+                output-dir: Whaiaronga tuhinga Putanga
             long: Whakapaihia te panui ka tiimata me te tauira i roto i te konae tohu me te whakaputa tuhinga hoahoa pātengi raraunga
             short: Hangaia nga tuhinga hoahoa pātengi raraunga
         dockerignore:

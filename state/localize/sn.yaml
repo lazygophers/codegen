@@ -7,6 +7,10 @@ cli:
         short: Gadzira chinyorwa chega chega cheganda rataurwa
         subcommand:
             short: Gadzira zvinyorwa zvinokwana zve{{.Command}}
+    doc:
+        filename:
+            api: Interface zvinyorwa
+            database-design: Database Dhizaini
     flags:
         debug: Kubuda kwakadzama log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Gadzira faira yekumisikidza
         doc:
             flags:
-                language: Mutauro Wemutauro, Default Is Chinese (ZH)
-                output-dir: Gwaro rinobuda dhairekitori, default ndeye ma docs
+                language: Mutauro Wemutauro
+                output-dir: Gwaro rekubuda dhairekitori
             long: Parse meseji inotanga nemhando mune iyo proto faira uye gadzira database dhizaini magwaro
             short: Gadzira DATABASE Dhizaini magwaro
         dockerignore:

@@ -7,6 +7,10 @@ cli:
         short: Xera un script de autocompletar para o shell especificado
         subcommand:
             short: Xerar un script de autocompletar para {{.Command}}
+    doc:
+        filename:
+            api: Documentación da interface
+            database-design: Deseño de bases de datos
     flags:
         debug: Saída de rexistro detallado
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Xerar ficheiro de configuración
         doc:
             flags:
-                language: Idioma do documento, o predeterminado é chinés (zh)
-                output-dir: Directorio de saída do documento, o predeterminado é docs
+                language: Linguaxe do documento
+                output-dir: Directorio de saída do documento
             long: Analiza a mensaxe comezando por Model no ficheiro proto e xera documentos de deseño da base de datos
             short: Xerar documentos de deseño de bases de datos
         dockerignore:

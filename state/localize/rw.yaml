@@ -7,6 +7,10 @@ cli:
         short: Gukora inyandiko yuzuye ya shell kubisobanuro byihariye
         subcommand:
             short: Gukora inyandiko yuzuye ya {{.Icyemezo}}
+    doc:
+        filename:
+            api: Inyandiko z'imigati
+            database-design: Igishushanyo mbonera
     flags:
         debug: Ibisohoka birambuye
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Gukora dosiye iboneza
         doc:
             flags:
-                language: Ururimi rwinyandiko, Mburabuzi ni Igishinwa (ZH)
-                output-dir: Ububiko bwibisohoka, busanzwe ni docs
+                language: Ururimi rwinyandiko
+                output-dir: Ububiko bw'inyandiko
             long: Transanga Ubutumwa butangirana na Moderi muri dosiye ya Proto no kubyara Ububikoshingiro
             short: Kubyara basease base
         dockerignore:

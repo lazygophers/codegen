@@ -7,6 +7,10 @@ cli:
         short: Tsim ib tsab ntawv autocomplete rau lub plhaub uas tau teev tseg
         subcommand:
             short: Tsim autocomplete tsab ntawv rau {{.Command}}
+    doc:
+        filename:
+            api: Cov Ntaub Ntawv Sib Tham
+            database-design: Database Tsim
     flags:
         debug: Cov ntaub ntawv qhia ntxaws
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Tsim cov ntaub ntawv configuration
         doc:
             flags:
-                language: Cov Lus Sau Cov Lus, Lub neej ntawd yog Suav (ZH)
-                output-dir: Cov Ntawv Tso Cai Tso Cai Tso Cai, Lub Ntsiab Lus yog docs
+                language: Cov Lus Sau Ntawv
+                output-dir: Cov Ntawv Tso Cai Tso Cai Tso Cai
             long: Parse cov lus pib nrog cov qauv hauv cov ntaub ntawv proto thiab tsim cov ntaub ntawv tsim database
             short: Tsim cov ntaub ntawv tsim database
         dockerignore:

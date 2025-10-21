@@ -7,6 +7,10 @@ cli:
         short: Belgilangan qobiq uchun avtomatik to'ldirish skriptini yarating
         subcommand:
             short: '{{.Command}} uchun avtomatik toʻldirish skriptini yaratish'
+    doc:
+        filename:
+            api: Interfeys Hujjatlar
+            database-design: Ma'lumotlar bazasi dizayni
     flags:
         debug: Batafsil jurnalni chiqarish
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Konfiguratsiya faylini yarating
         doc:
             flags:
-                language: Hujjat tilida, standart xitoycha (zh)
-                output-dir: Hujjatni chiqarish katalogi, standart bu doktor
+                language: Hujjat tili
+                output-dir: Hujjatning chiqish katalogi
             long: Proto faylida model bilan boshlanadigan va ma'lumotlar bazasi dizaynidagi hujjatlarni yarating Xabarni tahlil qiling
             short: Ma'lumotlar bazasi dizayni hujjatlarini yarating
         dockerignore:

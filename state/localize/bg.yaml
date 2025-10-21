@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Генериране на скрипт за автоматично довършване за {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Документация на интерфейса
+            database-design: Дизайн на база данни
     flags:
         debug: Изходен подробен дневник
     gen:

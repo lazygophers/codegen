@@ -7,6 +7,10 @@ cli:
         short: Tengeneza hati ya kukamilisha kiotomatiki kwa ganda lililobainishwa
         subcommand:
             short: Tengeneza hati ya kukamilisha kiotomatiki ya {{.Command}}
+    doc:
+        filename:
+            api: Nyaraka za Maingiliano
+            database-design: Ubunifu wa hifadhidata
     flags:
         debug: Logi ya kina ya pato
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Tengeneza faili ya usanidi
         doc:
             flags:
-                language: Lugha ya Hati, chaguo -msingi ni Kichina (ZH)
-                output-dir: Saraka ya pato la hati, chaguo -msingi ni hati
+                language: Lugha ya hati
+                output-dir: Saraka ya pato la hati
             long: Panga ujumbe unaoanza na mfano katika faili ya proto na toa hati za muundo wa hifadhidata
             short: Tengeneza hati za muundo wa hifadhidata
         dockerignore:

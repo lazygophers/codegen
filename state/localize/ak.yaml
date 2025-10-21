@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Yɛ autocomplete script ma {{.Ahyɛde}} .
     doc:
-        filename: {}
+        filename:
+            api: Nkitahodi ho nkrataa .
+            database-design: Database nhyehyɛe .
     flags:
         debug: Output nsɛm a ɛkɔ akyiri log
     gen:

@@ -7,6 +7,10 @@ cli:
         short: Hasilkan skrip pelengkapan otomatis untuk shell yang ditentukan
         subcommand:
             short: Hasilkan skrip pelengkapan otomatis untuk {{.Command}}
+    doc:
+        filename:
+            api: Dokumentasi antarmuka
+            database-design: Desain basis data
     flags:
         debug: Keluaran log terperinci
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Hasilkan file konfigurasi
         doc:
             flags:
-                language: Bahasa dokumen, standarnya adalah Cina (zh)
-                output-dir: Direktori keluaran dokumen, defaultnya adalah dokumen
+                language: Bahasa dokumen
+                output-dir: Direktori keluaran dokumen
             long: Parsing pesan yang dimulai dengan Model di file proto dan buat dokumen desain database
             short: Menghasilkan dokumen desain basis data
         dockerignore:

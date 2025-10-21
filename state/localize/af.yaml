@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Genereer outovoltooi-skrip vir {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Interface dokumentasie
+            database-design: Databasis ontwerp
     flags:
         debug: Voer gedetailleerde log uit
     gen:

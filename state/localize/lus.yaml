@@ -7,6 +7,10 @@ cli:
         short: Shell tarlan tan autocomplete script siam rawh
         subcommand:
             short: '{{.Command}} tan autocomplete script siam rawh.'
+    doc:
+        filename:
+            api: Interface documentation 1000 a ni.
+            database-design: Database design a ni a, a design pawh a tha hle.
     flags:
         debug: Output chipchiar takin log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Configuration file siam rawh
         doc:
             flags:
-                language: Document tawng, default chu Chinese (ZH) a ni.
-                output-dir: Document output directory, default chu DOCS a ni.
+                language: Document tawng hman dan .
+                output-dir: Document output directory 1.1.
             long: Proto file a model atanga intan message chu parse la, database design documents siam rawh .
             short: Database design document siam .
         dockerignore:

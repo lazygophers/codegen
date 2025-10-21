@@ -7,6 +7,10 @@ cli:
         short: Tonda ekiwandiiko ekijjuvu mu ngeri ey'okwekolako ku kisusunku ekiragiddwa
         subcommand:
             short: Okukola ekiwandiiko ekijjuvu mu ngeri ey'okwekolako ku {{.Command}}
+    doc:
+        filename:
+            api: Ebiwandiiko ebikwata ku nkolagana .
+            database-design: Design ya database .
     flags:
         debug: Ebifulumizibwa ebikwata ku log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Okukola fayiro y'okusengeka
         doc:
             flags:
-                language: Olulimi lw'ekiwandiiko, olusookerwako lwe luchina (ZH) .
-                output-dir: Ekiwandiiko ekifulumizibwa mu kiwandiiko, ekisookerwako ye DOCS .
+                language: Ekiwandiiko olulimi .
+                output-dir: Ekiwandiiko ekifulumizibwa mu kiwandiiko .
             long: Okusengejja obubaka obutandika ne model mu fayiro ya proto era okukola database design documents .
             short: Okukola ebiwandiiko ebikwata ku dizayini ya database .
         dockerignore:

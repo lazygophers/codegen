@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Paghimo og autocomplete nga script para sa {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Dokumentasyon sa Interface
+            database-design: Disenyo sa Database
     flags:
         debug: Output detalyado nga log
     gen:

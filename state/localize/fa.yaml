@@ -7,6 +7,10 @@ cli:
         short: یک اسکریپت تکمیل خودکار برای پوسته مشخص شده ایجاد کنید
         subcommand:
             short: ایجاد اسکریپت تکمیل خودکار برای {{.Command}}
+    doc:
+        filename:
+            api: اسناد رابط
+            database-design: طراحی پایگاه داده
     flags:
         debug: خروجی گزارش دقیق
     gen:

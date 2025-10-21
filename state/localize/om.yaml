@@ -7,6 +7,10 @@ cli:
         short: Iskiriiptii ofumaan guutuu qaaqa ifteessameef uumi
         subcommand:
             short: '{{.Ajaja}} tiif iskiriiptii ofumaan guutu uumi.'
+    doc:
+        filename:
+            api: Dokumantarii walqunnamtii .
+            database-design: Dizaayinii Kuusaa Deetaa .
     flags:
         debug: Galmee bal'aa baasaa
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Faayilii qindeessaa uumuu
         doc:
             flags:
-                language: Afaan galmee, durtii Chaayinaa (ZH) dha .
-                output-dir: Galmee firii galmee, durtii docs .
+                language: Afaan sanadaa .
+                output-dir: Galmee firii galmee .
             long: Ergaa faayilii Proto keessatti moodeela irraa eegalee parse fi galmeewwan dizaayinii kuusdeetaa uumuu .
             short: Sanadoota dizaayinii kuusdeetaa uumuu .
         dockerignore:
