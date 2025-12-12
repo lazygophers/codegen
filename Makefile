@@ -10,7 +10,7 @@ build: ## build
 	# cp ./codegen.cfg.yaml ~/Library/Application Support/lazygophers/codegen.cfg.yaml
 
 	GOVERSION=$(shell go version | awk '{print $$3;}') \
-	goreleaser build --clean --snapshot --single-target --config=debug.goreleaser.yaml
+	goreleaser build --clean --snapshot --single-target --config=debug.goreleaser.yaml --verbose
 	#GOVERSION=$(shell go version | awk '{print $$3;}') goreleaser --clean --snapshot --skip=publish,validate --timeout=24h
 
 .PHONY: gen
