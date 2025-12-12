@@ -7,6 +7,10 @@ cli:
         short: E hana i kahi palapala autocomplete no ka pūpū i kuhikuhi ʻia
         subcommand:
             short: E hana i ka palapala hoʻopiha ʻauʻa no {{.Command}}
+    doc:
+        filename:
+            api: Palapala Kūlana Meanga
+            database-design: Hoʻolālā Hoʻolālā
     flags:
         debug: Hoʻopuka i ka moʻolelo kikoʻī
     gen:
@@ -33,8 +37,8 @@ cli:
             short: E hana i ka waihona hoʻonohonoho
         doc:
             flags:
-                language: Palapala palapala, he chinese ka chinese (zh)
-                output-dir: Palapala palapala palapala palapala, he mau docs
+                language: Palapala palapala
+                output-dir: Nā papa kuhikuhi palapala palapala
             long: Parse i ka leka e hoʻomaka ana me ka hoʻohālike ma ka faila proto a hana i nā palapala hoʻolālā waihona waihona
             short: Hana i nā palapala hoʻolālā waihona waihona
         dockerignore:

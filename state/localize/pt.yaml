@@ -7,6 +7,10 @@ cli:
         short: Gere um script de preenchimento automático para o shell especificado
         subcommand:
             short: Gerar script de preenchimento automático para {{.Command}}
+    doc:
+        filename:
+            api: Documentação de interface
+            database-design: Projeto de banco de dados
     flags:
         debug: Log detalhado de saída
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Gerar arquivo de configuração
         doc:
             flags:
-                language: Idioma do documento, o padrão é chinês (zh)
-                output-dir: Diretório de saída do documento, o padrão é docs
+                language: Idioma do documento
+                output-dir: Diretório de saída do documento
             long: Analise a mensagem começando com Model no arquivo proto e gere documentos de design de banco de dados
             short: Gerar documentos de design de banco de dados
         dockerignore:

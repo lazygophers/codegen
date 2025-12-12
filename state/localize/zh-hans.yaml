@@ -9,6 +9,10 @@ cli:
         short: 为指定 shell 生成自动完成脚本
         subcommand:
             short: 为 {{.Command}} 生成自动完成脚本
+    doc:
+        filename:
+            api: 接口文档
+            database-design: 数据库设计
     flags:
         debug: 输出详细日志
     gen:

@@ -7,6 +7,10 @@ cli:
         short: Ji bo şêlê diyarkirî skrîptek temamker biafirînin
         subcommand:
             short: Ji bo {{.Ferman}} skrîpta temamkirina xweser biafirîne
+    doc:
+        filename:
+            api: Belgekirina navberê
+            database-design: Design Database
     flags:
         debug: Têketinek berfireh derxe
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Pelê veavakirinê çêbike
         doc:
             flags:
-                language: Zimanê belgeyê, xwerû Çînî ye (zh)
-                output-dir: Peldanka derana belgeyê, xwerû belge ye
+                language: Zimanê belgeyê
+                output-dir: Peldanka hilberîna belgeyê
             long: Peyama ku bi Modelê dest pê dike di pelê proto de parve bikin û belgeyên sêwirana databasê biafirînin
             short: Belgeyên sêwirana databasê biafirînin
         dockerignore:

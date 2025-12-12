@@ -7,6 +7,10 @@ cli:
         short: Mamorona script autocomplete ho an'ny akorandriaka voatondro
         subcommand:
             short: Mamorona script autocomplete ho an'ny {{.Command}}
+    doc:
+        filename:
+            api: Fandraisana an-tsoratra
+            database-design: Famolavolana Database
     flags:
         debug: Output log details
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Mamorona rakitra fikirakirana
         doc:
             flags:
-                language: Teny an-tsoratra, ny Default dia sinoa (zh)
-                output-dir: Directut Office Director, Docs dia Docs
+                language: Teny an-tsoratra
+                output-dir: Directut Office Directory
             long: Parse ny hafatra manomboka amin'ny modely ao amin'ny rakitra Proto ary miteraka antontan-taratasy famolavolana Database
             short: Miteraka antontan-taratasy famolavolana Database
         dockerignore:

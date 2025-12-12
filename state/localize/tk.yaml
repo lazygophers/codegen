@@ -7,6 +7,10 @@ cli:
         short: Görkezilen gabyk üçin awtomatiki doly skript dörediň
         subcommand:
             short: '{{.Söwda}} üçin awtomatiki doly skript dörediň'
+    doc:
+        filename:
+            api: Interfeýs resminamalary
+            database-design: Maglumat bazasynyň dizaýny
     flags:
         debug: Jikme-jik gündeligi
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Sazlama faýly dörediň
         doc:
             flags:
-                language: Resminama dili, bellenmesi hytaýlylar (zh)
-                output-dir: Resminamanyň çykyş katalogy, deslapky resminamalar
+                language: Resminama dili
+                output-dir: Resminamanyň çykyş katalogy
             long: Proto faýly modelinde modelden we maglumat bazasynyň dizaýn resminamalaryny dörediň
             short: Maglumatlar bazasynyň dizaýn resminamalaryny dörediň
         dockerignore:

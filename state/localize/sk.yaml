@@ -7,6 +7,10 @@ cli:
         short: Vygenerujte skript automatického dopĺňania pre zadaný shell
         subcommand:
             short: Vygenerovať skript automatického dopĺňania pre {{.Command}}
+    doc:
+        filename:
+            api: Dokumentácia rozhrania
+            database-design: Návrh databázy
     flags:
         debug: Výstup podrobného protokolu
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Vygenerujte konfiguračný súbor
         doc:
             flags:
-                language: Jazyk dokumentu, predvolený jazyk je čínština (zh)
-                output-dir: Výstupný adresár dokumentu, predvolený je docs
+                language: Jazyk dokumentu
+                output-dir: Výstupný adresár dokumentu
             long: Analyzujte správu začínajúcu modelom v súbore proto a vygenerujte dokumenty návrhu databázy
             short: Generovať dokumenty návrhu databázy
         dockerignore:

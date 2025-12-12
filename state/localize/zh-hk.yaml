@@ -7,6 +7,10 @@ cli:
         short: 為指定 shell 產生自動完成腳本
         subcommand:
             short: 為 {{.Command}} 產生自動完成腳本
+    doc:
+        filename:
+            api: 接口文檔
+            database-design: 數據庫設計
     flags:
         debug: 輸出詳細日誌
     gen:
@@ -33,8 +37,8 @@ cli:
             short: 產生設定檔
         doc:
             flags:
-                language: 文檔語言，默認為中文(zh)
-                output-dir: 文檔輸出目錄，默認為 docs
+                language: 文檔語言
+                output-dir: 文檔輸出目錄
             long: 解析 proto 文件中 Model 開頭的 message，生成數據庫設計文檔
             short: 生成數據庫設計文檔
         dockerignore:

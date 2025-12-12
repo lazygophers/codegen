@@ -7,6 +7,10 @@ cli:
         short: Dala iskripthi sokuqedela ngokuzenzakalela segobolondo elishiwo
         subcommand:
             short: Khiqiza umbhalo wokuqedela ngokuzenzakalela kokuthi {{.Command}}
+    doc:
+        filename:
+            api: Imibhalo ebonakalayo
+            database-design: Design database
     flags:
         debug: Ilogi enemininingwane yokuphuma
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Khiqiza ifayela lokumisa
         doc:
             flags:
-                language: Ulimi lwedokhumenti, okuzenzakalelayo kuyi-Chinese (zh)
-                output-dir: Isiqondisi Sokukhipha Idokhumenti, Okuzenzakalelayo yi-Docs
+                language: Ulimi lwedokhumenti
+                output-dir: Isiqondisi Sokukhipha Idokhumenti
             long: Hlukanisa umyalezo oqala ngemodeli kufayela le-proto futhi ukhiqize amadokhumenti e-database design
             short: Khiqiza amadokhumenti e-Database Design
         dockerignore:

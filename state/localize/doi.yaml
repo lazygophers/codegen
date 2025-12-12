@@ -7,6 +7,10 @@ cli:
         short: निर्दिश्ट शैल आस्तै इक ऑटोकम्पलीट स्क्रिप्ट पैदा करो
         subcommand:
             short: '{{.Command}} लेई ऑटोकम्पलीट स्क्रिप्ट पैदा करो।'
+    doc:
+        filename:
+            api: इंटरफेस दस्तावेजीकरण
+            database-design: डेटाबेस डिजाइन ऐ
     flags:
         debug: आउटपुट विस्तृत लॉग
     gen:

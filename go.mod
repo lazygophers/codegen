@@ -7,16 +7,16 @@ require (
 	github.com/emicklei/proto v1.14.2
 	github.com/go-git/go-git/v5 v5.16.2
 	github.com/gookit/color v1.6.0
-	github.com/lazygophers/log v0.0.0-20250921073910-e5ecde8b16f4
-	github.com/lazygophers/lrpc v0.0.0-20251009102735-cbd4e3496c58
-	github.com/lazygophers/utils v0.0.0-20251013095735-5d2f3fbf7349
+	github.com/lazygophers/log v0.0.0-20251109135330-a99e80960847
+	github.com/lazygophers/lrpc v0.0.0-20251212135100-729fb200bc30
+	github.com/lazygophers/utils v0.0.0-20251030072921-255b987010d6
 	github.com/pelletier/go-toml/v2 v2.2.4
 	github.com/pterm/pterm v0.12.81
 	github.com/spf13/cobra v1.10.1
 	go.etcd.io/bbolt v1.4.3
 	go.uber.org/atomic v1.11.0
 	golang.org/x/mod v0.29.0
-	golang.org/x/text v0.30.0
+	golang.org/x/text v0.31.0
 	gopkg.in/yaml.v3 v3.0.1
 	gotest.tools/v3 v3.5.2
 	resty.dev/v3 v3.0.0-beta.3
@@ -30,8 +30,8 @@ require (
 	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/ProtonMail/go-crypto v1.3.0 // indirect
 	github.com/bytedance/gopkg v0.1.3 // indirect
-	github.com/bytedance/sonic v1.14.1 // indirect
-	github.com/bytedance/sonic/loader v0.3.0 // indirect
+	github.com/bytedance/sonic v1.14.2 // indirect
+	github.com/bytedance/sonic/loader v0.4.0 // indirect
 	github.com/cloudflare/circl v1.6.1 // indirect
 	github.com/cloudwego/base64x v0.1.6 // indirect
 	github.com/containerd/console v1.0.5 // indirect
@@ -48,7 +48,7 @@ require (
 	github.com/klauspost/cpuid/v2 v2.3.0 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
-	github.com/petermattis/goid v0.0.0-20250904145737-900bdf8bb490 // indirect
+	github.com/petermattis/goid v0.0.0-20251121121749-a11dd1a45f9a // indirect
 	github.com/pjbgf/sha1cd v0.5.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/sergi/go-diff v1.4.0 // indirect
@@ -58,12 +58,12 @@ require (
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	go.uber.org/zap v1.27.1-0.20240725153609-f95879bd02b8 // indirect
-	golang.org/x/arch v0.22.0 // indirect
-	golang.org/x/crypto v0.42.0 // indirect
-	golang.org/x/net v0.45.0 // indirect
-	golang.org/x/sys v0.37.0 // indirect
-	golang.org/x/term v0.35.0 // indirect
+	go.uber.org/zap v1.27.1 // indirect
+	golang.org/x/arch v0.23.0 // indirect
+	golang.org/x/crypto v0.45.0 // indirect
+	golang.org/x/net v0.47.0 // indirect
+	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/term v0.37.0 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 )

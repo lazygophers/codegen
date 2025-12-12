@@ -7,6 +7,10 @@ cli:
         short: Gin script uathchríochnaithe don bhlaosc sonraithe
         subcommand:
             short: Gin script uathchríochnaithe le haghaidh {{.Command}}
+    doc:
+        filename:
+            api: Doiciméadú comhéadan
+            database-design: Dearadh bunachar sonraí
     flags:
         debug: Aschur logáil mionsonraithe
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Gin comhad cumraíochta
         doc:
             flags:
-                language: Teanga dhoiciméid, is í Sínis (zh) an réamhshocrú
-                output-dir: Eolaire aschuir doiciméad, is é an réamhshocrú ná docs
+                language: Teanga doiciméad
+                output-dir: Eolaire aschuir doiciméad
             long: Parsáil an teachtaireacht ag tosú le Múnla sa chomhad proto agus giniúint doiciméid dearaidh bunachar sonraí
             short: Gin doiciméid dearaidh bunachar sonraí
         dockerignore:

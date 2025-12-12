@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: '{{.Command}} खातिर ऑटोकम्पलीट स्क्रिप्ट जनरेट करीं।'
     doc:
-        filename: {}
+        filename:
+            api: इंटरफेस के दस्तावेजीकरण कइल गइल बा .
+            database-design: डेटाबेस डिजाइन के बा .
     flags:
         debug: आउटपुट विस्तृत लॉग बा
     gen:

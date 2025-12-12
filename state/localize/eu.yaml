@@ -7,6 +7,10 @@ cli:
         short: Sortu automatikoki osatzeko script bat zehaztutako shell-erako
         subcommand:
             short: Sortu automatikoki osatzeko script-a {{.Command}}-rako
+    doc:
+        filename:
+            api: Interfazearen dokumentazioa
+            database-design: Datu-basearen diseinua
     flags:
         debug: Irteera erregistro zehatza
     gen:

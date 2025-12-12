@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: '{{.Command}} üçün avtomatik tamamlama skripti yaradın'
     doc:
-        filename: {}
+        filename:
+            api: İnterfeys sənədləri
+            database-design: Verilənlər bazası dizaynı
     flags:
         debug: Ətraflı jurnalı çıxarın
     gen:

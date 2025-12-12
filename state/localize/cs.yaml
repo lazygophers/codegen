@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Vygenerovat skript automatického doplňování pro {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Dokumentace rozhraní
+            database-design: Návrh databáze
     flags:
         debug: Výstup podrobného protokolu
     gen:

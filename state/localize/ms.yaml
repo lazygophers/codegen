@@ -7,6 +7,10 @@ cli:
         short: Hasilkan skrip autolengkap untuk shell yang ditentukan
         subcommand:
             short: Hasilkan skrip autolengkap untuk {{.Command}}
+    doc:
+        filename:
+            api: Dokumentasi antara muka
+            database-design: Reka bentuk pangkalan data
     flags:
         debug: Output log terperinci
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Hasilkan fail konfigurasi
         doc:
             flags:
-                language: Bahasa Dokumen, Lalai adalah Cina (ZH)
-                output-dir: Direktori output dokumen, lalai adalah dokumen
+                language: Bahasa dokumen
+                output-dir: Direktori Output Dokumen
             long: Menghuraikan mesej bermula dengan model dalam fail proto dan menghasilkan dokumen reka bentuk pangkalan data
             short: Menjana dokumen reka bentuk pangkalan data
         dockerignore:

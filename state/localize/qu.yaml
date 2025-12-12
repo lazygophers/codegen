@@ -7,6 +7,10 @@ cli:
         short: Huk kikin hunt'asqa qillqa mayt'uta paqarichiy, nisqa k'aspipaq
         subcommand:
             short: '{{.Command}} nisqapaq kikinmanta hunt''asqa qillqata paqarichiy.'
+    doc:
+        filename:
+            api: Interfaz qillqakuna .
+            database-design: Diseño de base de datos .
     flags:
         debug: Salida detallada registro
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Wakichiy willañiqita paqarichiy
         doc:
             flags:
-                language: Documento simi, ñawpaqmanta churasqa chino (ZH) .
-                output-dir: Qillqa lluqsiy qillqana mayt'u, ñawpaqmanta churasqa docs .
+                language: Qillqap simi .
+                output-dir: Qillqasqa lluqsiy qillqana mayt'u .
             long: PROTO qillqapi modelowan qallariq willakuyta t'aqwiy hinaspa willakuypa waqaychanan qillqa qillqakunata ruway .
             short: Willaypa waqaychanan qillqa qillqakunata paqarichiy .
         dockerignore:

@@ -7,6 +7,10 @@ cli:
         short: Pangani zolemba zomaliza zokha za chipolopolo chomwe mwatchulidwa
         subcommand:
             short: Pangani zolemba zokha za {{.Command}}
+    doc:
+        filename:
+            api: Zolemba Zolemba
+            database-design: Mapangidwe a Database
     flags:
         debug: Chotuluka mwatsatanetsatane chipika
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Pangani fayilo yosinthira
         doc:
             flags:
-                language: Chilankhulo, chosasinthika ndi China (ZH)
-                output-dir: Chikalata Chotulutsa, chosasinthika ndi ma docs
+                language: Chinenerocho
+                output-dir: Chikalata Chotulutsa
             long: Ganizirani uthenga woyambira ndi mtundu mu fayilo ya Proto ndikupanga zikalata zopanga database
             short: Pangani zikalata za database
         dockerignore:

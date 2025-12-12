@@ -7,6 +7,10 @@ cli:
         short: Búðu til sjálfvirkt útfyllingarforskrift fyrir tilgreinda skel
         subcommand:
             short: Búðu til sjálfvirkt útfyllingarforskrift fyrir {{.Command}}
+    doc:
+        filename:
+            api: Viðmótsskjöl
+            database-design: Hönnun gagnagrunns
     flags:
         debug: Framleiðsla nákvæma annál
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Búðu til stillingarskrá
         doc:
             flags:
-                language: Tungumál skjala, sjálfgefið er kínverska (zh)
-                output-dir: Skjalaúttaksmappa, sjálfgefið er skjöl
+                language: Tungumál skjala
+                output-dir: Skjalaúttaksmappa
             long: Tjáðu skilaboðin sem byrja á Model í frumskránni og búðu til gagnagrunnshönnunarskjöl
             short: Búðu til gagnagrunnshönnunarskjöl
         dockerignore:

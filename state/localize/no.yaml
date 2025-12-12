@@ -7,6 +7,10 @@ cli:
         short: Generer et autofullføringsskript for det angitte skallet
         subcommand:
             short: Generer autofullføringsskript for {{.Command}}
+    doc:
+        filename:
+            api: Grensesnittdokumentasjon
+            database-design: Database design
     flags:
         debug: Utdata detaljert logg
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Generer konfigurasjonsfil
         doc:
             flags:
-                language: Dokumentspråk, standard er kinesisk (zh)
-                output-dir: Dokumentutdatakatalog, standard er docs
+                language: Dokumentspråk
+                output-dir: Dokumentutdatakatalog
             long: Parse meldingen som starter med Model i protofilen og generer databasedesigndokumenter
             short: Generer databasedesigndokumenter
         dockerignore:

@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Generiraj autokompletnu skriptu za {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Dokumentacija o interfejsu
+            database-design: Dizajn baze podataka
     flags:
         debug: Izlaz detaljnog dnevnika
     gen:

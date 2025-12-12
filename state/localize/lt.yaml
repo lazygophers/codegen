@@ -7,6 +7,10 @@ cli:
         short: Sugeneruokite nurodyto apvalkalo automatinio užbaigimo scenarijų
         subcommand:
             short: Sugeneruoti automatinio užbaigimo scenarijų, skirtą {{.Command}}
+    doc:
+        filename:
+            api: Sąsajos dokumentacija
+            database-design: Duomenų bazės dizainas
     flags:
         debug: Išvesti išsamų žurnalą
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Sukurti konfigūracijos failą
         doc:
             flags:
-                language: Dokumento kalba, numatytoji kinų (zh)
-                output-dir: Dokumento išvesties katalogas, pagal nutylėjimą yra dokumentai
+                language: Dokumento kalba
+                output-dir: Dokumento išvesties katalogas
             long: Išanalizuoti pranešimą, pradedant nuo Modelis proto faile ir generuoti duomenų bazės projektavimo dokumentus
             short: Sukurti duomenų bazės projektavimo dokumentus
         dockerignore:

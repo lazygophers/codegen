@@ -7,6 +7,10 @@ cli:
         short: U samee qoraal toos ah qolof la cayimay
         subcommand:
             short: U samee qoraal toos ah {{.Command}}
+    doc:
+        filename:
+            api: Diiwaangelinta interface
+            database-design: Naqshadeynta keydka
     flags:
         debug: Soosaar qoraal faahfaahsan
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Samee faylka qaabeynta
         doc:
             flags:
-                language: Luuqadda dukumiintiga, sida caadiga ah waa Shiinaha (zh)
-                output-dir: Diiwaangelinta Diiwaangelinta Diiwaangelinta Diiwaangelinta, Defaultu waa Docs
+                language: Dukumiinti luuqad
+                output-dir: Diiwaangelinta Buugga Soo-saar
             long: Parse fariinta ka bilaabmaysa moodalka faylka faylka ku jira oo abuuro dukumiintiyada naqshadeynta keydka macluumaadka
             short: Abuuri dukumiintiyada naqshadeynta keydka macluumaadka
         dockerignore:

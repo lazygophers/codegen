@@ -7,6 +7,10 @@ cli:
         short: Hozzon létre egy automatikus kiegészítõ szkriptet a megadott héjhoz
         subcommand:
             short: Automatikus kiegészítési szkript létrehozása a(z) {{.Command}} számára
+    doc:
+        filename:
+            api: Interfész dokumentáció
+            database-design: Adatbázis tervezés
     flags:
         debug: Részletes napló kimenet
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Konfigurációs fájl létrehozása
         doc:
             flags:
-                language: A dokumentum nyelve, alapértelmezett a kínai (zh)
-                output-dir: Dokumentumkimeneti könyvtár, alapértelmezett a docs
+                language: A dokumentum nyelve
+                output-dir: Dokumentum kimeneti könyvtár
             long: Elemezze a protofájlban a Modell szóval kezdődő üzenetet, és állítson elő adatbázis-tervezési dokumentumokat
             short: Adatbázis tervezési dokumentumok létrehozása
         dockerignore:

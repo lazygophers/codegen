@@ -7,6 +7,10 @@ cli:
         short: Hlagiša sengwalwa sa go phethagatša ka go itiriša sa khetla ye e laeditšwego
         subcommand:
             short: Hlagiša sengwalwa sa go phethagatša ka go itiriša sa {{.Command}} .
+    doc:
+        filename:
+            api: Ditokomane tša Segokaganyi .
+            database-design: Moralo wa polokelo ya tshedimošo .
     flags:
         debug: Output qaqileng log
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Hlahisa faele ya peakanyo
         doc:
             flags:
-                language: Polelo ya tokomane, default ke Sechaena (ZH) .
-                output-dir: Tokomane dipholo tsa directory, default ke docs .
+                language: Polelo ya Tokomane .
+                output-dir: Tlhahlo ya Tšweletšo ya Tokomane .
             long: Lekana molaetša wo o thomago ka mohlala ka faeleng ya proto gomme o tšweletše ditokomane tša tlhamo ya polokelo ya tshedimošo .
             short: Hlagiša ditokomane tša tlhamo ya polokelo ya tshedimošo .
         dockerignore:

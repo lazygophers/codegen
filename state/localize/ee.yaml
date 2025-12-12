@@ -7,6 +7,10 @@ cli:
         short: Wɔ autocomplete script na shell si woɖo la
         subcommand:
             short: Wɔ ŋɔŋlɔdzesi si wu enu le eɖokui si na {{.Command}}.
+    doc:
+        filename:
+            api: Nuŋlɔɖiwo ƒe ŋgɔdonyawo .
+            database-design: Nyatakakadzraɖoƒe ƒe ɖoɖowɔwɔ .
     flags:
         debug: Output tsitotsito log
     gen:

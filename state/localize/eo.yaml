@@ -7,6 +7,10 @@ cli:
         short: Generu aŭtomatan skripton por la specifita ŝelo
         subcommand:
             short: Generu aŭtomatan skripton por {{.Komando}}
+    doc:
+        filename:
+            api: Dokumentado pri interfaco
+            database-design: Dezajno de datumbazo
     flags:
         debug: Eligi detalan protokolon
     gen:

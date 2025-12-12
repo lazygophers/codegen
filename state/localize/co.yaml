@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: Generate script di autocomplete per {{.Command}}
     doc:
-        filename: {}
+        filename:
+            api: Documentazione di l'interfaccia
+            database-design: Disegnu di basa di dati
     flags:
         debug: Output log detallatu
     gen:

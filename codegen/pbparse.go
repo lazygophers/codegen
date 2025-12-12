@@ -260,13 +260,13 @@ func (p *PbRPC) walk() {
 			return
 		}
 
-		if gen.Role != "" {
-			p.genOption.Role = gen.Role
-		}
-
-		if gen.SkipGenRoute {
-			p.genOption.SkipGenRoute = gen.SkipGenRoute
-		}
+		//if gen.Role != "" {
+		//	p.genOption.Role = gen.Role
+		//}
+		//
+		//if gen.SkipGenRoute {
+		//	p.genOption.SkipGenRoute = gen.SkipGenRoute
+		//}
 	} else {
 		log.Info(p.options)
 	}

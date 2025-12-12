@@ -7,6 +7,10 @@ cli:
         short: 指定されたシェルのオートコンプリート スクリプトを生成します。
         subcommand:
             short: '{{.Command}} のオートコンプリート スクリプトを生成する'
+    doc:
+        filename:
+            api: インターフェースのドキュメント
+            database-design: データベース設計
     flags:
         debug: 詳細ログを出力する
     gen:
@@ -33,8 +37,8 @@ cli:
             short: 設定ファイルを生成する
         doc:
             flags:
-                language: ドキュメント言語、デフォルトは中国語 (zh)
-                output-dir: ドキュメント出力ディレクトリ、デフォルトは docs
+                language: 文書言語
+                output-dir: ドキュメント出力ディレクトリ
             long: proto ファイル内の Model で始まるメッセージを解析し、データベース設計ドキュメントを生成します
             short: データベース設計ドキュメントの生成
         dockerignore:

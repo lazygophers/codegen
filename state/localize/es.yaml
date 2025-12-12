@@ -7,6 +7,10 @@ cli:
         short: Generar un script de autocompletar para el shell especificado
         subcommand:
             short: Generar script de autocompletar para {{.Command}}
+    doc:
+        filename:
+            api: Documentación de la interfaz
+            database-design: Diseño de base de datos
     flags:
         debug: Registro detallado de salida
     gen:

@@ -7,6 +7,10 @@ cli:
         short: Ģenerējiet automātiskās pabeigšanas skriptu norādītajam apvalkam
         subcommand:
             short: Ģenerēt automātiskās pabeigšanas skriptu komandai {{.Command}}
+    doc:
+        filename:
+            api: Interfeisa dokumentācija
+            database-design: Datu bāzes dizains
     flags:
         debug: Izvadiet detalizētu žurnālu
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Ģenerējiet konfigurācijas failu
         doc:
             flags:
-                language: Dokumenta valoda, noklusējuma ķīniešu (zh)
-                output-dir: Dokumentu izvades direktorijs, pēc noklusējuma ir dokumenti
+                language: Dokumenta valoda
+                output-dir: Dokumentu izvades direktorijs
             long: Parsējiet ziņojumu, sākot ar Modelis proto failā, un ģenerējiet datu bāzes dizaina dokumentus
             short: Ģenerēt datu bāzes dizaina dokumentus
         dockerignore:

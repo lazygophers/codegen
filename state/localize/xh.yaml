@@ -7,6 +7,10 @@ cli:
         short: Yenza iscript esipheleleyo seqokobhe elikhankanyiweyo
         subcommand:
             short: Velisa iscript esizigqibezelelayo se-{{.Command}}
+    doc:
+        filename:
+            api: Uxwebhu lwe-Intanethi
+            database-design: Uyilo lwedatha
     flags:
         debug: Imveliso yelog eneenkcukacha
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Yenza ifayile yoqwalaselo
         doc:
             flags:
-                language: Ulwimi lweXwebhu, ukungagqibekanga sisiTshayina (Zh)
-                output-dir: Ulwakhiwo lwemveliso yemveliso, Ukungagqibeki kwamanzi
+                language: Ulwimi lweX
+                output-dir: Ulawulo lwemveliso yoxwebhu
             long: Phinda uMyalezo oqala ngemodeli kwifayile yefayile kwaye uvelise ugcino lwedatha
             short: Yenza i-Devetal Fingu
         dockerignore:

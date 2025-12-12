@@ -8,7 +8,9 @@ cli:
         subcommand:
             short: '{{.Command}} ukatakix autocompletar script luraña.'
     doc:
-        filename: {}
+        filename:
+            api: Interfaz ukan qillqatanakapa .
+            database-design: Diseño de base de datos ukax 1.1.
     flags:
         debug: Salida detallada registro ukaxa
     gen:

@@ -7,6 +7,10 @@ cli:
         short: Jɛnɛret wan ɔtokɔmplit skript fɔ di shel we dɛn dɔn spɛsifa
         subcommand:
             short: Jɛnɛret ɔtokɔmplit skript fɔ {{.Kɔmand}}
+    doc:
+        filename:
+            api: Intafɛs Dokumɛnt .
+            database-design: Dizain fɔ di database .
     flags:
         debug: Output ditayl lɔg
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Jɛnɛret kɔnfigyushɔn fayl
         doc:
             flags:
-                language: Dokumɛnt Langwej, Difɔlt na Chaynish (ZH)
-                output-dir: Dokumɛnt ɔtput dairektrɔ, difɔlt na doks .
+                language: Dokumɛnt Langwej .
+                output-dir: Dokumɛnt Ɔtput Dayrɛktɔri .
             long: Parse di mɛsej we bigin wit mɔdel na di Proto fayl ɛn jenarayz database dizayn dɔkyumɛnt dɛn .
             short: Jɛnɛret di database dizayn dɔkyumɛnt dɛn .
         dockerignore:

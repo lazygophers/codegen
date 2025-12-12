@@ -7,6 +7,10 @@ cli:
         short: Hlahisa mongolo oa ho ikemela bakeng sa khetla e boletsoeng
         subcommand:
             short: Hlahisa mongolo oa ho ikemela oa {{.Command}}
+    doc:
+        filename:
+            api: TLHOKOMELISO
+            database-design: Moralo oa database
     flags:
         debug: Lethathamo le felletseng la lintlha
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Hlahisa faele ea tlhophiso
         doc:
             flags:
-                language: Puo ea Puo, kamehla ke Sechaena (zh)
-                output-dir: Ngola Directory Recking, kamehla ke PAPS
+                language: Ngola Puo ea Ngola
+                output-dir: Ngola Directory Rector
             long: Ngolisa molaetsa o qalang ka faele ea proto le mofuta oa database oa database oa database
             short: Fana ka litokomane tsa database tsa database
         dockerignore:

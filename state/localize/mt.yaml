@@ -7,6 +7,10 @@ cli:
         short: Iġġenera skript ta' tlestija awtomatika għall-qoxra speċifikata
         subcommand:
             short: Iġġenera skript ta' tlestija awtomatika għal {{.Kmand}}
+    doc:
+        filename:
+            api: Dokumentazzjoni tal-interface
+            database-design: Disinn tad-database
     flags:
         debug: Output log dettaljat
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Iġġenera fajl tal-konfigurazzjoni
         doc:
             flags:
-                language: Lingwa tad-dokument, default huwa Ċiniż (zh)
-                output-dir: Id-direttorju tal-output tad-dokument, default huwa docs
+                language: Lingwa tad-dokument
+                output-dir: Direttorju tal-ħruġ tad-dokument
             long: Analiżi l-messaġġ li jibda bil-Mudell fil-fajl proto u ġġenera dokumenti tad-disinn tad-database
             short: Iġġenera dokumenti tad-disinn tad-database
         dockerignore:

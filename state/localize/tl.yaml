@@ -7,6 +7,10 @@ cli:
         short: Bumuo ng isang autocomplete na script para sa tinukoy na shell
         subcommand:
             short: Bumuo ng autocomplete na script para sa {{.Command}}
+    doc:
+        filename:
+            api: Dokumentasyon ng interface
+            database-design: Disenyo ng Database
     flags:
         debug: Detalyadong log ng output
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Bumuo ng configuration file
         doc:
             flags:
-                language: Dokumento ng Dokumento, Default ay Intsik (ZH)
-                output-dir: Direktoryo ng Output ng Dokumento, ang default ay mga doc
+                language: Wika ng dokumento
+                output-dir: Direktoryo ng Output ng Dokumento
             long: I -parse ang mensahe na nagsisimula sa modelo sa proto file at makabuo ng mga dokumento ng disenyo ng database
             short: Bumuo ng mga dokumento sa disenyo ng database
         dockerignore:

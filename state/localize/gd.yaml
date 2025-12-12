@@ -7,6 +7,10 @@ cli:
         short: Cruthaich sgriobt fèin-choileanta airson an t-slige ainmichte
         subcommand:
             short: Cruthaich sgriobt fèin-choileanta airson {{.command}}
+    doc:
+        filename:
+            api: Sgrìobhainnean eadar-aghaidh
+            database-design: Dealbhadh stòr-dàta
     flags:
         debug: Clàr toraidh mionaideach
     gen:
@@ -33,8 +37,8 @@ cli:
             short: Cruthaich faidhle rèiteachaidh
         doc:
             flags:
-                language: Cànan na sgrìobhainn, is e Sìonais (zh) a th’ ann an bunaiteach.
-                output-dir: Eòlaire toraidh sgrìobhainnean, is e docaichean bunaiteach
+                language: Cànan sgrìobhainn
+                output-dir: Eòlaire toraidh sgrìobhainnean
             long: Parsaich an teachdaireachd a’ tòiseachadh le Model anns an fhaidhle proto agus cruthaich sgrìobhainnean dealbhaidh stòr-dàta
             short: Cruthaich sgrìobhainnean dealbhaidh stòr-dàta
         dockerignore:
