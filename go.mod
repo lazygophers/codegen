@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/Xuanwo/go-locale v1.1.3
 	github.com/emicklei/proto v1.14.2
-	github.com/go-git/go-git/v5 v5.16.2
+	github.com/go-git/go-git/v5 v5.16.5
 	github.com/gookit/color v1.6.0
 	github.com/lazygophers/log v0.0.0-20251109135330-a99e80960847
 	github.com/lazygophers/lrpc v0.0.0-20251212135100-729fb200bc30
@@ -15,7 +15,7 @@ require (
 	github.com/spf13/cobra v1.10.1
 	go.etcd.io/bbolt v1.4.3
 	go.uber.org/atomic v1.11.0
-	golang.org/x/mod v0.29.0
+	golang.org/x/mod v0.30.0
 	golang.org/x/text v0.31.0
 	gopkg.in/yaml.v3 v3.0.1
 	gotest.tools/v3 v3.5.2
@@ -61,6 +61,7 @@ require (
 	go.uber.org/zap v1.27.1 // indirect
 	golang.org/x/arch v0.23.0 // indirect
 	golang.org/x/crypto v0.45.0 // indirect
+	golang.org/x/exp v0.0.0-20251125195548-87e1e737ad39 // indirect
 	golang.org/x/net v0.47.0 // indirect
 	golang.org/x/sys v0.38.0 // indirect
 	golang.org/x/term v0.37.0 // indirect
