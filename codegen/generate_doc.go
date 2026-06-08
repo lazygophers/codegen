@@ -7,7 +7,7 @@ import (
 
 	"github.com/lazygophers/codegen/state"
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/lrpc/middleware/i18n"
+	"github.com/lazygophers/utils/i18n"
 	"github.com/lazygophers/utils/candy"
 	"github.com/lazygophers/utils/osx"
 	"github.com/lazygophers/utils/stringx"
@@ -176,7 +176,7 @@ func GenerateDatabaseDoc(pb *PbPackage) (err error) {
 		Models:        docModels,
 	}
 
-	tpl, err := GetTemplate(TemplateTypeDocsDatabase, i18n.DefaultLanguage())
+	tpl, err := GetTemplate(TemplateTypeDocsDatabase, i18n.Default.DefaultLang().String())
 	if err != nil {
 		log.Errorf("failed to get template: %v", err)
 		return err

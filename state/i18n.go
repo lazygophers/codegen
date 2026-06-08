@@ -4,16 +4,16 @@ import (
 	"embed"
 	"github.com/Xuanwo/go-locale"
 	"github.com/lazygophers/log"
-	"github.com/lazygophers/lrpc/middleware/i18n"
+	"github.com/lazygophers/utils/i18n"
+	"github.com/lazygophers/utils/language"
 	"github.com/pterm/pterm"
-	"golang.org/x/text/language"
 	"os"
 )
 
 var (
 	//go:embed localize/*.yaml
 	i18nFs embed.FS
-	I18n   = i18n.DefaultI18n
+	I18n   = i18n.Default
 )
 
 func LoadI18n() (err error) {
@@ -37,13 +37,13 @@ func LoadI18n() (err error) {
 	}
 
 	if defaultLanguage == "" {
-		defaultLanguage = language.English.String()
+		defaultLanguage = "en"
 	}
 
-	defaultLanguage = i18n.ParseLanguage(defaultLanguage)
+	defaultLanguage = language.Make(defaultLanguage).String()
 
 	pterm.Info.Printfln("use language %s", defaultLanguage)
-	I18n.SetDefaultLang(defaultLanguage)
+	I18n.SetDefaultLang(language.Make(defaultLanguage).Tag())
 
 	err = I18n.LoadLocalizes(i18nFs)
 	if err != nil {
@@ -59,5 +59,5 @@ func Localize(key string, args ...interface{}) string {
 }
 
 func LocalizeWithLanguage(lang string, key string, args ...interface{}) string {
-	return I18n.LocalizeWithLang(lang, key, args...)
+	return I18n.LocalizeWithLang(language.Make(lang).Tag(), key, args...)
 }

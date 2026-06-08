@@ -23,10 +23,10 @@ var NameStyle = map[state.CfgStyleName]NameStyleHandler{
 	},
 	state.CfgStyleNameCamel: {
 		Base: func(source string) (target string) {
-			return stringx.ToSmallCamel(source)
+			return stringx.ToSmallCamel(stringx.ToSnake(source))
 		},
 		NamePath: func(source string, modele string) string {
-			return stringx.ToSmallCamel(source)
+			return stringx.ToSmallCamel(stringx.ToSnake(source))
 		},
 	},
 	state.CfgStyleNameSnake: {
