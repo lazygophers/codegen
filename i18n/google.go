@@ -83,7 +83,7 @@ func NewTranslatorGoogleFree() *TranslatorGoogleFree {
 			}).
 			AddRequestMiddleware(func(client *resty.Client, request *resty.Request) error {
 				// Set random User-Agent for each request to avoid rate limiting
-				request.SetHeader("User-Agent", fake.RandomUserAgent())
+				request.SetHeader("User-Agent", fake.UserAgent())
 				return nil
 			}).
 			SetQueryParams(map[string]string{
